@@ -22,6 +22,9 @@ public:
         this->m_icon1 = icon1;
         this->m_icon2 = icon2;
     }
+    void removeFilter() {
+        this->removeEventFilter(this);
+    }
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override {
         if (event->type() == QEvent::Enter) {
@@ -34,8 +37,10 @@ protected:
         return QToolButton::eventFilter(watched, event);
     }
 private:
-    QIcon m_icon1;//leave
-    QIcon m_icon2;//enter
+    QIcon m_icon1{};//leave
+    QIcon m_icon2{};//enter
+public:
+    int m_cnt = 0; //记录之前的图片
 };
 
 
@@ -59,6 +64,8 @@ public:
 
     void checkHover();
 
+    void checkSelection();
+
 signals:
     void play();
 
@@ -77,6 +84,10 @@ private:
     //为了解决QWidgetAction没有与hovered相反的离开事件设置下面两个变量
     QVector<QWidget*> m_lastHover{};
     QVector<QWidget*> m_currentHover{};
+
+    //为了解决顺序图标只能显示一个的问题
+    MenuBtn* m_lastSelect{};
+    MenuBtn* m_curSelect{};
 };
 
 

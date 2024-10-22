@@ -509,11 +509,12 @@ void MyMenu::initSortOptionMenu() {
     //默认排序
     auto a_sortByDefaultAction = new QWidgetAction(this);
     {
-        auto a_sortByDefaultToolBtn = new QToolButton(this);
+        auto a_sortByDefaultToolBtn = new MenuBtn(this);
+        a_sortByDefaultToolBtn->removeFilter();
         a_sortByDefaultToolBtn->setFixedSize(120, 35);
-        a_sortByDefaultToolBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        a_sortByDefaultToolBtn->setIconSize(QSize(18,18));
         a_sortByDefaultToolBtn->setIcon(QIcon());
-        a_sortByDefaultToolBtn->setText(QStringLiteral(" 默认排序"));
+        a_sortByDefaultToolBtn->setText(QStringLiteral("  默认排序"));
         a_sortByDefaultAction->setDefaultWidget(a_sortByDefaultToolBtn);
         connect(a_sortByDefaultAction, &QWidgetAction::triggered, this, [a_sortByDefaultToolBtn,this] {
             //默认排序无图标
@@ -529,21 +530,29 @@ void MyMenu::initSortOptionMenu() {
     //添加时间
     auto a_sortByAddTimeAction = new QWidgetAction(this);
     {
-        auto a_sortByAddTimeToolBtn = new QToolButton(this);
+        auto a_sortByAddTimeToolBtn = new MenuBtn(this);
+        a_sortByAddTimeToolBtn->removeFilter();
         a_sortByAddTimeToolBtn->setFixedSize(120, 35);
-        a_sortByAddTimeToolBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        a_sortByAddTimeToolBtn->setIconSize(QSize(18,18));
         a_sortByAddTimeToolBtn->setIcon(QIcon());
-        a_sortByAddTimeToolBtn->setText(QStringLiteral(" 添加时间"));
+        a_sortByAddTimeToolBtn->setText(QStringLiteral("  添加时间"));
         a_sortByAddTimeAction->setDefaultWidget(a_sortByAddTimeToolBtn);
-        connect(a_sortByAddTimeToolBtn, &QToolButton::clicked, this, [a_sortByAddTimeToolBtn] {
-            qDebug()<<"点击";
+        connect(a_sortByAddTimeToolBtn, &QToolButton::clicked, this, [a_sortByAddTimeToolBtn,this] {
+            //qDebug()<<"点击";
+            this->m_curSelect = a_sortByAddTimeToolBtn;
+            checkSelection();
+            this->m_lastSelect = this->m_curSelect;
             if(a_sortByAddTimeToolBtn->icon().isNull()) {
-                qDebug()<<"无图标，设置图标";
+                //qDebug()<<"无图标，设置图标";
                 a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
             }
             else {
-                qDebug()<<"有图标，更换图标";
-                a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
+               a_sortByAddTimeToolBtn->m_cnt = (a_sortByAddTimeToolBtn->m_cnt + 1)%2;
+               if(a_sortByAddTimeToolBtn->m_cnt & 1)
+                   a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
+               else
+                   a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
+
             }
         });
         connect(a_sortByAddTimeAction, &QWidgetAction::hovered, this, [a_sortByAddTimeToolBtn,this] {
@@ -557,19 +566,28 @@ void MyMenu::initSortOptionMenu() {
     //歌曲名
     auto a_sortBySongNameAction = new QWidgetAction(this);
     {
-        auto a_sortBySongNameToolBtn = new QToolButton(this);
+        auto a_sortBySongNameToolBtn = new MenuBtn(this);
+        a_sortBySongNameToolBtn->removeFilter();
         a_sortBySongNameToolBtn->setFixedSize(120, 35);
-        a_sortBySongNameToolBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        a_sortBySongNameToolBtn->setIconSize(QSize(18,18));
         a_sortBySongNameToolBtn->setIcon(QIcon());
-        a_sortBySongNameToolBtn->setText(QStringLiteral(" 歌曲名"));
+        a_sortBySongNameToolBtn->setText(QStringLiteral("  歌曲名    "));
         a_sortBySongNameAction->setDefaultWidget(a_sortBySongNameToolBtn);
-        connect(a_sortBySongNameToolBtn, &QToolButton::clicked, this, [a_sortBySongNameToolBtn] {
+        connect(a_sortBySongNameToolBtn, &QToolButton::clicked, this, [this,a_sortBySongNameToolBtn] {
+            this->m_curSelect = a_sortBySongNameToolBtn;
+            checkSelection();
+            this->m_lastSelect = this->m_curSelect;
+
             if(a_sortBySongNameToolBtn->icon().isNull()) {
                 a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
             }
             else {
-                a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
-            }
+               a_sortBySongNameToolBtn->m_cnt = (a_sortBySongNameToolBtn->m_cnt + 1)%2;
+               if(a_sortBySongNameToolBtn->m_cnt & 1)
+                   a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
+               else
+                   a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
+           }
         });
         connect(a_sortBySongNameAction, &QWidgetAction::hovered, this, [a_sortBySongNameToolBtn,this] {
             checkHover();
@@ -582,19 +600,27 @@ void MyMenu::initSortOptionMenu() {
     //歌手
     auto a_sortBySingerAction = new QWidgetAction(this);
     {
-        auto a_sortBySingerToolBtn = new QToolButton(this);
+        auto a_sortBySingerToolBtn = new MenuBtn(this);
+        a_sortBySingerToolBtn->removeFilter();
         a_sortBySingerToolBtn->setFixedSize(120, 35);
-        a_sortBySingerToolBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        a_sortBySingerToolBtn->setIconSize(QSize(18,18));
         a_sortBySingerToolBtn->setIcon(QIcon());
-        a_sortBySingerToolBtn->setText(QStringLiteral(" 歌手"));
+        a_sortBySingerToolBtn->setText(QStringLiteral("  歌手       "));
         a_sortBySingerAction->setDefaultWidget(a_sortBySingerToolBtn);
-        connect(a_sortBySingerToolBtn, &QToolButton::clicked, this, [a_sortBySingerToolBtn] {
+        connect(a_sortBySingerToolBtn, &QToolButton::clicked, this, [this,a_sortBySingerToolBtn] {
+            this->m_curSelect = a_sortBySingerToolBtn;
+            checkSelection();
+            this->m_lastSelect = this->m_curSelect;
             if(a_sortBySingerToolBtn->icon().isNull()) {
                 a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
             }
             else {
-                a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
-            }
+               a_sortBySingerToolBtn->m_cnt = (a_sortBySingerToolBtn->m_cnt + 1)%2;
+               if(a_sortBySingerToolBtn->m_cnt & 1)
+                   a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
+               else
+                   a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
+           }
         });
         connect(a_sortBySingerAction, &QWidgetAction::hovered, this, [a_sortBySingerToolBtn,this] {
             checkHover();
@@ -607,18 +633,26 @@ void MyMenu::initSortOptionMenu() {
     //时长
     auto a_sortByDurationAction = new QWidgetAction(this);
     {
-        auto a_sortByDurationToolBtn = new QToolButton(this);
+        auto a_sortByDurationToolBtn = new MenuBtn(this);
+        a_sortByDurationToolBtn->removeFilter();
         a_sortByDurationToolBtn->setFixedSize(120, 35);
-        a_sortByDurationToolBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        a_sortByDurationToolBtn->setIconSize(QSize(18,18));
         a_sortByDurationToolBtn->setIcon(QIcon());
-        a_sortByDurationToolBtn->setText(QStringLiteral(" 时长"));
+        a_sortByDurationToolBtn->setText(QStringLiteral("  时长       "));
         a_sortByDurationAction->setDefaultWidget(a_sortByDurationToolBtn);
-        connect(a_sortByDurationToolBtn, &QToolButton::clicked, this, [a_sortByDurationToolBtn] {
-           if(a_sortByDurationToolBtn->icon().isNull()) {
+        connect(a_sortByDurationToolBtn, &QToolButton::clicked, this, [this,a_sortByDurationToolBtn] {
+            this->m_curSelect = a_sortByDurationToolBtn;
+            checkSelection();
+             this->m_lastSelect = this->m_curSelect;
+            if(a_sortByDurationToolBtn->icon().isNull()) {
                a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
            }
            else {
-               a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
+               a_sortByDurationToolBtn->m_cnt = (a_sortByDurationToolBtn->m_cnt + 1)%2;
+               if(a_sortByDurationToolBtn->m_cnt & 1)
+                   a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
+               else
+                   a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
            }
         });
         connect(a_sortByDurationAction, &QWidgetAction::hovered, this, [a_sortByDurationToolBtn,this] {
@@ -632,19 +666,26 @@ void MyMenu::initSortOptionMenu() {
     //播放次数
     auto a_sortByPlayCountAction = new QWidgetAction(this);
     {
-        auto a_sortByPlayCountToolBtn = new QToolButton(this);
+        auto a_sortByPlayCountToolBtn = new MenuBtn(this);
+        a_sortByPlayCountToolBtn->removeFilter();
         a_sortByPlayCountToolBtn->setFixedSize(120, 35);
-        a_sortByPlayCountToolBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        a_sortByPlayCountToolBtn->setIconSize(QSize(18,18));
         a_sortByPlayCountToolBtn->setIcon(QIcon());
-        a_sortByPlayCountToolBtn->setText(QStringLiteral(" 播放次数"));
+        a_sortByPlayCountToolBtn->setText(QStringLiteral("  播放次数"));
         a_sortByPlayCountAction->setDefaultWidget(a_sortByPlayCountToolBtn);
-        connect(a_sortByPlayCountToolBtn, &QToolButton::clicked, this, [a_sortByPlayCountToolBtn] {
-           if(a_sortByPlayCountToolBtn->icon().isNull()) {
+        connect(a_sortByPlayCountToolBtn, &QToolButton::clicked, this, [this,a_sortByPlayCountToolBtn] {
+            this->m_curSelect = a_sortByPlayCountToolBtn;
+            checkSelection();
+             this->m_lastSelect = this->m_curSelect;
+            if(a_sortByPlayCountToolBtn->icon().isNull()) {
                a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
            }
            else {
-               a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
-
+               a_sortByPlayCountToolBtn->m_cnt = (a_sortByPlayCountToolBtn->m_cnt + 1)%2;
+               if(a_sortByPlayCountToolBtn->m_cnt & 1)
+                   a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
+               else
+                   a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
            }
         });
         connect(a_sortByPlayCountAction, &QWidgetAction::hovered, this, [a_sortByPlayCountToolBtn,this] {
@@ -658,20 +699,15 @@ void MyMenu::initSortOptionMenu() {
     //随机排序
     auto a_sortByRandomAction = new QWidgetAction(this);
     {
-        auto a_sortByRandomToolBtn = new QToolButton(this);
+        auto a_sortByRandomToolBtn = new MenuBtn(this);
         a_sortByRandomToolBtn->setFixedSize(120, 35);
-        a_sortByRandomToolBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        a_sortByRandomToolBtn->removeFilter();
+        a_sortByRandomToolBtn->setIconSize(QSize(18,18));
         a_sortByRandomToolBtn->setIcon(QIcon());
-        a_sortByRandomToolBtn->setText(QStringLiteral(" 随机排序"));
+        a_sortByRandomToolBtn->setText(QStringLiteral("  随机排序"));
         a_sortByRandomAction->setDefaultWidget(a_sortByRandomToolBtn);
         connect(a_sortByRandomToolBtn, &QToolButton::clicked, this, [a_sortByRandomToolBtn] {
-           if(a_sortByRandomToolBtn->icon().isNull()) {
-               a_sortByRandomToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
-           }
-           else {
-               a_sortByRandomToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
 
-           }
         });
         connect(a_sortByRandomAction, &QWidgetAction::hovered, this, [a_sortByRandomToolBtn,this] {
             checkHover();
@@ -699,6 +735,17 @@ void MyMenu::checkHover() {
         }
         m_lastHover.clear();
         m_currentHover.clear();
+    }
+}
+
+void MyMenu::checkSelection() {
+    if(m_lastSelect) {
+        //qDebug()<<"之前指向目标存在";
+        if(m_lastSelect == m_curSelect)return;
+        if(!m_lastSelect->icon().isNull()) {
+            m_lastSelect->setIcon(QIcon());
+            //qDebug()<<"图标设置为空";
+        }
     }
 }
 
