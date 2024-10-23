@@ -124,6 +124,10 @@ KuGouApp::KuGouApp(MainWindow *parent)
     connect(this->m_vScrollBar, &QScrollBar::valueChanged, this, &KuGouApp::onScrollBarValueChanged);
     connect(this->m_scrollBarTimer, &QTimer::timeout, this, &KuGouApp::onUpBtnShowOrNot);
 
+
+    //专门处理重排
+    connect(this->m_localDownload.get(),&LocalDownload::syncSongInfo,this,&KuGouApp::onSyncSongInfoVector);
+
     ui->progressSlider->installEventFilter(this);
 }
 
@@ -222,7 +226,7 @@ void KuGouApp::initPlayWidget() {
     ui->ci_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/song-words.svg")));
     ui->list_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/play-list.svg")));
 
-    connect(ui->play_widget, &PlayWidget::doubleClicked, this, [this] { ui->max_toolButton->click(); });
+    connect(ui->play_widget, &PlayWidget::doubleClicked, this, [this] { ui->max_toolButton->clicked(); });
 }
 
 void KuGouApp::initMenu() {
@@ -260,6 +264,16 @@ void KuGouApp::initMenu() {
 void KuGouApp::initCornerWidget() {
     this->m_sizeGrip->setFixedSize(11, 11);
     this->m_sizeGrip->setObjectName(QStringLiteral("sizegrip"));
+}
+
+void KuGouApp::getCurrentIndex(int& index) {
+    SongInfor temp;
+    temp.songName = this->m_lastSongInfoVector[index].songName;
+    temp.singer = this->m_lastSongInfoVector[index].singer;
+    temp.duration = this->m_lastSongInfoVector[index].duration;
+    auto index1 = std::find(m_lastSongInfoVector.begin(), m_lastSongInfoVector.end(),temp);
+
+    index = static_cast<int>(index1 - m_lastSongInfoVector.begin());
 }
 
 void KuGouApp::addOrderIndex() {
@@ -443,8 +457,10 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
     return MainWindow::eventFilter(watched, event);
 }
 
-void KuGouApp::setPlayMusic(const int &index) {
-    //qDebug()<<"播放 "<<url;
+void KuGouApp::setPlayMusic(int &index) {
+    qDebug()<<"之前是第 "<<index<<" 首";
+    getCurrentIndex(index);
+    qDebug()<<"现在是第 "<<index<<" 首";
     emit setPlayIndex(index);
     this->m_player->stop();
     this->m_player->setSource(QUrl(this->m_songInfoVector[index].mediaPath));
@@ -479,6 +495,7 @@ void KuGouApp::onStartPlay() {
 
 void KuGouApp::onAddSongInfo(const SongInfor &info) {
     this->m_songInfoVector.emplace_back(info);
+    this->m_lastSongInfoVector.emplace_back(info);
 }
 
 void KuGouApp::onUpBtnClicked() {
@@ -535,6 +552,14 @@ void KuGouApp::onKeyLeft() {
 void KuGouApp::onKeyRight() {
     qint64 pos = this->m_player->position() + 5000;
     this->m_player->setPosition(pos > this->m_player->duration() ? this->m_player->duration() : pos);
+}
+
+void KuGouApp::onSyncSongInfoVector(QVector<SongInfor> &vec) {
+    qDebug()<<"重排，更新";
+    //保留旧的
+    this->m_lastSongInfoVector = this->m_songInfoVector;
+    //获取同步的播放顺序
+    this->m_songInfoVector = vec;
 }
 
 void KuGouApp::on_title_return_toolButton_clicked() {
@@ -710,7 +735,8 @@ void KuGouApp::on_circle_toolButton_clicked() {
                                                     // 当播放结束时，重新开始播放
                                                     //qDebug()<<"循环播放 ："<<this->m_isSingleCircle;
                                                     this->m_player->stop(); // 设置到文件的开头
-                                                    this->m_player->play();
+                                                    //this->m_player->play();
+                                                    setPlayIndex(this->m_songIndex);
                                                 }
                                             });
         } else

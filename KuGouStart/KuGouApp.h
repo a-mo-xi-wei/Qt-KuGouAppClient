@@ -49,6 +49,7 @@ private:
 
     void initCornerWidget();
 
+    void getCurrentIndex(int& index);    //通过在旧的vector里面的下标，来找新的下标
 private:
     void addOrderIndex();
 
@@ -113,7 +114,7 @@ private slots:
     void on_next_toolButton_clicked();
 
 public slots:
-    void setPlayMusic(const int &index);
+    void setPlayMusic(int &index);
 
     void updateProcess();
 
@@ -139,6 +140,9 @@ public slots:
 
 signals:
     void setPlayIndex(const int& index);
+public slots:
+    //接收重排信号
+    void onSyncSongInfoVector(QVector<SongInfor>& vec);
 
 private:
     Ui::KuGouApp *ui;
@@ -165,6 +169,7 @@ private:
     bool m_isOrderPlay = false;//专门提供给开始播放按钮
     int m_orderIndex = 0;
     QVector<SongInfor>m_songInfoVector;
+    QVector<SongInfor>m_lastSongInfoVector;//保留上一次排序的结果
     int m_songIndex = 0;//播放的歌曲的下标
 
     QEasingCurve m_curves = QEasingCurve::OutBounce;
