@@ -17,12 +17,13 @@ typedef struct SongInformation {
     int index;
     QPixmap cover;
     QString songName;
-    QString signer;
+    QString singer;
     QString duration;
     QString mediaPath;
     QDateTime addTime;
-    bool operator== (const struct SongInformation& info) {
-        return info.songName == this->songName &&info.signer == this->signer && info.duration == this->duration;
+    int playCount;
+    bool operator == (const struct SongInformation& info) const {
+        return info.songName == this->songName &&info.singer == this->singer && info.duration == this->duration;
     }
 
 }SongInfor;
@@ -33,7 +34,9 @@ class MusicItemWidget : public QFrame
 public:
     explicit MusicItemWidget(SongInfor info, QWidget *parent = nullptr);
 
-    void setInterval(const int& timeinterval); // 设置定时器时间间隔，控制填充速度
+    void setIndexText(const int& index);
+
+    void setInterval(const int& timeInterval); // 设置定时器时间间隔，控制填充速度
 
     void setFillColor(const QColor &fillcolor); // 设置填充颜色
 
@@ -59,6 +62,7 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
 
 private slots:
+    //smallWidget
     void onPlayToolBtnClicked();
 
     void onPlayNextToolBtnClicked();
@@ -68,7 +72,23 @@ private slots:
     void onCollectToolBtnClicked();
 
     void onMoreToolBtnClicked();
-
+    //menu
+    void onPlay();
+    void onNextPlay();
+    void onAddToPlayQueue();
+    void onAddToNewSongList();
+    void onAddToLove();
+    void onAddToCollect();
+    void onAddtoPlayList();
+    void onDownload();
+    void onShare();
+    void onComment();
+    void onSameSong();
+    void onViewSongInfo();
+    void onDeleteSong();
+    void onOpenInFile();
+    void onSearch();
+    void onUpLoad();
 signals:
     void playRequest();
 
@@ -89,6 +109,8 @@ private:
     QToolButton*    m_downloadToolBtn{};
     QToolButton*    m_collectToolBtn{};
     QToolButton*    m_moreToolBtn{};
+
+    bool            m_isPlaying = false;
     //菜单相关
     MyMenu*         m_songOptMenu{};
     QPoint          m_menuPosition;
@@ -98,8 +120,8 @@ private:
     QString         m_name;
     QString         m_singer;
     QString         m_duration;
+public:
     SongInfor       m_information;
-    bool            m_isPlaying = false;
 private:
     //涟漪效果相关
     int             timeInterval = 10; // 定时器时间间隔，单位：ms

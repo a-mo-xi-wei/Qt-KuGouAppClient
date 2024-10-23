@@ -44,7 +44,7 @@ MusicItemWidget::MusicItemWidget(SongInfor  infor, QWidget *parent)
     this->m_name            = m_information.songName;
     this->m_duration        = m_information.duration;
     this->m_cover           = m_information.cover;
-    this->m_singer          = m_information.signer;
+    this->m_singer          = m_information.singer;
     //qDebug()<<"m_index: "<<m_index<<" name: "<<m_name<<" duration: "<<m_duration<<
     //    " cover: "<<m_cover<<"m_singer: "<<m_singer;
     this->m_indexLab        = new QLabel(QString("%1").arg(this->m_index, 2, 10, QChar('0')), this);
@@ -87,16 +87,22 @@ MusicItemWidget::MusicItemWidget(SongInfor  infor, QWidget *parent)
     max_radius = static_cast<int>(qSqrt(width() * width() + height() * height())); // 计算最大半径
 
     initUi();
-
+    //smallWidget响应
     connect(this->m_playToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onPlayToolBtnClicked);
     connect(this->m_playNextToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onPlayNextToolBtnClicked);
     connect(this->m_downloadToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onDownloadToolBtnClicked);
     connect(this->m_collectToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onCollectToolBtnClicked);
     connect(this->m_moreToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onMoreToolBtnClicked);
+    //menu响应
+    connect(m_songOptMenu, &MyMenu::play, this, &MusicItemWidget::onPlay);
 }
 
-void MusicItemWidget::setInterval(const int &timeinterval) {
-    timer->setInterval(timeinterval);
+void MusicItemWidget::setIndexText(const int &index) {
+    this->m_indexLab->setText(QString("%1").arg(index, 2, 10, QChar('0')));
+}
+
+void MusicItemWidget::setInterval(const int &timeInterval) {
+    timer->setInterval(timeInterval);
 }
 
 void MusicItemWidget::setFillColor(const QColor &fillcolor) {
@@ -112,7 +118,7 @@ void MusicItemWidget::setInformation(const SongInfor &info) {
     this->m_name = info.songName;
     this->m_duration = info.duration;
     this->m_cover = info.cover;
-    this->m_singer = info.signer;
+    this->m_singer = info.singer;
     this->m_indexLab->setText(QString("%1").arg(this->m_index, 2, 10, QChar('0')));
     this->m_coverLab->setPixmap(roundedPix(this->m_cover, this->m_coverLab->size(), PIX_RADIUS));
     this->m_nameLab->setText(this->m_name);
@@ -249,6 +255,8 @@ void MusicItemWidget::mousePressEvent(QMouseEvent *event) {
 }
 
 void MusicItemWidget::onPlayToolBtnClicked() {
+    //this->m_information.playCount++;//放这里不明智
+    //qDebug()<<"已播放："<<this->m_information.playCount;
     emit playRequest();
 }
 
@@ -266,6 +274,55 @@ void MusicItemWidget::onMoreToolBtnClicked() {
     getMenuPosition(QCursor::pos());
     this->m_songOptMenu->move(this->m_menuPosition);
     this->m_songOptMenu->show();
+}
+
+void MusicItemWidget::onPlay() {
+    this->m_playToolBtn->clicked();
+}
+
+void MusicItemWidget::onNextPlay() {
+}
+
+void MusicItemWidget::onAddToPlayQueue() {
+}
+
+void MusicItemWidget::onAddToNewSongList() {
+}
+
+void MusicItemWidget::onAddToLove() {
+}
+
+void MusicItemWidget::onAddToCollect() {
+}
+
+void MusicItemWidget::onAddtoPlayList() {
+}
+
+void MusicItemWidget::onDownload() {
+}
+
+void MusicItemWidget::onShare() {
+}
+
+void MusicItemWidget::onComment() {
+}
+
+void MusicItemWidget::onSameSong() {
+}
+
+void MusicItemWidget::onViewSongInfo() {
+}
+
+void MusicItemWidget::onDeleteSong() {
+}
+
+void MusicItemWidget::onOpenInFile() {
+}
+
+void MusicItemWidget::onSearch() {
+}
+
+void MusicItemWidget::onUpLoad() {
 }
 
 void MusicItemWidget::initUi()
