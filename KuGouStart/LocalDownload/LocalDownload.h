@@ -69,6 +69,8 @@ signals:
 
     void addSongInfo(const SongInfor& info);
 
+    void syncSongInfo(QVector<SongInfor>& vec);
+
 private:
     Ui::LocalDownload *ui;
     std::unique_ptr<QMediaPlayer>m_player;
