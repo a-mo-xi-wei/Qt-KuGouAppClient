@@ -75,6 +75,24 @@ signals:
 
     void share();
 
+    void selected();
+
+    void deselected();
+
+    void defaultSort(const bool& down = true);
+
+    void addTimeSort(const bool& down = true);
+
+    void songNameSort(const bool& down = true);
+
+    void singerSort(const bool& down = true);
+
+    void durationSort(const bool& down = true);
+
+    void playCountSort(const bool& down = true);
+
+    void randomSort();
+
 protected:
     void paintEvent(QPaintEvent *event) override;
 
