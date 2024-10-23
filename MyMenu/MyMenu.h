@@ -68,15 +68,23 @@ public:
 
 signals:
     void play();
-
     void nextPlay();
-
+    void addToPlayQueue();
+    void addToNewSongList();
+    void addToLove();
+    void addToCollect();
+    void addToPlayList();
     void download();
-
     void share();
+    void comment();
+    void sameSong();
+    void songInfo();
+    void deleteSong();
+    void openInFile();
+    void search();
+    void upload();
 
     void selected();
-
     void deselected();
 
     void defaultSort(const bool& down = true);
