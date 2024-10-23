@@ -44,6 +44,23 @@ LocalDownload::LocalDownload(QWidget *parent)
     }
     getMetaData();
     init();
+    connect(m_sortOptMenu,&MyMenu::selected,this,[this] {
+        ui->local_sort_toolButton->setStyleSheet("border-image:url('://Res/titlebar/sort-blue.svg');");
+    });
+    connect(m_sortOptMenu,&MyMenu::deselected,this,[this] {
+        //qDebug()<<"接收到无排序状态";
+        ui->local_sort_toolButton->setStyleSheet(R"(
+                QToolButton{border-image:url('://Res/titlebar/sort-gray.svg');}
+                QToolButton:hover{border-image:url('://Res/titlebar/sort-blue.svg');})");
+    });
+    connect(m_sortOptMenu,&MyMenu::defaultSort,this,&LocalDownload::onDefaultSort);
+    connect(m_sortOptMenu,&MyMenu::addTimeSort,this,&LocalDownload::onAddTimeSort);
+    connect(m_sortOptMenu,&MyMenu::songNameSort,this,&LocalDownload::onSongNameSort);
+    connect(m_sortOptMenu,&MyMenu::singerSort,this,&LocalDownload::onSingerSort);
+    connect(m_sortOptMenu,&MyMenu::durationSort,this,&LocalDownload::onDurationSort);
+    connect(m_sortOptMenu,&MyMenu::playCountSort,this,&LocalDownload::onPlayCountSort);
+    connect(m_sortOptMenu,&MyMenu::randomSort,this,&LocalDownload::onRandomSort);
+
 }
 
 LocalDownload::~LocalDownload() {
@@ -116,7 +133,7 @@ void LocalDownload::getMetaData() {
             tempInformation.index = this->m_locationMusicVector.size()+1;//让他先加1
             tempInformation.cover = cover;
             tempInformation.songName = title;
-            tempInformation.signer = singer;
+            tempInformation.singer = singer;
             tempInformation.duration = QTime::fromMSecsSinceStartOfDay(duration).toString("mm:ss");
             tempInformation.mediaPath = this->m_mediaPath;
             tempInformation.addTime = QDateTime::currentDateTime();
@@ -141,6 +158,8 @@ void LocalDownload::getMetaData() {
             connect(item, &MusicItemWidget::playRequest, this, [index, this] {
                 emit playMusic(index);
             });
+            //插入Item
+            this->m_MusicItemVector.emplace_back(item);
             dynamic_cast<QVBoxLayout*>(ui->local_song_list_widget->layout())->insertWidget(ui->local_song_list_widget->layout()->count() - 1, item);
             ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
             //加载下一首歌
@@ -282,6 +301,195 @@ void LocalDownload::setPlayIndex(const int &index) {
         }
     }
 
+}
+
+void LocalDownload::onDefaultSort() {
+    ui->local_song_list_widget->setUpdatesEnabled(false);
+    auto layout = ui->local_song_list_widget->layout();
+    QLayoutItem* item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        //if(item->widget())item->widget()->deleteLater();
+        delete item;
+    }
+    layout->setSpacing(0);
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    layout->setContentsMargins(0,0,0,0);
+    //排序规则
+    auto defaultSort = [](const MusicItemWidget* item1,const MusicItemWidget* item2) {
+        return item1->m_information.addTime < item2->m_information.addTime;
+    };
+    std::sort(this->m_MusicItemVector.begin(), this->m_MusicItemVector.end(),defaultSort);
+    int index = 0;
+    for(auto& val : this->m_MusicItemVector) {
+        val->setIndexText(++index);
+        dynamic_cast<QVBoxLayout*>(ui->local_song_list_widget->layout())->insertWidget(ui->local_song_list_widget->layout()->count() - 1, val);
+    }
+    // 恢复更新
+    ui->local_song_list_widget->setUpdatesEnabled(true);
+    update();
+}
+
+void LocalDownload::onAddTimeSort(const bool& down) {
+    ui->local_song_list_widget->setUpdatesEnabled(false);
+    auto layout = ui->local_song_list_widget->layout();
+    QLayoutItem* item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        //if(item->widget())item->widget()->deleteLater();
+        delete item;
+    }
+    layout->setSpacing(0);
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    layout->setContentsMargins(0,0,0,0);
+    //排序规则
+    auto addTimeSort = [down](const MusicItemWidget* item1,const MusicItemWidget* item2) {
+        if(down) return item1->m_information.addTime < item2->m_information.addTime;
+        return item1->m_information.addTime > item2->m_information.addTime;
+    };
+    std::sort(this->m_MusicItemVector.begin(), this->m_MusicItemVector.end(),addTimeSort);
+    int index = 0;
+    for(auto& val : this->m_MusicItemVector) {
+        val->setIndexText(++index);
+        dynamic_cast<QVBoxLayout*>(ui->local_song_list_widget->layout())->insertWidget(ui->local_song_list_widget->layout()->count() - 1, val);
+    }
+    // 恢复更新
+    ui->local_song_list_widget->setUpdatesEnabled(true);
+    update();
+}
+
+void LocalDownload::onSongNameSort(const bool& down) {
+    ui->local_song_list_widget->setUpdatesEnabled(false);
+    auto layout = ui->local_song_list_widget->layout();
+    QLayoutItem* item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        //if(item->widget())item->widget()->deleteLater();
+        delete item;
+    }
+    layout->setSpacing(0);
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    layout->setContentsMargins(0,0,0,0);
+    //排序规则
+    auto songNameSort = [down](const MusicItemWidget* item1,const MusicItemWidget* item2) {
+        if(down) return item1->m_information.songName < item2->m_information.songName;
+        return item1->m_information.songName > item2->m_information.songName;
+    };
+    std::sort(this->m_MusicItemVector.begin(), this->m_MusicItemVector.end(),songNameSort);
+    int index = 0;
+    for(auto& val : this->m_MusicItemVector) {
+        val->setIndexText(++index);
+        dynamic_cast<QVBoxLayout*>(ui->local_song_list_widget->layout())->insertWidget(ui->local_song_list_widget->layout()->count() - 1, val);
+    }
+    // 恢复更新
+    ui->local_song_list_widget->setUpdatesEnabled(true);
+    update();
+    //qDebug()<<"更新";
+}
+
+void LocalDownload::onSingerSort(const bool& down) {
+    ui->local_song_list_widget->setUpdatesEnabled(false);
+    auto layout = ui->local_song_list_widget->layout();
+    QLayoutItem* item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        //if(item->widget())item->widget()->deleteLater();
+        delete item;
+    }
+    layout->setSpacing(0);
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    layout->setContentsMargins(0,0,0,0);
+    //排序规则
+    auto singerSort = [down](const MusicItemWidget* item1,const MusicItemWidget* item2) {
+        if(down) return item1->m_information.singer < item2->m_information.singer;
+        return item1->m_information.singer > item2->m_information.singer;
+    };
+    std::sort(this->m_MusicItemVector.begin(), this->m_MusicItemVector.end(),singerSort);
+    int index = 0;
+    for(auto& val : this->m_MusicItemVector) {
+        val->setIndexText(++index);
+        dynamic_cast<QVBoxLayout*>(ui->local_song_list_widget->layout())->insertWidget(ui->local_song_list_widget->layout()->count() - 1, val);
+    }
+    // 恢复更新
+    ui->local_song_list_widget->setUpdatesEnabled(true);
+    update();
+    //qDebug()<<"更新";
+}
+
+void LocalDownload::onDurationSort(const bool& down) {
+    ui->local_song_list_widget->setUpdatesEnabled(false);
+    auto layout = ui->local_song_list_widget->layout();
+    QLayoutItem* item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        //if(item->widget())item->widget()->deleteLater();
+        delete item;
+    }
+    layout->setSpacing(0);
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    layout->setContentsMargins(0,0,0,0);
+    //排序规则
+    auto durationSort = [down](const MusicItemWidget* item1,const MusicItemWidget* item2) {
+        if(down) return item1->m_information.duration < item2->m_information.duration;
+        return item1->m_information.duration > item2->m_information.duration;
+    };
+    std::sort(this->m_MusicItemVector.begin(), this->m_MusicItemVector.end(),durationSort);
+    int index = 0;
+    for(auto& val : this->m_MusicItemVector) {
+        val->setIndexText(++index);
+        dynamic_cast<QVBoxLayout*>(ui->local_song_list_widget->layout())->insertWidget(ui->local_song_list_widget->layout()->count() - 1, val);
+    }
+    // 恢复更新
+    ui->local_song_list_widget->setUpdatesEnabled(true);
+    update();
+    //qDebug()<<"更新";
+}
+
+void LocalDownload::onPlayCountSort(const bool& down) {
+    ui->local_song_list_widget->setUpdatesEnabled(false);
+    auto layout = ui->local_song_list_widget->layout();
+    QLayoutItem* item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        //if(item->widget())item->widget()->deleteLater();
+        delete item;
+    }
+    layout->setSpacing(0);
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    layout->setContentsMargins(0,0,0,0);
+    //排序规则
+    auto playCountSort = [down](const MusicItemWidget* item1,const MusicItemWidget* item2) {
+        if(down) return item1->m_information.playCount < item2->m_information.playCount;
+        return item1->m_information.playCount > item2->m_information.playCount;
+    };
+    std::sort(this->m_MusicItemVector.begin(), this->m_MusicItemVector.end(),playCountSort);
+    int index = 0;
+    for(auto& val : this->m_MusicItemVector) {
+        val->setIndexText(++index);
+        dynamic_cast<QVBoxLayout*>(ui->local_song_list_widget->layout())->insertWidget(ui->local_song_list_widget->layout()->count() - 1, val);
+    }
+    // 恢复更新
+    ui->local_song_list_widget->setUpdatesEnabled(true);update();
+}
+
+void LocalDownload::onRandomSort() {
+    ui->local_song_list_widget->setUpdatesEnabled(false);
+    auto layout = ui->local_song_list_widget->layout();
+    QLayoutItem* item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        //if(item->widget())item->widget()->deleteLater();
+        delete item;
+    }
+    layout->setSpacing(0);
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    layout->setContentsMargins(0,0,0,0);
+    //排序规则(打乱)
+    // 使用当前时间作为随机数种子
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    // 随机打乱 QVector
+    std::shuffle(this->m_MusicItemVector.begin(), this->m_MusicItemVector.end(), std::default_random_engine(seed));
+    int index = 0;
+    for(auto& val : this->m_MusicItemVector) {
+        val->setIndexText(++index);
+        dynamic_cast<QVBoxLayout*>(ui->local_song_list_widget->layout())->insertWidget(ui->local_song_list_widget->layout()->count() - 1, val);
+    }
+    // 恢复更新
+    ui->local_song_list_widget->setUpdatesEnabled(true);
+    update();
 }
 
 void LocalDownload::on_local_sort_toolButton_clicked() {

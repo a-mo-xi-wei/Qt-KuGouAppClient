@@ -43,6 +43,25 @@ private slots:
 
     void on_downloading_pushButton_clicked();
 
+    void on_local_sort_toolButton_clicked();
+
+public slots:
+    void setPlayIndex(const int& index);
+
+    void onDefaultSort();
+
+    void onAddTimeSort(const bool& down);
+
+    void onSongNameSort(const bool& down);
+
+    void onSingerSort(const bool& down);
+
+    void onDurationSort(const bool& down);
+
+    void onPlayCountSort(const bool& down);
+
+    void onRandomSort();
+
 signals:
     void playMusic(const int& index);
 
@@ -50,14 +69,11 @@ signals:
 
     void addSongInfo(const SongInfor& info);
 
-public slots:
-    void setPlayIndex(const int& index);
-
-    void on_local_sort_toolButton_clicked();
 private:
     Ui::LocalDownload *ui;
     std::unique_ptr<QMediaPlayer>m_player;
     QVector<SongInfor> m_locationMusicVector;
+    QVector<MusicItemWidget*> m_MusicItemVector;//存放item，方便排序
 
     QAction* m_searchAction;//专门为了设置图片
     QString m_mediaPath;

@@ -81,12 +81,12 @@ KuGouApp::KuGouApp(MainWindow *parent)
             ui->cover_label->setPixmap(roundedPixmap(this->m_songInfoVector[this->m_orderIndex].cover,
                                                      ui->cover_label->size(), 8));
             ui->song_name_label->setText(this->m_songInfoVector[this->m_orderIndex].songName);
-            ui->singer_label->setText(this->m_songInfoVector[this->m_orderIndex].signer);
+            ui->singer_label->setText(this->m_songInfoVector[this->m_orderIndex].singer);
         } else {
             ui->cover_label->setPixmap(roundedPixmap(this->m_songInfoVector[this->m_songIndex].cover,
                                                      ui->cover_label->size(), 8));
             ui->song_name_label->setText(this->m_songInfoVector[this->m_songIndex].songName);
-            ui->singer_label->setText(this->m_songInfoVector[this->m_songIndex].signer);
+            ui->singer_label->setText(this->m_songInfoVector[this->m_songIndex].singer);
         }
     });
     connect(this->m_player.get(), &QMediaPlayer::playbackStateChanged, this, [this](QMediaPlayer::PlaybackState state) {
