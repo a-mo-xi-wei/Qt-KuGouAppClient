@@ -14,18 +14,18 @@ QToolButton#title_refresh_toolButton:hover {
     border-image: url("://Res/titlebar/refresh-blue.svg");
 }
 
-QWidget#title_widget .QLabel{
+QWidget#title_widget QLabel{
     background-color: rgba(255,255,255,0);
 }
-QWidget#title_widget .QPushButton{
+QWidget#title_widget QPushButton{
     background-color:rgba(255,255,255,0);
     color:rgba(0,0,0,50%);
 }
-QWidget#title_widget .QPushButton:hover {
+QWidget#title_widget QPushButton:hover {
     color: #3366FF;
     font-size: 18px;
 }
-QWidget#title_widget .QPushButton:checked {
+QWidget#title_widget QPushButton:checked {
     color: #3366FF;
     font-size: 25px;
 }
@@ -85,16 +85,16 @@ QWidget#center_widget *{
 }
 
 /*--------------------menu_scrollArea------------------------------*/
-QScrollArea#menu_scrollArea .QToolButton{
+QScrollArea#menu_scrollArea QToolButton{
     font: bold;
     padding-left:20px;
     border-radius:10px;
     border:none;
 }
-QScrollArea#menu_scrollArea .QToolButton:hover{
+QScrollArea#menu_scrollArea QToolButton:hover{
     background-color:#c0c0c0;
 }
-QScrollArea#menu_scrollArea .QToolButton:checked{
+QScrollArea#menu_scrollArea QToolButton:checked{
     background-color:#268cff;
 }
 /*--------------------play_widget------------------------------*/
@@ -107,20 +107,20 @@ QWidget#play_widget {
 QWidget#song_info_widget{
     background-color:rgba(255,255,255,0);
 }
-QWidget#play_widget .QToolButton {
+QWidget#play_widget QToolButton {
     background-color: rgba(255,255,255,0);
     border: none;
 }
-QWidget#play_widget .QLabel {
+QWidget#play_widget QLabel {
     background-color: rgba(255,255,255,0);
     border: none;
 }
-QWidget#play_widget .QPushButton {
+QWidget#play_widget QPushButton {
     border-radius:5px;
     border:1px solid black;
     background-color:rgba(255,255,255,0);
 }
-QWidget#play_widget .QPushButton:checked {
+QWidget#play_widget QPushButton:checked {
     background-color: pink;
 }
 QToolButton#volume_toolButton{
@@ -150,32 +150,32 @@ GLTabWidget#guess_love_widget {
     border-radius:10px;
     border:none;
 }
-GLTabWidget#guess_love_widget .QLabel {
+GLTabWidget#guess_love_widget QLabel {
     font-size: 25px;
     color: white;
 }
-GLTabWidget#guess_love_widget .QToolButton#playToolBtn {
+GLTabWidget#guess_love_widget QToolButton#playToolBtn {
     border-image: url("://Res/tabIcon/play-white.svg");
 }
-GLTabWidget#guess_love_widget .QToolButton#playToolBtn:hover {
+GLTabWidget#guess_love_widget QToolButton#playToolBtn:hover {
     border-image: url("://Res/tabIcon/play-blue.svg");
 }
-GLTabWidget#guess_love_widget .QToolButton#nextToolBtn {
+GLTabWidget#guess_love_widget QToolButton#nextToolBtn {
     border-image: url("://Res/tabIcon/next-song-white.svg");
 }
-GLTabWidget#guess_love_widget .QToolButton#nextToolBtn:hover {
+GLTabWidget#guess_love_widget QToolButton#nextToolBtn:hover {
     border-image: url("://Res/tabIcon/next-song-blue.svg");
 }
-GLTabWidget#guess_love_widget .QToolButton#likeToolBtn {
+GLTabWidget#guess_love_widget QToolButton#likeToolBtn {
     border-image: url("://Res/tabIcon/like-white.svg");
 }
-GLTabWidget#guess_love_widget .QToolButton#likeToolBtn:hover {
+GLTabWidget#guess_love_widget QToolButton#likeToolBtn:hover {
     border-image: url("://Res/tabIcon/like-blue.svg");
 }
-GLTabWidget#guess_love_widget .QToolButton#dislikeToolBtn {
+GLTabWidget#guess_love_widget QToolButton#dislikeToolBtn {
     border-image: url("://Res/tabIcon/dislike-white.svg");
 }
-GLTabWidget#guess_love_widget .QToolButton#dislikeToolBtn:hover {
+GLTabWidget#guess_love_widget QToolButton#dislikeToolBtn:hover {
     border-image: url("://Res/tabIcon/dislike-blue.svg");
 }
 
