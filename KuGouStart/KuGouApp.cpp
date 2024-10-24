@@ -427,28 +427,37 @@ bool KuGouApp::event(QEvent *event) {
 
 bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
     if (watched == ui->progressSlider) {
+        // 禁用进度条拖拽，当播放器没有加载资源时
+        // 如果播放器没有加载资源，禁用进度条的鼠标事件
+        if (event->type() == QEvent::MouseButtonPress || event->type() == QEvent::MouseButtonRelease || event->type() == QEvent::MouseMove) {
+            if (this->m_player->source().isEmpty()) {
+                return true; // 只拦截与鼠标有关的事件
+            }
+        }
         if (event->type() == QEvent::MouseButtonPress) //判断类型
         {
             auto mouseEvent = dynamic_cast<QMouseEvent *>(event);
             if (mouseEvent->button() == Qt::LeftButton) //判断左键
             {
-                if (this->m_player->source().isEmpty()) return false;
                 //qDebug() << "触发点击";
                 qint64 value = QStyle::sliderValueFromPosition(ui->progressSlider->minimum(),
                                                                ui->progressSlider->maximum(), mouseEvent->pos().x(),
                                                                ui->progressSlider->width());
-                //水平进度条动态地划到点击位置
-                //auto ani = new QPropertyAnimation(ui->progressSlider,"sliderPosition");
-                // 设置动画持续时间，单位是毫秒，这里设置为100毫秒
-                //ani->setDuration(100);
-                // 动画开始值为滑块的当前位置
-                //ani->setStartValue(ui->progressSlider->value());
-                // 动画结束值为你希望的目标值
-                //ani->setEndValue(value);
-                // 设置动画的曲线类型，比如缓入缓出的效果
-                //ani->setEasingCurve(QEasingCurve::Linear);
-                // 启动动画
-                //ani->start(QAbstractAnimation::DeleteWhenStopped);
+                {
+                    //水平进度条动态地划到点击位置
+                    //auto ani = new QPropertyAnimation(ui->progressSlider,"sliderPosition");
+                    // 设置动画持续时间，单位是毫秒，这里设置为100毫秒
+                    //ani->setDuration(100);
+                    // 动画开始值为滑块的当前位置
+                    //ani->setStartValue(ui->progressSlider->value());
+                    // 动画结束值为你希望的目标值
+                    //ani->setEndValue(value);
+                    // 设置动画的曲线类型，比如缓入缓出的效果
+                    //ani->setEasingCurve(QEasingCurve::Linear);
+                    // 启动动画
+                    //ani->start(QAbstractAnimation::DeleteWhenStopped);
+                }
+
                 this->m_player->setPosition(value);
                 if (!this->m_isPlaying)ui->play_or_pause_toolButton->clicked();
             }
