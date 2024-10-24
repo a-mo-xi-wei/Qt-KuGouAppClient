@@ -4,29 +4,29 @@ QLabel#local_download_label {
     font-size:25px;
     font-weight:bold;
 }
-QWidget#guide_widget .QPushButton {
+QWidget#guide_widget QPushButton {
     color:black;
     font-size:14px;
     border: none;
     padding: 0px;
     margin: 0px;
 }
-QWidget#guide_widget .QPushButton:checked {
+QWidget#guide_widget QPushButton:checked {
     color:#26a1ff;
     font-size:17px;
     font-weight:bold;
 }
-QWidget#guide_widget .QLabel {
+QWidget#guide_widget QLabel {
     padding-top:0px;
     margin: 0px;
 }
-QWidget#operation_widget > .QToolButton {
+QWidget#operation_widget > QToolButton {
     background-color: #e2e5ff;
     border: none;
     border-radius: 15px;
     padding-left: 15px;
 }
-QWidget#operation_widget > .QToolButton:hover {
+QWidget#operation_widget > QToolButton:hover {
     background-color: #dadeff;
 }
 
