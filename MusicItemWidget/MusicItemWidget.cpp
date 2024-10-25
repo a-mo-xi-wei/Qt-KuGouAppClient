@@ -47,7 +47,7 @@ MusicItemWidget::MusicItemWidget(SongInfor  infor, QWidget *parent)
     this->m_singer          = m_information.singer;
     //qDebug()<<"m_index: "<<m_index<<" name: "<<m_name<<" duration: "<<m_duration<<
     //    " cover: "<<m_cover<<"m_singer: "<<m_singer;
-    this->m_indexLab        = new QLabel(QString("%1").arg(this->m_index, 2, 10, QChar('0')), this);
+    this->m_indexLab        = new QLabel(QString("%1").arg(this->m_index + 1, 2, 10, QChar('0')), this);
     this->m_coverLab        = new QLabel(this);
     this->m_coverLab->setAlignment(Qt::AlignCenter);
     this->m_coverLab->setFixedSize(PIX_SIZE,PIX_SIZE);
