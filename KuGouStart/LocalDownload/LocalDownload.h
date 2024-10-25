@@ -32,6 +32,8 @@ public:
     void getMenuPosition(const QPoint& pos);
 
     void MySort(std::function<bool(const MusicItemWidget*, const MusicItemWidget*)> comparator);
+
+    void updateCurPlayIndex();
 private slots:
     void on_local_play_toolButton_clicked();
 
@@ -77,6 +79,7 @@ private:
     Ui::LocalDownload *ui;
     std::unique_ptr<QMediaPlayer>m_player;
     QVector<SongInfor> m_locationMusicVector;
+    QVector<SongInfor> m_lastLocationMusicVector;//方便求得之前的下标
     QVector<MusicItemWidget*> m_MusicItemVector;//存放item，方便排序
 
     QAction* m_searchAction;//专门为了设置图片

@@ -225,9 +225,8 @@ void LocalDownload::getMenuPosition(const QPoint &pos) {
 }
 
 void LocalDownload::MySort(std::function<bool(const MusicItemWidget *, const MusicItemWidget *)> comparator) {
-    //记录m_curPlayIndex;
-    if(this->m_curPlatIndex == -1)return;
-    SongInfor temp = this->m_locationMusicVector[this->m_curPlatIndex];
+    //记录当前的（旧的）vector
+    this->m_lastLocationMusicVector = this-> m_locationMusicVector;
     //初始UI
     ui->local_song_list_widget->setUpdatesEnabled(false);
     auto layout = ui->local_song_list_widget->layout();
@@ -251,13 +250,18 @@ void LocalDownload::MySort(std::function<bool(const MusicItemWidget *, const Mus
         this->m_locationMusicVector.emplace_back(val->m_information);
     }
     emit syncSongInfo(this->m_locationMusicVector);
-    //重新赋值m_curPlayIndex
-    //qDebug()<<"当前显示的是第："<<this->m_curPlatIndex;
-    this->m_curPlatIndex = static_cast<int>(std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), temp) - this->m_locationMusicVector.begin());
-    //qDebug()<<"排序后显示的是第："<<this->m_curPlatIndex;
     // 恢复更新
     ui->local_song_list_widget->setUpdatesEnabled(true);
     update();
+    updateCurPlayIndex();
+}
+
+void LocalDownload::updateCurPlayIndex() {
+    //记录m_curPlayIndex;
+    if(m_curPlatIndex == -1)return;
+    SongInfor temp = this->m_lastLocationMusicVector[this->m_curPlatIndex];
+    //重新赋值m_curPlayIndex
+    this->m_curPlatIndex = static_cast<int>(std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), temp) - this->m_locationMusicVector.begin());
 }
 
 void LocalDownload::on_local_play_toolButton_clicked() {
@@ -414,9 +418,8 @@ void LocalDownload::onPlayCountSort(const bool& down) {
 }
 
 void LocalDownload::onRandomSort() {
-    //记录m_curPlayIndex;
-    if(this->m_curPlatIndex == -1)return;
-    SongInfor temp = this->m_locationMusicVector[this->m_curPlatIndex];
+    //记录当前的（旧的）vector
+    this->m_lastLocationMusicVector = this-> m_locationMusicVector;
     //初始UI
     ui->local_sort_toolButton->setToolTip("当前排序方式：随机排序");
     ui->local_song_list_widget->setUpdatesEnabled(false);
@@ -443,11 +446,10 @@ void LocalDownload::onRandomSort() {
         this->m_locationMusicVector.emplace_back(val->m_information);
     }
     emit syncSongInfo(this->m_locationMusicVector);//按相同的顺序
-    //重新赋值m_curPlayIndex
-    this->m_curPlatIndex = static_cast<int>(std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), temp) - this->m_locationMusicVector.begin());
     // 恢复更新
     ui->local_song_list_widget->setUpdatesEnabled(true);
     update();
+    updateCurPlayIndex();
 }
 
 void LocalDownload::on_local_sort_toolButton_clicked() {
