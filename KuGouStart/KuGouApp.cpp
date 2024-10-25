@@ -124,7 +124,6 @@ KuGouApp::KuGouApp(MainWindow *parent)
     connect(this->m_vScrollBar, &QScrollBar::valueChanged, this, &KuGouApp::onScrollBarValueChanged);
     connect(this->m_scrollBarTimer, &QTimer::timeout, this, &KuGouApp::onUpBtnShowOrNot);
 
-
     //专门处理重排
     connect(this->m_localDownload.get(),&LocalDownload::syncSongInfo,this,&KuGouApp::onSyncSongInfoVector);
 
@@ -266,14 +265,16 @@ void KuGouApp::initCornerWidget() {
     this->m_sizeGrip->setObjectName(QStringLiteral("sizegrip"));
 }
 
-void KuGouApp::getCurrentIndex(int& index) {
+int KuGouApp::getCurrentIndex(int index) {
+    //直接默认从旧的排序中找
     SongInfor temp;
     temp.songName = this->m_lastSongInfoVector[index].songName;
     temp.singer = this->m_lastSongInfoVector[index].singer;
     temp.duration = this->m_lastSongInfoVector[index].duration;
-    auto index1 = std::find(m_lastSongInfoVector.begin(), m_lastSongInfoVector.end(),temp);
+    auto index1 = std::find(m_songInfoVector.begin(), m_songInfoVector.end(),temp);
 
-    index = static_cast<int>(index1 - m_lastSongInfoVector.begin());
+    index = static_cast<int>(index1 - m_songInfoVector.begin());
+    return index;
 }
 
 void KuGouApp::addOrderIndex() {
@@ -467,10 +468,9 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
 }
 
 void KuGouApp::setPlayMusic(int &index) {
-    qDebug()<<"之前是第 "<<index<<" 首";
-    getCurrentIndex(index);
-    qDebug()<<"现在是第 "<<index<<" 首";
+    //qDebug()<<"之前是第 "<<index<<" 首";
     emit setPlayIndex(index);
+    //qDebug()<<"现在是第 "<<index<<" 首";
     this->m_player->stop();
     this->m_player->setSource(QUrl(this->m_songInfoVector[index].mediaPath));
     this->m_player->play();
@@ -489,13 +489,15 @@ void KuGouApp::updateSliderRange(const qint64 &duration) {
     ui->duration_label->setText(QTime::fromMSecsSinceStartOfDay(static_cast<int>(duration)).toString("mm:ss"));
 }
 
-void KuGouApp::onPlayMusic(const int &index) {
+void KuGouApp::onPlayMusic(int index) {
+    //index = getCurrentIndex(index-1);
     this->m_isOrderPlay = false;
-    this->m_songIndex = index - 1;
+    this->m_songIndex = index;
     setPlayMusic(this->m_songIndex);
 }
 
 void KuGouApp::onStartPlay() {
+    if(this->m_isSingleCircle)ui->circle_toolButton->clicked();
     this->m_isOrderPlay = true;
     this->m_orderIndex = 0;
     //直接从第一首开始播放
@@ -564,11 +566,18 @@ void KuGouApp::onKeyRight() {
 }
 
 void KuGouApp::onSyncSongInfoVector(QVector<SongInfor> &vec) {
-    qDebug()<<"重排，更新";
     //保留旧的
     this->m_lastSongInfoVector = this->m_songInfoVector;
     //获取同步的播放顺序
     this->m_songInfoVector = vec;
+    //qDebug()<<"重排，更新为如下：";
+    //for(auto& val : this->m_songInfoVector) {
+    //    qDebug()<<val.songName;
+    //}
+    //更新当前播放下标
+    this->m_songIndex = getCurrentIndex(this->m_songIndex);
+    this->m_orderIndex = getCurrentIndex(this->m_orderIndex);
+
 }
 
 void KuGouApp::on_title_return_toolButton_clicked() {
@@ -729,6 +738,7 @@ void KuGouApp::on_circle_toolButton_clicked() {
     if (this->m_player->source().isEmpty()) return;
     m_isSingleCircle = !m_isSingleCircle;
     if (m_isSingleCircle) {
+        this->m_isOrderPlay = false;
         //qDebug()<<"单曲循环";
         //this->m_player->setLoops(QMediaPlayer::Loops::Infinite);
         ////怪不得，原来错在这里，我就说怎么循环播放进度条一直有问题，服了
@@ -745,7 +755,7 @@ void KuGouApp::on_circle_toolButton_clicked() {
                                                     //qDebug()<<"循环播放 ："<<this->m_isSingleCircle;
                                                     this->m_player->stop(); // 设置到文件的开头
                                                     //this->m_player->play();
-                                                    setPlayIndex(this->m_songIndex);
+                                                    setPlayMusic(this->m_songIndex);
                                                 }
                                             });
         } else

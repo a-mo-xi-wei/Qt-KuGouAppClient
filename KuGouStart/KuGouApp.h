@@ -49,7 +49,7 @@ private:
 
     void initCornerWidget();
 
-    void getCurrentIndex(int& index);    //通过在旧的vector里面的下标，来找新的下标
+    int getCurrentIndex(int index);    //通过在旧的vector里面的下标，来找新的下标
 private:
     void addOrderIndex();
 
@@ -120,7 +120,7 @@ public slots:
 
     void updateSliderRange(const qint64& duration);
 
-    void onPlayMusic(const int& index);
+    void onPlayMusic(int index);
 
     void onStartPlay();
 

@@ -30,6 +30,8 @@ public:
     void loadNextSong();
 
     void getMenuPosition(const QPoint& pos);
+
+    void MySort(std::function<bool(const MusicItemWidget*, const MusicItemWidget*)> comparator);
 private slots:
     void on_local_play_toolButton_clicked();
 
@@ -63,7 +65,7 @@ public slots:
     void onRandomSort();
 
 signals:
-    void playMusic(const int& index);
+    void playMusic(int index);
 
     void startPlay();
 
