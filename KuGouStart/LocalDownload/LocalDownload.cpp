@@ -226,6 +226,7 @@ void LocalDownload::getMenuPosition(const QPoint &pos) {
 
 void LocalDownload::MySort(std::function<bool(const MusicItemWidget *, const MusicItemWidget *)> comparator) {
     //记录m_curPlayIndex;
+    if(this->m_curPlatIndex == -1)return;
     SongInfor temp = this->m_locationMusicVector[this->m_curPlatIndex];
     //初始UI
     ui->local_song_list_widget->setUpdatesEnabled(false);
@@ -414,6 +415,7 @@ void LocalDownload::onPlayCountSort(const bool& down) {
 
 void LocalDownload::onRandomSort() {
     //记录m_curPlayIndex;
+    if(this->m_curPlatIndex == -1)return;
     SongInfor temp = this->m_locationMusicVector[this->m_curPlatIndex];
     //初始UI
     ui->local_sort_toolButton->setToolTip("当前排序方式：随机排序");
