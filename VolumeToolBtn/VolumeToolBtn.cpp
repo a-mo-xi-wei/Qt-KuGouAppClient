@@ -31,7 +31,7 @@ VolumeToolBtn::VolumeToolBtn(QWidget *parent)
         }
     });
     connect(this->m_volumeSlider.get(), &QSlider::valueChanged, [this] {
-        this->m_volumeLab->setText(QString::number(this->m_volumeSlider->getValue()) + "%");
+        this->m_volumeLab->setText(" "+QString::number(this->m_volumeSlider->getValue()) + "%");
         emit volumeChange(this->m_volumeSlider->getValue());
     });
     connect(this->m_volumeSlider.get(), &SliderWidget::noVolume,this,[this](bool flag){onNoVolume(flag);});
@@ -55,7 +55,7 @@ void VolumeToolBtn::initVolumeWidget() {
     this->m_volumeSlider->setContentsMargins(0,0,0,0);
     this->m_volumeLab->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
     this->m_volumeLab->setContentsMargins(0,0,0,0);
-    this->m_volumeLab->setText(QString::number(this->m_volumeSlider->getValue()) + "%");
+    this->m_volumeLab->setText(" "+QString::number(this->m_volumeSlider->getValue()) + "%");
     auto hBoxLayout = new QHBoxLayout;
     hBoxLayout->setAlignment(Qt::AlignCenter);
     hBoxLayout->setContentsMargins(0, 0, 0, 0);
