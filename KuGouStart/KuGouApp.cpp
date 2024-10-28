@@ -77,17 +77,25 @@ KuGouApp::KuGouApp(MainWindow *parent)
     connect(this->m_player.get(), &QMediaPlayer::durationChanged, this, &KuGouApp::updateSliderRange);
     connect(this->m_player.get(), &QMediaPlayer::metaDataChanged, this, [this] {
         //qDebug() << "metaDataChanged";
+        const QFont font("楷体",10);
+        const QFontMetrics fm(font);
+        QString song_name;
+        QString singer;
         if (this->m_isOrderPlay) {
             ui->cover_label->setPixmap(roundedPixmap(this->m_songInfoVector[this->m_orderIndex].cover,
                                                      ui->cover_label->size(), 8));
-            ui->song_name_label->setText(this->m_songInfoVector[this->m_orderIndex].songName);
-            ui->singer_label->setText(this->m_songInfoVector[this->m_orderIndex].singer);
+           song_name = this->m_songInfoVector[this->m_orderIndex].songName;
+           singer = " "+this->m_songInfoVector[this->m_orderIndex].singer;
         } else {
             ui->cover_label->setPixmap(roundedPixmap(this->m_songInfoVector[this->m_songIndex].cover,
                                                      ui->cover_label->size(), 8));
-            ui->song_name_label->setText(this->m_songInfoVector[this->m_songIndex].songName);
-            ui->singer_label->setText(this->m_songInfoVector[this->m_songIndex].singer);
+            song_name= this->m_songInfoVector[this->m_songIndex].songName;
+            singer= " "+this->m_songInfoVector[this->m_songIndex].singer;
         }
+        ui->song_name_label->setToolTip(song_name);
+        ui->singer_label->setToolTip(singer);
+        ui->song_name_label->setText(fm.elidedText(song_name,Qt::ElideRight,ui->song_name_label->width()));
+        ui->singer_label->setText(fm.elidedText(singer,Qt::ElideRight,ui->singer_label->width()));
     });
     connect(this->m_player.get(), &QMediaPlayer::playbackStateChanged, this, [this](QMediaPlayer::PlaybackState state) {
         if (state == QMediaPlayer::PlayingState)this->m_isPlaying = true;

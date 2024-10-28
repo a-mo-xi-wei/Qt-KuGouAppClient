@@ -133,6 +133,12 @@ QLabel#cover_label{
 QLabel#cover_label:hover{
     border-image:url('://Res/playbar/default-cover-blue.svg');
 }
+QLabel#song_name_label:hover{
+    color: #006fff;
+}
+QLabel#singer_label:hover{
+    color: #006fff;
+}
 QToolButton#circle_toolButton{
     border-image:url('://Res/playbar/list-loop-gray.svg');
 }
