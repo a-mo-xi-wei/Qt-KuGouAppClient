@@ -18,7 +18,7 @@
 #include <QTimer>
 #include <QShortcut>
 constexpr int SHADOW_WIDTH = 5;
-constexpr int RADIUS = 8;
+constexpr int RADIUS = 12;
 
 QPixmap roundedPixmap(const QPixmap &src, QSize size, int radius) {
     QPixmap scaled = src.scaled(size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
@@ -48,6 +48,7 @@ KuGouApp::KuGouApp(MainWindow *parent)
       , m_localDownload(std::make_unique<LocalDownload>(this))
       , m_scrollBarTimer(new QTimer(this)) {
     ui->setupUi(this);
+    this->setObjectName("KuGou");
     QFile file(QStringLiteral("://Res/styles/original.css"));
     if (file.open(QIODevice::ReadOnly)) {
         this->setStyleSheet(file.readAll());
@@ -144,8 +145,9 @@ KuGouApp::~KuGouApp() {
 
 void KuGouApp::initUi() {
     this->setWindowIcon(QIcon(QStringLiteral("://Res/window/windowIcon.svg")));
-    setWindowFlags(Qt::FramelessWindowHint);
-    setAttribute(Qt::WA_TranslucentBackground);
+    //setWindowFlags(Qt::FramelessWindowHint);
+    setWindowFlags(Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
+    setAttribute(Qt::WA_TranslucentBackground,true);
     //移动窗口到合适的地方
     move(QGuiApplication::primaryScreen()->geometry().width() / 2 - this->width() / 2, 100);
 
@@ -382,15 +384,14 @@ void KuGouApp::paintEvent(QPaintEvent *ev) {
     QWidget::paintEvent(ev);
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
-    QBrush brush(QColor(QStringLiteral("#eef2ff")));
-    painter.setBrush(brush);
-    painter.setPen(Qt::NoPen);
-    QRect rect = this->rect();
-    QPainterPath path;
-    path.addRoundedRect(rect, RADIUS, RADIUS);
-    painter.drawPath(path);
+    //QBrush brush(QColor(QStringLiteral("#eef2ff")));
+    //painter.setBrush(brush);
+    //painter.setPen(Qt::NoPen);
+    //QPainterPath path;
+    //path.addRoundedRect(this->rect(), RADIUS, RADIUS);
+    //painter.drawPath(path);
     //------------绘制阴影
-    /*QPainterPath path1;
+    QPainterPath path1;
     path1.setFillRule(Qt::WindingFill);
     path1.addRoundedRect(SHADOW_WIDTH,SHADOW_WIDTH, this->width() - SHADOW_WIDTH * 2, this->height() - SHADOW_WIDTH * 2,RADIUS,RADIUS);
     QColor color(150, 150, 150, 55);
@@ -398,18 +399,19 @@ void KuGouApp::paintEvent(QPaintEvent *ev) {
     {
         QPainterPath path;
         path.setFillRule(Qt::WindingFill);
-        path.addRoundedRect(SHADOW_WIDTH - i, SHADOW_WIDTH- i, this->width() - (SHADOW_WIDTH- i) * 2, this->height() - (SHADOW_WIDTH- i) * 2, RADIUS, RADIUS);
+        path.addRoundedRect(SHADOW_WIDTH - i, SHADOW_WIDTH- i, this->width() - (SHADOW_WIDTH- i) * 2,
+                            this->height() - (SHADOW_WIDTH- i) * 2, RADIUS, RADIUS);
         color.setAlpha(180 - static_cast<int>(qSqrt(i) * 80));
         painter.setPen(color);
         painter.drawPath(path);
-    }*/
+    }
 }
 
 void KuGouApp::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     //角标移动
-    this->m_sizeGrip->move(this->width() - this->m_sizeGrip->width() - 3,
-                           this->height() - this->m_sizeGrip->height() - 3);
+    this->m_sizeGrip->move(this->width() - this->m_sizeGrip->width() - 8,
+                           this->height() - this->m_sizeGrip->height() - 8);
     this->m_sizeGrip->raise();
     this->m_sizeGrip->setVisible(true);
     //UpWidget移动
