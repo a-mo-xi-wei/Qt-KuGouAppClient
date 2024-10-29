@@ -9,7 +9,8 @@
 #include"RecommendForYou.h"
 #include"LocalDownload.h"
 #include"UpToolButton.h"
-
+//#include"MyMenu.h"//直接使用title的Menu
+#include"TitleWidget.h"
 
 class QMediaPlayer;
 class QAudioOutput;
@@ -91,6 +92,8 @@ private slots:
 
     void on_play_or_pause_toolButton_clicked();
 
+    void on_menu_toolButton_clicked();
+
     void on_min_toolButton_clicked();
 
     void on_max_toolButton_clicked();
@@ -146,37 +149,39 @@ public slots:
 
 private:
     Ui::KuGouApp *ui;
-    std::unique_ptr<QMediaPlayer> m_player{};
-    std::unique_ptr<QAudioOutput> m_audioOutput{};
-    std::unique_ptr<QButtonGroup> m_menuBtnGroup{};
-    std::unique_ptr<QSizeGrip> m_sizeGrip{};
-    std::unique_ptr<UpToolButton> m_upBtn{};
+    std::unique_ptr<QMediaPlayer>       m_player{};
+    std::unique_ptr<QAudioOutput>       m_audioOutput{};
+    std::unique_ptr<QButtonGroup>       m_menuBtnGroup{};
+    std::unique_ptr<QSizeGrip>          m_sizeGrip{};
+    std::unique_ptr<UpToolButton>       m_upBtn{};
     std::unique_ptr<QPropertyAnimation> m_animation{};  //专门用于窗口的缩放动画
-    std::unique_ptr<RecommendForYou> m_recommendForYou{};
-    std::unique_ptr<LocalDownload> m_localDownload{};
+    std::unique_ptr<RecommendForYou>    m_recommendForYou{};
+    std::unique_ptr<LocalDownload>      m_localDownload{};
+    //标题菜单相关
+    TitleWidget*                m_title{};
+    //窗口缩放相关
+    bool                        m_isTransForming = false; //专门用于在窗口缩放动画播放时，禁用拖动事件
+    bool                        m_isSingleCircle = false;
+    bool                        m_isMaxScreen = false;
+    QMetaObject::Connection     mediaStatusConnection;
 
-    bool m_isTransForming = false; //专门用于在窗口缩放动画播放时，禁用拖动事件
-    bool m_isSingleCircle = false;
-    bool m_isMaxScreen = false;
-    QMetaObject::Connection mediaStatusConnection;
+    bool                        m_isPlaying = false;
+    QPoint                      m_pressPos;
+    QString                     m_maxBtnStyle;
+    QRect                       startGeometry; // 获取当前窗口的几何形状(正常状态)
+    QRect                       endGeometry;
 
-    bool m_isPlaying = false;
-    QPoint m_pressPos;
-    QString m_maxBtnStyle;
-    QRect startGeometry; // 获取当前窗口的几何形状(正常状态)
-    QRect endGeometry;
+    bool                    m_isOrderPlay = false;//专门提供给开始播放按钮
+    int                     m_orderIndex = 0;
+    QVector<SongInfor>      m_songInfoVector;
+    QVector<SongInfor>      m_lastSongInfoVector;//保留上一次排序的结果
+    int                     m_songIndex = 0;//播放的歌曲的下标
 
-    bool m_isOrderPlay = false;//专门提供给开始播放按钮
-    int m_orderIndex = 0;
-    QVector<SongInfor>m_songInfoVector;
-    QVector<SongInfor>m_lastSongInfoVector;//保留上一次排序的结果
-    int m_songIndex = 0;//播放的歌曲的下标
-
-    QEasingCurve m_curves = QEasingCurve::OutBounce;
-    QScrollBar* m_vScrollBar{};
+    QEasingCurve            m_curves = QEasingCurve::OutBounce;
+    QScrollBar*             m_vScrollBar{};
 
     //专门处理回到最顶部按钮
-    QTimer *m_scrollBarTimer;  // 定时器
-    int m_scrollValue;  // 存储最新的滚动值
+    QTimer*                 m_scrollBarTimer;  // 定时器
+    int                     m_scrollValue;  // 存储最新的滚动值
 };
 #endif // KUGOUAPP_H

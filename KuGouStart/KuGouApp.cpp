@@ -46,7 +46,8 @@ KuGouApp::KuGouApp(MainWindow *parent)
       , m_animation(std::make_unique<QPropertyAnimation>(this, "geometry"))
       , m_recommendForYou(std::make_unique<RecommendForYou>(this))
       , m_localDownload(std::make_unique<LocalDownload>(this))
-      , m_scrollBarTimer(new QTimer(this)) {
+      , m_scrollBarTimer(new QTimer(this))
+{
     ui->setupUi(this);
     this->setObjectName("KuGou");
     QFile file(QStringLiteral("://Res/styles/original.css"));
@@ -136,6 +137,8 @@ KuGouApp::KuGouApp(MainWindow *parent)
     //专门处理重排
     connect(this->m_localDownload.get(),&LocalDownload::syncSongInfo,this,&KuGouApp::onSyncSongInfoVector);
 
+    //专门处理标题menu
+    connect(ui->menu_toolButton,&QToolButton::clicked,this,&KuGouApp::on_menu_toolButton_clicked);
     ui->progressSlider->installEventFilter(this);
 }
 
@@ -161,6 +164,8 @@ void KuGouApp::initUi() {
     this->setAttribute(Qt::WA_Hover, true);
     //设置滚动定时器
     this->m_scrollBarTimer->setSingleShot(true); // 只触发一次
+    //设置titleWidget,目的是使用title的Menu
+    this->m_title = ui->title_widget;
 
     initTitleWidget();
     initCommendForYouWidget();
@@ -722,6 +727,10 @@ void KuGouApp::on_play_or_pause_toolButton_clicked() {
         this->m_player->pause();
         ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/play.svg")));
     }
+}
+
+void KuGouApp::on_menu_toolButton_clicked() {
+    this->m_title->showMenu(QCursor::pos());
 }
 
 void KuGouApp::on_love_toolButton_clicked() {
