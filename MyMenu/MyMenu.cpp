@@ -11,6 +11,7 @@
 #include <QStyleOption>
 #include <QBoxLayout>
 #include <QWidgetAction>
+#include <QActionGroup>
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 constexpr int SHADOW_WIDTH = 5;
@@ -23,6 +24,8 @@ MyMenu::MyMenu(const MenuKind &kind, QWidget *parent)
         case MenuKind::SongOptionMenu: initSongOptionMenu();
             break;
         case MenuKind::SortOptionMenu: initSortOptionMenu();
+            break;
+        case MenuKind::TitleOptionMenu: initTitleOptionMenu();
             break;
         case MenuKind::None: break;
     }
@@ -45,6 +48,7 @@ void MyMenu::initUi() {
 }
 
 void MyMenu::initSongOptionMenu() {
+    //qDebug() << "Entering initSongOptionMenu";
     this->setFixedSize(200, 470);
     //播放按钮
     auto a_playAction = new QWidgetAction(this); {
@@ -93,11 +97,10 @@ void MyMenu::initSongOptionMenu() {
         });
     }
     //添加到(子目录)
-    auto a_addToAction = new QWidgetAction(this);
-    {
+    auto a_addToAction = new QWidgetAction(this); {
         auto widget = new QWidget(this);
         auto layout = new QHBoxLayout(widget);
-        layout->setContentsMargins(0,0,0,0);
+        layout->setContentsMargins(0, 0, 0, 0);
         layout->setSpacing(0);
         //前后两个按钮
         auto a_addToToolBtn = new MenuBtn(this);
@@ -108,12 +111,12 @@ void MyMenu::initSongOptionMenu() {
                                  QIcon(QStringLiteral("://Res/menuIcon/add-blue.svg")));
         a_addToToolBtn->setText(QStringLiteral("  添加到"));
         auto a_addToRightBtn = new MenuBtn(this);
-        a_addToRightBtn->setObjectName("addToRightToolBtn");
+        a_addToRightBtn->setObjectName("addToRightToolBtn1");
         a_addToRightBtn->setFixedSize(35, 35);
         a_addToRightBtn->setToolButtonStyle(Qt::ToolButtonIconOnly);
         a_addToRightBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/right-black.svg")));
         a_addToRightBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/right-black.svg")),
-                                QIcon(QStringLiteral("://Res/menuIcon/right-blue.svg")));
+                                  QIcon(QStringLiteral("://Res/menuIcon/right-blue.svg")));
         layout->addWidget(a_addToToolBtn);
         layout->addWidget(a_addToRightBtn);
         a_addToAction->setDefaultWidget(widget);
@@ -139,8 +142,8 @@ void MyMenu::initSongOptionMenu() {
                                          QIcon(QStringLiteral("://Res/menuIcon/playqueue-blue.svg")));
             a_playQueueToolBtn->setText(QStringLiteral("  播放队列"));
             a_playQueueAction->setDefaultWidget(a_playQueueToolBtn);
-            connect(a_playQueueToolBtn,&QToolButton::clicked,this,[this] {
-               emit addToPlayQueue();
+            connect(a_playQueueToolBtn, &QToolButton::clicked, this, [this] {
+                emit addToPlayQueue();
             });
             connect(a_playQueueAction, &QWidgetAction::hovered, this, [a_playQueueToolBtn,this] {
                 checkHover();
@@ -162,8 +165,8 @@ void MyMenu::initSongOptionMenu() {
                                            QIcon(QStringLiteral("://Res/menuIcon/add-blue.svg")));
             a_newPlayListToolBtn->setText(QStringLiteral("  新建歌单"));
             a_newPlayListAction->setDefaultWidget(a_newPlayListToolBtn);
-            connect(a_newPlayListToolBtn,&QToolButton::clicked,this,[this] {
-               emit addToNewSongList();
+            connect(a_newPlayListToolBtn, &QToolButton::clicked, this, [this] {
+                emit addToNewSongList();
             });
             connect(a_newPlayListAction, &QWidgetAction::hovered, this, [a_newPlayListToolBtn,this] {
                 checkHover();
@@ -185,8 +188,8 @@ void MyMenu::initSongOptionMenu() {
                                     QIcon(QStringLiteral("://Res/menuIcon/like-blue.svg")));
             a_likeToolBtn->setText(QStringLiteral("  我喜欢"));
             a_likeAction->setDefaultWidget(a_likeToolBtn);
-            connect(a_likeToolBtn,&QToolButton::clicked,this,[this] {
-               emit addToLove();
+            connect(a_likeToolBtn, &QToolButton::clicked, this, [this] {
+                emit addToLove();
             });
             connect(a_likeAction, &QWidgetAction::hovered, this, [a_likeToolBtn,this] {
                 checkHover();
@@ -208,8 +211,8 @@ void MyMenu::initSongOptionMenu() {
                                               QIcon(QStringLiteral("://Res/menuIcon/collect-blue.svg")));
             a_defaultCollectToolBtn->setText(QStringLiteral("  默认收藏"));
             a_defaultCollectAction->setDefaultWidget(a_defaultCollectToolBtn);
-            connect(a_defaultCollectToolBtn,&QToolButton::clicked,this,[this] {
-               emit addToCollect();
+            connect(a_defaultCollectToolBtn, &QToolButton::clicked, this, [this] {
+                emit addToCollect();
             });
             connect(a_defaultCollectAction, &QWidgetAction::hovered, this, [a_defaultCollectToolBtn,this] {
                 checkHover();
@@ -231,8 +234,8 @@ void MyMenu::initSongOptionMenu() {
                                            QIcon(QStringLiteral("://Res/menuIcon/defaultlist-blue.svg")));
             a_defaultListToolBtn->setText(QStringLiteral("  默认列表"));
             a_defaultListAction->setDefaultWidget(a_defaultListToolBtn);
-            connect(a_defaultListToolBtn,&QToolButton::clicked,this,[this] {
-               emit addToPlayList();
+            connect(a_defaultListToolBtn, &QToolButton::clicked, this, [this] {
+                emit addToPlayList();
             });
             connect(a_defaultListAction, &QWidgetAction::hovered, this, [a_defaultListToolBtn,this] {
                 checkHover();
@@ -257,7 +260,6 @@ void MyMenu::initSongOptionMenu() {
         a_addToMenu->addAction(a_defaultListAction);
         //设置Menu
         a_addToAction->setMenu(a_addToMenu);
-
     }
     //下载按钮
     auto a_downloadAction = new QWidgetAction(this); {
@@ -268,8 +270,8 @@ void MyMenu::initSongOptionMenu() {
                                     QIcon(QStringLiteral("://Res/menuIcon/download-blue.svg")));
         a_downloadToolBtn->setText(QStringLiteral("  下载"));
         a_downloadAction->setDefaultWidget(a_downloadToolBtn);
-        connect(a_downloadToolBtn,&QToolButton::clicked,this,[this] {
-               emit download();
+        connect(a_downloadToolBtn, &QToolButton::clicked, this, [this] {
+            emit download();
         });
         connect(a_downloadAction, &QWidgetAction::hovered, this, [a_downloadToolBtn,this] {
             checkHover();
@@ -290,8 +292,8 @@ void MyMenu::initSongOptionMenu() {
                                  QIcon(QStringLiteral("://Res/menuIcon/share-blue.svg")));
         a_shareToolBtn->setText(QStringLiteral("  分享"));
         a_shareAction->setDefaultWidget(a_shareToolBtn);
-        connect(a_shareToolBtn,&QToolButton::clicked,this,[this] {
-               emit share();
+        connect(a_shareToolBtn, &QToolButton::clicked, this, [this] {
+            emit share();
         });
         connect(a_shareAction, &QWidgetAction::hovered, this, [a_shareToolBtn,this] {
             checkHover();
@@ -312,8 +314,8 @@ void MyMenu::initSongOptionMenu() {
                                    QIcon(QStringLiteral("://Res/menuIcon/comment-blue.svg")));
         a_commentToolBtn->setText(QStringLiteral("  查看评论"));
         a_commentAction->setDefaultWidget(a_commentToolBtn);
-        connect(a_commentToolBtn,&QToolButton::clicked,this,[this] {
-               emit comment();
+        connect(a_commentToolBtn, &QToolButton::clicked, this, [this] {
+            emit comment();
         });
         connect(a_commentAction, &QWidgetAction::hovered, this, [a_commentToolBtn,this] {
             checkHover();
@@ -334,8 +336,8 @@ void MyMenu::initSongOptionMenu() {
                                     QIcon(QStringLiteral("://Res/menuIcon/same-blue.svg")));
         a_sameSongToolBtn->setText(QStringLiteral("  相似歌曲"));
         a_sameSongAction->setDefaultWidget(a_sameSongToolBtn);
-        connect(a_sameSongToolBtn,&QToolButton::clicked,this,[this] {
-               emit sameSong();
+        connect(a_sameSongToolBtn, &QToolButton::clicked, this, [this] {
+            emit sameSong();
         });
         connect(a_sameSongAction, &QWidgetAction::hovered, this, [a_sameSongToolBtn,this] {
             checkHover();
@@ -356,8 +358,8 @@ void MyMenu::initSongOptionMenu() {
                                         QIcon(QStringLiteral("://Res/menuIcon/songinfo-blue.svg")));
         a_songInfoSongToolBtn->setText(QStringLiteral("  查看歌曲信息"));
         a_songInfoAction->setDefaultWidget(a_songInfoSongToolBtn);
-        connect(a_songInfoSongToolBtn,&QToolButton::clicked,this,[this] {
-               emit songInfo();
+        connect(a_songInfoSongToolBtn, &QToolButton::clicked, this, [this] {
+            emit songInfo();
         });
         connect(a_songInfoAction, &QWidgetAction::hovered, this, [a_songInfoSongToolBtn,this] {
             checkHover();
@@ -378,9 +380,9 @@ void MyMenu::initSongOptionMenu() {
                                       QIcon(QStringLiteral("://Res/menuIcon/delete-blue.svg")));
         a_deleteSongToolBtn->setText(QStringLiteral("  从列表中删除"));
         a_deleteAction->setDefaultWidget(a_deleteSongToolBtn);
-        connect(a_deleteSongToolBtn,&QToolButton::clicked,this,[this] {
-              emit deleteSong();
-       });
+        connect(a_deleteSongToolBtn, &QToolButton::clicked, this, [this] {
+            emit deleteSong();
+        });
         connect(a_deleteAction, &QWidgetAction::hovered, this, [a_deleteSongToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_deleteSongToolBtn);
@@ -397,11 +399,11 @@ void MyMenu::initSongOptionMenu() {
         a_openFileSongToolBtn->setFixedSize(180, 35);
         a_openFileSongToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/openfile-black.svg")));
         a_openFileSongToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/openfile-black.svg")),
-                                      QIcon(QStringLiteral("://Res/menuIcon/openfile-blue.svg")));
+                                        QIcon(QStringLiteral("://Res/menuIcon/openfile-blue.svg")));
         a_openFileSongToolBtn->setText(QStringLiteral("  打开文件所在目录"));
         a_openFileAction->setDefaultWidget(a_openFileSongToolBtn);
-        connect(a_openFileSongToolBtn,&QToolButton::clicked,this,[this] {
-              emit openInFile();
+        connect(a_openFileSongToolBtn, &QToolButton::clicked, this, [this] {
+            emit openInFile();
         });
         connect(a_openFileAction, &QWidgetAction::hovered, this, [a_openFileSongToolBtn,this] {
             checkHover();
@@ -417,68 +419,62 @@ void MyMenu::initSongOptionMenu() {
     auto a_searchAction = new QWidgetAction(this); {
         auto widget = new QWidget(this);
         auto layout = new QHBoxLayout(widget);
-        layout->setContentsMargins(0,0,0,0);
+        layout->setContentsMargins(0, 0, 0, 0);
         layout->setSpacing(0);
         //前后两个按钮
         auto a_searchToolBtn = new MenuBtn(this);
+        a_searchToolBtn->setObjectName("searchToolBtn");
         a_searchToolBtn->setFixedSize(145, 35);
         a_searchToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/search-black.svg")));
         a_searchToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/search-black.svg")),
-                                      QIcon(QStringLiteral("://Res/menuIcon/search-blue.svg")));
+                                  QIcon(QStringLiteral("://Res/menuIcon/search-blue.svg")));
         a_searchToolBtn->setText(QStringLiteral("  搜索"));
         auto a_addToRightBtn = new MenuBtn(this);
+        a_addToRightBtn->setObjectName("addToRightToolBtn2");
         a_addToRightBtn->setFixedSize(35, 35);
         a_addToRightBtn->setToolButtonStyle(Qt::ToolButtonIconOnly);
         a_addToRightBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/right-black.svg")));
         a_addToRightBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/right-black.svg")),
-                               QIcon(QStringLiteral("://Res/menuIcon/right-blue.svg")));
+                                  QIcon(QStringLiteral("://Res/menuIcon/right-blue.svg")));
         layout->addWidget(a_searchToolBtn);
         layout->addWidget(a_addToRightBtn);
         a_searchAction->setDefaultWidget(widget);
-
-        connect(a_searchAction, &QWidgetAction::hovered, this, [a_searchToolBtn,this] {
+        connect(a_searchAction, &QWidgetAction::hovered, this, [widget,a_addToRightBtn,a_searchToolBtn,this] {
             checkHover();
+            this->m_currentHover.emplace_back(widget);
             this->m_currentHover.emplace_back(a_searchToolBtn);
+            this->m_currentHover.emplace_back(a_addToRightBtn);
             this->m_lastHover = this->m_currentHover;
             QEvent enterEvent(QEvent::Enter); // 创建进入事件
             QCoreApplication::sendEvent(a_searchToolBtn, &enterEvent); // 发送事件
+            QCoreApplication::sendEvent(a_addToRightBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
-            a_searchToolBtn->setAttribute(Qt::WA_UnderMouse, true);
+            widget->setAttribute(Qt::WA_UnderMouse, true);
         });
         //子菜单项
-        auto a_searchTitleAction = new QWidgetAction(this);
-        {
+        auto a_searchTitleAction = new QWidgetAction(this); {
             auto a_searchTitleBtn = new QToolButton(this);
             a_searchTitleBtn->setFixedSize(120, 35);
             a_searchTitleBtn->setText(QStringLiteral("搜索本歌曲"));
             a_searchTitleAction->setDefaultWidget(a_searchTitleBtn);
-            connect(a_searchTitleBtn,&QToolButton::clicked,this,[this] {
+            connect(a_searchTitleBtn, &QToolButton::clicked, this, [this] {
                 emit search();
             });
             connect(a_searchTitleAction, &QWidgetAction::hovered, this, [a_searchTitleBtn,this] {
-               checkHover();
-               this->m_currentHover.emplace_back(a_searchTitleBtn);
-               this->m_lastHover = this->m_currentHover;
-               QEvent enterEvent(QEvent::Enter); // 创建进入事件
-               QCoreApplication::sendEvent(a_searchTitleBtn, &enterEvent); // 发送事件
-               // 模拟按钮进入 hover 状态
-               a_searchTitleBtn->setAttribute(Qt::WA_UnderMouse, true);
-           });
+                checkHover();
+                this->m_currentHover.emplace_back(a_searchTitleBtn);
+                this->m_lastHover = this->m_currentHover;
+                QEvent enterEvent(QEvent::Enter); // 创建进入事件
+                QCoreApplication::sendEvent(a_searchTitleBtn, &enterEvent); // 发送事件
+                // 模拟按钮进入 hover 状态
+                a_searchTitleBtn->setAttribute(Qt::WA_UnderMouse, true);
+            });
         }
 
         auto a_searchMenu = new MyMenu(MenuKind::None, this);
         a_searchMenu->setFixedSize(140, 65);
         a_searchMenu->addAction(a_searchTitleAction);
         a_searchAction->setMenu(a_searchMenu);
-        connect(a_searchAction, &QWidgetAction::hovered, this, [a_searchToolBtn,this] {
-            checkHover();
-            this->m_currentHover.emplace_back(a_searchToolBtn);
-            this->m_lastHover = this->m_currentHover;
-            QEvent enterEvent(QEvent::Enter); // 创建进入事件
-            QCoreApplication::sendEvent(a_searchToolBtn, &enterEvent); // 发送事件
-            // 模拟按钮进入 hover 状态
-            a_searchToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
     }
     //上传到音乐云盘按钮
     auto a_uploadAction = new QWidgetAction(this); {
@@ -489,8 +485,8 @@ void MyMenu::initSongOptionMenu() {
                                       QIcon(QStringLiteral("://Res/menuIcon/upload-blue.svg")));
         a_uploadSongToolBtn->setText(QStringLiteral("  上传到音乐云盘"));
         a_uploadAction->setDefaultWidget(a_uploadSongToolBtn);
-        connect(a_uploadSongToolBtn,&QToolButton::clicked,this,[this] {
-          emit upload();
+        connect(a_uploadSongToolBtn, &QToolButton::clicked, this, [this] {
+            emit upload();
         });
         connect(a_uploadAction, &QWidgetAction::hovered, this, [a_uploadSongToolBtn,this] {
             checkHover();
@@ -518,17 +514,17 @@ void MyMenu::initSongOptionMenu() {
     this->addAction(a_openFileAction);
     this->addAction(a_searchAction);
     this->addAction(a_uploadAction);
+    //qDebug() << "Exiting initSongOptionMenu";
 }
 
 void MyMenu::initSortOptionMenu() {
-    this->setFixedSize(140,280);
+    this->setFixedSize(140, 280);
     //默认排序
-    auto a_sortByDefaultAction = new QWidgetAction(this);
-    {
+    auto a_sortByDefaultAction = new QWidgetAction(this); {
         auto a_sortByDefaultToolBtn = new MenuBtn(this);
         a_sortByDefaultToolBtn->removeFilter();
         a_sortByDefaultToolBtn->setFixedSize(120, 35);
-        a_sortByDefaultToolBtn->setIconSize(QSize(18,18));
+        a_sortByDefaultToolBtn->setIconSize(QSize(18, 18));
         a_sortByDefaultToolBtn->setIcon(QIcon());
         a_sortByDefaultToolBtn->setText(QStringLiteral("  默认排序"));
         a_sortByDefaultAction->setDefaultWidget(a_sortByDefaultToolBtn);
@@ -540,7 +536,6 @@ void MyMenu::initSortOptionMenu() {
             //清除之前的图标
             checkSelection();
             this->m_lastSelect = this->m_curSelect;
-
         });
         connect(a_sortByDefaultAction, &QWidgetAction::hovered, this, [a_sortByDefaultToolBtn,this] {
             checkHover();
@@ -551,12 +546,11 @@ void MyMenu::initSortOptionMenu() {
         });
     }
     //添加时间
-    auto a_sortByAddTimeAction = new QWidgetAction(this);
-    {
+    auto a_sortByAddTimeAction = new QWidgetAction(this); {
         auto a_sortByAddTimeToolBtn = new MenuBtn(this);
         a_sortByAddTimeToolBtn->removeFilter();
         a_sortByAddTimeToolBtn->setFixedSize(120, 35);
-        a_sortByAddTimeToolBtn->setIconSize(QSize(18,18));
+        a_sortByAddTimeToolBtn->setIconSize(QSize(18, 18));
         a_sortByAddTimeToolBtn->setIcon(QIcon());
         a_sortByAddTimeToolBtn->setText(QStringLiteral("  添加时间"));
         a_sortByAddTimeAction->setDefaultWidget(a_sortByAddTimeToolBtn);
@@ -566,22 +560,19 @@ void MyMenu::initSortOptionMenu() {
             this->m_curSelect = a_sortByAddTimeToolBtn;
             checkSelection();
             this->m_lastSelect = this->m_curSelect;
-            if(a_sortByAddTimeToolBtn->icon().isNull()) {
+            if (a_sortByAddTimeToolBtn->icon().isNull()) {
                 //qDebug()<<"无图标，设置图标";
                 emit addTimeSort(true);
                 a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
-            }
-            else {
-               a_sortByAddTimeToolBtn->m_cnt = (a_sortByAddTimeToolBtn->m_cnt + 1)%2;
-               if(a_sortByAddTimeToolBtn->m_cnt & 1) {
-                   emit addTimeSort(false);
-                   a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
-               }
-               else {
-                   emit addTimeSort(true);
-                   a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
-               }
-
+            } else {
+                a_sortByAddTimeToolBtn->m_cnt = (a_sortByAddTimeToolBtn->m_cnt + 1) % 2;
+                if (a_sortByAddTimeToolBtn->m_cnt & 1) {
+                    emit addTimeSort(false);
+                    a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
+                } else {
+                    emit addTimeSort(true);
+                    a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
+                }
             }
         });
         connect(a_sortByAddTimeAction, &QWidgetAction::hovered, this, [a_sortByAddTimeToolBtn,this] {
@@ -593,12 +584,11 @@ void MyMenu::initSortOptionMenu() {
         });
     }
     //歌曲名
-    auto a_sortBySongNameAction = new QWidgetAction(this);
-    {
+    auto a_sortBySongNameAction = new QWidgetAction(this); {
         auto a_sortBySongNameToolBtn = new MenuBtn(this);
         a_sortBySongNameToolBtn->removeFilter();
         a_sortBySongNameToolBtn->setFixedSize(120, 35);
-        a_sortBySongNameToolBtn->setIconSize(QSize(18,18));
+        a_sortBySongNameToolBtn->setIconSize(QSize(18, 18));
         a_sortBySongNameToolBtn->setIcon(QIcon());
         a_sortBySongNameToolBtn->setText(QStringLiteral("  歌曲名    "));
         a_sortBySongNameAction->setDefaultWidget(a_sortBySongNameToolBtn);
@@ -609,21 +599,19 @@ void MyMenu::initSortOptionMenu() {
             checkSelection();
             this->m_lastSelect = this->m_curSelect;
 
-            if(a_sortBySongNameToolBtn->icon().isNull()) {
+            if (a_sortBySongNameToolBtn->icon().isNull()) {
                 emit songNameSort(true);
                 a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
+            } else {
+                a_sortBySongNameToolBtn->m_cnt = (a_sortBySongNameToolBtn->m_cnt + 1) % 2;
+                if (a_sortBySongNameToolBtn->m_cnt & 1) {
+                    emit songNameSort(false);
+                    a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
+                } else {
+                    emit songNameSort(true);
+                    a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
+                }
             }
-            else {
-               a_sortBySongNameToolBtn->m_cnt = (a_sortBySongNameToolBtn->m_cnt + 1)%2;
-               if(a_sortBySongNameToolBtn->m_cnt & 1) {
-                   emit songNameSort(false);
-                   a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
-               }
-               else {
-                   emit songNameSort(true);
-                   a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
-               }
-           }
         });
         connect(a_sortBySongNameAction, &QWidgetAction::hovered, this, [a_sortBySongNameToolBtn,this] {
             checkHover();
@@ -634,12 +622,11 @@ void MyMenu::initSortOptionMenu() {
         });
     }
     //歌手
-    auto a_sortBySingerAction = new QWidgetAction(this);
-    {
+    auto a_sortBySingerAction = new QWidgetAction(this); {
         auto a_sortBySingerToolBtn = new MenuBtn(this);
         a_sortBySingerToolBtn->removeFilter();
         a_sortBySingerToolBtn->setFixedSize(120, 35);
-        a_sortBySingerToolBtn->setIconSize(QSize(18,18));
+        a_sortBySingerToolBtn->setIconSize(QSize(18, 18));
         a_sortBySingerToolBtn->setIcon(QIcon());
         a_sortBySingerToolBtn->setText(QStringLiteral("  歌手       "));
         a_sortBySingerAction->setDefaultWidget(a_sortBySingerToolBtn);
@@ -648,21 +635,19 @@ void MyMenu::initSortOptionMenu() {
             this->m_curSelect = a_sortBySingerToolBtn;
             checkSelection();
             this->m_lastSelect = this->m_curSelect;
-            if(a_sortBySingerToolBtn->icon().isNull()) {
+            if (a_sortBySingerToolBtn->icon().isNull()) {
                 emit singerSort(true);
                 a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
+            } else {
+                a_sortBySingerToolBtn->m_cnt = (a_sortBySingerToolBtn->m_cnt + 1) % 2;
+                if (a_sortBySingerToolBtn->m_cnt & 1) {
+                    emit singerSort(false);
+                    a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
+                } else {
+                    emit singerSort(true);
+                    a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
+                }
             }
-            else {
-               a_sortBySingerToolBtn->m_cnt = (a_sortBySingerToolBtn->m_cnt + 1)%2;
-               if(a_sortBySingerToolBtn->m_cnt & 1) {
-                   emit singerSort(false);
-                   a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
-               }
-               else {
-                   emit singerSort(true);
-                   a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
-               }
-           }
         });
         connect(a_sortBySingerAction, &QWidgetAction::hovered, this, [a_sortBySingerToolBtn,this] {
             checkHover();
@@ -673,12 +658,11 @@ void MyMenu::initSortOptionMenu() {
         });
     }
     //时长
-    auto a_sortByDurationAction = new QWidgetAction(this);
-    {
+    auto a_sortByDurationAction = new QWidgetAction(this); {
         auto a_sortByDurationToolBtn = new MenuBtn(this);
         a_sortByDurationToolBtn->removeFilter();
         a_sortByDurationToolBtn->setFixedSize(120, 35);
-        a_sortByDurationToolBtn->setIconSize(QSize(18,18));
+        a_sortByDurationToolBtn->setIconSize(QSize(18, 18));
         a_sortByDurationToolBtn->setIcon(QIcon());
         a_sortByDurationToolBtn->setText(QStringLiteral("  时长       "));
         a_sortByDurationAction->setDefaultWidget(a_sortByDurationToolBtn);
@@ -686,22 +670,20 @@ void MyMenu::initSortOptionMenu() {
             emit selected();
             this->m_curSelect = a_sortByDurationToolBtn;
             checkSelection();
-             this->m_lastSelect = this->m_curSelect;
-            if(a_sortByDurationToolBtn->icon().isNull()) {
+            this->m_lastSelect = this->m_curSelect;
+            if (a_sortByDurationToolBtn->icon().isNull()) {
                 emit durationSort(true);
-               a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
-           }
-           else {
-               a_sortByDurationToolBtn->m_cnt = (a_sortByDurationToolBtn->m_cnt + 1)%2;
-               if(a_sortByDurationToolBtn->m_cnt & 1) {
-                   emit durationSort(false);
-                   a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
-               }
-               else {
-                   emit durationSort(true);
-                   a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
-               }
-           }
+                a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
+            } else {
+                a_sortByDurationToolBtn->m_cnt = (a_sortByDurationToolBtn->m_cnt + 1) % 2;
+                if (a_sortByDurationToolBtn->m_cnt & 1) {
+                    emit durationSort(false);
+                    a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
+                } else {
+                    emit durationSort(true);
+                    a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
+                }
+            }
         });
         connect(a_sortByDurationAction, &QWidgetAction::hovered, this, [a_sortByDurationToolBtn,this] {
             checkHover();
@@ -712,12 +694,11 @@ void MyMenu::initSortOptionMenu() {
         });
     }
     //播放次数
-    auto a_sortByPlayCountAction = new QWidgetAction(this);
-    {
+    auto a_sortByPlayCountAction = new QWidgetAction(this); {
         auto a_sortByPlayCountToolBtn = new MenuBtn(this);
         a_sortByPlayCountToolBtn->removeFilter();
         a_sortByPlayCountToolBtn->setFixedSize(120, 35);
-        a_sortByPlayCountToolBtn->setIconSize(QSize(18,18));
+        a_sortByPlayCountToolBtn->setIconSize(QSize(18, 18));
         a_sortByPlayCountToolBtn->setIcon(QIcon());
         a_sortByPlayCountToolBtn->setText(QStringLiteral("  播放次数"));
         a_sortByPlayCountAction->setDefaultWidget(a_sortByPlayCountToolBtn);
@@ -726,21 +707,19 @@ void MyMenu::initSortOptionMenu() {
             this->m_curSelect = a_sortByPlayCountToolBtn;
             checkSelection();
             this->m_lastSelect = this->m_curSelect;
-            if(a_sortByPlayCountToolBtn->icon().isNull()) {
+            if (a_sortByPlayCountToolBtn->icon().isNull()) {
                 emit playCountSort(true);
-               a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
-           }
-           else {
-               a_sortByPlayCountToolBtn->m_cnt = (a_sortByPlayCountToolBtn->m_cnt + 1)%2;
-               if(a_sortByPlayCountToolBtn->m_cnt & 1) {
-                   emit playCountSort(false);
-                   a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
-               }
-               else {
-                   emit playCountSort(true);
-                   a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
-               }
-           }
+                a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
+            } else {
+                a_sortByPlayCountToolBtn->m_cnt = (a_sortByPlayCountToolBtn->m_cnt + 1) % 2;
+                if (a_sortByPlayCountToolBtn->m_cnt & 1) {
+                    emit playCountSort(false);
+                    a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortup.svg")));
+                } else {
+                    emit playCountSort(true);
+                    a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/sortdown.svg")));
+                }
+            }
         });
         connect(a_sortByPlayCountAction, &QWidgetAction::hovered, this, [a_sortByPlayCountToolBtn,this] {
             checkHover();
@@ -751,12 +730,11 @@ void MyMenu::initSortOptionMenu() {
         });
     }
     //随机排序
-    auto a_sortByRandomAction = new QWidgetAction(this);
-    {
+    auto a_sortByRandomAction = new QWidgetAction(this); {
         auto a_sortByRandomToolBtn = new MenuBtn(this);
         a_sortByRandomToolBtn->setFixedSize(120, 35);
         a_sortByRandomToolBtn->removeFilter();
-        a_sortByRandomToolBtn->setIconSize(QSize(18,18));
+        a_sortByRandomToolBtn->setIconSize(QSize(18, 18));
         a_sortByRandomToolBtn->setIcon(QIcon());
         a_sortByRandomToolBtn->setText(QStringLiteral("  随机排序"));
         a_sortByRandomAction->setDefaultWidget(a_sortByRandomToolBtn);
@@ -765,7 +743,7 @@ void MyMenu::initSortOptionMenu() {
             emit randomSort();
             this->m_curSelect = a_sortByRandomToolBtn;
             checkSelection();
-             this->m_lastSelect = this->m_curSelect;
+            this->m_lastSelect = this->m_curSelect;
         });
         connect(a_sortByRandomAction, &QWidgetAction::hovered, this, [a_sortByRandomToolBtn,this] {
             checkHover();
@@ -785,10 +763,143 @@ void MyMenu::initSortOptionMenu() {
     this->addAction(a_sortByRandomAction);
 }
 
+void MyMenu::initTitleOptionMenu() {
+    this->setFixedSize(370, 500);
+    //顶部按钮
+    //auto a_topListWidgetAction = new QWidgetAction(this);
+    auto a_topListWidgetAction = new QWidgetAction(this);
+    {
+        //动态壁纸按钮
+        auto a_dynamicWallPaperBtn = new QToolButton(this);
+        a_dynamicWallPaperBtn->setMouseTracking(true);
+        {
+            a_dynamicWallPaperBtn->setObjectName(QStringLiteral("wallPaperBtn"));
+            a_dynamicWallPaperBtn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+            a_dynamicWallPaperBtn->setFixedSize(75, 85);
+            a_dynamicWallPaperBtn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+            a_dynamicWallPaperBtn->setText(QStringLiteral("动态壁纸"));
+            a_dynamicWallPaperBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/wallpaper.png")));
+            a_dynamicWallPaperBtn->setIconSize(QSize(35, 35));
+            connect(a_dynamicWallPaperBtn, &QToolButton::clicked, this, [this] {
+                emit wallpaper();
+            });
+            //auto a_dynamicWallPaperAction = new QWidgetAction(this);
+            //a_dynamicWallPaperAction->setDefaultWidget(a_dynamicWallPaperBtn);
+            //connect(a_dynamicWallPaperAction, &QWidgetAction::hovered, this, [a_dynamicWallPaperBtn,this] {
+            //    checkHover();
+            //    this->m_currentHover.emplace_back(a_dynamicWallPaperBtn);
+            //    this->m_lastHover = this->m_currentHover;
+            //    QEvent enterEvent(QEvent::Enter); // 创建进入事件
+            //    QCoreApplication::sendEvent(a_dynamicWallPaperBtn, &enterEvent); // 发送事件
+            //    // 模拟按钮进入 hover 状态
+            //    a_dynamicWallPaperBtn->setAttribute(Qt::WA_UnderMouse, true);
+            //});
+        }
+        //手机play按钮
+        auto a_phonePlayBtn = new QToolButton(this);
+        a_phonePlayBtn->setMouseTracking(true);
+        {
+            a_phonePlayBtn->setObjectName(QStringLiteral("phonePlayBtn"));
+            a_phonePlayBtn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+            a_phonePlayBtn->setFixedSize(75, 85);
+            a_phonePlayBtn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+            a_phonePlayBtn->setText(QStringLiteral("手机play"));
+            a_phonePlayBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/wallpaper.png")));
+            a_phonePlayBtn->setIconSize(QSize(35, 35));
+            connect(a_phonePlayBtn, &QToolButton::clicked, this, [this] {
+                emit phonePlay();
+            });
+            //auto a_phonePlayAction = new QWidgetAction(this);
+            //a_phonePlayAction->setDefaultWidget(a_phonePlayBtn);
+            //connect(a_phonePlayAction, &QWidgetAction::hovered, this, [a_phonePlayBtn,this] {
+            //    checkHover();
+            //    this->m_currentHover.emplace_back(a_phonePlayBtn);
+            //    this->m_lastHover = this->m_currentHover;
+            //    QEvent enterEvent(QEvent::Enter); // 创建进入事件
+            //    QCoreApplication::sendEvent(a_phonePlayBtn, &enterEvent); // 发送事件
+            //    // 模拟按钮进入 hover 状态
+            //    a_phonePlayBtn->setAttribute(Qt::WA_UnderMouse, true);
+            //});
+        }
+        //传歌到设备按钮
+        auto a_uploadToDeviceBtn = new QToolButton(this);
+        a_uploadToDeviceBtn->setMouseTracking(true);
+        {
+            a_uploadToDeviceBtn->setObjectName(QStringLiteral("uploadToDevice"));
+            a_uploadToDeviceBtn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+            a_uploadToDeviceBtn->setFixedSize(75, 85);
+            a_uploadToDeviceBtn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+            a_uploadToDeviceBtn->setText(QStringLiteral("传歌到设备"));
+            a_uploadToDeviceBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/wallpaper.png")));
+            a_uploadToDeviceBtn->setIconSize(QSize(35, 35));
+            connect(a_uploadToDeviceBtn, &QToolButton::clicked, this, [this] {
+                emit uploadToDevice();
+            });
+            //auto a_uploadToDeviceAction = new QWidgetAction(this);
+            //a_uploadToDeviceAction->setDefaultWidget(a_uploadToDeviceBtn);
+            //connect(a_uploadToDeviceAction, &QWidgetAction::hovered, this, [a_uploadToDeviceBtn,this] {
+            //    checkHover();
+            //    this->m_currentHover.emplace_back(a_uploadToDeviceBtn);
+            //    this->m_lastHover = this->m_currentHover;
+            //    QEvent enterEvent(QEvent::Enter); // 创建进
+            //    QCoreApplication::sendEvent(a_uploadToDeviceBtn, &enterEvent); // 发送事件
+            //    // 模拟按钮进入 hover 状态入事件
+            //    a_uploadToDeviceBtn->setAttribute(Qt::WA_UnderMouse, true);
+            //});
+        }
+        //听歌赚金币按钮
+        auto a_earnCoinBtn = new QToolButton(this);
+        a_earnCoinBtn->setMouseTracking(true);
+        {
+            a_earnCoinBtn->setObjectName(QStringLiteral("earnCoin"));
+            a_earnCoinBtn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+            a_earnCoinBtn->setFixedSize(75, 85);
+            a_earnCoinBtn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+            a_earnCoinBtn->setText(QStringLiteral("听歌赚金币"));
+            a_earnCoinBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/wallpaper.png")));
+            a_earnCoinBtn->setIconSize(QSize(35, 35));
+            connect(a_earnCoinBtn, &QToolButton::clicked, this, [this] {
+                emit earnCoin();
+            });
+            //auto a_earnCoinAction = new QWidgetAction(this);
+            //a_earnCoinAction->setDefaultWidget(a_earnCoinBtn);
+            //connect(a_earnCoinAction, &QWidgetAction::hovered, this, [a_earnCoinBtn,this] {
+            //    checkHover();
+            //    this->m_currentHover.emplace_back(a_earnCoinBtn);
+            //    this->m_lastHover = this->m_currentHover;
+            //    QEvent enterEvent(QEvent::Enter); // 创建进入事件
+            //    QCoreApplication::sendEvent(a_earnCoinBtn, &enterEvent); // 发送事件
+            //    // 模拟按钮进入 hover 状态
+            //    a_earnCoinBtn->setAttribute(Qt::WA_UnderMouse, true);
+            //});
+        }
+        auto a_listWidget = new QWidget(this);
+        a_listWidget->setMouseTracking(true);
+        a_listWidget->setObjectName(QStringLiteral("listWidget"));
+        a_listWidget->setFixedSize(360, 100);
+        a_listWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+
+        auto a_hLayout = new QHBoxLayout(a_listWidget);
+        a_hLayout->setAlignment(Qt::AlignCenter);
+        a_hLayout->setContentsMargins(0, 0, 0, 0);
+        a_hLayout->setSpacing(0);
+        a_hLayout->addWidget(a_dynamicWallPaperBtn);
+        a_hLayout->addWidget(a_phonePlayBtn);
+        a_hLayout->addWidget(a_uploadToDeviceBtn);
+        a_hLayout->addWidget(a_earnCoinBtn);
+        a_topListWidgetAction->setDefaultWidget(a_listWidget);
+    }
+
+
+    //菜单添加按钮
+    this->addAction(a_topListWidgetAction);
+    this->addSeparator();
+}
+
 void MyMenu::checkHover() {
     if (!this->m_lastHover.isEmpty()) {
         QEvent leaveEvent(QEvent::Leave); // 创建进入事件
-        for(QWidget* val : m_lastHover) {
+        for (QWidget *val: m_lastHover) {
             QCoreApplication::sendEvent(val, &leaveEvent); // 发送事件
         }
         m_lastHover.clear();
@@ -797,10 +908,10 @@ void MyMenu::checkHover() {
 }
 
 void MyMenu::checkSelection() {
-    if(m_lastSelect) {
+    if (m_lastSelect) {
         //qDebug()<<"之前指向目标存在";
-        if(m_lastSelect == m_curSelect)return;
-        if(!m_lastSelect->icon().isNull()) {
+        if (m_lastSelect == m_curSelect)return;
+        if (!m_lastSelect->icon().isNull()) {
             m_lastSelect->setIcon(QIcon());
             //qDebug()<<"图标设置为空";
         }

@@ -52,6 +52,7 @@ public:
     enum MenuKind {
         SongOptionMenu,
         SortOptionMenu,
+        TitleOptionMenu,
         None
     };
     explicit MyMenu(const MenuKind& kind, QWidget *parent = nullptr);
@@ -62,11 +63,14 @@ public:
 
     void initSortOptionMenu();
 
+    void initTitleOptionMenu();
+
     void checkHover();
 
     void checkSelection();
 
 signals:
+    //MusicItem设置相关
     void play();
     void nextPlay();
     void addToPlayQueue();
@@ -83,24 +87,34 @@ signals:
     void openInFile();
     void search();
     void upload();
-
+    //音乐选中相关
     void selected();
     void deselected();
-
+    //排序相关
     void defaultSort(const bool& down = true);
-
     void addTimeSort(const bool& down = true);
-
     void songNameSort(const bool& down = true);
-
     void singerSort(const bool& down = true);
-
     void durationSort(const bool& down = true);
-
     void playCountSort(const bool& down = true);
-
     void randomSort();
-
+    //titleMenu设置相关
+    void wallpaper();
+    void phonePlay();
+    void uploadToDevice();
+    void earnCoin();
+    void MusicRemoteController();
+    void equalizer();
+    void aiHelpYou();
+    void soundPlugin();
+    void timeSetting();
+    void appTool();
+    void restoreWindow();
+    void checkUpdate();
+    void helpFaceback();
+    void settings();
+    void logOut();
+    void exit();
 protected:
     void paintEvent(QPaintEvent *event) override;
 
