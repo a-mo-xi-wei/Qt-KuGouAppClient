@@ -26,7 +26,7 @@ void TitleWidget::paintEvent(QPaintEvent *ev) {
     p.setPen(Qt::NoPen);
     // 创建一个线性渐变
     // 先绘制阴影效果
-    QRect shadowRect = rect().adjusted(5, 5, -4, 1);
+    QRect shadowRect = rect().adjusted(5, 5, -4, 2);
     QLinearGradient gradient(shadowRect.topLeft(), shadowRect.bottomLeft());
     gradient.setColorAt(0, QColor(QStringLiteral("#87CEFA"))); // 起始颜色
     gradient.setColorAt(1, QColor(QStringLiteral("#eef2ff"))); // 结束颜色
