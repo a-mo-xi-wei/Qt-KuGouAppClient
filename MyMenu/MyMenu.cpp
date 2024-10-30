@@ -1157,7 +1157,7 @@ void MyMenu::initTitleOptionMenu() {
         a_exitToolBtn->setText(QStringLiteral("   退出酷狗音乐"));
         a_exitAction->setDefaultWidget(a_exitToolBtn);
         connect(a_exitToolBtn, &QToolButton::clicked, this, [this] {
-            emit soundPlugin();
+            emit exit();
         });
         connect(a_exitAction, &QWidgetAction::hovered, this, [a_exitToolBtn,this] {
             checkHover();
