@@ -197,7 +197,7 @@ void KuGouApp::initTitleWidget() {
     ui->index_label3->hide();
     ui->index_label4->hide();
 
-    ui->title_line->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/line-gray.svg")));
+    ui->title_line->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/line-black.svg")));
     ui->search_lineEdit->addAction(QIcon(QStringLiteral("://Res/titlebar/search-black.svg")),
                                    QLineEdit::LeadingPosition);
 
