@@ -28,7 +28,7 @@ QWidget#title_widget QPushButton{
 }
 QWidget#title_widget QPushButton:hover {
     color: #3366FF;
-    font-size: 18px;
+    font-size: 20px;
 }
 QWidget#title_widget QPushButton:checked {
     color: #3366FF;
@@ -193,12 +193,13 @@ GLTabWidget#guess_love_widget QToolButton#dislikeToolBtn:hover {
 /*--------------------QSlider------------------------------*/
 
 QSlider {
-    background-color: rgba(170, 255, 255, 100);
+    background-color: rgba(0, 255, 190, 30);
 }
 QSlider::groove:horizontal {
-    border: 1px solid #999999;
+    border: 1px inset #c3e0c3;
     height: 8px;
-    background-color: qlineargradient(spread:reflect, x1:0.500364, y1:0.0561364, x2:0.5, y2:0.517045, stop:0 rgba(168, 164, 168, 250), stop:1 rgba(232, 232, 232, 255));
+    /*background-color: qlineargradient(spread:reflect, x1:0.500364, y1:0.0561364, x2:0.5, y2:0.517045, stop:0 rgba(168, 164, 168, 250), stop:1 rgba(232, 232, 232, 255));*/
+    background-color: #eafffa;
     border-radius: 4px;
 }
 QSlider::handle:horizontal {
