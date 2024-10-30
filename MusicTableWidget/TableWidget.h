@@ -13,7 +13,6 @@ class QPaintEvent;
 class QEnterEvent;
 class QEvent;
 class QLine;
-class ItemBlockWidget;
 class QTimer;
 
 class TableWidget : public QWidget
@@ -65,7 +64,7 @@ private:
     std::unique_ptr<QGridLayout>m_gridLayout;
     std::unique_ptr<QWidget>m_gridContainer;
     QLabel* m_titleLab{};
-    KIND m_kindList;
+    KIND m_kind;
     QToolButton* m_play_ToolBtn{};
     QToolButton* m_adjust_ToolBtn{};
     QLabel* line1{};

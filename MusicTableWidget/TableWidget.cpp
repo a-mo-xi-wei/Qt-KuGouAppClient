@@ -17,7 +17,7 @@
 TableWidget::TableWidget(const QString &title, KIND kind, QWidget *parent)
     : QWidget(parent)
       , m_titleLab(new QLabel(title, this))
-      , m_kindList(kind)
+      , m_kind(kind)
       , m_tabHLayout(std::make_unique<QHBoxLayout>())
       , m_gridLayout(std::make_unique<QGridLayout>())
       , m_gridContainer(std::make_unique<QWidget>(this))
@@ -125,10 +125,10 @@ void TableWidget::initUi() {
     m_tabHLayout->addWidget(this->m_more_Lab);
     this->m_gridContainer->setAttribute(Qt::WA_OpaquePaintEvent);
 
-    if (this->m_kindList == KIND::ItemList) {
+    if (this->m_kind == KIND::ItemList) {
         initItemListWidget();
     }
-    else if (this->m_kindList == KIND::BlockList) {
+    else if (this->m_kind == KIND::BlockList) {
         this->m_play_ToolBtn->hide();
         this->m_more_Lab->setText(QStringLiteral("歌单广场 >"));
         initItemBlockWidget();
@@ -305,6 +305,13 @@ void TableWidget::onGridChange(int len) {
         //由于直接全屏需要一定时间，因此不存在从5列直接变成7列的情况
         //但是，上面说的是正常缩放的情况，但如果存在突然发送的信号的情况。。。
         else {
+            for (int i = 0; i < 2; ++i) {
+                auto item = this->m_gridLayout->itemAtPosition(i, 5);
+                if(item)item->widget()->show();
+                item = this->m_gridLayout->itemAtPosition(i, 6);
+                if(item)item->widget()->show();
+                //qDebug()<<"show一个";
+            }
             this->m_showCol = 7;
         }
     }
@@ -350,7 +357,7 @@ void TableWidget::onRefreshBtnClicked() {
 }
 
 void TableWidget::onRefreshTimeout() {
-    if(this->m_kindList == KIND::BlockList) {
+    if(this->m_kind == KIND::BlockList) {
         shuffleBlockCover();
         this->m_gridContainer->setUpdatesEnabled(false);
         this->m_gridContainer->hide(); // 隐藏容器
