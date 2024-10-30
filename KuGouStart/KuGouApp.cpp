@@ -330,14 +330,11 @@ void KuGouApp::mouseMoveEvent(QMouseEvent *event) {
     // 计算的鼠标移动偏移量, 就是鼠标全局坐标 - 减去点击时鼠标坐标
     QPoint point_offset = event->globalPosition().toPoint() - mousePs;
 
-    if ((event->buttons() == Qt::LeftButton) && isPress) {
+    if (isPress&&ui->title_widget->rect().contains(event->pos())) {
         if (this->m_isMaxScreen == true) //如果是最大化拖动，则还原大小再拖动
         {
-            this->endGeometry = this->startGeometry;
-            this->endGeometry.setX(event->pos().x() - this->startGeometry.width() / 2);
-            this->endGeometry.setY(event->pos().y() - 3);
-            this->startGeometry = this->endGeometry;
-            //qDebug()<<"点击pos : "<<event->pos()<<" start :"<<startGeometry;
+            this->startGeometry.setX(this->startGeometry.width() / 4);
+            this->startGeometry.setY(event->pos().y() - 3);
             ui->max_toolButton->clicked();
             return;
         }
