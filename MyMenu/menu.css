@@ -1,28 +1,38 @@
 QToolButton{
     border-radius: 6px;
     background-color: rgba(255,255,255,0);
-    font-size: 12px;
+    font-size: 13px;
+    font-family: "Microsoft YaHei UI";
     padding-left: 10px;
-    padding-right: 10px;
 }
 QToolButton:hover{
-    background-color: #e6edfe;
+    background-color: rgba(255,255,255,0);;
     color: #268cff;
 }
-QToolButton#addToToolBtn:hover{
-    background-color: rgba(255,255,255,0);
+QToolButton#wallPaperBtn,QToolButton#phonePlayBtn,QToolButton#uploadToDeviceBtn,QToolButton#earnCoinBtn {
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 12px;
+    padding: 5px;
+}
+QToolButton#wallPaperBtn:hover,QToolButton#phonePlayBtn:hover,QToolButton#uploadToDeviceBtn:hover,QToolButton#earnCoinBtn:hover{
+    background-color: #eff2f7;
     color: #268cff;
 }
-QToolButton#addToRightToolBtn:hover{
-    background-color: rgba(255,255,255,0);
-    color: #268cff;
-}
+
 QWidget{
     border-radius: 6px;
     background-color: rgba(255,255,255,0);
 }
 QWidget:hover{
     background-color: #e6edfe;
+    color: #268cff;
+}
+QWidget#listWidget{
+    background-color: rgba(255,255,255,0);
+}
+QWidget#listWidget:hover {
+    background-color: rgba(255,255,255,0);
 }
 QMenu{
     border-radius: 8px;
