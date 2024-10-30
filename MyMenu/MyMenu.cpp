@@ -111,7 +111,6 @@ void MyMenu::initSongOptionMenu() {
                                  QIcon(QStringLiteral("://Res/menuIcon/add-blue.svg")));
         a_addToToolBtn->setText(QStringLiteral("  添加到"));
         auto a_addToRightBtn = new MenuBtn(this);
-        a_addToRightBtn->setObjectName("addToRightToolBtn1");
         a_addToRightBtn->setFixedSize(35, 35);
         a_addToRightBtn->setToolButtonStyle(Qt::ToolButtonIconOnly);
         a_addToRightBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/right-black.svg")));
@@ -430,7 +429,6 @@ void MyMenu::initSongOptionMenu() {
                                   QIcon(QStringLiteral("://Res/menuIcon/search-blue.svg")));
         a_searchToolBtn->setText(QStringLiteral("  搜索"));
         auto a_addToRightBtn = new MenuBtn(this);
-        a_addToRightBtn->setObjectName("addToRightToolBtn2");
         a_addToRightBtn->setFixedSize(35, 35);
         a_addToRightBtn->setToolButtonStyle(Qt::ToolButtonIconOnly);
         a_addToRightBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/right-black.svg")));
@@ -767,12 +765,10 @@ void MyMenu::initTitleOptionMenu() {
     this->setFixedSize(380, 600);
     //顶部按钮
     //auto a_topListWidgetAction = new QWidgetAction(this);
-    auto a_topListWidgetAction = new QWidgetAction(this);
-    {
+    auto a_topListWidgetAction = new QWidgetAction(this); {
         //动态壁纸按钮
         auto a_dynamicWallPaperBtn = new MenuBtn(this);
-        a_dynamicWallPaperBtn->setMouseTracking(true);
-        {
+        a_dynamicWallPaperBtn->setMouseTracking(true); {
             a_dynamicWallPaperBtn->removeFilter();
             a_dynamicWallPaperBtn->setObjectName(QStringLiteral("wallPaperBtn"));
             a_dynamicWallPaperBtn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -798,8 +794,7 @@ void MyMenu::initTitleOptionMenu() {
         }
         //手机play按钮
         auto a_phonePlayBtn = new MenuBtn(this);
-        a_phonePlayBtn->setMouseTracking(true);
-        {
+        a_phonePlayBtn->setMouseTracking(true); {
             a_phonePlayBtn->removeFilter();
             a_phonePlayBtn->setObjectName(QStringLiteral("phonePlayBtn"));
             a_phonePlayBtn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -825,8 +820,7 @@ void MyMenu::initTitleOptionMenu() {
         }
         //传歌到设备按钮
         auto a_uploadToDeviceBtn = new MenuBtn(this);
-        a_uploadToDeviceBtn->setMouseTracking(true);
-        {
+        a_uploadToDeviceBtn->setMouseTracking(true); {
             a_uploadToDeviceBtn->removeFilter();
             a_uploadToDeviceBtn->setObjectName(QStringLiteral("uploadToDeviceBtn"));
             a_uploadToDeviceBtn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -852,8 +846,7 @@ void MyMenu::initTitleOptionMenu() {
         }
         //听歌赚金币按钮
         auto a_earnCoinBtn = new MenuBtn(this);
-        a_earnCoinBtn->setMouseTracking(true);
-        {
+        a_earnCoinBtn->setMouseTracking(true); {
             a_earnCoinBtn->removeFilter();
             a_earnCoinBtn->setObjectName(QStringLiteral("earnCoinBtn"));
             a_earnCoinBtn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -897,10 +890,10 @@ void MyMenu::initTitleOptionMenu() {
     auto a_controlAction = new QWidgetAction(this); {
         auto a_controlToolBtn = new MenuBtn(this);
         a_controlToolBtn->setFixedSize(360, 37);
-        a_controlToolBtn->setIconSize(QSize(20,20));
+        a_controlToolBtn->setIconSize(QSize(20, 20));
         a_controlToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/controller-black.svg")));
         a_controlToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/controller-black.svg")),
-                                QIcon(QStringLiteral("://Res/menuIcon/controller-blue.svg")));
+                                   QIcon(QStringLiteral("://Res/menuIcon/controller-blue.svg")));
         a_controlToolBtn->setText(QStringLiteral("   音乐遥控器"));
         a_controlAction->setDefaultWidget(a_controlToolBtn);
         connect(a_controlToolBtn, &QToolButton::clicked, this, [this] {
@@ -920,10 +913,10 @@ void MyMenu::initTitleOptionMenu() {
     auto a_balanceAction = new QWidgetAction(this); {
         auto a_balanceToolBtn = new MenuBtn(this);
         a_balanceToolBtn->setFixedSize(360, 37);
-        a_balanceToolBtn->setIconSize(QSize(20,20));
+        a_balanceToolBtn->setIconSize(QSize(20, 20));
         a_balanceToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/balance-black.svg")));
         a_balanceToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/balance-black.svg")),
-                                QIcon(QStringLiteral("://Res/menuIcon/balance-blue.svg")));
+                                   QIcon(QStringLiteral("://Res/menuIcon/balance-blue.svg")));
         a_balanceToolBtn->setText(QStringLiteral("   均衡器"));
         a_balanceAction->setDefaultWidget(a_balanceToolBtn);
         connect(a_balanceToolBtn, &QToolButton::clicked, this, [this] {
@@ -943,10 +936,10 @@ void MyMenu::initTitleOptionMenu() {
     auto a_aiHelpAction = new QWidgetAction(this); {
         auto a_aiHelpToolBtn = new MenuBtn(this);
         a_aiHelpToolBtn->setFixedSize(360, 37);
-        a_aiHelpToolBtn->setIconSize(QSize(20,20));
+        a_aiHelpToolBtn->setIconSize(QSize(20, 20));
         a_aiHelpToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/aihelp-black.svg")));
         a_aiHelpToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/aihelp-black.svg")),
-                                QIcon(QStringLiteral("://Res/menuIcon/aihelp-blue.svg")));
+                                  QIcon(QStringLiteral("://Res/menuIcon/aihelp-blue.svg")));
         a_aiHelpToolBtn->setText(QStringLiteral("   AI帮你唱"));
         a_aiHelpAction->setDefaultWidget(a_aiHelpToolBtn);
         connect(a_aiHelpToolBtn, &QToolButton::clicked, this, [this] {
@@ -966,10 +959,10 @@ void MyMenu::initTitleOptionMenu() {
     auto a_pluginAction = new QWidgetAction(this); {
         auto a_pluginToolBtn = new MenuBtn(this);
         a_pluginToolBtn->setFixedSize(360, 37);
-        a_pluginToolBtn->setIconSize(QSize(20,20));
+        a_pluginToolBtn->setIconSize(QSize(20, 20));
         a_pluginToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/soundPlugin-black.svg")));
         a_pluginToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/soundPlugin-black.svg")),
-                                QIcon(QStringLiteral("://Res/menuIcon/soundPlugin-blue.svg")));
+                                  QIcon(QStringLiteral("://Res/menuIcon/soundPlugin-blue.svg")));
         a_pluginToolBtn->setText(QStringLiteral("   音效插件"));
         a_pluginAction->setDefaultWidget(a_pluginToolBtn);
         connect(a_pluginToolBtn, &QToolButton::clicked, this, [this] {
@@ -989,10 +982,10 @@ void MyMenu::initTitleOptionMenu() {
     auto a_timeSettingAction = new QWidgetAction(this); {
         auto a_timeSettingToolBtn = new MenuBtn(this);
         a_timeSettingToolBtn->setFixedSize(360, 37);
-        a_timeSettingToolBtn->setIconSize(QSize(20,20));
+        a_timeSettingToolBtn->setIconSize(QSize(20, 20));
         a_timeSettingToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/timeSetting-black.svg")));
         a_timeSettingToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/timeSetting-black.svg")),
-                                QIcon(QStringLiteral("://Res/menuIcon/timeSetting-blue.svg")));
+                                       QIcon(QStringLiteral("://Res/menuIcon/timeSetting-blue.svg")));
         a_timeSettingToolBtn->setText(QStringLiteral("   定时设置"));
         a_timeSettingAction->setDefaultWidget(a_timeSettingToolBtn);
         connect(a_timeSettingToolBtn, &QToolButton::clicked, this, [this] {
@@ -1012,10 +1005,10 @@ void MyMenu::initTitleOptionMenu() {
     auto a_appToolAction = new QWidgetAction(this); {
         auto a_appToolToolBtn = new MenuBtn(this);
         a_appToolToolBtn->setFixedSize(360, 37);
-        a_appToolToolBtn->setIconSize(QSize(20,20));
+        a_appToolToolBtn->setIconSize(QSize(20, 20));
         a_appToolToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/appTool-black.svg")));
         a_appToolToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/appTool-black.svg")),
-                                QIcon(QStringLiteral("://Res/menuIcon/appTool-blue.svg")));
+                                   QIcon(QStringLiteral("://Res/menuIcon/appTool-blue.svg")));
         a_appToolToolBtn->setText(QStringLiteral("   应用工具"));
         a_appToolAction->setDefaultWidget(a_appToolToolBtn);
         connect(a_appToolToolBtn, &QToolButton::clicked, this, [this] {
@@ -1035,10 +1028,10 @@ void MyMenu::initTitleOptionMenu() {
     auto a_restoreWindowAction = new QWidgetAction(this); {
         auto a_restoreWindowBtn = new MenuBtn(this);
         a_restoreWindowBtn->setFixedSize(360, 37);
-        a_restoreWindowBtn->setIconSize(QSize(20,20));
+        a_restoreWindowBtn->setIconSize(QSize(20, 20));
         a_restoreWindowBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/restoreWindow-black.svg")));
         a_restoreWindowBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/restoreWindow-black.svg")),
-                                QIcon(QStringLiteral("://Res/menuIcon/restoreWindow-blue.svg")));
+                                     QIcon(QStringLiteral("://Res/menuIcon/restoreWindow-blue.svg")));
         a_restoreWindowBtn->setText(QStringLiteral("   恢复窗口"));
         a_restoreWindowAction->setDefaultWidget(a_restoreWindowBtn);
         connect(a_restoreWindowBtn, &QToolButton::clicked, this, [this] {
@@ -1058,10 +1051,10 @@ void MyMenu::initTitleOptionMenu() {
     auto a_checkUpdateAction = new QWidgetAction(this); {
         auto a_checkUpdateToolBtn = new MenuBtn(this);
         a_checkUpdateToolBtn->setFixedSize(360, 37);
-        a_checkUpdateToolBtn->setIconSize(QSize(20,20));
+        a_checkUpdateToolBtn->setIconSize(QSize(20, 20));
         a_checkUpdateToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/checkUpdate-black.svg")));
         a_checkUpdateToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/checkUpdate-black.svg")),
-                                QIcon(QStringLiteral("://Res/menuIcon/checkUpdate-blue.svg")));
+                                       QIcon(QStringLiteral("://Res/menuIcon/checkUpdate-blue.svg")));
         a_checkUpdateToolBtn->setText(QStringLiteral("   检查更新"));
         a_checkUpdateAction->setDefaultWidget(a_checkUpdateToolBtn);
         connect(a_checkUpdateToolBtn, &QToolButton::clicked, this, [this] {
@@ -1079,35 +1072,176 @@ void MyMenu::initTitleOptionMenu() {
     }
     //帮助与意见反馈按钮
     auto a_helpFacebackAction = new QWidgetAction(this); {
+        auto widget = new QWidget(this);
+        auto layout = new QHBoxLayout(widget);
+        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setSpacing(0);
+        //前后两个按钮
         auto a_helpFacebackToolBtn = new MenuBtn(this);
-        a_helpFacebackToolBtn->setFixedSize(360, 37);
-        a_helpFacebackToolBtn->setIconSize(QSize(20,20));
+        a_helpFacebackToolBtn->setFixedSize(325, 37);
+        a_helpFacebackToolBtn->setIconSize(QSize(20, 20));
         a_helpFacebackToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/helpFaceback-black.svg")));
         a_helpFacebackToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/helpFaceback-black.svg")),
-                                QIcon(QStringLiteral("://Res/menuIcon/helpFaceback-blue.svg")));
+                                        QIcon(QStringLiteral("://Res/menuIcon/helpFaceback-blue.svg")));
         a_helpFacebackToolBtn->setText(QStringLiteral("   帮助与意见反馈"));
-        a_helpFacebackAction->setDefaultWidget(a_helpFacebackToolBtn);
-        connect(a_helpFacebackToolBtn, &QToolButton::clicked, this, [this] {
-            emit helpFaceback();
-        });
-        connect(a_helpFacebackAction, &QWidgetAction::hovered, this, [a_helpFacebackToolBtn,this] {
+        auto a_helpRightBtn = new MenuBtn(this);
+        a_helpRightBtn->setFixedSize(35, 37);
+        a_helpRightBtn->setToolButtonStyle(Qt::ToolButtonIconOnly);
+        a_helpRightBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/right-black.svg")));
+        a_helpRightBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/right-black.svg")),
+                                  QIcon(QStringLiteral("://Res/menuIcon/right-blue.svg")));
+        layout->addWidget(a_helpFacebackToolBtn);
+        layout->addWidget(a_helpRightBtn);
+        a_helpFacebackAction->setDefaultWidget(widget);
+        connect(a_helpFacebackAction, &QWidgetAction::hovered, this, [widget,a_helpFacebackToolBtn,a_helpRightBtn,this] {
             checkHover();
+            this->m_currentHover.emplace_back(widget);
             this->m_currentHover.emplace_back(a_helpFacebackToolBtn);
+            this->m_currentHover.emplace_back(a_helpRightBtn);
             this->m_lastHover = this->m_currentHover;
             QEvent enterEvent(QEvent::Enter); // 创建进入事件
             QCoreApplication::sendEvent(a_helpFacebackToolBtn, &enterEvent); // 发送事件
-            // 模拟按钮进入 hover 状态
-            a_helpFacebackToolBtn->setAttribute(Qt::WA_UnderMouse, true);
+            QCoreApplication::sendEvent(a_helpRightBtn, &enterEvent); // 发送事件
+            // 模拟widget进入 hover 状态
+            widget->setAttribute(Qt::WA_UnderMouse, true);
         });
+        //子菜单项
+        //使用帮助
+        auto a_useHelpAction = new QWidgetAction(this); {
+            auto a_useHelpToolBtn = new MenuBtn(this);
+            a_useHelpToolBtn->setFixedSize(150, 35);
+            a_useHelpToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/useHelp-black.svg")));
+            a_useHelpToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/useHelp-black.svg")),
+                                           QIcon(QStringLiteral("://Res/menuIcon/useHelp-blue.svg")));
+            a_useHelpToolBtn->setText(QStringLiteral("  使用帮助"));
+            a_useHelpAction->setDefaultWidget(a_useHelpToolBtn);
+            connect(a_useHelpToolBtn, &QToolButton::clicked, this, [this] {
+                emit useHelp();
+            });
+            connect(a_useHelpAction, &QWidgetAction::hovered, this, [a_useHelpToolBtn,this] {
+                checkHover();
+                this->m_currentHover.emplace_back(a_useHelpToolBtn);
+                this->m_lastHover = this->m_currentHover;
+                QEvent enterEvent(QEvent::Enter); // 创建进入事件
+                QCoreApplication::sendEvent(a_useHelpToolBtn, &enterEvent); // 发送事件
+                // 模拟按钮进入 hover 状态
+                a_useHelpToolBtn->setAttribute(Qt::WA_UnderMouse, true);
+            });
+        }
+        //子菜单项
+        //意见反馈
+        auto a_feedbackAction = new QWidgetAction(this); {
+            auto a_feedbackToolBtn = new MenuBtn(this);
+            a_feedbackToolBtn->setFixedSize(150, 35);
+            a_feedbackToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/feedback-black.svg")));
+            a_feedbackToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/feedback-black.svg")),
+                                           QIcon(QStringLiteral("://Res/menuIcon/feedback-blue.svg")));
+            a_feedbackToolBtn->setText(QStringLiteral("  意见反馈"));
+            a_feedbackAction->setDefaultWidget(a_feedbackToolBtn);
+            connect(a_feedbackToolBtn, &QToolButton::clicked, this, [this] {
+                emit feedback();
+            });
+            connect(a_feedbackAction, &QWidgetAction::hovered, this, [a_feedbackToolBtn,this] {
+                checkHover();
+                this->m_currentHover.emplace_back(a_feedbackToolBtn);
+                this->m_lastHover = this->m_currentHover;
+                QEvent enterEvent(QEvent::Enter); // 创建进入事件
+                QCoreApplication::sendEvent(a_feedbackToolBtn, &enterEvent); // 发送事件
+                // 模拟按钮进入 hover 状态
+                a_feedbackToolBtn->setAttribute(Qt::WA_UnderMouse, true);
+            });
+        }
+        //子菜单项
+        //用户反馈社区
+        auto a_communityAction = new QWidgetAction(this); {
+            auto a_communityToolBtn = new MenuBtn(this);
+            a_communityToolBtn->setFixedSize(150, 35);
+            a_communityToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/community-black.svg")));
+            a_communityToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/community-black.svg")),
+                                           QIcon(QStringLiteral("://Res/menuIcon/community-blue.svg")));
+            a_communityToolBtn->setText(QStringLiteral("  用户反馈社区"));
+            a_communityAction->setDefaultWidget(a_communityToolBtn);
+            connect(a_communityToolBtn, &QToolButton::clicked, this, [this] {
+                emit community();
+            });
+            connect(a_communityAction, &QWidgetAction::hovered, this, [a_communityToolBtn,this] {
+                checkHover();
+                this->m_currentHover.emplace_back(a_communityToolBtn);
+                this->m_lastHover = this->m_currentHover;
+                QEvent enterEvent(QEvent::Enter); // 创建进入事件
+                QCoreApplication::sendEvent(a_communityToolBtn, &enterEvent); // 发送事件
+                // 模拟按钮进入 hover 状态
+                a_communityToolBtn->setAttribute(Qt::WA_UnderMouse, true);
+            });
+        }
+        //子菜单项
+        //更新信息
+        auto a_updateInfoAction = new QWidgetAction(this); {
+            auto a_updateInfoToolBtn = new MenuBtn(this);
+            a_updateInfoToolBtn->setFixedSize(150, 35);
+            a_updateInfoToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/updateInfo-black.svg")));
+            a_updateInfoToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/updateInfo-black.svg")),
+                                           QIcon(QStringLiteral("://Res/menuIcon/updateInfo-blue.svg")));
+            a_updateInfoToolBtn->setText(QStringLiteral("  更新信息"));
+            a_updateInfoAction->setDefaultWidget(a_updateInfoToolBtn);
+            connect(a_updateInfoToolBtn, &QToolButton::clicked, this, [this] {
+                emit updateInfo();
+            });
+            connect(a_updateInfoAction, &QWidgetAction::hovered, this, [a_updateInfoToolBtn,this] {
+                checkHover();
+                this->m_currentHover.emplace_back(a_updateInfoToolBtn);
+                this->m_lastHover = this->m_currentHover;
+                QEvent enterEvent(QEvent::Enter); // 创建进入事件
+                QCoreApplication::sendEvent(a_updateInfoToolBtn, &enterEvent); // 发送事件
+                // 模拟按钮进入 hover 状态
+                a_updateInfoToolBtn->setAttribute(Qt::WA_UnderMouse, true);
+            });
+        }
+        //子菜单项
+        //关于应用
+        auto a_aboutAction = new QWidgetAction(this); {
+            auto a_aboutToolBtn = new MenuBtn(this);
+            a_aboutToolBtn->setFixedSize(150, 35);
+            a_aboutToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/about-black.svg")));
+            a_aboutToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/about-black.svg")),
+                                           QIcon(QStringLiteral("://Res/menuIcon/about-blue.svg")));
+            a_aboutToolBtn->setText(QStringLiteral("  关于应用"));
+            a_aboutAction->setDefaultWidget(a_aboutToolBtn);
+            connect(a_aboutToolBtn, &QToolButton::clicked, this, [this] {
+                emit about();
+            });
+            connect(a_aboutAction, &QWidgetAction::hovered, this, [a_aboutToolBtn,this] {
+                checkHover();
+                this->m_currentHover.emplace_back(a_aboutToolBtn);
+                this->m_lastHover = this->m_currentHover;
+                QEvent enterEvent(QEvent::Enter); // 创建进入事件
+                QCoreApplication::sendEvent(a_aboutToolBtn, &enterEvent); // 发送事件
+                // 模拟按钮进入 hover 状态
+                a_aboutToolBtn->setAttribute(Qt::WA_UnderMouse, true);
+            });
+        }
+        //子目录添加子项
+        auto a_helpFacebackMenu = new MyMenu(MenuKind::None, this);
+        //让菜单项保持高亮 ???
+
+        a_helpFacebackMenu->setFixedSize(180, 220);
+        a_helpFacebackMenu->addAction(a_useHelpAction);
+        a_helpFacebackMenu->addAction(a_feedbackAction);
+        a_helpFacebackMenu->addAction(a_communityAction);
+        a_helpFacebackMenu->addSeparator();
+        a_helpFacebackMenu->addAction(a_updateInfoAction);
+        a_helpFacebackMenu->addAction(a_aboutAction);
+        //设置Menu
+        a_helpFacebackAction->setMenu(a_helpFacebackMenu);
     }
     //设置按钮
     auto a_settingsAction = new QWidgetAction(this); {
         auto a_settingsToolBtn = new MenuBtn(this);
         a_settingsToolBtn->setFixedSize(360, 37);
-        a_settingsToolBtn->setIconSize(QSize(20,20));
+        a_settingsToolBtn->setIconSize(QSize(20, 20));
         a_settingsToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/settings-black.svg")));
         a_settingsToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/settings-black.svg")),
-                                QIcon(QStringLiteral("://Res/menuIcon/settings-blue.svg")));
+                                    QIcon(QStringLiteral("://Res/menuIcon/settings-blue.svg")));
         a_settingsToolBtn->setText(QStringLiteral("   设置"));
         a_settingsAction->setDefaultWidget(a_settingsToolBtn);
         connect(a_settingsToolBtn, &QToolButton::clicked, this, [this] {
@@ -1127,10 +1261,10 @@ void MyMenu::initTitleOptionMenu() {
     auto a_logOutAction = new QWidgetAction(this); {
         auto a_logOutToolBtn = new MenuBtn(this);
         a_logOutToolBtn->setFixedSize(360, 37);
-        a_logOutToolBtn->setIconSize(QSize(20,20));
+        a_logOutToolBtn->setIconSize(QSize(20, 20));
         a_logOutToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/logOut-black.svg")));
         a_logOutToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/logOut-black.svg")),
-                                QIcon(QStringLiteral("://Res/menuIcon/logOut-blue.svg")));
+                                  QIcon(QStringLiteral("://Res/menuIcon/logOut-blue.svg")));
         a_logOutToolBtn->setText(QStringLiteral("   退出登录"));
         a_logOutAction->setDefaultWidget(a_logOutToolBtn);
         connect(a_logOutToolBtn, &QToolButton::clicked, this, [this] {
@@ -1150,7 +1284,7 @@ void MyMenu::initTitleOptionMenu() {
     auto a_exitAction = new QWidgetAction(this); {
         auto a_exitToolBtn = new MenuBtn(this);
         a_exitToolBtn->setFixedSize(360, 37);
-        a_exitToolBtn->setIconSize(QSize(20,20));
+        a_exitToolBtn->setIconSize(QSize(20, 20));
         a_exitToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/exit-black.svg")));
         a_exitToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/exit-black.svg")),
                                 QIcon(QStringLiteral("://Res/menuIcon/exit-blue.svg")));

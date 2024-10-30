@@ -111,7 +111,11 @@ signals:
     void appTool();
     void restoreWindow();
     void checkUpdate();
-    void helpFaceback();
+    void useHelp();
+    void feedback();
+    void community();
+    void updateInfo();
+    void about();
     void settings();
     void logOut();
     void exit();
