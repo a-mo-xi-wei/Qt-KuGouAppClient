@@ -35,7 +35,8 @@ void MyMenu::initUi() {
     //背景透明
     this->setAttribute(Qt::WA_TranslucentBackground, true);
     this->setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
-    this->setMouseTracking(true); {
+    this->setMouseTracking(true);
+    {
         //设置样式
         QFile file(GET_CURRENT_DIR + QStringLiteral("/menu.css"));
         if (file.open(QIODevice::ReadOnly)) {
@@ -130,6 +131,8 @@ void MyMenu::initSongOptionMenu() {
             QCoreApplication::sendEvent(a_addToRightBtn, &enterEvent); // 发送事件
             // 模拟widget进入 hover 状态
             widget->setAttribute(Qt::WA_UnderMouse, true);
+            a_addToToolBtn->setAttribute(Qt::WA_UnderMouse, true);
+            a_addToRightBtn->setAttribute(Qt::WA_UnderMouse, true);
         });
         //子菜单项
         //播放队列
@@ -448,6 +451,8 @@ void MyMenu::initSongOptionMenu() {
             QCoreApplication::sendEvent(a_addToRightBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             widget->setAttribute(Qt::WA_UnderMouse, true);
+            a_searchToolBtn->setAttribute(Qt::WA_UnderMouse, true);
+            a_addToRightBtn->setAttribute(Qt::WA_UnderMouse, true);
         });
         //子菜单项
         auto a_searchTitleAction = new QWidgetAction(this); {
@@ -1070,22 +1075,26 @@ void MyMenu::initTitleOptionMenu() {
             a_checkUpdateToolBtn->setAttribute(Qt::WA_UnderMouse, true);
         });
     }
-    //帮助与意见反馈按钮
-    auto a_helpFacebackAction = new QWidgetAction(this); {
+    //帮助与意见反馈按钮（子目录）
+    auto a_helpFacebackAction = new QWidgetAction(this);
+    {
         auto widget = new QWidget(this);
+        widget->setFixedWidth(360);
         auto layout = new QHBoxLayout(widget);
         layout->setContentsMargins(0, 0, 0, 0);
         layout->setSpacing(0);
         //前后两个按钮
         auto a_helpFacebackToolBtn = new MenuBtn(this);
-        a_helpFacebackToolBtn->setFixedSize(325, 37);
+        a_helpFacebackToolBtn->setObjectName("helpFacebackToolBtn");
+        a_helpFacebackToolBtn->setFixedSize(320, 37);
         a_helpFacebackToolBtn->setIconSize(QSize(20, 20));
         a_helpFacebackToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/helpFaceback-black.svg")));
         a_helpFacebackToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/helpFaceback-black.svg")),
                                         QIcon(QStringLiteral("://Res/menuIcon/helpFaceback-blue.svg")));
         a_helpFacebackToolBtn->setText(QStringLiteral("   帮助与意见反馈"));
         auto a_helpRightBtn = new MenuBtn(this);
-        a_helpRightBtn->setFixedSize(35, 37);
+        a_helpRightBtn->setObjectName("helpRightBtn");
+        a_helpRightBtn->setFixedSize(40, 37);
         a_helpRightBtn->setToolButtonStyle(Qt::ToolButtonIconOnly);
         a_helpRightBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/right-black.svg")));
         a_helpRightBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/right-black.svg")),
@@ -1104,6 +1113,8 @@ void MyMenu::initTitleOptionMenu() {
             QCoreApplication::sendEvent(a_helpRightBtn, &enterEvent); // 发送事件
             // 模拟widget进入 hover 状态
             widget->setAttribute(Qt::WA_UnderMouse, true);
+            a_helpFacebackToolBtn->setAttribute(Qt::WA_UnderMouse, true);
+            a_helpRightBtn->setAttribute(Qt::WA_UnderMouse, true);
         });
         //子菜单项
         //使用帮助
@@ -1222,8 +1233,6 @@ void MyMenu::initTitleOptionMenu() {
         }
         //子目录添加子项
         auto a_helpFacebackMenu = new MyMenu(MenuKind::None, this);
-        //让菜单项保持高亮 ???
-
         a_helpFacebackMenu->setFixedSize(180, 220);
         a_helpFacebackMenu->addAction(a_useHelpAction);
         a_helpFacebackMenu->addAction(a_feedbackAction);
@@ -1233,6 +1242,11 @@ void MyMenu::initTitleOptionMenu() {
         a_helpFacebackMenu->addAction(a_aboutAction);
         //设置Menu
         a_helpFacebackAction->setMenu(a_helpFacebackMenu);
+        //让显示菜单项保持高亮???
+        //connect(a_helpFacebackMenu,&MyMenu::showSelf,this,[a_helpFacebackAction] {
+        //    a_helpFacebackAction->hovered();
+        //    qDebug()<<"子菜单显示，触发悬停";
+        //});
     }
     //设置按钮
     auto a_settingsAction = new QWidgetAction(this); {
@@ -1327,7 +1341,7 @@ void MyMenu::initTitleOptionMenu() {
 void MyMenu::checkHover() {
     if (!this->m_lastHover.isEmpty()) {
         QEvent leaveEvent(QEvent::Leave); // 创建进入事件
-        for (QWidget *val: m_lastHover) {
+        for (const auto val: m_lastHover) {
             QCoreApplication::sendEvent(val, &leaveEvent); // 发送事件
         }
         m_lastHover.clear();
@@ -1372,4 +1386,10 @@ void MyMenu::paintEvent(QPaintEvent *event) {
 void MyMenu::showEvent(QShowEvent *event) {
     QMenu::showEvent(event);
     //this->setFocus(); // 强制widget接收焦点
+    emit showSelf();
+}
+
+void MyMenu::leaveEvent(QEvent *event) {
+    QMenu::leaveEvent(event);
+    checkHover();
 }

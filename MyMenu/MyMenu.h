@@ -70,6 +70,8 @@ public:
     void checkSelection();
 
 signals:
+    //显示
+    void showSelf();
     //MusicItem设置相关
     void play();
     void nextPlay();
@@ -123,6 +125,8 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
     void showEvent(QShowEvent *event) override;
+
+    void leaveEvent(QEvent *event) override;
 
 private:
     //为了解决QWidgetAction没有与hovered相反的离开事件设置下面两个变量
