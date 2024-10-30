@@ -102,8 +102,7 @@ void TableWidget::initUi() {
                            QToolButton#adjust_ToolBtn:hover{border-image: url(':///Res/tabIcon/adjust-column-blue.svg');}
                            QToolButton#refresh_ToolBtn{border-image: url(':///Res/tabIcon/refresh-gray.svg');}
                            QToolButton#refresh_ToolBtn:hover{border-image: url(':///Res/tabIcon/refresh-blue.svg');}
-                           QToolButton#play_ToolBtn{border-image: url(':///Res/tabIcon/play2-gray.svg');}
-                           QToolButton#play_ToolBtn:hover{border-image: url(':///Res/tabIcon/play2-blue.svg');}
+                           QToolButton#play_ToolBtn{border-image: url(':///Res/tabIcon/titlePlay.svg');}
                         )");
 
     m_tabHLayout->setSpacing(0);
