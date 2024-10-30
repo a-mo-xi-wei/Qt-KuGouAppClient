@@ -103,8 +103,8 @@ signals:
     void phonePlay();
     void uploadToDevice();
     void earnCoin();
-    void MusicRemoteController();
-    void equalizer();
+    void controller();
+    void balance();
     void aiHelpYou();
     void soundPlugin();
     void timeSetting();
