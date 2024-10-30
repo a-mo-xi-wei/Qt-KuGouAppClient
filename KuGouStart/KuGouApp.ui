@@ -746,7 +746,7 @@
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>0</y>
+           <y>-37</y>
            <width>143</width>
            <height>592</height>
           </rect>
@@ -761,7 +761,7 @@
           <item>
            <widget class="QWidget" name="center_menu_widget" native="true">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -806,11 +806,23 @@
              </item>
              <item>
               <widget class="QToolButton" name="recommend_toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>120</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
@@ -843,11 +855,23 @@
              </item>
              <item>
               <widget class="QToolButton" name="yueku_toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>120</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
@@ -874,11 +898,23 @@
              </item>
              <item>
               <widget class="QToolButton" name="gedan_toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>120</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
@@ -905,11 +941,23 @@
              </item>
              <item>
               <widget class="QToolButton" name="pindao_toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>120</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
@@ -936,11 +984,23 @@
              </item>
              <item>
               <widget class="QToolButton" name="video_toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>120</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
@@ -967,11 +1027,23 @@
              </item>
              <item>
               <widget class="QToolButton" name="live_toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>120</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
@@ -1002,7 +1074,7 @@
           <item>
            <widget class="QWidget" name="widget_3" native="true">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -1050,11 +1122,23 @@
              </item>
              <item>
               <widget class="QToolButton" name="my_shoucang_toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>120</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
@@ -1081,11 +1165,23 @@
              </item>
              <item>
               <widget class="QToolButton" name="my_pindao_toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>120</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
@@ -1112,11 +1208,23 @@
              </item>
              <item>
               <widget class="QToolButton" name="local_download_toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>120</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
@@ -1143,11 +1251,23 @@
              </item>
              <item>
               <widget class="QToolButton" name="music_yunpan_toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>120</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
@@ -1174,11 +1294,23 @@
              </item>
              <item>
               <widget class="QToolButton" name="yigou_yunpan_toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>120</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
@@ -1205,11 +1337,23 @@
              </item>
              <item>
               <widget class="QToolButton" name="zuijin_bofang_toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>120</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
@@ -1236,11 +1380,23 @@
              </item>
              <item>
               <widget class="QToolButton" name="moren_liebiao_toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>120</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
