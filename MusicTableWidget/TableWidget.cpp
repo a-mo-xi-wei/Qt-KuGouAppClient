@@ -124,6 +124,7 @@ void TableWidget::initUi() {
     line2->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/line-gray.svg")));
     m_tabHLayout->addWidget(line2);
     m_tabHLayout->addWidget(this->m_more_Lab);
+    this->m_gridContainer->setAttribute(Qt::WA_OpaquePaintEvent);
 
     if (this->m_kindList == KIND::ItemList) {
         initItemListWidget();
@@ -352,6 +353,8 @@ void TableWidget::onRefreshBtnClicked() {
 void TableWidget::onRefreshTimeout() {
     if(this->m_kindList == KIND::BlockList) {
         shuffleBlockCover();
+        this->m_gridContainer->setUpdatesEnabled(false);
+        this->m_gridContainer->hide(); // 隐藏容器
         for (int i = 0; i < 2; ++i) {
             for (int j = 0; j < 7; ++j) {
                 auto item = this->m_gridLayout->itemAtPosition(i,j);
@@ -376,10 +379,13 @@ void TableWidget::onRefreshTimeout() {
                 this->m_gridLayout->itemAtPosition(i, j)->widget()->show();
             }
         }
-
+        this->m_gridContainer->setUpdatesEnabled(true);
+        this->m_gridContainer->show(); // 显示容器
     }
     else {
         shuffleListCover();
+        this->m_gridContainer->setUpdatesEnabled(false);
+        this->m_gridContainer->hide(); // 隐藏容器
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 3; ++j) {
                 auto item = this->m_gridLayout->itemAtPosition(i,j);
@@ -397,6 +403,8 @@ void TableWidget::onRefreshTimeout() {
                 this->m_gridLayout->addWidget(list, i, j);
             }
         }
+        this->m_gridContainer->setUpdatesEnabled(true);
+        this->m_gridContainer->show(); // 显示容器
     }
 }
 
