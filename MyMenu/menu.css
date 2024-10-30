@@ -6,7 +6,7 @@ QToolButton{
     padding-left: 10px;
 }
 QToolButton:hover{
-    background-color: rgba(255,255,255,0);;
+    background-color: #e6edfe;
     color: #268cff;
 }
 QToolButton#wallPaperBtn,QToolButton#phonePlayBtn,QToolButton#uploadToDeviceBtn,QToolButton#earnCoinBtn {
@@ -15,7 +15,7 @@ QToolButton#wallPaperBtn,QToolButton#phonePlayBtn,QToolButton#uploadToDeviceBtn,
     font-size: 12px;
     padding: 5px;
 }
-QToolButton#wallPaperBtn:hover,QToolButton#phonePlayBtn:hover,QToolButton#uploadToDeviceBtn:hover,QToolButton#earnCoinBtn:hover{
+QToolButton#wallPaperBtn:hover,QToolBu tton#phonePlayBtn:hover,QToolButton#uploadToDeviceBtn:hover,QToolButton#earnCoinBtn:hover{
     background-color: #eff2f7;
     color: #268cff;
 }
@@ -44,10 +44,4 @@ QMenu::separator { /* 菜单子控件separator，定义菜单项之间的分隔�
     height: 1px;
     background: #eeeeee;
     margin: 2px; /* 距离菜单边界2px */
-}
-
-QMenu::right-arrow { /* 菜单子控件right-arrow，定义子菜单指示器 */
-    width: 15px;
-    height: 15px;
-    image: url("://Res/menuIcon/sub_menu_arrow.png");
 }
