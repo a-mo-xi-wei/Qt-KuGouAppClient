@@ -1120,7 +1120,7 @@ void MyMenu::initTitleOptionMenu() {
         //使用帮助
         auto a_useHelpAction = new QWidgetAction(this); {
             auto a_useHelpToolBtn = new MenuBtn(this);
-            a_useHelpToolBtn->setFixedSize(150, 35);
+            a_useHelpToolBtn->setFixedSize(160, 35);
             a_useHelpToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/useHelp-black.svg")));
             a_useHelpToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/useHelp-black.svg")),
                                            QIcon(QStringLiteral("://Res/menuIcon/useHelp-blue.svg")));
@@ -1143,7 +1143,7 @@ void MyMenu::initTitleOptionMenu() {
         //意见反馈
         auto a_feedbackAction = new QWidgetAction(this); {
             auto a_feedbackToolBtn = new MenuBtn(this);
-            a_feedbackToolBtn->setFixedSize(150, 35);
+            a_feedbackToolBtn->setFixedSize(160, 35);
             a_feedbackToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/feedback-black.svg")));
             a_feedbackToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/feedback-black.svg")),
                                            QIcon(QStringLiteral("://Res/menuIcon/feedback-blue.svg")));
@@ -1166,7 +1166,7 @@ void MyMenu::initTitleOptionMenu() {
         //用户反馈社区
         auto a_communityAction = new QWidgetAction(this); {
             auto a_communityToolBtn = new MenuBtn(this);
-            a_communityToolBtn->setFixedSize(150, 35);
+            a_communityToolBtn->setFixedSize(160, 35);
             a_communityToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/community-black.svg")));
             a_communityToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/community-black.svg")),
                                            QIcon(QStringLiteral("://Res/menuIcon/community-blue.svg")));
@@ -1189,7 +1189,7 @@ void MyMenu::initTitleOptionMenu() {
         //更新信息
         auto a_updateInfoAction = new QWidgetAction(this); {
             auto a_updateInfoToolBtn = new MenuBtn(this);
-            a_updateInfoToolBtn->setFixedSize(150, 35);
+            a_updateInfoToolBtn->setFixedSize(160, 35);
             a_updateInfoToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/updateInfo-black.svg")));
             a_updateInfoToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/updateInfo-black.svg")),
                                            QIcon(QStringLiteral("://Res/menuIcon/updateInfo-blue.svg")));
@@ -1212,7 +1212,7 @@ void MyMenu::initTitleOptionMenu() {
         //关于应用
         auto a_aboutAction = new QWidgetAction(this); {
             auto a_aboutToolBtn = new MenuBtn(this);
-            a_aboutToolBtn->setFixedSize(150, 35);
+            a_aboutToolBtn->setFixedSize(160, 35);
             a_aboutToolBtn->setIcon(QIcon(QStringLiteral("://Res/menuIcon/about-black.svg")));
             a_aboutToolBtn->initIcon(QIcon(QStringLiteral("://Res/menuIcon/about-black.svg")),
                                            QIcon(QStringLiteral("://Res/menuIcon/about-blue.svg")));
