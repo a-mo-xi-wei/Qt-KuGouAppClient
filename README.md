@@ -11,9 +11,9 @@ Based on Qt Widget + UiTools module+ Custom control +QSS
 使用CMake进行模块化管理，参照酷狗酷狗客户端，高仿并且优化界面，QMediaPlayer和QAudioOutput来实现音频播放，提供更好的音乐播放体验，有着丰富的自定义控件和事件响应，解决诸多难题如：遮罩绘图，控件拉伸，绘制特效，页面切换动画等。
 
 ### 图例
-![输入图片说明](image-show/image1.png)
-![输入图片说明](image-show/image2.png)
-![输入图片说明](image-show/image3.png)
-![输入图片说明](image-show/image4.png)
-![输入图片说明](image-show/image5.png)
-![输入图片说明](image-show/image6.png)
+![输入图片说明](image-show/image01.png)
+![输入图片说明](image-show/image02.png)
+![输入图片说明](image-show/image03.png)
+![输入图片说明](image-show/image04.png)
+![输入图片说明](image-show/image05.png)
+![输入图片说明](image-show/image06.png)
