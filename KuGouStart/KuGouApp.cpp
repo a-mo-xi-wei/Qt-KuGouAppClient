@@ -108,6 +108,7 @@ KuGouApp::KuGouApp(MainWindow *parent)
     connect(this->m_localDownload.get(), &LocalDownload::addSongInfo, this, &KuGouApp::onAddSongInfo);
 
     connect(this, &KuGouApp::setPlayIndex, this->m_localDownload.get(), &LocalDownload::setPlayIndex);
+    connect(this, &KuGouApp::maxScreen, this->m_localDownload.get(), &LocalDownload::onMaxScreenHandle);
 
     connect(this->m_upBtn.get(), &QToolButton::clicked, this, &KuGouApp::onUpBtnClicked);
 
@@ -669,7 +670,7 @@ void KuGouApp::on_min_toolButton_clicked() {
 
 void KuGouApp::on_max_toolButton_clicked() {
     if (m_isMaxScreen) {
-        this->m_isMaxScreen = false;
+        this->m_isMaxScreen = false;//现在是正常化
         m_endGeometry = m_startGeometry; // 获取普通尺寸时的几何形状
         m_startGeometry = this->screen()->availableGeometry();
         //this->setGeometry(m_startGeometry); // 恢复前，我们先把它设置回最大化尺寸
@@ -686,7 +687,7 @@ void KuGouApp::on_max_toolButton_clicked() {
     }
     else {
         this->m_normalGeometry = this->geometry();//最大化之前获取geometry
-        this->m_isMaxScreen = true;
+        this->m_isMaxScreen = true;//现在是最大化
         // 如果当前不是最大化状态，则目标是最大化
         m_startGeometry = this->m_normalGeometry;
         m_endGeometry = this->screen()->availableGeometry(); // 获取屏幕的最大化尺寸
@@ -715,6 +716,7 @@ void KuGouApp::on_max_toolButton_clicked() {
         QTimer::singleShot(500, this, [this] {
             this->m_isTransForming = false; // 启用拖拽
         });
+        if(this->m_endGeometry == this->screen()->availableGeometry())emit maxScreen();//高亮条延伸
     });
 
     // 更新按钮样式

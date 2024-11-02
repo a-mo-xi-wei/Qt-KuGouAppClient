@@ -258,10 +258,10 @@ void LocalDownload::MySort(std::function<bool(const MusicItemWidget *, const Mus
 
 void LocalDownload::updateCurPlayIndex() {
     //记录m_curPlayIndex;
-    if(m_curPlatIndex == -1)return;
-    SongInfor temp = this->m_lastLocationMusicVector[this->m_curPlatIndex];
+    if(m_curPlayIndex == -1)return;
+    SongInfor temp = this->m_lastLocationMusicVector[this->m_curPlayIndex];
     //重新赋值m_curPlayIndex
-    this->m_curPlatIndex = static_cast<int>(std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), temp) - this->m_locationMusicVector.begin());
+    this->m_curPlayIndex = static_cast<int>(std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), temp) - this->m_locationMusicVector.begin());
 }
 
 void LocalDownload::on_local_play_toolButton_clicked() {
@@ -328,8 +328,8 @@ void LocalDownload::on_downloading_pushButton_clicked() {
 void LocalDownload::setPlayIndex(const int &index) {
     this->m_setPlayIndex = index;
     //qDebug()<<"开始播放第 : "<<index<<" 首歌";
-    if(this->m_curPlatIndex == -1) {
-        this->m_curPlatIndex = index;
+    if(this->m_curPlayIndex == -1) {
+        this->m_curPlayIndex = index;
         auto widget = m_MusicItemVector[index];
         //增加播放次数
         widget->m_information.playCount++;
@@ -341,14 +341,23 @@ void LocalDownload::setPlayIndex(const int &index) {
         //增加播放次数
         widget->m_information.playCount++;
         //qDebug()<<"第 "<<index<<"首歌增加次数至："<<widget->m_information.playCount;
-        if(this->m_setPlayIndex != this->m_curPlatIndex) {
+        if(this->m_setPlayIndex != this->m_curPlayIndex) {
             widget->setPlayState(true);
-            widget = m_MusicItemVector[this->m_curPlatIndex];
+            widget = m_MusicItemVector[this->m_curPlayIndex];
             widget->setPlayState(false);
-            this->m_curPlatIndex = this->m_setPlayIndex;
+            this->m_curPlayIndex = this->m_setPlayIndex;
         }
     }
 
+}
+
+void LocalDownload::onMaxScreenHandle() {
+    if(this->m_curPlayIndex != -1) {
+        //qDebug()<<"正在播放第 : "<<this->m_curPlayIndex<<" 首歌";
+        auto widget = m_MusicItemVector[this->m_curPlayIndex];
+        widget->setPlayState(true);
+        //qDebug()<<"收到最大化信号";
+    }
 }
 
 void LocalDownload::onDefaultSort() {

@@ -145,6 +145,8 @@ public slots:
 
 signals:
     void setPlayIndex(const int& index);
+
+    void maxScreen();       //发出最大化信号给LocalDown，让正在播放的高亮条延伸
 public slots:
     //接收重排信号
     void onSyncSongInfoVector(QVector<SongInfor>& vec);

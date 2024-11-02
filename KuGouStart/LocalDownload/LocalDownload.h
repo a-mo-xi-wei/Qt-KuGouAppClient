@@ -52,6 +52,9 @@ private slots:
 public slots:
     void setPlayIndex(const int& index);
 
+    void onMaxScreenHandle();   //最大化的时候延伸高亮部分
+
+public slots:
     void onDefaultSort();
 
     void onAddTimeSort(const bool& down);
@@ -87,7 +90,7 @@ private:
     QQueue<QString> m_songQueue;
 
     //固定颜色专用
-    int m_curPlatIndex = -1;
+    int m_curPlayIndex = -1;
     int m_setPlayIndex = -1;
 
     //菜单相关
