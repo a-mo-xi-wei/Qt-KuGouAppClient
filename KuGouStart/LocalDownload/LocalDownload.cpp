@@ -6,7 +6,7 @@
 
 #include "LocalDownload.h"
 #include "ui_LocalDownload.h"
-
+#include "MyStackedWidget.h"
 
 #include<QStandardPaths>
 #include<QFileDialog>
@@ -16,7 +16,10 @@
 #include<QRandomGenerator>
 #include<QRegularExpression>
 #include <memory>
+#include <QResizeEvent>
 #include <QScreen>
+
+
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -60,7 +63,6 @@ LocalDownload::LocalDownload(QWidget *parent)
     connect(m_sortOptMenu,&MyMenu::durationSort,this,&LocalDownload::onDurationSort);
     connect(m_sortOptMenu,&MyMenu::playCountSort,this,&LocalDownload::onPlayCountSort);
     connect(m_sortOptMenu,&MyMenu::randomSort,this,&LocalDownload::onRandomSort);
-
 }
 
 LocalDownload::~LocalDownload() {
@@ -160,7 +162,9 @@ void LocalDownload::getMetaData() {
             });
             //插入Item
             this->m_MusicItemVector.emplace_back(item);
-            dynamic_cast<QVBoxLayout*>(ui->local_song_list_widget->layout())->insertWidget(ui->local_song_list_widget->layout()->count() - 1, item);
+            auto layout = dynamic_cast<QVBoxLayout*>(ui->local_song_list_widget->layout());
+            if (!layout)return;
+            layout->insertWidget(layout->count() - 1, item);
             ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
             //加载下一首歌
             loadNextSong();

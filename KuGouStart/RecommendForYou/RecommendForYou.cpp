@@ -7,8 +7,10 @@
 #include "RecommendForYou.h"
 #include "ui_RecommendForYou.h"
 #include "TableWidget.h"
+#include "MyStackedWidget.h"
 
 #include<QDir>
+#include <QResizeEvent>
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))

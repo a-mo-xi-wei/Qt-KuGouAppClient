@@ -235,9 +235,12 @@ void MusicItemWidget::resizeEvent(QResizeEvent *event) {
     max_radius = static_cast<int>(qSqrt(width() * width() + height() * height())); // 重新计算最大半径
     //设置弹簧宽度
     this->m_spacerItem2->changeSize(this->width()/5,20,QSizePolicy::Fixed);
-    //qDebug()<<"当前宽度："<<this->width();
-    //qDebug()<<"event->size().width() = "<<event->size().width();
-    //qDebug()<<"父对象宽度："<<qobject_cast<QWidget*>(this->parent())->width();
+    //this->setFixedWidth(1200);
+    //this->setGeometry(this->geometry().x(),this->geometry().y(),
+    //    event->size().width(),this->geometry().height());
+    qDebug()<<"当前宽度："<<this->width();
+    qDebug()<<"event->size().width() = "<<event->size().width();
+    qDebug()<<"父对象宽度："<<qobject_cast<QWidget*>(this->parent())->width();
 }
 
 void MusicItemWidget::mouseDoubleClickEvent(QMouseEvent *event) {

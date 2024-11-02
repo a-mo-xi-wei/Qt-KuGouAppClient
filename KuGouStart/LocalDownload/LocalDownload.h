@@ -34,6 +34,8 @@ public:
     void MySort(std::function<bool(const MusicItemWidget*, const MusicItemWidget*)> comparator);
 
     void updateCurPlayIndex();
+
+
 private slots:
     void on_local_play_toolButton_clicked();
 

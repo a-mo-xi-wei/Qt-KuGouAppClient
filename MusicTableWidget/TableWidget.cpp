@@ -44,7 +44,7 @@ TableWidget::TableWidget(const QString &title, KIND kind, QWidget *parent)
         });
     }
 
-    connect(this, &TableWidget::gridChange, this, [this](int len) { onGridChange(len); });
+    connect(this, &TableWidget::gridChange, this, [this](const int& len) { onGridChange(len); });
 
     connect(this->m_refresh_ToolBtn,&QToolButton::clicked,this,&TableWidget::onRefreshBtnClicked);
     connect(this->m_refreshTimer,&QTimer::timeout,this,&TableWidget::onRefreshTimeout);
@@ -528,6 +528,7 @@ void ItemListWidget::leaveEvent(QEvent *ev) {
 void ItemListWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     this->setFixedHeight(event->size().width() / this->m_aspectRatio);
+    //this->setGeometry(this->geometry().x(), this->geometry().y(),this->geometry().width(),event->size().width() / this->m_aspectRatio);
     this->m_coverLab->setFixedSize(this->height(), this->height());
     this->m_mask->setFixedSize(this->m_coverLab->size());
 
@@ -668,6 +669,7 @@ void ItemBlockWidget::resizeEvent(QResizeEvent *event) {
     //qDebug()<<"改变大小 : "<<event->size();
 
     this->setFixedHeight(event->size().width() + DescribeLabHeight);
+    //this->setGeometry(this->geometry().x(),this->geometry().y(),this->geometry().width(),event->size().width() + DescribeLabHeight);
     //只要留了一定的空间，就能缩小
     this->m_bacWidget->setFixedSize(event->size().width() / 1.05, event->size().width() / 1.05);
     //this->m_bacWidget->setFixedSize(event->size().width(),event->size().width());

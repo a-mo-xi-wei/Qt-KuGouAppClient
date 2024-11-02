@@ -5,8 +5,10 @@
 #include "MyStackedWidget.h"
 
 
+
 MyStackedWidget::MyStackedWidget(QWidget *parent) :
     QStackedWidget(parent)
 {
 
 }
+

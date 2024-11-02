@@ -53,7 +53,7 @@ private:
 signals:
     void hideTitle();
 
-    void gridChange(int len);
+    void gridChange(const int& len);
 
 public slots:
     void onGridChange(int len);

@@ -44,8 +44,6 @@ KuGouApp::KuGouApp(MainWindow *parent)
       , m_sizeGrip(std::make_unique<QSizeGrip>(this))
       , m_upBtn(std::make_unique<UpToolButton>(this))
       , m_animation(std::make_unique<QPropertyAnimation>(this, "geometry"))
-      , m_recommendForYou(std::make_unique<RecommendForYou>(this))
-      , m_localDownload(std::make_unique<LocalDownload>(this))
       , m_scrollBarTimer(new QTimer(this))
 {
     ui->setupUi(this);
@@ -155,15 +153,16 @@ void KuGouApp::initUi() {
     initLocalDownload();
     initPlayWidget();
     initMenu();
-    initLocalDownload();
     initCornerWidget();
 }
 
 void KuGouApp::initCommendForYouWidget() {
+    this->m_recommendForYou = std::make_unique<RecommendForYou>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_recommendForYou.get());
 }
 
 void KuGouApp::initLocalDownload() {
+    this->m_localDownload = std::make_unique<LocalDownload>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_localDownload.get());
 }
 
