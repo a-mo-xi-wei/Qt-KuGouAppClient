@@ -17,7 +17,6 @@
 #include<QRegularExpression>
 #include <memory>
 #include <QScreen>
-#include <utility>
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
