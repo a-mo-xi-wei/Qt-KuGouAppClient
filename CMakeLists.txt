@@ -8,6 +8,9 @@ add_subdirectory(MainWindow)
 #自定义窗口模块
 add_subdirectory(BasicWidget)
 
+#自定义堆栈窗口模块
+add_subdirectory(MyStackedWidget)
+
 #广告模块
 add_subdirectory(AdvertiseBoardWidget)
 

@@ -29,7 +29,8 @@ INCLUDE_DIRECTORIES(
     ${PROJECT_SOURCE_DIR}/../MySearchLineEdit
     ${PROJECT_SOURCE_DIR}/../UpToolButton
     ${PROJECT_SOURCE_DIR}/../LocalDownload
-    ${PROJECT_SOURCE_DIR}/../MainWindow)
+    ${PROJECT_SOURCE_DIR}/../MainWindow
+    ${PROJECT_SOURCE_DIR}/../MyStackedWidget)
 
 #包含为你推荐模块
 add_subdirectory(RecommendForYou)
@@ -41,4 +42,4 @@ add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools Qt6::Multimedia
                         RecommendForYou LocalDownload BasicWidget MyScrollArea
                         MySearchLineEdit UpToolButton RippleButton VolumeToolBtn
-                        SliderWidget MainWindow)
+                        SliderWidget MainWindow MyStackedWidget)

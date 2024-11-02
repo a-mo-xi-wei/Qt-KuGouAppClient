@@ -1463,7 +1463,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QStackedWidget" name="stackedWidget">
+           <widget class="MyStackedWidget" name="stackedWidget">
             <property name="currentIndex">
              <number>-1</number>
             </property>
@@ -2104,6 +2104,12 @@
    <class>MyScrollArea</class>
    <extends>QScrollArea</extends>
    <header>MyScrollArea.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MyStackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header>MyStackedWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
