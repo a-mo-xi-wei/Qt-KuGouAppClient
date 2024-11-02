@@ -79,25 +79,7 @@ KuGouApp::KuGouApp(MainWindow *parent)
     connect(this->m_player.get(), &QMediaPlayer::durationChanged, this, &KuGouApp::updateSliderRange);
     connect(this->m_player.get(), &QMediaPlayer::metaDataChanged, this, [this] {
         //qDebug() << "metaDataChanged";
-        const QFont font("楷体",10);
-        const QFontMetrics fm(font);
-        QString song_name;
-        QString singer;
-        if (this->m_isOrderPlay) {
-            ui->cover_label->setPixmap(roundedPixmap(this->m_songInfoVector[this->m_orderIndex].cover,
-                                                     ui->cover_label->size(), 8));
-           song_name = this->m_songInfoVector[this->m_orderIndex].songName;
-           singer = " "+this->m_songInfoVector[this->m_orderIndex].singer;
-        } else {
-            ui->cover_label->setPixmap(roundedPixmap(this->m_songInfoVector[this->m_songIndex].cover,
-                                                     ui->cover_label->size(), 8));
-            song_name= this->m_songInfoVector[this->m_songIndex].songName;
-            singer= " "+this->m_songInfoVector[this->m_songIndex].singer;
-        }
-        ui->song_name_label->setToolTip(song_name);
-        ui->singer_label->setToolTip(singer);
-        ui->song_name_label->setText(fm.elidedText(song_name,Qt::ElideRight,ui->song_name_label->width()));
-        ui->singer_label->setText(fm.elidedText(singer,Qt::ElideRight,ui->singer_label->width()));
+        update_cover_singer_song_HLayout();
     });
     connect(this->m_player.get(), &QMediaPlayer::playbackStateChanged, this, [this](QMediaPlayer::PlaybackState state) {
         if (state == QMediaPlayer::PlayingState)this->m_isPlaying = true;
@@ -292,6 +274,29 @@ int KuGouApp::getCurrentIndex(int index) {
     return index;
 }
 
+void KuGouApp::update_cover_singer_song_HLayout() {
+    const QFont font("楷体",10);
+    const QFontMetrics fm(font);
+    QString song_name;
+    QString singer;
+    if (this->m_isOrderPlay) {
+        ui->cover_label->setPixmap(roundedPixmap(this->m_songInfoVector[this->m_orderIndex].cover,
+                                                 ui->cover_label->size(), 8));
+        song_name = this->m_songInfoVector[this->m_orderIndex].songName;
+        singer = this->m_songInfoVector[this->m_orderIndex].singer;
+    }
+    else {
+        ui->cover_label->setPixmap(roundedPixmap(this->m_songInfoVector[this->m_songIndex].cover,
+                                                 ui->cover_label->size(), 8));
+        song_name= this->m_songInfoVector[this->m_songIndex].songName;
+        singer= this->m_songInfoVector[this->m_songIndex].singer;
+    }
+    ui->song_name_label->setToolTip(song_name);
+    ui->singer_label->setToolTip(singer);
+    ui->song_name_label->setText(fm.elidedText(song_name,Qt::ElideRight,ui->song_name_label->width()));
+    ui->singer_label->setText(fm.elidedText(singer,Qt::ElideRight,ui->singer_label->width()));
+}
+
 void KuGouApp::addOrderIndex() {
     this->m_orderIndex = (this->m_orderIndex + 1) % static_cast<int>(this->m_songInfoVector.size());
     this->m_songIndex = this->m_orderIndex;
@@ -330,23 +335,37 @@ void KuGouApp::mouseMoveEvent(QMouseEvent *event) {
     // 计算的鼠标移动偏移量, 就是鼠标全局坐标 - 减去点击时鼠标坐标
     QPoint point_offset = event->globalPosition().toPoint() - mousePs;
 
-    if (isPress&&ui->title_widget->rect().contains(event->pos())) {
-        if (this->m_isMaxScreen == true) //如果是最大化拖动，则还原大小再拖动
-        {
-            this->startGeometry.setX(this->startGeometry.width() / 4);
-            this->startGeometry.setY(event->pos().y() - 3);
-            ui->max_toolButton->clicked();
-            return;
-        }
+    if (isPress) {
         if (mouse_press_region == kMousePositionMid) {
-            if (ui->title_widget->geometry().contains(this->m_pressPos) ||
-                ui->play_widget->geometry().contains(this->m_pressPos)) {
+            if(ui->title_widget->geometry().contains(this->m_pressPos)) {
+                if (this->m_isMaxScreen == true) //如果是最大化拖动，则还原大小再拖动
+                {
+                    this->m_startGeometry.setX(event->pos().x() - this->m_normalGeometry.width() / 2);
+                    this->m_startGeometry.setY(event->pos().y() - 20);
+                    this->m_startGeometry.setWidth( this->m_normalGeometry.width());
+                    this->m_startGeometry.setHeight( this->m_normalGeometry.height());
+
+                    ui->max_toolButton->clicked();
+                    return;
+                }
+                move(windowsLastPs + point_offset);
+            }
+            if(ui->play_widget->geometry().contains(this->m_pressPos)) {
+                if (this->m_isMaxScreen == true) //如果是最大化拖动，则还原大小再拖动
+                {
+                    this->m_startGeometry.setX(event->pos().x() - this->m_normalGeometry.width() / 2);
+                    this->m_startGeometry.setY(event->pos().y() - this->m_normalGeometry.height()+20);
+                    this->m_startGeometry.setWidth( this->m_normalGeometry.width());
+                    this->m_startGeometry.setHeight( this->m_normalGeometry.height());
+                    ui->max_toolButton->clicked();
+                    return;
+                }
                 move(windowsLastPs + point_offset);
             }
         } else {
             // 其他部分 是拉伸窗口
             // 获取客户区
-            QRect rect = geometry();
+            QRect rect = this->geometry();
             switch (mouse_press_region) {
                 // 左上角
                 case kMousePositionLeftTop:
@@ -420,6 +439,10 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
     this->m_upBtn->move(this->width() - this->m_upBtn->width() - 20,
                         this->height() - this->m_upBtn->height() - 100);
     this->m_upBtn->raise();
+    //song_info_widget适度延展
+    ui->song_info_widget->setFixedWidth(this->width()/8+20);
+    if(!this->m_player->source().isEmpty())update_cover_singer_song_HLayout();
+    //qDebug()<<"song_info_widget->width "<<ui->song_info_widget->width();
 }
 
 bool KuGouApp::event(QEvent *event) {
@@ -630,13 +653,13 @@ void KuGouApp::on_title_found_pushButton_clicked() {
 }
 
 void KuGouApp::on_min_toolButton_clicked() {
-    //QRect startGeometry = this->geometry(); // 获取当前窗口的几何形状(正常状态)
-    //QRect endGeometry = startGeometry;
-    ////endGeometry.setWidth(0); // 设置目标宽度为0
-    //endGeometry.setHeight(100); // 设置目标高度为0
+    //QRect m_startGeometry = this->geometry(); // 获取当前窗口的几何形状(正常状态)
+    //QRect m_endGeometry = m_startGeometry;
+    ////m_endGeometry.setWidth(0); // 设置目标宽度为0
+    //m_endGeometry.setHeight(100); // 设置目标高度为0
     //this->m_animation->setDuration(1000); // 动画时长
-    //this->m_animation->setStartValue(startGeometry);
-    //this->m_animation->setEndValue(endGeometry);
+    //this->m_animation->setStartValue(m_startGeometry);
+    //this->m_animation->setEndValue(m_endGeometry);
     //this->m_animation->setEasingCurve(QEasingCurve::InOutQuad); // 设置动画曲线
     //this->m_animation->start(); // 启动动画
     //// 最小化窗口
@@ -647,9 +670,9 @@ void KuGouApp::on_min_toolButton_clicked() {
 void KuGouApp::on_max_toolButton_clicked() {
     if (m_isMaxScreen) {
         this->m_isMaxScreen = false;
-        endGeometry = startGeometry; // 获取普通尺寸时的几何形状
-        startGeometry = this->screen()->availableGeometry();
-        //this->setGeometry(startGeometry); // 恢复前，我们先把它设置回最大化尺寸
+        m_endGeometry = m_startGeometry; // 获取普通尺寸时的几何形状
+        m_startGeometry = this->screen()->availableGeometry();
+        //this->setGeometry(m_startGeometry); // 恢复前，我们先把它设置回最大化尺寸
         this->m_maxBtnStyle = R"(QToolButton#max_toolButton {
                                 background-color: rgba(255,255,255,0);
                                 qproperty-icon: url("://Res/titlebar/maximize-black.svg");
@@ -662,10 +685,11 @@ void KuGouApp::on_max_toolButton_clicked() {
         this->m_animation->setDuration(500); // 设置动画持续时间
     }
     else {
+        this->m_normalGeometry = this->geometry();//最大化之前获取geometry
         this->m_isMaxScreen = true;
         // 如果当前不是最大化状态，则目标是最大化
-        startGeometry = this->geometry();
-        endGeometry = this->screen()->availableGeometry(); // 获取屏幕的最大化尺寸
+        m_startGeometry = this->m_normalGeometry;
+        m_endGeometry = this->screen()->availableGeometry(); // 获取屏幕的最大化尺寸
         this->m_maxBtnStyle = R"(QToolButton#max_toolButton {
                                 background-color: rgba(255,255,255,0);
                                 qproperty-icon: url("://Res/titlebar/resume-black.svg");
@@ -677,9 +701,9 @@ void KuGouApp::on_max_toolButton_clicked() {
         ui->max_toolButton->setMyIcon(QIcon("://Res/titlebar/resume-black.svg"));
         this->m_animation->setDuration(400); // 设置动画持续时间
     }
-    //qDebug()<<"start : "<<this->startGeometry<<" end : "<<this->endGeometry;
-    this->m_animation->setStartValue(startGeometry); // 动画开始时的窗口几何
-    this->m_animation->setEndValue(endGeometry); // 动画结束时的窗口几何
+    //qDebug()<<"start : "<<this->m_startGeometry<<" end : "<<this->m_endGeometry;
+    this->m_animation->setStartValue(m_startGeometry); // 动画开始时的窗口几何
+    this->m_animation->setEndValue(m_endGeometry); // 动画结束时的窗口几何
     this->m_animation->setEasingCurve(QEasingCurve::InOutQuad); // 设置动画的缓动曲线
 
     this->m_isTransForming = true; // 正在变形，禁用点击、拖动事件

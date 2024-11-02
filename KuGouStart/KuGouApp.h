@@ -51,6 +51,8 @@ private:
     void initCornerWidget();
 
     int getCurrentIndex(int index);    //通过在旧的vector里面的下标，来找新的下标
+
+    void update_cover_singer_song_HLayout();
 private:
     void addOrderIndex();
 
@@ -168,8 +170,9 @@ private:
     bool                        m_isPlaying = false;
     QPoint                      m_pressPos;
     QString                     m_maxBtnStyle;
-    QRect                       startGeometry; // 获取当前窗口的几何形状(正常状态)
-    QRect                       endGeometry;
+    QRect                       m_startGeometry; // 获取当前窗口的几何形状(正常状态)
+    QRect                       m_endGeometry;
+    QRect                       m_normalGeometry;//非最大化状态
 
     bool                    m_isOrderPlay = false;//专门提供给开始播放按钮
     int                     m_orderIndex = 0;

@@ -1673,7 +1673,7 @@
             <number>5</number>
            </property>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <layout class="QHBoxLayout" name="singer_song_HLayout">
              <property name="spacing">
               <number>0</number>
              </property>
@@ -1694,6 +1694,9 @@
                <property name="text">
                 <string/>
                </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
                <property name="alignment">
                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                </property>
@@ -1702,13 +1705,16 @@
              <item>
               <widget class="QLabel" name="singer_label">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
                <property name="text">
                 <string/>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
                </property>
                <property name="alignment">
                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1718,7 +1724,7 @@
             </layout>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <layout class="QHBoxLayout" name="song_option_HLayout">
              <item>
               <widget class="QToolButton" name="love_toolButton">
                <property name="toolTip">
