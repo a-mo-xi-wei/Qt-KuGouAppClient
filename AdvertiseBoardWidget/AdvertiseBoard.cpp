@@ -87,12 +87,16 @@ void AdvertiseBoard::paintEvent(QPaintEvent *ev)
     const auto s = static_cast<int>(this->m_posters.size());
     auto drawStartPos = QPoint((this->width() - (s-1) * (G_Radius * 2 + G_Space)) / 2,this->height() - 10);
     for(auto i = 0 ; i < this->m_posters.size() ; ++i){
-        if(i == posterIndex)
-            painter.setBrush(Qt::red);
-        else
+        if(i == posterIndex) {
+            painter.setBrush(Qt::cyan);
+            painter.drawEllipse(drawStartPos,G_Radius + 2,G_Radius + 2);
+            drawStartPos.setX(drawStartPos.x() + G_Space + 2 * (G_Radius + 1));
+        }
+        else {
             painter.setBrush(Qt::white);
-        painter.drawEllipse(drawStartPos,G_Radius,G_Radius);
-        drawStartPos.setX(drawStartPos.x() + G_Space + 2 * G_Radius);
+            painter.drawEllipse(drawStartPos,G_Radius,G_Radius);
+            drawStartPos.setX(drawStartPos.x() + G_Space + 2 * G_Radius);
+        }
     }
 }
 
