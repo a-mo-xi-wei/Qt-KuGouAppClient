@@ -442,7 +442,16 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
     //song_info_widget适度延展
     ui->song_info_widget->setFixedWidth(this->width()/8+20);
     if(!this->m_player->source().isEmpty())update_cover_singer_song_HLayout();
-    //qDebug()<<"song_info_widget->width "<<ui->song_info_widget->width();
+    //stackedWidget宽度处理
+    if(ui->stackedWidget->width() + ui->menu_scrollArea->width() > this->width() - 20) {
+
+        //ui->stackedWidget->setFixedWidth(this->width() - ui->menu_scrollArea->width() - 20);
+        auto geo = ui->stackedWidget->geometry();
+        geo.setWidth(this->width() - ui->menu_scrollArea->width() - 30);
+        ui->stackedWidget->setGeometry(geo);
+
+    }
+
 }
 
 bool KuGouApp::event(QEvent *event) {
