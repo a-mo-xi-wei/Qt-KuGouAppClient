@@ -12,7 +12,8 @@ Q_OBJECT
 
 public:
     explicit MyStackedWidget(QWidget *parent = nullptr);
-
+protected:
+    void resizeEvent(QResizeEvent *event) override;
 };
 
 
