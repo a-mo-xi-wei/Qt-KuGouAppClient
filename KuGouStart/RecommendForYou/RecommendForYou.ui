@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>862</width>
+    <width>880</width>
     <height>526</height>
    </rect>
   </property>
@@ -325,6 +325,12 @@
    </item>
    <item>
     <widget class="QWidget" name="table_widget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <layout class="QVBoxLayout" name="verticalLayout_8">
       <item>
        <spacer name="verticalSpacer">
