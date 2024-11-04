@@ -90,17 +90,22 @@ QWidget#center_widget *{
 }
 
 /*--------------------menu_scrollArea------------------------------*/
+QLabel#menu_find_music_label,QLabel#menu_myMusic_label{
+    color: #2d5a46;
+}
+
 QScrollArea#menu_scrollArea QToolButton{
-    font: bold;
     padding-left:20px;
     border-radius:10px;
     border:none;
 }
 QScrollArea#menu_scrollArea QToolButton:hover{
     background-color:#c0c0c0;
+    font-size: 14px;
 }
 QScrollArea#menu_scrollArea QToolButton:checked{
     background-color:#268cff;
+    font-size: 14px;
 }
 /*--------------------play_widget------------------------------*/
 
