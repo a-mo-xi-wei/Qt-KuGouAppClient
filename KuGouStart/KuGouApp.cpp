@@ -104,6 +104,7 @@ KuGouApp::KuGouApp(MainWindow *parent)
     connect(this->m_localDownload.get(), &LocalDownload::playMusic, this, &KuGouApp::onPlayMusic);
     connect(this->m_localDownload.get(), &LocalDownload::startPlay, this, &KuGouApp::onStartPlay);
     connect(this->m_localDownload.get(), &LocalDownload::addSongInfo, this, &KuGouApp::onAddSongInfo);
+    connect(this->m_localDownload.get(), &LocalDownload::subSongInfo, this, &KuGouApp::onSubSongInfo);
 
     connect(this, &KuGouApp::setPlayIndex, this->m_localDownload.get(), &LocalDownload::setPlayIndex);
     connect(this, &KuGouApp::maxScreen, this->m_localDownload.get(), &LocalDownload::onMaxScreenHandle);
@@ -263,14 +264,26 @@ void KuGouApp::initCornerWidget() {
 }
 
 int KuGouApp::getCurrentIndex(int index) {
+    if (index < 0 || index > static_cast<int>(this->m_lastSongInfoVector.size())||this->m_lastSongInfoVector.isEmpty()) {
+        //qDebug() << "获取下标错误";
+        return -1;
+    }
+    if(index == this->m_lastSongInfoVector.size())--index;
     //直接默认从旧的排序中找
+    qDebug()<<"旧排序中，在 "<<index;
     SongInfor temp;
     temp.songName = this->m_lastSongInfoVector[index].songName;
     temp.singer = this->m_lastSongInfoVector[index].singer;
     temp.duration = this->m_lastSongInfoVector[index].duration;
     auto index1 = std::find(m_songInfoVector.begin(), m_songInfoVector.end(),temp);
-
+    if(index1 == m_songInfoVector.end()) {
+        if(index == m_songInfoVector.size()) {
+            return index-1;
+        }
+        return index;
+    }
     index = static_cast<int>(index1 - m_songInfoVector.begin());
+    qDebug()<<"找到，现在是 ======== "<<index;
     return index;
 }
 
@@ -311,8 +324,11 @@ void KuGouApp::subOrderIndex() {
 }
 
 void KuGouApp::addSongIndex() {
+    qDebug()<<"之前正在播放第 "<<this->m_songIndex<<" 首歌";
     this->m_songIndex = (this->m_songIndex + 1) % static_cast<int>(this->m_songInfoVector.size());;
+    qDebug()<<"现在播放第 "<<this->m_songIndex<<" 首歌";
     setPlayMusic(this->m_songIndex);
+    qDebug()<<"设置高亮成功";
 }
 
 void KuGouApp::subSongIndex() {
@@ -441,10 +457,10 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
     this->m_upBtn->raise();
     //song_info_widget适度延展
     ui->song_info_widget->setFixedWidth(this->width()/8+20);
-    if(!this->m_player->source().isEmpty())update_cover_singer_song_HLayout();
+    //
+    if(!this->m_player->source().isEmpty() && !this->m_songInfoVector.isEmpty())update_cover_singer_song_HLayout();
     //stackedWidget宽度处理
     if(ui->stackedWidget->width() + ui->menu_scrollArea->width() > this->width() - 20) {
-
         //ui->stackedWidget->setFixedWidth(this->width() - ui->menu_scrollArea->width() - 20);
         auto geo = ui->stackedWidget->geometry();
         geo.setWidth(this->width() - ui->menu_scrollArea->width() - 30);
@@ -512,9 +528,8 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
 }
 
 void KuGouApp::setPlayMusic(int &index) {
-    //qDebug()<<"之前是第 "<<index<<" 首";
+    qDebug()<<"设置第 "<<index<<" 首高亮";
     emit setPlayIndex(index);
-    //qDebug()<<"现在是第 "<<index<<" 首";
     this->m_player->stop();
     this->m_player->setSource(QUrl(this->m_songInfoVector[index].mediaPath));
     this->m_player->play();
@@ -551,6 +566,31 @@ void KuGouApp::onStartPlay() {
 void KuGouApp::onAddSongInfo(const SongInfor &info) {
     this->m_songInfoVector.emplace_back(info);
     this->m_lastSongInfoVector.emplace_back(info);
+}
+
+void KuGouApp::onSubSongInfo(const SongInfor &info) {
+    auto it = std::find(this->m_songInfoVector.begin(),this->m_songInfoVector.end(),info);
+    this->m_songInfoVector.erase(it);
+    //auto it2 = std::find(this->m_lastSongInfoVector.begin(),this->m_lastSongInfoVector.end(),info);
+    //this->m_lastSongInfoVector.erase(it2);
+
+    //更新下标
+    int index = -1;
+    for(auto& val : this->m_songInfoVector) {
+        val.index = ++index;
+    }
+    //如果之前设置了循环，则改为初始状态
+    if(this->m_songInfoVector.isEmpty()) {
+        this->m_isOrderPlay = false;
+        this->m_isSingleCircle = false;
+        ui->circle_toolButton->setStyleSheet(R"(QToolButton{border-image:url('://Res/playbar/list-loop-gray.svg');}
+                                            QToolButton:hover{border-image:url('://Res/playbar/list-loop-blue.svg');})");
+    }
+    //更新当前播放下标
+    this->m_songIndex = getCurrentIndex(this->m_songIndex);
+    this->m_orderIndex = getCurrentIndex(this->m_orderIndex);
+
+    this->m_lastSongInfoVector =  this->m_songInfoVector;
 }
 
 void KuGouApp::onUpBtnClicked() {
@@ -785,7 +825,7 @@ void KuGouApp::on_more_toolButton_clicked() {
 }
 
 void KuGouApp::on_circle_toolButton_clicked() {
-    if (this->m_player->source().isEmpty()) return;
+    if (this->m_player->source().isEmpty()|| this->m_songInfoVector.isEmpty()) return;
     m_isSingleCircle = !m_isSingleCircle;
     if (m_isSingleCircle) {
         this->m_isOrderPlay = false;
@@ -800,6 +840,7 @@ void KuGouApp::on_circle_toolButton_clicked() {
             mediaStatusConnection = connect(this->m_player.get(), &QMediaPlayer::mediaStatusChanged, this,
                                             [=](QMediaPlayer::MediaStatus status) {
                                                 if (status == QMediaPlayer::EndOfMedia) {
+                                                    if(this->m_songInfoVector.isEmpty())return;
                                                     //qDebug()<<"播放结束";
                                                     // 当播放结束时，重新开始播放
                                                     //qDebug()<<"循环播放 ："<<this->m_isSingleCircle;
@@ -817,6 +858,7 @@ void KuGouApp::on_circle_toolButton_clicked() {
             mediaStatusConnection = connect(this->m_player.get(), &QMediaPlayer::mediaStatusChanged, this,
                                             [=](QMediaPlayer::MediaStatus status) {
                                                 if (status == QMediaPlayer::EndOfMedia) {
+                                                    if(this->m_songInfoVector.isEmpty())return;
                                                     if (this->m_isOrderPlay) {
                                                         //qDebug()<<"结束，开始播放下一首";
                                                         addOrderIndex();
@@ -832,13 +874,13 @@ void KuGouApp::on_circle_toolButton_clicked() {
 }
 
 void KuGouApp::on_pre_toolButton_clicked() {
-    if (this->m_player->source().isEmpty()) return;
+    if (this->m_player->source().isEmpty()|| this->m_songInfoVector.isEmpty()) return;
     if (this->m_isOrderPlay) subOrderIndex();
     else subSongIndex();
 }
 
 void KuGouApp::on_next_toolButton_clicked() {
-    if (this->m_player->source().isEmpty()) return;
+    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) return;
     if (this->m_isOrderPlay) addOrderIndex();
     else addSongIndex();
 }

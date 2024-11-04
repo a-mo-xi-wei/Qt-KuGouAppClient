@@ -6,7 +6,6 @@
 
 #include "LocalDownload.h"
 #include "ui_LocalDownload.h"
-#include "MyStackedWidget.h"
 
 #include<QStandardPaths>
 #include<QFileDialog>
@@ -46,6 +45,7 @@ LocalDownload::LocalDownload(QWidget *parent)
     }
     getMetaData();
     init();
+    //选中相关
     connect(m_sortOptMenu,&MyMenu::selected,this,[this] {
         //ui->local_sort_toolButton->setStyleSheet("border-image:url('://Res/titlebar/sort-blue.svg');");
         ui->local_sort_toolButton->setStyleSheet("QToolButton{border-image:url('://Res/titlebar/sort-blue.svg');}");
@@ -56,6 +56,7 @@ LocalDownload::LocalDownload(QWidget *parent)
                 QToolButton{border-image:url('://Res/titlebar/sort-gray.svg');}
                 QToolButton:hover{border-image:url('://Res/titlebar/sort-blue.svg');})");
     });
+    //排序相关
     connect(m_sortOptMenu,&MyMenu::defaultSort,this,&LocalDownload::onDefaultSort);
     connect(m_sortOptMenu,&MyMenu::addTimeSort,this,&LocalDownload::onAddTimeSort);
     connect(m_sortOptMenu,&MyMenu::songNameSort,this,&LocalDownload::onSongNameSort);
@@ -63,6 +64,7 @@ LocalDownload::LocalDownload(QWidget *parent)
     connect(m_sortOptMenu,&MyMenu::durationSort,this,&LocalDownload::onDurationSort);
     connect(m_sortOptMenu,&MyMenu::playCountSort,this,&LocalDownload::onPlayCountSort);
     connect(m_sortOptMenu,&MyMenu::randomSort,this,&LocalDownload::onRandomSort);
+
 }
 
 LocalDownload::~LocalDownload() {
@@ -153,13 +155,8 @@ void LocalDownload::getMetaData() {
             emit addSongInfo(tempInformation);
             //加载相关信息
             auto item = new MusicItemWidget(tempInformation, this);
-            item->setFillColor(QColor(QStringLiteral("#B0EDF6")));
-            item->setRadius(12);
-            item->setInterval(1);
-            //int index = tempInformation.index;// 捕获当前的 index
-            connect(item, &MusicItemWidget::playRequest, this, [item, this] {
-                emit playMusic(item->m_information.index);
-            });
+            //初始化item
+            initMusicItem(item);
             //插入Item
             this->m_MusicItemVector.emplace_back(item);
             auto layout = dynamic_cast<QVBoxLayout*>(ui->local_song_list_widget->layout());
@@ -230,6 +227,7 @@ void LocalDownload::getMenuPosition(const QPoint &pos) {
 void LocalDownload::MySort(std::function<bool(const MusicItemWidget *, const MusicItemWidget *)> comparator) {
     //记录当前的（旧的）vector
     this->m_lastLocationMusicVector = this-> m_locationMusicVector;
+    if(this->m_lastLocationMusicVector.isEmpty())return;
     //初始UI
     ui->local_song_list_widget->setUpdatesEnabled(false);
     auto layout = ui->local_song_list_widget->layout();
@@ -265,6 +263,17 @@ void LocalDownload::updateCurPlayIndex() {
     SongInfor temp = this->m_lastLocationMusicVector[this->m_curPlayIndex];
     //重新赋值m_curPlayIndex
     this->m_curPlayIndex = static_cast<int>(std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), temp) - this->m_locationMusicVector.begin());
+}
+
+void LocalDownload::initMusicItem(MusicItemWidget* item) {
+    item->setFillColor(QColor(QStringLiteral("#B0EDF6")));
+    item->setRadius(12);
+    item->setInterval(1);
+    //int index = tempInformation.index;// 捕获当前的 index
+    connect(item, &MusicItemWidget::play, this, [item, this] {
+        emit playMusic(item->m_information.index);
+    });
+    connect(item, &MusicItemWidget::deleteSong,this,&LocalDownload::onItemDeleteSong);
 }
 
 void LocalDownload::on_local_play_toolButton_clicked() {
@@ -329,8 +338,10 @@ void LocalDownload::on_downloading_pushButton_clicked() {
 }
 
 void LocalDownload::setPlayIndex(const int &index) {
+    if(this->m_locationMusicVector.isEmpty())return;
     this->m_setPlayIndex = index;
-    //qDebug()<<"开始播放第 : "<<index<<" 首歌";
+    qDebug()<<"开始播放第 : "<<index<<" 首歌";
+    qDebug()<<m_curPlayIndex<<"**********";
     if(this->m_curPlayIndex == -1) {
         this->m_curPlayIndex = index;
         auto widget = m_MusicItemVector[index];
@@ -355,6 +366,7 @@ void LocalDownload::setPlayIndex(const int &index) {
 }
 
 void LocalDownload::onMaxScreenHandle() {
+    if(this->m_locationMusicVector.isEmpty())return;
     if(this->m_curPlayIndex != -1) {
         //qDebug()<<"正在播放第 : "<<this->m_curPlayIndex<<" 首歌";
         auto widget = m_MusicItemVector[this->m_curPlayIndex];
@@ -432,6 +444,7 @@ void LocalDownload::onPlayCountSort(const bool& down) {
 void LocalDownload::onRandomSort() {
     //记录当前的（旧的）vector
     this->m_lastLocationMusicVector = this-> m_locationMusicVector;
+    if(this->m_lastLocationMusicVector.isEmpty())return;
     //初始UI
     ui->local_sort_toolButton->setToolTip("当前排序方式：随机排序");
     ui->local_song_list_widget->setUpdatesEnabled(false);
@@ -462,6 +475,70 @@ void LocalDownload::onRandomSort() {
     ui->local_song_list_widget->setUpdatesEnabled(true);
     update();
     updateCurPlayIndex();
+}
+
+void LocalDownload::onItemNextPlay() {
+}
+
+void LocalDownload::onItemAddToPlayQueue() {
+}
+
+void LocalDownload::onItemAddToNewSongList() {
+}
+
+void LocalDownload::onItemAddToLove() {
+}
+
+void LocalDownload::onItemAddToCollect() {
+}
+
+void LocalDownload::onItemAddtoPlayList() {
+}
+
+void LocalDownload::onItemDownload() {
+}
+
+void LocalDownload::onItemShare() {
+}
+
+void LocalDownload::onItemComment() {
+}
+
+void LocalDownload::onItemSameSong() {
+}
+
+void LocalDownload::onItemViewSongInfo() {
+}
+
+void LocalDownload::onItemDeleteSong(const int& idx) {
+    //qDebug()<<"收到删除信号，删除第 "<<idx<<" 项";
+    this->m_lastLocationMusicVector = this-> m_locationMusicVector;
+    auto widget = this->m_MusicItemVector[idx];
+    widget->deleteLater();
+    emit subSongInfo(m_locationMusicVector[idx]);//向KuGou发送删除idx信号
+    this->m_locationMusicVector.erase(m_locationMusicVector.cbegin()+idx);
+    this->m_MusicItemVector.erase(m_MusicItemVector.cbegin()+idx);
+    //更新下标
+    int index = -1;
+    for(auto& val : this->m_locationMusicVector) {
+        val.index = ++index;
+    }
+    index  = -1;
+    for(auto& val : this->m_MusicItemVector) {
+        val->m_information.index = ++index;//更换下标
+        val->setIndexText(index+1);//设置indexLab
+    }
+    update();
+    updateCurPlayIndex();
+}
+
+void LocalDownload::onItemOpenInFile() {
+}
+
+void LocalDownload::onItemSearch() {
+}
+
+void LocalDownload::onItemUpLoad() {
 }
 
 void LocalDownload::on_local_sort_toolButton_clicked() {

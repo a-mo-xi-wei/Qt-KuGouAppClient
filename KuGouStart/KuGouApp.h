@@ -131,6 +131,8 @@ public slots:
 
     void onAddSongInfo(const SongInfor &info);
 
+    void onSubSongInfo(const SongInfor &info);
+
     void onUpBtnClicked();
 
     void onScrollBarValueChanged(const int& value);
@@ -180,7 +182,7 @@ private:
     int                     m_orderIndex = 0;
     QVector<SongInfor>      m_songInfoVector;
     QVector<SongInfor>      m_lastSongInfoVector;//保留上一次排序的结果
-    int                     m_songIndex = 0;//播放的歌曲的下标
+    int                     m_songIndex = -1;//播放的歌曲的下标
 
     QEasingCurve            m_curves = QEasingCurve::OutBounce;
     QScrollBar*             m_vScrollBar{};

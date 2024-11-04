@@ -383,7 +383,8 @@ void MyMenu::initSongOptionMenu() {
         a_deleteSongToolBtn->setText(QStringLiteral("  从列表中删除"));
         a_deleteAction->setDefaultWidget(a_deleteSongToolBtn);
         connect(a_deleteSongToolBtn, &QToolButton::clicked, this, [this] {
-            emit deleteSong();
+            //qDebug()<<"发送删除信号，删除第 "<<this->m_curIndex<<" 项";
+            emit deleteSong(this->m_curIndex);
         });
         connect(a_deleteAction, &QWidgetAction::hovered, this, [a_deleteSongToolBtn,this] {
             checkHover();
@@ -1358,6 +1359,10 @@ void MyMenu::checkSelection() {
             //qDebug()<<"图标设置为空";
         }
     }
+}
+
+void MyMenu::setCurIndex(const int &idx) {
+    this->m_curIndex = idx;
 }
 
 void MyMenu::paintEvent(QPaintEvent *event) {

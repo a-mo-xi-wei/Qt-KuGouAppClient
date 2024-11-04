@@ -68,7 +68,8 @@ public:
     void checkHover();
 
     void checkSelection();
-
+public:
+    void setCurIndex(const int& idx); //设置当前响应下标
 signals:
     //显示
     void showSelf();
@@ -85,7 +86,7 @@ signals:
     void comment();
     void sameSong();
     void songInfo();
-    void deleteSong();
+    void deleteSong(const int& idx);
     void openInFile();
     void search();
     void upload();
@@ -136,6 +137,9 @@ private:
     //为了解决顺序图标只能显示一个的问题
     MenuBtn* m_lastSelect{};
     MenuBtn* m_curSelect{};
+private:
+    //item menu 相关
+    int m_curIndex = -1;    //当前让menu显示的那item的index
 };
 
 

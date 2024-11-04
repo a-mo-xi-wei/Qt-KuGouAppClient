@@ -35,12 +35,9 @@ public:
 
     void updateCurPlayIndex();
 
-
+    void initMusicItem(MusicItemWidget* item);
 private slots:
-    void on_local_play_toolButton_clicked();
-
-    void on_local_add_toolButton_clicked();
-
+    //ui相关
     void on_local_music_pushButton_clicked();
 
     void on_downloaded_music_pushButton_clicked();
@@ -49,14 +46,20 @@ private slots:
 
     void on_downloading_pushButton_clicked();
 
+    void on_local_play_toolButton_clicked();
+
+    void on_local_add_toolButton_clicked();
+
     void on_local_sort_toolButton_clicked();
 
 public slots:
+    //其他
     void setPlayIndex(const int& index);
 
     void onMaxScreenHandle();   //最大化的时候延伸高亮部分
 
 public slots:
+    //排序相关
     void onDefaultSort();
 
     void onAddTimeSort(const bool& down);
@@ -70,6 +73,24 @@ public slots:
     void onPlayCountSort(const bool& down);
 
     void onRandomSort();
+public slots:
+    //Item menu相关
+    void onItemNextPlay();
+    void onItemAddToPlayQueue();
+    void onItemAddToNewSongList();
+    void onItemAddToLove();
+    void onItemAddToCollect();
+    void onItemAddtoPlayList();
+    void onItemDownload();
+    void onItemShare();
+    void onItemComment();
+    void onItemSameSong();
+    void onItemViewSongInfo();
+    void onItemDeleteSong(const int& idx);
+    void onItemOpenInFile();
+    void onItemSearch();
+    void onItemUpLoad();
+    //Title menu相关
 
 signals:
     void playMusic(int index);
@@ -78,6 +99,9 @@ signals:
 
     void addSongInfo(const SongInfor& info);
 
+    void subSongInfo(const SongInfor& info);
+
+    //同步(更新)Vec
     void syncSongInfo(QVector<SongInfor>& vec);
 
 private:

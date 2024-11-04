@@ -95,6 +95,7 @@ MusicItemWidget::MusicItemWidget(SongInfor  infor, QWidget *parent)
     connect(this->m_moreToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onMoreToolBtnClicked);
     //menu响应
     connect(m_songOptMenu, &MyMenu::play, this, &MusicItemWidget::onPlay);
+    connect(m_songOptMenu, &MyMenu::deleteSong, this, &MusicItemWidget::onDeleteSong);
 }
 
 void MusicItemWidget::setIndexText(const int &index) {
@@ -253,6 +254,7 @@ void MusicItemWidget::mousePressEvent(QMouseEvent *event) {
         getMenuPosition(this->mapToGlobal(event->pos()));
         this->m_songOptMenu->move(this->m_menuPosition);
         this->m_songOptMenu->show();
+        this->m_songOptMenu->setCurIndex(this->m_information.index);
     }
     else {
         QFrame::mousePressEvent(event);//要么放else里面，要么注释掉这一行，否则会不显示
@@ -262,7 +264,7 @@ void MusicItemWidget::mousePressEvent(QMouseEvent *event) {
 void MusicItemWidget::onPlayToolBtnClicked() {
     //this->m_information.playCount++;//放这里不明智
     //qDebug()<<"已播放："<<this->m_information.playCount;
-    emit playRequest();
+    emit play();
 }
 
 void MusicItemWidget::onPlayNextToolBtnClicked() {
@@ -279,10 +281,12 @@ void MusicItemWidget::onMoreToolBtnClicked() {
     getMenuPosition(QCursor::pos());
     this->m_songOptMenu->move(this->m_menuPosition);
     this->m_songOptMenu->show();
+    this->m_songOptMenu->setCurIndex(this->m_information.index);
+
 }
 
 void MusicItemWidget::onPlay() {
-    this->m_playToolBtn->clicked();
+    emit play();
 }
 
 void MusicItemWidget::onNextPlay() {
@@ -318,7 +322,8 @@ void MusicItemWidget::onSameSong() {
 void MusicItemWidget::onViewSongInfo() {
 }
 
-void MusicItemWidget::onDeleteSong() {
+void MusicItemWidget::onDeleteSong(const int& idx) {
+    emit deleteSong(idx);
 }
 
 void MusicItemWidget::onOpenInFile() {

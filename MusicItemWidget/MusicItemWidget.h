@@ -72,7 +72,7 @@ private slots:
     void onCollectToolBtnClicked();
 
     void onMoreToolBtnClicked();
-    //menu
+    //menu (中转)
     void onPlay();
     void onNextPlay();
     void onAddToPlayQueue();
@@ -85,13 +85,27 @@ private slots:
     void onComment();
     void onSameSong();
     void onViewSongInfo();
-    void onDeleteSong();
+    void onDeleteSong(const int& idx);
     void onOpenInFile();
     void onSearch();
     void onUpLoad();
 signals:
-    void playRequest();
-
+    void play();
+    void nextPlay();
+    void addToPLayQueue();
+    void addToNewSongList();
+    void addToLove();
+    void addToCollect();
+    void addToPlayList();
+    void download();
+    void share();
+    void comment();
+    void sameSong();
+    void viewSongInfo();
+    void deleteSong(const int& idx);
+    void openInFile();
+    void search();
+    void upload();
 private:
     void initUi();
 
