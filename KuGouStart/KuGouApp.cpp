@@ -275,14 +275,12 @@ int KuGouApp::getCurrentIndex(int index) {
     temp.songName = this->m_lastSongInfoVector[index].songName;
     temp.singer = this->m_lastSongInfoVector[index].singer;
     temp.duration = this->m_lastSongInfoVector[index].duration;
-    auto index1 = std::find(m_songInfoVector.begin(), m_songInfoVector.end(),temp);
-    if(index1 == m_songInfoVector.end()) {
-        if(index == m_songInfoVector.size()) {
-            return index-1;
-        }
-        return index;
+    auto index1 = std::find(m_lastSongInfoVector.begin(), m_lastSongInfoVector.end(),temp);
+    if(index1 == m_lastSongInfoVector.end()-1) {
+        qDebug()<<"找到了 ======== "<<index-1;
+        return index-1;
     }
-    index = static_cast<int>(index1 - m_songInfoVector.begin());
+    index = static_cast<int>(index1 - m_lastSongInfoVector.begin());
     qDebug()<<"找到，现在是 ======== "<<index;
     return index;
 }

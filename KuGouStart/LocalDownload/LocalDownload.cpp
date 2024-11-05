@@ -260,9 +260,14 @@ void LocalDownload::MySort(std::function<bool(const MusicItemWidget *, const Mus
 void LocalDownload::updateCurPlayIndex() {
     //记录m_curPlayIndex;
     if(m_curPlayIndex == -1)return;
-    SongInfor temp = this->m_lastLocationMusicVector[this->m_curPlayIndex];
+    auto temp = this->m_lastLocationMusicVector[this->m_curPlayIndex];
     //重新赋值m_curPlayIndex
-    this->m_curPlayIndex = static_cast<int>(std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), temp) - this->m_locationMusicVector.begin());
+    auto it = std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), temp);
+    if(it == this->m_locationMusicVector.end()) {
+        //没找到，说明删除的是最后一个
+        --it;
+    }
+    this->m_curPlayIndex = static_cast<int>(it - this->m_locationMusicVector.begin());
 }
 
 void LocalDownload::initMusicItem(MusicItemWidget* item) {
