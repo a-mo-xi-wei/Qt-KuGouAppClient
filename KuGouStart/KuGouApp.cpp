@@ -270,18 +270,19 @@ int KuGouApp::getCurrentIndex(int index) {
     }
     if(index == this->m_lastSongInfoVector.size())--index;
     //直接默认从旧的排序中找
-    qDebug()<<"旧排序中，在 "<<index;
+    //qDebug()<<"旧排序中，在 "<<index;
     SongInfor temp;
     temp.songName = this->m_lastSongInfoVector[index].songName;
     temp.singer = this->m_lastSongInfoVector[index].singer;
     temp.duration = this->m_lastSongInfoVector[index].duration;
-    auto index1 = std::find(m_lastSongInfoVector.begin(), m_lastSongInfoVector.end(),temp);
-    if(index1 == m_lastSongInfoVector.end()-1) {
-        qDebug()<<"找到了 ======== "<<index-1;
+    auto index1 = std::find(m_songInfoVector.begin(), m_songInfoVector.end(), temp);
+
+    if(index1 == m_songInfoVector.end()) {//删除的是自己本身
+        //qDebug()<<"找到了 ======== "<<index-1;
         return index-1;
     }
-    index = static_cast<int>(index1 - m_lastSongInfoVector.begin());
-    qDebug()<<"找到，现在是 ======== "<<index;
+    index = static_cast<int>(index1 - m_songInfoVector.begin());
+    //qDebug()<<"找到，现在是 ======== "<<index;
     return index;
 }
 
@@ -322,11 +323,11 @@ void KuGouApp::subOrderIndex() {
 }
 
 void KuGouApp::addSongIndex() {
-    qDebug()<<"之前正在播放第 "<<this->m_songIndex<<" 首歌";
+    //qDebug()<<"之前正在播放第 "<<this->m_songIndex<<" 首歌";
     this->m_songIndex = (this->m_songIndex + 1) % static_cast<int>(this->m_songInfoVector.size());;
-    qDebug()<<"现在播放第 "<<this->m_songIndex<<" 首歌";
+    //qDebug()<<"现在播放第 "<<this->m_songIndex<<" 首歌";
     setPlayMusic(this->m_songIndex);
-    qDebug()<<"设置高亮成功";
+    //qDebug()<<"设置高亮成功";
 }
 
 void KuGouApp::subSongIndex() {
@@ -526,7 +527,7 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
 }
 
 void KuGouApp::setPlayMusic(int &index) {
-    qDebug()<<"设置第 "<<index<<" 首高亮";
+    //qDebug()<<"设置第 "<<index<<" 首高亮";
     emit setPlayIndex(index);
     this->m_player->stop();
     this->m_player->setSource(QUrl(this->m_songInfoVector[index].mediaPath));

@@ -345,8 +345,8 @@ void LocalDownload::on_downloading_pushButton_clicked() {
 void LocalDownload::setPlayIndex(const int &index) {
     if(this->m_locationMusicVector.isEmpty())return;
     this->m_setPlayIndex = index;
-    qDebug()<<"开始播放第 : "<<index<<" 首歌";
-    qDebug()<<m_curPlayIndex<<"**********";
+    //qDebug()<<"开始播放第 : "<<index<<" 首歌";
+    //qDebug()<<m_curPlayIndex<<"**********";
     if(this->m_curPlayIndex == -1) {
         this->m_curPlayIndex = index;
         auto widget = m_MusicItemVector[index];
@@ -365,6 +365,9 @@ void LocalDownload::setPlayIndex(const int &index) {
             widget = m_MusicItemVector[this->m_curPlayIndex];
             widget->setPlayState(false);
             this->m_curPlayIndex = this->m_setPlayIndex;
+        }
+        else {
+            widget->setPlayState(true);
         }
     }
 
