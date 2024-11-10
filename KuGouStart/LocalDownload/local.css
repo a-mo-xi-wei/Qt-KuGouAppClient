@@ -4,6 +4,7 @@ QLabel#local_download_label {
     font-size:25px;
     font-weight:bold;
 }
+/*--------------------guide_widget------------------------------*/
 QWidget#guide_widget QPushButton {
     color:black;
     font-size:14px;
@@ -16,10 +17,15 @@ QWidget#guide_widget QPushButton:checked {
     font-size:17px;
     font-weight:bold;
 }
+QWidget#guide_widget QPushButton:hover {
+    font-size:15px;
+    font-weight:bold;
+}
 QWidget#guide_widget QLabel {
     padding-top:0px;
     margin: 0px;
 }
+/*--------------------operation_widget------------------------------*/
 QWidget#operation_widget > QToolButton {
     background-color: #e2e5ff;
     border: none;
@@ -36,7 +42,7 @@ QWidget#operation_widget QToolButton#local_play_toolButton{
 QWidget#operation_widget QToolButton#local_play_toolButton:hover{
     background-color:#2085d9;
 }
-
+/*--------------------small_widget------------------------------*/
 QWidget#small_widget{
     border: 1px solid #b4bcff;
     border-radius:15px;
