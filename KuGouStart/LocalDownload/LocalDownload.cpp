@@ -526,6 +526,7 @@ void LocalDownload::onItemDeleteSong(const int& idx) {
     emit subSongInfo(m_locationMusicVector[idx]);//向KuGou发送删除idx信号
     this->m_locationMusicVector.erase(m_locationMusicVector.cbegin()+idx);
     this->m_MusicItemVector.erase(m_MusicItemVector.cbegin()+idx);
+    ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
     //更新下标
     int index = -1;
     for(auto& val : this->m_locationMusicVector) {
