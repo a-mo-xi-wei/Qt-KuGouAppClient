@@ -41,6 +41,9 @@ add_subdirectory(MySearchLineEdit)
 #回到顶部模块
 add_subdirectory(UpToolButton)
 
+#文字在前图标在后的按钮模块
+add_subdirectory(IconBesideTextToolButton)
+
 #滚动区域模块
 add_subdirectory(MyScrollArea)
 
