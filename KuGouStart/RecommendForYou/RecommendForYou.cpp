@@ -7,7 +7,6 @@
 #include "RecommendForYou.h"
 #include "ui_RecommendForYou.h"
 #include "TableWidget.h"
-#include "MyStackedWidget.h"
 
 #include<QDir>
 #include <QResizeEvent>
