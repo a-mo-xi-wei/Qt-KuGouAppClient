@@ -28,6 +28,7 @@ RecommendForYou::RecommendForYou(QWidget *parent) :
     }
 
     initAdvertiseBoard();
+    initClassifyWidget();
     initTabWidget();
 }
 
@@ -42,7 +43,27 @@ void RecommendForYou::initAdvertiseBoard()
 
     auto s = dir.entryList(QDir::Files | QDir::NoDotAndDotDot).size();
     for (auto i = 1; i <= s; ++i)
-        ui->advertise_board_widget->addPoster(QPixmap(QString(":///Res/poster/%1.jpg").arg(i)));
+        ui->advertise_board_widget->addPoster(QPixmap(QString(":/Res/poster/%1.jpg").arg(i)));
+}
+
+void RecommendForYou::initClassifyWidget() {
+    ui->recommend_toolButton->setIcon(QIcon(":/Res/tabIcon/rili.svg"));
+    ui->recommend_toolButton->setEnterIconSize(QSize(35,35));
+    ui->recommend_toolButton->setLeaveIconSize(QSize(30,30));
+    ui->ranking_list_toolButton->setIcon(QIcon(":/Res/tabIcon/rank.svg"));
+    ui->ranking_list_toolButton->setEnterIconSize(QSize(40,40));
+    ui->ranking_list_toolButton->setLeaveIconSize(QSize(35,35));
+    ui->classify_toolButton->setIcon(QIcon(":/Res/tabIcon/classification.svg"));
+    ui->classify_toolButton->setEnterIconSize(QSize(40,40));
+    ui->classify_toolButton->setLeaveIconSize(QSize(35,35));
+    ui->scene_music_toolButton->setIcon(QIcon(":/Res/tabIcon/shafa.svg"));
+    ui->scene_music_toolButton->setEnterIconSize(QSize(45,45));
+    ui->scene_music_toolButton->setLeaveIconSize(QSize(40,40));
+    ui->scene_music_toolButton->setEnterFontSize(13);
+    ui->music_quality_toolButton->setIcon(QIcon(":/Res/tabIcon/dish.svg"));
+    ui->music_quality_toolButton->setEnterIconSize(QSize(40,40));
+    ui->music_quality_toolButton->setLeaveIconSize(QSize(35,35));
+    //ui->recommend_toolButton->setIcon(QIcon(":/Res/tabIcon/rili.svg"));
 }
 
 void RecommendForYou::initTabWidget() {

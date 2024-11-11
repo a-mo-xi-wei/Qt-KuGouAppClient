@@ -22,6 +22,8 @@ public:
 private:
     void initAdvertiseBoard();
 
+    void initClassifyWidget();
+
     void initTabWidget();
 
 private:

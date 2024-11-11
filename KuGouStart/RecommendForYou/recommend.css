@@ -1,46 +1,47 @@
 /*--------------------classify_widget------------------------------*/
 
-QWidget#classify_widget .QPushButton {
+QWidget#classify_widget > QToolButton {
     color:white;
-    border-radius: 10px;
+    border-radius: 15px;
+    icon-size:20px 20px;
 }
 
-QPushButton#recommend_pushButton {
+QToolButton#recommend_toolButton {
     margin:3px;
     background-color: #44a2ff;
 }
-QPushButton#recommend_pushButton:hover {
+QToolButton#recommend_toolButton:hover {
     margin: 0px 3px 6px 3px;
 }
 
-QPushButton#ranking_list_pushButton {
+QToolButton#ranking_list_toolButton {
     margin: 3px;
-    background-color: #fe72ae;
+    background-color: #ffa2c1;
 }
-QPushButton#ranking_list_pushButton:hover {
+QToolButton#ranking_list_toolButton:hover {
     margin: 0px 3px 6px 3px;
 }
 
-QPushButton#classify_pushButton {
+QToolButton#classify_toolButton {
     margin: 3px;
-    background-color: #fc994a;
+    background-color: #feb154;
 }
-QPushButton#classify_pushButton:hover {
+QToolButton#classify_toolButton:hover {
     margin: 0px 3px 6px 3px;
 }
 
-QPushButton#scene_music_pushButton {
+QToolButton#scene_music_toolButton {
     margin: 3px;
-    background-color: #c740e1;
+    background-color: #8c38d8;
 }
-QPushButton#scene_music_pushButton:hover {
+QToolButton#scene_music_toolButton:hover {
     margin: 0px 3px 6px 3px;
 }
 
-QPushButton#music_quality_pushButton {
+QToolButton#music_quality_toolButton {
     margin: 3px;
     background-color: #0a0a0a;
 }
-QPushButton#music_quality_pushButton:hover {
+QToolButton#music_quality_toolButton:hover {
     margin: 0px 3px 6px 3px;
 }

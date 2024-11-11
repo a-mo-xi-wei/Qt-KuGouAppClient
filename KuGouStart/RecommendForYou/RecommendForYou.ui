@@ -106,7 +106,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="recommend_pushButton">
+       <widget class="IconBesideTextToolButton" name="recommend_toolButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -121,6 +121,7 @@
         </property>
         <property name="font">
          <font>
+          <pointsize>10</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -149,7 +150,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="ranking_list_pushButton">
+       <widget class="IconBesideTextToolButton" name="ranking_list_toolButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -164,6 +165,7 @@
         </property>
         <property name="font">
          <font>
+          <pointsize>10</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -192,7 +194,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="classify_pushButton">
+       <widget class="IconBesideTextToolButton" name="classify_toolButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -207,6 +209,7 @@
         </property>
         <property name="font">
          <font>
+          <pointsize>10</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -235,7 +238,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="scene_music_pushButton">
+       <widget class="IconBesideTextToolButton" name="scene_music_toolButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -250,6 +253,7 @@
         </property>
         <property name="font">
          <font>
+          <pointsize>10</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -278,7 +282,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="music_quality_pushButton">
+       <widget class="IconBesideTextToolButton" name="music_quality_toolButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -293,6 +297,7 @@
         </property>
         <property name="font">
          <font>
+          <pointsize>10</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -368,6 +373,11 @@
    <extends>QWidget</extends>
    <header>GLTabWidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>IconBesideTextToolButton</class>
+   <extends>QPushButton</extends>
+   <header>IconBesideTextToolButton.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
