@@ -17,8 +17,6 @@ set(SOURCE_FILE
         LocalDownload.ui
         local.css
 )
-INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/../../MusicItemWidget
-                    ${PROJECT_SOURCE_DIR}/../MySearchLineEdit)
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 

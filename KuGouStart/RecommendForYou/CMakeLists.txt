@@ -20,8 +20,7 @@ set(SOURCE_FILE
 
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/../../GuessLoveWidget
         ${PROJECT_SOURCE_DIR}/../../AdvertiseBoardWidget
-        ${PROJECT_SOURCE_DIR}/../../MusicTableWidget
-        ${PROJECT_SOURCE_DIR}/../../SMaskWidget)
+        ${PROJECT_SOURCE_DIR}/../../MusicTableWidget)
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
@@ -29,4 +28,4 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools
-        AdvertiseBoardWidget GuessLoveWidget SMaskWidget MusicTableWidget)
+        AdvertiseBoardWidget GuessLoveWidget MusicTableWidget)

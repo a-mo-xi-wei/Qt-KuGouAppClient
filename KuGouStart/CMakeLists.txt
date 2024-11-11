@@ -20,17 +20,6 @@ set(SOURCE_FILE
     "Res.qrc"
     "KuGouApp.ui"
 )
-INCLUDE_DIRECTORIES(
-    ${PROJECT_SOURCE_DIR}/../BasicWidget
-    ${PROJECT_SOURCE_DIR}/../RippleButton
-    ${PROJECT_SOURCE_DIR}/../VolumeToolBtn
-    ${PROJECT_SOURCE_DIR}/../SliderWidget
-    ${PROJECT_SOURCE_DIR}/../MyScrollArea
-    ${PROJECT_SOURCE_DIR}/../MySearchLineEdit
-    ${PROJECT_SOURCE_DIR}/../UpToolButton
-    ${PROJECT_SOURCE_DIR}/../LocalDownload
-    ${PROJECT_SOURCE_DIR}/../MainWindow
-    ${PROJECT_SOURCE_DIR}/../MyStackedWidget)
 
 #包含为你推荐模块
 add_subdirectory(RecommendForYou)
