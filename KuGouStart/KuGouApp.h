@@ -7,6 +7,7 @@
 
 #include"MainWindow.h"
 #include"RecommendForYou.h"
+#include"MusicRepository.h"
 #include"LocalDownload.h"
 #include"UpToolButton.h"
 //#include"MyMenu.h"//直接使用title的Menu
@@ -38,7 +39,9 @@ public:
 private:
     void initUi();
 
-    void initCommendForYouWidget();
+    void initCommendForYou();
+
+    void initMusicRepository();
 
     void initLocalDownload();
 
@@ -76,6 +79,7 @@ protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private slots:
+    //title
     void on_title_return_toolButton_clicked();
 
     void on_title_refresh_toolButton_clicked();
@@ -88,12 +92,6 @@ private slots:
 
     void on_title_found_pushButton_clicked();
 
-    void on_recommend_toolButton_clicked();
-
-    void on_local_download_toolButton_clicked();
-
-    void on_play_or_pause_toolButton_clicked();
-
     void on_menu_toolButton_clicked();
 
     void on_min_toolButton_clicked();
@@ -101,6 +99,15 @@ private slots:
     void on_max_toolButton_clicked();
 
     void on_close_toolButton_clicked();
+    //menu
+    void on_recommend_toolButton_clicked();
+
+    void on_yueku_toolButton_clicked();
+
+    void on_local_download_toolButton_clicked();
+
+    //playWidget
+    void on_play_or_pause_toolButton_clicked();
 
     void on_love_toolButton_clicked();
 
@@ -161,7 +168,9 @@ private:
     std::unique_ptr<QSizeGrip>          m_sizeGrip{};
     std::unique_ptr<UpToolButton>       m_upBtn{};
     std::unique_ptr<QPropertyAnimation> m_animation{};  //专门用于窗口的缩放动画
+    //堆栈窗口
     std::unique_ptr<RecommendForYou>    m_recommendForYou{};
+    std::unique_ptr<MusicRepository>    m_musicRepository{};
     std::unique_ptr<LocalDownload>      m_localDownload{};
     //标题菜单相关
     TitleWidget*                m_title{};

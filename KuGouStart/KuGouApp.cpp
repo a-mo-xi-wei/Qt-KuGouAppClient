@@ -150,16 +150,22 @@ void KuGouApp::initUi() {
     this->m_title = ui->title_widget;
 
     initTitleWidget();
-    initCommendForYouWidget();
+    initCommendForYou();
+    initMusicRepository();
     initLocalDownload();
     initPlayWidget();
     initMenu();
     initCornerWidget();
 }
 
-void KuGouApp::initCommendForYouWidget() {
+void KuGouApp::initCommendForYou() {
     this->m_recommendForYou = std::make_unique<RecommendForYou>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_recommendForYou.get());
+}
+
+void KuGouApp::initMusicRepository() {
+    this->m_musicRepository = std::make_unique<MusicRepository>(ui->stackedWidget);
+    ui->stackedWidget->addWidget(this->m_musicRepository.get());
 }
 
 void KuGouApp::initLocalDownload() {
@@ -776,6 +782,12 @@ void KuGouApp::on_close_toolButton_clicked() {
 
 void KuGouApp::on_recommend_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_recommendForYou.get());
+    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
+    this->m_upBtn->clicked();
+}
+
+void KuGouApp::on_yueku_toolButton_clicked() {
+    ui->stackedWidget->setCurrentWidget(this->m_musicRepository.get());
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
 }
