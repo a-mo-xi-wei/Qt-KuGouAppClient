@@ -1,0 +1,94 @@
+/*--------------------local_download_page------------------------------*/
+QLabel#local_download_label {
+    border:none;
+    font-size:25px;
+    font-weight:bold;
+}
+/*--------------------guide_widget------------------------------*/
+QWidget#guide_widget QPushButton {
+    color:black;
+    font-size:14px;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+QWidget#guide_widget QPushButton:checked {
+    color:#26a1ff;
+    font-size:17px;
+    font-weight:bold;
+}
+QWidget#guide_widget QPushButton:hover {
+    font-size:15px;
+    font-weight:bold;
+}
+QWidget#guide_widget QLabel {
+    padding-top:0px;
+    margin: 0px;
+}
+/*--------------------operation_widget------------------------------*/
+QWidget#operation_widget > QToolButton {
+    background-color: #e2e5ff;
+    border: none;
+    border-radius: 15px;
+    padding-left: 15px;
+}
+QWidget#operation_widget > QToolButton:hover {
+    background-color: #dadeff;
+}
+
+QWidget#operation_widget QToolButton#local_play_toolButton{
+    background-color:#269dff;
+}
+QWidget#operation_widget QToolButton#local_play_toolButton:hover{
+    background-color:#2085d9;
+}
+/*--------------------small_widget------------------------------*/
+QWidget#small_widget{
+    border: 1px solid #b4bcff;
+    border-radius:15px;
+}
+QWidget#small_widget > QFrame{
+    border:none;
+    background-color:#dadeff;
+}
+
+QWidget#small_widget > QToolButton {
+    background-color: transparent;
+}
+QToolButton#local_share_toolButton {
+    border-image:url("://Res/titlebar/share-gray.svg");
+}
+QToolButton#local_share_toolButton:hover {
+    border-image:url("://Res/titlebar/share-blue.svg");
+}
+
+QToolButton#local_batch_toolButton {
+    border-image:url("://Res/titlebar/batch-gray.svg");
+}
+QToolButton#local_batch_toolButton:hover {
+    border-image:url("://Res/titlebar/batch-blue.svg");
+}
+
+QToolButton#local_zhuanji_toolButton {
+    border-image:url("://Res/titlebar/zhuanji-gray.svg");
+}
+QToolButton#local_zhuanji_toolButton:hover {
+    border-image:url("://Res/titlebar/zhuanji-blue.svg");
+}
+
+QToolButton#local_sort_toolButton {
+    border-image:url("://Res/titlebar/sort-gray.svg");
+}
+QToolButton#local_sort_toolButton:hover {
+    border-image:url("://Res/titlebar/sort-blue.svg");
+}
+
+QLineEdit#local_search_lineEdit{
+    border-radius: 12px;
+    background-color: #e2e5ff;
+    padding-left: 5px;
+}
+QLineEdit#local_search_lineEdit:hover{
+    background-color: #dadeff;
+    color:#269dff;
+}

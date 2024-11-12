@@ -25,12 +25,16 @@ set(SOURCE_FILE
 add_subdirectory(RecommendForYou)
 #包含乐库模块
 add_subdirectory(MusicRepository)
+#包含频道模块
+add_subdirectory(Channel)
+
 #包含本地与下载模块
 add_subdirectory(LocalDownload)
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools Qt6::Multimedia
-                        RecommendForYou MusicRepository LocalDownload BasicWidget
+                        RecommendForYou MusicRepository Channel LocalDownload
+                        BasicWidget
                         MyScrollArea MySearchLineEdit UpToolButton RippleButton
                         VolumeToolBtn SliderWidget MainWindow MyStackedWidget)

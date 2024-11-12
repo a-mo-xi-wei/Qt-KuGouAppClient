@@ -150,12 +150,17 @@ void KuGouApp::initUi() {
     this->m_title = ui->title_widget;
 
     initTitleWidget();
-    initCommendForYou();
-    initMusicRepository();
-    initLocalDownload();
+    initStackedWidget();
     initPlayWidget();
     initMenu();
     initCornerWidget();
+}
+
+void KuGouApp::initStackedWidget() {
+    initCommendForYou();
+    initMusicRepository();
+    initChannel();
+    initLocalDownload();
 }
 
 void KuGouApp::initCommendForYou() {
@@ -166,6 +171,11 @@ void KuGouApp::initCommendForYou() {
 void KuGouApp::initMusicRepository() {
     this->m_musicRepository = std::make_unique<MusicRepository>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_musicRepository.get());
+}
+
+void KuGouApp::initChannel() {
+    this->m_channel = std::make_unique<Channel>(ui->stackedWidget);
+    ui->stackedWidget->addWidget(this->m_channel.get());
 }
 
 void KuGouApp::initLocalDownload() {
@@ -233,6 +243,7 @@ void KuGouApp::initPlayWidget() {
 }
 
 void KuGouApp::initMenu() {
+    //发现音乐
     this->m_menuBtnGroup->setParent(ui->center_menu_widget);
     ui->recommend_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/recommend.svg")));
     ui->yueku_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/music-library.svg")));
@@ -240,25 +251,27 @@ void KuGouApp::initMenu() {
     ui->pindao_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/my-channel.svg")));
     ui->video_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/video.svg")));
     ui->live_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/live.svg")));
+    ui->daily_recommend_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/daily.svg")));
+    //我的音乐
     ui->my_shoucang_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/collect.svg")));
-    ui->my_pindao_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/my-channel.svg")));
     ui->local_download_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/download.svg")));
     ui->music_yunpan_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/cloud.svg")));
-    ui->yigou_yunpan_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/bought.svg")));
+    ui->yigou_yinyue_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/bought.svg")));
     ui->zuijin_bofang_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/history.svg")));
     ui->moren_liebiao_toolButton->setIcon(QIcon(QStringLiteral("://Res/titlebar/menu-black.svg")));
-
+    //互斥
     m_menuBtnGroup->addButton(ui->recommend_toolButton);
     m_menuBtnGroup->addButton(ui->yueku_toolButton);
     m_menuBtnGroup->addButton(ui->gedan_toolButton);
     m_menuBtnGroup->addButton(ui->pindao_toolButton);
     m_menuBtnGroup->addButton(ui->video_toolButton);
     m_menuBtnGroup->addButton(ui->live_toolButton);
+    m_menuBtnGroup->addButton(ui->daily_recommend_toolButton);
+
     m_menuBtnGroup->addButton(ui->my_shoucang_toolButton);
-    m_menuBtnGroup->addButton(ui->my_pindao_toolButton);
     m_menuBtnGroup->addButton(ui->local_download_toolButton);
     m_menuBtnGroup->addButton(ui->music_yunpan_toolButton);
-    m_menuBtnGroup->addButton(ui->yigou_yunpan_toolButton);
+    m_menuBtnGroup->addButton(ui->yigou_yinyue_toolButton);
     m_menuBtnGroup->addButton(ui->zuijin_bofang_toolButton);
     m_menuBtnGroup->addButton(ui->moren_liebiao_toolButton);
     m_menuBtnGroup->setExclusive(true);
@@ -790,6 +803,14 @@ void KuGouApp::on_yueku_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_musicRepository.get());
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
+    qDebug()<<"点击乐库";
+}
+
+void KuGouApp::on_pindao_toolButton_clicked() {
+    ui->stackedWidget->setCurrentWidget(this->m_channel.get());
+    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
+    this->m_upBtn->clicked();
+    qDebug()<<"点击频道";
 }
 
 void KuGouApp::on_local_download_toolButton_clicked() {
