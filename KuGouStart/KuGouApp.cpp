@@ -160,6 +160,7 @@ void KuGouApp::initStackedWidget() {
     initCommendForYou();
     initMusicRepository();
     initChannel();
+    initVideo();
     initLocalDownload();
 }
 
@@ -176,6 +177,11 @@ void KuGouApp::initMusicRepository() {
 void KuGouApp::initChannel() {
     this->m_channel = std::make_unique<Channel>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_channel.get());
+}
+
+void KuGouApp::initVideo() {
+    this->m_video = std::make_unique<Video>(ui->stackedWidget);
+    ui->stackedWidget->addWidget(this->m_video.get());
 }
 
 void KuGouApp::initLocalDownload() {
@@ -811,6 +817,13 @@ void KuGouApp::on_pindao_toolButton_clicked() {
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     qDebug()<<"点击频道";
+}
+
+void KuGouApp::on_video_toolButton_clicked() {
+    ui->stackedWidget->setCurrentWidget(this->m_video.get());
+    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
+    this->m_upBtn->clicked();
+    qDebug()<<"点击视频";
 }
 
 void KuGouApp::on_local_download_toolButton_clicked() {

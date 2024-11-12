@@ -8,6 +8,7 @@
 #include"RecommendForYou.h"
 #include"MusicRepository.h"
 #include"Channel.h"
+#include"Video.h"
 #include"LocalDownload.h"
 #include"UpToolButton.h"
 //#include"MyMenu.h"//直接使用title的Menu
@@ -46,6 +47,8 @@ private:
     void initMusicRepository();
 
     void initChannel();
+
+    void initVideo();
 
     void initLocalDownload();
 
@@ -109,6 +112,8 @@ private slots:
     void on_yueku_toolButton_clicked();
 
     void on_pindao_toolButton_clicked();
+
+    void on_video_toolButton_clicked();
 
     void on_local_download_toolButton_clicked();
 
@@ -178,6 +183,7 @@ private:
     std::unique_ptr<RecommendForYou>    m_recommendForYou{};
     std::unique_ptr<MusicRepository>    m_musicRepository{};
     std::unique_ptr<Channel>            m_channel{};
+    std::unique_ptr<Video>              m_video{};
     std::unique_ptr<LocalDownload>      m_localDownload{};
     //标题菜单相关
     TitleWidget*                m_title{};
