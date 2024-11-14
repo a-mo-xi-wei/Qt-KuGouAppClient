@@ -20,7 +20,7 @@ set(SOURCE_FILE
     "Res.qrc"
     "KuGouApp.ui"
 )
-
+####       发现音乐       ####
 #包含为你推荐模块
 add_subdirectory(RecommendForYou)
 #包含乐库模块
@@ -31,14 +31,29 @@ add_subdirectory(Channel)
 add_subdirectory(Video)
 #包含直播模块
 add_subdirectory(Live)
-
+#包含歌单模块
+add_subdirectory(SongList)
+#包含每日推荐模块
+add_subdirectory(DailyRecommend)
+####       我的音乐       ####
+#包含我的收藏模块
+add_subdirectory(MyCollection)
 #包含本地与下载模块
 add_subdirectory(LocalDownload)
+#包含音乐云盘模块
+add_subdirectory(MusicCloudDisk)
+#包含已购音乐模块
+add_subdirectory(PurchasedMusic)
+#包含最近播放模块
+add_subdirectory(RecentlyPlayed)
+#包含默认列表模块
+add_subdirectory(DefaultList)
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools Qt6::Multimedia
                         RecommendForYou MusicRepository Channel Video Live
-                        LocalDownload
+                        SongList DailyRecommend MyCollection LocalDownload
+                        MusicCloudDisk PurchasedMusic RecentlyPlayed DefaultList
                         BasicWidget MyScrollArea MySearchLineEdit UpToolButton
                         RippleButton VolumeToolBtn SliderWidget MainWindow MyStackedWidget)

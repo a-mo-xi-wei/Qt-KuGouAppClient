@@ -10,7 +10,14 @@
 #include"Channel.h"
 #include"Video.h"
 #include"Live.h"
+#include"SongList.h"
+#include"DailyRecommend.h"
+#include"MyCollection.h"
 #include"LocalDownload.h"
+#include"MusicCloudDisk.h"
+#include"PurchasedMusic.h"
+#include"RecentlyPlayed.h"
+#include"DefaultList.h"
 #include"UpToolButton.h"
 //#include"MyMenu.h"//直接使用title的Menu
 #include"TitleWidget.h"
@@ -53,7 +60,21 @@ private:
 
     void initLive();
 
+    void initSongList();
+
+    void initDailyRecommend();
+
+    void initMyCollection();
+
     void initLocalDownload();
+
+    void initMusicCloudDisk();
+
+    void initPurchasedMusic();
+
+    void initRecentlyPlayed();
+
+    void initDefaultList();
 
     void initTitleWidget();
 
@@ -110,17 +131,31 @@ private slots:
 
     void on_close_toolButton_clicked();
     //menu
-    void on_recommend_toolButton_clicked();
+    void on_recommend_you_toolButton_clicked();
 
-    void on_yueku_toolButton_clicked();
+    void on_music_repository_toolButton_clicked();
 
-    void on_pindao_toolButton_clicked();
+    void on_channel_toolButton_clicked();
 
     void on_video_toolButton_clicked();
 
     void on_live_toolButton_clicked();
 
+    void on_song_list_toolButton_clicked();
+
+    void on_daily_recommend_toolButton_clicked();
+
+    void on_my_collection_toolButton_clicked();
+
     void on_local_download_toolButton_clicked();
+
+    void on_music_cloud_disk_toolButton_clicked();
+
+    void on_purchased_music_toolButton_clicked();
+
+    void on_recently_played_toolButton_clicked();
+
+    void on_default_list_toolButton_clicked();
 
     //playWidget
     void on_play_or_pause_toolButton_clicked();
@@ -190,8 +225,15 @@ private:
     std::unique_ptr<MusicRepository>    m_musicRepository{};
     std::unique_ptr<Channel>            m_channel{};
     std::unique_ptr<Video>              m_video{};
-    std::unique_ptr<Live>              m_live{};
+    std::unique_ptr<Live>               m_live{};
+    std::unique_ptr<SongList>           m_songList{};
+    std::unique_ptr<DailyRecommend>     m_dailyRecommend{};
+    std::unique_ptr<MyCollection>       m_collection{};
     std::unique_ptr<LocalDownload>      m_localDownload{};
+    std::unique_ptr<MusicCloudDisk>     m_musicCloudDisk{};
+    std::unique_ptr<PurchasedMusic>     m_purchasedMusic{};
+    std::unique_ptr<RecentlyPlayed>     m_recentlyPlayed{};
+    std::unique_ptr<DefaultList>        m_defaultList{};
     //标题菜单相关
     TitleWidget*                m_title{};
     //窗口缩放相关
