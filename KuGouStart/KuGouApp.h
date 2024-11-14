@@ -9,6 +9,7 @@
 #include"MusicRepository.h"
 #include"Channel.h"
 #include"Video.h"
+#include"Live.h"
 #include"LocalDownload.h"
 #include"UpToolButton.h"
 //#include"MyMenu.h"//直接使用title的Menu
@@ -49,6 +50,8 @@ private:
     void initChannel();
 
     void initVideo();
+
+    void initLive();
 
     void initLocalDownload();
 
@@ -115,6 +118,8 @@ private slots:
 
     void on_video_toolButton_clicked();
 
+    void on_live_toolButton_clicked();
+
     void on_local_download_toolButton_clicked();
 
     //playWidget
@@ -175,6 +180,7 @@ private:
     Ui::KuGouApp *ui;
     std::unique_ptr<QMediaPlayer>       m_player{};
     std::unique_ptr<QAudioOutput>       m_audioOutput{};
+    QToolButton*                        m_lastBtn{};//上一次点击的按钮
     std::unique_ptr<QButtonGroup>       m_menuBtnGroup{};
     std::unique_ptr<QSizeGrip>          m_sizeGrip{};
     std::unique_ptr<UpToolButton>       m_upBtn{};
@@ -184,6 +190,7 @@ private:
     std::unique_ptr<MusicRepository>    m_musicRepository{};
     std::unique_ptr<Channel>            m_channel{};
     std::unique_ptr<Video>              m_video{};
+    std::unique_ptr<Live>              m_live{};
     std::unique_ptr<LocalDownload>      m_localDownload{};
     //标题菜单相关
     TitleWidget*                m_title{};
