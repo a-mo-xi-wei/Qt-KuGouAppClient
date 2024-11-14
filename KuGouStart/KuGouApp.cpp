@@ -908,11 +908,11 @@ void KuGouApp::on_song_list_toolButton_clicked() {
 }
 
 void KuGouApp::on_daily_recommend_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_songList.get());
+    ui->stackedWidget->setCurrentWidget(this->m_dailyRecommend.get());
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
-    this->m_lastBtn = ui->song_list_toolButton;
+    this->m_lastBtn = ui->daily_recommend_toolButton;
     //qDebug()<<"点击每日推荐";
 }
 
