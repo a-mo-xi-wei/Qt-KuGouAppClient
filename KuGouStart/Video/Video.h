@@ -22,6 +22,8 @@ Q_OBJECT
 public:
     explicit Video(QWidget *parent = nullptr);
 
+    ~Video() override;
+
     void initStackedWidget();
 
     void initVideoChannelWidget();
@@ -29,8 +31,6 @@ public:
     void initVideoWidget();
 
     void initMVWidget();
-
-    ~Video() override;
 
 private slots:
     void on_video_channel_pushButton_clicked();

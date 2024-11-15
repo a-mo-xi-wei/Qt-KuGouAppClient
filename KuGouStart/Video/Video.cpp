@@ -17,6 +17,11 @@ Video::Video(QWidget *parent) :
     initStackedWidget();
 }
 
+Video::~Video() {
+    delete ui;
+}
+
+
 void Video::initStackedWidget() {
     initVideoChannelWidget();
     initMVWidget();
@@ -43,11 +48,6 @@ void Video::initVideoWidget() {
     this->m_videoWidget = std::make_unique<VideoWidget>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_videoWidget.get());
 }
-
-Video::~Video() {
-    delete ui;
-}
-
 void Video::on_video_channel_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_videoChannelWidget.get());
     qDebug()<<"点击videoChannelWidget";
