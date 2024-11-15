@@ -234,8 +234,8 @@ void KuGouApp::initRecentlyPlayed() {
 }
 
 void KuGouApp::initDefaultList() {
-    this->m_defaultList = std::make_unique<DefaultList>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_defaultList.get());
+    this->m_allMujsic = std::make_unique<AllMusic>(ui->stackedWidget);
+    ui->stackedWidget->addWidget(this->m_allMujsic.get());
 }
 
 void KuGouApp::initTitleWidget() {
@@ -313,7 +313,7 @@ void KuGouApp::initMenu() {
     ui->music_cloud_disk_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/cloud.svg")));
     ui->purchased_music_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/bought.svg")));
     ui->recently_played_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/history.svg")));
-    ui->default_list_toolButton->setIcon(QIcon(QStringLiteral("://Res/titlebar/menu-black.svg")));
+    ui->all_music_toolButton->setIcon(QIcon(QStringLiteral("://Res/titlebar/menu-black.svg")));
     //互斥
     m_menuBtnGroup->addButton(ui->recommend_you_toolButton);
     m_menuBtnGroup->addButton(ui->music_repository_toolButton);
@@ -328,7 +328,7 @@ void KuGouApp::initMenu() {
     m_menuBtnGroup->addButton(ui->music_cloud_disk_toolButton);
     m_menuBtnGroup->addButton(ui->purchased_music_toolButton);
     m_menuBtnGroup->addButton(ui->recently_played_toolButton);
-    m_menuBtnGroup->addButton(ui->default_list_toolButton);
+    m_menuBtnGroup->addButton(ui->all_music_toolButton);
     m_menuBtnGroup->setExclusive(true);
 }
 
@@ -960,12 +960,12 @@ void KuGouApp::on_recently_played_toolButton_clicked() {
     //qDebug()<<"点击最近播放";
 }
 
-void KuGouApp::on_default_list_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_defaultList.get());
+void KuGouApp::on_all_music_toolButton_clicked() {
+    ui->stackedWidget->setCurrentWidget(this->m_allMujsic.get());
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
-    this->m_lastBtn = ui->default_list_toolButton;
+    this->m_lastBtn = ui->all_music_toolButton;
     //qDebug()<<"点击默认列表";
 }
 

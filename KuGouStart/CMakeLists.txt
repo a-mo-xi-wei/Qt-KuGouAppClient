@@ -47,13 +47,13 @@ add_subdirectory(PurchasedMusic)
 #包含最近播放模块
 add_subdirectory(RecentlyPlayed)
 #包含默认列表模块
-add_subdirectory(DefaultList)
+add_subdirectory(AllMusic)
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools Qt6::Multimedia
-                        RecommendForYou MusicRepository Channel Video Live
+                        RecommendForYou MusicRepository Channel StartVideo Live
                         SongList DailyRecommend MyCollection LocalDownload
-                        MusicCloudDisk PurchasedMusic RecentlyPlayed DefaultList
+                        MusicCloudDisk PurchasedMusic RecentlyPlayed AllMusic
                         BasicWidget MyScrollArea MySearchLineEdit UpToolButton
                         RippleButton VolumeToolBtn SliderWidget MainWindow MyStackedWidget)

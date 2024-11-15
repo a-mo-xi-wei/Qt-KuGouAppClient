@@ -17,7 +17,7 @@
 #include"MusicCloudDisk.h"
 #include"PurchasedMusic.h"
 #include"RecentlyPlayed.h"
-#include"DefaultList.h"
+#include"AllMusic.h"
 #include"UpToolButton.h"
 //#include"MyMenu.h"//直接使用title的Menu
 #include"TitleWidget.h"
@@ -155,7 +155,7 @@ private slots:
 
     void on_recently_played_toolButton_clicked();
 
-    void on_default_list_toolButton_clicked();
+    void on_all_music_toolButton_clicked();
 
     //playWidget
     void on_play_or_pause_toolButton_clicked();
@@ -233,7 +233,7 @@ private:
     std::unique_ptr<MusicCloudDisk>     m_musicCloudDisk{};
     std::unique_ptr<PurchasedMusic>     m_purchasedMusic{};
     std::unique_ptr<RecentlyPlayed>     m_recentlyPlayed{};
-    std::unique_ptr<DefaultList>        m_defaultList{};
+    std::unique_ptr<AllMusic>           m_allMujsic{};
     //标题菜单相关
     TitleWidget*                m_title{};
     //窗口缩放相关
