@@ -619,13 +619,21 @@
     </widget>
    </item>
    <item>
-    <widget class="QStackedWidget" name="stackedWidget">
+    <widget class="MyStackedWidget" name="stackedWidget">
      <widget class="QWidget" name="page"/>
      <widget class="QWidget" name="page_2"/>
     </widget>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyStackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header>MyStackedWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
