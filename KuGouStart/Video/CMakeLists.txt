@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(Video VERSION 1.0 LANGUAGES CXX)
+project(StartVideo VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
@@ -30,4 +30,4 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools
-                        VideoChannelWidget MVWidget VideoWidget MyStackedWidget)
+                        VideoChannelWidget VideoMVWidget VideoWidget MyStackedWidget)

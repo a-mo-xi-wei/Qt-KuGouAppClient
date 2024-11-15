@@ -18,9 +18,17 @@ set(SOURCE_FILE
     purchased.css
 )
 
+#包含付费单曲模块
+add_subdirectory(PaidSingle)
+#包含已购专辑模块
+add_subdirectory(PurchasedAlbums)
+#包含已购视频模块
+add_subdirectory(PurchasedVideos)
+
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools MyStackedWidget
+                        PurchasedPaidSingle PurchasedAlbums PurchasedVideos)

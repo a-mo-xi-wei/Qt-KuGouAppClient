@@ -18,9 +18,15 @@ set(SOURCE_FILE
     cloud.css
 )
 
+#包含已上传歌曲模块
+add_subdirectory(UploadedSong)
+#包含正在上传歌曲模块
+add_subdirectory(UploadingSong)
+
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools
+                        MyStackedWidget CloudUploadedSong CloudUploadingSong)

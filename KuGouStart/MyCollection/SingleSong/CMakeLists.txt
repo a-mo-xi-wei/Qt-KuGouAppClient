@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(SingleSong VERSION 1.0 LANGUAGES CXX)
+project(CollectSingleSong VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)

@@ -18,9 +18,22 @@ set(SOURCE_FILE
     recently.css
 )
 
+#包含单曲模块
+add_subdirectory(SingleSong)
+#包含歌单模块
+add_subdirectory(RecentlySongList)
+#包含视频模块
+add_subdirectory(RecentlyVideoWidget)
+#包含音乐频道模块
+add_subdirectory(SongChannel)
+#包含MV频道模块
+add_subdirectory(MVChannel)
+
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools MyStackedWidget
+                        RecentlySingleSong RecentlySongList RecentlyVideoWidget
+                        RecentlySongChannel RecentlyMVChannel)
