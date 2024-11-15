@@ -38,4 +38,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools
                         SingleSong SongListWidget SpecialAlbum CollectVideo
-                        SingerWidget DeviceWidget MySearchLineEdit MyStackedWidget)
+                        SingerWidget DeviceWidget MyStackedWidget)
