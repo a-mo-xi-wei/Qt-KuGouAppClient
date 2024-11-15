@@ -7,9 +7,12 @@
 #include "Video.h"
 #include "ui_Video.h"
 
+#include<QButtonGroup>
 
 Video::Video(QWidget *parent) :
-    QWidget(parent), ui(new Ui::Video) {
+    QWidget(parent), ui(new Ui::Video)
+    ,m_buttonGroup(std::make_unique<QButtonGroup>(this))
+{
     ui->setupUi(this);
     initStackedWidget();
 }
@@ -18,6 +21,12 @@ void Video::initStackedWidget() {
     initVideoChannelWidget();
     initMVWidget();
     initVideoWidget();
+    //设置互斥
+    m_buttonGroup->addButton(ui->video_channel_pushButton);
+    m_buttonGroup->addButton(ui->MV_pushButton);
+    m_buttonGroup->addButton(ui->video_pushButton);
+    m_buttonGroup->setExclusive(true);
+
 }
 
 void Video::initVideoChannelWidget() {

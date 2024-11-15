@@ -10,7 +10,7 @@
 #include"MVWidget.h"
 
 #include <QWidget>
-
+class QButtonGroup;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Video; }
@@ -41,10 +41,11 @@ private slots:
 
 private:
     Ui::Video *ui;
+    std::unique_ptr<QButtonGroup>       m_buttonGroup{};
     //stackedWidget
     std::unique_ptr<VideoChannelWidget> m_videoChannelWidget{};
-    std::unique_ptr<VideoWidget> m_videoWidget{};
-    std::unique_ptr<MVWidget> m_MVWidget{};
+    std::unique_ptr<VideoWidget>        m_videoWidget{};
+    std::unique_ptr<MVWidget>           m_MVWidget{};
 };
 
 
