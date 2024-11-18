@@ -376,7 +376,7 @@
        </widget>
       </item>
       <item row="1" column="5">
-       <widget class="QToolButton" name="all_toolButton">
+       <widget class="IconBesideTextToolButton" name="all_toolButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -464,6 +464,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>IconBesideTextToolButton</class>
+   <extends>QToolButton</extends>
+   <header>IconBesideTextToolButton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
