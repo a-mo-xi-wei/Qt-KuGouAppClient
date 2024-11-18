@@ -5,6 +5,7 @@
 #include<QEasingCurve>
 
 #include"MainWindow.h"
+//发现音乐
 #include"RecommendForYou.h"
 #include"MusicRepository.h"
 #include"Channel.h"
@@ -12,12 +13,17 @@
 #include"Live.h"
 #include"SongList.h"
 #include"DailyRecommend.h"
+//我的音乐
 #include"MyCollection.h"
 #include"LocalDownload.h"
 #include"MusicCloudDisk.h"
 #include"PurchasedMusic.h"
 #include"RecentlyPlayed.h"
 #include"AllMusic.h"
+//标题栏
+#include"ListenBook.h"
+#include"Search.h"
+
 #include"UpToolButton.h"
 //#include"MyMenu.h"//直接使用title的Menu
 #include"TitleWidget.h"
@@ -74,7 +80,11 @@ private:
 
     void initRecentlyPlayed();
 
-    void initDefaultList();
+    void initAllMusic();
+
+    void initListenBook();
+
+    void initSearch();
 
     void initTitleWidget();
 
@@ -119,9 +129,9 @@ private slots:
 
     void on_title_live_pushButton_clicked();
 
-    void on_title_listenBook_pushButton_clicked();
+    void on_title_listen_book_pushButton_clicked();
 
-    void on_title_found_pushButton_clicked();
+    void on_title_search_pushButton_clicked();
 
     void on_menu_toolButton_clicked();
 
@@ -233,7 +243,9 @@ private:
     std::unique_ptr<MusicCloudDisk>     m_musicCloudDisk{};
     std::unique_ptr<PurchasedMusic>     m_purchasedMusic{};
     std::unique_ptr<RecentlyPlayed>     m_recentlyPlayed{};
-    std::unique_ptr<AllMusic>           m_allMujsic{};
+    std::unique_ptr<AllMusic>           m_allMusic{};
+    std::unique_ptr<ListenBook>         m_listenBook{};
+    std::unique_ptr<Search>             m_search{};
     //标题菜单相关
     TitleWidget*                m_title{};
     //窗口缩放相关

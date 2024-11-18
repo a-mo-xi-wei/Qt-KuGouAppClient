@@ -156,7 +156,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="index_label1">
+           <widget class="QLabel" name="title_index_label1">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -213,7 +213,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="index_label2">
+           <widget class="QLabel" name="title_index_label2">
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -239,7 +239,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="title_listenBook_pushButton">
+           <widget class="QPushButton" name="title_listen_book_pushButton">
             <property name="minimumSize">
              <size>
               <width>50</width>
@@ -264,7 +264,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="index_label3">
+           <widget class="QLabel" name="title_index_label3">
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -290,7 +290,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="title_found_pushButton">
+           <widget class="QPushButton" name="title_search_pushButton">
             <property name="minimumSize">
              <size>
               <width>50</width>
@@ -315,7 +315,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="index_label4">
+           <widget class="QLabel" name="title_index_label4">
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -750,7 +750,7 @@
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>-43</y>
+           <y>0</y>
            <width>148</width>
            <height>598</height>
           </rect>

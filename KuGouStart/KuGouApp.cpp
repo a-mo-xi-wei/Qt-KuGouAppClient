@@ -170,7 +170,9 @@ void KuGouApp::initStackedWidget() {
     initMusicCloudDisk();
     initPurchasedMusic();
     initRecentlyPlayed();
-    initDefaultList();
+    initAllMusic();
+    initListenBook();
+    initSearch();
 }
 
 void KuGouApp::initCommendForYou() {
@@ -233,23 +235,33 @@ void KuGouApp::initRecentlyPlayed() {
     ui->stackedWidget->addWidget(this->m_recentlyPlayed.get());
 }
 
-void KuGouApp::initDefaultList() {
-    this->m_allMujsic = std::make_unique<AllMusic>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_allMujsic.get());
+void KuGouApp::initAllMusic() {
+    this->m_allMusic = std::make_unique<AllMusic>(ui->stackedWidget);
+    ui->stackedWidget->addWidget(this->m_allMusic.get());
+}
+
+void KuGouApp::initListenBook() {
+    this->m_listenBook = std::make_unique<ListenBook>(ui->stackedWidget);
+    ui->stackedWidget->addWidget(this->m_listenBook.get());
+}
+
+void KuGouApp::initSearch() {
+    this->m_search = std::make_unique<Search>(ui->stackedWidget);
+    ui->stackedWidget->addWidget(this->m_search.get());
 }
 
 void KuGouApp::initTitleWidget() {
-    ui->index_label1->setPixmap(
+    ui->title_index_label1->setPixmap(
         QPixmap(QStringLiteral("://Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
-    ui->index_label2->setPixmap(
+    ui->title_index_label2->setPixmap(
         QPixmap(QStringLiteral("://Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
-    ui->index_label3->setPixmap(
+    ui->title_index_label3->setPixmap(
         QPixmap(QStringLiteral("://Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
-    ui->index_label4->setPixmap(
+    ui->title_index_label4->setPixmap(
         QPixmap(QStringLiteral("://Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
-    ui->index_label2->hide();
-    ui->index_label3->hide();
-    ui->index_label4->hide();
+    ui->title_index_label2->hide();
+    ui->title_index_label3->hide();
+    ui->title_index_label4->hide();
 
     ui->title_line->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/line-black.svg")));
     ui->search_lineEdit->addAction(QIcon(QStringLiteral("://Res/titlebar/search-black.svg")),
@@ -747,10 +759,10 @@ void KuGouApp::on_title_refresh_toolButton_clicked() {
 }
 
 void KuGouApp::on_title_music_pushButton_clicked() {
-    ui->index_label1->show();
-    ui->index_label2->hide();
-    ui->index_label3->hide();
-    ui->index_label4->hide();
+    ui->title_index_label1->show();
+    ui->title_index_label2->hide();
+    ui->title_index_label3->hide();
+    ui->title_index_label4->hide();
     //显示menu
     ui->menu_scrollArea->show();
     this->m_lastBtn->clicked();
@@ -758,10 +770,10 @@ void KuGouApp::on_title_music_pushButton_clicked() {
 }
 
 void KuGouApp::on_title_live_pushButton_clicked() {
-    ui->index_label1->hide();
-    ui->index_label2->show();
-    ui->index_label3->hide();
-    ui->index_label4->hide();
+    ui->title_index_label1->hide();
+    ui->title_index_label2->show();
+    ui->title_index_label3->hide();
+    ui->title_index_label4->hide();
     //隐藏menu
     ui->menu_scrollArea->hide();
     //显示窗口
@@ -770,18 +782,30 @@ void KuGouApp::on_title_live_pushButton_clicked() {
     this->m_upBtn->clicked();
 }
 
-void KuGouApp::on_title_listenBook_pushButton_clicked() {
-    ui->index_label1->hide();
-    ui->index_label2->hide();
-    ui->index_label3->show();
-    ui->index_label4->hide();
+void KuGouApp::on_title_listen_book_pushButton_clicked() {
+    ui->title_index_label1->hide();
+    ui->title_index_label2->hide();
+    ui->title_index_label3->show();
+    ui->title_index_label4->hide();
+    //隐藏menu
+    ui->menu_scrollArea->hide();
+    //显示窗口
+    ui->stackedWidget->setCurrentWidget(this->m_listenBook.get());
+    this->m_curves = QEasingCurve::OutQuart; // 缓动曲线
+    this->m_upBtn->clicked();
 }
 
-void KuGouApp::on_title_found_pushButton_clicked() {
-    ui->index_label1->hide();
-    ui->index_label2->hide();
-    ui->index_label3->hide();
-    ui->index_label4->show();
+void KuGouApp::on_title_search_pushButton_clicked() {
+    ui->title_index_label1->hide();
+    ui->title_index_label2->hide();
+    ui->title_index_label3->hide();
+    ui->title_index_label4->show();
+    //隐藏menu
+    ui->menu_scrollArea->hide();
+    //显示窗口
+    ui->stackedWidget->setCurrentWidget(this->m_search.get());
+    this->m_curves = QEasingCurve::OutQuart; // 缓动曲线
+    this->m_upBtn->clicked();
 }
 
 void KuGouApp::on_min_toolButton_clicked() {
@@ -961,7 +985,7 @@ void KuGouApp::on_recently_played_toolButton_clicked() {
 }
 
 void KuGouApp::on_all_music_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_allMujsic.get());
+    ui->stackedWidget->setCurrentWidget(this->m_allMusic.get());
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向

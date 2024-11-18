@@ -48,6 +48,11 @@ add_subdirectory(PurchasedMusic)
 add_subdirectory(RecentlyPlayed)
 #包含默认列表模块
 add_subdirectory(AllMusic)
+####       标题栏       ####
+#包含听书模块
+add_subdirectory(ListenBook)
+#包含搜索模块
+add_subdirectory(Search)
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 
@@ -55,5 +60,6 @@ target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools Qt6::Multimedia
                         RecommendForYou MusicRepository Channel StartVideo Live
                         SongList DailyRecommend MyCollection LocalDownload
                         MusicCloudDisk PurchasedMusic RecentlyPlayed AllMusic
+                        ListenBook Search MyStackedWidget
                         BasicWidget MyScrollArea MySearchLineEdit UpToolButton
-                        RippleButton VolumeToolBtn SliderWidget MainWindow MyStackedWidget)
+                        RippleButton VolumeToolBtn SliderWidget MainWindow )
