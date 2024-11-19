@@ -47,14 +47,14 @@ LocalDownload::LocalDownload(QWidget *parent)
     init();
     //选中相关
     connect(m_sortOptMenu,&MyMenu::selected,this,[this] {
-        //ui->local_sort_toolButton->setStyleSheet("border-image:url('://Res/titlebar/sort-blue.svg');");
-        ui->local_sort_toolButton->setStyleSheet("QToolButton{border-image:url('://Res/titlebar/sort-blue.svg');}");
+        //ui->local_sort_toolButton->setStyleSheet("border-image:url(':/Res/titlebar/sort-blue.svg');");
+        ui->local_sort_toolButton->setStyleSheet("QToolButton{border-image:url(':/Res/titlebar/sort-blue.svg');}");
     });
     connect(m_sortOptMenu,&MyMenu::deselected,this,[this] {
         //qDebug()<<"接收到无排序状态";
         ui->local_sort_toolButton->setStyleSheet(R"(
-                QToolButton{border-image:url('://Res/titlebar/sort-gray.svg');}
-                QToolButton:hover{border-image:url('://Res/titlebar/sort-blue.svg');})");
+                QToolButton{border-image:url(':/Res/titlebar/sort-gray.svg');}
+                QToolButton:hover{border-image:url(':/Res/titlebar/sort-blue.svg');})");
     });
     //排序相关
     connect(m_sortOptMenu,&MyMenu::defaultSort,this,&LocalDownload::onDefaultSort);
@@ -78,20 +78,20 @@ void LocalDownload::init() {
     layout->setContentsMargins(0,0,0,0);
 
     //下标图片
-    ui->idx1_lab->setPixmap(QPixmap(QStringLiteral("://Res/window/index_lab.svg")));
-    ui->idx2_lab->setPixmap(QPixmap(QStringLiteral("://Res/window/index_lab.svg")));
-    ui->idx3_lab->setPixmap(QPixmap(QStringLiteral("://Res/window/index_lab.svg")));
-    ui->idx4_lab->setPixmap(QPixmap(QStringLiteral("://Res/window/index_lab.svg")));
+    ui->idx1_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
+    ui->idx2_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
+    ui->idx3_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
+    ui->idx4_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
     ui->idx4_lab->hide();
 
-    ui->local_play_toolButton->setIcon(QIcon(QStringLiteral("://Res/tabIcon/play3-white.svg")));
-    ui->local_add_toolButton->setIcon(QIcon(QStringLiteral("://Res/tabIcon/add-gray.svg")));
-    ui->upload_toolButton->setIcon(QIcon(QStringLiteral("://Res/tabIcon/upload-cloud-gray.svg")));
+    ui->local_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")));
+    ui->local_add_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/add-gray.svg")));
+    ui->upload_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/upload-cloud-gray.svg")));
 
     //使用 addAction 添加右侧图标
-    this->m_searchAction->setIcon(QIcon(QStringLiteral("://Res/titlebar/search-black.svg")));
+    this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/titlebar/search-black.svg")));
     this->m_searchAction->setIconVisibleInMenu(false);  // 仅显示图标
     ui->local_search_lineEdit->addAction(this->m_searchAction,QLineEdit::TrailingPosition);
     ui->local_search_lineEdit->setWidth(150);
@@ -127,7 +127,7 @@ void LocalDownload::getMetaData() {
             auto cover = data.value(QMediaMetaData::ThumbnailImage).value<QPixmap>();
             if(cover.isNull()) {
                 //qDebug()<<"封面为空";
-                cover = QPixmap(QString("://Res/tablisticon/pix%1.png").arg(QRandomGenerator::global()->bounded(1,11)));
+                cover = QPixmap(QString(":/Res/tablisticon/pix%1.png").arg(QRandomGenerator::global()->bounded(1,11)));
             }
             //获取时长
             const auto duration = data.value(QMediaMetaData::Duration).value<qint64>();
