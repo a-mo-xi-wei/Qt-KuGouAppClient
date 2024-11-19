@@ -1,0 +1,22 @@
+QWidget#menu_widget > QToolButton{
+    border: none;
+    border-radius: 6px;
+    padding: 5px;
+
+}
+QWidget#menu_widget > QToolButton:hover{
+    background-color: #E2EAF5;
+}
+QWidget#menu_widget > QToolButton:checked {
+    background-color: #E2EAF5;
+    font: bold;
+}
+
+QToolButton#download_toolButton{
+    margin :-1px;
+}
+
+QLabel#subscribe_label{
+    color: gray;
+    margin-bottom: 2px;
+}

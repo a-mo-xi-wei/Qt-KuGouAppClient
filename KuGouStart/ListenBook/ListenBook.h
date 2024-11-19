@@ -6,6 +6,7 @@
 #define LISTENBOOK_H
 
 #include <QWidget>
+class QButtonGroup;
 
 
 QT_BEGIN_NAMESPACE
@@ -19,8 +20,12 @@ public:
     explicit ListenBook(QWidget *parent = nullptr);
     ~ListenBook() override;
 
+    void initUi();
+
 private:
     Ui::ListenBook *ui;
+    std::unique_ptr<QButtonGroup> m_buttonGroup{};
+
 };
 
 
