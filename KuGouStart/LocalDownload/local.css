@@ -56,31 +56,31 @@ QWidget#small_widget > QToolButton {
     background-color: transparent;
 }
 QToolButton#local_share_toolButton {
-    border-image:url("://Res/titlebar/share-gray.svg");
+    border-image:url(":/Res/titlebar/share-gray.svg");
 }
 QToolButton#local_share_toolButton:hover {
-    border-image:url("://Res/titlebar/share-blue.svg");
+    border-image:url(":/Res/titlebar/share-blue.svg");
 }
 
 QToolButton#local_batch_toolButton {
-    border-image:url("://Res/titlebar/batch-gray.svg");
+    border-image:url(":/Res/titlebar/batch-gray.svg");
 }
 QToolButton#local_batch_toolButton:hover {
-    border-image:url("://Res/titlebar/batch-blue.svg");
+    border-image:url(":/Res/titlebar/batch-blue.svg");
 }
 
 QToolButton#local_zhuanji_toolButton {
-    border-image:url("://Res/titlebar/zhuanji-gray.svg");
+    border-image:url(":/Res/titlebar/zhuanji-gray.svg");
 }
 QToolButton#local_zhuanji_toolButton:hover {
-    border-image:url("://Res/titlebar/zhuanji-blue.svg");
+    border-image:url(":/Res/titlebar/zhuanji-blue.svg");
 }
 
 QToolButton#local_sort_toolButton {
-    border-image:url("://Res/titlebar/sort-gray.svg");
+    border-image:url(":/Res/titlebar/sort-gray.svg");
 }
 QToolButton#local_sort_toolButton:hover {
-    border-image:url("://Res/titlebar/sort-blue.svg");
+    border-image:url(":/Res/titlebar/sort-blue.svg");
 }
 
 QLineEdit#local_search_lineEdit{
