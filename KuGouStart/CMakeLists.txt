@@ -17,8 +17,8 @@ file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 set(SOURCE_FILE
     ${SOURCE_CPP}
     ${SOURCE_H}
-    "Res.qrc"
-    "KuGouApp.ui"
+    Res.qrc
+    KuGouApp.ui
 )
 ####       发现音乐       ####
 #包含为你推荐模块

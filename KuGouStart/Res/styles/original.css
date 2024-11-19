@@ -6,17 +6,17 @@ QWidget#KuGou{
 /*--------------------title_widget------------------------------*/
 QToolButton#title_return_toolButton{
     background-color: rgba(255,255,255,0);
-    border-image: url("://Res/titlebar/return-black.svg");
+    border-image: url(":/Res/titlebar/return-black.svg");
 }
 QToolButton#title_return_toolButton:hover {
-    border-image: url("://Res/titlebar/return-blue.svg");
+    border-image: url(":/Res/titlebar/return-blue.svg");
 }
 QToolButton#title_refresh_toolButton{
     background-color: rgba(255,255,255,0);
-    border-image: url("://Res/titlebar/refresh-black.svg");
+    border-image: url(":/Res/titlebar/refresh-black.svg");
 }
 QToolButton#title_refresh_toolButton:hover {
-    border-image: url("://Res/titlebar/refresh-blue.svg");
+    border-image: url(":/Res/titlebar/refresh-blue.svg");
 }
 
 QWidget#title_widget QLabel{
@@ -43,35 +43,35 @@ QLineEdit#search_lineEdit:hover {
 }
 QToolButton#listen_toolButton {
     background-color:rgba(255,255,255,0);
-    border-image: url("://Res/titlebar/listen-music-black.svg");
+    border-image: url(":/Res/titlebar/listen-music-black.svg");
     border-radius: 10px;
 }
 QToolButton#listen_toolButton:hover {
-    border-image: url("://Res/titlebar/listen-music-blue.svg");
+    border-image: url(":/Res/titlebar/listen-music-blue.svg");
 }
 
 QToolButton#theme_toolButton {
     background-color: rgba(255,255,255,0);
-    border-image: url("://Res/titlebar/theme-black.svg");
+    border-image: url(":/Res/titlebar/theme-black.svg");
 }
 QToolButton#theme_toolButton:hover {
-    border-image: url("://Res/titlebar/theme-blue.svg");
+    border-image: url(":/Res/titlebar/theme-blue.svg");
 }
 
 QToolButton#message_toolButton {
     background-color: rgba(255,255,255,0);
-    border-image: url("://Res/titlebar/message-black.svg");
+    border-image: url(":/Res/titlebar/message-black.svg");
 }
 QToolButton#message_toolButton:hover {
-    border-image: url("://Res/titlebar/message-blue.svg");
+    border-image: url(":/Res/titlebar/message-blue.svg");
 }
 
 QToolButton#menu_toolButton {
     background-color: rgba(255,255,255,0);
-    border-image: url("://Res/titlebar/menu-black.svg");
+    border-image: url(":/Res/titlebar/menu-black.svg");
 }
 QToolButton#menu_toolButton:hover {
-    border-image: url("://Res/titlebar/menu-blue.svg");
+    border-image: url(":/Res/titlebar/menu-blue.svg");
 }
 
 QToolButton#min_toolButton,
@@ -139,10 +139,10 @@ QToolButton#volume_toolButton{
 }
 QLabel#cover_label{
     border-radius:8px;
-    border-image:url('://Res/playbar/default-cover-gray.svg');
+    border-image:url(':/Res/playbar/default-cover-gray.svg');
 }
 QLabel#cover_label:hover{
-    border-image:url('://Res/playbar/default-cover-blue.svg');
+    border-image:url(':/Res/playbar/default-cover-blue.svg');
 }
 QLabel#song_name_label:hover{
     color: #006fff;
@@ -151,19 +151,19 @@ QLabel#singer_label:hover{
     color: #006fff;
 }
 QToolButton#circle_toolButton{
-    border-image:url('://Res/playbar/list-loop-gray.svg');
+    border-image:url(':/Res/playbar/list-loop-gray.svg');
 }
 QToolButton#circle_toolButton:hover{
-    border-image:url('://Res/playbar/list-loop-blue.svg');
+    border-image:url(':/Res/playbar/list-loop-blue.svg');
 }
 QSizeGrip#sizegrip{
     background-color:rgba(255,255,255,0);
-    border-image:url('://Res/playbar/bottom-mark.svg');
+    border-image:url(':/Res/playbar/bottom-mark.svg');
 }
 /*--------------------guess_love_widget------------------------------*/
 
 GLTabWidget#guess_love_widget {
-    border-image: url("://Res/tabIcon/cover.jpg");
+    border-image: url(":/Res/tabIcon/cover.jpg");
     border-radius:10px;
     border:none;
 }
@@ -172,28 +172,28 @@ GLTabWidget#guess_love_widget QLabel {
     color: white;
 }
 GLTabWidget#guess_love_widget QToolButton#playToolBtn {
-    border-image: url("://Res/tabIcon/play-white.svg");
+    border-image: url(":/Res/tabIcon/play-white.svg");
 }
 GLTabWidget#guess_love_widget QToolButton#playToolBtn:hover {
-    border-image: url("://Res/tabIcon/play-blue.svg");
+    border-image: url(":/Res/tabIcon/play-blue.svg");
 }
 GLTabWidget#guess_love_widget QToolButton#nextToolBtn {
-    border-image: url("://Res/tabIcon/next-song-white.svg");
+    border-image: url(":/Res/tabIcon/next-song-white.svg");
 }
 GLTabWidget#guess_love_widget QToolButton#nextToolBtn:hover {
-    border-image: url("://Res/tabIcon/next-song-blue.svg");
+    border-image: url(":/Res/tabIcon/next-song-blue.svg");
 }
 GLTabWidget#guess_love_widget QToolButton#likeToolBtn {
-    border-image: url("://Res/tabIcon/like-white.svg");
+    border-image: url(":/Res/tabIcon/like-white.svg");
 }
 GLTabWidget#guess_love_widget QToolButton#likeToolBtn:hover {
-    border-image: url("://Res/tabIcon/like-blue.svg");
+    border-image: url(":/Res/tabIcon/like-blue.svg");
 }
 GLTabWidget#guess_love_widget QToolButton#dislikeToolBtn {
-    border-image: url("://Res/tabIcon/dislike-white.svg");
+    border-image: url(":/Res/tabIcon/dislike-white.svg");
 }
 GLTabWidget#guess_love_widget QToolButton#dislikeToolBtn:hover {
-    border-image: url("://Res/tabIcon/dislike-blue.svg");
+    border-image: url(":/Res/tabIcon/dislike-blue.svg");
 }
 
 /*--------------------QSlider------------------------------*/
@@ -221,7 +221,7 @@ QSlider::sub-page:horizontal {
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(231,80,229, 255), stop:1 rgba(7,208,255, 255));
 }
 
-/*-------------------设置垂直滑动条样式----------------------*/
+/*-------------------?????????----------------------*/
 QScrollBar:vertical {
     border: 1px solid rgb(231,166,190);
     border-radius:4px;
@@ -229,7 +229,7 @@ QScrollBar:vertical {
     width: 10px;
     margin: 20px 0px 20px 0px;
 }
-/*--设置滑动条滑块样式*/
+/*--?????????*/
 QScrollBar::handle:vertical {
     background: rgb(237,188,206);
     border-radius: 4px;

@@ -83,9 +83,9 @@ KuGouApp::KuGouApp(MainWindow *parent)
         if (state == QMediaPlayer::PlayingState)this->m_isPlaying = true;
         else this->m_isPlaying = false;
         if (this->m_isPlaying) {
-            ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/pause.svg")));
+            ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
         } else {
-            ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/play.svg")));
+            ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
         }
     });
     mediaStatusConnection = connect(this->m_player.get(), &QMediaPlayer::mediaStatusChanged, this,
@@ -129,7 +129,7 @@ KuGouApp::~KuGouApp() {
 }
 
 void KuGouApp::initUi() {
-    this->setWindowIcon(QIcon(QStringLiteral("://Res/window/windowIcon.svg")));
+    this->setWindowIcon(QIcon(QStringLiteral(":/Res/window/windowIcon.svg")));
     setWindowFlags(Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground,true);
     //移动窗口到合适的地方
@@ -252,30 +252,30 @@ void KuGouApp::initSearch() {
 
 void KuGouApp::initTitleWidget() {
     ui->title_index_label1->setPixmap(
-        QPixmap(QStringLiteral("://Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
+        QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
     ui->title_index_label2->setPixmap(
-        QPixmap(QStringLiteral("://Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
+        QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
     ui->title_index_label3->setPixmap(
-        QPixmap(QStringLiteral("://Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
+        QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
     ui->title_index_label4->setPixmap(
-        QPixmap(QStringLiteral("://Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
+        QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
     ui->title_index_label2->hide();
     ui->title_index_label3->hide();
     ui->title_index_label4->hide();
 
     ui->title_line->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/line-black.svg")));
-    ui->search_lineEdit->addAction(QIcon(QStringLiteral("://Res/titlebar/search-black.svg")),
+    ui->search_lineEdit->addAction(QIcon(QStringLiteral(":/Res/titlebar/search-black.svg")),
                                    QLineEdit::LeadingPosition);
 
     //除非自定义QToolButton否则达不到 CSS 中 border-image 的效果
-    //ui->listen_toolButton->setIcon(QIcon("://Res/titlebar/listen-music-black.svg"));
+    //ui->listen_toolButton->setIcon(QIcon(":/Res/titlebar/listen-music-black.svg"));
 
-    QPixmap roundedPix = roundedPixmap(QPixmap(QStringLiteral("://Res/window/portrait.jpg")),
+    QPixmap roundedPix = roundedPixmap(QPixmap(QStringLiteral(":/Res/window/portrait.jpg")),
                                        ui->title_portrait_label->size(), 20);
     // 设置圆角半径
     ui->title_portrait_label->setPixmap(roundedPix);
 
-    ui->title_gender_label->setPixmap(QPixmap(QStringLiteral("://Res/window/boy.svg")));
+    ui->title_gender_label->setPixmap(QPixmap(QStringLiteral(":/Res/window/boy.svg")));
 
     //设置设置按钮的Frame圆角，填充颜色
     ui->min_toolButton->setRadius(6);
@@ -286,25 +286,25 @@ void KuGouApp::initTitleWidget() {
     ui->max_toolButton->setFillColor(QColor(QStringLiteral("#969696")));
     ui->close_toolButton->setFillColor(QColor(QStringLiteral("#FF0066")));
 
-    ui->min_toolButton->setMyIcon(QIcon(QStringLiteral("://Res/titlebar/minimize-black.svg")));
-    ui->max_toolButton->setMyIcon(QIcon(QStringLiteral("://Res/titlebar/maximize-black.svg")));
-    ui->close_toolButton->setMyIcon(QIcon(QStringLiteral("://Res/titlebar/close-black.svg")));
+    ui->min_toolButton->setMyIcon(QIcon(QStringLiteral(":/Res/titlebar/minimize-black.svg")));
+    ui->max_toolButton->setMyIcon(QIcon(QStringLiteral(":/Res/titlebar/maximize-black.svg")));
+    ui->close_toolButton->setMyIcon(QIcon(QStringLiteral(":/Res/titlebar/close-black.svg")));
 
     connect(ui->title_widget, &TitleWidget::doubleClicked, this, [this] { ui->max_toolButton->click(); });
 }
 
 void KuGouApp::initPlayWidget() {
-    ui->love_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/collect.svg")));
-    ui->download_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/download.svg")));
-    ui->comment_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/comment.svg")));
-    ui->share_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/share.svg")));
-    ui->more_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/more.svg")));
-    ui->pre_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/previous-song.svg")));
-    ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/play.svg")));
-    ui->next_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/next-song.svg")));
-    ui->erji_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/together.svg")));
-    ui->ci_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/song-words.svg")));
-    ui->list_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/play-list.svg")));
+    ui->love_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/collect.svg")));
+    ui->download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/download.svg")));
+    ui->comment_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/comment.svg")));
+    ui->share_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/share.svg")));
+    ui->more_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/more.svg")));
+    ui->pre_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/previous-song.svg")));
+    ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
+    ui->next_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/next-song.svg")));
+    ui->erji_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/together.svg")));
+    ui->ci_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/song-words.svg")));
+    ui->list_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play-list.svg")));
 
     connect(ui->play_widget, &PlayWidget::doubleClicked, this, [this] { ui->max_toolButton->clicked(); });
 }
@@ -312,20 +312,20 @@ void KuGouApp::initPlayWidget() {
 void KuGouApp::initMenu() {
     //发现音乐
     this->m_menuBtnGroup->setParent(ui->center_menu_widget);
-    ui->recommend_you_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/recommend.svg")));
-    ui->music_repository_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/music-library.svg")));
-    ui->song_list_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/song-list.svg")));
-    ui->channel_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/my-channel.svg")));
-    ui->video_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/video.svg")));
-    ui->live_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/live.svg")));
-    ui->daily_recommend_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/daily.svg")));
+    ui->recommend_you_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/recommend.svg")));
+    ui->music_repository_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/music-library.svg")));
+    ui->song_list_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/song-list.svg")));
+    ui->channel_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/my-channel.svg")));
+    ui->video_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/video.svg")));
+    ui->live_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/live.svg")));
+    ui->daily_recommend_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/daily.svg")));
     //我的音乐
-    ui->my_collection_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/collect.svg")));
-    ui->local_download_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/download.svg")));
-    ui->music_cloud_disk_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/cloud.svg")));
-    ui->purchased_music_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/bought.svg")));
-    ui->recently_played_toolButton->setIcon(QIcon(QStringLiteral("://Res/window/history.svg")));
-    ui->all_music_toolButton->setIcon(QIcon(QStringLiteral("://Res/titlebar/menu-black.svg")));
+    ui->my_collection_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/collect.svg")));
+    ui->local_download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/download.svg")));
+    ui->music_cloud_disk_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/cloud.svg")));
+    ui->purchased_music_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/bought.svg")));
+    ui->recently_played_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/history.svg")));
+    ui->all_music_toolButton->setIcon(QIcon(QStringLiteral(":/Res/titlebar/menu-black.svg")));
     //互斥
     m_menuBtnGroup->addButton(ui->recommend_you_toolButton);
     m_menuBtnGroup->addButton(ui->music_repository_toolButton);
@@ -668,8 +668,8 @@ void KuGouApp::onSubSongInfo(const SongInfor &info) {
     if(this->m_songInfoVector.isEmpty()) {
         this->m_isOrderPlay = false;
         this->m_isSingleCircle = false;
-        ui->circle_toolButton->setStyleSheet(R"(QToolButton{border-image:url('://Res/playbar/list-loop-gray.svg');}
-                                            QToolButton:hover{border-image:url('://Res/playbar/list-loop-blue.svg');})");
+        ui->circle_toolButton->setStyleSheet(R"(QToolButton{border-image:url(':/Res/playbar/list-loop-gray.svg');}
+                                            QToolButton:hover{border-image:url(':/Res/playbar/list-loop-blue.svg');})");
     }
     //更新当前播放下标
     this->m_songIndex = getCurrentIndex(this->m_songIndex);
@@ -831,13 +831,13 @@ void KuGouApp::on_max_toolButton_clicked() {
         //this->setGeometry(m_startGeometry); // 恢复前，我们先把它设置回最大化尺寸
         this->m_maxBtnStyle = R"(QToolButton#max_toolButton {
                                 background-color: rgba(255,255,255,0);
-                                qproperty-icon: url("://Res/titlebar/maximize-black.svg");
+                                qproperty-icon: url(":/Res/titlebar/maximize-black.svg");
                                 border-radius: 6px;
                                 height: 30px;
                                 width: 30px;
                                 icon-size: 12px 12px;
                             })";
-        ui->max_toolButton->setMyIcon(QIcon("://Res/titlebar/maximize-black.svg"));
+        ui->max_toolButton->setMyIcon(QIcon(":/Res/titlebar/maximize-black.svg"));
         this->m_animation->setDuration(500); // 设置动画持续时间
     }
     else {
@@ -848,13 +848,13 @@ void KuGouApp::on_max_toolButton_clicked() {
         m_endGeometry = this->screen()->availableGeometry(); // 获取屏幕的最大化尺寸
         this->m_maxBtnStyle = R"(QToolButton#max_toolButton {
                                 background-color: rgba(255,255,255,0);
-                                qproperty-icon: url("://Res/titlebar/resume-black.svg");
+                                qproperty-icon: url(":/Res/titlebar/resume-black.svg");
                                 border-radius: 6px;
                                 height: 30px;
                                 width: 30px;
                                 icon-size: 12px 12px;
                             })";
-        ui->max_toolButton->setMyIcon(QIcon("://Res/titlebar/resume-black.svg"));
+        ui->max_toolButton->setMyIcon(QIcon(":/Res/titlebar/resume-black.svg"));
         this->m_animation->setDuration(400); // 设置动画持续时间
     }
     //qDebug()<<"start : "<<this->m_startGeometry<<" end : "<<this->m_endGeometry;
@@ -999,10 +999,10 @@ void KuGouApp::on_play_or_pause_toolButton_clicked() {
     this->m_isPlaying = !this->m_isPlaying;
     if (this->m_isPlaying) {
         this->m_player->play();
-        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/pause.svg")));
+        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
     } else {
         this->m_player->pause();
-        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral("://Res/playbar/play.svg")));
+        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
     }
 }
 
@@ -1039,8 +1039,8 @@ void KuGouApp::on_circle_toolButton_clicked() {
         //this->m_player->setLoops(QMediaPlayer::Loops::Infinite);
         ////怪不得，原来错在这里，我就说怎么循环播放进度条一直有问题，服了
         ui->circle_toolButton->setStyleSheet(
-            R"(QToolButton{border-image:url('://Res/playbar/single-list-loop-gray.svg');}
-                                            QToolButton:hover{border-image:url('://Res/playbar/single-list-loop-blue.svg');})");
+            R"(QToolButton{border-image:url(':/Res/playbar/single-list-loop-gray.svg');}
+                                            QToolButton:hover{border-image:url(':/Res/playbar/single-list-loop-blue.svg');})");
         if (mediaStatusConnection) {
             disconnect(mediaStatusConnection);
             mediaStatusConnection = connect(this->m_player.get(), &QMediaPlayer::mediaStatusChanged, this,
@@ -1074,8 +1074,8 @@ void KuGouApp::on_circle_toolButton_clicked() {
         } else
             qDebug() << "mediaStatusConnection is empty";
 
-        ui->circle_toolButton->setStyleSheet(R"(QToolButton{border-image:url('://Res/playbar/list-loop-gray.svg');}
-                                            QToolButton:hover{border-image:url('://Res/playbar/list-loop-blue.svg');})");
+        ui->circle_toolButton->setStyleSheet(R"(QToolButton{border-image:url(':/Res/playbar/list-loop-gray.svg');}
+                                            QToolButton:hover{border-image:url(':/Res/playbar/list-loop-blue.svg');})");
     }
 }
 
