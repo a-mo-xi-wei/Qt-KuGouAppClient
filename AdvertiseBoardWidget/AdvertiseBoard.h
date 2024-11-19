@@ -18,12 +18,12 @@ signals:
     void clicked();
 protected:
     void enterEvent(QEnterEvent* event) override {
-        setPixmap(QPixmap(QStringLiteral("://Res/window/left-pink.svg"))); // 悬停时的图片
+        setPixmap(QPixmap(QStringLiteral(":/Res/window/left-pink.svg"))); // 悬停时的图片
         QLabel::enterEvent(event);
     }
 
     void leaveEvent(QEvent* event) override {
-        setPixmap(QPixmap(QStringLiteral("://Res/window/left.svg"))); // 悬停时的图片
+        setPixmap(QPixmap(QStringLiteral(":/Res/window/left.svg"))); // 悬停时的图片
         QLabel::leaveEvent(event);
     }
 
@@ -44,12 +44,12 @@ signals:
 
 protected:
     void enterEvent(QEnterEvent* event) override {
-        setPixmap(QPixmap(QStringLiteral("://Res/window/right-pink.svg"))); // 悬停时的图片
+        setPixmap(QPixmap(QStringLiteral(":/Res/window/right-pink.svg"))); // 悬停时的图片
         QLabel::enterEvent(event);
     }
 
     void leaveEvent(QEvent* event) override {
-        setPixmap(QPixmap(QStringLiteral("://Res/window/right.svg"))); // 悬停时的图片
+        setPixmap(QPixmap(QStringLiteral(":/Res/window/right.svg"))); // 悬停时的图片
         QLabel::leaveEvent(event);
     }
 

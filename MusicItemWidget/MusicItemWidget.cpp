@@ -337,11 +337,11 @@ void MusicItemWidget::onUpLoad() {
 
 void MusicItemWidget::initUi()
 {
-    this->m_playToolBtn     ->setIcon(QIcon(QStringLiteral("://Res/tabIcon/play3-gray.svg")));
-    this->m_playNextToolBtn ->setIcon(QIcon(QStringLiteral("://Res/tabIcon/add-music-list-gray.svg")));
-    this->m_downloadToolBtn ->setIcon(QIcon(QStringLiteral("://Res/window/download.svg")));
-    this->m_collectToolBtn  ->setIcon(QIcon(QStringLiteral("://Res/window/collect.svg")));
-    this->m_moreToolBtn     ->setIcon(QIcon(QStringLiteral("://Res/tabIcon/more2-gray.svg")));
+    this->m_playToolBtn     ->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-gray.svg")));
+    this->m_playNextToolBtn ->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/add-music-list-gray.svg")));
+    this->m_downloadToolBtn ->setIcon(QIcon(QStringLiteral(":/Res/window/download.svg")));
+    this->m_collectToolBtn  ->setIcon(QIcon(QStringLiteral(":/Res/window/collect.svg")));
+    this->m_moreToolBtn     ->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/more2-gray.svg")));
 
     this->m_playToolBtn     ->setCursor(Qt::PointingHandCursor);
     this->m_playNextToolBtn ->setCursor(Qt::PointingHandCursor);

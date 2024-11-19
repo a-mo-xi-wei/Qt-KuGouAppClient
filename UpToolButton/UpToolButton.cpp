@@ -17,16 +17,16 @@ void UpToolButton::initUi() {
     this->setStyleSheet(QStringLiteral("border-radius:5px;background-color:rgba(177,177,177,200);"));
 
     this->setCursor(Qt::PointingHandCursor);
-    this->setIcon(QIcon(QStringLiteral("://Res/window/up-white.svg")));
+    this->setIcon(QIcon(QStringLiteral(":/Res/window/up-white.svg")));
     this->hide();
 }
 
 void UpToolButton::enterEvent(QEnterEvent *event) {
     QToolButton::enterEvent(event);
-    this->setIcon(QIcon(QStringLiteral("://Res/window/up-hover.svg")));
+    this->setIcon(QIcon(QStringLiteral(":/Res/window/up-hover.svg")));
 }
 
 void UpToolButton::leaveEvent(QEvent *event) {
     QToolButton::leaveEvent(event);
-    this->setIcon(QIcon(QStringLiteral("://Res/window/up-white.svg")));
+    this->setIcon(QIcon(QStringLiteral(":/Res/window/up-white.svg")));
 }

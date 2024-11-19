@@ -98,11 +98,11 @@ void TableWidget::initUi() {
                            QLabel#moreLab{color:gray;font-size:12px;padding-bottom: 3px;}
                            QLabel#moreLab:hover{color:#26a1ff;}
                            QToolButton{background-color:rgba(255,255,255,0);}
-                           QToolButton#adjust_ToolBtn{border-image: url(':///Res/tabIcon/adjust-column-gray.svg');}
-                           QToolButton#adjust_ToolBtn:hover{border-image: url(':///Res/tabIcon/adjust-column-blue.svg');}
-                           QToolButton#refresh_ToolBtn{border-image: url(':///Res/tabIcon/refresh-gray.svg');}
-                           QToolButton#refresh_ToolBtn:hover{border-image: url(':///Res/tabIcon/refresh-blue.svg');}
-                           QToolButton#play_ToolBtn{border-image: url(':///Res/tabIcon/titlePlay.svg');}
+                           QToolButton#adjust_ToolBtn{border-image: url(':/Res/tabIcon/adjust-column-gray.svg');}
+                           QToolButton#adjust_ToolBtn:hover{border-image: url(':/Res/tabIcon/adjust-column-blue.svg');}
+                           QToolButton#refresh_ToolBtn{border-image: url(':/Res/tabIcon/refresh-gray.svg');}
+                           QToolButton#refresh_ToolBtn:hover{border-image: url(':/Res/tabIcon/refresh-blue.svg');}
+                           QToolButton#play_ToolBtn{border-image: url(':/Res/tabIcon/titlePlay.svg');}
                         )");
 
     m_tabHLayout->setSpacing(0);
@@ -555,12 +555,12 @@ void ItemListWidget::initUi() {
 
 
     this->m_play_add_ToolBtn->setStyleSheet(
-        R"(QToolButton#play_add_ToolBtn{border-image: url(':///Res/tabIcon/play-add-gray.svg');}
-                                               QToolButton#play_add_ToolBtn:hover{border-image: url(':///Res/tabIcon/play-add-blue.svg');})");
-    this->m_like_ToolBtn->setStyleSheet(R"(QToolButton#like_ToolBtn{border-image: url(':///Res/playbar/collect.svg')}
-                                           QToolButton#like_ToolBtn:hover{border-image: url(':///Res/tabIcon/collect-blue.svg');})");
-    this->m_more_ToolBtn->setStyleSheet(R"(QToolButton#more_ToolBtn{border-image: url(':///Res/playbar/more.svg');}
-                                           QToolButton#more_ToolBtn:hover{border-image: url(':///Res/playbar/more-blue.svg');})");
+        R"(QToolButton#play_add_ToolBtn{border-image: url(':/Res/tabIcon/play-add-gray.svg');}
+                                               QToolButton#play_add_ToolBtn:hover{border-image: url(':/Res/tabIcon/play-add-blue.svg');})");
+    this->m_like_ToolBtn->setStyleSheet(R"(QToolButton#like_ToolBtn{border-image: url(':/Res/playbar/collect.svg')}
+                                           QToolButton#like_ToolBtn:hover{border-image: url(':/Res/tabIcon/collect-blue.svg');})");
+    this->m_more_ToolBtn->setStyleSheet(R"(QToolButton#more_ToolBtn{border-image: url(':/Res/playbar/more.svg');}
+                                           QToolButton#more_ToolBtn:hover{border-image: url(':/Res/playbar/more-blue.svg');})");
 
     QVBoxLayout *vlayout = new QVBoxLayout;
     vlayout->addWidget(this->m_nameLab);
@@ -695,7 +695,7 @@ void ItemBlockWidget::initUi() {
     this->m_tipLab->move(6, 6);
 
     this->m_popularBtn->setFixedSize(70, 20);
-    this->m_popularBtn->setIcon(QIcon(QStringLiteral("://Res/tabIcon/popular-white.svg")));
+    this->m_popularBtn->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/popular-white.svg")));
     this->setPopularBtnText(QString::number(QRandomGenerator::global()->generateDouble() * 1000, 'f', 1));
     this->m_popularBtn->setContentsMargins(5, 0, 5, 0);
     this->m_popularBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
