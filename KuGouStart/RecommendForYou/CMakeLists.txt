@@ -15,6 +15,7 @@ set(SOURCE_FILE
     RecommendForYou.cpp
     RecommendForYou.h
     RecommendForYou.ui
+    recommend.css
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
