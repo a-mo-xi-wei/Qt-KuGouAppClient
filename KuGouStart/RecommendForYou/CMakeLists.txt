@@ -12,10 +12,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 REQUIRED COMPONENTS Widgets UiTools)
 
 set(SOURCE_FILE
-        RecommendForYou.cpp
-        RecommendForYou.h
-        RecommendForYou.ui
-        recommend.css
+    RecommendForYou.cpp
+    RecommendForYou.h
+    RecommendForYou.ui
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})

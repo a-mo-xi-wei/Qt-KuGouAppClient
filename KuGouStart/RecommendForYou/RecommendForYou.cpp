@@ -38,32 +38,43 @@ RecommendForYou::~RecommendForYou() {
 
 void RecommendForYou::initAdvertiseBoard()
 {
-    QDir dir(__FILE__);
-    if (dir.cdUp())dir.cd("Res/poster");
+    QDir dir(__FILE__);dir.cdUp();
+    //qDebug()<<"当前目录："<<dir.dirName();
+    dir.cd("recommend/poster");
 
     auto s = dir.entryList(QDir::Files | QDir::NoDotAndDotDot).size();
-    for (auto i = 1; i <= s; ++i)
-        ui->advertise_board_widget->addPoster(QPixmap(QString(":/Res/poster/%1.jpg").arg(i)));
+    //qDebug()<<"共有: "<<s<<" 条数据";
+    for (auto i = 1; i <= s; ++i) {
+        //QString path = QString(":/RecommendForYou/Res/recommend/poster/%1.jpg").arg(i);
+        //qDebug()<<"图片路径为："<<path;
+        //const QPixmap pix(path);
+        //if(pix.isNull())qDebug()<<"图像错误";
+        ui->advertise_board_widget->addPoster(QPixmap(QString(":/RecommendForYou/Res/recommend/poster/%1.jpg").arg(i)));
+    }
+
 }
 
 void RecommendForYou::initClassifyWidget() {
-    ui->recommend_toolButton->setIcon(QIcon(":/Res/tabIcon/rili.svg"));
+    //QIcon ico = QIcon(":/RecommendForYou/recommend/tabIcon/rili.svg");
+    //if(ico.isNull())qDebug()<<"++++++++++ico 为空++++++++++++++";
+    //QFile file(":/RecommendForYou/recommend/tabIcon/rili.svg");
+    //qDebug() << "File Exists:" << file.exists();
+    ui->recommend_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/rili.svg"));
     ui->recommend_toolButton->setEnterIconSize(QSize(35,35));
     ui->recommend_toolButton->setLeaveIconSize(QSize(30,30));
-    ui->ranking_list_toolButton->setIcon(QIcon(":/Res/tabIcon/rank.svg"));
+    ui->ranking_list_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/rank.svg"));
     ui->ranking_list_toolButton->setEnterIconSize(QSize(40,40));
     ui->ranking_list_toolButton->setLeaveIconSize(QSize(35,35));
-    ui->classify_toolButton->setIcon(QIcon(":/Res/tabIcon/classification.svg"));
+    ui->classify_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/classification.svg"));
     ui->classify_toolButton->setEnterIconSize(QSize(40,40));
     ui->classify_toolButton->setLeaveIconSize(QSize(35,35));
-    ui->scene_music_toolButton->setIcon(QIcon(":/Res/tabIcon/shafa.svg"));
+    ui->scene_music_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/shafa.svg"));
     ui->scene_music_toolButton->setEnterIconSize(QSize(45,45));
     ui->scene_music_toolButton->setLeaveIconSize(QSize(40,40));
     ui->scene_music_toolButton->setEnterFontSize(13);
-    ui->music_quality_toolButton->setIcon(QIcon(":/Res/tabIcon/dish.svg"));
+    ui->music_quality_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/dish.svg"));
     ui->music_quality_toolButton->setEnterIconSize(QSize(40,40));
     ui->music_quality_toolButton->setLeaveIconSize(QSize(35,35));
-    //ui->recommend_toolButton->setIcon(QIcon(":/Res/tabIcon/rili.svg"));
 }
 
 void RecommendForYou::initTabWidget() {
