@@ -83,6 +83,7 @@ void TableWidget::initUi() {
     this->m_play_ToolBtn->setCursor(Qt::PointingHandCursor);
     this->m_adjust_ToolBtn->setCursor(Qt::PointingHandCursor);
     this->m_refresh_ToolBtn->setCursor(Qt::PointingHandCursor);
+    this->m_more_Lab->setCursor(Qt::PointingHandCursor);
 
     this->m_titleLab->setObjectName(QStringLiteral("titleLab"));
     this->m_play_ToolBtn->setObjectName(QStringLiteral("play_ToolBtn"));
@@ -554,8 +555,7 @@ void ItemListWidget::initUi() {
     this->m_more_ToolBtn->setObjectName(QStringLiteral("more_ToolBtn"));
 
 
-    this->m_play_add_ToolBtn->setStyleSheet(
-        R"(QToolButton#play_add_ToolBtn{border-image: url(':/Res/tabIcon/play-add-gray.svg');}
+    this->m_play_add_ToolBtn->setStyleSheet(R"(QToolButton#play_add_ToolBtn{border-image: url(':/Res/tabIcon/play-add-gray.svg');}
                                                QToolButton#play_add_ToolBtn:hover{border-image: url(':/Res/tabIcon/play-add-blue.svg');})");
     this->m_like_ToolBtn->setStyleSheet(R"(QToolButton#like_ToolBtn{border-image: url(':/Res/playbar/collect.svg')}
                                            QToolButton#like_ToolBtn:hover{border-image: url(':/Res/tabIcon/collect-blue.svg');})");
