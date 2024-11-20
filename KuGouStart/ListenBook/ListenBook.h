@@ -22,6 +22,9 @@ public:
 
     void initUi();
 
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
 private:
     Ui::ListenBook *ui;
     std::unique_ptr<QButtonGroup> m_buttonGroup{};
