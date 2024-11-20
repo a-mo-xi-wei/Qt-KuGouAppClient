@@ -603,10 +603,23 @@
        </widget>
       </item>
       <item>
-       <widget class="QWidget" name="table_widget" native="true"/>
+       <widget class="QWidget" name="table_widget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>100</height>
+         </size>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QWidget" name="rank_widget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>101</height>
+         </size>
+        </property>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="QWidget" name="widget_7" native="true"/>
