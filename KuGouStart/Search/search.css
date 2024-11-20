@@ -1,0 +1,12 @@
+QWidget#classify_widget > QPushButton{
+    background-color: rgba(255,255,255,0);
+    font-size: 15px;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+QWidget#classify_widget > QPushButton:checked{
+    font-weight: bold;
+    font-size: 20px;
+    color: #26A1FF;
+}
