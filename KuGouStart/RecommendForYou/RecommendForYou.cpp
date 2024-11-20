@@ -59,19 +59,31 @@ void RecommendForYou::initClassifyWidget() {
     //if(ico.isNull())qDebug()<<"++++++++++ico 为空++++++++++++++";
     //QFile file(":/RecommendForYou/recommend/tabIcon/rili.svg");
     //qDebug() << "File Exists:" << file.exists();
+
+    //设置可变大小
+    ui->recommend_toolButton->setChangeSize(true);
+    ui->ranking_list_toolButton->setChangeSize(true);
+    ui->classify_toolButton->setChangeSize(true);
+    ui->scene_music_toolButton->setChangeSize(true);
+    ui->music_quality_toolButton->setChangeSize(true);
+
     ui->recommend_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/rili.svg"));
     ui->recommend_toolButton->setEnterIconSize(QSize(35,35));
     ui->recommend_toolButton->setLeaveIconSize(QSize(30,30));
+
     ui->ranking_list_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/rank.svg"));
     ui->ranking_list_toolButton->setEnterIconSize(QSize(40,40));
     ui->ranking_list_toolButton->setLeaveIconSize(QSize(35,35));
+
     ui->classify_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/classification.svg"));
     ui->classify_toolButton->setEnterIconSize(QSize(40,40));
     ui->classify_toolButton->setLeaveIconSize(QSize(35,35));
+
     ui->scene_music_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/shafa.svg"));
     ui->scene_music_toolButton->setEnterIconSize(QSize(45,45));
     ui->scene_music_toolButton->setLeaveIconSize(QSize(40,40));
     ui->scene_music_toolButton->setEnterFontSize(13);
+
     ui->music_quality_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/dish.svg"));
     ui->music_quality_toolButton->setEnterIconSize(QSize(40,40));
     ui->music_quality_toolButton->setLeaveIconSize(QSize(35,35));
