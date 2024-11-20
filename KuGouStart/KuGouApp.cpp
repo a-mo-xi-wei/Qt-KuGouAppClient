@@ -545,12 +545,20 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
     //
     if(!this->m_player->source().isEmpty() && !this->m_songInfoVector.isEmpty())update_cover_singer_song_HLayout();
     //stackedWidget宽度处理
-    if(ui->stackedWidget->width() + ui->menu_scrollArea->width() > this->width() - 20) {
-        //ui->stackedWidget->setFixedWidth(this->width() - ui->menu_scrollArea->width() - 20);
-        auto geo = ui->stackedWidget->geometry();
-        geo.setWidth(this->width() - ui->menu_scrollArea->width() - 30);
-        ui->stackedWidget->setGeometry(geo);
-
+    if(!ui->menu_scrollArea->isHidden()) {
+        if(ui->stackedWidget->width() + ui->menu_scrollArea->width() > this->width() - 20) {
+            //ui->stackedWidget->setFixedWidth(this->width() - ui->menu_scrollArea->width() - 20);
+            auto geo = ui->stackedWidget->geometry();
+            geo.setWidth(this->width() - ui->menu_scrollArea->width() - 30);
+            ui->stackedWidget->setGeometry(geo);
+        }
+    }
+    else {
+        if(ui->stackedWidget->width() > this->width() -20) {
+            auto geo = ui->stackedWidget->geometry();
+            geo.setWidth(this->width() - 25);
+            ui->stackedWidget->setGeometry(geo);
+        }
     }
 
 }
