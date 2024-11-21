@@ -469,6 +469,9 @@
       <property name="spacing">
        <number>30</number>
       </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <property name="spacing">
@@ -711,7 +714,7 @@
     <widget class="QWidget" name="table_widget" native="true">
      <layout class="QVBoxLayout" name="verticalLayout_5">
       <item>
-       <widget class="QWidget" name="widget" native="true">
+       <widget class="QStackedWidget" name="stackedWidget">
         <property name="minimumSize">
          <size>
           <width>0</width>
