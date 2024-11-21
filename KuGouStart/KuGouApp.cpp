@@ -650,6 +650,7 @@ void KuGouApp::onPlayMusic(int index) {
 
 void KuGouApp::onStartPlay() {
     if(this->m_isSingleCircle)ui->circle_toolButton->clicked();
+    if(this->m_songInfoVector.isEmpty())return;
     this->m_isOrderPlay = true;
     this->m_orderIndex = 0;
     //直接从第一首开始播放
