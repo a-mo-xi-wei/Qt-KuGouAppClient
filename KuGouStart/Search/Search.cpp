@@ -17,11 +17,13 @@
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
+//唯一标志
 std::once_flag flag1;
 std::once_flag flag2;
 std::once_flag flag3;
 std::once_flag flag4;
-#define IMAGE_WIDTH 102
+
+#define IMAGE_WIDTH 102     //图片的宽度（正方形）
 
 Search::Search(QWidget *parent) :
     QWidget(parent), ui(new Ui::Search)
@@ -90,9 +92,9 @@ void Search::initUi() {
 void Search::initStackWidget() {
     //分配内存
     this->m_recommendWidget = std::make_unique<QWidget>(ui->stackedWidget);
-    this->m_rankWidget = std::make_unique<QWidget>(ui->stackedWidget);
-    this->m_specialWidget = std::make_unique<QWidget>(ui->stackedWidget);
-    this->m_channelWidget = std::make_unique<QWidget>(ui->stackedWidget);
+    this->m_rankWidget      = std::make_unique<QWidget>(ui->stackedWidget);
+    this->m_specialWidget   = std::make_unique<QWidget>(ui->stackedWidget);
+    this->m_channelWidget   = std::make_unique<QWidget>(ui->stackedWidget);
     //设置布局
     auto lay1 = new MyFlowLayout;
     this->m_recommendWidget->setLayout(lay1);
@@ -122,7 +124,7 @@ void Search::initCoverVector() {
 void Search::initDescVector() {
     QStringList list = {"酷歌词","抖音潮流区","开车必备歌曲专区","抖音DJ",
         "2021抖音最火歌曲","DJ必备歌曲","伤感音乐","车载DJ","植物大战僵尸",
-        "抖音热歌","刀郎老哥合集","魔道祖师","邓丽君老哥合集","学生党专区",
+        "抖音热歌","刀郎老哥合集","魔道祖师","邓丽君老歌合集","学生党专区",
         "夜听伤感频道","纯音乐路的尽头会是温柔和月光","鞠婧祎的歌","快手抖音最火歌曲集合",
         "肖战","KG大神","我的世界","神仙翻唱","岁月陈酿过的粤语老歌","治愈专区",
         "林俊杰音乐汇","第五人格角色曲","满载回忆的华语经典","云南山歌-单曲-专辑精选汇聚",
@@ -143,6 +145,40 @@ void Search::refresh() {
     // 随机打乱 QVector
     std::shuffle(this->m_coverVector.begin(), this->m_coverVector.end(), std::default_random_engine(seed));
     std::shuffle(this->m_descVector.begin(), this->m_descVector.end(), std::default_random_engine(seed));
+}
+
+void Search::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+    //qDebug()<<"Search::resizeEvent";
+    // 获取顶级窗口的指针
+    QWidget *topLevelWindow = this->window();
+    if (!topLevelWindow) {
+        qWarning() << "无法获取顶级窗口！";
+        return;
+    }
+
+    int topLevelWidth = topLevelWindow->width();
+    //qDebug()<<"顶级窗口宽度为："<<topLevelWidth<<" 当前窗口宽度为："<<this->width();
+    if(this->width() > topLevelWidth) {
+        auto geo = this->geometry();
+        geo.setWidth(topLevelWidth - 10);
+        this->setGeometry(geo);
+        //qDebug()<<"修改后顶级窗口宽度为："<<topLevelWidth<<" 当前窗口宽度为："<<this->width();
+    }
+    {
+        //无用
+        //auto geo = ui->stackedWidget->geometry();
+        //for (int i = 0; i < ui->stackedWidget->count(); ++i) {
+        //    QWidget *page = ui->stackedWidget->widget(i);
+        //    if (page) {
+        //        auto pageGeo = page->geometry();
+        //        pageGeo.setWidth(geo.width()); // 与堆栈窗口一致
+        //        page->setGeometry(pageGeo);
+        //        qDebug()<<"page "<<i + 1<<" 改变宽度为 "<<geo.width();
+        //    }
+        //}
+    }
+
 }
 
 void Search::on_recommend_pushButton_clicked() {

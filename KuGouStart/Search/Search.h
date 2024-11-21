@@ -35,6 +35,9 @@ private:
 
     void refresh();
 
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 private slots:
     void on_recommend_pushButton_clicked();
 
