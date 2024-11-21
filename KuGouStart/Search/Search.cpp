@@ -160,14 +160,19 @@ void Search::on_recommend_pushButton_clicked() {
         //54个图片、描述
         for (int i = 0; i < 54; ++i) {
             auto btn = new QToolButton(this->m_recommendWidget.get());
+            btn->setCursor(Qt::PointingHandCursor);
             btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
             btn->setIconSize(QSize(IMAGE_WIDTH, IMAGE_WIDTH));
             btn->setIcon(this->m_coverVector[i]);
             QFont font("微软雅黑",10);
             QFontMetrics fm(font);
             auto text = this->m_descVector[i];
-            text = fm.elidedText(text,Qt::ElideRight,IMAGE_WIDTH);
-            btn->setText(text);
+            auto elidedText = fm.elidedText(text,Qt::ElideRight,IMAGE_WIDTH);
+            // 检查是否被省略
+            if (elidedText != text) {
+                btn->setToolTip(text); // 被省略时设置完整文本为 tooltip
+            }
+            btn->setText(elidedText);
             lay->addWidget(btn);
         }
     };
@@ -190,14 +195,19 @@ void Search::on_rank_pushButton_clicked() {
         //19个图片、描述
         for (int i = 0; i < 19; ++i) {
             auto btn = new QToolButton(this->m_rankWidget.get());
+            btn->setCursor(Qt::PointingHandCursor);
             btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
             btn->setIconSize(QSize(IMAGE_WIDTH, IMAGE_WIDTH));
             btn->setIcon(this->m_coverVector[i]);
             QFont font("微软雅黑",10);
             QFontMetrics fm(font);
             auto text = this->m_descVector[i];
-            text = fm.elidedText(text,Qt::ElideRight,IMAGE_WIDTH);
-            btn->setText(text);
+            auto elidedText = fm.elidedText(text,Qt::ElideRight,IMAGE_WIDTH);
+            // 检查是否被省略
+            if (elidedText != text) {
+                btn->setToolTip(text); // 被省略时设置完整文本为 tooltip
+            }
+            btn->setText(elidedText);
             lay->addWidget(btn);
         }
     };
@@ -220,14 +230,19 @@ void Search::on_special_pushButton_clicked() {
         //27个图片、描述
         for (int i = 0; i < 27; ++i) {
             auto btn = new QToolButton(this->m_specialWidget.get());
+            btn->setCursor(Qt::PointingHandCursor);
             btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
             btn->setIconSize(QSize(IMAGE_WIDTH, IMAGE_WIDTH));
             btn->setIcon(this->m_coverVector[i]);
             QFont font("微软雅黑",10);
             QFontMetrics fm(font);
             auto text = this->m_descVector[i];
-            text = fm.elidedText(text,Qt::ElideRight,IMAGE_WIDTH);
-            btn->setText(text);
+            auto elidedText = fm.elidedText(text,Qt::ElideRight,IMAGE_WIDTH);
+            // 检查是否被省略
+            if (elidedText != text) {
+                btn->setToolTip(text); // 被省略时设置完整文本为 tooltip
+            }
+            btn->setText(elidedText);
             lay->addWidget(btn);
         }
     };
@@ -250,14 +265,19 @@ void Search::on_channel_pushButton_clicked() {
         //7个图片、描述
         for (int i = 0; i < 7; ++i) {
             auto btn = new QToolButton(this->m_channelWidget.get());
+            btn->setCursor(Qt::PointingHandCursor);
             btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
             btn->setIconSize(QSize(IMAGE_WIDTH, IMAGE_WIDTH));
             btn->setIcon(this->m_coverVector[i]);
             QFont font("微软雅黑",10);
             QFontMetrics fm(font);
             auto text = this->m_descVector[i];
-            text = fm.elidedText(text,Qt::ElideRight,IMAGE_WIDTH);
-            btn->setText(text);
+            auto elidedText = fm.elidedText(text,Qt::ElideRight,IMAGE_WIDTH);
+            // 检查是否被省略
+            if (elidedText != text) {
+                btn->setToolTip(text); // 被省略时设置完整文本为 tooltip
+            }
+            btn->setText(elidedText);
             lay->addWidget(btn);
         }
     };
