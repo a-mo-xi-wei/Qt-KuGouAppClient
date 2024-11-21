@@ -14,10 +14,6 @@ QWidget#classify_widget > QPushButton:checked{
     font-size: 20px;
     color: #26A1FF;
 }
-QStackedWidget > QToolButton{
-    background-color: rgba(255,255,255,0);
-    border: none;
-    padding: 0px;
-    margin: 0px;
-    border-radius: 8px;
+QStackedWidget QToolButton:hover{
+    color: #26A1FF;
 }
