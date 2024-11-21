@@ -11,6 +11,9 @@ add_subdirectory(BasicWidget)
 #自定义堆栈窗口模块
 add_subdirectory(MyStackedWidget)
 
+#自定义流式布局
+add_subdirectory(MyFlowLayout)
+
 #广告模块
 add_subdirectory(AdvertiseBoardWidget)
 
