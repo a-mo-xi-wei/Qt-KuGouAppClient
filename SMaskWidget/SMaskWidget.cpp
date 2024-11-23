@@ -49,6 +49,7 @@ bool SMaskWidget::isMouseInCircle(const float &mouseX, const float &mouseY) {
 
 void SMaskWidget::paintEvent(QPaintEvent *event) {
     QWidget::paintEvent(event);
+    //qDebug()<<"重绘";//只要悬停就会一直调用，不明所以
     constexpr QColor color(0, 0, 0, 160);//遮罩颜色
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
@@ -102,35 +103,40 @@ void SMaskWidget::paintEvent(QPaintEvent *event) {
         painter.drawPath(path);
     }
 }
+
+void SMaskWidget::mousePressEvent(QMouseEvent *event) {
+    //qDebug() << "鼠标按下";
+    event->ignore();
+}
+
+void SMaskWidget::mouseReleaseEvent(QMouseEvent *event) {
+    //qDebug() << "鼠标释放";
+    event->ignore();
+}
+
 void SMaskWidget::mouseMoveEvent(QMouseEvent *event) {
     QWidget::mouseMoveEvent(event);
     const auto x = static_cast<float>(event->pos().x());
     const auto y= static_cast<float>(event->pos().y());
-    this->m_isEnterCircle = isMouseInCircle(x,y);
-    if(this->m_isEnterWidgetChangeCursor) {//立马变指向
-        this->setCursor(Qt::PointingHandCursor);
+    if(this->m_isEnterCircle != isMouseInCircle(x,y)) {
+        this->m_isEnterCircle = isMouseInCircle(x,y);
+        if(this->m_isEnterWidgetChangeCursor) {//立马变指向
+            this->setCursor(Qt::PointingHandCursor);
+        }
+        else {//进入圆圈再变指向
+            if(this->m_isEnterCircle)this->setCursor(Qt::PointingHandCursor);
+            else this->setCursor(Qt::ArrowCursor);
+        }
+        //qDebug() << "鼠标移动";
+        update();
     }
-    else {//进入圆圈再变指向
-        if(this->m_isEnterCircle)this->setCursor(Qt::PointingHandCursor);
-        else this->setCursor(Qt::ArrowCursor);
-    }
 
-    update();
-}
-
-void SMaskWidget::leaveEvent(QEvent *event) {
-    QWidget::leaveEvent(event);
-    update();
-}
-
-void SMaskWidget::enterEvent(QEnterEvent *event) {
-    QWidget::enterEvent(event);
-    update();
 }
 
 void SMaskWidget::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     calOnce();
+    //qDebug() << "大小改变******";
     update();
 }
