@@ -536,17 +536,26 @@
         <property name="spacing">
          <number>5</number>
         </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetFixedSize</enum>
+        </property>
         <item>
          <widget class="QPushButton" name="recommend_pushButton">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>70</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>16777215</width>
+            <width>70</width>
             <height>20</height>
            </size>
           </property>
@@ -612,17 +621,26 @@
         <property name="spacing">
          <number>5</number>
         </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetFixedSize</enum>
+        </property>
         <item>
          <widget class="QPushButton" name="rank_pushButton">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>70</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>16777215</width>
+            <width>70</width>
             <height>20</height>
            </size>
           </property>
@@ -682,17 +700,26 @@
         <property name="spacing">
          <number>5</number>
         </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetFixedSize</enum>
+        </property>
         <item>
          <widget class="QPushButton" name="special_pushButton">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>70</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>16777215</width>
+            <width>70</width>
             <height>20</height>
            </size>
           </property>
@@ -752,17 +779,26 @@
         <property name="spacing">
          <number>5</number>
         </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetFixedSize</enum>
+        </property>
         <item>
          <widget class="QPushButton" name="channel_pushButton">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>70</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="maximumSize">
            <size>
-            <width>16777215</width>
+            <width>70</width>
             <height>20</height>
            </size>
           </property>
