@@ -139,7 +139,7 @@ void TableWidget::initUi() {
 void TableWidget::initBlockCover() {
     for (int i = 0; i < 4; ++i) {
         for (int j = 0; j < 7; ++j) {
-            this->m_blockCoverPaths.emplace_back(QString(":/Res/tabIcon/music-block-cover%1.jpg").arg(i * 7 + j + 1));
+            this->m_blockCoverPaths.emplace_back(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(i * 7 + j + 1));
         }
     }
 }
@@ -562,11 +562,11 @@ void ItemListWidget::initUi() {
     this->m_more_ToolBtn->setStyleSheet(R"(QToolButton#more_ToolBtn{border-image: url(':/Res/playbar/more.svg');}
                                            QToolButton#more_ToolBtn:hover{border-image: url(':/Res/playbar/more-blue.svg');})");
 
-    QVBoxLayout *vlayout = new QVBoxLayout;
+    auto vlayout = new QVBoxLayout;
     vlayout->addWidget(this->m_nameLab);
     vlayout->addWidget(this->m_authorLab);
 
-    QHBoxLayout *hlayout = new QHBoxLayout(this);
+    auto hlayout = new QHBoxLayout(this);
     hlayout->setContentsMargins(0, 0, 10, 0);
     hlayout->addWidget(this->m_coverLab);
 
@@ -646,6 +646,7 @@ void ItemBlockWidget::paintEvent(QPaintEvent *ev) {
         this->m_mask->raise();
         this->m_popularBtn->setStyleSheet(QStringLiteral("color:white;border-radius:10px;background-color: rgba(60,60,60, 127);"));
     } else {
+        this->m_popularBtn->setStyleSheet(QStringLiteral("color:white;border-radius:10px;background-color: rgba(128, 128, 128, 127);"));
         this->m_mask->hide();
     }
 }
@@ -703,7 +704,6 @@ void ItemBlockWidget::initUi() {
     //this->m_popularBtn->move(this->width()-this->m_popularBtn->height()-10,this->m_bacWidget->height()-this->m_popularBtn->height()-10);
     //qDebug()<<"this->m_bacWidget->width() : "<<this->m_bacWidget->width()<<"\nthis->width() : "<<this->width();
 
-    this->m_describeLab->setText(QStringLiteral("游戏主播常用音乐"));
     this->m_describeLab->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
 
     auto vlayout = new QVBoxLayout(this);
