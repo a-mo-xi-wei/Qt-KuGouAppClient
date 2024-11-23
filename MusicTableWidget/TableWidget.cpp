@@ -507,24 +507,28 @@ void ItemListWidget::paintEvent(QPaintEvent *ev) {
 void ItemListWidget::enterEvent(QEnterEvent *ev) {
     // 先调用父类的 paintEvent 以执行默认绘制行为
     QWidget::enterEvent(ev);
-    this->m_isHoverCoverLab = true;
-    this->m_play_add_ToolBtn->show();
-    this->m_like_ToolBtn->show();
-    this->m_more_ToolBtn->show();
-    this->setStyleSheet(R"(QWidget{border-radius:8px;background-color:#e8eafb;}
-                           QLabel{background-color:#e8eafb;}
-                           QLabel:hover{color:#2291e6;})");
-    update();
+    if(!this->m_isHoverCoverLab) {
+        this->m_isHoverCoverLab = true;
+        this->m_play_add_ToolBtn->show();
+        this->m_like_ToolBtn->show();
+        this->m_more_ToolBtn->show();
+        this->setStyleSheet(R"(QWidget{border-radius:8px;background-color:#e8eafb;}
+                               QLabel{background-color:#e8eafb;}
+                               QLabel:hover{color:#2291e6;})");
+        update();
+    }
 }
 
 void ItemListWidget::leaveEvent(QEvent *ev) {
     QWidget::leaveEvent(ev);
-    this->m_isHoverCoverLab = false;
-    this->m_play_add_ToolBtn->hide();
-    this->m_like_ToolBtn->hide();
-    this->m_more_ToolBtn->hide();
-    this->setStyleSheet(R"(QWidget{border-radius:8px;})");
-    update();
+    if(this->m_isHoverCoverLab) {
+        this->m_isHoverCoverLab = false;
+        this->m_play_add_ToolBtn->hide();
+        this->m_like_ToolBtn->hide();
+        this->m_more_ToolBtn->hide();
+        this->setStyleSheet(R"(QWidget{border-radius:8px;})");
+        update();
+    }
 }
 
 void ItemListWidget::resizeEvent(QResizeEvent *event) {
@@ -635,6 +639,7 @@ void ItemBlockWidget::setDescribeText(QString desc) {
 void ItemBlockWidget::paintEvent(QPaintEvent *ev) {
     // 先调用父类的 paintEvent 以执行默认绘制行为
     QWidget::paintEvent(ev);
+    qDebug()<<"ItemBlockWidget重绘";
     QStyleOption opt;
     opt.initFrom(this);
     QPainter p(this);
@@ -655,20 +660,24 @@ void ItemBlockWidget::paintEvent(QPaintEvent *ev) {
 void ItemBlockWidget::enterEvent(QEnterEvent *ev) {
     // 先调用父类的 paintEvent 以执行默认绘制行为
     QWidget::enterEvent(ev);
-    this->m_isHoverCoverLab = true;
-    update();
+    if(!this->m_isHoverCoverLab) {
+        this->m_isHoverCoverLab = true;
+        update();
+    }
+
 }
 
 void ItemBlockWidget::leaveEvent(QEvent *ev) {
     // 先调用父类的 paintEvent 以执行默认绘制行为
     QWidget::leaveEvent(ev);
-    this->m_isHoverCoverLab = false;
-    update();
+    if(this->m_isHoverCoverLab) {
+        this->m_isHoverCoverLab = false;
+        update();
+    }
 }
 
 void ItemBlockWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
-    //qDebug()<<"改变大小 : "<<event->size();
 
     this->setFixedHeight(event->size().width() + DescribeLabHeight);
     //this->setGeometry(this->geometry().x(),this->geometry().y(),this->geometry().width(),event->size().width() + DescribeLabHeight);
