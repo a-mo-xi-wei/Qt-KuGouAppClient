@@ -11,6 +11,17 @@ class SMaskWidget : public QWidget {
 public:
     explicit SMaskWidget(QWidget *parent = nullptr);
 
+    void setDefaultFillCircleColor(const QColor &color);
+
+    void setDefaultFillTriangleColor(const QColor &color);
+
+    void setHoverFillCircleColor(const QColor &color);
+
+    void setHoverFillTriangleColor(const QColor &color);
+
+    void setEnterWidgetChangeCursor(const bool& change);
+
+private:
     void calOnce();
 
     bool isMouseInCircle(const float &mouseX, const float &mouseY);
@@ -36,7 +47,15 @@ private:
     QPointF m_ap;
     QPointF m_bp;
     QPointF m_cp;
-    bool m_isEnter = false;
+    //颜色相关
+    QColor m_defaultFillCircleColor = QColor();
+    QColor m_hoverFillCircleColor = Qt::white;
+    QColor m_defaultFillTriangleColor = Qt::white;
+    QColor m_hoverFillTriangleColor = QColor();
+    //鼠标一进入widget就变指向样式
+    bool m_isEnterWidgetChangeCursor = true;
+    bool m_isEnterCircle = false;
+
 };
 
 #endif // SMASKWIDGET_H

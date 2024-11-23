@@ -202,7 +202,7 @@ void TableWidget::initSongInfo() {
 }
 
 void TableWidget::initDescVector() {
-    //插入28条描述
+    //插入至少28条描述
     this->m_descVector.emplace_back(QStringLiteral("【欧美】让人一听就上头的欧美歌曲"));
     this->m_descVector.emplace_back(QStringLiteral("适合晚上听的甜甜的歌"));
     this->m_descVector.emplace_back(QStringLiteral("『欧美R＆B』比红唇更加性感致命的旋律"));
@@ -448,6 +448,7 @@ ItemListWidget::ItemListWidget(QPixmap coverPix, const QString &name, const QStr
     this->m_coverLab->setStyleSheet(R"(margin:0px;padding:0px;background-color: rgba(255, 0, 0, 0);)");
 
     initUi();
+    this->m_mask->setEnterWidgetChangeCursor(false);
     this->m_mask->move(this->m_coverLab->pos());
     this->m_mask->setFixedSize(this->m_coverLab->size());
     this->m_mask->hide();

@@ -9,6 +9,26 @@ SMaskWidget::SMaskWidget(QWidget *parent)
     this->setMouseTracking(true);
 }
 
+void SMaskWidget::setDefaultFillCircleColor(const QColor &color) {
+    this->m_defaultFillCircleColor = color;
+}
+
+void SMaskWidget::setDefaultFillTriangleColor(const QColor &color) {
+    this->m_defaultFillTriangleColor = color;
+}
+
+void SMaskWidget::setHoverFillCircleColor(const QColor &color) {
+    this->m_hoverFillCircleColor = color;
+}
+
+void SMaskWidget::setHoverFillTriangleColor(const QColor &color) {
+    this->m_hoverFillTriangleColor = color;
+}
+
+void SMaskWidget::setEnterWidgetChangeCursor(const bool &change) {
+    this->m_isEnterWidgetChangeCursor = change;
+}
+
 void SMaskWidget::calOnce() {
     m_w = static_cast<const float>(rect().width());
     m_h = static_cast<const float>(rect().height());
@@ -29,14 +49,14 @@ bool SMaskWidget::isMouseInCircle(const float &mouseX, const float &mouseY) {
 
 void SMaskWidget::paintEvent(QPaintEvent *event) {
     QWidget::paintEvent(event);
-    constexpr QColor color(0, 0, 0, 160);
+    constexpr QColor color(0, 0, 0, 160);//遮罩颜色
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     // 设置绘制颜色，带有透明度
     painter.setBrush(color);
     painter.setPen(Qt::NoPen);
     painter.drawRoundedRect(rect(), 8, 8);
-    if(this->m_isEnter) {
+    if(this->m_isEnterCircle) {
         // 创建一个绘制路径
         QPainterPath path;
         // 定义三角形的三个顶点
@@ -45,25 +65,34 @@ void SMaskWidget::paintEvent(QPaintEvent *event) {
         path.lineTo(m_cp.x(),m_cp.y());
         path.closeSubpath(); // 闭合路径
         path = path.simplified();
+        if(this->m_hoverFillTriangleColor != QColor()) {
+            painter.setBrush(this->m_hoverFillTriangleColor); // 设置三角形填充颜色
+            painter.drawPath(path); // 绘制三角形路径
+        }
         // 使用路径组合来创建镂空效果
         QPainterPath circlePath;
-        circlePath.addEllipse(QPointF(m_centerX, m_centerY), m_radius - 1, m_radius - 1);
+        circlePath.addEllipse(QPointF(m_centerX, m_centerY), m_radius, m_radius);
         // 使用路径组合来创建镂空效果
         QPainterPath combinedPath = circlePath.subtracted(path);
         combinedPath = combinedPath.simplified();
         // 绘制镂空效果
-        painter.setBrush(Qt::white); // 设置填充颜色为白色
+        painter.setBrush(this->m_hoverFillCircleColor); // 设置填充颜色为白色
         painter.drawPath(combinedPath);
     }
     else {
         //绘制圆形
         painter.setPen(Qt::white);
-        painter.setBrush(Qt::NoBrush);
+        if(this->m_defaultFillCircleColor == QColor()) {
+            painter.setBrush(Qt::NoBrush);
+        }
+        else {
+            painter.setBrush(this->m_defaultFillCircleColor);
+        }
         painter.drawEllipse(QPointF(m_centerX,m_centerY), m_radius,m_radius);
         // 创建一个绘制路径
-        painter.setBrush(Qt::white);
-        painter.setPen(Qt::NoPen);
         QPainterPath path;
+        painter.setBrush(m_defaultFillTriangleColor);
+        painter.setPen(Qt::NoPen);
         // 定义三角形的三个顶点
         path.moveTo(m_ap.x(),m_ap.y());
         path.lineTo(m_bp.x(),m_bp.y());
@@ -77,9 +106,15 @@ void SMaskWidget::mouseMoveEvent(QMouseEvent *event) {
     QWidget::mouseMoveEvent(event);
     const auto x = static_cast<float>(event->pos().x());
     const auto y= static_cast<float>(event->pos().y());
-    this->m_isEnter = isMouseInCircle(x,y);
-    if(this->m_isEnter)this->setCursor(Qt::PointingHandCursor);
-    else this->setCursor(Qt::ArrowCursor);
+    this->m_isEnterCircle = isMouseInCircle(x,y);
+    if(this->m_isEnterWidgetChangeCursor) {//立马变指向
+        this->setCursor(Qt::PointingHandCursor);
+    }
+    else {//进入圆圈再变指向
+        if(this->m_isEnterCircle)this->setCursor(Qt::PointingHandCursor);
+        else this->setCursor(Qt::ArrowCursor);
+    }
+
     update();
 }
 
