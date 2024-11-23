@@ -563,21 +563,22 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
 
 }
 
-bool KuGouApp::event(QEvent *event) {
-    if (QEvent::HoverMove == event->type()) //鼠标移动
-    {
-        //auto ev = dynamic_cast<QMouseEvent*>(event);
-        //if (ev) {
-        //    this->mouseMoveEvent(ev);
-        //}
+//bool KuGouApp::event(QEvent *event) {
+    //if (QEvent::HoverMove == event->type()) //鼠标移动
+    //{
+    //    //auto ev = dynamic_cast<QMouseEvent*>(event);
+    //    //if (ev) {
+    //    //    this->mouseMoveEvent(ev);
+    //    //}
+//
+    //    // 此处最好用static_cast
+    //    auto ev = static_cast<QMouseEvent *>(event);
+    //    this->mouseMoveEvent(ev);
+    //    return true;
+    //}
 
-        // 此处最好用static_cast
-        auto ev = static_cast<QMouseEvent *>(event);
-        this->mouseMoveEvent(ev);
-    }
-
-    return QWidget::event(event);
-}
+//     return MainWindow::event(event);
+// }
 
 bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
     if (watched == ui->progressSlider) {
@@ -616,6 +617,11 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
                 if (!this->m_isPlaying)ui->play_or_pause_toolButton->clicked();
             }
         }
+    }
+    else if(watched == this) {
+        auto ev = static_cast<QMouseEvent *>(event);
+        this->mouseMoveEvent(ev);
+        return true;
     }
     return MainWindow::eventFilter(watched, event);
 }

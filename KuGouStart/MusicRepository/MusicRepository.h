@@ -5,6 +5,8 @@
 #ifndef MUSICREPOSITORY_H
 #define MUSICREPOSITORY_H
 
+#include"MyBlockWidget.h"
+
 #include <QWidget>
 
 
@@ -18,6 +20,8 @@ Q_OBJECT
 public:
     explicit MusicRepository(QWidget *parent = nullptr);
     ~MusicRepository() override;
+private:
+    void initUi();
 
 private:
     Ui::MusicRepository *ui;
