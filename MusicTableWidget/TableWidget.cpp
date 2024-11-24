@@ -137,10 +137,8 @@ void TableWidget::initUi() {
 }
 
 void TableWidget::initBlockCover() {
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < 7; ++j) {
-            this->m_blockCoverPaths.emplace_back(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(i * 7 + j + 1));
-        }
+    for(int i = 1; i <= 60; ++i) {
+        this->m_blockCoverPaths.emplace_back(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(i));
     }
 }
 
