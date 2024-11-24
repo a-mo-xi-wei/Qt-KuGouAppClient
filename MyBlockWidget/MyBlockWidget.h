@@ -16,13 +16,17 @@ class MyBlockWidget : public QWidget {
 Q_OBJECT
 
 public:
-    explicit MyBlockWidget(const QString &path,QWidget *parent = nullptr);
+    explicit MyBlockWidget(QWidget *parent = nullptr);
+
+    void setBorderImage(const QString &path);
 
     void setTipLabText(const QString& text);
 
     void setPopularDirection(const int& direction);
 
     void setPopularBtnText(const QString& text);
+
+    void setShowTip(const bool& show);
 
     SMaskWidget& getMask();
 private:
@@ -40,6 +44,8 @@ protected:
     void resizeEvent(QResizeEvent *event) override;
 
     void mousePressEvent(QMouseEvent* event) override;
+
+    void mouseReleaseEvent(QMouseEvent* event) override;
 
 private:
     QWidget* m_bacWidget{};

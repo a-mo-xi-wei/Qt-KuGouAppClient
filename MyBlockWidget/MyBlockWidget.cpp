@@ -9,7 +9,7 @@
 #include <QResizeEvent>
 #include <QStyleOption>
 
-MyBlockWidget::MyBlockWidget(const QString &path,QWidget *parent) :
+MyBlockWidget::MyBlockWidget(QWidget *parent) :
     QWidget(parent)
     , m_bacWidget(new QWidget(this))
     , m_mask(std::make_unique<SMaskWidget>( this))
@@ -17,10 +17,6 @@ MyBlockWidget::MyBlockWidget(const QString &path,QWidget *parent) :
     , m_rightPopularBtn(new QToolButton(this))
     , m_leftPopularBtn(new QToolButton(this))
 {
-    QString style = QString("border-radius:8px;border-image:url(%1);").arg(path);
-    //qDebug()<<"当前样式："<<style;
-    this->m_bacWidget->setStyleSheet(style);
-
     initUi();
     this->m_mask->setParent(this->m_bacWidget);
     this->m_mask->move(this->m_bacWidget->pos());
@@ -29,6 +25,8 @@ MyBlockWidget::MyBlockWidget(const QString &path,QWidget *parent) :
     //先隐藏流行人数按钮
     this->m_leftPopularBtn->hide();
     this->m_rightPopularBtn->hide();
+    //默认隐藏tipLab
+    this->m_tipLab->hide();
 }
 
 void MyBlockWidget::initUi() {
@@ -74,6 +72,12 @@ void MyBlockWidget::initTipArr() {
                 QStringLiteral("甜蜜"),QStringLiteral("广场舞"),};
 }
 
+void MyBlockWidget::setBorderImage(const QString &path) {
+    QString style = QString("border-radius:8px;border-image:url(%1);").arg(path);
+    //qDebug()<<"当前样式："<<style;
+    this->m_bacWidget->setStyleSheet(style);
+}
+
 void MyBlockWidget::setTipLabText(const QString &text) {
     this->m_tipLab->setText(text);
 }
@@ -97,6 +101,10 @@ void MyBlockWidget::setPopularBtnText(const QString &text) {
     else if(this->m_popularDirection == 2) {
         this->m_rightPopularBtn->setText(QStringLiteral(" ") + text + QStringLiteral("万"));
     }
+}
+
+void MyBlockWidget::setShowTip(const bool &show) {
+    if(show)this->m_tipLab->show();
 }
 
 SMaskWidget& MyBlockWidget::getMask() {
@@ -141,5 +149,9 @@ void MyBlockWidget::resizeEvent(QResizeEvent *event) {
 }
 
 void MyBlockWidget::mousePressEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
+void MyBlockWidget::mouseReleaseEvent(QMouseEvent *event) {
     event->ignore();
 }
