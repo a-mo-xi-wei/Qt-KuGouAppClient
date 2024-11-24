@@ -464,10 +464,9 @@ void ItemListWidget::setNameText(QString name) {
     this->m_nameLab->setFont(font);
     //设置字体测量工具
     QFontMetrics fm(font);
-    int maxWidth = this->m_nameLab->width() * 3 / 4;
     //设置tip
     this->m_nameLab->setToolTip(name);
-    name = fm.elidedText(name,Qt::ElideRight,maxWidth);
+    name = fm.elidedText(name,Qt::ElideRight, this->m_nameLab->width() * 3 / 4);
     this->m_nameLab->setText(name);
 }
 
@@ -478,10 +477,9 @@ void ItemListWidget::setAuthorText(QString author) {
     this->m_authorLab->setFont(font);
     //设置字体测量工具
     QFontMetrics fm(font);
-    int maxWidth = this->m_authorLab->width() * 3 / 4;
     //设置Tip
     this->m_authorLab->setToolTip(author);
-    author = fm.elidedText(author,Qt::ElideRight,maxWidth);
+    author = fm.elidedText(author,Qt::ElideRight,this->m_authorLab->width() * 3 / 4);
     this->m_authorLab->setText(author);
 }
 
@@ -541,7 +539,6 @@ void ItemListWidget::resizeEvent(QResizeEvent *event) {
     //设置文字
     this->setNameText(this->m_songName);
     this->setAuthorText(this->m_singer);
-    update();
 }
 
 void ItemListWidget::initUi() {
@@ -696,7 +693,6 @@ void ItemBlockWidget::resizeEvent(QResizeEvent *event) {
     this->m_popularBtn->move(this->m_bacWidget->width() - this->m_popularBtn->width() - 5,
                              this->m_bacWidget->height() - this->m_popularBtn->height() - 5);
     setDescribeText(this->m_descText);
-    update();
 }
 
 void ItemBlockWidget::mousePressEvent(QMouseEvent *event) {

@@ -35,13 +35,24 @@ MusicRepoList::~MusicRepoList() {
     delete ui;
 }
 
+void MusicRepoList::setCoverPix(const QString &pixmapPath) {
+    ui->cover_widget->setBorderImage(pixmapPath);
+}
+
+void MusicRepoList::setSongName(const QString &song) {
+    this->m_songName = song;
+}
+
+void MusicRepoList::setSinger(const QString &singer) {
+    this->m_singer = singer;
+}
+
 void MusicRepoList::initUi() {
     //隐藏toolButton
     ui->play_add_toolButton->hide();
     ui->like_toolButton->hide();
     ui->comment_toolButton->hide();
     //遮罩设置
-    ui->cover_widget->setBorderImage(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(1));
     auto& mask = ui->cover_widget->getMask();
     mask.setDefaultFillCircleColor(Qt::white);
     mask.setHoverFillCircleColor(QColor(QStringLiteral("#26A1FF")));
@@ -52,6 +63,26 @@ void MusicRepoList::initUi() {
     ui->cover_widget->setExpandRespond(true);
     connect(this,&MusicRepoList::enterList,ui->cover_widget,&MyBlockWidget::onShowMask);
     connect(this,&MusicRepoList::leaveList,ui->cover_widget,&MyBlockWidget::onHideMask);
+
+}
+
+void MusicRepoList::updateSongText() {
+    //设置字体测量工具
+    auto font = ui->song_label->font();
+    QFontMetrics fm(font);
+    ui->song_label->setToolTip(this->m_songName);
+    //auto w = fm.horizontalAdvance(this->m_songName);
+    auto elidedText = fm.elidedText(this->m_songName,Qt::ElideRight,ui->info_widget->width()-50);
+    ui->song_label->setText(elidedText);
+}
+
+void MusicRepoList::updateSingerText() {
+    //设置字体测量工具
+    auto font = ui->singer_label->font();
+    QFontMetrics fm(font);
+    ui->singer_label->setToolTip(this->m_singer);
+    auto elidedText = fm.elidedText(this->m_singer,Qt::ElideRight,ui->info_widget->width()-50);
+    ui->singer_label->setText(elidedText);
 
 }
 
@@ -102,3 +133,9 @@ void MusicRepoList::mouseReleaseEvent(QMouseEvent *event) {
     event->ignore();
 }
 
+void MusicRepoList::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+    //改变字数
+    updateSongText();
+    updateSingerText();
+}

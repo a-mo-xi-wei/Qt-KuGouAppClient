@@ -50,6 +50,8 @@ void MusicRepository::initUi() {
 
     initButtonGroup();
     initVector();
+
+    ui->chinese_pushButton->clicked();
 }
 
 void MusicRepository::initVector() {

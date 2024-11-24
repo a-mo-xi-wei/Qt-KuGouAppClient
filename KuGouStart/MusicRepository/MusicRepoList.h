@@ -25,8 +25,18 @@ public:
 
     ~MusicRepoList() override;
 
+    void setCoverPix(const QString &pixmapPath);
+
+    void setSongName(const QString &song);
+
+    void setSinger(const QString &singer);
+
 private:
     void initUi();
+
+    void updateSongText();
+
+    void updateSingerText();
 
 signals:
     void enterList();
@@ -44,9 +54,14 @@ protected:
 
     void mouseReleaseEvent(QMouseEvent *event) override;
 
+    void resizeEvent(QResizeEvent *event) override;
+
 private:
     Ui::MusicRepoList *ui;
     bool m_isEnter = false;
+    //歌曲名、歌手
+    QString m_songName;
+    QString m_singer;
 };
 
 
