@@ -18,10 +18,12 @@
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 //唯一标志
-std::once_flag flag1;
-std::once_flag flag2;
-std::once_flag flag3;
-std::once_flag flag4;
+namespace SearchFlag {
+    std::once_flag flag1;
+    std::once_flag flag2;
+    std::once_flag flag3;
+    std::once_flag flag4;
+}
 
 #define IMAGE_WIDTH 102     //图片的宽度（正方形）
 
@@ -212,7 +214,7 @@ void Search::on_recommend_pushButton_clicked() {
             lay->addWidget(btn);
         }
     };
-    std::call_once(flag1,handle);
+    std::call_once(SearchFlag::flag1,handle);
     ui->stackedWidget->setCurrentWidget(this->m_recommendWidget.get());
 }
 
@@ -247,7 +249,7 @@ void Search::on_rank_pushButton_clicked() {
             lay->addWidget(btn);
         }
     };
-    std::call_once(flag2,handle);
+    std::call_once(SearchFlag::flag2,handle);
     ui->stackedWidget->setCurrentWidget(this->m_rankWidget.get());
 }
 
@@ -282,7 +284,7 @@ void Search::on_special_pushButton_clicked() {
             lay->addWidget(btn);
         }
     };
-    std::call_once(flag3,handle);
+    std::call_once(SearchFlag::flag3,handle);
     ui->stackedWidget->setCurrentWidget(this->m_specialWidget.get());
 }
 
@@ -317,6 +319,6 @@ void Search::on_channel_pushButton_clicked() {
             lay->addWidget(btn);
         }
     };
-    std::call_once(flag4,handle);
+    std::call_once(SearchFlag::flag4,handle);
     ui->stackedWidget->setCurrentWidget(this->m_channelWidget.get());
 }
