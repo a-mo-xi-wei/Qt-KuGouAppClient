@@ -15,6 +15,9 @@ set(SOURCE_FILE
     MusicRepository.cpp
     MusicRepository.h
     MusicRepository.ui
+    MusicRepoList.cpp
+    MusicRepoList.h
+    MusicRepoList.ui
     musicrepo.css
 )
 

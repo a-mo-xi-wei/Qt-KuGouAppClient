@@ -1,0 +1,27 @@
+QLabel{
+    font-size: 15px;
+}
+QLabel:hover{
+    color:#26A1FF;
+}
+QToolButton{
+    background-color: rgba(255,255,255,0);
+}
+QToolButton#play_add_toolButton{
+    border-image: url(':/Res/tabIcon/play-add-gray.svg');
+}
+QToolButton#play_add_toolButton:hover{
+    border-image: url(':/Res/tabIcon/play-add-blue.svg');
+}
+QToolButton#like_toolButton{
+    border-image: url(':/Res/playbar/collect.svg')
+}
+QToolButton#like_toolButton:hover{
+    border-image: url(':/Res/tabIcon/collect-blue.svg');
+}
+QToolButton#comment_toolButton{
+    border-image: url(':/Res/playbar/more.svg');
+}
+QToolButton#comment_toolButton:hover{
+    border-image: url(':/Res/playbar/more-blue.svg');
+}
