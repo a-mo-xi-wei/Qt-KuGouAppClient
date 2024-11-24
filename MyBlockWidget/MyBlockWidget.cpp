@@ -107,8 +107,24 @@ void MyBlockWidget::setShowTip(const bool &show) {
     if(show)this->m_tipLab->show();
 }
 
+void MyBlockWidget::setExpandRespond(const bool &expandRespond) {
+    this->m_isExpandRespond = expandRespond;
+}
+
 SMaskWidget& MyBlockWidget::getMask() {
     return *m_mask;
+}
+
+void MyBlockWidget::onShowMask() {
+    this->m_mask->show();
+    this->m_mask->raise();
+    this->m_rightPopularBtn->setStyleSheet(QStringLiteral("color:white;border-radius:10px;background-color: rgba(60,60,60, 127);"));
+    update();
+}
+
+void MyBlockWidget::onHideMask() {
+    this->m_mask->hide();
+    update();
 }
 
 void MyBlockWidget::paintEvent(QPaintEvent *ev) {
@@ -121,27 +137,32 @@ void MyBlockWidget::paintEvent(QPaintEvent *ev) {
 
 void MyBlockWidget::enterEvent(QEnterEvent *ev) {
     QWidget::enterEvent(ev);
-    if(!this->m_isHoverCoverLab) {//如果之前是离开
-        this->m_isHoverCoverLab = true;
-        this->m_mask->show();
-        this->m_mask->raise();
-        this->m_rightPopularBtn->setStyleSheet(QStringLiteral("color:white;border-radius:10px;background-color: rgba(60,60,60, 127);"));
-        update();
+    if(!this->m_isExpandRespond) {
+        if(!this->m_isHoverCover) {//如果之前是离开
+            this->m_isHoverCover = true;
+            this->m_mask->show();
+            this->m_mask->raise();
+            this->m_rightPopularBtn->setStyleSheet(QStringLiteral("color:white;border-radius:10px;background-color: rgba(60,60,60, 127);"));
+            update();
+        }
     }
+
 }
 
 void MyBlockWidget::leaveEvent(QEvent *ev) {
     QWidget::leaveEvent(ev);
-    if(this->m_isHoverCoverLab) {
-        this->m_isHoverCoverLab = false;
-        this->m_mask->hide();
-        update();
+    if(!this->m_isExpandRespond) {
+        if(this->m_isHoverCover) {
+            this->m_isHoverCover = false;
+            this->m_mask->hide();
+            update();
+        }
     }
 }
 
 void MyBlockWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
-    this->m_bacWidget->setFixedSize(event->size().width() / 1.05, event->size().width() / 1.05);
+    this->m_bacWidget->setFixedSize(event->size().width() / 1.01, event->size().width() / 1.01);
     this->m_mask->setFixedSize(this->m_bacWidget->size());
     this->m_rightPopularBtn->move(this->m_bacWidget->width() - this->m_rightPopularBtn->width() - 5,
                              this->m_bacWidget->height() - this->m_rightPopularBtn->height() - 5);
