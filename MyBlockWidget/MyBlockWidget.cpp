@@ -109,16 +109,6 @@ void MyBlockWidget::paintEvent(QPaintEvent *ev) {
     opt.initFrom(this);
     QPainter p(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
-
-    p.setRenderHint(QPainter::Antialiasing, true);
-    // 如果鼠标悬停，绘制半透明蒙层
-    if (this->m_isHoverCoverLab) {
-        this->m_mask->show();
-        this->m_mask->raise();
-        this->m_rightPopularBtn->setStyleSheet(QStringLiteral("color:white;border-radius:10px;background-color: rgba(60,60,60, 127);"));
-    } else {
-        this->m_mask->hide();
-    }
 }
 
 void MyBlockWidget::enterEvent(QEnterEvent *ev) {

@@ -105,6 +105,11 @@ protected:
     void leaveEvent(QEvent* ev)override;
 
     void resizeEvent(QResizeEvent *event) override;
+
+    void mousePressEvent(QMouseEvent *event) override;
+
+    void mouseReleaseEvent(QMouseEvent *event) override;
+
 private:
     void initUi();
 

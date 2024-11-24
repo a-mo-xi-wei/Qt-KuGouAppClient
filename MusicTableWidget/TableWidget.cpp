@@ -353,11 +353,12 @@ void TableWidget::onGridChange(int len) {
 void TableWidget::onRefreshBtnClicked() {
     // 启动定时器，延迟处理
     if (!this->m_refreshTimer->isActive()) {
-        this->m_refreshTimer->start(200);  // 200ms 延迟，避免过于频繁地触发
+        this->m_refreshTimer->start(300);  // 200ms 延迟，避免过于频繁地触发
     }
 }
 
 void TableWidget::onRefreshTimeout() {
+    //qDebug()<<"刷新";
     if(this->m_kind == KIND::BlockList) {
         shuffleBlockCover();
         this->m_gridContainer->setUpdatesEnabled(false);
@@ -489,6 +490,7 @@ void ItemListWidget::setAuthorText(QString author) {
 void ItemListWidget::paintEvent(QPaintEvent *ev) {
     // 先调用父类的 paintEvent 以执行默认绘制行为
     QWidget::paintEvent(ev);
+    qDebug()<<"ItemListWidget重绘";
     QStyleOption opt;
     opt.initFrom(this);
     QPainter p(this);
@@ -584,6 +586,7 @@ void ItemListWidget::initUi() {
 }
 
 void ItemListWidget::onHide() {
+    qDebug()<<"隐藏/显示";
     this->setHidden(!this->isHidden());
     update();
 }
@@ -639,7 +642,7 @@ void ItemBlockWidget::setDescribeText(QString desc) {
 void ItemBlockWidget::paintEvent(QPaintEvent *ev) {
     // 先调用父类的 paintEvent 以执行默认绘制行为
     QWidget::paintEvent(ev);
-    qDebug()<<"ItemBlockWidget重绘";
+    //qDebug()<<"ItemBlockWidget重绘";
     QStyleOption opt;
     opt.initFrom(this);
     QPainter p(this);
@@ -647,14 +650,14 @@ void ItemBlockWidget::paintEvent(QPaintEvent *ev) {
 
     p.setRenderHint(QPainter::Antialiasing, true);
     // 如果鼠标悬停，绘制半透明蒙层
-    if (this->m_isHoverCoverLab) {
+    /*if (this->m_isHoverCoverLab) {
         this->m_mask->show();
         this->m_mask->raise();
         this->m_popularBtn->setStyleSheet(QStringLiteral("color:white;border-radius:10px;background-color: rgba(60,60,60, 127);"));
     } else {
         this->m_popularBtn->setStyleSheet(QStringLiteral("color:white;border-radius:10px;background-color: rgba(128, 128, 128, 127);"));
         this->m_mask->hide();
-    }
+    }*/
 }
 
 void ItemBlockWidget::enterEvent(QEnterEvent *ev) {
@@ -662,6 +665,9 @@ void ItemBlockWidget::enterEvent(QEnterEvent *ev) {
     QWidget::enterEvent(ev);
     if(!this->m_isHoverCoverLab) {
         this->m_isHoverCoverLab = true;
+        this->m_mask->show();
+        this->m_mask->raise();
+        this->m_popularBtn->setStyleSheet(QStringLiteral("color:white;border-radius:10px;background-color: rgba(60,60,60, 127);"));
         update();
     }
 
@@ -672,6 +678,8 @@ void ItemBlockWidget::leaveEvent(QEvent *ev) {
     QWidget::leaveEvent(ev);
     if(this->m_isHoverCoverLab) {
         this->m_isHoverCoverLab = false;
+        this->m_popularBtn->setStyleSheet(QStringLiteral("color:white;border-radius:10px;background-color: rgba(128, 128, 128, 127);"));
+        this->m_mask->hide();
         update();
     }
 }
@@ -691,6 +699,16 @@ void ItemBlockWidget::resizeEvent(QResizeEvent *event) {
                              this->m_bacWidget->height() - this->m_popularBtn->height() - 5);
     setDescribeText(this->m_descText);
     update();
+}
+
+void ItemBlockWidget::mousePressEvent(QMouseEvent *event) {
+    //QWidget::mousePressEvent(event);
+    event->ignore();
+}
+
+void ItemBlockWidget::mouseReleaseEvent(QMouseEvent *event) {
+    //QWidget::mouseReleaseEvent(event);
+    event->ignore();
 }
 
 void ItemBlockWidget::initUi() {
