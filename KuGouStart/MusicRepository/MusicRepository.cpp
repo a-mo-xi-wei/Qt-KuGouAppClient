@@ -9,6 +9,7 @@
 
 #include <QFile>
 #include <QButtonGroup>
+#include <QMouseEvent>
 #include <random>
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
@@ -17,8 +18,8 @@
 
 MusicRepository::MusicRepository(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::MusicRepository)
-    , m_buttonGroup(std::make_unique<QButtonGroup>(this)) {
+      , ui(new Ui::MusicRepository)
+      , m_buttonGroup(std::make_unique<QButtonGroup>(this)) {
     ui->setupUi(this);
     QFile file(GET_CURRENT_DIR + QStringLiteral("/musicrepo.css"));
     if (file.open(QIODevice::ReadOnly)) {
@@ -55,8 +56,7 @@ void MusicRepository::initUi() {
     ui->chinese_pushButton->clicked();
 }
 
-void MusicRepository::initVector() {
-    {
+void MusicRepository::initVector() { {
         //插入歌曲和歌手的配对关系
         this->m_songAndsinger.emplace_back(" ", " ");
         this->m_songAndsinger.emplace_back("租购", "薛之谦");
@@ -140,11 +140,11 @@ void MusicRepository::initVector() {
         this->m_westVector.emplace_back(this->m_total[i]);
         //qDebug()<<"m_total["<<i<<"] = "<<this->m_total[i].song<<" "<<this->m_total[i].singer;
     }
-    for(int i = 21; i <= 30; ++i) {
+    for (int i = 21; i <= 30; ++i) {
         this->m_koreaVector.emplace_back(this->m_total[i]);
         //qDebug()<<"m_total["<<i<<"] = "<<this->m_total[i].song<<" "<<this->m_total[i].singer;
     }
-    for(int i = 31; i <= 40; ++i) {
+    for (int i = 31; i <= 40; ++i) {
         this->m_japanVector.emplace_back(this->m_total[i]);
         //qDebug()<<"m_total["<<i<<"] = "<<this->m_total[i].song<<" "<<this->m_total[i].singer;
     }
@@ -158,17 +158,30 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
     ui->singer_widget->setFixedHeight(average);
     ui->classify_widget->setFixedHeight(average);
     //grid设置
-    //QWidget *topLevelWindow = this->window();
-    //if (!topLevelWindow) {
-    //    qWarning() << "无法获取顶级窗口！";
-    //    return;
-    //}
-    //int topLevelWidth = topLevelWindow->width();
-    //average = (topLevelWidth - 280)/3;
-    //ui->gridLayout->itemAtPosition(0,0)->widget()->setFixedWidth(average);
-    //ui->gridLayout->itemAtPosition(0,1)->widget()->setFixedWidth(average);
-    //ui->gridLayout->itemAtPosition(0,2)->widget()->setFixedWidth(average);
+    this->m_topWindow = this->window();
+    if (!m_topWindow) {
+        qWarning() << "无法获取顶级窗口！";
+        return;
+    }
+    int topLevelWidth = m_topWindow->width();
+    average = (topLevelWidth - 290) / 3;
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            ui->gridLayout->itemAtPosition(i, j)->widget()->setFixedWidth(average);
+        }
+    }
+}
 
+void MusicRepository::mousePressEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
+void MusicRepository::mouseReleaseEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
+void MusicRepository::mouseDoubleClickEvent(QMouseEvent *event) {
+    event->ignore();
 }
 
 void MusicRepository::on_chinese_pushButton_clicked() {
@@ -185,7 +198,7 @@ void MusicRepository::on_chinese_pushButton_clicked() {
                 qWarning() << "item error at position:" << row << col;
                 return;
             }
-            auto widget = static_cast<MusicRepoList*>(item->widget());
+            auto widget = static_cast<MusicRepoList *>(item->widget());
             if (!widget) {
                 qWarning() << "widget error at position:" << row << col;
                 return;
@@ -206,7 +219,7 @@ void MusicRepository::on_west_pushButton_clicked() {
         for (int col = 0; col < 3; ++col) {
             int index = row * 3 + col; // 根据行列计算index
             auto item = ui->gridLayout->itemAtPosition(row, col); // 按行列获取item
-            auto widget = static_cast<MusicRepoList*>(item->widget());
+            auto widget = static_cast<MusicRepoList *>(item->widget());
             widget->setCoverPix(this->m_westVector[index].pixPath);
             widget->setSongName(this->m_westVector[index].song);
             widget->setSinger(this->m_westVector[index].singer);
@@ -221,7 +234,7 @@ void MusicRepository::on_korea_pushButton_clicked() {
         for (int col = 0; col < 3; ++col) {
             int index = row * 3 + col; // 根据行列计算index
             auto item = ui->gridLayout->itemAtPosition(row, col); // 按行列获取item
-            auto widget = static_cast<MusicRepoList*>(item->widget());
+            auto widget = static_cast<MusicRepoList *>(item->widget());
             widget->setCoverPix(this->m_koreaVector[index].pixPath);
             widget->setSongName(this->m_koreaVector[index].song);
             widget->setSinger(this->m_koreaVector[index].singer);
@@ -236,7 +249,7 @@ void MusicRepository::on_japan_pushButton_clicked() {
         for (int col = 0; col < 3; ++col) {
             int index = row * 3 + col; // 根据行列计算index
             auto item = ui->gridLayout->itemAtPosition(row, col); // 按行列获取item
-            auto widget = static_cast<MusicRepoList*>(item->widget());
+            auto widget = static_cast<MusicRepoList *>(item->widget());
             widget->setCoverPix(this->m_japanVector[index].pixPath);
             widget->setSongName(this->m_japanVector[index].song);
             widget->setSinger(this->m_japanVector[index].singer);
