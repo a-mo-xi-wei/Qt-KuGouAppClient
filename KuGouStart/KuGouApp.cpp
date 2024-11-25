@@ -424,6 +424,7 @@ void KuGouApp::subSongIndex() {
 
 void KuGouApp::mousePressEvent(QMouseEvent *ev) {
     MainWindow::mousePressEvent(ev);
+    if (this->m_isTransForming)return;
     if (ev->button() == Qt::LeftButton) {
         this->m_pressPos = ev->pos();
         // 获取鼠标在那个区域
@@ -463,7 +464,8 @@ void KuGouApp::mouseMoveEvent(QMouseEvent *event) {
                 }
                 move(windowsLastPs + point_offset);
             }
-        } else {
+        }
+        else {
             // 其他部分 是拉伸窗口
             // 获取客户区
             QRect rect = this->geometry();
@@ -531,6 +533,12 @@ void KuGouApp::paintEvent(QPaintEvent *ev) {
 
 void KuGouApp::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
+    if(this->geometry() != this->screen()->availableGeometry()) {
+        //一旦拖动边框改变大小，就不再是全屏
+        //qDebug()<<"全屏";
+        this->m_isMaxScreen = false;
+    }
+    else this->m_isMaxScreen = true;
     //角标移动
     this->m_sizeGrip->move(this->width() - this->m_sizeGrip->width() - 8,
                            this->height() - this->m_sizeGrip->height() - 8);
@@ -877,8 +885,8 @@ void KuGouApp::on_max_toolButton_clicked() {
     this->m_animation->start();
     // 在动画结束后标记动画停止
     connect(this->m_animation.get(), &QPropertyAnimation::finished, this, [this] {
-        // 动画结束后，延迟 500 毫秒启用拖拽
-        QTimer::singleShot(500, this, [this] {
+        // 动画结束后，延迟 100 毫秒启用拖拽
+        QTimer::singleShot(100, this, [this] {
             this->m_isTransForming = false; // 启用拖拽
         });
         if(this->m_endGeometry == this->screen()->availableGeometry())emit maxScreen();//高亮条延伸
