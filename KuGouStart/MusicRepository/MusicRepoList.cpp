@@ -41,10 +41,12 @@ void MusicRepoList::setCoverPix(const QString &pixmapPath) {
 
 void MusicRepoList::setSongName(const QString &song) {
     this->m_songName = song;
+    updateSongText();
 }
 
 void MusicRepoList::setSinger(const QString &singer) {
     this->m_singer = singer;
+    updateSingerText();
 }
 
 void MusicRepoList::initUi() {
@@ -72,8 +74,13 @@ void MusicRepoList::updateSongText() {
     QFontMetrics fm(font);
     ui->song_label->setToolTip(this->m_songName);
     //auto w = fm.horizontalAdvance(this->m_songName);
-    auto elidedText = fm.elidedText(this->m_songName,Qt::ElideRight,ui->info_widget->width()-50);
-    ui->song_label->setText(elidedText);
+    //if(w >= ui->info_widget->width()-50) {
+        auto elidedText = fm.elidedText(this->m_songName,Qt::ElideRight,ui->info_widget->width()-20);
+        ui->song_label->setText(elidedText);
+    //}
+    //else {
+    //    ui->song_label->setText(this->m_songName);
+    //}
 }
 
 void MusicRepoList::updateSingerText() {
@@ -81,7 +88,7 @@ void MusicRepoList::updateSingerText() {
     auto font = ui->singer_label->font();
     QFontMetrics fm(font);
     ui->singer_label->setToolTip(this->m_singer);
-    auto elidedText = fm.elidedText(this->m_singer,Qt::ElideRight,ui->info_widget->width()-50);
+    auto elidedText = fm.elidedText(this->m_singer,Qt::ElideRight,ui->info_widget->width()-20);
     ui->singer_label->setText(elidedText);
 
 }

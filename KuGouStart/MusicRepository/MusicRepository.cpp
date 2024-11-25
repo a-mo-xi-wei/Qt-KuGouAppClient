@@ -15,9 +15,10 @@
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 
-MusicRepository::MusicRepository(QWidget *parent) : QWidget(parent)
-                                                    , ui(new Ui::MusicRepository)
-                                                    , m_buttonGroup(std::make_unique<QButtonGroup>(this)) {
+MusicRepository::MusicRepository(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::MusicRepository)
+    , m_buttonGroup(std::make_unique<QButtonGroup>(this)) {
     ui->setupUi(this);
     QFile file(GET_CURRENT_DIR + QStringLiteral("/musicrepo.css"));
     if (file.open(QIODevice::ReadOnly)) {
@@ -26,7 +27,6 @@ MusicRepository::MusicRepository(QWidget *parent) : QWidget(parent)
         qDebug() << "样式表打开失败QAQ";
         return;
     }
-
     initUi();
 }
 
@@ -47,10 +47,11 @@ void MusicRepository::initUi() {
     ui->ranking_list_widget->setCursor(Qt::PointingHandCursor);
     ui->singer_widget->setCursor(Qt::PointingHandCursor);
     ui->classify_widget->setCursor(Qt::PointingHandCursor);
-
+    //初始化按钮组
     initButtonGroup();
+    //初始化容器
     initVector();
-
+    //先按下华语
     ui->chinese_pushButton->clicked();
 }
 
@@ -133,15 +134,19 @@ void MusicRepository::initVector() {
     //分配给四个vector
     for (int i = 1; i <= 10; ++i) {
         this->m_chineseVector.emplace_back(this->m_total[i]);
+        //qDebug()<<"m_total["<<i<<"] = "<<this->m_total[i].song<<" "<<this->m_total[i].singer;
     }
     for (int i = 11; i <= 20; ++i) {
         this->m_westVector.emplace_back(this->m_total[i]);
+        //qDebug()<<"m_total["<<i<<"] = "<<this->m_total[i].song<<" "<<this->m_total[i].singer;
     }
     for(int i = 21; i <= 30; ++i) {
         this->m_koreaVector.emplace_back(this->m_total[i]);
+        //qDebug()<<"m_total["<<i<<"] = "<<this->m_total[i].song<<" "<<this->m_total[i].singer;
     }
     for(int i = 31; i <= 40; ++i) {
         this->m_japanVector.emplace_back(this->m_total[i]);
+        //qDebug()<<"m_total["<<i<<"] = "<<this->m_total[i].song<<" "<<this->m_total[i].singer;
     }
 }
 
@@ -152,60 +157,90 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
     ui->ranking_list_widget->setFixedHeight(average);
     ui->singer_widget->setFixedHeight(average);
     ui->classify_widget->setFixedHeight(average);
+    //grid设置
+    //QWidget *topLevelWindow = this->window();
+    //if (!topLevelWindow) {
+    //    qWarning() << "无法获取顶级窗口！";
+    //    return;
+    //}
+    //int topLevelWidth = topLevelWindow->width();
+    //average = (topLevelWidth - 280)/3;
+    //ui->gridLayout->itemAtPosition(0,0)->widget()->setFixedWidth(average);
+    //ui->gridLayout->itemAtPosition(0,1)->widget()->setFixedWidth(average);
+    //ui->gridLayout->itemAtPosition(0,2)->widget()->setFixedWidth(average);
+
 }
 
 void MusicRepository::on_chinese_pushButton_clicked() {
     ui->grid_widget->setUpdatesEnabled(false);
-    for(int i = 1 ; i <= 9 ; ++i) {
-        auto item = ui->gridLayout->itemAt(i-1);
-        if(!item) {
-            qWarning()<<"item error";
-            return;
+    for (int row = 0; row < 3; ++row) {
+        for (int col = 0; col < 3; ++col) {
+            int index = row * 3 + col; // 根据行列计算index
+            if (index >= this->m_chineseVector.size()) {
+                qWarning() << "m_chineseVector out of range!";
+                return;
+            }
+            auto item = ui->gridLayout->itemAtPosition(row, col); // 按行列获取item
+            if (!item) {
+                qWarning() << "item error at position:" << row << col;
+                return;
+            }
+            auto widget = static_cast<MusicRepoList*>(item->widget());
+            if (!widget) {
+                qWarning() << "widget error at position:" << row << col;
+                return;
+            }
+            // 更新对应的widget内容
+            widget->setCoverPix(this->m_chineseVector[index].pixPath);
+            widget->setSongName(this->m_chineseVector[index].song);
+            widget->setSinger(this->m_chineseVector[index].singer);
         }
-        auto widget = static_cast<MusicRepoList*>(item->widget());
-        if(!widget) {
-            qWarning()<<"widget error";
-            return;
-        }
-        widget->setCoverPix(this->m_chineseVector[i].pixPath);
-        widget->setSongName(this->m_chineseVector[i].song);
-        widget->setSinger(this->m_chineseVector[i].singer);
     }
+
     ui->grid_widget->setUpdatesEnabled(true);
 }
 
 void MusicRepository::on_west_pushButton_clicked() {
     ui->grid_widget->setUpdatesEnabled(false);
-    for(int i = 1 ; i <= 9 ; ++i) {
-        auto item = ui->gridLayout->itemAt(i-1);
-        auto widget = static_cast<MusicRepoList*>(item->widget());
-        widget->setCoverPix(this->m_westVector[i].pixPath);
-        widget->setSongName(this->m_westVector[i].song);
-        widget->setSinger(this->m_westVector[i].singer);
+    for (int row = 0; row < 3; ++row) {
+        for (int col = 0; col < 3; ++col) {
+            int index = row * 3 + col; // 根据行列计算index
+            auto item = ui->gridLayout->itemAtPosition(row, col); // 按行列获取item
+            auto widget = static_cast<MusicRepoList*>(item->widget());
+            widget->setCoverPix(this->m_westVector[index].pixPath);
+            widget->setSongName(this->m_westVector[index].song);
+            widget->setSinger(this->m_westVector[index].singer);
+        }
     }
     ui->grid_widget->setUpdatesEnabled(true);
 }
 
 void MusicRepository::on_korea_pushButton_clicked() {
     ui->grid_widget->setUpdatesEnabled(false);
-    for(int i = 1 ; i <= 9 ; ++i) {
-        auto item = ui->gridLayout->itemAt(i-1);
-        auto widget = static_cast<MusicRepoList*>(item->widget());
-        widget->setCoverPix(this->m_koreaVector[i].pixPath);
-        widget->setSongName(this->m_koreaVector[i].song);
-        widget->setSinger(this->m_koreaVector[i].singer);
+    for (int row = 0; row < 3; ++row) {
+        for (int col = 0; col < 3; ++col) {
+            int index = row * 3 + col; // 根据行列计算index
+            auto item = ui->gridLayout->itemAtPosition(row, col); // 按行列获取item
+            auto widget = static_cast<MusicRepoList*>(item->widget());
+            widget->setCoverPix(this->m_koreaVector[index].pixPath);
+            widget->setSongName(this->m_koreaVector[index].song);
+            widget->setSinger(this->m_koreaVector[index].singer);
+        }
     }
     ui->grid_widget->setUpdatesEnabled(true);
 }
 
 void MusicRepository::on_japan_pushButton_clicked() {
     ui->grid_widget->setUpdatesEnabled(false);
-    for(int i = 1 ; i <= 9 ; ++i) {
-        auto item = ui->gridLayout->itemAt(i-1);
-        auto widget = static_cast<MusicRepoList*>(item->widget());
-        widget->setCoverPix(this->m_japanVector[i].pixPath);
-        widget->setSongName(this->m_japanVector[i].song);
-        widget->setSinger(this->m_japanVector[i].singer);
+    for (int row = 0; row < 3; ++row) {
+        for (int col = 0; col < 3; ++col) {
+            int index = row * 3 + col; // 根据行列计算index
+            auto item = ui->gridLayout->itemAtPosition(row, col); // 按行列获取item
+            auto widget = static_cast<MusicRepoList*>(item->widget());
+            widget->setCoverPix(this->m_japanVector[index].pixPath);
+            widget->setSongName(this->m_japanVector[index].song);
+            widget->setSinger(this->m_japanVector[index].singer);
+        }
     }
     ui->grid_widget->setUpdatesEnabled(true);
 }
