@@ -5,6 +5,7 @@
 #include<QTimer>
 #include<QEnterEvent>
 #include<QBoxLayout>
+#include <QFile>
 #include<QSpacerItem>
 #include<QStyleOption>
 #include<QPainter>
@@ -13,6 +14,8 @@
 #include<vector>
 #include<QFontMetrics>
 
+// 创建一个宏来截取 __FILE__ 宏中的目录部分
+#define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 TableWidget::TableWidget(const QString &title, KIND kind, QWidget *parent)
     : QWidget(parent)
@@ -72,6 +75,33 @@ void TableWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     //qDebug()<<"this->width : "<<this->width();
     emit gridChange(this->width());
+    if(this->m_kind == KIND::ItemList) {
+        this->m_topWindow = this->window();
+        if (!m_topWindow) {
+            qWarning() << "无法获取顶级窗口！";
+            return;
+        }
+        int topLevelWidth = m_topWindow->width();
+        auto average = (topLevelWidth - 255) / 3;
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                this->m_gridLayout->itemAtPosition(i, j)->widget()->setFixedWidth(average);
+            }
+        }
+    }
+
+}
+
+void TableWidget::mousePressEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
+void TableWidget::mouseReleaseEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
+void TableWidget::mouseDoubleClickEvent(QMouseEvent *event) {
+    event->ignore();
 }
 
 void TableWidget::initUi() {
@@ -95,17 +125,13 @@ void TableWidget::initUi() {
 
     this->m_refreshTimer->setSingleShot(true);
 
-    this->setStyleSheet(R"(QLabel#titleLab{font-size:20px;}
-                           QLabel#moreLab{color:gray;font-size:12px;padding-bottom: 3px;}
-                           QLabel#moreLab:hover{color:#26a1ff;}
-                           QToolButton{background-color:rgba(255,255,255,0);}
-                           QToolButton#adjust_ToolBtn{border-image: url(':/Res/tabIcon/adjust-column-gray.svg');}
-                           QToolButton#adjust_ToolBtn:hover{border-image: url(':/Res/tabIcon/adjust-column-blue.svg');}
-                           QToolButton#refresh_ToolBtn{border-image: url(':/Res/tabIcon/refresh-gray.svg');}
-                           QToolButton#refresh_ToolBtn:hover{border-image: url(':/Res/tabIcon/refresh-blue.svg');}
-                           QToolButton#play_ToolBtn{border-image: url(':/Res/tabIcon/titlePlay.svg');}
-                        )");
-
+    QFile file(GET_CURRENT_DIR + QStringLiteral("/tab.css"));
+    if (file.open(QIODevice::ReadOnly)) {
+        this->setStyleSheet(file.readAll());
+    } else {
+        qDebug() << "样式表打开失败QAQ";
+        return;
+    }
     m_tabHLayout->setSpacing(0);
     m_tabHLayout->addWidget(this->m_titleLab);
     m_tabHLayout->addWidget(this->m_play_ToolBtn);
@@ -251,6 +277,7 @@ void TableWidget::initItemBlockWidget() {
         }
     }
     auto vlayout = new QVBoxLayout(this);
+    vlayout->setSpacing(16);
     vlayout->setContentsMargins(0,5,0,5);
     vlayout->addLayout(m_tabHLayout.get());
     vlayout->addWidget(this->m_gridContainer.get());
@@ -258,6 +285,13 @@ void TableWidget::initItemBlockWidget() {
 
 void TableWidget::initItemListWidget() {
     this->m_gridLayout->setSpacing(10);
+    this->m_gridLayout->setRowStretch(0,1);
+    this->m_gridLayout->setRowStretch(1,1);
+    this->m_gridLayout->setRowStretch(2,1);
+    this->m_gridLayout->setColumnStretch(0,1);
+    this->m_gridLayout->setColumnStretch(1,1);
+    this->m_gridLayout->setColumnStretch(2,1);
+
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
             auto pixPath = this->m_listCoverPaths[i*3+j];
@@ -269,6 +303,7 @@ void TableWidget::initItemListWidget() {
     }
 
     auto vlayout = new QVBoxLayout(this);
+    vlayout->setSpacing(16);
     vlayout->addLayout(m_tabHLayout.get());
     vlayout->addLayout(this->m_gridLayout.get());
 }
@@ -432,61 +467,55 @@ ItemListWidget::ItemListWidget(QPixmap coverPix, const QString &name, const QStr
     : QWidget(parent)
       , m_mask(std::make_unique<SMaskWidget>(this))
       , m_coverLab(new QLabel(this))
-      , m_nameLab(new QLabel(this))
-      , m_authorLab(new QLabel(this))
+      , m_songNameLab(new QLabel(this))
+      , m_singerLab(new QLabel(this))
+      , m_optionWidget(new QWidget(this))
       , m_play_add_ToolBtn(new QToolButton(this))
       , m_like_ToolBtn(new QToolButton(this))
       , m_more_ToolBtn(new QToolButton(this))
       , m_songName(name)
       , m_singer(author)
 {
-    this->setFixedHeight(65);
+    this->setFixedHeight(90);
+    this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
     this->m_coverLab->setFixedSize(this->height(), this->height());
-    this->m_coverLab->setPixmap(roundedPixmap(coverPix, this->m_coverLab->size(), 8));
+    this->m_coverLab->setPixmap(roundedPixmap(coverPix, this->m_coverLab->size(), 12));
     this->m_coverLab->setScaledContents(true);
-    this->m_coverLab->setStyleSheet(R"(margin:0px;padding:0px;background-color: rgba(255, 0, 0, 0);)");
 
+    this->setObjectName("listWidget");
+    this->m_coverLab->setObjectName(QStringLiteral("coverLab"));
+    this->m_songNameLab->setObjectName(QStringLiteral("nameLab"));
+    this->m_singerLab->setObjectName(QStringLiteral("singerLab"));
+    this->m_play_add_ToolBtn->setObjectName(QStringLiteral("play_add_ToolBtn"));
+    this->m_like_ToolBtn->setObjectName(QStringLiteral("like_ToolBtn"));
+    this->m_more_ToolBtn->setObjectName(QStringLiteral("more_ToolBtn"));
+
+    QFile file(GET_CURRENT_DIR + QStringLiteral("/tablist.css"));
+    if (file.open(QIODevice::ReadOnly)) {
+        this->setStyleSheet(file.readAll());
+    } else {
+        qDebug() << "样式表打开失败QAQ";
+        return;
+    }
     initUi();
-    this->m_mask->setEnterWidgetChangeCursor(false);
-    this->m_mask->move(this->m_coverLab->pos());
-    this->m_mask->setFixedSize(this->m_coverLab->size());
-    this->m_mask->hide();
-    this->m_play_add_ToolBtn->hide();
-    this->m_like_ToolBtn->hide();
-    this->m_more_ToolBtn->hide();
 
     connect(qobject_cast<TableWidget *>(parent), &TableWidget::hideTitle, this, &ItemListWidget::onHide);
 }
 
-void ItemListWidget::setNameText(QString name) {
-    const QFont font("楷体",this->m_coverLab->height()/4);
-    // 应用字体到标签
-    this->m_nameLab->setFont(font);
-    //设置字体测量工具
-    QFontMetrics fm(font);
-    //设置tip
-    this->m_nameLab->setToolTip(name);
-    name = fm.elidedText(name,Qt::ElideRight, this->m_nameLab->width() * 3 / 4);
-    this->m_nameLab->setText(name);
+void ItemListWidget::setNameText(const QString& name) {
+    this->m_songName = name;
+    updateSongName();
 }
 
-void ItemListWidget::setAuthorText(QString author) {
-    //qDebug()<<"font size : "<<this->m_coverLab->height()/4;
-    const QFont font(QStringLiteral("楷体"),this->m_coverLab->height()/4-2);
-    // 应用字体到标签
-    this->m_authorLab->setFont(font);
-    //设置字体测量工具
-    QFontMetrics fm(font);
-    //设置Tip
-    this->m_authorLab->setToolTip(author);
-    author = fm.elidedText(author,Qt::ElideRight,this->m_authorLab->width() * 3 / 4);
-    this->m_authorLab->setText(author);
+void ItemListWidget::setSingerText(const QString& singer) {
+    this->m_singer =singer;
+    updateSinger();
 }
 
 void ItemListWidget::paintEvent(QPaintEvent *ev) {
     // 先调用父类的 paintEvent 以执行默认绘制行为
     QWidget::paintEvent(ev);
-    qDebug()<<"ItemListWidget重绘";
+    //qDebug()<<"ItemListWidget重绘";
     QStyleOption opt;
     opt.initFrom(this);
     QPainter p(this);
@@ -500,6 +529,10 @@ void ItemListWidget::paintEvent(QPaintEvent *ev) {
     } else {
         this->m_mask->hide();
     }
+
+    //设置文字
+    updateSongName();
+    updateSinger();
 }
 
 void ItemListWidget::enterEvent(QEnterEvent *ev) {
@@ -507,12 +540,12 @@ void ItemListWidget::enterEvent(QEnterEvent *ev) {
     QWidget::enterEvent(ev);
     if(!this->m_isHoverCoverLab) {
         this->m_isHoverCoverLab = true;
+        //设置文字
+        updateSongName();
+        updateSinger();
         this->m_play_add_ToolBtn->show();
         this->m_like_ToolBtn->show();
         this->m_more_ToolBtn->show();
-        this->setStyleSheet(R"(QWidget{border-radius:8px;background-color:#e8eafb;}
-                               QLabel{background-color:#e8eafb;}
-                               QLabel:hover{color:#2291e6;})");
         update();
     }
 }
@@ -521,10 +554,12 @@ void ItemListWidget::leaveEvent(QEvent *ev) {
     QWidget::leaveEvent(ev);
     if(this->m_isHoverCoverLab) {
         this->m_isHoverCoverLab = false;
+        //设置文字
+        updateSongName();
+        updateSinger();
         this->m_play_add_ToolBtn->hide();
         this->m_like_ToolBtn->hide();
         this->m_more_ToolBtn->hide();
-        this->setStyleSheet(R"(QWidget{border-radius:8px;})");
         update();
     }
 }
@@ -535,49 +570,92 @@ void ItemListWidget::resizeEvent(QResizeEvent *event) {
     //this->setGeometry(this->geometry().x(), this->geometry().y(),this->geometry().width(),event->size().width() / this->m_aspectRatio);
     this->m_coverLab->setFixedSize(this->height(), this->height());
     this->m_mask->setFixedSize(this->m_coverLab->size());
-
     //设置文字
-    this->setNameText(this->m_songName);
-    this->setAuthorText(this->m_singer);
+    updateSongName();
+    updateSinger();
+}
+
+void ItemListWidget::mousePressEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
+void ItemListWidget::mouseReleaseEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
+void ItemListWidget::mouseDoubleClickEvent(QMouseEvent *event) {
+    event->ignore();
 }
 
 void ItemListWidget::initUi() {
+    //设置鼠标指向
     this->m_coverLab->setCursor(Qt::PointingHandCursor);
-    this->m_nameLab->setCursor(Qt::PointingHandCursor);
-    this->m_authorLab->setCursor(Qt::PointingHandCursor);
+    this->m_songNameLab->setCursor(Qt::PointingHandCursor);
+    this->m_singerLab->setCursor(Qt::PointingHandCursor);
     this->m_play_add_ToolBtn->setCursor(Qt::PointingHandCursor);
     this->m_like_ToolBtn->setCursor(Qt::PointingHandCursor);
     this->m_more_ToolBtn->setCursor(Qt::PointingHandCursor);
-
-    this->m_coverLab->setObjectName(QStringLiteral("coverLab"));
-    this->m_nameLab->setObjectName(QStringLiteral("nameLab"));
-    this->m_authorLab->setObjectName(QStringLiteral("authorLab"));
-    this->m_play_add_ToolBtn->setObjectName(QStringLiteral("play_add_ToolBtn"));
-    this->m_like_ToolBtn->setObjectName(QStringLiteral("like_ToolBtn"));
-    this->m_more_ToolBtn->setObjectName(QStringLiteral("more_ToolBtn"));
-
-
-    this->m_play_add_ToolBtn->setStyleSheet(R"(QToolButton#play_add_ToolBtn{border-image: url(':/Res/tabIcon/play-add-gray.svg');}
-                                               QToolButton#play_add_ToolBtn:hover{border-image: url(':/Res/tabIcon/play-add-blue.svg');})");
-    this->m_like_ToolBtn->setStyleSheet(R"(QToolButton#like_ToolBtn{border-image: url(':/Res/playbar/collect.svg')}
-                                           QToolButton#like_ToolBtn:hover{border-image: url(':/Res/tabIcon/collect-blue.svg');})");
-    this->m_more_ToolBtn->setStyleSheet(R"(QToolButton#more_ToolBtn{border-image: url(':/Res/playbar/more.svg');}
-                                           QToolButton#more_ToolBtn:hover{border-image: url(':/Res/playbar/more-blue.svg');})");
-
-    auto vlayout = new QVBoxLayout;
-    vlayout->addWidget(this->m_nameLab);
-    vlayout->addWidget(this->m_authorLab);
-
+    //label
+    this->m_songNameLab->setScaledContents(true);
+    this->m_singerLab->setScaledContents(true);
+    this->m_songNameLab->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
+    this->m_singerLab->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
+    //optionwidget
+    this->m_optionWidget->setFixedWidth(80);
+    this->m_optionWidget->setContentsMargins(0,0,0,0);
+    this->m_optionWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    //布局设置
     auto hlayout = new QHBoxLayout(this);
     hlayout->setContentsMargins(0, 0, 10, 0);
     hlayout->addWidget(this->m_coverLab);
+    //歌曲和歌手垂直布局
+    auto vlayout = new QVBoxLayout;
+    vlayout->addWidget(this->m_songNameLab);
+    vlayout->addWidget(this->m_singerLab);
 
     hlayout->addLayout(vlayout);
+    hlayout->addSpacerItem(new QSpacerItem(5, 20, QSizePolicy::Expanding));
+    //optionWidget垂直布局
+    auto hhlayout = new QHBoxLayout(this->m_optionWidget);
+    hhlayout->addWidget(this->m_play_add_ToolBtn);
+    hhlayout->addWidget(this->m_like_ToolBtn);
+    hhlayout->addWidget(this->m_more_ToolBtn);
 
-    hlayout->addSpacerItem(new QSpacerItem(10, 20, QSizePolicy::Preferred));
-    hlayout->addWidget(this->m_play_add_ToolBtn);
-    hlayout->addWidget(this->m_like_ToolBtn);
-    hlayout->addWidget(this->m_more_ToolBtn);
+    hlayout->addWidget(this->m_optionWidget);
+
+    //遮罩设置
+    this->m_mask->setEnterWidgetChangeCursor(false);
+    this->m_mask->move(this->m_coverLab->pos());
+    this->m_mask->setFixedSize(this->m_coverLab->size());
+    this->m_mask->hide();
+    //初始隐藏按钮
+    this->m_optionWidget->show();
+    this->m_play_add_ToolBtn->hide();
+    this->m_like_ToolBtn->hide();
+    this->m_more_ToolBtn->hide();
+}
+
+void ItemListWidget::updateSongName() {
+    //设置字体测量工具
+    auto font = this->m_songNameLab->font();
+    QFontMetrics fm(font);
+    this->m_songNameLab->setToolTip(this->m_songName);
+    QString elidedText;
+    elidedText = fm.elidedText(this->m_songName,Qt::ElideRight,
+        this->width()-this->m_optionWidget->width()-50);
+    this->m_songNameLab->setText(elidedText);
+}
+
+void ItemListWidget::updateSinger() {
+    //设置字体测量工具
+    auto font = this->m_singerLab->font();
+    QFontMetrics fm(font);
+    this->m_singerLab->setToolTip(this->m_singer);
+    QString elidedText;
+    elidedText = fm.elidedText(this->m_singer,Qt::ElideRight,
+    this->width()-this->m_optionWidget->width()-50);
+
+    this->m_singerLab->setText(elidedText);
 }
 
 void ItemListWidget::onHide() {
@@ -702,6 +780,10 @@ void ItemBlockWidget::mousePressEvent(QMouseEvent *event) {
 
 void ItemBlockWidget::mouseReleaseEvent(QMouseEvent *event) {
     //QWidget::mouseReleaseEvent(event);
+    event->ignore();
+}
+
+void ItemBlockWidget::mouseDoubleClickEvent(QMouseEvent *event) {
     event->ignore();
 }
 
