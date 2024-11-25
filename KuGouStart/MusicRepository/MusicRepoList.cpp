@@ -130,6 +130,9 @@ void MusicRepoList::paintEvent(QPaintEvent *event) {
         p.setBrush(QColor(QStringLiteral("#E8EAFB")));
         p.drawRoundedRect(rect(),10,10);
     }
+    //改变字数
+    updateSongText();
+    updateSingerText();
 }
 
 void MusicRepoList::mousePressEvent(QMouseEvent *event) {
