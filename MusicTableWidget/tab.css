@@ -1,0 +1,29 @@
+QLabel#titleLab{
+    font-size:20px;
+}
+QLabel#moreLab{
+    color:gray;
+    font-size:12px;
+    padding-bottom: 3px;
+}
+QLabel#moreLab:hover{
+    color:#26a1ff;
+}
+QToolButton{
+    background-color:rgba(255,255,255,0);
+}
+QToolButton#adjust_ToolBtn{
+    border-image: url(':/Res/tabIcon/adjust-column-gray.svg');
+}
+QToolButton#adjust_ToolBtn:hover{
+    border-image: url(':/Res/tabIcon/adjust-column-blue.svg');
+}
+QToolButton#refresh_ToolBtn{
+    border-image: url(':/Res/tabIcon/refresh-gray.svg');
+}
+QToolButton#refresh_ToolBtn:hover{
+    border-image: url(':/Res/tabIcon/refresh-blue.svg');
+}
+QToolButton#play_ToolBtn{
+    border-image: url(':/Res/tabIcon/titlePlay.svg');
+}
