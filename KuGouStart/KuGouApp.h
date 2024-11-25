@@ -97,6 +97,8 @@ private:
     int getCurrentIndex(int index);    //通过在旧的vector里面的下标，来找新的下标
 
     void update_cover_singer_song_HLayout();
+
+    void updateSize();
 private:
     void addOrderIndex();
 

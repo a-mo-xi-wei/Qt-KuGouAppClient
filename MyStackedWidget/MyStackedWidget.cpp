@@ -4,6 +4,8 @@
 
 #include "MyStackedWidget.h"
 
+#include <QResizeEvent>
+
 MyStackedWidget::MyStackedWidget(QWidget *parent) :
     QStackedWidget(parent)
 {
@@ -13,9 +15,11 @@ MyStackedWidget::MyStackedWidget(QWidget *parent) :
 
 void MyStackedWidget::resizeEvent(QResizeEvent *event) {
     QStackedWidget::resizeEvent(event);
-    //for (int i = 0; i < this->count(); ++i) {
-    //    auto widget = this->widget(i);
-    //    qDebug() <<i+1<<" 号窗口大小 "<< widget->width();
-    //}
+    for (int i = 0; i < this->count(); ++i) {
+        auto widget = this->widget(i);
+        widget->resize(this->size()-QSize(20,20));
+        qDebug()<<"自己的宽度："<<this->width();
+        qDebug() <<i+1<<" 号窗口宽度 "<< widget->width();
+    }
 }
 

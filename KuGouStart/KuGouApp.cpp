@@ -395,6 +395,14 @@ void KuGouApp::update_cover_singer_song_HLayout() {
     ui->singer_label->setText(fm.elidedText(singer,Qt::ElideRight,ui->singer_label->width()));
 }
 
+void KuGouApp::updateSize() {
+
+    QResizeEvent resizeEvent(this->size(), this->size());
+    QApplication::sendEvent(this, &resizeEvent);
+
+    //this->resize(this->size().width()+1,this->size().height()+1);
+}
+
 void KuGouApp::addOrderIndex() {
     this->m_orderIndex = (this->m_orderIndex + 1) % static_cast<int>(this->m_songInfoVector.size());
     this->m_songIndex = this->m_orderIndex;
@@ -550,22 +558,25 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
     this->m_upBtn->raise();
     //song_info_widget适度延展
     ui->song_info_widget->setFixedWidth(this->width()/8+20);
-    //
+    //更新文字数量
     if(!this->m_player->source().isEmpty() && !this->m_songInfoVector.isEmpty())update_cover_singer_song_HLayout();
     //stackedWidget宽度处理
     if(!ui->menu_scrollArea->isHidden()) {
         if(ui->stackedWidget->width() + ui->menu_scrollArea->width() > this->width() - 20) {
             //ui->stackedWidget->setFixedWidth(this->width() - ui->menu_scrollArea->width() - 20);
             auto geo = ui->stackedWidget->geometry();
-            geo.setWidth(this->width() - ui->menu_scrollArea->width() - 30);
-            ui->stackedWidget->setGeometry(geo);
+            geo.setWidth(this->width() - ui->menu_scrollArea->width() - 40);
+            //qDebug() << "menu显示，堆栈宽度设置为："<<geo.width();
+            //ui->stackedWidget->setGeometry(geo);
+            ui->stackedWidget->resize(this->width() - ui->menu_scrollArea->width() - 40,this->height());
         }
     }
     else {
         if(ui->stackedWidget->width() > this->width() -20) {
-            auto geo = ui->stackedWidget->geometry();
-            geo.setWidth(this->width() - 25);
-            ui->stackedWidget->setGeometry(geo);
+            //auto geo = ui->stackedWidget->geometry();
+            //geo.setWidth(this->width() - 30);
+            //ui->stackedWidget->setGeometry(geo);
+            ui->stackedWidget->resize(this->width() - 30,this->height());
         }
     }
 
@@ -902,6 +913,7 @@ void KuGouApp::on_close_toolButton_clicked() {
 
 void KuGouApp::on_recommend_you_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_recommendForYou.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
@@ -910,6 +922,7 @@ void KuGouApp::on_recommend_you_toolButton_clicked() {
 
 void KuGouApp::on_music_repository_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_musicRepository.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
@@ -919,6 +932,7 @@ void KuGouApp::on_music_repository_toolButton_clicked() {
 
 void KuGouApp::on_channel_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_channel.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
@@ -928,6 +942,7 @@ void KuGouApp::on_channel_toolButton_clicked() {
 
 void KuGouApp::on_video_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_video.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
@@ -942,6 +957,7 @@ void KuGouApp::on_live_toolButton_clicked() {
 
 void KuGouApp::on_song_list_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_songList.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
@@ -951,6 +967,7 @@ void KuGouApp::on_song_list_toolButton_clicked() {
 
 void KuGouApp::on_daily_recommend_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_dailyRecommend.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
@@ -960,6 +977,7 @@ void KuGouApp::on_daily_recommend_toolButton_clicked() {
 
 void KuGouApp::on_local_download_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_localDownload.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutQuart; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
@@ -968,6 +986,7 @@ void KuGouApp::on_local_download_toolButton_clicked() {
 
 void KuGouApp::on_my_collection_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_collection.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
@@ -977,6 +996,7 @@ void KuGouApp::on_my_collection_toolButton_clicked() {
 
 void KuGouApp::on_music_cloud_disk_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_musicCloudDisk.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
@@ -986,6 +1006,7 @@ void KuGouApp::on_music_cloud_disk_toolButton_clicked() {
 
 void KuGouApp::on_purchased_music_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_purchasedMusic.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
@@ -995,6 +1016,7 @@ void KuGouApp::on_purchased_music_toolButton_clicked() {
 
 void KuGouApp::on_recently_played_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_recentlyPlayed.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
@@ -1004,6 +1026,7 @@ void KuGouApp::on_recently_played_toolButton_clicked() {
 
 void KuGouApp::on_all_music_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_allMusic.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
