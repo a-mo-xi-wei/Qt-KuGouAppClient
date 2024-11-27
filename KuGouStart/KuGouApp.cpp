@@ -562,22 +562,10 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
     if(!this->m_player->source().isEmpty() && !this->m_songInfoVector.isEmpty())update_cover_singer_song_HLayout();
     //stackedWidget宽度处理
     if(!ui->menu_scrollArea->isHidden()) {
-        if(ui->stackedWidget->width() + ui->menu_scrollArea->width() > this->width() - 20) {
-            //ui->stackedWidget->setFixedWidth(this->width() - ui->menu_scrollArea->width() - 20);
-            auto geo = ui->stackedWidget->geometry();
-            geo.setWidth(this->width() - ui->menu_scrollArea->width() - 40);
-            //qDebug() << "menu显示，堆栈宽度设置为："<<geo.width();
-            //ui->stackedWidget->setGeometry(geo);
-            ui->stackedWidget->resize(this->width() - ui->menu_scrollArea->width() - 40,this->height());
-        }
+        ui->stackedWidget->setFixedWidth((this->width() - ui->menu_scrollArea->width() - 30));
     }
     else {
-        if(ui->stackedWidget->width() > this->width() -20) {
-            //auto geo = ui->stackedWidget->geometry();
-            //geo.setWidth(this->width() - 30);
-            //ui->stackedWidget->setGeometry(geo);
-            ui->stackedWidget->resize(this->width() - 30,this->height());
-        }
+        ui->stackedWidget->setFixedWidth(this->width() - 30);
     }
 
 }
@@ -807,6 +795,7 @@ void KuGouApp::on_title_live_pushButton_clicked() {
     ui->menu_scrollArea->hide();
     //显示窗口
     ui->stackedWidget->setCurrentWidget(this->m_live.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutQuart; // 缓动曲线
     this->m_upBtn->clicked();
 }
@@ -820,6 +809,7 @@ void KuGouApp::on_title_listen_book_pushButton_clicked() {
     ui->menu_scrollArea->hide();
     //显示窗口
     ui->stackedWidget->setCurrentWidget(this->m_listenBook.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutQuart; // 缓动曲线
     this->m_upBtn->clicked();
 }
@@ -833,6 +823,7 @@ void KuGouApp::on_title_search_pushButton_clicked() {
     ui->menu_scrollArea->hide();
     //显示窗口
     ui->stackedWidget->setCurrentWidget(this->m_search.get());
+    updateSize();
     this->m_curves = QEasingCurve::OutQuart; // 缓动曲线
     this->m_upBtn->clicked();
 }
