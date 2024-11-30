@@ -9,7 +9,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets UiTools Multimedia)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia)
 
 file(GLOB SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
@@ -56,7 +56,7 @@ add_subdirectory(Search)
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::UiTools Qt6::Multimedia
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia
                         RecommendForYou MusicRepository Channel StartVideo Live
                         SongList DailyRecommend MyCollection LocalDownload
                         MusicCloudDisk PurchasedMusic RecentlyPlayed AllMusic
