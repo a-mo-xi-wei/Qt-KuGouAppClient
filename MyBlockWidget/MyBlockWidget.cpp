@@ -44,13 +44,15 @@ void MyBlockWidget::initUi() {
     this->m_rightPopularBtn->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/popular-white.svg")));
     this->setPopularBtnText(QString::number(QRandomGenerator::global()->generateDouble() * 1000, 'f', 1));
     this->m_rightPopularBtn->setContentsMargins(5, 0, 5, 0);
-    this->m_rightPopularBtn->setStyleSheet(QStringLiteral("color:white;border-radius:10px;background-color: rgba(128, 128, 128, 127);"));
+    this->m_rightPopularBtnStyle = "color:white;border:none;border-radius:10px;";
+    this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle+"background-color: rgba(128, 128, 128, 127);");
 
     this->m_leftPopularBtn->setFixedSize(70, 20);
     this->m_leftPopularBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     this->m_leftPopularBtn->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/person-white.svg")));
     this->m_leftPopularBtn->setContentsMargins(5, 0, 5, 0);
-    this->m_leftPopularBtn->setStyleSheet(QStringLiteral("color:white;border:none;background-color:rgba(255,255,255,0);"));
+    this->m_leftPopularBtnStyle = "color:white;border:none;border-radius:10px;background-color: rgba(255,255,255,0);";
+    this->m_leftPopularBtn->setStyleSheet(this->m_leftPopularBtnStyle);
 
 }
 
@@ -72,10 +74,13 @@ void MyBlockWidget::initTipArr() {
                 QStringLiteral("甜蜜"),QStringLiteral("广场舞"),};
 }
 
-void MyBlockWidget::setBorderImage(const QString &path) {
-    QString style = QString("border-radius:8px;border-image:url(%1);").arg(path);
+void MyBlockWidget::setBorderImage(const QString &path,const int& border) {
+    QString style = QString("border-radius:%1px;border-image:url(%2);").arg(border).arg(path);
     //qDebug()<<"当前样式："<<style;
     this->m_bacWidget->setStyleSheet(style);
+    if (border != 8) {
+        this->m_mask->setBorderRadius(border);
+    }
 }
 
 void MyBlockWidget::setTipLabText(const QString &text) {
@@ -89,6 +94,10 @@ void MyBlockWidget::setPopularDirection(const int &direction) {
     }
     else if(direction == 2) {
         this->m_rightPopularBtn->show();
+    }
+    else {
+        this->m_leftPopularBtn->hide();
+        this->m_rightPopularBtn->hide();
     }
 }
 
@@ -111,6 +120,31 @@ void MyBlockWidget::setExpandRespond(const bool &expandRespond) {
     this->m_isExpandRespond = expandRespond;
 }
 
+void MyBlockWidget::setRightPopularBtnIcon(const QString &icon) {
+    this->m_rightPopularBtn->setIcon(QIcon(icon));
+}
+
+void MyBlockWidget::setLeftPopularBtnIcon(const QString &icon) {
+    this->m_leftPopularBtn->setIcon(QIcon(icon));
+}
+
+void MyBlockWidget::setAspectRatio(const int &aspectRatio) {
+    this->m_aspectRatio = aspectRatio;
+}
+
+void MyBlockWidget::setPopularBtnLeftPadding(const int &leftPadding) {
+    if(!this->m_popularDirection)return;
+
+    if(this->m_popularDirection == 1) {
+        this->m_leftPopularBtnStyle += QString("padding-left:%1;").arg(leftPadding);
+        this->m_leftPopularBtn->setStyleSheet(this->m_leftPopularBtnStyle);
+    }
+    else if(this->m_popularDirection == 2) {
+        this->m_rightPopularBtnStyle += QString("padding-left:%1;").arg(leftPadding);
+        this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle+"background-color: rgba(128, 128, 128, 127);");
+    }
+}
+
 SMaskWidget& MyBlockWidget::getMask() {
     return *m_mask;
 }
@@ -118,12 +152,15 @@ SMaskWidget& MyBlockWidget::getMask() {
 void MyBlockWidget::onShowMask() {
     this->m_mask->show();
     this->m_mask->raise();
-    this->m_rightPopularBtn->setStyleSheet(QStringLiteral("color:white;border-radius:10px;background-color: rgba(60,60,60, 127);"));
+    QEvent enter(QEvent::Enter);
+    this->leaveEvent(&enter);
     update();
 }
 
 void MyBlockWidget::onHideMask() {
     this->m_mask->hide();
+    QEvent leave(QEvent::Leave);
+    this->leaveEvent(&leave);
     update();
 }
 
@@ -142,7 +179,7 @@ void MyBlockWidget::enterEvent(QEnterEvent *ev) {
             this->m_isHoverCover = true;
             this->m_mask->show();
             this->m_mask->raise();
-            this->m_rightPopularBtn->setStyleSheet(QStringLiteral("color:white;border-radius:10px;background-color: rgba(60,60,60, 127);"));
+            this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle + "background-color: rgba(60,60,60, 127);");
             update();
         }
     }
@@ -155,6 +192,7 @@ void MyBlockWidget::leaveEvent(QEvent *ev) {
         if(this->m_isHoverCover) {
             this->m_isHoverCover = false;
             this->m_mask->hide();
+            this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle + "background-color: rgba(60,60,60, 127);");
             update();
         }
     }
@@ -162,7 +200,7 @@ void MyBlockWidget::leaveEvent(QEvent *ev) {
 
 void MyBlockWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
-    this->m_bacWidget->setFixedSize(event->size().width() / 1.01, event->size().width() / 1.01);
+    this->m_bacWidget->setFixedSize(event->size().width() / 1.01, event->size().width() / (1.01 * this->m_aspectRatio));
     this->m_mask->setFixedSize(this->m_bacWidget->size());
     this->m_rightPopularBtn->move(this->m_bacWidget->width() - this->m_rightPopularBtn->width() - 5,
                              this->m_bacWidget->height() - this->m_rightPopularBtn->height() - 5);
