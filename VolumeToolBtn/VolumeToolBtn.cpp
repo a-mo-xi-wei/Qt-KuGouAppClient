@@ -52,7 +52,7 @@ void VolumeToolBtn::initVolumeWidget() {
     this->m_volumeSlider->setMaximum(100);
     this->m_volumeSlider->setValue(20);
     this->m_volumeSlider->setToolTip(QStringLiteral("调节音量"));
-    this->m_volumeSlider->setContentsMargins(0,0,0,0);
+    this->m_volumeSlider->setContentsMargins(0,20,0,10);
     this->m_volumeLab->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
     this->m_volumeLab->setContentsMargins(0,0,0,0);
     this->m_volumeLab->setText(" "+QString::number(this->m_volumeSlider->getValue()) + "%");
@@ -62,9 +62,11 @@ void VolumeToolBtn::initVolumeWidget() {
     hBoxLayout->addWidget(this->m_volumeSlider.get());
     this->m_vBoxLayout = new QVBoxLayout(this->m_volumeWidget.get());
     this->m_vBoxLayout->setAlignment(Qt::AlignCenter);
-    this->m_vBoxLayout->setSpacing(0);
+    this->m_vBoxLayout->setSpacing(5);
+    this->m_vBoxLayout->addSpacerItem(new QSpacerItem(10,10,QSizePolicy::Fixed,QSizePolicy::Fixed));
     this->m_vBoxLayout->addLayout(hBoxLayout);
     this->m_vBoxLayout->addWidget(this->m_volumeLab.get());
+    this->m_vBoxLayout->addSpacerItem(new QSpacerItem(10,10,QSizePolicy::Fixed,QSizePolicy::Expanding));
 }
 
 void VolumeToolBtn::initUi() {
