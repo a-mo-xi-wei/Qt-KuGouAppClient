@@ -21,6 +21,9 @@ set(SOURCE_FILE
     MusicRepoBlock.cpp
     MusicRepoBlock.h
     MusicRepoBlock.ui
+    MusicRepoVideo.cpp
+    MusicRepoVideo.h
+    MusicRepoVideo.ui
     musicrepo.css
     repolist.css
 )

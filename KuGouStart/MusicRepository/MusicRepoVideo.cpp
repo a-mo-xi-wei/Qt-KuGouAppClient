@@ -1,0 +1,99 @@
+//
+// Created by WeiWang on 24-11-30.
+//
+
+// You may need to build the project (run Qt uic code generator) to get "ui_MusicRepoVideo.h" resolved
+
+#include "MusicRepoVideo.h"
+#include "ui_MusicRepoVideo.h"
+
+#include <QFile>
+#include <QMouseEvent>
+#include <QPainterPath>
+
+
+// 创建一个宏来截取 __FILE__ 宏中的目录部分
+#define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+
+MusicRepoVideo::MusicRepoVideo(QWidget *parent) :
+    QWidget(parent), ui(new Ui::MusicRepoVideo) {
+    ui->setupUi(this);
+    QFile file(GET_CURRENT_DIR + QStringLiteral("/repovideo.css"));
+    if (file.open(QIODevice::ReadOnly)) {
+        this->setStyleSheet(file.readAll());
+    } else {
+        qDebug() << "样式表打开失败QAQ";
+        return;
+    }
+}
+
+MusicRepoVideo::~MusicRepoVideo() {
+    delete ui;
+}
+
+void MusicRepoVideo::setCoverPix(const QString &pixmapPath) {
+    ui->cover_widget->setBorderImage(pixmapPath);
+}
+
+void MusicRepoVideo::setVideoName(const QString &name) {
+    this->m_videoName = name;
+    updateVideoNameText();
+}
+
+void MusicRepoVideo::setIconPix(const QString &pix) {
+    auto src = QPixmap(pix);
+    auto size = ui->ico_label->size();
+    auto len = size.width();
+    QPixmap scaled = src.scaled(size , Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+    QPixmap dest(size);
+    dest.fill(Qt::transparent);
+    QPainter painter(&dest);
+    painter.setRenderHint(QPainter::Antialiasing);
+    QPainterPath path;
+    path.addRoundedRect(0, 0, len,len, len/2, len/2);
+    painter.setClipPath(path);
+    painter.drawPixmap(0, 0, scaled);
+    ui->ico_label->setPixmap(dest);
+}
+
+void MusicRepoVideo::setAuthor(const QString &author) {
+    this->m_videoAuthor = author;
+    updateVideoAuthorText();
+}
+
+void MusicRepoVideo::updateVideoNameText() {
+    //设置字体测量工具
+    auto font = ui->video_name_label->font();
+    QFontMetrics fm(font);
+    ui->video_name_label->setToolTip(this->m_videoName);
+    auto elidedText = fm.elidedText(this->m_videoName,Qt::ElideRight,ui->info_widget->width()-20);
+    ui->video_name_label->setText(elidedText);
+}
+
+void MusicRepoVideo::updateVideoAuthorText() {
+    //设置字体测量工具
+    auto font = ui->video_author_label->font();
+    QFontMetrics fm(font);
+    ui->video_author_label->setToolTip(this->m_videoAuthor);
+    auto elidedText = fm.elidedText(this->m_videoAuthor,Qt::ElideRight,ui->info_widget->width()-20);
+    ui->video_author_label->setText(elidedText);
+}
+
+void MusicRepoVideo::mousePressEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
+void MusicRepoVideo::mouseReleaseEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
+void MusicRepoVideo::mouseDoubleClickEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
+void MusicRepoVideo::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+    ui->cover_widget->setFixedHeight(ui->cover_widget->width()/2);
+    updateVideoNameText();
+    updateVideoAuthorText();
+}
