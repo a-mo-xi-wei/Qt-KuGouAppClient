@@ -52,7 +52,7 @@ void MusicRepoBlock::updateSongText() {
     ui->song_label->setToolTip(this->m_songName);
     //auto w = fm.horizontalAdvance(this->m_songName);
     //if(w >= ui->info_widget->width()-50) {
-    auto elidedText = fm.elidedText(this->m_songName,Qt::ElideRight,ui->song_label->width()-10);
+    auto elidedText = fm.elidedText(this->m_songName,Qt::ElideRight,ui->info_widget->width()-10);
     ui->song_label->setText(elidedText);
 }
 
@@ -61,7 +61,7 @@ void MusicRepoBlock::updateSingerText() {
     auto font = ui->singer_label->font();
     QFontMetrics fm(font);
     ui->singer_label->setToolTip(this->m_singer);
-    auto elidedText = fm.elidedText(this->m_singer,Qt::ElideRight,ui->singer_label->width()-10);
+    auto elidedText = fm.elidedText(this->m_singer,Qt::ElideRight,ui->info_widget->width()-10);
     ui->singer_label->setText(elidedText);
 }
 
