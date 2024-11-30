@@ -95,9 +95,20 @@ void SliderWidget::showEvent(QShowEvent *event) {
     this->m_maxValue = this->maximum();
     this->m_parent = qobject_cast<MyWidget*>(this->parent());
     // 确保 m_parent 不为空再进行连接
-    if (this->m_parent)
+    if (this->m_parent) {
         connect(this->m_parent,&MyWidget::noVolume,this,&SliderWidget::onNoVolume);
-
+        connect(this->m_parent,&MyWidget::volumeChanged,this,[=](int delta) {
+            if(delta > 0) {
+                this->m_currentValue += 2 ;
+                this->m_currentValue = this->m_currentValue >= this->m_maxValue ? this->m_maxValue : this->m_currentValue;
+            }
+            else if(delta < 0) {
+                this->m_currentValue -= 2;
+                this->m_currentValue = this->m_currentValue < this->m_minValue ? this->m_minValue : this->m_currentValue;
+            }
+            this->setValue(this->m_currentValue);
+        });
+    }
 }
 void SliderWidget::onNoVolume(bool flag) {
     if(flag) {

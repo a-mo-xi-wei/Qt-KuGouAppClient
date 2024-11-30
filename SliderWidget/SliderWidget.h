@@ -8,6 +8,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QStyleOption>
+#include <QWheelEvent>
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 /*此处重写的QWidget的唯一目的就是作为中转传递信号。。。。*/
@@ -17,13 +18,11 @@ class MyWidget : public QWidget {
 public:
     explicit MyWidget(QWidget *parent = nullptr)
         : QWidget(parent)
-          , m_effect(std::make_unique<QGraphicsDropShadowEffect>(this))
-    {
+          , m_effect(std::make_unique<QGraphicsDropShadowEffect>(this)) {
         this->setContentsMargins(0, 0, 0, 10);
-        setFixedSize(64,198);
+        setFixedSize(64, 198);
         setWindowFlags(Qt::FramelessWindowHint);
-        setAttribute(Qt::WA_TranslucentBackground);
-        {
+        setAttribute(Qt::WA_TranslucentBackground); {
             //设置样式
             QFile file(GET_CURRENT_DIR + QStringLiteral("/slider.css"));
             if (file.open(QIODevice::ReadOnly)) {
@@ -38,6 +37,7 @@ public:
         this->m_effect->setBlurRadius(30);
         this->setGraphicsEffect(this->m_effect.get());
     }
+
 protected:
     void paintEvent(QPaintEvent *ev) override {
         QStyleOption opt;
@@ -47,7 +47,7 @@ protected:
         p.setRenderHint(QPainter::Antialiasing);
         p.setPen(QColor(Qt::transparent));
         p.setBrush(QColor(QStringLiteral("#edf2ff")));
-        p.drawRoundedRect(rect().x(),rect().y(),64,190,6,6);
+        p.drawRoundedRect(rect().x(), rect().y(), 64, 190, 6, 6);
         QPainterPath path;
         path.moveTo(rect().x() + 22, rect().bottom() - 8);
         path.lineTo(rect().x() + 32, rect().bottom());
@@ -55,11 +55,20 @@ protected:
         p.drawPath(path);
     }
 
+    void wheelEvent(QWheelEvent *event) override {
+        QWidget::wheelEvent(event);
+        this->m_delta = event->angleDelta().y();
+        emit volumeChanged(this->m_delta);
+    }
+
 signals:
-    void noVolume(bool flag);
+    void noVolume(const bool &flag);
+
+    void volumeChanged(const int &value);
 
 private:
     std::unique_ptr<QGraphicsDropShadowEffect> m_effect;
+    int m_delta;
 };
 
 class SliderWidget : public QSlider {
