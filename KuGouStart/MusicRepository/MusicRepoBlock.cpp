@@ -32,7 +32,7 @@ MusicRepoBlock::~MusicRepoBlock() {
 }
 
 void MusicRepoBlock::setCoverPix(const QString &pixmapPath) {
-    ui->cover_widget->setBorderImage(pixmapPath);
+    ui->cover_widget->setBorderImage(pixmapPath,10);
 }
 
 void MusicRepoBlock::setSongName(const QString &song) {

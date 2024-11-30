@@ -4,7 +4,13 @@
 #include<QPainterPath>
 
 SMaskWidget::SMaskWidget(QWidget *parent)
-    : QWidget(parent),m_radius(0),m_centerX(0),m_centerY(0),m_w(0),m_h(0){
+    : QWidget(parent)
+    ,m_radius(0)
+    ,m_centerX(0)
+    ,m_centerY(0)
+    ,m_w(0)
+    ,m_h(0)
+{
     setWindowFlags(Qt::FramelessWindowHint);
     this->setMouseTracking(true);
 }
@@ -27,6 +33,10 @@ void SMaskWidget::setHoverFillTriangleColor(const QColor &color) {
 
 void SMaskWidget::setEnterWidgetChangeCursor(const bool &change) {
     this->m_isEnterWidgetChangeCursor = change;
+}
+
+void SMaskWidget::setBorderRadius(const int &radius) {
+    this->m_borderRadius = radius;
 }
 
 void SMaskWidget::calOnce() {
@@ -56,7 +66,7 @@ void SMaskWidget::paintEvent(QPaintEvent *event) {
     // 设置绘制颜色，带有透明度
     painter.setBrush(color);
     painter.setPen(Qt::NoPen);
-    painter.drawRoundedRect(rect(), 8, 8);
+    painter.drawRoundedRect(rect(), this->m_borderRadius, this->m_borderRadius);
     if(this->m_isEnterCircle) {
         // 创建一个绘制路径
         QPainterPath path;

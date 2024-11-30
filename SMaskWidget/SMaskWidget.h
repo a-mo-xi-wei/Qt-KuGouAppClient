@@ -21,6 +21,8 @@ public:
 
     void setEnterWidgetChangeCursor(const bool& change);
 
+    void setBorderRadius(const int& radius);
+
 private:
     void calOnce();
 
@@ -55,7 +57,8 @@ private:
     //鼠标一进入widget就变指向样式
     bool m_isEnterWidgetChangeCursor = true;
     bool m_isEnterCircle = false;
-
+    //border-radius
+    int m_borderRadius = 8;
 };
 
 #endif // SMASKWIDGET_H
