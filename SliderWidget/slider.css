@@ -1,3 +1,10 @@
+QWidget{
+    border:none;
+    border-radius:6px;
+}
+QSlider{
+    background-color: #edf2ff;
+}
 QSlider::groove:vertical {
     background-color:white;
     border:none;
@@ -27,9 +34,4 @@ QSlider:vertical{
 QLabel {
     border: none;
     background-color:rgba(255,255,255,0);
-}
-QWidget{
-    background-color:#edf2ff;
-    border:none;
-    border-radius:6px;
 }

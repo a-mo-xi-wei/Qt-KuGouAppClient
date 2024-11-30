@@ -6,20 +6,23 @@
 #include <QFile>
 #include<QGraphicsDropShadowEffect>
 #include <QPainter>
+#include <QPainterPath>
 #include <QStyleOption>
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 /*此处重写的QWidget的唯一目的就是作为中转传递信号。。。。*/
 class MyWidget : public QWidget {
     Q_OBJECT
+
 public:
     explicit MyWidget(QWidget *parent = nullptr)
-        :QWidget(parent)
-        ,m_effect(std::make_unique<QGraphicsDropShadowEffect>(this))
+        : QWidget(parent)
+          , m_effect(std::make_unique<QGraphicsDropShadowEffect>(this))
     {
-
-        this->setFixedSize(64, 200);
         this->setContentsMargins(0, 0, 0, 10);
+        setFixedSize(64,198);
+        setWindowFlags(Qt::FramelessWindowHint);
+        setAttribute(Qt::WA_TranslucentBackground);
         {
             //设置样式
             QFile file(GET_CURRENT_DIR + QStringLiteral("/slider.css"));
@@ -41,12 +44,22 @@ protected:
         opt.initFrom(this);
         QPainter p(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+        p.setRenderHint(QPainter::Antialiasing);
+        p.setPen(QColor(Qt::transparent));
+        p.setBrush(QColor(QStringLiteral("#edf2ff")));
+        p.drawRoundedRect(rect().x(),rect().y(),64,190,6,6);
+        QPainterPath path;
+        path.moveTo(rect().x() + 22, rect().bottom() - 8);
+        path.lineTo(rect().x() + 32, rect().bottom());
+        path.lineTo(rect().x() + 42, rect().bottom() - 8);
+        p.drawPath(path);
     }
 
 signals:
     void noVolume(bool flag);
+
 private:
-    std::unique_ptr<QGraphicsDropShadowEffect>m_effect;
+    std::unique_ptr<QGraphicsDropShadowEffect> m_effect;
 };
 
 class SliderWidget : public QSlider {
@@ -54,7 +67,9 @@ class SliderWidget : public QSlider {
 
 public:
     explicit SliderWidget(QWidget *parent = nullptr, Qt::Orientation orientation = Qt::Horizontal);
-    const int getValue() const ;
+
+    const int getValue() const;
+
 protected:
     void mousePressEvent(QMouseEvent *event) override;
 
@@ -68,10 +83,13 @@ protected:
 
 public slots:
     void onNoVolume(bool flag);
+
 signals:
     void noVolume(bool flag);
+
 public:
     bool m_isPressing;
+
 private:
     int m_minValue;
     int m_maxValue;
