@@ -214,6 +214,38 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
             ui->gridLayout->itemAtPosition(i, j)->widget()->setFixedWidth(average);
         }
     }
+    //BlockWidget设置
+    static int lastVisibleState = -1;  // 记录上一次的可见状态
+    int currentWidth = this->width();
+    int newVisibleState;
+
+    // 根据宽度确定状态
+    if (currentWidth < 1045) {
+        newVisibleState = 0;
+    } else if (currentWidth >= 1045 && currentWidth < 1250) {
+        newVisibleState = 1;
+    } else {
+        newVisibleState = 2;
+    }
+
+    // 只有状态变化时才执行显示/隐藏
+    if (newVisibleState != lastVisibleState) {
+        switch (newVisibleState) {
+            case 0:
+                ui->block_widget6->hide();
+            ui->block_widget7->hide();
+            break;
+            case 1:
+                ui->block_widget6->show();
+            ui->block_widget7->hide();
+            break;
+            case 2:
+                ui->block_widget6->show();
+            ui->block_widget7->show();
+            break;
+        }
+        lastVisibleState = newVisibleState;
+    }
 }
 
 void MusicRepository::mousePressEvent(QMouseEvent *event) {
