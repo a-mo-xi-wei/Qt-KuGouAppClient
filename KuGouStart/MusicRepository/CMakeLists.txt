@@ -18,7 +18,11 @@ set(SOURCE_FILE
     MusicRepoList.cpp
     MusicRepoList.h
     MusicRepoList.ui
+    MusicRepoBlock.cpp
+    MusicRepoBlock.h
+    MusicRepoBlock.ui
     musicrepo.css
+    repolist.css
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})

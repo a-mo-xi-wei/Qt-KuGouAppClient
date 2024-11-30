@@ -11,7 +11,11 @@
 class QButtonGroup;
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MusicRepository; }
+
+namespace Ui {
+    class MusicRepository;
+}
+
 QT_END_NAMESPACE
 
 class MusicRepository : public QWidget {
@@ -26,6 +30,10 @@ private:
     void initButtonGroup();
 
     void initUi();
+
+    void initnewDiskWidget();
+
+    void initSelectWidget();
 
     void initVector();
 
@@ -49,25 +57,30 @@ private slots:
     void on_korea_pushButton_clicked();
 
     void on_japan_pushButton_clicked();
+
 private:
     Ui::MusicRepository *ui;
-    QWidget* m_topWindow{};
+    QWidget *m_topWindow{};
     std::unique_ptr<QButtonGroup> m_buttonGroup{};
+
     //四个容器，响应四个按钮
-    struct MusicListInfo {
+    struct MusicInfo {
         // 添加构造函数
-        MusicListInfo(const QString& pixmapPath, const QString& song, const QString& singer)
-            : pixPath(pixmapPath), song(song), singer(singer) {}
+        MusicInfo(const QString &pixmapPath, const QString &song, const QString &singer)
+            : pixPath(pixmapPath), song(song), singer(singer) {
+        }
+
         QString pixPath;
         QString song;
         QString singer;
     };
-    std::vector<std::pair<QString,QString>>m_songAndsinger{};
-    std::vector<MusicListInfo>m_total{};
-    std::vector<MusicListInfo>m_chineseVector{};
-    std::vector<MusicListInfo>m_westVector{};
-    std::vector<MusicListInfo>m_koreaVector{};
-    std::vector<MusicListInfo>m_japanVector{};
+
+    std::vector<std::pair<QString, QString> > m_songAndsinger{};
+    std::vector<MusicInfo> m_total{};
+    std::vector<MusicInfo> m_chineseVector{};
+    std::vector<MusicInfo> m_westVector{};
+    std::vector<MusicInfo> m_koreaVector{};
+    std::vector<MusicInfo> m_japanVector{};
 };
 
 

@@ -52,11 +52,55 @@ void MusicRepository::initUi() {
     initButtonGroup();
     //初始化容器
     initVector();
+    //初始化新碟上架
+    initnewDiskWidget();
+    //初始化精选视频
+    initSelectWidget();
+
     //先按下华语
     ui->chinese_pushButton->clicked();
 }
 
-void MusicRepository::initVector() { {
+void MusicRepository::initnewDiskWidget() {
+    //先隐藏两个block
+    ui->block_widget6->hide();
+    ui->block_widget7->hide();
+
+    // 使用当前时间作为随机数种子
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    // 随机打乱 QVector
+    std::shuffle(this->m_total.begin(), this->m_total.end(), std::default_random_engine(seed));
+    {
+        //初始化
+        ui->block_widget1->setCoverPix  (this->m_total[1].pixPath);
+        ui->block_widget1->setSongName  (this->m_total[1].song);
+        ui->block_widget1->setSinger    (this->m_total[1].singer);
+        ui->block_widget2->setCoverPix  (this->m_total[2].pixPath);
+        ui->block_widget2->setSongName  (this->m_total[2].song);
+        ui->block_widget2->setSinger    (this->m_total[2].singer);
+        ui->block_widget3->setCoverPix  (this->m_total[3].pixPath);
+        ui->block_widget3->setSongName  (this->m_total[3].song);
+        ui->block_widget3->setSinger    (this->m_total[3].singer);
+        ui->block_widget4->setCoverPix  (this->m_total[4].pixPath);
+        ui->block_widget4->setSongName  (this->m_total[4].song);
+        ui->block_widget4->setSinger    (this->m_total[4].singer);
+        ui->block_widget5->setCoverPix  (this->m_total[5].pixPath);
+        ui->block_widget5->setSongName  (this->m_total[5].song);
+        ui->block_widget5->setSinger    (this->m_total[5].singer);
+        ui->block_widget6->setCoverPix  (this->m_total[6].pixPath);
+        ui->block_widget6->setSongName  (this->m_total[6].song);
+        ui->block_widget6->setSinger    (this->m_total[6].singer);
+        ui->block_widget7->setCoverPix  (this->m_total[7].pixPath);
+        ui->block_widget7->setSongName  (this->m_total[7].song);
+        ui->block_widget7->setSinger    (this->m_total[7].singer);
+    }
+}
+
+void MusicRepository::initSelectWidget() {
+}
+
+void MusicRepository::initVector() {
+    {
         //插入歌曲和歌手的配对关系
         this->m_songAndsinger.emplace_back(" ", " ");
         this->m_songAndsinger.emplace_back("租购", "薛之谦");
