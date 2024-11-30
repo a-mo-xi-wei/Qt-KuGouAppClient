@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QMouseEvent>
 #include <QPainterPath>
+#include <QRandomGenerator>
 
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
@@ -25,6 +26,7 @@ MusicRepoVideo::MusicRepoVideo(QWidget *parent) :
         qDebug() << "样式表打开失败QAQ";
         return;
     }
+    initUi();
 }
 
 MusicRepoVideo::~MusicRepoVideo() {
@@ -32,7 +34,7 @@ MusicRepoVideo::~MusicRepoVideo() {
 }
 
 void MusicRepoVideo::setCoverPix(const QString &pixmapPath) {
-    ui->cover_widget->setBorderImage(pixmapPath);
+    ui->cover_widget->setBorderImage(pixmapPath,10);
 }
 
 void MusicRepoVideo::setVideoName(const QString &name) {
@@ -59,6 +61,15 @@ void MusicRepoVideo::setIconPix(const QString &pix) {
 void MusicRepoVideo::setAuthor(const QString &author) {
     this->m_videoAuthor = author;
     updateVideoAuthorText();
+}
+
+void MusicRepoVideo::initUi() {
+    ui->cover_widget->setRightPopularBtnIcon(QStringLiteral(":/Res/tabIcon/video-white.svg"));
+    ui->cover_widget->setPopularDirection(2);
+    ui->cover_widget->setAspectRatio(2);
+    ui->cover_widget->setPopularBtnText(QString::number(QRandomGenerator::global()->generateDouble() * 10, 'f', 1));
+    ui->cover_widget->setPopularBtnLeftPadding(8);
+    ui->cover_widget->installEventFilter(this);
 }
 
 void MusicRepoVideo::updateVideoNameText() {
@@ -89,6 +100,24 @@ void MusicRepoVideo::mouseReleaseEvent(QMouseEvent *event) {
 
 void MusicRepoVideo::mouseDoubleClickEvent(QMouseEvent *event) {
     event->ignore();
+}
+
+bool MusicRepoVideo::eventFilter(QObject *watched, QEvent *event) {
+    if (watched == ui->cover_widget) {
+        if (event->type() == QEvent::Enter) {
+            if (!this->m_isEnter) {
+                this->m_isEnter = true;
+                ui->cover_widget->setPopularDirection(0);
+            }
+        } else if (event->type() == QEvent::Leave) {
+            if (this->m_isEnter) {
+                this->m_isEnter = false;
+                ui->cover_widget->setPopularDirection(2);
+            }
+        }
+    }
+
+    return QWidget::eventFilter(watched, event);
 }
 
 void MusicRepoVideo::resizeEvent(QResizeEvent *event) {

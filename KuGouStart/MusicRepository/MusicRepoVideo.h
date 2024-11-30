@@ -33,6 +33,8 @@ public:
     void setAuthor(const QString &author);
 
 private:
+    void initUi();
+
     void updateVideoNameText();
 
     void updateVideoAuthorText();
@@ -44,6 +46,8 @@ protected:
 
     void mouseDoubleClickEvent(QMouseEvent *event) override;
 
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
     void resizeEvent(QResizeEvent *event) override;
 
 private:
@@ -51,7 +55,7 @@ private:
     //视频名、视频作者
     QString m_videoName;
     QString m_videoAuthor;
+    //是否进入
+    bool m_isEnter = false;
 };
-
-
 #endif //MUSICREPOVIDEO_H

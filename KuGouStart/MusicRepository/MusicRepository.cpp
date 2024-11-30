@@ -97,6 +97,40 @@ void MusicRepository::initnewDiskWidget() {
 }
 
 void MusicRepository::initSelectWidget() {
+    //先隐藏两个video
+    ui->video_widget4->hide();
+    ui->video_widget5->hide();
+    // 使用当前时间作为随机数种子
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    // 随机打乱 QVector
+    std::shuffle(this->m_total.begin(), this->m_total.end(), std::default_random_engine(seed));
+    {
+        //初始化
+        ui->video_widget1->setCoverPix  (this->m_total[1].pixPath);
+        ui->video_widget1->setVideoName (this->m_total[1].song);
+        ui->video_widget1->setIconPix   (this->m_total[1].pixPath);
+        ui->video_widget1->setAuthor    (this->m_total[1].singer);
+
+        ui->video_widget2->setCoverPix  (this->m_total[2].pixPath);
+        ui->video_widget2->setVideoName (this->m_total[2].song);
+        ui->video_widget2->setIconPix   (this->m_total[2].pixPath);
+        ui->video_widget2->setAuthor    (this->m_total[2].singer);
+
+        ui->video_widget3->setCoverPix  (this->m_total[3].pixPath);
+        ui->video_widget3->setVideoName (this->m_total[3].song);
+        ui->video_widget3->setIconPix   (this->m_total[3].pixPath);
+        ui->video_widget3->setAuthor    (this->m_total[3].singer);
+
+        ui->video_widget4->setCoverPix  (this->m_total[4].pixPath);
+        ui->video_widget4->setVideoName (this->m_total[4].song);
+        ui->video_widget4->setIconPix   (this->m_total[4].pixPath);
+        ui->video_widget4->setAuthor    (this->m_total[4].singer);
+
+        ui->video_widget5->setCoverPix  (this->m_total[5].pixPath);
+        ui->video_widget5->setVideoName (this->m_total[5].song);
+        ui->video_widget5->setIconPix   (this->m_total[5].pixPath);
+        ui->video_widget5->setAuthor    (this->m_total[5].singer);
+    }
 }
 
 void MusicRepository::initVector() {
@@ -231,21 +265,31 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
     // 只有状态变化时才执行显示/隐藏
     if (newVisibleState != lastVisibleState) {
         switch (newVisibleState) {
-            case 0:
+            case 0: {
                 ui->block_widget6->hide();
-            ui->block_widget7->hide();
-            break;
-            case 1:
+                ui->block_widget7->hide();
+                ui->video_widget4->hide();
+                ui->video_widget5->hide();
+                break;
+            }
+            case 1: {
                 ui->block_widget6->show();
-            ui->block_widget7->hide();
-            break;
-            case 2:
+                ui->block_widget7->hide();
+                ui->video_widget4->show();
+                ui->video_widget5->hide();
+                break;
+            }
+            case 2: {
                 ui->block_widget6->show();
-            ui->block_widget7->show();
-            break;
+                ui->block_widget7->show();
+                ui->video_widget4->show();
+                ui->video_widget5->show();
+                break;
+            }
         }
         lastVisibleState = newVisibleState;
     }
+
 }
 
 void MusicRepository::mousePressEvent(QMouseEvent *event) {
