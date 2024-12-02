@@ -904,6 +904,7 @@ void KuGouApp::on_close_toolButton_clicked() {
 
 void KuGouApp::on_recommend_you_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_recommendForYou.get());
+    qDebug()<<"当前界面大小："<<this->m_recommendForYou->size();
     updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
@@ -913,7 +914,9 @@ void KuGouApp::on_recommend_you_toolButton_clicked() {
 
 void KuGouApp::on_music_repository_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_musicRepository.get());
+    qDebug()<<"当前界面大小："<<this->m_musicRepository->size();
     updateSize();
+    //ui->context_scrollAreaWidgetContents->setFixedSize(this->m_musicRepository->size());
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
     //设置上次指向
@@ -923,6 +926,7 @@ void KuGouApp::on_music_repository_toolButton_clicked() {
 
 void KuGouApp::on_channel_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_channel.get());
+    qDebug()<<"当前界面大小："<<this->m_channel->size();
     updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
