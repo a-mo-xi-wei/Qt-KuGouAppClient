@@ -18,7 +18,7 @@
     <number>10</number>
    </property>
    <item>
-    <widget class="QWidget" name="widget" native="true">
+    <widget class="QWidget" name="title_widget" native="true">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
        <horstretch>0</horstretch>
@@ -26,12 +26,15 @@
       </sizepolicy>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QLabel" name="title_label">
         <property name="minimumSize">
          <size>
-          <width>100</width>
-          <height>0</height>
+          <width>150</width>
+          <height>60</height>
          </size>
         </property>
         <property name="text">
@@ -112,7 +115,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="widget_2" native="true">
+    <widget class="QWidget" name="guide_widget" native="true">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
        <horstretch>0</horstretch>
@@ -133,14 +136,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -148,6 +151,12 @@
         </property>
         <property name="text">
          <string>推荐</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -161,14 +170,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -176,6 +185,9 @@
         </property>
         <property name="text">
          <string>DJ</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -189,14 +201,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -204,6 +216,9 @@
         </property>
         <property name="text">
          <string>语言</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -217,14 +232,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -232,6 +247,9 @@
         </property>
         <property name="text">
          <string>主题</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -245,14 +263,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -260,6 +278,9 @@
         </property>
         <property name="text">
          <string>场景</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -273,14 +294,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -288,6 +309,9 @@
         </property>
         <property name="text">
          <string>心情</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -301,14 +325,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -316,6 +340,9 @@
         </property>
         <property name="text">
          <string>风格</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -329,14 +356,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -344,6 +371,9 @@
         </property>
         <property name="text">
          <string>人群</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -357,14 +387,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -372,6 +402,9 @@
         </property>
         <property name="text">
          <string>儿童</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -385,14 +418,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -400,6 +433,9 @@
         </property>
         <property name="text">
          <string>乐器</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -413,14 +449,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -428,6 +464,9 @@
         </property>
         <property name="text">
          <string>厂牌</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -441,14 +480,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -456,6 +495,9 @@
         </property>
         <property name="text">
          <string>综艺</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -469,14 +511,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -484,6 +526,9 @@
         </property>
         <property name="text">
          <string>国风</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -497,14 +542,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>27</height>
+          <width>60</width>
+          <height>35</height>
          </size>
         </property>
         <property name="cursor">
@@ -512,6 +557,9 @@
         </property>
         <property name="text">
          <string>运动</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
