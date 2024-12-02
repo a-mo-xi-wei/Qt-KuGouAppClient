@@ -100,36 +100,64 @@ void MusicRepository::initSelectWidget() {
     //先隐藏两个video
     ui->video_widget4->hide();
     ui->video_widget5->hide();
+    ui->video_widget9->hide();
+    ui->video_widget10->hide();
+
     // 使用当前时间作为随机数种子
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     // 随机打乱 QVector
-    std::shuffle(this->m_total.begin(), this->m_total.end(), std::default_random_engine(seed));
+    std::shuffle(this->m_videoVector.begin(), this->m_videoVector.end(), std::default_random_engine(seed));
     {
         //初始化
-        ui->video_widget1->setCoverPix  (this->m_total[1].pixPath);
-        ui->video_widget1->setVideoName (this->m_total[1].song);
-        ui->video_widget1->setIconPix   (this->m_total[1].pixPath);
-        ui->video_widget1->setAuthor    (this->m_total[1].singer);
+        ui->video_widget1->setCoverPix  (this->m_videoVector[1].pixPath);
+        ui->video_widget1->setVideoName (this->m_videoVector[1].song);
+        ui->video_widget1->setIconPix   (this->m_videoVector[1].pixPath);
+        ui->video_widget1->setAuthor    (this->m_videoVector[1].singer);
 
-        ui->video_widget2->setCoverPix  (this->m_total[2].pixPath);
-        ui->video_widget2->setVideoName (this->m_total[2].song);
-        ui->video_widget2->setIconPix   (this->m_total[2].pixPath);
-        ui->video_widget2->setAuthor    (this->m_total[2].singer);
+        ui->video_widget2->setCoverPix  (this->m_videoVector[2].pixPath);
+        ui->video_widget2->setVideoName (this->m_videoVector[2].song);
+        ui->video_widget2->setIconPix   (this->m_videoVector[2].pixPath);
+        ui->video_widget2->setAuthor    (this->m_videoVector[2].singer);
 
-        ui->video_widget3->setCoverPix  (this->m_total[3].pixPath);
-        ui->video_widget3->setVideoName (this->m_total[3].song);
-        ui->video_widget3->setIconPix   (this->m_total[3].pixPath);
-        ui->video_widget3->setAuthor    (this->m_total[3].singer);
+        ui->video_widget3->setCoverPix  (this->m_videoVector[3].pixPath);
+        ui->video_widget3->setVideoName (this->m_videoVector[3].song);
+        ui->video_widget3->setIconPix   (this->m_videoVector[3].pixPath);
+        ui->video_widget3->setAuthor    (this->m_videoVector[3].singer);
 
-        ui->video_widget4->setCoverPix  (this->m_total[4].pixPath);
-        ui->video_widget4->setVideoName (this->m_total[4].song);
-        ui->video_widget4->setIconPix   (this->m_total[4].pixPath);
-        ui->video_widget4->setAuthor    (this->m_total[4].singer);
+        ui->video_widget4->setCoverPix  (this->m_videoVector[4].pixPath);
+        ui->video_widget4->setVideoName (this->m_videoVector[4].song);
+        ui->video_widget4->setIconPix   (this->m_videoVector[4].pixPath);
+        ui->video_widget4->setAuthor    (this->m_videoVector[4].singer);
 
-        ui->video_widget5->setCoverPix  (this->m_total[5].pixPath);
-        ui->video_widget5->setVideoName (this->m_total[5].song);
-        ui->video_widget5->setIconPix   (this->m_total[5].pixPath);
-        ui->video_widget5->setAuthor    (this->m_total[5].singer);
+        ui->video_widget5->setCoverPix  (this->m_videoVector[5].pixPath);
+        ui->video_widget5->setVideoName (this->m_videoVector[5].song);
+        ui->video_widget5->setIconPix   (this->m_videoVector[5].pixPath);
+        ui->video_widget5->setAuthor    (this->m_videoVector[5].singer);
+
+        ui->video_widget6->setCoverPix  (this->m_videoVector[6].pixPath);
+        ui->video_widget6->setVideoName (this->m_videoVector[6].song);
+        ui->video_widget6->setIconPix   (this->m_videoVector[6].pixPath);
+        ui->video_widget6->setAuthor    (this->m_videoVector[6].singer);
+
+        ui->video_widget7->setCoverPix  (this->m_videoVector[7].pixPath);
+        ui->video_widget7->setVideoName (this->m_videoVector[7].song);
+        ui->video_widget7->setIconPix   (this->m_videoVector[7].pixPath);
+        ui->video_widget7->setAuthor    (this->m_videoVector[7].singer);
+
+        ui->video_widget8->setCoverPix  (this->m_videoVector[8].pixPath);
+        ui->video_widget8->setVideoName (this->m_videoVector[8].song);
+        ui->video_widget8->setIconPix   (this->m_videoVector[8].pixPath);
+        ui->video_widget8->setAuthor    (this->m_videoVector[8].singer);
+
+        ui->video_widget9->setCoverPix  (this->m_videoVector[9].pixPath);
+        ui->video_widget9->setVideoName (this->m_videoVector[9].song);
+        ui->video_widget9->setIconPix   (this->m_videoVector[9].pixPath);
+        ui->video_widget9->setAuthor    (this->m_videoVector[9].singer);
+
+        ui->video_widget10->setCoverPix  (this->m_videoVector[10].pixPath);
+        ui->video_widget10->setVideoName (this->m_videoVector[10].song);
+        ui->video_widget10->setIconPix   (this->m_videoVector[10].pixPath);
+        ui->video_widget10->setAuthor    (this->m_videoVector[10].singer);
     }
 }
 
@@ -205,6 +233,13 @@ void MusicRepository::initVector() {
             m_songAndsinger[i].second);
     }
 
+    for (int i = 1; i <= 40 ; ++i) {
+        this->m_videoVector.emplace_back(
+        QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").arg(i),
+        m_songAndsinger[i+10].first,
+        m_songAndsinger[i+10].second);
+    }
+
     // 使用当前时间作为随机数种子
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     // 随机打乱 QVector
@@ -230,8 +265,9 @@ void MusicRepository::initVector() {
 
 void MusicRepository::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
-    int average = static_cast<int>((ui->ranking_list_widget->width() / 2 + ui->singer_widget->width() / 1.6 +
-                                    ui->classify_widget->width() / 1.6) / 3);
+    //qDebug()<<"MusicRepository::resizeEvent , size = "<<event->size();
+    //通过线性分析得出以下结论
+    int average = static_cast<int>(160 + (event->size().width() - 900) * 0.15);
     ui->ranking_list_widget->setFixedHeight(average);
     ui->singer_widget->setFixedHeight(average);
     ui->classify_widget->setFixedHeight(average);
@@ -270,6 +306,8 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
                 ui->block_widget7->hide();
                 ui->video_widget4->hide();
                 ui->video_widget5->hide();
+                ui->video_widget9->hide();
+                ui->video_widget10->hide();
                 break;
             }
             case 1: {
@@ -277,6 +315,8 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
                 ui->block_widget7->hide();
                 ui->video_widget4->show();
                 ui->video_widget5->hide();
+                ui->video_widget9->show();
+                ui->video_widget10->hide();
                 break;
             }
             case 2: {
@@ -284,6 +324,8 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
                 ui->block_widget7->show();
                 ui->video_widget4->show();
                 ui->video_widget5->show();
+                ui->video_widget9->show();
+                ui->video_widget10->show();
                 break;
             }
         }

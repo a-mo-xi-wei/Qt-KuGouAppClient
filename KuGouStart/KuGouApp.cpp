@@ -541,6 +541,7 @@ void KuGouApp::paintEvent(QPaintEvent *ev) {
 
 void KuGouApp::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
+    //qDebug()<<"KuGouApp::resizeEvent , size = "<<event->size();
     if(this->geometry() != this->screen()->availableGeometry()) {
         //一旦拖动边框改变大小，就不再是全屏
         //qDebug()<<"全屏";

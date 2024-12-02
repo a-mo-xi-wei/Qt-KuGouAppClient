@@ -81,6 +81,8 @@ private:
     std::vector<MusicInfo> m_westVector{};
     std::vector<MusicInfo> m_koreaVector{};
     std::vector<MusicInfo> m_japanVector{};
+    //videoVector
+    std::vector<MusicInfo> m_videoVector{};
 };
 
 
