@@ -105,10 +105,16 @@ void MyBlockWidget::setPopularBtnText(const QString &text) {
     if(!this->m_popularDirection)return;
 
     if(this->m_popularDirection == 1) {
-        this->m_leftPopularBtn->setText(QStringLiteral(" ") + text + QStringLiteral("万"));
+        if (this->m_haveUnit)
+            this->m_leftPopularBtn->setText(QStringLiteral(" ") + text + QStringLiteral("万"));
+        else
+            this->m_leftPopularBtn->setText(QStringLiteral(" ") + text);
     }
     else if(this->m_popularDirection == 2) {
-        this->m_rightPopularBtn->setText(QStringLiteral(" ") + text + QStringLiteral("万"));
+        if (this->m_haveUnit)
+            this->m_rightPopularBtn->setText(QStringLiteral(" ") + text + QStringLiteral("万"));
+        else
+            this->m_rightPopularBtn->setText(QStringLiteral(" ") + text);
     }
 }
 
@@ -143,6 +149,10 @@ void MyBlockWidget::setPopularBtnLeftPadding(const int &leftPadding) {
         this->m_rightPopularBtnStyle += QString("padding-left:%1;").arg(leftPadding);
         this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle+"background-color: rgba(128, 128, 128, 127);");
     }
+}
+
+void MyBlockWidget::setHaveNumberUnit(const bool &haveNumberUnit) {
+    this->m_haveUnit = haveNumberUnit;
 }
 
 SMaskWidget& MyBlockWidget::getMask() {

@@ -38,6 +38,8 @@ public:
 
     void setPopularBtnLeftPadding(const int &leftPadding);
 
+    void setHaveNumberUnit(const bool &haveNumberUnit);
+
     SMaskWidget &getMask();
 
 public slots:
@@ -67,14 +69,16 @@ private:
     QWidget *m_bacWidget{};
     std::unique_ptr<SMaskWidget> m_mask;
     QLabel *m_tipLab{};
-    int m_popularDirection = 0; //0 没有 ， 1 左边 ， 2 右边
+    int m_popularDirection = 0;     //0 没有 ， 1 左边 ， 2 右边
     QToolButton *m_rightPopularBtn{};
     QToolButton *m_leftPopularBtn{};
     QString m_rightPopularBtnStyle;
     QString m_leftPopularBtnStyle;
-    bool m_isHoverCover = false; //是否悬停在图像上
+    bool m_isHoverCover = false;    //是否悬停在图像上
     std::vector<QString> m_tipArr;
     bool m_isExpandRespond = false; //是否扩展响应，即是否让遮罩出现的响应范围扩大 信号响应
-    int m_aspectRatio = 1;
+    int m_aspectRatio = 1;          //宽高比
+    bool m_haveUnit = true;         //是否带单位（万）
+
 };
 #endif //MYBLOCKWIDGET_H
