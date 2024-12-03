@@ -23,6 +23,8 @@ public:
 
     void setBorderRadius(const int& radius);
 
+    void setMaskColor(const QColor &color);
+
 private:
     void calOnce();
 
@@ -49,11 +51,13 @@ private:
     QPointF m_ap;
     QPointF m_bp;
     QPointF m_cp;
-    //颜色相关
+    //填充颜色相关
     QColor m_defaultFillCircleColor = QColor();
     QColor m_hoverFillCircleColor = Qt::white;
     QColor m_defaultFillTriangleColor = Qt::white;
     QColor m_hoverFillTriangleColor = QColor();
+    //遮罩颜色
+    QColor m_maskColor = QColor(0,0,0,160);
     //鼠标一进入widget就变指向样式
     bool m_isEnterWidgetChangeCursor = true;
     bool m_isEnterCircle = false;

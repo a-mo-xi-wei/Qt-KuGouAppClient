@@ -39,6 +39,10 @@ void SMaskWidget::setBorderRadius(const int &radius) {
     this->m_borderRadius = radius;
 }
 
+void SMaskWidget::setMaskColor(const QColor &color) {
+    this->m_maskColor = color;
+}
+
 void SMaskWidget::calOnce() {
     m_w = static_cast<const float>(rect().width());
     m_h = static_cast<const float>(rect().height());
@@ -61,11 +65,10 @@ bool SMaskWidget::isMouseInCircle(const float &mouseX, const float &mouseY) {
 void SMaskWidget::paintEvent(QPaintEvent *event) {
     QWidget::paintEvent(event);
     //qDebug()<<"重绘";//只要悬停就会一直调用，不明所以
-    constexpr QColor color(0, 0, 0, 160);//遮罩颜色
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     // 设置绘制颜色，带有透明度
-    painter.setBrush(color);
+    painter.setBrush(this->m_maskColor);
     painter.setPen(Qt::NoPen);
     painter.drawRoundedRect(rect(), this->m_borderRadius, this->m_borderRadius);
     if(this->m_isEnterCircle) {
