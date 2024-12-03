@@ -16,6 +16,15 @@ set(SOURCE_FILE
     Channel.h
     Channel.ui
     channel.css
+    ChannelBlock.cpp
+    ChannelBlock.h
+    ChannelBlock.ui
+    channelblock.css
+    PartWidget.h
+    PartWidget.cpp
+    SScrollArea.h
+    SScrollArea.cpp
+
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
@@ -23,4 +32,4 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyFlowLayout MyBlockWidget)

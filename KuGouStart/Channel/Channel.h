@@ -5,6 +5,8 @@
 #ifndef CHANNEL_H
 #define CHANNEL_H
 
+#include"PartWidget.h"
+
 #include <QWidget>
 
 class QButtonGroup;
@@ -28,9 +30,39 @@ public:
 private:
     void initButtonGroup();
 
+    void initTotalWidget();
+
+    void initUi();
+
+    void initVector();
+
+private slots:
+    void handleWheelValue(const int& value);
+
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 private:
     Ui::Channel *ui;
     std::unique_ptr<QButtonGroup> m_buttonGroup{};
+    //14个Widget
+    std::unique_ptr<PartWidget> m_recommendWidget{};
+    std::unique_ptr<PartWidget> m_djWidget{};
+    std::unique_ptr<PartWidget> m_languageWidget{};
+    std::unique_ptr<PartWidget> m_themeWidget{};
+    std::unique_ptr<PartWidget> m_sceneWidget{};
+    std::unique_ptr<PartWidget> m_moodWidget{};
+    std::unique_ptr<PartWidget> m_styleWidget{};
+    std::unique_ptr<PartWidget> m_crowdWidget{};
+    std::unique_ptr<PartWidget> m_childrenWidget{};
+    std::unique_ptr<PartWidget> m_musicalInstrumentWidget{};
+    std::unique_ptr<PartWidget> m_labelWidget{};
+    std::unique_ptr<PartWidget> m_varietyWidget{};
+    std::unique_ptr<PartWidget> m_nationalCustomsWidget{};
+    std::unique_ptr<PartWidget> m_sportsWidget{};
+    //配对歌手歌曲
+    std::vector<std::pair<QString,QString>> m_songAndsinger{};
+    std::vector<QString> m_pixPathVector{};
 };
 
 
