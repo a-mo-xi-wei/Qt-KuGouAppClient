@@ -9,15 +9,21 @@
 
 
 class MyScrollArea : public QScrollArea {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit MyScrollArea(QWidget *parent = nullptr);
-    void setAnimating(const bool& animating);
+
+    void setAnimating(const bool &animating);
+
+    void setIgnore(const bool &ignore);
+
 protected:
-    void wheelEvent(QWheelEvent* event) override;
+    void wheelEvent(QWheelEvent *event) override;
+
 private:
-    bool m_isAnimating;  // 标记动画是否正在进行
+    bool m_isAnimating = false; // 标记动画是否正在进行
+    bool m_ignore = false;
 };
 
 
