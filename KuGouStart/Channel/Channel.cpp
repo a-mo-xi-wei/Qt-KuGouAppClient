@@ -164,14 +164,196 @@ void Channel::initUi() {
         //wheelVaue信号
         connect(ui->scrollArea,&SScrollArea::wheelValue,this,&Channel::handleWheelValue);
     }
+    auto cur = 0;
     {
         //m_recommendWidget 17 个
+        const QString title[] = {"","国语","聚会暖场","抖音热门歌","中文经典","中文DJ","怀旧粤语","KTV必点曲",
+            "90后","抖音最火DJ","老情歌","网络红歌","最爱成名曲","车载舞曲","那年MP3里的歌",
+            "百听不厌英文歌","伤感网络情歌","轻音乐"};
         for (int i = 1; i <= 17; ++i) {
             auto block = new ChannelBlock(this);
             block->setCoverPix(this->m_pixPathVector[i]);
-           this->m_recommendWidget->addBlockWidget(block);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i].first + "-" + this->m_songAndsinger[i].second);
+            this->m_recommendWidget->addBlockWidget(block);
         }
     }
+    cur += 17;
+    {
+        //m_djWidget 14 个
+        const QString title[] = {"","中文DJ","抖音最火DJ","情歌DJ","车载舞曲","重低音","EDM热歌",
+            "串烧舞曲","电音","电子纯音","慢摇舞曲","复古迪士高","外文舞曲","House舞曲","超嗨舞曲"};
+        for (int i = 1; i <= 14; ++i) {
+            auto block = new ChannelBlock(this);
+            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+           this->m_djWidget->addBlockWidget(block);
+        }
+    }
+    cur += 14;
+    {
+        //m_languageWidget 17 个
+        const QString title[] = {"","百听不厌英文歌","怀旧粤语","粤语","欧美","怀旧华语","闽南语",
+            "韩语","国语","日语","法语","泰语","印度语","俄语","德语","意大利语",
+            "客家语","西班牙语"};
+        for (int i = 1; i <= 17; ++i) {
+            auto block = new ChannelBlock(this);
+            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            this->m_languageWidget->addBlockWidget(block);
+        }
+    }
+    cur += 17;
+    {
+        //m_themeWidget 28 个
+        const QString title[] = {"","0.8x慢速","KTV必点曲","网络红歌","中文经典","伤感网络情歌",
+            "最爱成名曲","酷狗热歌","那年MP3里的歌","店铺","老情歌","热评10W+歌曲",
+            "世界级热门单曲","情歌对唱","酷狗新歌","由你音乐榜","国创ACG","神曲",
+            "经典影视原声","最热影视歌曲","发烧女声","励志","日本ACG","蝰蛇全景声",
+            "圣诞必听","中国新乡村音乐","热门动漫","抖音热歌榜","二次元精选"};
+        for (int i = 1; i <= 28; ++i) {
+            auto block = new ChannelBlock(this);
+            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            this->m_themeWidget->addBlockWidget(block);
+        }
+    }
+    cur += 28;
+    {
+        //m_sceneWidget 18 个
+        const QString title[] = {"","广场舞","咖啡厅","一个人","工作加油曲","睡前",
+            "学习","散步","清吧","在路上","驾驶","打游戏","聚会暖场","婚礼","午休",
+            "起床","蹦迪","自然","冥想"};
+        for (int i = 1; i <= 18; ++i) {
+            auto block = new ChannelBlock(this);
+            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            this->m_sceneWidget->addBlockWidget(block);
+        }
+    }
+    cur += 18;
+    {
+        //m_moodWidget 8 个
+        const QString title[] = {"","安静","轻松","伤感","寂寞","甜蜜","兴奋","思念","快乐"};
+        for (int i = 1; i <= 8; ++i) {
+            auto block = new ChannelBlock(this);
+            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            this->m_moodWidget->addBlockWidget(block);
+        }
+    }
+    cur += 8;
+    {
+        //m_styleWidget 14 个
+        const QString title[] = {"","轻音乐","草原风","流行","民歌","乡村音乐",
+            "R&B","摇滚","爵士","蒸汽波","民谣","说唱","古典音乐","布鲁斯","金属"};
+        for (int i = 1; i <= 14; ++i) {
+            auto block = new ChannelBlock(this);
+            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            this->m_styleWidget->addBlockWidget(block);
+        }
+    }
+    cur += 14;
+    qDebug()<<"cur : "<<cur;
+    {
+        //m_crowdWidget 4 个
+        const QString title[] = {"","90后","80后","70后","00后"};
+        for (int i = 1; i <= 4; ++i) {
+            auto block = new ChannelBlock(this);
+            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            this->m_crowdWidget->addBlockWidget(block);
+        }
+    }
+    cur += 4;
+    {
+        //m_childrenWidget 12 个
+        const QString title[] = {"","儿童故事","0-1岁儿歌","1-3岁儿歌",
+            "3-6岁儿歌","7-12岁儿歌","英文儿歌","胎教","教育科普","中文儿歌",
+            "睡眠故事","国学启蒙","动画儿歌"};
+        for (int i = 1; i <= 12; ++i) {
+            auto block = new ChannelBlock(this);
+            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            this->m_childrenWidget->addBlockWidget(block);
+        }
+    }
+    cur += 12;
+    {
+        //m_musicalInstrumentWidget 11 个
+        const QString title[] = {"","钢琴","古筝","萨克斯","八音盒","吉他","尤克里里",
+            "葫芦丝","二胡","笛子","小提琴","唢呐"};
+        for (int i = 1; i <= 11; ++i) {
+            auto block = new ChannelBlock(this);
+            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            this->m_musicalInstrumentWidget->addBlockWidget(block);
+        }
+    }
+    cur += 11;
+    {
+        //m_labelWidget 6 个
+        const QString title[] = {"","滚石唱片推荐","华纳唱片","JYP","SACRA MUSIC",
+            "Liquid State","摩登天空"};
+        for (int i = 1; i <= 6; ++i) {
+            auto block = new ChannelBlock(this);
+            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            this->m_labelWidget->addBlockWidget(block);
+        }
+    }
+    cur += 6;
+    {
+        //m_varietyWidget 27 个
+        const QString title[] = {"","声生不息-宝岛季","来看我们的演唱会","声生不息-港乐季",
+            "明日之子乐团季","乘风破浪的姐姐","新声请指教","中国梦之声·我们的歌","音浪合伙人",
+            "明日之子","创造营2024","这！就是原创","中国新说唱","创造101","歌手",
+            "经典咏流传","天赐的声音第三季","跨次元新星","我们的歌第二季","中国好声音","我是歌手",
+            "厉害了!我的歌","中国好歌曲","盖世英雄","乐队的夏天","诗画中国","天赐的声音第二季","蒙面唱将第五季"};
+        for (int i = 1; i <= 27; ++i) {
+            auto block = new ChannelBlock(this);
+            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            this->m_varietyWidget->addBlockWidget(block);
+        }
+    }
+    cur += 27;
+    {
+        //m_nationalCustomsWidget 6 个
+        const QString title[] = {"","中国风精选","古风好歌","伤感国风","国风新歌","国风经典","热血国风"};
+        for (int i = 1; i <= 6; ++i) {
+            auto block = new ChannelBlock(this);
+            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            this->m_nationalCustomsWidget->addBlockWidget(block);
+        }
+    }
+    cur += 6;
+    {
+        //m_sportsWidget 7 个
+        const QString title[] = {"","健身房","跑步","动感单车","热身","HIIT","力量训练","瑜伽"};
+        for (int i = 1; i <= 7; ++i) {
+            auto block = new ChannelBlock(this);
+            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setTitleText(title[i]);
+            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            this->m_sportsWidget->addBlockWidget(block);
+        }
+    }
+
 }
 
 void Channel::initVector() {
@@ -277,8 +459,109 @@ void Channel::initVector() {
         this->m_songAndsinger.emplace_back("时光谣", "蔡健雅");
         this->m_songAndsinger.emplace_back("好风(Live)", "布衣乐队");
         this->m_songAndsinger.emplace_back("纸上雪", "许嵩");
+        this->m_songAndsinger.emplace_back("红山果", "安与骑兵");
+        this->m_songAndsinger.emplace_back("不羁恋人", "陈慧娴");
+        this->m_songAndsinger.emplace_back("懂你", "满文军");
+        this->m_songAndsinger.emplace_back("落日归山河", "张颜烁");
+        this->m_songAndsinger.emplace_back("想起他们", "毛不易");
+        this->m_songAndsinger.emplace_back("想念你想我", "Eric周兴哲");
+        this->m_songAndsinger.emplace_back("運命ちゃん", "いきものがかり");
+        this->m_songAndsinger.emplace_back("会いたい", "いきものがかり");
+        this->m_songAndsinger.emplace_back("Under the Tree", "Ed Sheeran");
+        this->m_songAndsinger.emplace_back("봄처럼 다가와", "송하영、이나경");
+        this->m_songAndsinger.emplace_back("Contigo", "Marta Santos");
+        this->m_songAndsinger.emplace_back("Ends of the Earth", "Ty Myers");
+        this->m_songAndsinger.emplace_back("Dicen", "Alvaro Soler");
+        this->m_songAndsinger.emplace_back("TWS (투어스) '마지막 축제' Official", "TWS");
+        this->m_songAndsinger.emplace_back("IZNA", "izna");
+        this->m_songAndsinger.emplace_back("情人", "LUMi");
+        this->m_songAndsinger.emplace_back("마이트로(MYTRO)", "Mytro");
+        this->m_songAndsinger.emplace_back("Work Hard Play Hard", "YONA YONA WEEKENDERS");
+        this->m_songAndsinger.emplace_back("我想要拥有你", "小男孩乐团");
+        this->m_songAndsinger.emplace_back("number one girl", "ROSÉ");
+        this->m_songAndsinger.emplace_back("SHE THING（心生）", "戴萌");
+        this->m_songAndsinger.emplace_back("Told You So", "Martin Garrix、Jex");
+        this->m_songAndsinger.emplace_back("漂流", "肖战");
+        this->m_songAndsinger.emplace_back("别Gender", "曾轶可");
+        this->m_songAndsinger.emplace_back("SHUSH", "ENONE");
+        this->m_songAndsinger.emplace_back("梦的烛衣", "张碧晨");
+        this->m_songAndsinger.emplace_back("Nothing", "薛之谦");
+        this->m_songAndsinger.emplace_back("Gang Gang Love", "弹壳");
+        this->m_songAndsinger.emplace_back("青年", "刘循子墨、张本煜");
+        this->m_songAndsinger.emplace_back("月夜狂想曲", "时代少年团");
+        this->m_songAndsinger.emplace_back("天空之外Above The Rooftop", "曾轶可");
+        this->m_songAndsinger.emplace_back("不重要", "苏醒AllenSu");
+        this->m_songAndsinger.emplace_back("喚醒我", "万妮达Vinida Weng");
+        this->m_songAndsinger.emplace_back("七号种子", "万妮达Vinida Weng");
+        this->m_songAndsinger.emplace_back("你的温柔Your Tenderness", "曾轶可");
+        this->m_songAndsinger.emplace_back("TOXIC", "MEOVV");
+        this->m_songAndsinger.emplace_back("Side U (Prod. AmPm)", "茜屋日海夏");
+        this->m_songAndsinger.emplace_back("Dystopia", "ONE OK ROCK");
+        this->m_songAndsinger.emplace_back("NALLINA", "NEXZ");
+        this->m_songAndsinger.emplace_back("알고싶어요 (I want to know )", "김수영");
+        this->m_songAndsinger.emplace_back("ミチシルベ", "IMP.");
+        this->m_songAndsinger.emplace_back("고칠게(I'm gonna change)", "Woody");
+        this->m_songAndsinger.emplace_back("멈추지 않아", "PLAVE");
+        this->m_songAndsinger.emplace_back("Latawce", "Sylwia Grzeszczak");
+        this->m_songAndsinger.emplace_back("Mine", "AUDREY NUNA");
+        this->m_songAndsinger.emplace_back("Your Christmas", "Tokio Hotel");
+        this->m_songAndsinger.emplace_back("Não Vou Temer", "Rich Lima");
+        this->m_songAndsinger.emplace_back("SHEITE", "Nicki Nicole");
+        this->m_songAndsinger.emplace_back("Tragen Engel Schwerter", "Nicki Papa");
+        this->m_songAndsinger.emplace_back("The Karate Kid", "Coldplay");
+        this->m_songAndsinger.emplace_back("2 hands", "Tate McRae");
+        this->m_songAndsinger.emplace_back("SINNER", "Zauntee");
+        this->m_songAndsinger.emplace_back("Gelada", "Atitude 67、Mar.iana");
+        this->m_songAndsinger.emplace_back("Be Careful", "Maiah");
+        this->m_songAndsinger.emplace_back("Lover Boy", "Diamond Cafe");
+        this->m_songAndsinger.emplace_back("Breathe", "ZOĒ");
+        this->m_songAndsinger.emplace_back("more than a minute", "Macey");
+        this->m_songAndsinger.emplace_back("Halfway To Heaven", "Midland");
+        this->m_songAndsinger.emplace_back("Blah Blah Blah", "Mikay");
+        this->m_songAndsinger.emplace_back("Metamorfosis", "Reyno");
+        this->m_songAndsinger.emplace_back("Two Faced", "Linkin Park");
+        this->m_songAndsinger.emplace_back("Tout va bien", "Dalí");
+        this->m_songAndsinger.emplace_back("Daddy Raised", "Jackson Dean");
+        this->m_songAndsinger.emplace_back("HYÄNE", "NGEE");
+        this->m_songAndsinger.emplace_back("This Christmas", "Alive Gospel、Janice");
+        this->m_songAndsinger.emplace_back("Was muss, das muss", "Mr. Hurley & Die Pulveraffen、Dämmerland");
+        this->m_songAndsinger.emplace_back("AMARSI PER LAVORO", "Mazzariello");
+        this->m_songAndsinger.emplace_back("Be Alright", "Joel Corry");
+        this->m_songAndsinger.emplace_back("už i andělé šli spát", "Mirai");
+        this->m_songAndsinger.emplace_back("Rode Draad", "Hannah Mae");
+        this->m_songAndsinger.emplace_back("FEARLESS", "Twocolors、TC/TC");
+        this->m_songAndsinger.emplace_back("love myself", "Lindsay Ell");
+        this->m_songAndsinger.emplace_back("Snow Waltz", "Inger Lise Hope");
+        this->m_songAndsinger.emplace_back("Bıraktım Yansınlar", "Uğur Bozdağ");
+        this->m_songAndsinger.emplace_back("Confiance", "Oussama");
+        this->m_songAndsinger.emplace_back("HO SBAGLIATO ANCORA", "chiello");
+        this->m_songAndsinger.emplace_back("En lo oscurito", "Conep、Ciara Lauve");
+        this->m_songAndsinger.emplace_back("Running Wild", "Jin");
+        this->m_songAndsinger.emplace_back("나였으면(If It Were Me)", "HYNN");
+        this->m_songAndsinger.emplace_back("빛 (Light)", "申容财");
+        this->m_songAndsinger.emplace_back("아이 (The Child)", "미미크리엑스");
+        this->m_songAndsinger.emplace_back("両片想い (两相思)", "柴田淳");
+        this->m_songAndsinger.emplace_back("미워하다, 그리워하고(Hate and Miss you)", "柳会胜");
+        this->m_songAndsinger.emplace_back("우리라는 이야기 (The story of us)", "이젤");
+        this->m_songAndsinger.emplace_back("HOWLING", "XG");
+        this->m_songAndsinger.emplace_back("Fighter", "HYNN、nochexintoma");
+        this->m_songAndsinger.emplace_back("景色 (KESHIKI)", "EVNNE");
+        this->m_songAndsinger.emplace_back("Identity", "MISAMO");
+        this->m_songAndsinger.emplace_back("潜规则", "郑智化");
+        this->m_songAndsinger.emplace_back("不要回答", "檀健次、朱哲琴");
+        this->m_songAndsinger.emplace_back("OVERLOAD", "邹沛沛、邢益豪");
+        this->m_songAndsinger.emplace_back("心悸宝贝 BIUBIU", "babyMINT");
+        this->m_songAndsinger.emplace_back("紫蝴蝶", "邹沛沛");
+        this->m_songAndsinger.emplace_back("从未见过的海", "告五人");
+        this->m_songAndsinger.emplace_back("目标是宝可梦大师", "腾格尔");
+        this->m_songAndsinger.emplace_back("忘", "张叶蕾");
+        this->m_songAndsinger.emplace_back("次次", "甄济如");
+        this->m_songAndsinger.emplace_back("我好想你", "苏打绿");
+        this->m_songAndsinger.emplace_back("最好的朋友", "SNH48");
+        this->m_songAndsinger.emplace_back("伴你", "黄绮珊");
+        this->m_songAndsinger.emplace_back("炎之舞", "郑智化");
     }
-    for (int i = 1 ; i <= 60 ; ++i) {
+    for (int i = 1 ; i <= 200 ; ++i) {
         this->m_pixPathVector.emplace_back(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(i));
     }
     // 使用当前时间作为随机数种子
