@@ -561,7 +561,7 @@ void Channel::initVector() {
         this->m_songAndsinger.emplace_back("伴你", "黄绮珊");
         this->m_songAndsinger.emplace_back("炎之舞", "郑智化");
     }
-    for (int i = 1 ; i <= 200 ; ++i) {
+    for (int i = 1 ; i <= 210 ; ++i) {
         this->m_pixPathVector.emplace_back(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(i));
     }
     // 使用当前时间作为随机数种子
