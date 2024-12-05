@@ -34,6 +34,8 @@ public:
 private:
     void initUi();
 
+    void updateTitleText();
+
     void updateSingerSongText();
 
 protected:
@@ -50,19 +52,9 @@ protected:
 private:
     Ui::ChannelBlock *ui;
     //text
+    QString m_titleText;
     QString m_singerSongText;
 };
 
 
-inline void ChannelBlock::mousePressEvent(QMouseEvent *event) {
-    event->ignore();
-}
-
-inline void ChannelBlock::mouseReleaseEvent(QMouseEvent *event) {
-    event->ignore();
-}
-
-inline void ChannelBlock::mouseDoubleClickEvent(QMouseEvent *event) {
-    event->ignore();
-}
 #endif //CHANNELBLOCK_H

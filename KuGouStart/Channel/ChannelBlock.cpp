@@ -45,11 +45,21 @@ void ChannelBlock::initUi() {
     ui->cover_widget->setExpandRespond(true);
     ui->cover_widget->setPopularDirection(1);
     ui->cover_widget->setHaveNumberUnit(false);
-    ui->cover_widget->setPopularBtnText(QString::number(QRandomGenerator::global()->bounded(1,500)));
+    ui->cover_widget->setPopularBtnText(QString::number(QRandomGenerator::global()->bounded(1,1000)));
 }
 
 void ChannelBlock::setTitleText(const QString &title) {
-    ui->title_label->setText(title);
+    this->m_titleText = title;
+    updateTitleText();
+}
+
+void ChannelBlock::updateTitleText() {
+    //设置字体测量工具
+    auto font = ui->title_label->font();
+    QFontMetrics fm(font);
+    ui->title_label->setToolTip(this->m_titleText);
+    auto elidedText = fm.elidedText(this->m_titleText,Qt::ElideRight,this->width()-10);
+    ui->title_label->setText(elidedText);
 }
 
 void ChannelBlock::setSingerSongText(const QString &singerSong) {
@@ -64,7 +74,6 @@ void ChannelBlock::updateSingerSongText() {
     ui->singe_song_label->setToolTip(this->m_singerSongText);
     auto elidedText = fm.elidedText(this->m_singerSongText,Qt::ElideRight,this->width()-10);
     ui->singe_song_label->setText(elidedText);
-
 }
 
 void ChannelBlock::enterEvent(QEnterEvent *event) {
@@ -77,4 +86,16 @@ void ChannelBlock::leaveEvent(QEvent *event) {
     QWidget::leaveEvent(event);
     ui->cover_widget->onHideMask();
     ui->title_label->setStyleSheet("color:black;");
+}
+
+void ChannelBlock::mousePressEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
+void ChannelBlock::mouseReleaseEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
+void ChannelBlock::mouseDoubleClickEvent(QMouseEvent *event) {
+    event->ignore();
 }
