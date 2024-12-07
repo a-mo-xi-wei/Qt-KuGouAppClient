@@ -797,7 +797,6 @@ void KuGouApp::on_title_live_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_live.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    ui->center_widget->setContentsMargins(0,0,9,9);
     ui->context_scrollArea->setIgnore(false);
 
     updateSize();
@@ -816,7 +815,6 @@ void KuGouApp::on_title_listen_book_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_listenBook.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    ui->center_widget->setContentsMargins(0,0,9,9);
     ui->context_scrollArea->setIgnore(false);
 
     updateSize();
@@ -835,7 +833,6 @@ void KuGouApp::on_title_search_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_search.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    ui->center_widget->setContentsMargins(0,0,9,9);
     ui->context_scrollArea->setIgnore(false);
 
     updateSize();
@@ -921,10 +918,8 @@ void KuGouApp::on_recommend_you_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_recommendForYou.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    ui->center_widget->setContentsMargins(0,0,9,9);
     ui->context_scrollArea->setIgnore(false);
 
-    qDebug()<<"当前界面大小："<<this->m_recommendForYou->size();
     updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
@@ -936,10 +931,8 @@ void KuGouApp::on_music_repository_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_musicRepository.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    ui->center_widget->setContentsMargins(0,0,9,9);
     ui->context_scrollArea->setIgnore(false);
 
-    qDebug()<<"当前界面大小："<<this->m_musicRepository->size();
     updateSize();
     //ui->context_scrollAreaWidgetContents->setFixedSize(this->m_musicRepository->size());
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
@@ -953,10 +946,8 @@ void KuGouApp::on_channel_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_channel.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->center_widget->setContentsMargins(0,0,0,9);
     ui->context_scrollArea->setIgnore(true);
 
-    qDebug()<<"当前界面大小："<<this->m_channel->size();
     updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
     this->m_upBtn->clicked();
@@ -969,7 +960,6 @@ void KuGouApp::on_video_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_video.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->center_widget->setContentsMargins(0,0,0,9);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
@@ -989,7 +979,6 @@ void KuGouApp::on_song_list_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_songList.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    ui->center_widget->setContentsMargins(0,0,9,9);
     ui->context_scrollArea->setIgnore(false);
 
     updateSize();
@@ -1004,7 +993,6 @@ void KuGouApp::on_daily_recommend_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_dailyRecommend.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    ui->center_widget->setContentsMargins(0,0,9,9);
     ui->context_scrollArea->setIgnore(false);
 
     updateSize();
@@ -1019,7 +1007,6 @@ void KuGouApp::on_local_download_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_localDownload.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->center_widget->setContentsMargins(0,0,9,9);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
@@ -1033,7 +1020,6 @@ void KuGouApp::on_my_collection_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_collection.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->center_widget->setContentsMargins(0,0,9,9);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
@@ -1048,7 +1034,6 @@ void KuGouApp::on_music_cloud_disk_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_musicCloudDisk.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->center_widget->setContentsMargins(0,0,9,9);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
@@ -1063,7 +1048,6 @@ void KuGouApp::on_purchased_music_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_purchasedMusic.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->center_widget->setContentsMargins(0,0,9,9);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
@@ -1078,7 +1062,6 @@ void KuGouApp::on_recently_played_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_recentlyPlayed.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->center_widget->setContentsMargins(0,0,9,9);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
@@ -1093,7 +1076,6 @@ void KuGouApp::on_all_music_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_allMusic.get());
 
     ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->center_widget->setContentsMargins(0,0,0,9);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
