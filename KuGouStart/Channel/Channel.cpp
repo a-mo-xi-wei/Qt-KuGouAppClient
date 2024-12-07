@@ -11,7 +11,9 @@
 
 #include<QFile>
 #include<QButtonGroup>
+#include <QPropertyAnimation>
 #include <QScrollBar>
+#include <QTimer>
 #include <QWheelEvent>
 #include <random>
 
@@ -21,6 +23,7 @@
 Channel::Channel(QWidget *parent) : QWidget(parent)
     , ui(new Ui::Channel)
     , m_buttonGroup(std::make_unique<QButtonGroup>(this))
+    , m_upBtn(std::make_unique<UpToolButton>(this))
     , m_recommendWidget(std::make_unique<PartWidget>(this))
     , m_djWidget(std::make_unique<PartWidget>(this))
     , m_languageWidget(std::make_unique<PartWidget>(this))
@@ -34,7 +37,9 @@ Channel::Channel(QWidget *parent) : QWidget(parent)
     , m_labelWidget(std::make_unique<PartWidget>(this))
     , m_varietyWidget(std::make_unique<PartWidget>(this))
     , m_nationalCustomsWidget(std::make_unique<PartWidget>(this))
-    , m_sportsWidget(std::make_unique<PartWidget>(this)) {
+    , m_sportsWidget(std::make_unique<PartWidget>(this))
+    , m_scrollBarTimer(new QTimer(this))
+{
     ui->setupUi(this); {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/channel.css"));
         if (file.open(QIODevice::ReadOnly)) {
@@ -91,7 +96,8 @@ void Channel::initTotalWidget() {
     this->m_sportsWidget->setTitleName("运动");
 }
 
-void Channel::initUi() { {
+void Channel::initUi() {
+    {
         //加入布局
         auto lay = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout());
         if (!lay) {
@@ -112,53 +118,59 @@ void Channel::initUi() { {
         lay->insertWidget(lay->count() - 1, this->m_varietyWidget.get());
         lay->insertWidget(lay->count() - 1, this->m_nationalCustomsWidget.get());
         lay->insertWidget(lay->count() - 1, this->m_sportsWidget.get());
-    } {
+    }
+    {
+        this->m_vScrollBar = ui->scrollArea->verticalScrollBar();
         //处理信号
         connect(ui->recommend_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_recommendWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_recommendWidget->mapToParent(QPoint(0, 0)).y());
         });
         connect(ui->DJ_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_djWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_djWidget->mapToParent(QPoint(0, 0)).y());
         });
         connect(ui->language_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_languageWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_languageWidget->mapToParent(QPoint(0, 0)).y());
         });
         connect(ui->theme_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_themeWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_themeWidget->mapToParent(QPoint(0, 0)).y());
         });
         connect(ui->scene_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_sceneWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_sceneWidget->mapToParent(QPoint(0, 0)).y());
         });
         connect(ui->mood_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_moodWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_moodWidget->mapToParent(QPoint(0, 0)).y());
         });
         connect(ui->style_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_styleWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_styleWidget->mapToParent(QPoint(0, 0)).y());
         });
         connect(ui->crowd_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_crowdWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_crowdWidget->mapToParent(QPoint(0, 0)).y());
         });
         connect(ui->children_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_childrenWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_childrenWidget->mapToParent(QPoint(0, 0)).y());
         });
         connect(ui->musical_instrument_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_musicalInstrumentWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_musicalInstrumentWidget->mapToParent(QPoint(0, 0)).y());
         });
         connect(ui->label_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_labelWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_labelWidget->mapToParent(QPoint(0, 0)).y());
         });
         connect(ui->variety_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_varietyWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_varietyWidget->mapToParent(QPoint(0, 0)).y());
         });
         connect(ui->national_customs_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_nationalCustomsWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_nationalCustomsWidget->mapToParent(QPoint(0, 0)).y());
         });
         connect(ui->sports_pushButton, &QPushButton::clicked, this, [this] {
-            ui->scrollArea->verticalScrollBar()->setValue(this->m_sportsWidget->mapToParent(QPoint(0, 0)).y());
+            this->m_vScrollBar->setValue(this->m_sportsWidget->mapToParent(QPoint(0, 0)).y());
         });
         //wheelVaue信号
         connect(ui->scrollArea, &SScrollArea::wheelValue, this, &Channel::handleWheelValue);
-        connect(ui->scrollArea->verticalScrollBar(),&QScrollBar::valueChanged,this, &Channel::handleWheelValue);
+        connect(this->m_vScrollBar,&QScrollBar::valueChanged,this, &Channel::handleWheelValue);
+        //回到最顶部信号
+        connect(this->m_upBtn.get(), &QToolButton::clicked, this, &Channel::onUpBtnClicked);
+        connect(this->m_scrollBarTimer, &QTimer::timeout, this, &Channel::onUpBtnShowOrNot);
+
     }
     auto cur = 0; {
         //m_recommendWidget 17 个
@@ -626,9 +638,49 @@ void Channel::handleWheelValue(const int &value) {
     } else if (value >= this->m_sportsWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->sports_pushButton->setChecked(true);
     }
+    // 启动定时器，延迟处理
+    if (!this->m_scrollBarTimer->isActive()) {
+        this->m_scrollBarTimer->start(500); // 500ms 延迟，避免过于频繁地触发
+    }
+}
+
+void Channel::onUpBtnClicked() {
+    // 标记动画开始
+    ui->scrollArea->setAnimating(true); //开始禁用滚轮
+
+    auto animation = new QPropertyAnimation(this->m_vScrollBar, "value", this);
+    // 设置动画的起始值（当前滚动条位置）和结束值（最顶部）
+    animation->setStartValue(this->m_vScrollBar->value()); // 当前滚动条位置
+    animation->setEndValue(0); // 滚动到顶部（0 表示最上方）
+    animation->setDuration(500); // 动画持续时间，500ms
+    animation->setEasingCurve(QEasingCurve::OutBounce); // 缓动曲线
+
+    // 在动画结束后标记动画停止
+    connect(animation, &QPropertyAnimation::finished, this, [this]() {
+        ui->scrollArea->setAnimating(false); //动画结束启用滚轮
+    });
+
+    // 启动动画
+    animation->start(QAbstractAnimation::DeleteWhenStopped); // 动画结束后自动删除
+}
+
+void Channel::onUpBtnShowOrNot() {
+    //qDebug()<<this->m_vScrollBar->value();
+    if (this->m_vScrollBar->value() > 120)this->m_upBtn->show();
+    else this->m_upBtn->hide();
 }
 
 void Channel::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     ui->scrollArea->setFixedHeight(this->window()->height() - 305);
+    //UpWidget移动
+    auto parent = this->window();
+    this->m_upBtn->move(parent->width() - this->m_upBtn->width() - 206,
+                        parent->height() - this->m_upBtn->height() - 190);
+    this->m_upBtn->raise();
+}
+
+void Channel::mousePressEvent(QMouseEvent *event) {
+    QWidget::mousePressEvent(event);
+    //qDebug()<<"clicked : "<<event->pos();
 }

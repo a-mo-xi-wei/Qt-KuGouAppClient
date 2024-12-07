@@ -273,7 +273,7 @@ private:
     QScrollBar*             m_vScrollBar{};
 
     //专门处理回到最顶部按钮
-    QTimer*                 m_scrollBarTimer;  // 定时器
+    QTimer*                 m_scrollBarTimer{};  // 定时器
     int                     m_scrollValue;  // 存储最新的滚动值
 };
 #endif // KUGOUAPP_H
