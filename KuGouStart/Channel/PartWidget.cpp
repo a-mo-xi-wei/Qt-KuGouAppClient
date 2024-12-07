@@ -41,6 +41,7 @@ void PartWidget::addBlockWidget(ChannelBlock* block) {
 }
 
 void PartWidget::initUi() {
+    this->setContentsMargins(0,0,0,0);
     this->m_titleLab->setObjectName("titleLab");
     this->m_titleDeco->setObjectName("titleDeco");
     this->m_titleDeco->setText(" .MHz");

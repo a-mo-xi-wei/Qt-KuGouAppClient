@@ -20,6 +20,9 @@
    <string>Channel</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
    <property name="rightMargin">
     <number>0</number>
    </property>
@@ -557,7 +560,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>871</width>
+        <width>880</width>
         <height>351</height>
        </rect>
       </property>
@@ -580,6 +583,9 @@
        <item>
         <widget class="QWidget" name="table_widget" native="true">
          <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
           <item>
            <spacer name="verticalSpacer">
             <property name="orientation">
