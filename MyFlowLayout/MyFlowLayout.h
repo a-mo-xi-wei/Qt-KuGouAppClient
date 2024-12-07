@@ -8,6 +8,8 @@ class MyFlowLayout : public QLayout {
 public:
     explicit MyFlowLayout(QWidget *parent, int margin = -1, int hSpacing = -1, int vSpacing = -1);
 
+    explicit MyFlowLayout(QWidget *parent, bool home,int margin = -1, int hSpacing = -1, int vSpacing = -1 );
+
     explicit MyFlowLayout(int margin = -1, int hSpacing = -1, int vSpacing = -1);
 
     ~MyFlowLayout();
@@ -36,6 +38,8 @@ public:
 
     QLayoutItem *takeAt(int index) Q_DECL_OVERRIDE;
 
+    int fillSpaceX(QWidget *wid) const;
+
 private:
     int doLayout(const QRect &rect, bool testOnly) const;
 
@@ -45,6 +49,7 @@ private:
     QList<QLayoutItem *> itemList;
     int m_hSpace;
     int m_vSpace;
+    bool m_home = false;
 };
 
 #endif // MyFlowLayout_H

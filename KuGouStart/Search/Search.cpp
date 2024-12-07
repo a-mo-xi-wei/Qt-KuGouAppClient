@@ -98,13 +98,13 @@ void Search::initStackWidget() {
     this->m_specialWidget   = std::make_unique<QWidget>(ui->stackedWidget);
     this->m_channelWidget   = std::make_unique<QWidget>(ui->stackedWidget);
     //设置布局
-    auto lay1 = new MyFlowLayout;
+    auto lay1 = new MyFlowLayout(this->m_recommendWidget.get(),16, -1, -1);
     this->m_recommendWidget->setLayout(lay1);
-    auto lay2 = new MyFlowLayout;
+    auto lay2 = new MyFlowLayout(this->m_rankWidget.get(),16, -1, -1);
     this->m_rankWidget->setLayout(lay2);
-    auto lay3 = new MyFlowLayout;
+    auto lay3 = new MyFlowLayout(this->m_specialWidget.get(),16, -1, -1);
     this->m_specialWidget->setLayout(lay3);
-    auto lay4 = new MyFlowLayout;
+    auto lay4 = new MyFlowLayout(this->m_channelWidget.get(),16, -1, -1);
     this->m_channelWidget->setLayout(lay4);
 
     ui->stackedWidget->addWidget(this->m_recommendWidget.get());
