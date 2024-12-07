@@ -18,8 +18,7 @@
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
-Channel::Channel(QWidget *parent) :
-    QWidget(parent)
+Channel::Channel(QWidget *parent) : QWidget(parent)
     , ui(new Ui::Channel)
     , m_buttonGroup(std::make_unique<QButtonGroup>(this))
     , m_recommendWidget(std::make_unique<PartWidget>(this))
@@ -35,19 +34,17 @@ Channel::Channel(QWidget *parent) :
     , m_labelWidget(std::make_unique<PartWidget>(this))
     , m_varietyWidget(std::make_unique<PartWidget>(this))
     , m_nationalCustomsWidget(std::make_unique<PartWidget>(this))
-    , m_sportsWidget(std::make_unique<PartWidget>(this))
-{
-    ui->setupUi(this);
-    {
+    , m_sportsWidget(std::make_unique<PartWidget>(this)) {
+    ui->setupUi(this); {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/channel.css"));
         if (file.open(QIODevice::ReadOnly)) {
             this->setStyleSheet(file.readAll());
-        }
-        else {
+        } else {
             qDebug() << "样式表打开失败QAQ";
             return;
         }
-        ui->title_label->setStyleSheet(QString("border:none;border-image: url(%1/music-channel.png);").arg(GET_CURRENT_DIR));
+        ui->title_label->setStyleSheet(
+            QString("border:none;border-image: url(%1/music-channel.png);").arg(GET_CURRENT_DIR));
     }
     initButtonGroup();
     initTotalWidget();
@@ -94,12 +91,11 @@ void Channel::initTotalWidget() {
     this->m_sportsWidget->setTitleName("运动");
 }
 
-void Channel::initUi() {
-    {
+void Channel::initUi() { {
         //加入布局
-        auto lay = dynamic_cast<QVBoxLayout*>(ui->table_widget->layout());
+        auto lay = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout());
         if (!lay) {
-            qWarning()<<"布局不存在";
+            qWarning() << "布局不存在";
             return;
         }
         lay->insertWidget(lay->count() - 1, this->m_recommendWidget.get());
@@ -116,60 +112,61 @@ void Channel::initUi() {
         lay->insertWidget(lay->count() - 1, this->m_varietyWidget.get());
         lay->insertWidget(lay->count() - 1, this->m_nationalCustomsWidget.get());
         lay->insertWidget(lay->count() - 1, this->m_sportsWidget.get());
-    }
-    {
+    } {
         //处理信号
-        connect(ui->recommend_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->recommend_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_recommendWidget->mapToParent(QPoint(0, 0)).y());
         });
-        connect(ui->DJ_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->DJ_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_djWidget->mapToParent(QPoint(0, 0)).y());
         });
-        connect(ui->language_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->language_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_languageWidget->mapToParent(QPoint(0, 0)).y());
         });
-        connect(ui->theme_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->theme_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_themeWidget->mapToParent(QPoint(0, 0)).y());
         });
-        connect(ui->scene_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->scene_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_sceneWidget->mapToParent(QPoint(0, 0)).y());
         });
-        connect(ui->mood_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->mood_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_moodWidget->mapToParent(QPoint(0, 0)).y());
         });
-        connect(ui->style_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->style_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_styleWidget->mapToParent(QPoint(0, 0)).y());
         });
-        connect(ui->crowd_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->crowd_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_crowdWidget->mapToParent(QPoint(0, 0)).y());
         });
-        connect(ui->children_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->children_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_childrenWidget->mapToParent(QPoint(0, 0)).y());
         });
-        connect(ui->musical_instrument_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->musical_instrument_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_musicalInstrumentWidget->mapToParent(QPoint(0, 0)).y());
         });
-        connect(ui->label_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->label_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_labelWidget->mapToParent(QPoint(0, 0)).y());
         });
-        connect(ui->variety_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->variety_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_varietyWidget->mapToParent(QPoint(0, 0)).y());
         });
-        connect(ui->national_customs_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->national_customs_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_nationalCustomsWidget->mapToParent(QPoint(0, 0)).y());
         });
-        connect(ui->sports_pushButton,&QPushButton::clicked,this,[this] {
+        connect(ui->sports_pushButton, &QPushButton::clicked, this, [this] {
             ui->scrollArea->verticalScrollBar()->setValue(this->m_sportsWidget->mapToParent(QPoint(0, 0)).y());
         });
         //wheelVaue信号
-        connect(ui->scrollArea,&SScrollArea::wheelValue,this,&Channel::handleWheelValue);
+        connect(ui->scrollArea, &SScrollArea::wheelValue, this, &Channel::handleWheelValue);
+        connect(ui->scrollArea->verticalScrollBar(),&QScrollBar::valueChanged,this, &Channel::handleWheelValue);
     }
-    auto cur = 0;
-    {
+    auto cur = 0; {
         //m_recommendWidget 17 个
-        const QString title[] = {"","国语","聚会暖场","抖音热门歌","中文经典","中文DJ","怀旧粤语","KTV必点曲",
-            "90后","抖音最火DJ","老情歌","网络红歌","最爱成名曲","车载舞曲","那年MP3里的歌",
-            "百听不厌英文歌","伤感网络情歌","轻音乐"};
+        const QString title[] = {
+            "", "国语", "聚会暖场", "抖音热门歌", "中文经典", "中文DJ", "怀旧粤语", "KTV必点曲",
+            "90后", "抖音最火DJ", "老情歌", "网络红歌", "最爱成名曲", "车载舞曲", "那年MP3里的歌",
+            "百听不厌英文歌", "伤感网络情歌", "轻音乐"
+        };
         for (int i = 1; i <= 17; ++i) {
             auto block = new ChannelBlock(this);
             block->setCoverPix(this->m_pixPathVector[i]);
@@ -178,186 +175,201 @@ void Channel::initUi() {
             this->m_recommendWidget->addBlockWidget(block);
         }
     }
-    cur += 17;
-    {
+    cur += 17; {
         //m_djWidget 14 个
-        const QString title[] = {"","中文DJ","抖音最火DJ","情歌DJ","车载舞曲","重低音","EDM热歌",
-            "串烧舞曲","电音","电子纯音","慢摇舞曲","复古迪士高","外文舞曲","House舞曲","超嗨舞曲"};
+        const QString title[] = {
+            "", "中文DJ", "抖音最火DJ", "情歌DJ", "车载舞曲", "重低音", "EDM热歌",
+            "串烧舞曲", "电音", "电子纯音", "慢摇舞曲", "复古迪士高", "外文舞曲", "House舞曲", "超嗨舞曲"
+        };
         for (int i = 1; i <= 14; ++i) {
             auto block = new ChannelBlock(this);
-            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
-           this->m_djWidget->addBlockWidget(block);
+            block->setSingerSongText(
+                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+            this->m_djWidget->addBlockWidget(block);
         }
     }
-    cur += 14;
-    {
+    cur += 14; {
         //m_languageWidget 17 个
-        const QString title[] = {"","百听不厌英文歌","怀旧粤语","粤语","欧美","怀旧华语","闽南语",
-            "韩语","国语","日语","法语","泰语","印度语","俄语","德语","意大利语",
-            "客家语","西班牙语"};
+        const QString title[] = {
+            "", "百听不厌英文歌", "怀旧粤语", "粤语", "欧美", "怀旧华语", "闽南语",
+            "韩语", "国语", "日语", "法语", "泰语", "印度语", "俄语", "德语", "意大利语",
+            "客家语", "西班牙语"
+        };
         for (int i = 1; i <= 17; ++i) {
             auto block = new ChannelBlock(this);
-            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            block->setSingerSongText(
+                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
             this->m_languageWidget->addBlockWidget(block);
         }
     }
-    cur += 17;
-    {
+    cur += 17; {
         //m_themeWidget 28 个
-        const QString title[] = {"","0.8x慢速","KTV必点曲","网络红歌","中文经典","伤感网络情歌",
-            "最爱成名曲","酷狗热歌","那年MP3里的歌","店铺","老情歌","热评10W+歌曲",
-            "世界级热门单曲","情歌对唱","酷狗新歌","由你音乐榜","国创ACG","神曲",
-            "经典影视原声","最热影视歌曲","发烧女声","励志","日本ACG","蝰蛇全景声",
-            "圣诞必听","中国新乡村音乐","热门动漫","抖音热歌榜","二次元精选"};
+        const QString title[] = {
+            "", "0.8x慢速", "KTV必点曲", "网络红歌", "中文经典", "伤感网络情歌",
+            "最爱成名曲", "酷狗热歌", "那年MP3里的歌", "店铺", "老情歌", "热评10W+歌曲",
+            "世界级热门单曲", "情歌对唱", "酷狗新歌", "由你音乐榜", "国创ACG", "神曲",
+            "经典影视原声", "最热影视歌曲", "发烧女声", "励志", "日本ACG", "蝰蛇全景声",
+            "圣诞必听", "中国新乡村音乐", "热门动漫", "抖音热歌榜", "二次元精选"
+        };
         for (int i = 1; i <= 28; ++i) {
             auto block = new ChannelBlock(this);
-            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            block->setSingerSongText(
+                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
             this->m_themeWidget->addBlockWidget(block);
         }
     }
-    cur += 28;
-    {
+    cur += 28; {
         //m_sceneWidget 18 个
-        const QString title[] = {"","广场舞","咖啡厅","一个人","工作加油曲","睡前",
-            "学习","散步","清吧","在路上","驾驶","打游戏","聚会暖场","婚礼","午休",
-            "起床","蹦迪","自然","冥想"};
+        const QString title[] = {
+            "", "广场舞", "咖啡厅", "一个人", "工作加油曲", "睡前",
+            "学习", "散步", "清吧", "在路上", "驾驶", "打游戏", "聚会暖场", "婚礼", "午休",
+            "起床", "蹦迪", "自然", "冥想"
+        };
         for (int i = 1; i <= 18; ++i) {
             auto block = new ChannelBlock(this);
-            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            block->setSingerSongText(
+                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
             this->m_sceneWidget->addBlockWidget(block);
         }
     }
-    cur += 18;
-    {
+    cur += 18; {
         //m_moodWidget 8 个
-        const QString title[] = {"","安静","轻松","伤感","寂寞","甜蜜","兴奋","思念","快乐"};
+        const QString title[] = {"", "安静", "轻松", "伤感", "寂寞", "甜蜜", "兴奋", "思念", "快乐"};
         for (int i = 1; i <= 8; ++i) {
             auto block = new ChannelBlock(this);
-            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            block->setSingerSongText(
+                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
             this->m_moodWidget->addBlockWidget(block);
         }
     }
-    cur += 8;
-    {
+    cur += 8; {
         //m_styleWidget 14 个
-        const QString title[] = {"","轻音乐","草原风","流行","民歌","乡村音乐",
-            "R&B","摇滚","爵士","蒸汽波","民谣","说唱","古典音乐","布鲁斯","金属"};
+        const QString title[] = {
+            "", "轻音乐", "草原风", "流行", "民歌", "乡村音乐",
+            "R&B", "摇滚", "爵士", "蒸汽波", "民谣", "说唱", "古典音乐", "布鲁斯", "金属"
+        };
         for (int i = 1; i <= 14; ++i) {
             auto block = new ChannelBlock(this);
-            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            block->setSingerSongText(
+                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
             this->m_styleWidget->addBlockWidget(block);
         }
     }
-    cur += 14;
-    qDebug()<<"cur : "<<cur;
-    {
+    cur += 14; {
         //m_crowdWidget 4 个
-        const QString title[] = {"","90后","80后","70后","00后"};
+        const QString title[] = {"", "90后", "80后", "70后", "00后"};
         for (int i = 1; i <= 4; ++i) {
             auto block = new ChannelBlock(this);
-            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            block->setSingerSongText(
+                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
             this->m_crowdWidget->addBlockWidget(block);
         }
     }
-    cur += 4;
-    {
+    cur += 4; {
         //m_childrenWidget 12 个
-        const QString title[] = {"","儿童故事","0-1岁儿歌","1-3岁儿歌",
-            "3-6岁儿歌","7-12岁儿歌","英文儿歌","胎教","教育科普","中文儿歌",
-            "睡眠故事","国学启蒙","动画儿歌"};
+        const QString title[] = {
+            "", "儿童故事", "0-1岁儿歌", "1-3岁儿歌",
+            "3-6岁儿歌", "7-12岁儿歌", "英文儿歌", "胎教", "教育科普", "中文儿歌",
+            "睡眠故事", "国学启蒙", "动画儿歌"
+        };
         for (int i = 1; i <= 12; ++i) {
             auto block = new ChannelBlock(this);
-            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            block->setSingerSongText(
+                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
             this->m_childrenWidget->addBlockWidget(block);
         }
     }
-    cur += 12;
-    {
+    cur += 12; {
         //m_musicalInstrumentWidget 11 个
-        const QString title[] = {"","钢琴","古筝","萨克斯","八音盒","吉他","尤克里里",
-            "葫芦丝","二胡","笛子","小提琴","唢呐"};
+        const QString title[] = {
+            "", "钢琴", "古筝", "萨克斯", "八音盒", "吉他", "尤克里里",
+            "葫芦丝", "二胡", "笛子", "小提琴", "唢呐"
+        };
         for (int i = 1; i <= 11; ++i) {
             auto block = new ChannelBlock(this);
-            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            block->setSingerSongText(
+                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
             this->m_musicalInstrumentWidget->addBlockWidget(block);
         }
     }
-    cur += 11;
-    {
+    cur += 11; {
         //m_labelWidget 6 个
-        const QString title[] = {"","滚石唱片推荐","华纳唱片","JYP","SACRA MUSIC",
-            "Liquid State","摩登天空"};
+        const QString title[] = {
+            "", "滚石唱片推荐", "华纳唱片", "JYP", "SACRA MUSIC",
+            "Liquid State", "摩登天空"
+        };
         for (int i = 1; i <= 6; ++i) {
             auto block = new ChannelBlock(this);
-            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            block->setSingerSongText(
+                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
             this->m_labelWidget->addBlockWidget(block);
         }
     }
-    cur += 6;
-    {
+    cur += 6; {
         //m_varietyWidget 27 个
-        const QString title[] = {"","声生不息-宝岛季","来看我们的演唱会","声生不息-港乐季",
-            "明日之子乐团季","乘风破浪的姐姐","新声请指教","中国梦之声·我们的歌","音浪合伙人",
-            "明日之子","创造营2024","这！就是原创","中国新说唱","创造101","歌手",
-            "经典咏流传","天赐的声音第三季","跨次元新星","我们的歌第二季","中国好声音","我是歌手",
-            "厉害了!我的歌","中国好歌曲","盖世英雄","乐队的夏天","诗画中国","天赐的声音第二季","蒙面唱将第五季"};
+        const QString title[] = {
+            "", "声生不息-宝岛季", "来看我们的演唱会", "声生不息-港乐季",
+            "明日之子乐团季", "乘风破浪的姐姐", "新声请指教", "中国梦之声·我们的歌", "音浪合伙人",
+            "明日之子", "创造营2024", "这！就是原创", "中国新说唱", "创造101", "歌手",
+            "经典咏流传", "天赐的声音第三季", "跨次元新星", "我们的歌第二季", "中国好声音", "我是歌手",
+            "厉害了!我的歌", "中国好歌曲", "盖世英雄", "乐队的夏天", "诗画中国", "天赐的声音第二季", "蒙面唱将第五季"
+        };
         for (int i = 1; i <= 27; ++i) {
             auto block = new ChannelBlock(this);
-            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            block->setSingerSongText(
+                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
             this->m_varietyWidget->addBlockWidget(block);
         }
     }
-    cur += 27;
-    {
+    cur += 27; {
         //m_nationalCustomsWidget 6 个
-        const QString title[] = {"","中国风精选","古风好歌","伤感国风","国风新歌","国风经典","热血国风"};
+        const QString title[] = {"", "中国风精选", "古风好歌", "伤感国风", "国风新歌", "国风经典", "热血国风"};
         for (int i = 1; i <= 6; ++i) {
             auto block = new ChannelBlock(this);
-            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            block->setSingerSongText(
+                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
             this->m_nationalCustomsWidget->addBlockWidget(block);
         }
     }
-    cur += 6;
-    {
+    cur += 6; {
         //m_sportsWidget 7 个
-        const QString title[] = {"","健身房","跑步","动感单车","热身","HIIT","力量训练","瑜伽"};
+        const QString title[] = {"", "健身房", "跑步", "动感单车", "热身", "HIIT", "力量训练", "瑜伽"};
         for (int i = 1; i <= 7; ++i) {
             auto block = new ChannelBlock(this);
-            block->setCoverPix(this->m_pixPathVector[i+cur]);
+            block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i+cur].first + "-" + this->m_songAndsinger[i+cur].second);
+            block->setSingerSongText(
+                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
             this->m_sportsWidget->addBlockWidget(block);
         }
     }
-
 }
 
-void Channel::initVector() {
-    {
+void Channel::initVector() { {
         //插入歌曲和歌手的配对关系
         this->m_songAndsinger.emplace_back(" ", " ");
         this->m_songAndsinger.emplace_back("租购", "薛之谦");
@@ -561,7 +573,7 @@ void Channel::initVector() {
         this->m_songAndsinger.emplace_back("伴你", "黄绮珊");
         this->m_songAndsinger.emplace_back("炎之舞", "郑智化");
     }
-    for (int i = 1 ; i <= 210 ; ++i) {
+    for (int i = 1; i <= 210; ++i) {
         this->m_pixPathVector.emplace_back(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(i));
     }
     // 使用当前时间作为随机数种子
@@ -569,68 +581,54 @@ void Channel::initVector() {
     // 随机打乱 QVector
     std::shuffle(this->m_songAndsinger.begin(), this->m_songAndsinger.end(), std::default_random_engine(seed));
     std::shuffle(this->m_pixPathVector.begin(), this->m_pixPathVector.end(), std::default_random_engine(seed));
-
 }
 
-void Channel::handleWheelValue(const int& value) {
+void Channel::handleWheelValue(const int &value) {
     if (value >= this->m_recommendWidget->mapToParent(QPoint(0, 0)).y() &&
         value < this->m_djWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->recommend_pushButton->setChecked(true);
-    }
-    else if (value >= this->m_djWidget->mapToParent(QPoint(0, 0)).y() &&
-        value < this->m_languageWidget->mapToParent(QPoint(0, 0)).y()) {
+    } else if (value >= this->m_djWidget->mapToParent(QPoint(0, 0)).y() &&
+               value < this->m_languageWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->DJ_pushButton->setChecked(true);
-    }
-    else if (value >= this->m_languageWidget->mapToParent(QPoint(0, 0)).y() &&
-        value < this->m_themeWidget->mapToParent(QPoint(0, 0)).y()) {
+    } else if (value >= this->m_languageWidget->mapToParent(QPoint(0, 0)).y() &&
+               value < this->m_themeWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->language_pushButton->setChecked(true);
-    }
-    else if (value >= this->m_themeWidget->mapToParent(QPoint(0, 0)).y() &&
-        value < this->m_sceneWidget->mapToParent(QPoint(0, 0)).y()) {
+    } else if (value >= this->m_themeWidget->mapToParent(QPoint(0, 0)).y() &&
+               value < this->m_sceneWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->theme_pushButton->setChecked(true);
-    }
-    else if (value >= this->m_sceneWidget->mapToParent(QPoint(0, 0)).y()&&
-        value < this->m_moodWidget->mapToParent(QPoint(0, 0)).y()) {
+    } else if (value >= this->m_sceneWidget->mapToParent(QPoint(0, 0)).y() &&
+               value < this->m_moodWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->scene_pushButton->setChecked(true);
-    }
-    else if (value >= this->m_moodWidget->mapToParent(QPoint(0, 0)).y() &&
-        value < this->m_styleWidget->mapToParent(QPoint(0, 0)).y() ) {
+    } else if (value >= this->m_moodWidget->mapToParent(QPoint(0, 0)).y() &&
+               value < this->m_styleWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->mood_pushButton->setChecked(true);
-    }
-    else if (value >= this->m_styleWidget->mapToParent(QPoint(0, 0)).y() &&
-        value < this->m_childrenWidget->mapToParent(QPoint(0, 0)).y()) {
+    } else if (value >= this->m_styleWidget->mapToParent(QPoint(0, 0)).y() &&
+               value < this->m_childrenWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->style_pushButton->setChecked(true);
-    }
-    else if (value >= this->m_crowdWidget->mapToParent(QPoint(0, 0)).y() &&
-        value < this->m_childrenWidget->mapToParent(QPoint(0, 0)).y()) {
+    } else if (value >= this->m_crowdWidget->mapToParent(QPoint(0, 0)).y() &&
+               value < this->m_childrenWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->crowd_pushButton->setChecked(true);
-    }
-    else if (value >= this->m_childrenWidget->mapToParent(QPoint(0, 0)).y() &&
-        value < this->m_musicalInstrumentWidget->mapToParent(QPoint(0, 0)).y()) {
+    } else if (value >= this->m_childrenWidget->mapToParent(QPoint(0, 0)).y() &&
+               value < this->m_musicalInstrumentWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->children_pushButton->setChecked(true);
-    }
-    else if (value >= this->m_musicalInstrumentWidget->mapToParent(QPoint(0, 0)).y() &&
-        value < this->m_labelWidget->mapToParent(QPoint(0, 0)).y()) {
+    } else if (value >= this->m_musicalInstrumentWidget->mapToParent(QPoint(0, 0)).y() &&
+               value < this->m_labelWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->musical_instrument_pushButton->setChecked(true);
-    }
-    else if (value >= this->m_labelWidget->mapToParent(QPoint(0, 0)).y() &&
-        value < this->m_varietyWidget->mapToParent(QPoint(0, 0)).y()) {
+    } else if (value >= this->m_labelWidget->mapToParent(QPoint(0, 0)).y() &&
+               value < this->m_varietyWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->label_pushButton->setChecked(true);
-    }
-    else if (value >= this->m_varietyWidget->mapToParent(QPoint(0, 0)).y() &&
-        value < this->m_nationalCustomsWidget->mapToParent(QPoint(0, 0)).y()) {
+    } else if (value >= this->m_varietyWidget->mapToParent(QPoint(0, 0)).y() &&
+               value < this->m_nationalCustomsWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->variety_pushButton->setChecked(true);
-    }
-    else if (value >= this->m_nationalCustomsWidget->mapToParent(QPoint(0, 0)).y() &&
-        value < this->m_sportsWidget->mapToParent(QPoint(0, 0)).y()) {
+    } else if (value >= this->m_nationalCustomsWidget->mapToParent(QPoint(0, 0)).y() &&
+               value < this->m_sportsWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->national_customs_pushButton->setChecked(true);
-    }
-    else if (value >= this->m_sportsWidget->mapToParent(QPoint(0, 0)).y()){
+    } else if (value >= this->m_sportsWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->sports_pushButton->setChecked(true);
     }
 }
 
 void Channel::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
-    ui->scrollArea->setFixedHeight(this->window()->height()-305);
+    ui->scrollArea->setFixedHeight(this->window()->height() - 305);
 }
