@@ -729,7 +729,7 @@ void KuGouApp::onScrollBarValueChanged(const int &value) {
 
 void KuGouApp::onUpBtnShowOrNot() {
     //qDebug()<<this->m_scrollValue;
-    if (this->m_scrollValue > 120)this->m_upBtn->show();
+    if (this->m_scrollValue > 200)this->m_upBtn->show();
     else this->m_upBtn->hide();
 }
 

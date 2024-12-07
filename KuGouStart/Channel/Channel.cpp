@@ -183,7 +183,7 @@ void Channel::initUi() {
             auto block = new ChannelBlock(this);
             block->setCoverPix(this->m_pixPathVector[i]);
             block->setTitleText(title[i]);
-            block->setSingerSongText(this->m_songAndsinger[i].first + "-" + this->m_songAndsinger[i].second);
+            block->setSingerSongText(this->m_songAndsinger[i].first + " - " + this->m_songAndsinger[i].second);
             this->m_recommendWidget->addBlockWidget(block);
         }
     }
@@ -198,7 +198,7 @@ void Channel::initUi() {
             block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
             block->setSingerSongText(
-                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+                this->m_songAndsinger[i + cur].first + " - " + this->m_songAndsinger[i + cur].second);
             this->m_djWidget->addBlockWidget(block);
         }
     }
@@ -214,7 +214,7 @@ void Channel::initUi() {
             block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
             block->setSingerSongText(
-                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+                this->m_songAndsinger[i + cur].first + " - " + this->m_songAndsinger[i + cur].second);
             this->m_languageWidget->addBlockWidget(block);
         }
     }
@@ -232,7 +232,7 @@ void Channel::initUi() {
             block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
             block->setSingerSongText(
-                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+                this->m_songAndsinger[i + cur].first + " - " + this->m_songAndsinger[i + cur].second);
             this->m_themeWidget->addBlockWidget(block);
         }
     }
@@ -248,7 +248,7 @@ void Channel::initUi() {
             block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
             block->setSingerSongText(
-                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+                this->m_songAndsinger[i + cur].first + " - " + this->m_songAndsinger[i + cur].second);
             this->m_sceneWidget->addBlockWidget(block);
         }
     }
@@ -260,7 +260,7 @@ void Channel::initUi() {
             block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
             block->setSingerSongText(
-                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+                this->m_songAndsinger[i + cur].first + " - " + this->m_songAndsinger[i + cur].second);
             this->m_moodWidget->addBlockWidget(block);
         }
     }
@@ -275,7 +275,7 @@ void Channel::initUi() {
             block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
             block->setSingerSongText(
-                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+                this->m_songAndsinger[i + cur].first + " - " + this->m_songAndsinger[i + cur].second);
             this->m_styleWidget->addBlockWidget(block);
         }
     }
@@ -287,7 +287,7 @@ void Channel::initUi() {
             block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
             block->setSingerSongText(
-                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+                this->m_songAndsinger[i + cur].first + " - " + this->m_songAndsinger[i + cur].second);
             this->m_crowdWidget->addBlockWidget(block);
         }
     }
@@ -303,7 +303,7 @@ void Channel::initUi() {
             block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
             block->setSingerSongText(
-                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+                this->m_songAndsinger[i + cur].first + " - " + this->m_songAndsinger[i + cur].second);
             this->m_childrenWidget->addBlockWidget(block);
         }
     }
@@ -318,7 +318,7 @@ void Channel::initUi() {
             block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
             block->setSingerSongText(
-                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+                this->m_songAndsinger[i + cur].first + " - " + this->m_songAndsinger[i + cur].second);
             this->m_musicalInstrumentWidget->addBlockWidget(block);
         }
     }
@@ -333,7 +333,7 @@ void Channel::initUi() {
             block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
             block->setSingerSongText(
-                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+                this->m_songAndsinger[i + cur].first + " - " + this->m_songAndsinger[i + cur].second);
             this->m_labelWidget->addBlockWidget(block);
         }
     }
@@ -351,7 +351,7 @@ void Channel::initUi() {
             block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
             block->setSingerSongText(
-                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+                this->m_songAndsinger[i + cur].first + " - " + this->m_songAndsinger[i + cur].second);
             this->m_varietyWidget->addBlockWidget(block);
         }
     }
@@ -363,7 +363,7 @@ void Channel::initUi() {
             block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
             block->setSingerSongText(
-                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+                this->m_songAndsinger[i + cur].first + " - " + this->m_songAndsinger[i + cur].second);
             this->m_nationalCustomsWidget->addBlockWidget(block);
         }
     }
@@ -375,13 +375,14 @@ void Channel::initUi() {
             block->setCoverPix(this->m_pixPathVector[i + cur]);
             block->setTitleText(title[i]);
             block->setSingerSongText(
-                this->m_songAndsinger[i + cur].first + "-" + this->m_songAndsinger[i + cur].second);
+                this->m_songAndsinger[i + cur].first + " - " + this->m_songAndsinger[i + cur].second);
             this->m_sportsWidget->addBlockWidget(block);
         }
     }
 }
 
-void Channel::initVector() { {
+void Channel::initVector() {
+    {
         //插入歌曲和歌手的配对关系
         this->m_songAndsinger.emplace_back(" ", " ");
         this->m_songAndsinger.emplace_back("租购", "薛之谦");
@@ -666,7 +667,7 @@ void Channel::onUpBtnClicked() {
 
 void Channel::onUpBtnShowOrNot() {
     //qDebug()<<this->m_vScrollBar->value();
-    if (this->m_vScrollBar->value() > 120)this->m_upBtn->show();
+    if (this->m_vScrollBar->value() > 200)this->m_upBtn->show();
     else this->m_upBtn->hide();
 }
 

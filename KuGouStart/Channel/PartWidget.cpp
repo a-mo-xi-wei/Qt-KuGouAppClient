@@ -32,7 +32,7 @@ PartWidget::PartWidget(QWidget *parent)
 }
 
 void PartWidget::setTitleName(const QString &title) {
-    this->m_titleLab->setText(title);
+    this->m_titleLab->setText(" " + title);
 }
 
 void PartWidget::addBlockWidget(ChannelBlock* block) {
