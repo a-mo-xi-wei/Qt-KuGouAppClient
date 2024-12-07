@@ -40,7 +40,9 @@ Channel::Channel(QWidget *parent) : QWidget(parent)
     , m_sportsWidget(std::make_unique<PartWidget>(this))
     , m_scrollBarTimer(new QTimer(this))
 {
-    ui->setupUi(this); {
+    ui->setupUi(this);
+    {
+        this->setObjectName("channel");
         QFile file(GET_CURRENT_DIR + QStringLiteral("/channel.css"));
         if (file.open(QIODevice::ReadOnly)) {
             this->setStyleSheet(file.readAll());

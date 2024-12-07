@@ -14,14 +14,18 @@
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 ChannelBlock::ChannelBlock(QWidget *parent) :
-    QWidget(parent), ui(new Ui::ChannelBlock) {
+    QWidget(parent), ui(new Ui::ChannelBlock)
+{
     ui->setupUi(this);
-    QFile file(GET_CURRENT_DIR + QStringLiteral("/channelblock.css"));
-    if (file.open(QIODevice::ReadOnly)) {
-        this->setStyleSheet(file.readAll());
-    } else {
-        qDebug() << "样式表打开失败QAQ";
-        return;
+    {
+        this->setObjectName("block");
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/channelblock.css"));
+        if (file.open(QIODevice::ReadOnly)) {
+            this->setStyleSheet(file.readAll());
+        } else {
+            qDebug() << "样式表打开失败QAQ";
+            return;
+        }
     }
     initUi();
 }
