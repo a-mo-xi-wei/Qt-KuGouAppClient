@@ -34,7 +34,7 @@ public:
 
     void setLeftPopularBtnIcon(const QString& icon);
 
-    void setAspectRatio(const int &aspectRatio);
+    void setAspectRatio(const float &aspectRatio);
 
     void setPopularBtnLeftPadding(const int &leftPadding);
 
@@ -77,7 +77,7 @@ private:
     bool m_isHoverCover = false;    //是否悬停在图像上
     std::vector<QString> m_tipArr;
     bool m_isExpandRespond = false; //是否扩展响应，即是否让遮罩出现的响应范围扩大 信号响应
-    int m_aspectRatio = 1;          //宽高比
+    float m_aspectRatio = 1;          //宽高比
     bool m_haveUnit = true;         //是否带单位（万）
 
 };

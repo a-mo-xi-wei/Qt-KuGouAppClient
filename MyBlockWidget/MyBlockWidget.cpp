@@ -134,7 +134,7 @@ void MyBlockWidget::setLeftPopularBtnIcon(const QString &icon) {
     this->m_leftPopularBtn->setIcon(QIcon(icon));
 }
 
-void MyBlockWidget::setAspectRatio(const int &aspectRatio) {
+void MyBlockWidget::setAspectRatio(const float &aspectRatio) {
     this->m_aspectRatio = aspectRatio;
 }
 
