@@ -8,6 +8,7 @@
 #include <QWidget>
 #include <QMouseEvent>
 
+class QLabel;
 QT_BEGIN_NAMESPACE
 
 namespace Ui {
@@ -28,14 +29,14 @@ public:
 
     void setDescription(const QString &description);
 
+    void setCoverText(const QString &text);
+
 private:
     void initUi();
 
     void initCoverTextFont();
 
 protected:
-    void paintEvent(QPaintEvent *event) override;
-
     void mousePressEvent(QMouseEvent *event) override;
 
     void mouseReleaseEvent(QMouseEvent *event) override;
@@ -46,10 +47,9 @@ protected:
 
 private:
     Ui::VideoChannelBlock *ui;
-    QString m_coverText;
+    QLabel* m_coverTextLab{};
     QString m_descriptionText;
     QFont m_coverTextFont;
-    bool m_isEnter = false;
 };
 
 

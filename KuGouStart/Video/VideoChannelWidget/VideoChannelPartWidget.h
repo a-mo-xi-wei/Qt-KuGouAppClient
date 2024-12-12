@@ -24,10 +24,8 @@ public:
 private:
     void initUi();
 
-
 private:
     QLabel* m_titleLab{};   //标题
-    QLabel* m_titleDeco{};  //标题旁边的 .MHz
     QWidget* m_tabWidget{}; //下面的容器
 
 };
