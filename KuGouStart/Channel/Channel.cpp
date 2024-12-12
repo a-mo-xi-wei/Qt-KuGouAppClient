@@ -6,7 +6,7 @@
 
 #include "Channel.h"
 #include "ui_Channel.h"
-#include "SScrollArea.h"
+#include "MyScrollArea.h"
 #include "ChannelBlock.h"
 
 #include<QFile>
@@ -123,6 +123,7 @@ void Channel::initUi() {
     }
     {
         this->m_vScrollBar = ui->scrollArea->verticalScrollBar();
+        ui->scrollArea->setScrollAreaKind(MyScrollArea::ScrollAreaKind::Inside);
         //处理信号
         connect(ui->recommend_pushButton, &QPushButton::clicked, this, [this] {
             this->m_vScrollBar->setValue(this->m_recommendWidget->mapToParent(QPoint(0, 0)).y());
@@ -167,7 +168,7 @@ void Channel::initUi() {
             this->m_vScrollBar->setValue(this->m_sportsWidget->mapToParent(QPoint(0, 0)).y());
         });
         //wheelVaue信号
-        connect(ui->scrollArea, &SScrollArea::wheelValue, this, &Channel::handleWheelValue);
+        connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &Channel::handleWheelValue);
         connect(this->m_vScrollBar,&QScrollBar::valueChanged,this, &Channel::handleWheelValue);
         //回到最顶部信号
         connect(this->m_upBtn.get(), &QToolButton::clicked, this, &Channel::onUpBtnClicked);

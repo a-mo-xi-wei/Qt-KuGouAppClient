@@ -539,7 +539,7 @@
     </widget>
    </item>
    <item>
-    <widget class="SScrollArea" name="scrollArea">
+    <widget class="MyScrollArea" name="scrollArea">
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
@@ -623,9 +623,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>SScrollArea</class>
+   <class>MyScrollArea</class>
    <extends>QScrollArea</extends>
-   <header>SScrollArea.h</header>
+   <header>MyScrollArea.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
