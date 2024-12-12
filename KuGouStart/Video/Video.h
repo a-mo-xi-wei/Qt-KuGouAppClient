@@ -24,6 +24,9 @@ public:
 
     ~Video() override;
 
+    void ininUi();
+
+private:
     void initStackedWidget();
 
     void initVideoChannelWidget();
