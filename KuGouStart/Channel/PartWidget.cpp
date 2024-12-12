@@ -6,7 +6,7 @@
 #include "MyFlowLayout.h"
 
 #include <QFile>
-#include <QBoxLayout>
+#include <QHBoxLayout>
 #include <QLabel>
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
