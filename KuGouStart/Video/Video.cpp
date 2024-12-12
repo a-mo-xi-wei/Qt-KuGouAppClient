@@ -45,6 +45,8 @@ void Video::ininUi() {
 }
 
 void Video::initStackedWidget() {
+    // 设置堆栈窗口的布局的边距
+    ui->stackedWidget->setContentsMargins(0, 0, 0, 0);
     initVideoChannelWidget();
     initMVWidget();
     initVideoWidget();
