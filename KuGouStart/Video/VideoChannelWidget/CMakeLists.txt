@@ -15,7 +15,13 @@ set(SOURCE_FILE
     VideoChannelWidget.cpp
     VideoChannelWidget.h
     VideoChannelWidget.ui
-    channel.css
+    channelwidget.css
+    VideoChannelPartWidget.h
+    VideoChannelPartWidget.cpp
+    VideoChannelBlock.h
+    VideoChannelBlock.cpp
+    VideoChannelBlock.ui
+    videoblock.css
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
@@ -23,4 +29,5 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyFlowLayout
+        MyBlockWidget UpToolButton MyScrollArea)
