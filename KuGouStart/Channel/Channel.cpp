@@ -42,7 +42,6 @@ Channel::Channel(QWidget *parent) : QWidget(parent)
 {
     ui->setupUi(this);
     {
-        this->setObjectName("channel");
         QFile file(GET_CURRENT_DIR + QStringLiteral("/channel.css"));
         if (file.open(QIODevice::ReadOnly)) {
             this->setStyleSheet(file.readAll());

@@ -5,7 +5,6 @@
 #ifndef PARTWIDGET_H
 #define PARTWIDGET_H
 
-#include <QWidget>
 #include "ChannelBlock.h"
 
 class QLabel;
