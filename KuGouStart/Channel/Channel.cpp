@@ -174,7 +174,8 @@ void Channel::initUi() {
         connect(this->m_scrollBarTimer, &QTimer::timeout, this, &Channel::onUpBtnShowOrNot);
 
     }
-    auto cur = 0; {
+    auto cur = 0;
+    {
         //m_recommendWidget 17 个
         const QString title[] = {
             "", "国语", "聚会暖场", "抖音热门歌", "中文经典", "中文DJ", "怀旧粤语", "KTV必点曲",
@@ -189,7 +190,8 @@ void Channel::initUi() {
             this->m_recommendWidget->addBlockWidget(block);
         }
     }
-    cur += 17; {
+    cur += 17;
+    {
         //m_djWidget 14 个
         const QString title[] = {
             "", "中文DJ", "抖音最火DJ", "情歌DJ", "车载舞曲", "重低音", "EDM热歌",
@@ -204,7 +206,8 @@ void Channel::initUi() {
             this->m_djWidget->addBlockWidget(block);
         }
     }
-    cur += 14; {
+    cur += 14;
+    {
         //m_languageWidget 17 个
         const QString title[] = {
             "", "百听不厌英文歌", "怀旧粤语", "粤语", "欧美", "怀旧华语", "闽南语",
@@ -220,7 +223,8 @@ void Channel::initUi() {
             this->m_languageWidget->addBlockWidget(block);
         }
     }
-    cur += 17; {
+    cur += 17;
+    {
         //m_themeWidget 28 个
         const QString title[] = {
             "", "0.8x慢速", "KTV必点曲", "网络红歌", "中文经典", "伤感网络情歌",
@@ -238,7 +242,8 @@ void Channel::initUi() {
             this->m_themeWidget->addBlockWidget(block);
         }
     }
-    cur += 28; {
+    cur += 28;
+    {
         //m_sceneWidget 18 个
         const QString title[] = {
             "", "广场舞", "咖啡厅", "一个人", "工作加油曲", "睡前",
@@ -254,7 +259,8 @@ void Channel::initUi() {
             this->m_sceneWidget->addBlockWidget(block);
         }
     }
-    cur += 18; {
+    cur += 18;
+    {
         //m_moodWidget 8 个
         const QString title[] = {"", "安静", "轻松", "伤感", "寂寞", "甜蜜", "兴奋", "思念", "快乐"};
         for (int i = 1; i <= 8; ++i) {
@@ -266,7 +272,8 @@ void Channel::initUi() {
             this->m_moodWidget->addBlockWidget(block);
         }
     }
-    cur += 8; {
+    cur += 8;
+    {
         //m_styleWidget 14 个
         const QString title[] = {
             "", "轻音乐", "草原风", "流行", "民歌", "乡村音乐",
@@ -281,7 +288,8 @@ void Channel::initUi() {
             this->m_styleWidget->addBlockWidget(block);
         }
     }
-    cur += 14; {
+    cur += 14;
+    {
         //m_crowdWidget 4 个
         const QString title[] = {"", "90后", "80后", "70后", "00后"};
         for (int i = 1; i <= 4; ++i) {
@@ -293,7 +301,8 @@ void Channel::initUi() {
             this->m_crowdWidget->addBlockWidget(block);
         }
     }
-    cur += 4; {
+    cur += 4;
+    {
         //m_childrenWidget 12 个
         const QString title[] = {
             "", "儿童故事", "0-1岁儿歌", "1-3岁儿歌",
@@ -309,7 +318,8 @@ void Channel::initUi() {
             this->m_childrenWidget->addBlockWidget(block);
         }
     }
-    cur += 12; {
+    cur += 12;
+    {
         //m_musicalInstrumentWidget 11 个
         const QString title[] = {
             "", "钢琴", "古筝", "萨克斯", "八音盒", "吉他", "尤克里里",
@@ -324,7 +334,8 @@ void Channel::initUi() {
             this->m_musicalInstrumentWidget->addBlockWidget(block);
         }
     }
-    cur += 11; {
+    cur += 11;
+    {
         //m_labelWidget 6 个
         const QString title[] = {
             "", "滚石唱片推荐", "华纳唱片", "JYP", "SACRA MUSIC",
@@ -339,7 +350,8 @@ void Channel::initUi() {
             this->m_labelWidget->addBlockWidget(block);
         }
     }
-    cur += 6; {
+    cur += 6;
+    {
         //m_varietyWidget 27 个
         const QString title[] = {
             "", "声生不息-宝岛季", "来看我们的演唱会", "声生不息-港乐季",
@@ -357,7 +369,8 @@ void Channel::initUi() {
             this->m_varietyWidget->addBlockWidget(block);
         }
     }
-    cur += 27; {
+    cur += 27;
+    {
         //m_nationalCustomsWidget 6 个
         const QString title[] = {"", "中国风精选", "古风好歌", "伤感国风", "国风新歌", "国风经典", "热血国风"};
         for (int i = 1; i <= 6; ++i) {
@@ -369,7 +382,8 @@ void Channel::initUi() {
             this->m_nationalCustomsWidget->addBlockWidget(block);
         }
     }
-    cur += 6; {
+    cur += 6;
+    {
         //m_sportsWidget 7 个
         const QString title[] = {"", "健身房", "跑步", "动感单车", "热身", "HIIT", "力量训练", "瑜伽"};
         for (int i = 1; i <= 7; ++i) {
@@ -675,9 +689,9 @@ void Channel::onUpBtnShowOrNot() {
 
 void Channel::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
-    ui->scrollArea->setFixedHeight(this->window()->height() - 305);
-    //UpWidget移动
     auto parent = this->window();
+    ui->scrollArea->setFixedHeight(parent->height() - 305);
+    //UpWidget移动
     this->m_upBtn->move(parent->width() - this->m_upBtn->width() - 206,
                         parent->height() - this->m_upBtn->height() - 190);
     this->m_upBtn->raise();
