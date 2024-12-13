@@ -1,6 +1,9 @@
 #include <QWidget>
 #include "MyFlowLayout.h"
 
+#define DEFAULTSPACE 10
+#define DEFAULTHOMESPACE 10
+
 MyFlowLayout::MyFlowLayout(QWidget *parent, int margin, int hSpacing, int vSpacing)
     : QLayout(parent),
       m_hSpace(hSpacing),
@@ -34,17 +37,15 @@ void MyFlowLayout::addItem(QLayoutItem *item) {
 int MyFlowLayout::horizontalSpacing() const {
     if (m_hSpace >= 0 || m_hSpace == -1) {
         return m_hSpace;
-    } else {
-        return smartSpacing(QStyle::PM_LayoutHorizontalSpacing);
     }
+    return smartSpacing(QStyle::PM_LayoutHorizontalSpacing);
 }
 
 int MyFlowLayout::verticalSpacing() const {
     if (m_vSpace >= 0 || m_vSpace == -1) {
         return m_vSpace;
-    } else {
-        return smartSpacing(QStyle::PM_LayoutVerticalSpacing);
     }
+    return smartSpacing(QStyle::PM_LayoutVerticalSpacing);
 }
 
 int MyFlowLayout::count() const {
@@ -67,7 +68,7 @@ int MyFlowLayout::fillSpaceX(QWidget *wid) const {
     int numH = 0;
     int space = 4;
     if (m_home) {
-        space = 24;
+        space = DEFAULTHOMESPACE;
     }
     int len = this->parentWidget()->width() - this->contentsMargins().left() - this->contentsMargins().right();
     while (true) {
@@ -81,17 +82,17 @@ int MyFlowLayout::fillSpaceX(QWidget *wid) const {
     num = num - 1;
     if (num <= 1) {
         //numH = static_cast<int>(itemList.size());
-        return 32;
+        return DEFAULTSPACE;
     }
     int height = wid->height();
-    numH = ceil(double(itemList.size()) / num);
+    numH = ceil(static_cast<double>(itemList.size()) / num);
     x = len + space - num * (wid->width() + space);
-    x = ceil(double(x) / (num - 1)) + space;
+    x = ceil(static_cast<double>(x) / (num - 1)) + space;
     x = x - 1; //考虑边框等因素影响
 
-    int maxY = numH * (height + x) + 32 - x;
+    int maxY = numH * (height + x) + DEFAULTSPACE - x;
     if (m_home) {
-        maxY = numH * (height + 24) + 32;
+        maxY = numH * (height + DEFAULTHOMESPACE) + DEFAULTSPACE;
     }
     this->parentWidget()->setFixedHeight(maxY);
     return x;
@@ -161,7 +162,7 @@ int MyFlowLayout::doLayout(const QRect &rect, bool testOnly) const {
                 QSizePolicy::PushButton, QSizePolicy::PushButton, Qt::Vertical);
         }
         if (m_home) {
-            spaceY = 32;
+            spaceY = DEFAULTSPACE;
         }
         int nextX = x + item->sizeHint().width() + spaceX;
         if (nextX - spaceX > effectiveRect.right() && lineHeight > 0) {
@@ -185,9 +186,11 @@ int MyFlowLayout::smartSpacing(QStyle::PixelMetric pm) const {
     if (!parent) {
         return -1;
     }
+    // 当父是QWidget=>顶层布局的默认间距为pm样式。
     if (parent->isWidgetType()) {
         auto pw = static_cast<QWidget *>(parent);
-        return pw->style()->pixelMetric(pm, 0, pw);
+        return pw->style()->pixelMetric(pm, nullptr, pw);
     }
+    // 当父为QLayout=>子布局的默认间距由父布局的间距来确定。
     return static_cast<QLayout *>(parent)->spacing();
 }
