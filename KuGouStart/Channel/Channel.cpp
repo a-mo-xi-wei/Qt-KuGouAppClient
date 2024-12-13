@@ -400,7 +400,6 @@ void Channel::initUi() {
 void Channel::initVector() {
     {
         //插入歌曲和歌手的配对关系
-        this->m_songAndsinger.emplace_back(" ", " ");
         this->m_songAndsinger.emplace_back("租购", "薛之谦");
         this->m_songAndsinger.emplace_back("还会再相遇", "时代少年团");
         this->m_songAndsinger.emplace_back("篇章(郜一菲小号合作曲)", "王赫野");
