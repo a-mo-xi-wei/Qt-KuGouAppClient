@@ -123,6 +123,10 @@ void SMaskWidget::mousePressEvent(QMouseEvent *event) {
     event->ignore();
 }
 
+void SMaskWidget::mouseDoubleClickEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
 void SMaskWidget::mouseReleaseEvent(QMouseEvent *event) {
     //qDebug() << "鼠标释放";
     event->ignore();

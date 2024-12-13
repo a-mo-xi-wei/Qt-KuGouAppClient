@@ -221,6 +221,10 @@ void MyBlockWidget::mousePressEvent(QMouseEvent *event) {
     event->ignore();
 }
 
+void MyBlockWidget::mouseDoubleClickEvent(QMouseEvent *event) {
+    event->ignore();
+}
+
 void MyBlockWidget::mouseReleaseEvent(QMouseEvent *event) {
     event->ignore();
 }
