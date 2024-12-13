@@ -87,6 +87,7 @@ void VideoChannelWidget::initUi() {
     {
         //加入布局
         auto lay = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout());
+        lay->setSpacing(0);
         if (!lay) {
             qWarning() << "布局不存在";
             return;
