@@ -29,9 +29,9 @@ public:
     ~VideoChannelWidget() override;
 
 private:
-    void initButtonGroup();
+    void initButtonGroup()const;
 
-    void initTotalWidget();
+    void initTotalWidget()const;
 
     void initUi();
 

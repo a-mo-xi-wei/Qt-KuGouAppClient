@@ -31,11 +31,11 @@ PartWidget::PartWidget(QWidget *parent)
     }
 }
 
-void PartWidget::setTitleName(const QString &title) {
+void PartWidget::setTitleName(const QString &title)const {
     this->m_titleLab->setText(" " + title);
 }
 
-void PartWidget::addBlockWidget(ChannelBlock* block) {
+void PartWidget::addBlockWidget(ChannelBlock* block)const {
     auto lay = static_cast<MyFlowLayout*>(this->m_tabWidget->layout());
     lay->addWidget(block);
 }
@@ -52,7 +52,8 @@ void PartWidget::initUi() {
     auto vlay = new QVBoxLayout(this);
     vlay->addLayout(hlay);
     vlay->addWidget(this->m_tabWidget);
-    auto lay = new MyFlowLayout(this->m_tabWidget,8, -1, 20);
+    auto lay = new MyFlowLayout(this->m_tabWidget,12, -1, -1);
+    lay->setContentsMargins(0,0,0,0);
     this->m_tabWidget->setLayout(lay);
 }
 

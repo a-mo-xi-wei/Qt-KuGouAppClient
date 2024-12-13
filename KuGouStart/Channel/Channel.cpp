@@ -62,7 +62,7 @@ Channel::~Channel() {
     delete ui;
 }
 
-void Channel::initButtonGroup() {
+void Channel::initButtonGroup()const {
     this->m_buttonGroup->addButton(ui->recommend_pushButton);
     this->m_buttonGroup->addButton(ui->DJ_pushButton);
     this->m_buttonGroup->addButton(ui->language_pushButton);
@@ -80,7 +80,7 @@ void Channel::initButtonGroup() {
     this->m_buttonGroup->setExclusive(true);
 }
 
-void Channel::initTotalWidget() {
+void Channel::initTotalWidget()const {
     this->m_recommendWidget->setTitleName("推荐");
     this->m_djWidget->setTitleName("DJ");
     this->m_languageWidget->setTitleName("语言");

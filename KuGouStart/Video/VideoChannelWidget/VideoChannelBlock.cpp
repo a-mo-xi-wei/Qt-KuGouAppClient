@@ -39,7 +39,7 @@ VideoChannelBlock::~VideoChannelBlock() {
     delete ui;
 }
 
-void VideoChannelBlock::setCoverPix(const QString &pixmapPath) {
+void VideoChannelBlock::setCoverPix(const QString &pixmapPath)const {
     ui->cover_widget->setBorderImage(pixmapPath, 10);
 }
 
@@ -47,7 +47,7 @@ void VideoChannelBlock::setDescription(const QString &description) {
     this->m_descriptionText = description;
 }
 
-void VideoChannelBlock::setCoverText(const QString &text) {
+void VideoChannelBlock::setCoverText(const QString &text)const {
     this->m_coverTextLab->setFont(this->m_coverTextFont);
     this->m_coverTextLab->setText(text);
     // 计算绘制区域

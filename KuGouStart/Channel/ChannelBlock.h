@@ -25,18 +25,18 @@ public:
 
     ~ChannelBlock() override;
 
-    void setCoverPix(const QString &pixmapPath);
+    void setCoverPix(const QString &pixmapPath)const;
 
     void setTitleText(const QString &title);
 
     void setSingerSongText(const QString &singerSong);
 
 private:
-    void initUi();
+    void initUi()const;
 
-    void updateTitleText();
+    void updateTitleText()const;
 
-    void updateSingerSongText();
+    void updateSingerSongText()const;
 
 protected:
     void enterEvent(QEnterEvent *event) override;

@@ -16,9 +16,9 @@ Q_OBJECT
 public:
     explicit PartWidget(QWidget *parent = nullptr);
 
-    void setTitleName(const QString &title);
+    void setTitleName(const QString &title)const;
 
-    void addBlockWidget(ChannelBlock* block);
+    void addBlockWidget(ChannelBlock* block)const;
 
 private:
     void initUi();

@@ -34,11 +34,11 @@ ChannelBlock::~ChannelBlock() {
     delete ui;
 }
 
-void ChannelBlock::setCoverPix(const QString &pixmapPath) {
+void ChannelBlock::setCoverPix(const QString &pixmapPath)const {
     ui->cover_widget->setBorderImage(pixmapPath,10);
 }
 
-void ChannelBlock::initUi() {
+void ChannelBlock::initUi()const {
     //遮罩设置
     auto& mask = ui->cover_widget->getMask();
     mask.setDefaultFillCircleColor(Qt::white);
@@ -57,7 +57,7 @@ void ChannelBlock::setTitleText(const QString &title) {
     updateTitleText();
 }
 
-void ChannelBlock::updateTitleText() {
+void ChannelBlock::updateTitleText()const {
     //设置字体测量工具
     auto font = ui->title_label->font();
     QFontMetrics fm(font);
@@ -71,7 +71,7 @@ void ChannelBlock::setSingerSongText(const QString &singerSong) {
     updateSingerSongText();
 }
 
-void ChannelBlock::updateSingerSongText() {
+void ChannelBlock::updateSingerSongText()const {
     //设置字体测量工具
     auto font = ui->singe_song_label->font();
     QFontMetrics fm(font);

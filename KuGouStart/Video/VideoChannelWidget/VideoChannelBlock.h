@@ -25,11 +25,11 @@ public:
 
     ~VideoChannelBlock() override;
 
-    void setCoverPix(const QString &pixmapPath);
+    void setCoverPix(const QString &pixmapPath)const;
 
     void setDescription(const QString &description);
 
-    void setCoverText(const QString &text);
+    void setCoverText(const QString &text)const;
 
 private:
     void initUi();

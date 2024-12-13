@@ -29,14 +29,14 @@ Video::Video(QWidget *parent) :
         }
     }
     initStackedWidget();
-    ininUi();
+    initUi();
 }
 
 Video::~Video() {
     delete ui;
 }
 
-void Video::ininUi() {
+void Video::initUi()const {
     ui->index_label1->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
     ui->index_label2->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
     ui->index_label3->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));

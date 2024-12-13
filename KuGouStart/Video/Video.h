@@ -24,7 +24,7 @@ public:
 
     ~Video() override;
 
-    void ininUi();
+    void initUi()const;
 
 private:
     void initStackedWidget();

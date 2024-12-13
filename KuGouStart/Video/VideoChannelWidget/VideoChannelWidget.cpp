@@ -54,7 +54,7 @@ VideoChannelWidget::~VideoChannelWidget() {
     delete ui;
 }
 
-void VideoChannelWidget::initButtonGroup() {
+void VideoChannelWidget::initButtonGroup()const {
     this->m_buttonGroup->addButton(ui->popular_pushButton);
     this->m_buttonGroup->addButton(ui->children_pushButton);
     this->m_buttonGroup->addButton(ui->theme_pushButton);
@@ -69,7 +69,7 @@ void VideoChannelWidget::initButtonGroup() {
     this->m_buttonGroup->setExclusive(true);
 }
 
-void VideoChannelWidget::initTotalWidget() {
+void VideoChannelWidget::initTotalWidget()const {
     this->m_popularWidget->setTitleName("热门");
     this->m_childrenWidget->setTitleName("儿童");
     this->m_themeWidget->setTitleName("主题");

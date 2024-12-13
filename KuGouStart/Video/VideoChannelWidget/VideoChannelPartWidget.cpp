@@ -17,16 +17,17 @@ VideoChannelPartWidget::VideoChannelPartWidget(QWidget *parent)
     initUi();
 }
 
-void VideoChannelPartWidget::setTitleName(const QString &title) {
+void VideoChannelPartWidget::setTitleName(const QString &title)const {
     this->m_titleLab->setText(" " + title);
 }
 
-void VideoChannelPartWidget::addBlockWidget(VideoChannelBlock *block) {
+void VideoChannelPartWidget::addBlockWidget(VideoChannelBlock *block)const {
     auto lay = static_cast<MyFlowLayout*>(this->m_tabWidget->layout());
     lay->addWidget(block);
 }
 
 void VideoChannelPartWidget::initUi() {
+    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     this->setContentsMargins(0,0,0,0);
     this->m_titleLab->setStyleSheet("font-weight: bold;font-size: 16px;color: black;");
     auto hlay = new QHBoxLayout;
@@ -35,7 +36,16 @@ void VideoChannelPartWidget::initUi() {
     auto vlay = new QVBoxLayout(this);
     vlay->addLayout(hlay);
     vlay->addWidget(this->m_tabWidget);
-    auto lay = new MyFlowLayout(this->m_tabWidget,8, -1, 10);
+    //auto lay = new MyFlowLayout(this->m_tabWidget,15,-1,-1);
+    auto lay = new MyFlowLayout(this->m_tabWidget,true,5);//这个有间隙，符合要求
+    lay->setContentsMargins(0,0,0,0);
     this->m_tabWidget->setLayout(lay);
+    this->m_tabWidget->setContentsMargins(0,0,0,0);
+    //this->m_tabWidget->setStyleSheet("background-color:pink;");
+}
+
+void VideoChannelPartWidget::paintEvent(QPaintEvent *event) {
+    QWidget::paintEvent(event);
+
 }
 
