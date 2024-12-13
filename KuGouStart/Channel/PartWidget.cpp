@@ -52,7 +52,7 @@ void PartWidget::initUi() {
     auto vlay = new QVBoxLayout(this);
     vlay->addLayout(hlay);
     vlay->addWidget(this->m_tabWidget);
-    auto lay = new MyFlowLayout(this->m_tabWidget,16, -1, -1);
+    auto lay = new MyFlowLayout(this->m_tabWidget,8, -1, 20);
     this->m_tabWidget->setLayout(lay);
 }
 
