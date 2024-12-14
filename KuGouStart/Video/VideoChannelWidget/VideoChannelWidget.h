@@ -37,8 +37,8 @@ private:
 
     void initVector();
 
-    private slots:
-        void handleWheelValue(const int& value);
+private slots:
+    void handleWheelValue(const int& value);
 
     void onUpBtnClicked();
 
