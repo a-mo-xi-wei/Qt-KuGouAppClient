@@ -55,7 +55,7 @@ void SMaskWidget::calOnce() {
     m_cp = static_cast<const QPointF>(QPointF(m_centerX + tmp / 15, m_centerY));
 }
 
-bool SMaskWidget::isMouseInCircle(const float &mouseX, const float &mouseY) {
+bool SMaskWidget::isMouseInCircle(const float &mouseX, const float &mouseY)const {
     // 计算鼠标位置和圆心的距离
     const float dx = mouseX - m_w/2;
     const float dy = mouseY - m_h/2;

@@ -74,7 +74,7 @@ void MyBlockWidget::initTipArr() {
                 QStringLiteral("甜蜜"),QStringLiteral("广场舞"),};
 }
 
-void MyBlockWidget::setBorderImage(const QString &path,const int& border) {
+void MyBlockWidget::setBorderImage(const QString &path,const int& border)const {
     QString style = QString("border-radius:%1px;border-image:url(%2);").arg(border).arg(path);
     //qDebug()<<"当前样式："<<style;
     this->m_bacWidget->setStyleSheet(style);
@@ -83,7 +83,7 @@ void MyBlockWidget::setBorderImage(const QString &path,const int& border) {
     }
 }
 
-void MyBlockWidget::setTipLabText(const QString &text) {
+void MyBlockWidget::setTipLabText(const QString &text)const {
     this->m_tipLab->setText(text);
 }
 
@@ -101,7 +101,7 @@ void MyBlockWidget::setPopularDirection(const int &direction) {
     }
 }
 
-void MyBlockWidget::setPopularBtnText(const QString &text) {
+void MyBlockWidget::setPopularBtnText(const QString &text)const {
     if(!this->m_popularDirection)return;
 
     if(this->m_popularDirection == 1) {
@@ -118,7 +118,7 @@ void MyBlockWidget::setPopularBtnText(const QString &text) {
     }
 }
 
-void MyBlockWidget::setShowTip(const bool &show) {
+void MyBlockWidget::setShowTip(const bool &show) const{
     if(show)this->m_tipLab->show();
 }
 
@@ -126,11 +126,11 @@ void MyBlockWidget::setExpandRespond(const bool &expandRespond) {
     this->m_isExpandRespond = expandRespond;
 }
 
-void MyBlockWidget::setRightPopularBtnIcon(const QString &icon) {
+void MyBlockWidget::setRightPopularBtnIcon(const QString &icon)const {
     this->m_rightPopularBtn->setIcon(QIcon(icon));
 }
 
-void MyBlockWidget::setLeftPopularBtnIcon(const QString &icon) {
+void MyBlockWidget::setLeftPopularBtnIcon(const QString &icon)const {
     this->m_leftPopularBtn->setIcon(QIcon(icon));
 }
 
@@ -155,7 +155,7 @@ void MyBlockWidget::setHaveNumberUnit(const bool &haveNumberUnit) {
     this->m_haveUnit = haveNumberUnit;
 }
 
-SMaskWidget& MyBlockWidget::getMask() {
+SMaskWidget& MyBlockWidget::getMask()const {
     return *m_mask;
 }
 
@@ -193,7 +193,6 @@ void MyBlockWidget::enterEvent(QEnterEvent *ev) {
             update();
         }
     }
-
 }
 
 void MyBlockWidget::leaveEvent(QEvent *ev) {

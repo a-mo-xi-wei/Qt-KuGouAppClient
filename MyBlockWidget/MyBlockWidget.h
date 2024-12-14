@@ -18,21 +18,21 @@ class MyBlockWidget : public QWidget {
 public:
     explicit MyBlockWidget(QWidget *parent = nullptr);
 
-    void setBorderImage(const QString &path,const int& border = 8);
+    void setBorderImage(const QString &path,const int& border = 8)const;
 
-    void setTipLabText(const QString &text);
+    void setTipLabText(const QString &text)const;
 
     void setPopularDirection(const int &direction);
 
-    void setPopularBtnText(const QString &text);
+    void setPopularBtnText(const QString &text)const;
 
-    void setShowTip(const bool &show);
+    void setShowTip(const bool &show)const;
 
     void setExpandRespond(const bool &expandRespond);
 
-    void setRightPopularBtnIcon(const QString& icon);
+    void setRightPopularBtnIcon(const QString& icon)const;
 
-    void setLeftPopularBtnIcon(const QString& icon);
+    void setLeftPopularBtnIcon(const QString& icon)const;
 
     void setAspectRatio(const float &aspectRatio);
 
@@ -40,7 +40,7 @@ public:
 
     void setHaveNumberUnit(const bool &haveNumberUnit);
 
-    SMaskWidget &getMask();
+    SMaskWidget &getMask()const;
 
 public slots:
     void onShowMask();

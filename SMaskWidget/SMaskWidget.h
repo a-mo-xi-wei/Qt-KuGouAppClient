@@ -3,7 +3,6 @@
 
 #include <QWidget>
 #include<QPainter>
-#include<memory>
 
 class SMaskWidget : public QWidget {
     Q_OBJECT
@@ -28,7 +27,7 @@ public:
 private:
     void calOnce();
 
-    bool isMouseInCircle(const float &mouseX, const float &mouseY);
+    bool isMouseInCircle(const float &mouseX, const float &mouseY)const;
 
 protected:
     void paintEvent(QPaintEvent *event) override;
