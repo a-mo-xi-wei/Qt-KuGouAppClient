@@ -8,7 +8,7 @@
 #include "ui_RecommendForYou.h"
 #include "TableWidget.h"
 
-#include<QDir>
+#include <QDir>
 #include <QResizeEvent>
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
@@ -41,8 +41,10 @@ RecommendForYou::~RecommendForYou() {
 void RecommendForYou::initAdvertiseBoard() const {
     QDir dir(__FILE__);
     dir.cdUp();
+    dir.cdUp();
     //qDebug()<<"当前目录："<<dir.dirName();
-    dir.cd("recommend/poster");
+    dir.cd("Res/recommend/poster");
+    //qDebug()<<"当前目录："<<dir.dirName();
 
     auto s = dir.entryList(QDir::Files | QDir::NoDotAndDotDot).size();
     //qDebug()<<"共有: "<<s<<" 条数据";
