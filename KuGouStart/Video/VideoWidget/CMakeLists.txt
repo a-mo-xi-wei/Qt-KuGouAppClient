@@ -15,7 +15,13 @@ set(SOURCE_FILE
     VideoWidget.cpp
     VideoWidget.h
     VideoWidget.ui
+    VideoBlockWidget.h
+    VideoBlockWidget.cpp
+    VideoBlockWidget.ui
+    VideoPartWidget.h
+    VideoPartWidget.cpp
     video.css
+    block.css
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
