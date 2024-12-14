@@ -17,8 +17,6 @@
 #include<QScrollBar>
 #include <QTimer>
 #include <QShortcut>
-constexpr int SHADOW_WIDTH = 5;
-constexpr int RADIUS = 12;
 
 QPixmap roundedPixmap(const QPixmap &src, QSize size, int radius) {
     QPixmap scaled = src.scaled(size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
@@ -442,7 +440,7 @@ void KuGouApp::mouseMoveEvent(QMouseEvent *event) {
     MainWindow::mouseMoveEvent(event);
     if (this->m_isTransForming)return;
     // 计算的鼠标移动偏移量, 就是鼠标全局坐标 - 减去点击时鼠标坐标
-    QPoint point_offset = event->globalPosition().toPoint() - mousePs;
+    point_offset = event->globalPosition().toPoint() - mousePs;
 
     if (isPress) {
         if (mouse_press_region == kMousePositionMid) {
@@ -472,74 +470,15 @@ void KuGouApp::mouseMoveEvent(QMouseEvent *event) {
                 move(windowsLastPs + point_offset);
             }
         }
-        else {
-            // 其他部分 是拉伸窗口
-            // 获取客户区
-            QRect rect = this->geometry();
-            switch (mouse_press_region) {
-                // 左上角
-                case kMousePositionLeftTop:
-                    rect.setTopLeft(rect.topLeft() + point_offset);
-                    break;
-                case kMousePositionTop:
-                    rect.setTop(rect.top() + point_offset.y());
-                    break;
-                case kMousePositionRightTop:
-                    rect.setTopRight(rect.topRight() + point_offset);
-                    break;
-                case kMousePositionRight:
-                    rect.setRight(rect.right() + point_offset.x());
-                    break;
-                case kMousePositionRightBottom:
-                    rect.setBottomRight(rect.bottomRight() + point_offset);
-                    break;
-                case kMousePositionBottom:
-                    rect.setBottom(rect.bottom() + point_offset.y());
-                    break;
-                case kMousePositionLeftBottom:
-                    rect.setBottomLeft(rect.bottomLeft() + point_offset);
-                    break;
-                case kMousePositionLeft:
-                    rect.setLeft(rect.left() + point_offset.x());
-                    break;
-                default:
-                    break;
-            }
-            setGeometry(rect);
-            mousePs = event->globalPosition().toPoint();
-        }
     }
 }
 
 void KuGouApp::paintEvent(QPaintEvent *ev) {
-    QWidget::paintEvent(ev);
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing, true);
-    //QBrush brush(QColor(QStringLiteral("#eef2ff")));
-    //painter.setBrush(brush);
-    //painter.setPen(Qt::NoPen);
-    //QPainterPath path;
-    //path.addRoundedRect(this->rect(), RADIUS, RADIUS);
-    //painter.drawPath(path);
-    //------------绘制阴影
-    QPainterPath path1;
-    path1.setFillRule(Qt::WindingFill);
-    path1.addRoundedRect(SHADOW_WIDTH,SHADOW_WIDTH, this->width() - SHADOW_WIDTH * 2, this->height() - SHADOW_WIDTH * 2,RADIUS,RADIUS);
-    QColor color(150, 150, 150, 55);
-    for (int i = 0; i != SHADOW_WIDTH; ++i)
-    {
-        QPainterPath path;
-        path.setFillRule(Qt::WindingFill);
-        path.addRoundedRect(SHADOW_WIDTH - i, SHADOW_WIDTH- i, this->width() - (SHADOW_WIDTH- i) * 2,
-                            this->height() - (SHADOW_WIDTH- i) * 2, RADIUS, RADIUS);
-        color.setAlpha(180 - static_cast<int>(qSqrt(i) * 80));
-        painter.setPen(color);
-        painter.drawPath(path);
-    }
+    MainWindow::paintEvent(ev);
 }
 
 void KuGouApp::resizeEvent(QResizeEvent *event) {
-    QWidget::resizeEvent(event);
+    MainWindow::resizeEvent(event);
     //qDebug()<<"KuGouApp::resizeEvent , size = "<<event->size();
     if(this->geometry() != this->screen()->availableGeometry()) {
         //一旦拖动边框改变大小，就不再是全屏

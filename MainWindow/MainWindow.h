@@ -45,8 +45,11 @@ Q_OBJECT
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow() override;
+
 protected:
+    void paintEvent(QPaintEvent *event) override;
+
+    void resizeEvent(QResizeEvent *event) override;
 
     void mousePressEvent(QMouseEvent *ev) override;
 
@@ -66,6 +69,7 @@ public:
     QPoint windowsLastPs;
     QPoint mousePs;
     int mouse_press_region = kMousePositionMid;
+    QPoint point_offset;
 };
 
 

@@ -1,13 +1,46 @@
 #include "MainWindow.h"
 #include "WaterDrop.h"
 #include<QMouseEvent>
+#include <QPainter>
+#include <QPainterPath>
+
+constexpr int SHADOW_WIDTH = 5;
+constexpr int RADIUS = 12;
 
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent)
 {
 }
 
-MainWindow::~MainWindow() {
+void MainWindow::paintEvent(QPaintEvent *event) {
+    QWidget::paintEvent(event);
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    //QBrush brush(QColor(QStringLiteral("#eef2ff")));
+    //painter.setBrush(brush);
+    //painter.setPen(Qt::NoPen);
+    //QPainterPath path;
+    //path.addRoundedRect(this->rect(), RADIUS, RADIUS);
+    //painter.drawPath(path);
+    //------------绘制阴影
+    QPainterPath path1;
+    path1.setFillRule(Qt::WindingFill);
+    path1.addRoundedRect(SHADOW_WIDTH,SHADOW_WIDTH, this->width() - SHADOW_WIDTH * 2, this->height() - SHADOW_WIDTH * 2,RADIUS,RADIUS);
+    QColor color(150, 150, 150, 55);
+    for (int i = 0; i != SHADOW_WIDTH; ++i)
+    {
+        QPainterPath path;
+        path.setFillRule(Qt::WindingFill);
+        path.addRoundedRect(SHADOW_WIDTH - i, SHADOW_WIDTH- i, this->width() - (SHADOW_WIDTH- i) * 2,
+                            this->height() - (SHADOW_WIDTH- i) * 2, RADIUS, RADIUS);
+        color.setAlpha(180 - static_cast<int>(qSqrt(i) * 80));
+        painter.setPen(color);
+        painter.drawPath(path);
+    }
+}
+
+void MainWindow::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
 }
 
 
@@ -41,7 +74,47 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event) {
     QWidget::mouseMoveEvent(event);
     // 设置鼠标的形状
     SetMouseCursor(event->pos().x(), event->pos().y());
+// 计算的鼠标移动偏移量, 就是鼠标全局坐标 - 减去点击时鼠标坐标
+    this->point_offset = event->globalPosition().toPoint() - mousePs;
 
+    if (isPress) {
+        if (mouse_press_region != kMousePositionMid) {
+            // 拉伸窗口
+            // 获取客户区
+            QRect rect = this->geometry();
+            switch (mouse_press_region) {
+                // 左上角
+                case kMousePositionLeftTop:
+                    rect.setTopLeft(rect.topLeft() + point_offset);
+                break;
+                case kMousePositionTop:
+                    rect.setTop(rect.top() + point_offset.y());
+                break;
+                case kMousePositionRightTop:
+                    rect.setTopRight(rect.topRight() + point_offset);
+                break;
+                case kMousePositionRight:
+                    rect.setRight(rect.right() + point_offset.x());
+                break;
+                case kMousePositionRightBottom:
+                    rect.setBottomRight(rect.bottomRight() + point_offset);
+                break;
+                case kMousePositionBottom:
+                    rect.setBottom(rect.bottom() + point_offset.y());
+                break;
+                case kMousePositionLeftBottom:
+                    rect.setBottomLeft(rect.bottomLeft() + point_offset);
+                break;
+                case kMousePositionLeft:
+                    rect.setLeft(rect.left() + point_offset.x());
+                break;
+                default:
+                    break;
+            }
+            setGeometry(rect);
+            mousePs = event->globalPosition().toPoint();
+        }
+    }
 }
 
 void MainWindow::SetMouseCursor(int x, int y) {
