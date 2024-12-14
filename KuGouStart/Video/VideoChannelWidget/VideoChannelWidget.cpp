@@ -35,7 +35,8 @@ VideoChannelWidget::VideoChannelWidget(QWidget *parent)
       , m_siteWidget(std::make_unique<VideoChannelPartWidget>(this))
       , m_singerWidget(std::make_unique<VideoChannelPartWidget>(this))
       , m_scrollBarTimer(new QTimer(this)) {
-    ui->setupUi(this); {
+    ui->setupUi(this);
+    {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/channelwidget.css"));
         if (file.open(QIODevice::ReadOnly)) {
             this->setStyleSheet(file.readAll());
