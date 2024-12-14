@@ -38,8 +38,16 @@ AdvertiseBoard::AdvertiseBoard(QWidget *parent)
     this->m_leftLab->setAlignment(Qt::AlignCenter);
     this->m_rightLab->setAlignment(Qt::AlignCenter);
 
-    connect(this->m_leftLab, &MyLLabel::clicked, [this] {posterIndex = (posterIndex - 1 + static_cast<int>(this->m_posters.size())) % static_cast<int>(this->m_posters.size()); this->update(); });
-    connect(this->m_rightLab, &MyRLabel::clicked, [this] {posterIndex = (posterIndex + 1) % static_cast<int>(this->m_posters.size()); this->update(); });
+    connect(this->m_leftLab, &MyLLabel::clicked, [this] {
+        posterIndex = (posterIndex - 1 + static_cast<int>(this->m_posters.size())) % static_cast<int>(this->m_posters.size());
+        this->update();
+        this->m_timer->start(3000);
+    });
+    connect(this->m_rightLab, &MyRLabel::clicked, [this] {
+        posterIndex = (posterIndex + 1) % static_cast<int>(this->m_posters.size());
+        this->update();
+        this->m_timer->start(3000);
+    });
 
     updateLabPosition();
 }
