@@ -14,8 +14,10 @@
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
-RecommendForYou::RecommendForYou(QWidget *parent) :
-    QWidget(parent), ui(new Ui::RecommendForYou) {
+RecommendForYou::RecommendForYou(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::RecommendForYou)
+{
     ui->setupUi(this);
 
     QFile file(GET_CURRENT_DIR + QStringLiteral("/recommend.css"));
@@ -36,9 +38,9 @@ RecommendForYou::~RecommendForYou() {
     delete ui;
 }
 
-void RecommendForYou::initAdvertiseBoard()
-{
-    QDir dir(__FILE__);dir.cdUp();
+void RecommendForYou::initAdvertiseBoard() const {
+    QDir dir(__FILE__);
+    dir.cdUp();
     //qDebug()<<"当前目录："<<dir.dirName();
     dir.cd("recommend/poster");
 
@@ -51,10 +53,9 @@ void RecommendForYou::initAdvertiseBoard()
         //if(pix.isNull())qDebug()<<"图像错误";
         ui->advertise_board_widget->addPoster(QPixmap(QString(":/RecommendForYou/Res/recommend/poster/%1.jpg").arg(i)));
     }
-
 }
 
-void RecommendForYou::initClassifyWidget() {
+void RecommendForYou::initClassifyWidget() const {
     //QIcon ico = QIcon(":/RecommendForYou/recommend/tabIcon/rili.svg");
     //if(ico.isNull())qDebug()<<"++++++++++ico 为空++++++++++++++";
     //QFile file(":/RecommendForYou/recommend/tabIcon/rili.svg");
@@ -68,32 +69,36 @@ void RecommendForYou::initClassifyWidget() {
     ui->music_quality_toolButton->setChangeSize(true);
 
     ui->recommend_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/rili.svg"));
-    ui->recommend_toolButton->setEnterIconSize(QSize(35,35));
-    ui->recommend_toolButton->setLeaveIconSize(QSize(30,30));
+    ui->recommend_toolButton->setEnterIconSize(QSize(35, 35));
+    ui->recommend_toolButton->setLeaveIconSize(QSize(30, 30));
 
     ui->ranking_list_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/rank.svg"));
-    ui->ranking_list_toolButton->setEnterIconSize(QSize(40,40));
-    ui->ranking_list_toolButton->setLeaveIconSize(QSize(35,35));
+    ui->ranking_list_toolButton->setEnterIconSize(QSize(40, 40));
+    ui->ranking_list_toolButton->setLeaveIconSize(QSize(35, 35));
 
     ui->classify_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/classification.svg"));
-    ui->classify_toolButton->setEnterIconSize(QSize(40,40));
-    ui->classify_toolButton->setLeaveIconSize(QSize(35,35));
+    ui->classify_toolButton->setEnterIconSize(QSize(40, 40));
+    ui->classify_toolButton->setLeaveIconSize(QSize(35, 35));
 
     ui->scene_music_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/shafa.svg"));
-    ui->scene_music_toolButton->setEnterIconSize(QSize(45,45));
-    ui->scene_music_toolButton->setLeaveIconSize(QSize(40,40));
+    ui->scene_music_toolButton->setEnterIconSize(QSize(45, 45));
+    ui->scene_music_toolButton->setLeaveIconSize(QSize(40, 40));
     ui->scene_music_toolButton->setEnterFontSize(13);
 
     ui->music_quality_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/dish.svg"));
-    ui->music_quality_toolButton->setEnterIconSize(QSize(40,40));
-    ui->music_quality_toolButton->setLeaveIconSize(QSize(35,35));
+    ui->music_quality_toolButton->setEnterIconSize(QSize(40, 40));
+    ui->music_quality_toolButton->setLeaveIconSize(QSize(35, 35));
 }
 
 void RecommendForYou::initTabWidget() {
     const auto layout = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout());
     if (!layout)return;
-    layout->insertWidget(layout->count() - 1, new TableWidget(QStringLiteral("今日专属推荐"), TableWidget::KIND::BlockList,this));
-    layout->insertWidget(layout->count() - 1, new TableWidget(QStringLiteral("潮流音乐站 "), TableWidget::KIND::ItemList,this));
-    layout->insertWidget(layout->count() - 1, new TableWidget(QStringLiteral("热门好歌精选 "),TableWidget::KIND::ItemList, this));
-    layout->insertWidget(layout->count() - 1, new TableWidget(QStringLiteral("私人专属好歌 "),TableWidget::KIND::ItemList, this));
+    layout->insertWidget(layout->count() - 1,
+                         new TableWidget(QStringLiteral("今日专属推荐"), TableWidget::KIND::BlockList, this));
+    layout->insertWidget(layout->count() - 1,
+                         new TableWidget(QStringLiteral("潮流音乐站 "), TableWidget::KIND::ItemList, this));
+    layout->insertWidget(layout->count() - 1,
+                         new TableWidget(QStringLiteral("热门好歌精选 "), TableWidget::KIND::ItemList, this));
+    layout->insertWidget(layout->count() - 1,
+                         new TableWidget(QStringLiteral("私人专属好歌 "), TableWidget::KIND::ItemList, this));
 }
