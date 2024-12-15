@@ -155,6 +155,14 @@ void MyBlockWidget::setHaveNumberUnit(const bool &haveNumberUnit) {
     this->m_haveUnit = haveNumberUnit;
 }
 
+void MyBlockWidget::setTipArr(const std::vector<QString> &tipArr) {
+    this->m_tipArr = tipArr;
+}
+
+void MyBlockWidget::setTipStyleSheet(const QString &style) {
+    this->m_tipLab->setStyleSheet(style);
+}
+
 SMaskWidget& MyBlockWidget::getMask()const {
     return *m_mask;
 }

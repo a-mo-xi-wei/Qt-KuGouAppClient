@@ -40,6 +40,10 @@ public:
 
     void setHaveNumberUnit(const bool &haveNumberUnit);
 
+    void setTipArr(const std::vector<QString>& tipArr);
+
+    void setTipStyleSheet(const QString& style);
+
     SMaskWidget &getMask()const;
 
 public slots:
