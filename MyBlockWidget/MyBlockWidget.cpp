@@ -35,6 +35,7 @@ MyBlockWidget::MyBlockWidget(QWidget *parent) :
 void MyBlockWidget::initUi() {
     this->setFixedSize(200,200);
     this->setCursor(Qt::PointingHandCursor);
+    this->setMouseTracking(true);
     initTipArr();
     this->m_tipLab->setFixedHeight(20);
     this->m_tipLab->setScaledContents(true);
