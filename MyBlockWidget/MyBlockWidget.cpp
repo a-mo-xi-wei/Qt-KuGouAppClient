@@ -36,7 +36,9 @@ void MyBlockWidget::initUi() {
     this->setFixedSize(200,200);
     this->setCursor(Qt::PointingHandCursor);
     initTipArr();
-    this->m_tipLab->setFixedSize(50, 20);
+    this->m_tipLab->setFixedHeight(20);
+    this->m_tipLab->setScaledContents(true);
+    this->m_tipLab->setContentsMargins(5,2,5,2);
     this->setTipLabText(m_tipArr[QRandomGenerator::global()->bounded(0, static_cast<int>(m_tipArr.size()))]);
     this->m_tipLab->setAlignment(Qt::AlignCenter);
     this->m_tipLab->setStyleSheet(QStringLiteral("border-radius:10px;background-color:black;color:white;"));
@@ -95,6 +97,7 @@ void MyBlockWidget::setBorderImage(const QString &path,const int& border)const {
 
 void MyBlockWidget::setTipLabText(const QString &text)const {
     this->m_tipLab->setText(text);
+    this->m_tipLab->adjustSize();
 }
 
 void MyBlockWidget::setPopularDirection(const int &direction) {
