@@ -31,7 +31,7 @@ private:
 
     void initUi();
 
-    void initnewDiskWidget();
+    void initNewDiskWidget();
 
     void initSelectWidget();
 

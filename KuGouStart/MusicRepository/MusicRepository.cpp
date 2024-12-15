@@ -53,7 +53,7 @@ void MusicRepository::initUi() {
     //初始化容器
     initVector();
     //初始化新碟上架
-    initnewDiskWidget();
+    initNewDiskWidget();
     //初始化精选视频
     initSelectWidget();
 
@@ -61,7 +61,7 @@ void MusicRepository::initUi() {
     ui->chinese_pushButton->clicked();
 }
 
-void MusicRepository::initnewDiskWidget() {
+void MusicRepository::initNewDiskWidget() {
     //先隐藏两个block
     ui->block_widget6->hide();
     ui->block_widget7->hide();
