@@ -221,7 +221,7 @@ QSlider::sub-page:horizontal {
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(231,80,229, 255), stop:1 rgba(7,208,255, 255));
 }
 
-/*-------------------?????????----------------------*/
+/*-------------------滚动区域滚动条----------------------*/
 QScrollBar:vertical {
     border: 1px solid rgb(231,166,190);
     border-radius:4px;
@@ -229,7 +229,7 @@ QScrollBar:vertical {
     width: 10px;
     margin: 20px 0px 20px 0px;
 }
-/*--?????????*/
+/*--子组件*/
 QScrollBar::handle:vertical {
     background: rgb(237,188,206);
     border-radius: 4px;
@@ -242,5 +242,9 @@ QScrollBar::handle:vertical:hover {
     background: rgb(248,129,161);
 }
 
-/*-------------------------------------------------------------*/
+/*--------------------提示框--------------------------------*/
+QToolTip {
+    background-color: #FFFEEB
+    /*background-color: ;*/
+}
 
