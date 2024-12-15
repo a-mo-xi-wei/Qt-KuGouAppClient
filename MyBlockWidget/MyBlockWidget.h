@@ -18,21 +18,21 @@ class MyBlockWidget : public QWidget {
 public:
     explicit MyBlockWidget(QWidget *parent = nullptr);
 
-    void setBorderImage(const QString &path,const int& border = 8)const;
+    void setBorderImage(const QString &path,const int& border = 8) const;
 
-    void setTipLabText(const QString &text)const;
+    void setTipLabText(const QString &text) const;
 
     void setPopularDirection(const int &direction);
 
-    void setPopularBtnText(const QString &text)const;
+    void setPopularBtnText(const QString &text) const;
 
-    void setShowTip(const bool &show)const;
+    void setShowTip(const bool &show) const;
 
     void setExpandRespond(const bool &expandRespond);
 
-    void setRightPopularBtnIcon(const QString& icon)const;
+    void setRightPopularBtnIcon(const QString& icon) const;
 
-    void setLeftPopularBtnIcon(const QString& icon)const;
+    void setLeftPopularBtnIcon(const QString& icon) const;
 
     void setAspectRatio(const float &aspectRatio);
 
@@ -42,9 +42,13 @@ public:
 
     void setTipArr(const std::vector<QString>& tipArr);
 
-    void setTipStyleSheet(const QString& style);
+    void setTipStyleSheet(const QString& style) const;
 
-    SMaskWidget &getMask()const;
+    void setDurationBtnShow() const;
+
+    void setDurationBtnText(const QString& text) const;
+
+    SMaskWidget &getMask() const;
 
 public slots:
     void onShowMask();
@@ -78,6 +82,7 @@ private:
     int m_popularDirection = 0;     //0 没有 ， 1 左边 ， 2 右边
     QToolButton *m_rightPopularBtn{};
     QToolButton *m_leftPopularBtn{};
+    QToolButton *m_durationBtn{};
     QString m_rightPopularBtnStyle;
     QString m_leftPopularBtnStyle;
     bool m_isHoverCover = false;    //是否悬停在图像上
@@ -87,4 +92,6 @@ private:
     bool m_haveUnit = true;         //是否带单位（万）
 
 };
+
+
 #endif //MYBLOCKWIDGET_H
