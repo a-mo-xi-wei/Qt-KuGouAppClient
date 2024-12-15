@@ -128,8 +128,8 @@ void MyBlockWidget::setPopularBtnText(const QString &text)const {
     }
 }
 
-void MyBlockWidget::setShowTip(const bool &show) const{
-    if(show)this->m_tipLab->show();
+void MyBlockWidget::setShowTip() const{
+    this->m_tipLab->show();
 }
 
 void MyBlockWidget::setExpandRespond(const bool &expandRespond) {

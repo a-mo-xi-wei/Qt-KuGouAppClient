@@ -26,7 +26,7 @@ public:
 
     void setPopularBtnText(const QString &text) const;
 
-    void setShowTip(const bool &show) const;
+    void setShowTip() const;
 
     void setExpandRespond(const bool &expandRespond);
 
