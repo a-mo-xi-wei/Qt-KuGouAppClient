@@ -223,25 +223,38 @@ QSlider::sub-page:horizontal {
 
 /*-------------------滚动区域滚动条----------------------*/
 QScrollBar:vertical {
-    border: 1px solid rgb(231,166,190);
+    border: 0px solid rgb(231,166,190);
     border-radius:4px;
-    background: rgb(231,166,190);
+    background-color: rgb(231,166,190);
     width: 10px;
     margin: 20px 0px 20px 0px;
 }
-/*--子组件*/
+QScrollBar:vertical:hover {
+    border: 1px solid rgb(231,166,190);
+    border-radius:4px;
+    background-color: rgb(231,166,190);
+    width: 10px;
+    margin: 20px 0px 20px 0px;
+}
+/*--滑块---*/
 QScrollBar::handle:vertical {
-    background: rgb(237,188,206);
+    background-color: rgb(237,188,206);
     border-radius: 4px;
 }
+QScrollBar::handle:vertical:hover {
+    background-color: rgb(248,129,161);
+}
+/*---箭头---*/
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    background: none; /* 确保没有箭头 */
+}
+/*---空白区域---*/
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none; /* 防止长按时的背景色 */
+}
 QScrollBar::sub-line:vertical, QScrollBar::add-line:vertical {
-    height: 0;
     background: none;
 }
-QScrollBar::handle:vertical:hover {
-    background: rgb(248,129,161);
-}
-
 /*--------------------提示框--------------------------------*/
 QToolTip {
     background-color: #FFFEEB
