@@ -1,0 +1,23 @@
+QPushButton{
+    font-size: 12px;
+    background-color: #F3F6FA;
+    border-radius: 15px;
+    border: none;
+}
+QPushButton:hover{
+    background-color: #E6E9ED;
+}
+QLineEdit{
+    border: 1px solid gray;
+    border-radius: 12px;
+    background-color: rgba(255,255,255,0);
+    padding-left: 5px;
+    font-weight: bold;
+}
+QLineEdit:hover{
+    background-color: rgba(255,255,255,0);
+}
+QLineEdit[placeholderText] {
+    color: #bbbbbb;
+    font-weight: normal;
+}

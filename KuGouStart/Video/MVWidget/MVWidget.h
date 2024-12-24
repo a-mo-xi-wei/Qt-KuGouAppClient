@@ -18,6 +18,12 @@ Q_OBJECT
 public:
     explicit MVWidget(QWidget *parent = nullptr);
     ~MVWidget() override;
+private:
+    void initUi();
+
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 
 private:
     Ui::MVWidget *ui;

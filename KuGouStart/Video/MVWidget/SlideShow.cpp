@@ -331,7 +331,7 @@ void SlideShow::resizeEvent(QResizeEvent *event)
     const auto w = (this->width()/2) >= 580 ? 580 : this->width()/2;
     const auto h = static_cast<int>(170 + (this->maximumHeight() - this->minimumHeight()) * (w * 1.0 / 580));
     oneSize = QSize(w,h);
-    qDebug()<<"oneSize.h() = "<< oneSize.height()<<" oneSize.w() = "<< oneSize.width();
+    //qDebug()<<"oneSize.h() = "<< oneSize.height()<<" oneSize.w() = "<< oneSize.width();
     // 调整已有图片的大小
     adjustLabels();
 

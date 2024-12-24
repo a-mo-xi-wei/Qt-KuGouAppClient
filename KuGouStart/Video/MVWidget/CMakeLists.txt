@@ -14,6 +14,12 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets)
 set(SOURCE_FILE
     MVWidget.cpp
     MVWidget.h
+	InteractiveButtonBase.h
+	InteractiveButtonBase.cpp
+	SideHideLabel.h
+	SideHideLabel.cpp
+	SlideShow.h
+	SlideShow.cpp
     MVWidget.ui
     mv.css
 )
@@ -23,4 +29,4 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyScrollArea UpToolButton)
