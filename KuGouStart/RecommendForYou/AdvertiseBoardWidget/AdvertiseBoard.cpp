@@ -6,7 +6,7 @@
 #include<QPainterPath>
 #include<QMouseEvent>
 
-static constexpr int G_Radius = 5;  //圆球半径
+static constexpr int G_Radius = 4;  //圆球半径
 static constexpr int G_Space = 2 * G_Radius;   //圆球之间的间隔
 static int posterIndex = 0;
 
@@ -90,7 +90,7 @@ void AdvertiseBoard::paintEvent(QPaintEvent *ev)
 
     //绘制广告图
     painter.drawPixmap(this->rect(),img);
-
+    painter.setPen(QColor(255,255,255,0));
     //绘制广告播放进度
     const auto s = static_cast<int>(this->m_posters.size());
     auto drawStartPos = QPoint((this->width() - (s-1) * (G_Radius * 2 + G_Space)) / 2,this->height() - 10);

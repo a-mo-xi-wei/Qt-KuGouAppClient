@@ -17,6 +17,9 @@ set(SOURCE_FILE
     RecommendForYou.ui
     recommend.css
 )
+add_subdirectory(AdvertiseBoardWidget)
+
+add_subdirectory(GuessLoveWidget)
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
