@@ -2,7 +2,7 @@
 #define SLIDESHOW_H
 
 #include "interactivebuttonbase.h"
-#include "sidehidelabel.h"
+#include "SideHideLabel.h"
 #include <QVBoxLayout>
 class SlideShow : public QWidget {
     Q_OBJECT

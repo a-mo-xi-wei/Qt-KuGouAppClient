@@ -14,12 +14,12 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets)
 set(SOURCE_FILE
     MVWidget.cpp
     MVWidget.h
-	InteractiveButtonBase.h
-	InteractiveButtonBase.cpp
-	SideHideLabel.h
-	SideHideLabel.cpp
-	SlideShow.h
-	SlideShow.cpp
+	SlideBoard/InteractiveButtonBase.h
+	SlideBoard/InteractiveButtonBase.cpp
+	SlideBoard/SideHideLabel.h
+	SlideBoard/SideHideLabel.cpp
+	SlideBoard/SlideShow.h
+	SlideBoard/SlideShow.cpp
     MVWidget.ui
     mv.css
 )
