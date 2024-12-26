@@ -1,9 +1,10 @@
 #ifndef SLIDESHOW_H
 #define SLIDESHOW_H
 
-#include "interactivebuttonbase.h"
+#include "InteractiveButtonBase.h"
 #include "SideHideLabel.h"
 #include <QVBoxLayout>
+
 class SlideShow : public QWidget {
     Q_OBJECT
 
@@ -47,10 +48,10 @@ signals:
     void signalTextActivated(QString text);
 
 private:
-    QList<SideHideLabel*> labels;
+    QList<SideHideLabel *> labels;
     QList<QPixmap> pixmaps;
     QList<QString> texts;
-    QList<InteractiveButtonBase*> indications;
+    QList<InteractiveButtonBase *> indications;
     int currentIndex = -1;
     QTimer *autoSlideTimer;
     SideHideLabel *hidingLabel = nullptr;
@@ -66,7 +67,6 @@ private:
     QHBoxLayout *indicationLayout;
 
     QRect centerRect, leftRect, rightRect, backRect; //backRect 指的是未显现出来的图片，隐藏在centerRect 的后面
-
 };
 
 #endif // SLIDESHOW_H
