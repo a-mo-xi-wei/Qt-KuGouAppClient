@@ -11,17 +11,21 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
-set(SOURCE_FILE
-    MVWidget.cpp
-    MVWidget.h
+set(BOARDFILE
 	SlideBoard/InteractiveButtonBase.h
 	SlideBoard/InteractiveButtonBase.cpp
 	SlideBoard/SideHideLabel.h
 	SlideBoard/SideHideLabel.cpp
 	SlideBoard/SlideShow.h
 	SlideBoard/SlideShow.cpp
-    MVWidget.ui
+)
+
+set(SOURCE_FILE
+    MVWidget.cpp
+    MVWidget.h
+	MVWidget.ui
     mv.css
+	${BOARDFILE}
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
