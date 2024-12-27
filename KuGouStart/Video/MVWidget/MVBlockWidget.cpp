@@ -45,6 +45,10 @@ void MVBlockWidget::setDescription(const QString &description) {
     updateDescText();
 }
 
+void MVBlockWidget::hideDesc() {
+    ui->desc_label->hide();
+}
+
 void MVBlockWidget::initUi() {
     //遮罩设置
     auto &mask = ui->cover_widget->getMask();

@@ -80,7 +80,7 @@ void VideoBlockWidget::initUi() {
     mask.setHoverFillCircleColor(QColor(QStringLiteral("#26A1FF")));
     mask.setDefaultFillTriangleColor(QColor(QStringLiteral("#666666")));
     mask.setHoverFillTriangleColor(QColor(QStringLiteral("#666666")));
-    mask.setMaskColor(QColor(0,0,0,100));
+    mask.setMaskColor(QColor(0,0,0,20));
     ui->cover_widget->setLeftPopularBtnIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg"));
     ui->cover_widget->setPopularDirection(1);
     ui->cover_widget->setAspectRatio(AspectRation);

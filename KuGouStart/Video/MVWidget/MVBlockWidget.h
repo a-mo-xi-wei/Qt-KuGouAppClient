@@ -30,6 +30,8 @@ public:
 
     void setDescription(const QString &description);
 
+    void hideDesc();
+
 private:
     void initUi();
 
