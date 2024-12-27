@@ -14,7 +14,9 @@ public:
     void setPixmapSize(const QSize &size);
 
     void setPixmapScale(const bool &scale); // 已废弃
+
     void setAutoSlide(const int &interval = 5000) const; // 设置自动轮播，interval=0时停止
+
     int getCurrentIndex() const;
 
     void adjustLabels(SideHideLabel *hidingLabel = nullptr);
@@ -61,7 +63,7 @@ private:
 
     QSize oneSize; // 默认图片大小
     double backScale = 0.8; // 两侧卡片的缩放程度
-    double sideOffside = 0.5; // 两侧卡片的位置偏移，越大靠越远
+    double sideOffside = 0.4; // 两侧卡片的位置偏移，越大靠越远
     double imgOffside = 0.15; // 图片内偏移比例
     bool scalePixmap = false; // 图片居中裁剪还是大小缩放（现在只能为false了）
     QHBoxLayout *indicationLayout;
