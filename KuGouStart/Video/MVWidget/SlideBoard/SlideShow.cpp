@@ -2,7 +2,6 @@
 #include <QEvent>
 #include <QPropertyAnimation>
 #include <QTimer>
-
 #include <QGraphicsDropShadowEffect>
 
 #define SHADOW_RADIUS 12
@@ -18,11 +17,11 @@ x->setGraphicsEffect(effect);                                           \
 
 SlideShow::SlideShow(QWidget *parent) : QWidget(parent)
 {
-    setPixmapSize(QSize(520, 200));
+    setPixmapSize(QSize(520, 150));
 
     indicationLayout = new QHBoxLayout;
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->addStretch(1);
+    mainLayout->addSpacerItem(new QSpacerItem(1,1,QSizePolicy::Preferred,QSizePolicy::Expanding));
     mainLayout->addLayout(indicationLayout);
     indicationLayout->setAlignment(Qt::AlignCenter);
 
@@ -253,7 +252,7 @@ void SlideShow::adjustLabels(SideHideLabel *leavingLabel)
                    marginTop + static_cast<int>(h * (1 - scale) / 2),
                    static_cast<int>(w*scale),
                    static_cast<int>(h*scale));
-
+    //qDebug()<<"centerRect: "<<centerRect;
     int count = static_cast<int>(labels.size());
     for (int i = currentIndex ; i < count + currentIndex ; i++)
     {
@@ -328,8 +327,8 @@ void SlideShow::moveTo(SideHideLabel *label, QRect geometry) const {
 void SlideShow::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
-    const auto w = (this->width()/2) >= 580 ? 580 : this->width()/2;
-    const auto h = static_cast<int>(170 + (this->maximumHeight() - this->minimumHeight()) * (w * 1.0 / 580));
+    const auto w = this->width()/2+20;
+    const auto h = static_cast<int>(150 + 60 * (w * 1.0 / 500));
     oneSize = QSize(w,h);
     //qDebug()<<"oneSize.h() = "<< oneSize.height()<<" oneSize.w() = "<< oneSize.width();
     // 调整已有图片的大小
@@ -357,4 +356,3 @@ bool SlideShow::eventFilter(QObject *obj, QEvent *event)
 
     return  QWidget::eventFilter(obj, event);
 }
-
