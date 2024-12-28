@@ -14,7 +14,9 @@
 #include <QScrollBar>
 #include <QTimer>
 #include <random>
-
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -111,123 +113,34 @@ void MVWidget::initHotMV() {
 
 void MVWidget::initVector() {
     {
-        //插入歌曲和歌手的配对关系
-        this->m_titleAndDesc.emplace_back(" ", " ");
-        this->m_titleAndDesc.emplace_back("租购", "薛之谦");
-        this->m_titleAndDesc.emplace_back("还会再相遇", "时代少年团");
-        this->m_titleAndDesc.emplace_back("篇章(郜一菲小号合作曲)", "王赫野");
-        this->m_titleAndDesc.emplace_back("先说爱的人为什么先离开", "田园");
-        this->m_titleAndDesc.emplace_back("勇气之歌(《海洋奇缘2》中文主题曲)", "张杰");
-        this->m_titleAndDesc.emplace_back("小太阳", "时代少年团");
-        this->m_titleAndDesc.emplace_back("山友顶峰湖有彼岸", "魏佳艺");
-        this->m_titleAndDesc.emplace_back("朝夕相伴两不厌", "门丽");
-        this->m_titleAndDesc.emplace_back("冬2025", "王靖雯");
-        this->m_titleAndDesc.emplace_back("繁星从远山升起", "怪阿姨、吴瑭");
-        this->m_titleAndDesc.emplace_back("我们的时光 + 彩虹下面(live版)", "赵雷");
-        this->m_titleAndDesc.emplace_back("别等啦，出发吧", "张碧晨");
-        this->m_titleAndDesc.emplace_back("一分钱难倒英雄汉", "王小叶");
-        this->m_titleAndDesc.emplace_back("久别离", "七叔 (叶泽浩)");
-        this->m_titleAndDesc.emplace_back("我是夜里的光", "郑畅业");
-        this->m_titleAndDesc.emplace_back("极度伤感", "马健涛");
-        this->m_titleAndDesc.emplace_back("再见白马", "杨小壮");
-        this->m_titleAndDesc.emplace_back("秋叶落尽大雪飞(烟嗓版)", "韩小欠");
-        this->m_titleAndDesc.emplace_back("心头刺", "小阿七");
-        this->m_titleAndDesc.emplace_back("人间数十载", "韩小欠");
-        this->m_titleAndDesc.emplace_back("12号", "周柏豪");
-        this->m_titleAndDesc.emplace_back("你在的城市下了雪吗", "苍狼");
-        this->m_titleAndDesc.emplace_back("我不能", "六哲");
-        this->m_titleAndDesc.emplace_back("风中听落雪", "小阿枫");
-        this->m_titleAndDesc.emplace_back("野草没有花期", "潘成 (皮卡潘)");
-        this->m_titleAndDesc.emplace_back("风雨中的遗憾(粤语金曲)", "阿国歌");
-        this->m_titleAndDesc.emplace_back("如何面对这份情", "红蔷薇");
-        this->m_titleAndDesc.emplace_back("花香染指尖", "蔷薇团长、笑天");
-        this->m_titleAndDesc.emplace_back("临安月", "冯提莫");
-        this->m_titleAndDesc.emplace_back("分手的意义", "贺一航");
-        this->m_titleAndDesc.emplace_back("你我这也不能称为我们", "大雨点儿");
-        this->m_titleAndDesc.emplace_back("我的人生只能自己升级", "肖雨蒙");
-        this->m_titleAndDesc.emplace_back("女人的妆男人的谎", "李乐乐");
-        this->m_titleAndDesc.emplace_back("乌兰巴托的夜晚", "石头");
-        this->m_titleAndDesc.emplace_back("赤裸裸的伤害", "张艺迈");
-        this->m_titleAndDesc.emplace_back("戏", "丫蛋");
-        this->m_titleAndDesc.emplace_back("心中有座城叫愁", "影子");
-        this->m_titleAndDesc.emplace_back("此夜定有鬼", "一只白羊");
-        this->m_titleAndDesc.emplace_back("又是一阵秋风过", "谈柒柒");
-        this->m_titleAndDesc.emplace_back("雪的来意", "于洋");
-        this->m_titleAndDesc.emplace_back("横滨别恋", "周慧敏");
-        this->m_titleAndDesc.emplace_back("我快撑不住了", "范茹");
-        this->m_titleAndDesc.emplace_back("TOO HARD", "米卡");
-        this->m_titleAndDesc.emplace_back("以后的路陪你走", "清唯");
-        this->m_titleAndDesc.emplace_back("恰少年", "曹怡");
-        this->m_titleAndDesc.emplace_back("欠你一个天下", "梦珂");
-        this->m_titleAndDesc.emplace_back("我若消失谁会思念", "乔玲儿");
-        this->m_titleAndDesc.emplace_back("你的(live)", "汪苏泷、贺仙人");
-        this->m_titleAndDesc.emplace_back("土坡上的狗尾草(双语版)", "卢润泽、宫八");
-        this->m_titleAndDesc.emplace_back("凝眸", "丁禹兮");
-        this->m_titleAndDesc.emplace_back("心甘情愿做你一生的知己", "基地小虎");
-        this->m_titleAndDesc.emplace_back("寄明月", "虞书欣、丁禹兮、祝绪丹");
-        this->m_titleAndDesc.emplace_back("都一样", "肖战");
-        this->m_titleAndDesc.emplace_back("忘了归期", "王忻辰、袁小葳");
-        this->m_titleAndDesc.emplace_back("踹", "尼古拉斯.四哥");
-        this->m_titleAndDesc.emplace_back("7月7日晴", "en");
-        this->m_titleAndDesc.emplace_back("白鸽乌鸦相爱的戏码", "艾辰");
-        this->m_titleAndDesc.emplace_back("重塑", "都智文");
-        this->m_titleAndDesc.emplace_back("带我到山顶(Live)", "姚晓棠、海来阿木");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
-        this->m_titleAndDesc.emplace_back("富时不忘穷时苦", "佳佳");
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/title.json"));
+        if (!file.open(QIODevice::ReadOnly)) {
+            qWarning() << "Could not open file for reading title.json";
+            return;
+        }
+        auto obj = QJsonDocument::fromJson(file.readAll());
+        auto arr = obj.array();
+        for (const auto &item : arr) {
+            QString title = item.toObject().value("title").toString();
+            this->m_titleAndDesc.emplace_back(title, parseTitle(title));
+        }
+        file.close();
+        // 对 vector 排序，按 pair 的第一个元素和第二个元素排序
+        std::sort(m_titleAndDesc.begin(), m_titleAndDesc.end());
+
+        // 使用 std::unique 去重，并调整容器大小
+        auto last = std::unique(m_titleAndDesc.begin(), m_titleAndDesc.end());
+        m_titleAndDesc.erase(last, m_titleAndDesc.end());
+        qDebug() << "现在大小："<<this->m_titleAndDesc.size();
     }
+
     for (int i = 1; i <= 100; i++) {
         this->m_total.emplace_back(
             QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").arg(i),
             m_titleAndDesc[i].first,
             m_titleAndDesc[i].second);
     }
+
     // 使用当前时间作为随机数种子
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     // 随机打乱 QVector
@@ -261,6 +174,36 @@ void MVWidget::initVector() {
     for (int i = 71; i <= 80; ++i) {
         this->m_hotMVVector.emplace_back(this->m_total[i]);
     }
+}
+
+const QString MVWidget::parseTitle(const QString &title) {
+    QStringList list = title.split(" - ");
+    QString str1 = list[0];
+    QString str2 = list[1];
+    // 查找 '《' 字符的位置
+    int indexOfParenthesis = str2.indexOf("》");
+    if (indexOfParenthesis != -1) {
+        str2 = str2.left(indexOfParenthesis + 1);  // 截取到 '》' 以及之前的部分
+        str2 += "MV上线";
+        return str1 + " " + str2;
+    }
+    // 查找 "（" 字符的位置
+    indexOfParenthesis = str2.indexOf("（");
+    if (indexOfParenthesis != -1) {
+        str2 = str2.left(indexOfParenthesis);  // 截取到 "（" 之前的部分
+        str2 = "《" + str2 + "》MV上线";
+        return str1 + " " + str2;
+    }
+
+    // 查找 '(' 字符的位置
+    indexOfParenthesis = str2.indexOf('(');
+
+    // 如果找到了 '('，则截取到 '(' 前的部分
+    if (indexOfParenthesis != -1) {
+        str2 = str2.left(indexOfParenthesis);  // 截取到 '(' 之前的部分
+    }
+    str2 = "《" + str2 + "》MV上线";
+    return str1 + " " + str2;
 }
 
 void MVWidget::handleWheelValue(const int &value) {

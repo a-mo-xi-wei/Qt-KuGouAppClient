@@ -36,6 +36,8 @@ private:
 
     void initVector();
 
+    const QString parseTitle(const QString &title);
+
 private slots:
     void handleWheelValue(const int& value);
 
