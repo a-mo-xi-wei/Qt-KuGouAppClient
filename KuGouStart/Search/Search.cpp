@@ -98,14 +98,19 @@ void Search::initStackWidget() {
     this->m_specialWidget   = std::make_unique<QWidget>(ui->stackedWidget);
     this->m_channelWidget   = std::make_unique<QWidget>(ui->stackedWidget);
     //设置布局
-    auto lay1 = new MyFlowLayout(this->m_recommendWidget.get(),16, -1, -1);
+    auto lay1 = new MyFlowLayout(this->m_recommendWidget.get(),10, -1, 2);
     this->m_recommendWidget->setLayout(lay1);
-    auto lay2 = new MyFlowLayout(this->m_rankWidget.get(),16, -1, -1);
+    this->m_recommendWidget->setFixedHeight(1200);
+    auto lay2 = new MyFlowLayout(this->m_rankWidget.get(),10, -1, -1);
     this->m_rankWidget->setLayout(lay2);
-    auto lay3 = new MyFlowLayout(this->m_specialWidget.get(),16, -1, -1);
+    this->m_rankWidget->setFixedHeight(600);
+    auto lay3 = new MyFlowLayout(this->m_specialWidget.get(),10, -1, -1);
     this->m_specialWidget->setLayout(lay3);
-    auto lay4 = new MyFlowLayout(this->m_channelWidget.get(),16, -1, -1);
+    this->m_specialWidget->setFixedHeight(800);
+    auto lay4 = new MyFlowLayout(this->m_channelWidget.get(),10, -1, -1);
     this->m_channelWidget->setLayout(lay4);
+    this->m_channelWidget->setFixedHeight(200);
+    this->m_channelWidget->setObjectName("channelWidget");
 
     ui->stackedWidget->addWidget(this->m_recommendWidget.get());
     ui->stackedWidget->addWidget(this->m_rankWidget.get());
@@ -159,7 +164,7 @@ void Search::resizeEvent(QResizeEvent *event) {
         return;
     }
 
-    int topLevelWidth = topLevelWindow->width();
+    const int topLevelWidth = topLevelWindow->width();
     //qDebug()<<"顶级窗口宽度为："<<topLevelWidth<<" 当前窗口宽度为："<<this->width();
     if(this->width() > topLevelWidth) {
         auto geo = this->geometry();
@@ -216,6 +221,7 @@ void Search::on_recommend_pushButton_clicked() {
     };
     std::call_once(SearchFlag::flag1,handle);
     ui->stackedWidget->setCurrentWidget(this->m_recommendWidget.get());
+    ui->stackedWidget->setFixedHeight(this->m_recommendWidget->height()+30);
 }
 
 void Search::on_rank_pushButton_clicked() {
@@ -251,6 +257,7 @@ void Search::on_rank_pushButton_clicked() {
     };
     std::call_once(SearchFlag::flag2,handle);
     ui->stackedWidget->setCurrentWidget(this->m_rankWidget.get());
+    ui->stackedWidget->setFixedHeight(this->m_rankWidget->height()+30);
 }
 
 void Search::on_special_pushButton_clicked() {
@@ -286,6 +293,7 @@ void Search::on_special_pushButton_clicked() {
     };
     std::call_once(SearchFlag::flag3,handle);
     ui->stackedWidget->setCurrentWidget(this->m_specialWidget.get());
+    ui->stackedWidget->setFixedHeight(this->m_specialWidget->height()+30);
 }
 
 void Search::on_channel_pushButton_clicked() {
@@ -321,4 +329,7 @@ void Search::on_channel_pushButton_clicked() {
     };
     std::call_once(SearchFlag::flag4,handle);
     ui->stackedWidget->setCurrentWidget(this->m_channelWidget.get());
+    ui->stackedWidget->setFixedHeight(this->m_channelWidget->height()+30);
+    //qDebug()<<"this->height() : "<<this->height()<<
+    //    "this->m_channelWidget->height() : "<<this->m_channelWidget->height();
 }

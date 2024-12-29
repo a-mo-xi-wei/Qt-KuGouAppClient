@@ -16,6 +16,7 @@ MyBlockWidget::MyBlockWidget(QWidget *parent) :
     , m_tipLab(new QLabel(this))
     , m_rightPopularBtn(new QToolButton(this))
     , m_leftPopularBtn(new QToolButton(this))
+    , m_durationBtn(new QToolButton(this))
 {
     initUi();
     this->m_mask->setParent(this->m_bacWidget);
@@ -27,18 +28,24 @@ MyBlockWidget::MyBlockWidget(QWidget *parent) :
     this->m_rightPopularBtn->hide();
     //默认隐藏tipLab
     this->m_tipLab->hide();
+    //默认隐藏时长按钮
+    this->m_durationBtn->hide();
 }
 
 void MyBlockWidget::initUi() {
     this->setFixedSize(200,200);
     this->setCursor(Qt::PointingHandCursor);
+    this->setMouseTracking(true);
     initTipArr();
-    this->m_tipLab->setFixedSize(50, 20);
+    this->m_tipLab->setFixedHeight(20);
+    this->m_tipLab->setScaledContents(true);
+    this->m_tipLab->setContentsMargins(5,2,5,2);
     this->setTipLabText(m_tipArr[QRandomGenerator::global()->bounded(0, static_cast<int>(m_tipArr.size()))]);
     this->m_tipLab->setAlignment(Qt::AlignCenter);
     this->m_tipLab->setStyleSheet(QStringLiteral("border-radius:10px;background-color:black;color:white;"));
     this->m_tipLab->move(6, 6);
     //两个流行人数按钮都初始化
+    this->m_rightPopularBtn->setEnabled(false);
     this->m_rightPopularBtn->setFixedSize(70, 20);
     this->m_rightPopularBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     this->m_rightPopularBtn->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/popular-white.svg")));
@@ -47,12 +54,18 @@ void MyBlockWidget::initUi() {
     this->m_rightPopularBtnStyle = "color:white;border:none;border-radius:10px;";
     this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle+"background-color: rgba(128, 128, 128, 127);");
 
+    this->m_leftPopularBtn->setEnabled(false);
     this->m_leftPopularBtn->setFixedSize(70, 20);
     this->m_leftPopularBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     this->m_leftPopularBtn->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/person-white.svg")));
     this->m_leftPopularBtn->setContentsMargins(5, 0, 5, 0);
     this->m_leftPopularBtnStyle = "color:white;border:none;border-radius:10px;background-color: rgba(255,255,255,0);";
     this->m_leftPopularBtn->setStyleSheet(this->m_leftPopularBtnStyle);
+
+    this->m_durationBtn->setEnabled(false);
+    this->m_durationBtn->setFixedSize(50,20);
+    this->m_leftPopularBtn->setContentsMargins(8, 0, 0, 0);
+    this->m_durationBtn->setStyleSheet("color:white;border:none;background-color: rgba(255,255,255,0);");
 
 }
 
@@ -85,6 +98,7 @@ void MyBlockWidget::setBorderImage(const QString &path,const int& border)const {
 
 void MyBlockWidget::setTipLabText(const QString &text)const {
     this->m_tipLab->setText(text);
+    this->m_tipLab->adjustSize();
 }
 
 void MyBlockWidget::setPopularDirection(const int &direction) {
@@ -118,8 +132,8 @@ void MyBlockWidget::setPopularBtnText(const QString &text)const {
     }
 }
 
-void MyBlockWidget::setShowTip(const bool &show) const{
-    if(show)this->m_tipLab->show();
+void MyBlockWidget::setShowTip() const{
+    this->m_tipLab->show();
 }
 
 void MyBlockWidget::setExpandRespond(const bool &expandRespond) {
@@ -159,8 +173,16 @@ void MyBlockWidget::setTipArr(const std::vector<QString> &tipArr) {
     this->m_tipArr = tipArr;
 }
 
-void MyBlockWidget::setTipStyleSheet(const QString &style) {
+void MyBlockWidget::setTipStyleSheet(const QString &style) const {
     this->m_tipLab->setStyleSheet(style);
+}
+
+void MyBlockWidget::setDurationBtnShow()const {
+    this->m_durationBtn->show();
+}
+
+void MyBlockWidget::setDurationBtnText(const QString &text)const {
+    this->m_durationBtn->setText(text);
 }
 
 SMaskWidget& MyBlockWidget::getMask()const {
@@ -217,11 +239,18 @@ void MyBlockWidget::leaveEvent(QEvent *ev) {
 
 void MyBlockWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
+
     this->m_bacWidget->setFixedSize(event->size().width() / 1.01, event->size().width() / (1.01 * this->m_aspectRatio));
+
     this->m_mask->setFixedSize(this->m_bacWidget->size());
+
     this->m_rightPopularBtn->move(this->m_bacWidget->width() - this->m_rightPopularBtn->width() - 5,
                              this->m_bacWidget->height() - this->m_rightPopularBtn->height() - 5);
-    this->m_leftPopularBtn->move(5,this->m_bacWidget->height() - this->m_rightPopularBtn->height() - 5);
+
+    this->m_leftPopularBtn->move(5,this->m_bacWidget->height() - this->m_leftPopularBtn->height() - 5);
+
+    this->m_durationBtn->move(this->m_bacWidget->width() - this->m_durationBtn->width() - 5,
+                             this->m_bacWidget->height() - this->m_durationBtn->height() - 5);
 }
 
 void MyBlockWidget::mousePressEvent(QMouseEvent *event) {

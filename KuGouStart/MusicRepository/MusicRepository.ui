@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>978</width>
-    <height>1020</height>
+    <width>976</width>
+    <height>1013</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -488,6 +488,9 @@
       <property name="leftMargin">
        <number>0</number>
       </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QWidget" name="widget_33" native="true">
         <layout class="QVBoxLayout" name="verticalLayout">
@@ -641,6 +644,9 @@
          <property name="leftMargin">
           <number>0</number>
          </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QWidget" name="widget_35" native="true">
            <layout class="QHBoxLayout" name="horizontalLayout_23">
@@ -698,6 +704,9 @@
              <number>0</number>
             </property>
             <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
              <number>0</number>
             </property>
             <item>
@@ -825,7 +834,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>40</height>
+       <height>1</height>
       </size>
      </property>
     </spacer>

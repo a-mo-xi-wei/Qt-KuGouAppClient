@@ -53,6 +53,7 @@ private:
     Ui::VideoChannelWidget *ui;
     std::unique_ptr<QButtonGroup> m_buttonGroup{};
     std::unique_ptr<UpToolButton> m_upBtn{};
+    QWidget* m_parent{};
     //11个Widget
     std::unique_ptr<VideoChannelPartWidget> m_popularWidget{};
     std::unique_ptr<VideoChannelPartWidget> m_childrenWidget{};
