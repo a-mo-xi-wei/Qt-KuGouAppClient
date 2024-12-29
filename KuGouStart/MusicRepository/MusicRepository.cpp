@@ -19,7 +19,8 @@
 MusicRepository::MusicRepository(QWidget *parent)
     : QWidget(parent)
       , ui(new Ui::MusicRepository)
-      , m_buttonGroup(std::make_unique<QButtonGroup>(this)) {
+      , m_buttonGroup(std::make_unique<QButtonGroup>(this))
+{
     ui->setupUi(this);
     QFile file(GET_CURRENT_DIR + QStringLiteral("/musicrepo.css"));
     if (file.open(QIODevice::ReadOnly)) {
@@ -29,6 +30,11 @@ MusicRepository::MusicRepository(QWidget *parent)
         return;
     }
     initUi();
+    this->m_topWindow = this->window();
+    if (!m_topWindow) {
+        qWarning() << "无法获取顶级窗口！";
+        return;
+    }
 }
 
 MusicRepository::~MusicRepository() {
@@ -72,27 +78,27 @@ void MusicRepository::initNewDiskWidget() {
     std::shuffle(this->m_total.begin(), this->m_total.end(), std::default_random_engine(seed));
     {
         //初始化
-        ui->block_widget1->setCoverPix  (this->m_total[1].pixPath);
-        ui->block_widget1->setSongName  (this->m_total[1].song);
-        ui->block_widget1->setSinger    (this->m_total[1].singer);
-        ui->block_widget2->setCoverPix  (this->m_total[2].pixPath);
-        ui->block_widget2->setSongName  (this->m_total[2].song);
-        ui->block_widget2->setSinger    (this->m_total[2].singer);
-        ui->block_widget3->setCoverPix  (this->m_total[3].pixPath);
-        ui->block_widget3->setSongName  (this->m_total[3].song);
-        ui->block_widget3->setSinger    (this->m_total[3].singer);
-        ui->block_widget4->setCoverPix  (this->m_total[4].pixPath);
-        ui->block_widget4->setSongName  (this->m_total[4].song);
-        ui->block_widget4->setSinger    (this->m_total[4].singer);
-        ui->block_widget5->setCoverPix  (this->m_total[5].pixPath);
-        ui->block_widget5->setSongName  (this->m_total[5].song);
-        ui->block_widget5->setSinger    (this->m_total[5].singer);
-        ui->block_widget6->setCoverPix  (this->m_total[6].pixPath);
-        ui->block_widget6->setSongName  (this->m_total[6].song);
-        ui->block_widget6->setSinger    (this->m_total[6].singer);
-        ui->block_widget7->setCoverPix  (this->m_total[7].pixPath);
-        ui->block_widget7->setSongName  (this->m_total[7].song);
-        ui->block_widget7->setSinger    (this->m_total[7].singer);
+        ui->block_widget1->setCoverPix(this->m_total[1].pixPath);
+        ui->block_widget1->setSongName(this->m_total[1].song);
+        ui->block_widget1->setSinger(this->m_total[1].singer);
+        ui->block_widget2->setCoverPix(this->m_total[2].pixPath);
+        ui->block_widget2->setSongName(this->m_total[2].song);
+        ui->block_widget2->setSinger(this->m_total[2].singer);
+        ui->block_widget3->setCoverPix(this->m_total[3].pixPath);
+        ui->block_widget3->setSongName(this->m_total[3].song);
+        ui->block_widget3->setSinger(this->m_total[3].singer);
+        ui->block_widget4->setCoverPix(this->m_total[4].pixPath);
+        ui->block_widget4->setSongName(this->m_total[4].song);
+        ui->block_widget4->setSinger(this->m_total[4].singer);
+        ui->block_widget5->setCoverPix(this->m_total[5].pixPath);
+        ui->block_widget5->setSongName(this->m_total[5].song);
+        ui->block_widget5->setSinger(this->m_total[5].singer);
+        ui->block_widget6->setCoverPix(this->m_total[6].pixPath);
+        ui->block_widget6->setSongName(this->m_total[6].song);
+        ui->block_widget6->setSinger(this->m_total[6].singer);
+        ui->block_widget7->setCoverPix(this->m_total[7].pixPath);
+        ui->block_widget7->setSongName(this->m_total[7].song);
+        ui->block_widget7->setSinger(this->m_total[7].singer);
     }
 }
 
@@ -233,11 +239,11 @@ void MusicRepository::initVector() {
             m_songAndsinger[i].second);
     }
 
-    for (int i = 1; i <= 40 ; ++i) {
+    for (int i = 1; i <= 40; ++i) {
         this->m_videoVector.emplace_back(
-        QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").arg(i),
-        m_songAndsinger[i+10].first,
-        m_songAndsinger[i+10].second);
+            QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").arg(i),
+            m_songAndsinger[i + 10].first,
+            m_songAndsinger[i + 10].second);
     }
 
     // 使用当前时间作为随机数种子
@@ -272,11 +278,7 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
     ui->singer_widget->setFixedHeight(average);
     ui->classify_widget->setFixedHeight(average);
     //grid设置
-    this->m_topWindow = this->window();
-    if (!m_topWindow) {
-        qWarning() << "无法获取顶级窗口！";
-        return;
-    }
+
     int topLevelWidth = m_topWindow->width();
     average = (topLevelWidth - 290) / 3;
     for (int i = 0; i < 3; ++i) {
@@ -285,14 +287,14 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
         }
     }
     //BlockWidget设置
-    static int lastVisibleState = -1;  // 记录上一次的可见状态
+    static int lastVisibleState = -1; // 记录上一次的可见状态
     int currentWidth = this->width();
     int newVisibleState;
 
     // 根据宽度确定状态
     if (currentWidth < 1045) {
         newVisibleState = 0;
-    } else if (currentWidth >= 1045 && currentWidth < 1250) {
+    } else if (currentWidth < 1250) {
         newVisibleState = 1;
     } else {
         newVisibleState = 2;
@@ -328,10 +330,10 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
                 ui->video_widget10->show();
                 break;
             }
+            default: break;
         }
         lastVisibleState = newVisibleState;
     }
-
 }
 
 void MusicRepository::mousePressEvent(QMouseEvent *event) {

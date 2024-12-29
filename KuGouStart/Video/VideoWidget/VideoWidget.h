@@ -56,7 +56,25 @@ private:
     std::unique_ptr<QButtonGroup> m_buttonGroup{};
     std::unique_ptr<UpToolButton> m_upBtn{};
     //13个widget
-
+    std::unique_ptr<VideoPartWidget> m_recommendWidget      {};
+    std::unique_ptr<VideoPartWidget> m_videoRankWidget      {};
+    std::unique_ptr<VideoPartWidget> m_MVWidget             {};
+    std::unique_ptr<VideoPartWidget> m_siteWidget           {};
+    std::unique_ptr<VideoPartWidget> m_coverWidget          {};
+    std::unique_ptr<VideoPartWidget> m_danceWidget          {};
+    std::unique_ptr<VideoPartWidget> m_childrenWidget       {};
+    std::unique_ptr<VideoPartWidget> m_liveWidget           {};
+    std::unique_ptr<VideoPartWidget> m_firstConcertWidget   {};
+    std::unique_ptr<VideoPartWidget> m_chineseLanguageWidget{};
+    std::unique_ptr<VideoPartWidget> m_southKoreaWidget     {};
+    std::unique_ptr<VideoPartWidget> m_japanWidget          {};
+    std::unique_ptr<VideoPartWidget> m_americanWidget       {};
+    //图片路径
+    std::vector<QString> m_pixPathVector{};
+    //垂直滚动条
+    QScrollBar* m_vScrollBar{};
+    //专门处理回到最顶部按钮
+    QTimer*     m_scrollBarTimer{};  // 定时器
 };
 
 

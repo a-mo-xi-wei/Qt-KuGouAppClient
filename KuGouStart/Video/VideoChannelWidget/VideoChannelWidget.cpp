@@ -36,6 +36,7 @@ VideoChannelWidget::VideoChannelWidget(QWidget *parent)
       , m_singerWidget(std::make_unique<VideoChannelPartWidget>(this))
       , m_scrollBarTimer(new QTimer(this)) {
     ui->setupUi(this);
+    this->m_parent = this->window();
     {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/channelwidget.css"));
         if (file.open(QIODevice::ReadOnly)) {
@@ -386,11 +387,10 @@ void VideoChannelWidget::onUpBtnShowOrNot() {
 
 void VideoChannelWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
-    auto parent = this->window();
-    ui->scrollArea->setFixedHeight(parent->height() - 280);
+    ui->scrollArea->setFixedHeight(this->m_parent->height() - 280);
     //UpWidget移动
-    this->m_upBtn->move(parent->width() - this->m_upBtn->width() - 206,
-                        parent->height() - this->m_upBtn->height() - 250);
+    this->m_upBtn->move(this->m_parent->width() - this->m_upBtn->width() - 206,
+                        this->m_parent->height() - this->m_upBtn->height() - 250);
     this->m_upBtn->raise();
 }
 

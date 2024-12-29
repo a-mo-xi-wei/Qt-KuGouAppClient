@@ -69,6 +69,7 @@ void VideoChannelBlock::initUi() {
     mask.setHoverFillCircleColor(QColor(QStringLiteral("#525759")));
     mask.setDefaultFillTriangleColor(Qt::white);
     mask.setHoverFillTriangleColor(Qt::white);
+    mask.setMaskColor(QColor(0,0,0,100));
     ui->cover_widget->setAspectRatio(1.5);
     ui->cover_widget->installEventFilter(this);
     //设置coverTextLab
