@@ -8,10 +8,11 @@
 #include <QStackedWidget>
 
 class MyStackedWidget : public QStackedWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit MyStackedWidget(QWidget *parent = nullptr);
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 };

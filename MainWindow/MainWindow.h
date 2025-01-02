@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include<QWidget>
+
 namespace Area {
     /* 这里我们将一个窗口划分为9个区域，分别为
      左上角（1, 1）、中上（1，2）、右上角（1, 3）
@@ -41,7 +42,7 @@ enum MousePosition {
 };
 
 class MainWindow : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);

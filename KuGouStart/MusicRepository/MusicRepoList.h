@@ -25,7 +25,7 @@ public:
 
     ~MusicRepoList() override;
 
-    void setCoverPix(const QString &pixmapPath);
+    void setCoverPix(const QString &pixmapPath) const;
 
     void setSongName(const QString &song);
 
@@ -34,9 +34,9 @@ public:
 private:
     void initUi();
 
-    void updateSongText();
+    void updateSongText() const;
 
-    void updateSingerText();
+    void updateSingerText() const;
 
 signals:
     void enterList();

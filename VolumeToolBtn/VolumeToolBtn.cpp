@@ -1,10 +1,8 @@
 #include "VolumeToolBtn.h"
 
 #include<QTimer>
-#include<QVBoxLayout>
 #include<QHBoxLayout>
 #include<QLabel>
-
 
 VolumeToolBtn::VolumeToolBtn(QWidget *parent)
     : QToolButton(parent)
@@ -35,9 +33,6 @@ VolumeToolBtn::VolumeToolBtn(QWidget *parent)
         emit volumeChange(this->m_volumeSlider->getValue());
     });
     connect(this->m_volumeSlider.get(), &SliderWidget::noVolume,this,[this](bool flag){onNoVolume(flag);});
-}
-
-VolumeToolBtn::~VolumeToolBtn() {
 }
 
 void VolumeToolBtn::initVolumeWidget() {
@@ -75,7 +70,7 @@ void VolumeToolBtn::initUi() {
     initVolumeWidget();
 }
 
-void VolumeToolBtn::checkMousePosition() {
+void VolumeToolBtn::checkMousePosition() const {
     QPoint globalMousePos = QCursor::pos(); // 获取全局鼠标位置
     // 检查鼠标是否在 m_volumeWidget 内
     if (!this->m_volumeWidget->isHidden()) {

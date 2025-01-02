@@ -11,7 +11,6 @@
 #include <QStyleOption>
 #include <QBoxLayout>
 #include <QWidgetAction>
-#include <QActionGroup>
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 constexpr int SHADOW_WIDTH = 5;
@@ -1350,7 +1349,7 @@ void MyMenu::checkHover() {
     }
 }
 
-void MyMenu::checkSelection() {
+void MyMenu::checkSelection() const {
     if (m_lastSelect) {
         //qDebug()<<"之前指向目标存在";
         if (m_lastSelect == m_curSelect)return;

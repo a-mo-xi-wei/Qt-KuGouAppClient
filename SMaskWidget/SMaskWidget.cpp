@@ -2,14 +2,15 @@
 
 #include <QMouseEvent>
 #include<QPainterPath>
+#include<QPainter>
 
 SMaskWidget::SMaskWidget(QWidget *parent)
     : QWidget(parent)
+    ,m_w(0)
+    ,m_h(0)
     ,m_radius(0)
     ,m_centerX(0)
     ,m_centerY(0)
-    ,m_w(0)
-    ,m_h(0)
 {
     setWindowFlags(Qt::FramelessWindowHint);
     this->setMouseTracking(true);

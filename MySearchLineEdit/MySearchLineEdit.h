@@ -10,17 +10,20 @@ class QPropertyAnimation;
 #include <QLineEdit>
 
 class MySearchLineEdit : public QLineEdit {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit MySearchLineEdit(QWidget *parent = nullptr);
-    ~MySearchLineEdit() override;
-    void setWidth(const int& width);
+
+    void setWidth(const int &width);
+
 protected:
     void focusInEvent(QFocusEvent *event) override;
+
     void focusOutEvent(QFocusEvent *event) override;
+
 private:
-    QPropertyAnimation* m_animation;
+    QPropertyAnimation *m_animation;
     int m_startWidth;
     int m_endWidth;
     int m_maxWidth;

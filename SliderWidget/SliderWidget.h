@@ -1,20 +1,19 @@
 #ifndef SLIDERWIDGET_H
 #define SLIDERWIDGET_H
 
-#include<QWidget>
-#include<memory>
+#include <QWidget>
 #include <QFile>
-#include<QGraphicsDropShadowEffect>
+#include <QGraphicsDropShadowEffect>
 #include <QPainter>
 #include <QPainterPath>
 #include <QStyleOption>
 #include <QWheelEvent>
+
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 /*此处重写的QWidget的唯一目的就是作为中转传递信号。。。。*/
 class MyWidget : public QWidget {
     Q_OBJECT
-
 public:
     explicit MyWidget(QWidget *parent = nullptr)
         : QWidget(parent)

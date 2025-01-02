@@ -1,5 +1,4 @@
 #include "SliderWidget.h"
-#include<QMouseEvent>
 
 SliderWidget::SliderWidget(QWidget *parent,Qt::Orientation orientation)
     : QSlider(orientation, parent)

@@ -2,7 +2,6 @@
 #define SMASKWIDGET_H
 
 #include <QWidget>
-#include<QPainter>
 
 class SMaskWidget : public QWidget {
     Q_OBJECT
@@ -18,16 +17,16 @@ public:
 
     void setHoverFillTriangleColor(const QColor &color);
 
-    void setEnterWidgetChangeCursor(const bool& change);
+    void setEnterWidgetChangeCursor(const bool &change);
 
-    void setBorderRadius(const int& radius);
+    void setBorderRadius(const int &radius);
 
     void setMaskColor(const QColor &color);
 
 private:
     void calOnce();
 
-    bool isMouseInCircle(const float &mouseX, const float &mouseY)const;
+    bool isMouseInCircle(const float &mouseX, const float &mouseY) const;
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -40,7 +39,7 @@ protected:
 
     void mouseMoveEvent(QMouseEvent *event) override;
 
-    void resizeEvent(QResizeEvent* event) override;
+    void resizeEvent(QResizeEvent *event) override;
 
 private:
     float m_w;
@@ -58,7 +57,7 @@ private:
     QColor m_defaultFillTriangleColor = Qt::white;
     QColor m_hoverFillTriangleColor = QColor();
     //遮罩颜色
-    QColor m_maskColor = QColor(0,0,0,160);
+    QColor m_maskColor = QColor(0, 0, 0, 160);
     //鼠标一进入widget就变指向样式
     bool m_isEnterWidgetChangeCursor = true;
     bool m_isEnterCircle = false;

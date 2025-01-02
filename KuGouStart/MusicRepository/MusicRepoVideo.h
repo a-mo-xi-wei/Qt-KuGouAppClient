@@ -24,20 +24,20 @@ public:
 
     ~MusicRepoVideo() override;
 
-    void setCoverPix(const QString &pixmapPath);
+    void setCoverPix(const QString &pixmapPath) const;
 
     void setVideoName(const QString &name);
 
-    void setIconPix(const QString &pix);
+    void setIconPix(const QString &pix) const;
 
     void setAuthor(const QString &author);
 
 private:
     void initUi();
 
-    void updateVideoNameText();
+    void updateVideoNameText() const;
 
-    void updateVideoAuthorText();
+    void updateVideoAuthorText() const;
 
 protected:
     void mousePressEvent(QMouseEvent *event) override;

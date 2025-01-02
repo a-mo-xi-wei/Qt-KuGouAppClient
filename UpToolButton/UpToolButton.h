@@ -9,11 +9,15 @@
 
 class UpToolButton : public QToolButton {
     Q_OBJECT
+
 public:
     explicit UpToolButton(QWidget *parent = nullptr);
+
     void initUi();
+
 protected:
     void enterEvent(QEnterEvent *event) override;
+
     void leaveEvent(QEvent *event) override;
 };
 

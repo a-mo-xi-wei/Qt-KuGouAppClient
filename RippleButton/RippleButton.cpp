@@ -1,4 +1,5 @@
 #include "RippleButton.h"
+
 #include <QCursor>
 #include <QPainter>
 #include <QPaintEvent>
@@ -9,6 +10,7 @@
 #include <QGraphicsDropShadowEffect>
 #include <QPointF>
 #include <QTimer>
+
 RippleButton::RippleButton(QWidget* parent)
     : QToolButton(parent),
     timer(new QTimer(this)),
@@ -25,8 +27,8 @@ RippleButton::RippleButton(QWidget* parent)
     this->setGraphicsEffect(this->m_effect.get());
 }
 
-void RippleButton::setSpeed(const int &timeinitval) {
-    timer->setInterval(timeinitval);
+void RippleButton::setSpeed(const int &timeInterval) const {
+    timer->setInterval(timeInterval);
 }
 
 void RippleButton::setFillColor(const QColor& fillcolor)

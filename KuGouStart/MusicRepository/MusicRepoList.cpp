@@ -9,6 +9,7 @@
 
 #include <QFile>
 #include <QMouseEvent>
+#include <QPainter>
 #include <QStyleOption>
 
 
@@ -35,7 +36,7 @@ MusicRepoList::~MusicRepoList() {
     delete ui;
 }
 
-void MusicRepoList::setCoverPix(const QString &pixmapPath) {
+void MusicRepoList::setCoverPix(const QString &pixmapPath) const {
     ui->cover_widget->setBorderImage(pixmapPath);
 }
 
@@ -68,7 +69,7 @@ void MusicRepoList::initUi() {
 
 }
 
-void MusicRepoList::updateSongText() {
+void MusicRepoList::updateSongText() const {
     //设置字体测量工具
     auto font = ui->song_label->font();
     QFontMetrics fm(font);
@@ -83,7 +84,7 @@ void MusicRepoList::updateSongText() {
     //}
 }
 
-void MusicRepoList::updateSingerText() {
+void MusicRepoList::updateSingerText() const {
     //设置字体测量工具
     auto font = ui->singer_label->font();
     QFontMetrics fm(font);

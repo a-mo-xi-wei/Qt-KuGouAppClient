@@ -1,18 +1,18 @@
 #include "TableWidget.h"
 
-#include<QLabel>
-#include<QToolButton>
-#include<QTimer>
-#include<QEnterEvent>
-#include<QBoxLayout>
+#include <QLabel>
+#include <QToolButton>
+#include <QTimer>
+#include <QEnterEvent>
+#include <QBoxLayout>
 #include <QFile>
-#include<QSpacerItem>
-#include<QStyleOption>
-#include<QPainter>
-#include<QPainterPath>
-#include<QRandomGenerator>
-#include<vector>
-#include<QFontMetrics>
+#include <QSpacerItem>
+#include <QStyleOption>
+#include <QPainter>
+#include <QPainterPath>
+#include <QRandomGenerator>
+#include <vector>
+#include <QFontMetrics>
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -719,7 +719,7 @@ void ItemListWidget::initUi() {
     this->m_more_ToolBtn->hide();
 }
 
-void ItemListWidget::updateSongName() {
+void ItemListWidget::updateSongName() const {
     //设置字体测量工具
     auto font = this->m_songNameLab->font();
     QFontMetrics fm(font);
@@ -730,7 +730,7 @@ void ItemListWidget::updateSongName() {
     this->m_songNameLab->setText(elidedText);
 }
 
-void ItemListWidget::updateSinger() {
+void ItemListWidget::updateSinger() const {
     //设置字体测量工具
     auto font = this->m_singerLab->font();
     QFontMetrics fm(font);
@@ -777,15 +777,15 @@ ItemBlockWidget::ItemBlockWidget(const QString &path, const QString &desc, QWidg
     this->m_mask->hide();
 }
 
-void ItemBlockWidget::setTipLabText(const QString &text) {
+void ItemBlockWidget::setTipLabText(const QString &text) const {
     this->m_tipLab->setText(text);
 }
 
-void ItemBlockWidget::setPopularBtnText(const QString &text) {
+void ItemBlockWidget::setPopularBtnText(const QString &text) const {
     this->m_popularBtn->setText(QStringLiteral(" ") + text + QStringLiteral("万"));
 }
 
-void ItemBlockWidget::setDescribeText(QString desc) {
+void ItemBlockWidget::setDescribeText(QString desc) const {
     const QFont font(QStringLiteral("楷体"),DescribeLabHeight - 14);
     // 应用字体到标签
     this->m_describeLab->setFont(font);

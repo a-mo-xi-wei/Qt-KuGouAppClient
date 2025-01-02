@@ -43,7 +43,6 @@ void MainWindow::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
 }
 
-
 void MainWindow::mousePressEvent(QMouseEvent *ev) {
     QWidget::mousePressEvent(ev);
     auto w = new WaterDrop;

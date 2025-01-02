@@ -9,11 +9,7 @@ MySearchLineEdit::MySearchLineEdit(QWidget *parent)
     :QLineEdit(parent)
     ,m_animation(new QPropertyAnimation(this,"minimumWidth",this))
     ,m_maxWidth(250)
-{
-
-}
-
-MySearchLineEdit::~MySearchLineEdit() {}
+{}
 
 void MySearchLineEdit::setWidth(const int &width) {
     this->m_maxWidth = width;

@@ -3,7 +3,6 @@
 
 #include<QHBoxLayout>
 #include<QGridLayout>
-#include<memory>
 
 #include"SMaskWidget.h"
 
@@ -81,7 +80,7 @@ public slots:
     void onRefreshTimeout();
 
 private:
-    QWidget* m_topWindow{};
+    QWidget *m_topWindow{};
     std::unique_ptr<QHBoxLayout> m_tabHLayout;
     std::unique_ptr<QGridLayout> m_gridLayout;
     std::unique_ptr<QWidget> m_gridContainer;
@@ -114,11 +113,11 @@ class ItemBlockWidget : public QWidget {
 public:
     ItemBlockWidget(const QString &path, const QString &desc, QWidget *parent = nullptr);
 
-    void setTipLabText(const QString &text);
+    void setTipLabText(const QString &text) const;
 
-    void setPopularBtnText(const QString &text);
+    void setPopularBtnText(const QString &text) const;
 
-    void setDescribeText(QString desc);
+    void setDescribeText(QString desc) const;
 
 private:
     void initUi();
@@ -161,9 +160,9 @@ public:
 private:
     void initUi();
 
-    void updateSongName();
+    void updateSongName() const;
 
-    void updateSinger();
+    void updateSinger() const;
 
 protected:
     void paintEvent(QPaintEvent *ev) override;

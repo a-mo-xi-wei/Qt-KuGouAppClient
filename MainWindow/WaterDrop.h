@@ -4,27 +4,23 @@
 #include <QWidget>
 class QVariantAnimation;
 
-class WaterDrop : public QWidget
-{
+class WaterDrop : public QWidget {
     Q_OBJECT
 
 public:
     WaterDrop(QWidget *parent = Q_NULLPTR);
 
-	~WaterDrop();
-
-	void move(const QPoint &point);
+    void move(const QPoint &point);
 
 protected:
-
-	void paintEvent(QPaintEvent *event)override;
+    void paintEvent(QPaintEvent *event) override;
 
 public slots:
-	void onRaduisChanged(QVariant value);
+    void onRadiusChanged(QVariant value);
 
 private:
-	QVariantAnimation* m_waterDropAnimation;
+    QVariantAnimation *m_waterDropAnimation;
 
-	int m_animationRadius;
+    int m_animationRadius;
 };
 #endif // WATERDROP_H

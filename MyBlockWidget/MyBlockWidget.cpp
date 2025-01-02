@@ -5,6 +5,7 @@
 
 #include<QToolButton>
 #include<QLabel>
+#include <QPainter>
 #include <QRandomGenerator>
 #include <QResizeEvent>
 #include <QStyleOption>
@@ -240,7 +241,7 @@ void MyBlockWidget::leaveEvent(QEvent *ev) {
 void MyBlockWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
 
-    this->m_bacWidget->setFixedSize(event->size().width() / 1.01, event->size().width() / (1.01 * this->m_aspectRatio));
+    this->m_bacWidget->setFixedSize(static_cast<int>(event->size().width() / 1.01), static_cast<int>(event->size().width() / (1.01 * this->m_aspectRatio)));
 
     this->m_mask->setFixedSize(this->m_bacWidget->size());
 

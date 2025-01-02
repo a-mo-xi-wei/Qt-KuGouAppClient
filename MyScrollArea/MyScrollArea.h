@@ -7,7 +7,6 @@
 
 #include <QScrollArea>
 
-
 class MyScrollArea : public QScrollArea {
     Q_OBJECT
 

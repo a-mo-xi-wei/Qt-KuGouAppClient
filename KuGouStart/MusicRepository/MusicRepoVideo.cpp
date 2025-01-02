@@ -9,6 +9,7 @@
 
 #include <QFile>
 #include <QMouseEvent>
+#include <QPainter>
 #include <QPainterPath>
 #include <QRandomGenerator>
 
@@ -33,7 +34,7 @@ MusicRepoVideo::~MusicRepoVideo() {
     delete ui;
 }
 
-void MusicRepoVideo::setCoverPix(const QString &pixmapPath) {
+void MusicRepoVideo::setCoverPix(const QString &pixmapPath) const {
     ui->cover_widget->setBorderImage(pixmapPath,10);
 }
 
@@ -42,7 +43,7 @@ void MusicRepoVideo::setVideoName(const QString &name) {
     updateVideoNameText();
 }
 
-void MusicRepoVideo::setIconPix(const QString &pix) {
+void MusicRepoVideo::setIconPix(const QString &pix) const {
     auto src = QPixmap(pix);
     auto size = ui->ico_label->size();
     auto len = size.width();
@@ -72,7 +73,7 @@ void MusicRepoVideo::initUi() {
     ui->cover_widget->installEventFilter(this);
 }
 
-void MusicRepoVideo::updateVideoNameText() {
+void MusicRepoVideo::updateVideoNameText() const {
     //设置字体测量工具
     auto font = ui->video_name_label->font();
     QFontMetrics fm(font);
@@ -81,7 +82,7 @@ void MusicRepoVideo::updateVideoNameText() {
     ui->video_name_label->setText(elidedText);
 }
 
-void MusicRepoVideo::updateVideoAuthorText() {
+void MusicRepoVideo::updateVideoAuthorText() const {
     //设置字体测量工具
     auto font = ui->video_author_label->font();
     QFontMetrics fm(font);

@@ -9,12 +9,11 @@ class QPointF;
 class QTimer;
 class QIcon;
 
-class RippleButton : public QToolButton
-{
+class RippleButton : public QToolButton {
 public:
     explicit RippleButton(QWidget *parent = Q_NULLPTR); // 构造函数
 
-    void setSpeed(const int& timeinitval); // 设置定时器时间间隔，控制填充速度
+    void setSpeed(const int &timeInterval) const; // 设置定时器时间间隔，控制填充速度
 
     void setFillColor(const QColor &fillcolor); // 设置填充颜色
 

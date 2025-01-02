@@ -19,6 +19,7 @@
 #define PIX_RADIUS 9
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+
 QPixmap roundedPix(const QPixmap &src, QSize size, int radius) {
     QPixmap scaled = src.scaled(size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
     QPixmap dest(size);
@@ -33,10 +34,11 @@ QPixmap roundedPix(const QPixmap &src, QSize size, int radius) {
 
     return dest;
 }
-MusicItemWidget::MusicItemWidget(SongInfor  infor, QWidget *parent)
+
+MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     :QFrame(parent)
-    ,m_information(std::move(infor))
     ,m_songOptMenu(new MyMenu(MyMenu::MenuKind::SongOptionMenu,this))
+    ,m_information(std::move(info))
     ,timer(new QTimer(this))
 {
 
@@ -98,11 +100,11 @@ MusicItemWidget::MusicItemWidget(SongInfor  infor, QWidget *parent)
     connect(m_songOptMenu, &MyMenu::deleteSong, this, &MusicItemWidget::onDeleteSong);
 }
 
-void MusicItemWidget::setIndexText(const int &index) {
+void MusicItemWidget::setIndexText(const int &index) const {
     this->m_indexLab->setText(QString("%1").arg(index, 2, 10, QChar('0')));
 }
 
-void MusicItemWidget::setInterval(const int &timeInterval) {
+void MusicItemWidget::setInterval(const int &timeInterval) const {
     timer->setInterval(timeInterval);
 }
 
@@ -110,7 +112,7 @@ void MusicItemWidget::setFillColor(const QColor &fillcolor) {
     fill_color = fillcolor;
 }
 
-void MusicItemWidget::setRadius(int radius_) {
+void MusicItemWidget::setRadius(const int &radius_) {
     frame_radius = radius_;
 }
 

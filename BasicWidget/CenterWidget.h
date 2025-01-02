@@ -13,8 +13,7 @@ public:
     explicit CenterWidget(QWidget *parent = nullptr);
 
 protected:
-    void paintEvent(QPaintEvent* ev)override;
-
+    void paintEvent(QPaintEvent *ev) override;
 };
 
 #endif // CENTERWIDGET_H

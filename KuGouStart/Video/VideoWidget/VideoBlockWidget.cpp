@@ -8,6 +8,7 @@
 #include "ui_VideoBlockWidget.h"
 
 #include <QFile>
+#include <QPainter>
 #include <QPainterPath>
 #include <QRandomGenerator>
 
@@ -34,7 +35,7 @@ VideoBlockWidget::~VideoBlockWidget() {
     delete ui;
 }
 
-void VideoBlockWidget::setCoverPix(const QString &pixmapPath) {
+void VideoBlockWidget::setCoverPix(const QString &pixmapPath) const {
     ui->cover_widget->setBorderImage(pixmapPath,10);
 }
 
@@ -43,7 +44,7 @@ void VideoBlockWidget::setVideoName(const QString &name) {
     updateVideoNameText();
 }
 
-void VideoBlockWidget::setIconPix(const QString &pix) {
+void VideoBlockWidget::setIconPix(const QString &pix) const {
     auto src = QPixmap(pix);
     auto size = ui->ico_label->size();
     auto len = size.width();
@@ -69,11 +70,11 @@ void VideoBlockWidget::setShowTip()const {
     ui->cover_widget->setTipStyleSheet(QStringLiteral("border-radius:10px;background-color:#797978;color:white;"));
 }
 
-void VideoBlockWidget::setTipText(const QString &text) {
+void VideoBlockWidget::setTipText(const QString &text) const {
     ui->cover_widget->setTipLabText(text);
 }
 
-void VideoBlockWidget::initUi() {
+void VideoBlockWidget::initUi() const {
     //遮罩设置
     auto &mask = ui->cover_widget->getMask();
     mask.setDefaultFillCircleColor(Qt::white);
@@ -107,7 +108,7 @@ void VideoBlockWidget::initUi() {
 
 }
 
-void VideoBlockWidget::updateVideoNameText() {
+void VideoBlockWidget::updateVideoNameText() const {
     //设置字体测量工具
     auto font = ui->video_name_label->font();
     QFontMetrics fm(font);
@@ -116,7 +117,7 @@ void VideoBlockWidget::updateVideoNameText() {
     ui->video_name_label->setText(elidedText);
 }
 
-void VideoBlockWidget::updateVideoAuthorText() {
+void VideoBlockWidget::updateVideoAuthorText() const {
     //设置字体测量工具
     auto font = ui->video_author_label->font();
     QFontMetrics fm(font);
