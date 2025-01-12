@@ -3,8 +3,8 @@
 //
 #include "MyBlockWidget.h"
 
-#include<QToolButton>
-#include<QLabel>
+#include <QToolButton>
+#include <QLabel>
 #include <QPainter>
 #include <QRandomGenerator>
 #include <QResizeEvent>

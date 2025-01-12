@@ -1,7 +1,7 @@
 #include "WaterDrop.h"
 #include <QPainter>
 #include <QPainterPath>
-#include<QVariantAnimation>
+#include <QVariantAnimation>
 
 #define WATER_DROP_RADIUS 20
 

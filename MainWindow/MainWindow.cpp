@@ -1,6 +1,6 @@
 #include "MainWindow.h"
 #include "WaterDrop.h"
-#include<QMouseEvent>
+#include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
 

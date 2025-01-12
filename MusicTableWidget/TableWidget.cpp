@@ -4,14 +4,12 @@
 #include <QToolButton>
 #include <QTimer>
 #include <QEnterEvent>
-#include <QBoxLayout>
 #include <QFile>
 #include <QSpacerItem>
 #include <QStyleOption>
 #include <QPainter>
 #include <QPainterPath>
 #include <QRandomGenerator>
-#include <vector>
 #include <QFontMetrics>
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分

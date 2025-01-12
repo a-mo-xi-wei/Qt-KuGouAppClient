@@ -1,10 +1,10 @@
 #include "MusicItemWidget.h"
-#include<QLabel>
-#include<QToolButton>
-#include<QVBoxLayout>
-#include<QSpacerItem>
-#include<QFile>
-#include<QTimer>
+#include <QLabel>
+#include <QToolButton>
+#include <QVBoxLayout>
+#include <QSpacerItem>
+#include <QFile>
+#include <QTimer>
 #include <QCursor>
 #include <QPainter>
 #include <QPaintEvent>
