@@ -1,11 +1,9 @@
 #ifndef TITLEWIDGET_H
 #define TITLEWIDGET_H
 
-#include <QWidget>
-#include <QApplication>
-#include <QPaintEvent>
-
 #include"MyMenu.h"
+
+#include <QWidget>
 
 class TitleWidget : public QWidget {
     Q_OBJECT

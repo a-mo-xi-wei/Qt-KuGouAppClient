@@ -3,7 +3,7 @@
 //
 
 #include "CenterWidget.h"
-#include<QPainter>
+#include <QPainter>
 
 CenterWidget::CenterWidget(QWidget *parent)
     : QWidget(parent) {

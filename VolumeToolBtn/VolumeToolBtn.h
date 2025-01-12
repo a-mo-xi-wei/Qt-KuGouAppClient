@@ -4,9 +4,9 @@
 #include"SliderWidget.h"
 
 #include <QToolButton>
+#include <QLabel>
 
 class QTimer;
-class QLabel;
 class QVBoxLayout;
 
 class VolumeToolBtn : public QToolButton {

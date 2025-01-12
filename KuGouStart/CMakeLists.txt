@@ -18,6 +18,7 @@ set(SOURCE_FILE
     ${SOURCE_CPP}
     ${SOURCE_H}
     Res.qrc
+    Res/titleIcon.rc
     KuGouApp.ui
 )
 ####       发现音乐       ####

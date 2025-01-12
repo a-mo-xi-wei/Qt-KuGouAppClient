@@ -3,8 +3,11 @@
 //
 
 #include "TitleWidget.h"
-#include<QPainter>
+
+#include <QGuiApplication>
+#include <QPainter>
 #include <QPainterPath>
+#include <QMouseEvent>
 
 TitleWidget::TitleWidget(QWidget *parent)
     : QWidget(parent)

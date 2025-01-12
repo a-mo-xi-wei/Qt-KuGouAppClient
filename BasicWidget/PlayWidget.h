@@ -2,9 +2,6 @@
 #define PLAYWIDGET_H
 
 #include <QWidget>
-#include <QApplication>
-#include <QMouseEvent>
-#include <QPaintEvent>
 
 class PlayWidget : public QWidget {
     Q_OBJECT

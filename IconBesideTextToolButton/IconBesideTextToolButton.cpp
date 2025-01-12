@@ -1,7 +1,6 @@
 #include "IconBesideTextToolButton.h"
 
 #include <QPainter>
-#include <QStyleOptionToolButton>
 
 IconBesideTextToolButton::IconBesideTextToolButton(QWidget *parent)
     : QToolButton(parent)

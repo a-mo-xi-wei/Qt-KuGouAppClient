@@ -3,8 +3,9 @@
 //
 
 #include "PlayWidget.h"
-#include<QPainter>
+#include <QPainter>
 #include <QPainterPath>
+#include <QMouseEvent>
 
 PlayWidget::PlayWidget(QWidget *parent)
     : QWidget(parent) {
