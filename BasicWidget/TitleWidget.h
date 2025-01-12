@@ -1,7 +1,7 @@
 #ifndef TITLEWIDGET_H
 #define TITLEWIDGET_H
 
-#include"MyMenu.h"
+#include"TitleOptionMenu.h"
 
 #include <QWidget>
 
@@ -21,13 +21,14 @@ protected:
     void paintEvent(QPaintEvent *ev) override;
 
 private:
-    void getMenuPosition(const QPoint &pos);
+    void setMenuPosition(const QPoint &pos);
 
 signals:
     void doubleClicked(); // 自定义的双击信号
+
 private:
     //标题菜单相关
-    MyMenu *m_menu{};
+    TitleOptionMenu *m_titleOptMenu{};
     QPoint m_menuPosition;
 };
 

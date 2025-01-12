@@ -3,24 +3,29 @@
 //
 
 #include "TitleWidget.h"
+#include "MyMenu.h"
 
 #include <QGuiApplication>
 #include <QPainter>
 #include <QPainterPath>
 #include <QMouseEvent>
 
+
 TitleWidget::TitleWidget(QWidget *parent)
     : QWidget(parent)
-    , m_menu(new MyMenu(MyMenu::MenuKind::TitleOptionMenu,this))
 {
     this->setObjectName("TitleWidget");
     this->setStyleSheet("QWidget#TitleWidget{margin:5px;}");
+    auto menu = new MyMenu(MyMenu::MenuKind::TitleOption,this);
+    m_titleOptMenu = menu->getMenu<TitleOptionMenu>();
 }
 
 void TitleWidget::showMenu(const QPoint &pos) {
-    getMenuPosition(pos);
-    this->m_menu->move(this->m_menuPosition);
-    this->m_menu->show();
+    setMenuPosition(pos);
+    //qDebug()<<"当前Menu位置: "<<pos<<" 显示菜单";
+    this->m_titleOptMenu->move(this->m_menuPosition);
+    this->m_titleOptMenu->show();
+    //qDebug()<<"显示菜单成功";
 }
 
 void TitleWidget::mouseDoubleClickEvent(QMouseEvent *event) {
@@ -69,7 +74,7 @@ void TitleWidget::paintEvent(QPaintEvent *ev) {
     p.drawPath(path); // 绘制路径
 }
 
-void TitleWidget::getMenuPosition(const QPoint &pos) {
+void TitleWidget::setMenuPosition(const QPoint &pos) {
     this->m_menuPosition = pos;
     // 获取屏幕的尺寸
     QScreen *screen = QGuiApplication::primaryScreen();
@@ -77,8 +82,9 @@ void TitleWidget::getMenuPosition(const QPoint &pos) {
 
     // 计算菜单右侧的全局位置
     //int menuLeftPos = pos.x() - m_menu->width();
-    int menuRightPos  = pos.x() + m_menu->width();
-    int menuBottomPos = pos.y() + m_menu->height();
+    //qDebug() << "Menu width:" << m_titleOptMenu->width();
+    int menuRightPos  = pos.x() + m_titleOptMenu->width();
+    int menuBottomPos = pos.y() + m_titleOptMenu->height();
     //int menuTopPos = pos.y() - m_menu->height();
     // 若菜单左侧超出屏幕左侧 (不存在)
     //if(menuLeftPos < 0) {

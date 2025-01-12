@@ -2,6 +2,7 @@
 #define MUSICITEMWIDGET_H
 
 #include "MyMenu.h"
+#include "SongOptionMenu.h"
 
 #include <QDateTime>
 #include <QFrame>
@@ -159,7 +160,7 @@ private:
 
     bool m_isPlaying = false;
     //菜单相关
-    MyMenu *m_songOptMenu{};
+    SongOptionMenu *m_songOptMenu{};
     QPoint m_menuPosition;
     //歌曲信息相关
     int m_index;

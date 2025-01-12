@@ -1,4 +1,5 @@
 #include "MusicItemWidget.h"
+
 #include <QLabel>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -13,6 +14,8 @@
 #include <QPainterPath>
 #include <QtMath>
 #include <QPointF>
+
+#include "SongOptionMenu.h"
 //图片大小
 #define PIX_SIZE 50
 //图片圆角
@@ -37,7 +40,6 @@ QPixmap roundedPix(const QPixmap &src, QSize size, int radius) {
 
 MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     :QFrame(parent)
-    ,m_songOptMenu(new MyMenu(MyMenu::MenuKind::SongOptionMenu,this))
     ,m_information(std::move(info))
     ,timer(new QTimer(this))
 {
@@ -96,8 +98,10 @@ MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     connect(this->m_collectToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onCollectToolBtnClicked);
     connect(this->m_moreToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onMoreToolBtnClicked);
     //menu响应
-    connect(m_songOptMenu, &MyMenu::play, this, &MusicItemWidget::onPlay);
-    connect(m_songOptMenu, &MyMenu::deleteSong, this, &MusicItemWidget::onDeleteSong);
+    auto menu = new MyMenu(MyMenu::MenuKind::SongOption,this);
+    m_songOptMenu = menu->getMenu<SongOptionMenu>();
+    connect(m_songOptMenu, &SongOptionMenu::play, this, &MusicItemWidget::onPlay);
+    connect(m_songOptMenu, &SongOptionMenu::deleteSong, this, &MusicItemWidget::onDeleteSong);
 }
 
 void MusicItemWidget::setIndexText(const int &index) const {
@@ -350,8 +354,6 @@ void MusicItemWidget::initUi()
     this->m_downloadToolBtn ->setCursor(Qt::PointingHandCursor);
     this->m_collectToolBtn  ->setCursor(Qt::PointingHandCursor);
     this->m_moreToolBtn     ->setCursor(Qt::PointingHandCursor);
-
-    this->m_songOptMenu->hide();
 
     auto hlayout = new QHBoxLayout(this);
     hlayout->addWidget(this->m_indexLab);

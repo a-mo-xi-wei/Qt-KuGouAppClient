@@ -6,6 +6,7 @@
 #define LOCALDOWNLOAD_H
 
 #include"MusicItemWidget.h"
+#include"SortOptionMenu.h"
 
 #include<QQueue>
 #include<QWidget>
@@ -36,6 +37,7 @@ public:
     void updateCurPlayIndex();
 
     void initMusicItem(MusicItemWidget* item);
+
 private slots:
     //ui相关
     void on_local_music_pushButton_clicked();
@@ -73,6 +75,7 @@ public slots:
     void onPlayCountSort(const bool& down);
 
     void onRandomSort();
+
 public slots:
     //Item menu相关
     void onItemNextPlay();
@@ -90,7 +93,6 @@ public slots:
     void onItemOpenInFile();
     void onItemSearch();
     void onItemUpLoad();
-    //Title menu相关
 
 signals:
     void playMusic(int index);
@@ -120,7 +122,7 @@ private:
     int m_setPlayIndex = -1;
 
     //菜单相关
-    MyMenu* m_sortOptMenu{};
+    SortOptionMenu* m_sortOptMenu{};
     QPoint m_menuPosition;
 };
 

@@ -131,7 +131,7 @@ void MVWidget::initVector() {
         // 使用 std::unique 去重，并调整容器大小
         auto last = std::unique(m_titleAndDesc.begin(), m_titleAndDesc.end());
         m_titleAndDesc.erase(last, m_titleAndDesc.end());
-        qDebug() << "现在大小："<<this->m_titleAndDesc.size();
+        //qDebug() << "现在大小："<<this->m_titleAndDesc.size();
     }
 
     for (int i = 1; i <= 100; i++) {
