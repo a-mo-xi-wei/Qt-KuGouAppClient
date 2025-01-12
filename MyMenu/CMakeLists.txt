@@ -11,9 +11,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
+file(GLOB SRC_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+file(GLOB SRC_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+
 set(SOURCE_FILE
-    MyMenu.h
-    MyMenu.cpp
+    ${SRC_CPP}
+    ${SRC_H}
     menu.css
 )
 
