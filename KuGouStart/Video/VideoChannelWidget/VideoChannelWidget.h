@@ -5,8 +5,8 @@
 #ifndef VIDEOCHANNELWIDGET_H
 #define VIDEOCHANNELWIDGET_H
 
-#include"UpToolButton.h"
-#include"VideoChannelPartWidget.h"
+#include "UpToolButton.h"
+#include "VideoChannelPartWidget.h"
 #include <QWidget>
 
 class QScrollBar;

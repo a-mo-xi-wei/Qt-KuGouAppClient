@@ -7,8 +7,8 @@
 #include "VideoChannelWidget.h"
 #include "ui_VideoChannelWidget.h"
 
-#include<QFile>
-#include<QButtonGroup>
+#include <QFile>
+#include <QButtonGroup>
 #include <QPropertyAnimation>
 #include <QScrollBar>
 #include <QTimer>
