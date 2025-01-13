@@ -7,10 +7,13 @@
 
 #include"MusicItemWidget.h"
 #include"SortOptionMenu.h"
+#include"UpToolButton.h"
 
 #include<QQueue>
 #include<QWidget>
+
 class QMediaPlayer;
+class QScrollBar;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class LocalDownload; }
@@ -94,6 +97,13 @@ public slots:
     void onItemSearch();
     void onItemUpLoad();
 
+private slots:
+    void handleWheelValue(const int& value);
+
+    void onUpBtnClicked();
+
+    void onUpBtnShowOrNot();
+
 signals:
     void playMusic(int index);
 
@@ -105,6 +115,9 @@ signals:
 
     //同步(更新)Vec
     void syncSongInfo(QVector<SongInfor>& vec);
+
+protected:
+    void resizeEvent(QResizeEvent *event) override;
 
 private:
     Ui::LocalDownload *ui;
@@ -124,6 +137,15 @@ private:
     //菜单相关
     SortOptionMenu* m_sortOptMenu{};
     QPoint m_menuPosition;
+
+    //滚动条相关
+    QWidget* m_parent{};
+    //回到顶部按钮
+    std::unique_ptr<UpToolButton> m_upBtn{};
+    //垂直滚动条
+    QScrollBar* m_vScrollBar{};
+    //专门处理回到最顶部按钮
+    QTimer*     m_scrollBarTimer{};  // 定时器
 };
 
 

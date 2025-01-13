@@ -5,17 +5,23 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_LocalDownload.h" resolved
 
 #include "LocalDownload.h"
+
+#include <qabstractanimation.h>
+
 #include "ui_LocalDownload.h"
 
 #include <QStandardPaths>
 #include <QFileDialog>
 #include <QMediaMetaData>
 #include <QMediaPlayer>
+#include <QPropertyAnimation>
 #include <QStringList>
 #include <QRandomGenerator>
 #include <QRegularExpression>
 #include <QResizeEvent>
 #include <QScreen>
+#include <QScrollBar>
+#include <QTimer>
 
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
@@ -25,10 +31,11 @@ static QRegularExpression re(QStringLiteral("^[A-Za-z0-9\\p{Han}\\\\/\\-_\\*]+$"
 
 LocalDownload::LocalDownload(QWidget *parent)
     : QWidget(parent)
-      , ui(new Ui::LocalDownload)
-      , m_player(std::make_unique<QMediaPlayer>(this))
-      , m_searchAction(new QAction(this))
-{
+    , ui(new Ui::LocalDownload)
+    , m_player(std::make_unique<QMediaPlayer>(this))
+    , m_searchAction(new QAction(this))
+    , m_upBtn(std::make_unique<UpToolButton>(this))
+    , m_scrollBarTimer(new QTimer(this)) {
     ui->setupUi(this); {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/local.css"));
         if (file.open(QIODevice::ReadOnly)) {
@@ -62,6 +69,18 @@ LocalDownload::LocalDownload(QWidget *parent)
     connect(m_sortOptMenu, &SortOptionMenu::durationSort, this, &LocalDownload::onDurationSort);
     connect(m_sortOptMenu, &SortOptionMenu::playCountSort, this, &LocalDownload::onPlayCountSort);
     connect(m_sortOptMenu, &SortOptionMenu::randomSort, this, &LocalDownload::onRandomSort);
+
+    //获取父类指针
+    this->m_parent = this->window();
+
+    this->m_vScrollBar = ui->scrollArea->verticalScrollBar();
+    ui->scrollArea->setScrollAreaKind(MyScrollArea::ScrollAreaKind::Inside);
+    //wheelVaue信号
+    connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &LocalDownload::handleWheelValue);
+    connect(this->m_vScrollBar,&QScrollBar::valueChanged,this, &LocalDownload::handleWheelValue);
+    //回到最顶部信号
+    connect(this->m_upBtn.get(), &QToolButton::clicked, this, &LocalDownload::onUpBtnClicked);
+    connect(this->m_scrollBarTimer, &QTimer::timeout, this, &LocalDownload::onUpBtnShowOrNot);
 }
 
 LocalDownload::~LocalDownload() {
@@ -544,6 +563,49 @@ void LocalDownload::onItemSearch() {
 }
 
 void LocalDownload::onItemUpLoad() {
+}
+
+void LocalDownload::handleWheelValue(const int &value) {
+    // 启动定时器，延迟处理
+    if (!this->m_scrollBarTimer->isActive()) {
+        this->m_scrollBarTimer->start(500); // 500ms 延迟，避免过于频繁地触发
+    }
+}
+
+void LocalDownload::onUpBtnClicked() {
+    // 标记动画开始
+    ui->scrollArea->setAnimating(true); //开始禁用滚轮
+
+    auto animation = new QPropertyAnimation(this->m_vScrollBar, "value", this);
+    // 设置动画的起始值（当前滚动条位置）和结束值（最顶部）
+    animation->setStartValue(this->m_vScrollBar->value()); // 当前滚动条位置
+    animation->setEndValue(0); // 滚动到顶部（0 表示最上方）
+    animation->setDuration(500); // 动画持续时间，500ms
+    animation->setEasingCurve(QEasingCurve::OutBounce); // 缓动曲线
+
+    // 在动画结束后标记动画停止
+    connect(animation, &QPropertyAnimation::finished, this, [this]() {
+        ui->scrollArea->setAnimating(false); //动画结束启用滚轮
+    });
+
+    // 启动动画
+    animation->start(QAbstractAnimation::DeleteWhenStopped); // 动画结束后自动删除
+}
+
+void LocalDownload::onUpBtnShowOrNot() {
+    qDebug()<<"滚动条位置："<<this->m_vScrollBar->value();
+    if (this->m_vScrollBar->value() > 200)this->m_upBtn->show();
+    else this->m_upBtn->hide();
+    qDebug()<<"按钮位置："<<this->m_upBtn->geometry();
+
+}
+
+void LocalDownload::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+    ui->scrollArea->setFixedHeight(this->m_parent->height() - 335);
+    this->m_upBtn->move(this->m_parent->width() - this->m_upBtn->width() - 220,
+                        this->m_parent->height() - this->m_upBtn->height() - 180);
+    this->m_upBtn->raise();
 }
 
 void LocalDownload::on_local_sort_toolButton_clicked() {
