@@ -119,6 +119,9 @@ KuGouApp::KuGouApp(MainWindow *parent)
     //专门处理标题menu
     connect(ui->menu_toolButton,&QToolButton::clicked,this,&KuGouApp::on_menu_toolButton_clicked);
     ui->progressSlider->installEventFilter(this);
+
+    //默认为你推荐
+    ui->recommend_you_toolButton->clicked();
 }
 
 KuGouApp::~KuGouApp() {
@@ -856,8 +859,8 @@ void KuGouApp::on_close_toolButton_clicked() {
 void KuGouApp::on_recommend_you_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_recommendForYou.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    ui->context_scrollArea->setIgnore(false);
+    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->context_scrollArea->setIgnore(true);
 
     updateSize();
     this->m_curves = QEasingCurve::OutBounce; // 缓动曲线

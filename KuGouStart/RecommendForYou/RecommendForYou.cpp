@@ -9,7 +9,10 @@
 #include "TableWidget.h"
 
 #include <QDir>
+#include <QPropertyAnimation>
 #include <QResizeEvent>
+#include <QScrollBar>
+#include <QTimer>
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -17,6 +20,8 @@
 RecommendForYou::RecommendForYou(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::RecommendForYou)
+    , m_upBtn(std::make_unique<UpToolButton>(this))
+    , m_scrollBarTimer(new QTimer(this))
 {
     ui->setupUi(this);
 
@@ -32,6 +37,16 @@ RecommendForYou::RecommendForYou(QWidget *parent)
     initAdvertiseBoard();
     initClassifyWidget();
     initTabWidget();
+
+    this->m_vScrollBar = ui->scrollArea->verticalScrollBar();
+    ui->scrollArea->setScrollAreaKind(MyScrollArea::ScrollAreaKind::Inside);
+    //wheelVaue信号
+    connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &RecommendForYou::handleWheelValue);
+    connect(this->m_vScrollBar,&QScrollBar::valueChanged,this, &RecommendForYou::handleWheelValue);
+    //回到最顶部信号
+    connect(this->m_upBtn.get(), &QToolButton::clicked, this, &RecommendForYou::onUpBtnClicked);
+    connect(this->m_scrollBarTimer, &QTimer::timeout, this, &RecommendForYou::onUpBtnShowOrNot);
+
 }
 
 RecommendForYou::~RecommendForYou() {
@@ -103,4 +118,46 @@ void RecommendForYou::initTabWidget() {
                          new TableWidget(QStringLiteral("热门好歌精选 "), TableWidget::KIND::ItemList, this));
     layout->insertWidget(layout->count() - 1,
                          new TableWidget(QStringLiteral("私人专属好歌 "), TableWidget::KIND::ItemList, this));
+}
+
+void RecommendForYou::handleWheelValue(const int &value) {
+    // 启动定时器，延迟处理
+    if (!this->m_scrollBarTimer->isActive()) {
+        this->m_scrollBarTimer->start(500); // 500ms 延迟，避免过于频繁地触发
+    }
+}
+
+void RecommendForYou::onUpBtnClicked() {
+    // 标记动画开始
+    ui->scrollArea->setAnimating(true); //开始禁用滚轮
+
+    auto animation = new QPropertyAnimation(this->m_vScrollBar, "value", this);
+    // 设置动画的起始值（当前滚动条位置）和结束值（最顶部）
+    animation->setStartValue(this->m_vScrollBar->value()); // 当前滚动条位置
+    animation->setEndValue(0); // 滚动到顶部（0 表示最上方）
+    animation->setDuration(500); // 动画持续时间，500ms
+    animation->setEasingCurve(QEasingCurve::OutBounce); // 缓动曲线
+
+    // 在动画结束后标记动画停止
+    connect(animation, &QPropertyAnimation::finished, this, [this]() {
+        ui->scrollArea->setAnimating(false); //动画结束启用滚轮
+    });
+
+    // 启动动画
+    animation->start(QAbstractAnimation::DeleteWhenStopped); // 动画结束后自动删除
+}
+
+void RecommendForYou::onUpBtnShowOrNot() {
+    if (this->m_vScrollBar->value() > 200)this->m_upBtn->show();
+    else this->m_upBtn->hide();
+}
+
+void RecommendForYou::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+    auto parent = this->window();
+    ui->scrollArea->setFixedHeight(parent->height() - 200);
+    //UpWidget移动
+    this->m_upBtn->move(parent->width() - this->m_upBtn->width() - 206,
+                        parent->height() - this->m_upBtn->height() - 190);
+    this->m_upBtn->raise();
 }

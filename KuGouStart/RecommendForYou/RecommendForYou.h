@@ -6,6 +6,9 @@
 #define RECOMMENDFORYOU_H
 
 #include <QWidget>
+#include "UpToolButton.h"
+
+class QScrollBar;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class RecommendForYou; }
@@ -25,8 +28,24 @@ private:
 
     void initTabWidget();
 
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
+private slots:
+    void handleWheelValue(const int& value);
+
+    void onUpBtnClicked();
+
+    void onUpBtnShowOrNot();
+
 private:
     Ui::RecommendForYou *ui;
+    std::unique_ptr<UpToolButton> m_upBtn{};
+    //垂直滚动条
+    QScrollBar* m_vScrollBar{};
+    //专门处理回到最顶部按钮
+    QTimer*     m_scrollBarTimer{};  // 定时器
+
 };
 
 
