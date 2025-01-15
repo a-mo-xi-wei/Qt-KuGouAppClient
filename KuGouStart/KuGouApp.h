@@ -1,9 +1,6 @@
 #ifndef KUGOUAPP_H
 #define KUGOUAPP_H
 
-#include<memory>
-#include<QEasingCurve>
-
 #include"MainWindow.h"
 //发现音乐
 #include"RecommendForYou.h"
@@ -24,7 +21,6 @@
 #include"ListenBook.h"
 #include"Search.h"
 
-#include"UpToolButton.h"
 //#include"MyMenu.h"//直接使用title的Menu
 #include"TitleWidget.h"
 
@@ -56,7 +52,7 @@ private:
 
     void initStackedWidget();
 
-    void initCommendForYou();
+    void initRecommendForYou();
 
     void initMusicRepository();
 
@@ -203,11 +199,7 @@ public slots:
 
     void onSubSongInfo(const SongInfor &info);
 
-    void onUpBtnClicked();
-
     void onScrollBarValueChanged(const int& value);
-
-    void onUpBtnShowOrNot();
 
     void onKeyPause();
 
@@ -230,7 +222,6 @@ private:
     QToolButton*                        m_lastBtn{};//上一次点击的按钮
     std::unique_ptr<QButtonGroup>       m_menuBtnGroup{};
     std::unique_ptr<QSizeGrip>          m_sizeGrip{};
-    std::unique_ptr<UpToolButton>       m_upBtn{};
     std::unique_ptr<QPropertyAnimation> m_animation{};  //专门用于窗口的缩放动画
     //堆栈窗口
     std::unique_ptr<RecommendForYou>    m_recommendForYou{};
@@ -269,7 +260,6 @@ private:
     QVector<SongInfor>      m_lastSongInfoVector;//保留上一次排序的结果
     int                     m_songIndex = -1;//播放的歌曲的下标
 
-    QEasingCurve            m_curves = QEasingCurve::OutBounce;
     QScrollBar*             m_vScrollBar{};
 
     //专门处理回到最顶部按钮

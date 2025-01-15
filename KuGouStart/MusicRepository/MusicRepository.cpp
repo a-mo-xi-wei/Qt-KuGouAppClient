@@ -278,8 +278,7 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
     ui->singer_widget->setFixedHeight(average);
     ui->classify_widget->setFixedHeight(average);
     //grid设置
-
-    int topLevelWidth = m_topWindow->width();
+    const auto topLevelWidth = m_topWindow->width();
     average = (topLevelWidth - 290) / 3;
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
@@ -334,6 +333,10 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
         }
         lastVisibleState = newVisibleState;
     }
+
+    // 设置scrollArea的高度
+    ui->scrollArea->setFixedHeight(this->m_topWindow->height() - 200);
+
 }
 
 void MusicRepository::mousePressEvent(QMouseEvent *event) {

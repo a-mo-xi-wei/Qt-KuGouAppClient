@@ -5,7 +5,6 @@
 #ifndef VIDEOWIDGET_H
 #define VIDEOWIDGET_H
 
-#include"UpToolButton.h"
 #include"VideoPartWidget.h"
 #include <QWidget>
 
@@ -42,10 +41,6 @@ private slots:
 
     void handleWheelValue(const int& value);
 
-    void onUpBtnClicked();
-
-    void onUpBtnShowOrNot();
-
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
@@ -54,7 +49,6 @@ protected:
 private:
     Ui::VideoWidget *ui;
     std::unique_ptr<QButtonGroup> m_buttonGroup{};
-    std::unique_ptr<UpToolButton> m_upBtn{};
     //13个widget
     std::unique_ptr<VideoPartWidget> m_recommendWidget      {};
     std::unique_ptr<VideoPartWidget> m_videoRankWidget      {};
@@ -73,8 +67,6 @@ private:
     std::vector<QString> m_pixPathVector{};
     //垂直滚动条
     QScrollBar* m_vScrollBar{};
-    //专门处理回到最顶部按钮
-    QTimer*     m_scrollBarTimer{};  // 定时器
 };
 
 

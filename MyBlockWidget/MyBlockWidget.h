@@ -7,8 +7,6 @@
 
 #include"SMaskWidget.h"
 
-#include <QWidget>
-
 class QLabel;
 class QToolButton;
 

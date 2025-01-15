@@ -22,7 +22,6 @@ VideoChannelWidget::VideoChannelWidget(QWidget *parent)
     : QWidget(parent)
       , ui(new Ui::VideoChannelWidget)
       , m_buttonGroup(std::make_unique<QButtonGroup>(this))
-      , m_upBtn(std::make_unique<UpToolButton>(this))
       , m_popularWidget(std::make_unique<VideoChannelPartWidget>(this))
       , m_childrenWidget(std::make_unique<VideoChannelPartWidget>(this))
       , m_themeWidget(std::make_unique<VideoChannelPartWidget>(this))
@@ -34,7 +33,7 @@ VideoChannelWidget::VideoChannelWidget(QWidget *parent)
       , m_danceWidget(std::make_unique<VideoChannelPartWidget>(this))
       , m_siteWidget(std::make_unique<VideoChannelPartWidget>(this))
       , m_singerWidget(std::make_unique<VideoChannelPartWidget>(this))
-      , m_scrollBarTimer(new QTimer(this)) {
+{
     ui->setupUi(this);
     this->m_parent = this->window();
     {
@@ -108,7 +107,6 @@ void VideoChannelWidget::initUi() {
     }
     {
         this->m_vScrollBar = ui->scrollArea->verticalScrollBar();
-        ui->scrollArea->setScrollAreaKind(MyScrollArea::ScrollAreaKind::Inside);
         //处理信号
         connect(ui->popular_pushButton,&QPushButton::clicked,this,[this] {
             this->m_vScrollBar->setValue(this->m_popularWidget->mapToParent(QPoint(0, 0)).y());
@@ -146,9 +144,6 @@ void VideoChannelWidget::initUi() {
         //wheelVaue信号
         connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &VideoChannelWidget::handleWheelValue);
         connect(this->m_vScrollBar,&QScrollBar::valueChanged,this, &VideoChannelWidget::handleWheelValue);
-        //回到最顶部信号
-        connect(this->m_upBtn.get(), &QToolButton::clicked, this, &VideoChannelWidget::onUpBtnClicked);
-        connect(this->m_scrollBarTimer, &QTimer::timeout, this, &VideoChannelWidget::onUpBtnShowOrNot);
     }
     auto cur = 0;
     {
@@ -353,45 +348,11 @@ void VideoChannelWidget::handleWheelValue(const int &value) {
     } else if (value >= this->m_singerWidget->mapToParent(QPoint(0, 0)).y()) {
         ui->singer_pushButton->setChecked(true);
     }
-    // 启动定时器，延迟处理
-    if (!this->m_scrollBarTimer->isActive()) {
-        this->m_scrollBarTimer->start(500); // 500ms 延迟，避免过于频繁地触发
-    }
-}
-
-void VideoChannelWidget::onUpBtnClicked() {
-    // 标记动画开始
-    ui->scrollArea->setAnimating(true); //开始禁用滚轮
-
-    auto animation = new QPropertyAnimation(this->m_vScrollBar, "value", this);
-    // 设置动画的起始值（当前滚动条位置）和结束值（最顶部）
-    animation->setStartValue(this->m_vScrollBar->value()); // 当前滚动条位置
-    animation->setEndValue(0); // 滚动到顶部（0 表示最上方）
-    animation->setDuration(500); // 动画持续时间，500ms
-    animation->setEasingCurve(QEasingCurve::OutBounce); // 缓动曲线
-
-    // 在动画结束后标记动画停止
-    connect(animation, &QPropertyAnimation::finished, this, [this]() {
-        ui->scrollArea->setAnimating(false); //动画结束启用滚轮
-    });
-
-    // 启动动画
-    animation->start(QAbstractAnimation::DeleteWhenStopped); // 动画结束后自动删除
-}
-
-void VideoChannelWidget::onUpBtnShowOrNot() {
-    //qDebug()<<this->m_vScrollBar->value();
-    if (this->m_vScrollBar->value() > 200)this->m_upBtn->show();
-    else this->m_upBtn->hide();
 }
 
 void VideoChannelWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     ui->scrollArea->setFixedHeight(this->m_parent->height() - 280);
-    //UpWidget移动
-    this->m_upBtn->move(this->m_parent->width() - this->m_upBtn->width() - 206,
-                        this->m_parent->height() - this->m_upBtn->height() - 250);
-    this->m_upBtn->raise();
 }
 
 void VideoChannelWidget::mousePressEvent(QMouseEvent *event) {

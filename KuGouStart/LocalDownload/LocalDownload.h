@@ -7,7 +7,6 @@
 
 #include"MusicItemWidget.h"
 #include"SortOptionMenu.h"
-#include"UpToolButton.h"
 
 #include<QQueue>
 #include<QWidget>
@@ -16,11 +15,15 @@ class QMediaPlayer;
 class QScrollBar;
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class LocalDownload; }
+
+namespace Ui {
+    class LocalDownload;
+}
+
 QT_END_NAMESPACE
 
 class LocalDownload : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit LocalDownload(QWidget *parent = nullptr);
@@ -33,13 +36,13 @@ public:
 
     void loadNextSong();
 
-    void getMenuPosition(const QPoint& pos);
+    void getMenuPosition(const QPoint &pos);
 
-    void MySort(std::function<bool(const MusicItemWidget*, const MusicItemWidget*)> comparator);
+    void MySort(std::function<bool(const MusicItemWidget *, const MusicItemWidget *)> comparator);
 
     void updateCurPlayIndex();
 
-    void initMusicItem(MusicItemWidget* item);
+    void initMusicItem(MusicItemWidget *item);
 
 private slots:
     //ui相关
@@ -59,74 +62,81 @@ private slots:
 
 public slots:
     //其他
-    void setPlayIndex(const int& index);
+    void setPlayIndex(const int &index);
 
-    void onMaxScreenHandle();   //最大化的时候延伸高亮部分
+    void onMaxScreenHandle(); //最大化的时候延伸高亮部分
 
 public slots:
     //排序相关
     void onDefaultSort();
 
-    void onAddTimeSort(const bool& down);
+    void onAddTimeSort(const bool &down);
 
-    void onSongNameSort(const bool& down);
+    void onSongNameSort(const bool &down);
 
-    void onSingerSort(const bool& down);
+    void onSingerSort(const bool &down);
 
-    void onDurationSort(const bool& down);
+    void onDurationSort(const bool &down);
 
-    void onPlayCountSort(const bool& down);
+    void onPlayCountSort(const bool &down);
 
     void onRandomSort();
 
 public slots:
     //Item menu相关
     void onItemNextPlay();
+
     void onItemAddToPlayQueue();
+
     void onItemAddToNewSongList();
+
     void onItemAddToLove();
+
     void onItemAddToCollect();
+
     void onItemAddtoPlayList();
+
     void onItemDownload();
+
     void onItemShare();
+
     void onItemComment();
+
     void onItemSameSong();
+
     void onItemViewSongInfo();
-    void onItemDeleteSong(const int& idx);
+
+    void onItemDeleteSong(const int &idx);
+
     void onItemOpenInFile();
+
     void onItemSearch();
+
     void onItemUpLoad();
-
-private slots:
-    void handleWheelValue(const int& value);
-
-    void onUpBtnClicked();
-
-    void onUpBtnShowOrNot();
 
 signals:
     void playMusic(int index);
 
     void startPlay();
 
-    void addSongInfo(const SongInfor& info);
+    void addSongInfo(const SongInfor &info);
 
-    void subSongInfo(const SongInfor& info);
+    void subSongInfo(const SongInfor &info);
 
     //同步(更新)Vec
-    void syncSongInfo(QVector<SongInfor>& vec);
+    void syncSongInfo(QVector<SongInfor> &vec);
 
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
 private:
     Ui::LocalDownload *ui;
-    std::unique_ptr<QMediaPlayer>m_player;
+    std::unique_ptr<QMediaPlayer> m_player;
     QVector<SongInfor> m_locationMusicVector;
-    QVector<SongInfor> m_lastLocationMusicVector;//方便求得之前的下标
-    QVector<MusicItemWidget*> m_MusicItemVector;//存放item，方便排序
+    QVector<SongInfor> m_lastLocationMusicVector; //方便求得之前的下标
+    QVector<MusicItemWidget *> m_MusicItemVector; //存放item，方便排序
 
-    QAction* m_searchAction;//专门为了设置图片
+    QAction *m_searchAction; //专门为了设置图片
     QString m_mediaPath;
     QQueue<QString> m_songQueue;
 
@@ -135,17 +145,13 @@ private:
     int m_setPlayIndex = -1;
 
     //菜单相关
-    SortOptionMenu* m_sortOptMenu{};
+    SortOptionMenu *m_sortOptMenu{};
     QPoint m_menuPosition;
 
     //滚动条相关
-    QWidget* m_parent{};
-    //回到顶部按钮
-    std::unique_ptr<UpToolButton> m_upBtn{};
+    QWidget *m_parent{};
     //垂直滚动条
-    QScrollBar* m_vScrollBar{};
-    //专门处理回到最顶部按钮
-    QTimer*     m_scrollBarTimer{};  // 定时器
+    QScrollBar *m_vScrollBar{};
 };
 
 

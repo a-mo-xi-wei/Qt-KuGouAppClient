@@ -25,8 +25,6 @@ MVWidget::MVWidget(QWidget *parent)
     :QWidget(parent)
     , ui(new Ui::MVWidget)
     , m_buttonGroup(std::make_unique<QButtonGroup>(this))
-    , m_upBtn(std::make_unique<UpToolButton>(this))
-    , m_scrollBarTimer(new QTimer(this))
 {
     ui->setupUi(this);
     this->m_parent = this->window();
@@ -206,38 +204,6 @@ const QString MVWidget::parseTitle(const QString &title) {
     return str1 + " " + str2;
 }
 
-void MVWidget::handleWheelValue(const int &value) {
-    // 启动定时器，延迟处理
-    if (!this->m_scrollBarTimer->isActive()) {
-        this->m_scrollBarTimer->start(500); // 500ms 延迟，避免过于频繁地触发
-    }
-}
-
-void MVWidget::onUpBtnClicked() {
-    // 标记动画开始
-    ui->scrollArea->setAnimating(true); //开始禁用滚轮
-
-    auto animation = new QPropertyAnimation(ui->scrollArea->verticalScrollBar(), "value", this);
-    // 设置动画的起始值（当前滚动条位置）和结束值（最顶部）
-    animation->setStartValue(ui->scrollArea->verticalScrollBar()->value()); // 当前滚动条位置
-    animation->setEndValue(0); // 滚动到顶部（0 表示最上方）
-    animation->setDuration(500); // 动画持续时间，500ms
-    animation->setEasingCurve(QEasingCurve::OutBounce); // 缓动曲线
-
-    // 在动画结束后标记动画停止
-    connect(animation, &QPropertyAnimation::finished, this, [this]() {
-        ui->scrollArea->setAnimating(false); //动画结束启用滚轮
-    });
-
-    // 启动动画
-    animation->start(QAbstractAnimation::DeleteWhenStopped); // 动画结束后自动删除
-}
-
-void MVWidget::onUpBtnShowOrNot() {
-    if (ui->scrollArea->verticalScrollBar()->value() > 200)this->m_upBtn->show();
-    else this->m_upBtn->hide();
-}
-
 void MVWidget::initUi() {
     //初始化按钮组
     initButtonGroup();
@@ -251,8 +217,6 @@ void MVWidget::initUi() {
     initAwardCeremony();
     //热门MV
     initHotMV();
-    //滚动条
-    ui->scrollArea->setScrollAreaKind(MyScrollArea::ScrollAreaKind::Inside);
     //广告
     ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/1.png")));
     ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/2.png")));
@@ -280,12 +244,6 @@ void MVWidget::initUi() {
     ui->pushButton8->setFixedSize(105,30);
     //先按下推荐
     ui->recommend_pushButton->clicked();
-    //wheelVaue信号
-    connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &MVWidget::handleWheelValue);
-    connect(ui->scrollArea->verticalScrollBar(),&QScrollBar::valueChanged,this, &MVWidget::handleWheelValue);
-    //回到最顶部信号
-    connect(this->m_upBtn.get(), &QToolButton::clicked, this, &MVWidget::onUpBtnClicked);
-    connect(this->m_scrollBarTimer, &QTimer::timeout, this, &MVWidget::onUpBtnShowOrNot);
 }
 
 void MVWidget::resizeEvent(QResizeEvent *event) {
@@ -327,10 +285,6 @@ void MVWidget::resizeEvent(QResizeEvent *event) {
     //qDebug()<<"ui->advertise_widget.size() : "<<ui->advertise_widget->size();
     ui->scrollArea->setFixedHeight(this->m_parent->height() - 260);
     //qDebug()<<"当前高度："<<ui->scrollArea->height();
-    //UpWidget移动
-    this->m_upBtn->move(this->m_parent->width() - this->m_upBtn->width() - 206,
-                        this->m_parent->height() - this->m_upBtn->height() - 260);
-    this->m_upBtn->raise();
 }
 
 void MVWidget::showEvent(QShowEvent *event) {

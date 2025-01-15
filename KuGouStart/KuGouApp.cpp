@@ -40,7 +40,6 @@ KuGouApp::KuGouApp(MainWindow *parent)
       , m_audioOutput(std::make_unique<QAudioOutput>(this))
       , m_menuBtnGroup(std::make_unique<QButtonGroup>(this))
       , m_sizeGrip(std::make_unique<QSizeGrip>(this))
-      , m_upBtn(std::make_unique<UpToolButton>(this))
       , m_animation(std::make_unique<QPropertyAnimation>(this, "geometry"))
       , m_scrollBarTimer(new QTimer(this))
 {
@@ -108,10 +107,8 @@ KuGouApp::KuGouApp(MainWindow *parent)
     connect(this, &KuGouApp::maxScreen, this->m_localDownload.get(), &LocalDownload::onMaxScreenHandle);
 
     //专门处理upBtn
-    connect(this->m_upBtn.get(), &QToolButton::clicked, this, &KuGouApp::onUpBtnClicked);
     this->m_vScrollBar = ui->context_scrollArea->verticalScrollBar();
     connect(this->m_vScrollBar, &QScrollBar::valueChanged, this, &KuGouApp::onScrollBarValueChanged);
-    connect(this->m_scrollBarTimer, &QTimer::timeout, this, &KuGouApp::onUpBtnShowOrNot);
 
     //专门处理重排
     connect(this->m_localDownload.get(),&LocalDownload::syncSongInfo,this,&KuGouApp::onSyncSongInfoVector);
@@ -158,7 +155,7 @@ void KuGouApp::initUi() {
 }
 
 void KuGouApp::initStackedWidget() {
-    initCommendForYou();
+    initRecommendForYou();
     initMusicRepository();
     initChannel();
     initVideo();
@@ -175,7 +172,7 @@ void KuGouApp::initStackedWidget() {
     initSearch();
 }
 
-void KuGouApp::initCommendForYou() {
+void KuGouApp::initRecommendForYou() {
     this->m_recommendForYou = std::make_unique<RecommendForYou>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_recommendForYou.get());
 }
@@ -494,10 +491,6 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
                            this->height() - this->m_sizeGrip->height() - 8);
     this->m_sizeGrip->raise();
     this->m_sizeGrip->setVisible(true);
-    //UpWidget移动
-    this->m_upBtn->move(this->width() - this->m_upBtn->width() - 20,
-                        this->height() - this->m_upBtn->height() - 100);
-    this->m_upBtn->raise();
     //song_info_widget适度延展
     ui->song_info_widget->setFixedWidth(this->width()/8+20);
     //更新文字数量
@@ -637,42 +630,12 @@ void KuGouApp::onSubSongInfo(const SongInfor &info) {
     this->m_lastSongInfoVector =  this->m_songInfoVector;
 }
 
-void KuGouApp::onUpBtnClicked() {
-    // 创建 QPropertyAnimation 对象
-    // 获取 QScrollArea 的垂直滚动条
-    this->m_vScrollBar = ui->context_scrollArea->verticalScrollBar();
-
-    // 标记动画开始
-    ui->context_scrollArea->setAnimating(true); //开始禁用滚轮
-
-    auto animation = new QPropertyAnimation(this->m_vScrollBar, "value", this);
-    // 设置动画的起始值（当前滚动条位置）和结束值（最顶部）
-    animation->setStartValue(this->m_vScrollBar->value()); // 当前滚动条位置
-    animation->setEndValue(0); // 滚动到顶部（0 表示最上方）
-    animation->setDuration(500); // 动画持续时间，500ms
-    animation->setEasingCurve(this->m_curves); // 缓动曲线
-
-    // 在动画结束后标记动画停止
-    connect(animation, &QPropertyAnimation::finished, this, [this]() {
-        ui->context_scrollArea->setAnimating(false); //动画结束启用滚轮
-    });
-
-    // 启动动画
-    animation->start(QAbstractAnimation::DeleteWhenStopped); // 动画结束后自动删除
-}
-
 void KuGouApp::onScrollBarValueChanged(const int &value) {
     // 启动定时器，延迟处理
     if (!this->m_scrollBarTimer->isActive()) {
         this->m_scrollBarTimer->start(500); // 500ms 延迟，避免过于频繁地触发
     }
     this->m_scrollValue = value;
-}
-
-void KuGouApp::onUpBtnShowOrNot() {
-    //qDebug()<<this->m_scrollValue;
-    if (this->m_scrollValue > 200)this->m_upBtn->show();
-    else this->m_upBtn->hide();
 }
 
 void KuGouApp::onKeyPause() {
@@ -738,12 +701,9 @@ void KuGouApp::on_title_live_pushButton_clicked() {
     //显示窗口
     ui->stackedWidget->setCurrentWidget(this->m_live.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     ui->context_scrollArea->setIgnore(false);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutQuart; // 缓动曲线
-    this->m_upBtn->clicked();
 }
 
 void KuGouApp::on_title_listen_book_pushButton_clicked() {
@@ -756,12 +716,9 @@ void KuGouApp::on_title_listen_book_pushButton_clicked() {
     //显示窗口
     ui->stackedWidget->setCurrentWidget(this->m_listenBook.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     ui->context_scrollArea->setIgnore(false);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutQuart; // 缓动曲线
-    this->m_upBtn->clicked();
 }
 
 void KuGouApp::on_title_search_pushButton_clicked() {
@@ -774,12 +731,9 @@ void KuGouApp::on_title_search_pushButton_clicked() {
     //显示窗口
     ui->stackedWidget->setCurrentWidget(this->m_search.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     ui->context_scrollArea->setIgnore(false);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutQuart; // 缓动曲线
-    this->m_upBtn->clicked();
 }
 
 void KuGouApp::on_min_toolButton_clicked() {
@@ -859,12 +813,10 @@ void KuGouApp::on_close_toolButton_clicked() {
 void KuGouApp::on_recommend_you_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_recommendForYou.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
-    this->m_upBtn->clicked();
+
     //设置上次指向
     this->m_lastBtn = ui->recommend_you_toolButton;
 }
@@ -872,13 +824,10 @@ void KuGouApp::on_recommend_you_toolButton_clicked() {
 void KuGouApp::on_music_repository_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_musicRepository.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    ui->context_scrollArea->setIgnore(false);
+    ui->context_scrollArea->setIgnore(true);
 
     updateSize();
-    //ui->context_scrollAreaWidgetContents->setFixedSize(this->m_musicRepository->size());
-    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
-    this->m_upBtn->clicked();
+    
     //设置上次指向
     this->m_lastBtn = ui->music_repository_toolButton;
     //qDebug()<<"点击乐库";
@@ -887,12 +836,10 @@ void KuGouApp::on_music_repository_toolButton_clicked() {
 void KuGouApp::on_channel_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_channel.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
-    this->m_upBtn->clicked();
+    
     //设置上次指向
     this->m_lastBtn = ui->channel_toolButton;
     //qDebug()<<"点击频道";
@@ -901,12 +848,10 @@ void KuGouApp::on_channel_toolButton_clicked() {
 void KuGouApp::on_video_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_video.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
-    this->m_upBtn->clicked();
+    
     //设置上次指向
     this->m_lastBtn = ui->video_toolButton;
     //qDebug()<<"点击视频";
@@ -920,12 +865,10 @@ void KuGouApp::on_live_toolButton_clicked() {
 void KuGouApp::on_song_list_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_songList.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    ui->context_scrollArea->setIgnore(false);
+    ui->context_scrollArea->setIgnore(true);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
-    this->m_upBtn->clicked();
+    
     //设置上次指向
     this->m_lastBtn = ui->song_list_toolButton;
     //qDebug()<<"点击歌单";
@@ -934,12 +877,10 @@ void KuGouApp::on_song_list_toolButton_clicked() {
 void KuGouApp::on_daily_recommend_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_dailyRecommend.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    ui->context_scrollArea->setIgnore(false);
+    ui->context_scrollArea->setIgnore(true);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
-    this->m_upBtn->clicked();
+    
     //设置上次指向
     this->m_lastBtn = ui->daily_recommend_toolButton;
     //qDebug()<<"点击每日推荐";
@@ -948,12 +889,10 @@ void KuGouApp::on_daily_recommend_toolButton_clicked() {
 void KuGouApp::on_local_download_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_localDownload.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutQuart; // 缓动曲线
-    this->m_upBtn->clicked();
+    
     //设置上次指向
     this->m_lastBtn = ui->local_download_toolButton;
 }
@@ -961,12 +900,10 @@ void KuGouApp::on_local_download_toolButton_clicked() {
 void KuGouApp::on_my_collection_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_collection.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
-    this->m_upBtn->clicked();
+    
     //设置上次指向
     this->m_lastBtn = ui->my_collection_toolButton;
     //qDebug()<<"点击我的收藏";
@@ -975,12 +912,10 @@ void KuGouApp::on_my_collection_toolButton_clicked() {
 void KuGouApp::on_music_cloud_disk_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_musicCloudDisk.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
-    this->m_upBtn->clicked();
+    
     //设置上次指向
     this->m_lastBtn = ui->music_cloud_disk_toolButton;
     //qDebug()<<"点击音乐云盘";
@@ -989,12 +924,10 @@ void KuGouApp::on_music_cloud_disk_toolButton_clicked() {
 void KuGouApp::on_purchased_music_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_purchasedMusic.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
-    this->m_upBtn->clicked();
+    
     //设置上次指向
     this->m_lastBtn = ui->purchased_music_toolButton;
     //qDebug()<<"点击已购音乐";
@@ -1003,12 +936,10 @@ void KuGouApp::on_purchased_music_toolButton_clicked() {
 void KuGouApp::on_recently_played_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_recentlyPlayed.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
-    this->m_upBtn->clicked();
+    
     //设置上次指向
     this->m_lastBtn = ui->recently_played_toolButton;
     //qDebug()<<"点击最近播放";
@@ -1017,12 +948,10 @@ void KuGouApp::on_recently_played_toolButton_clicked() {
 void KuGouApp::on_all_music_toolButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_allMusic.get());
 
-    ui->context_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->context_scrollArea->setIgnore(true);
 
     updateSize();
-    this->m_curves = QEasingCurve::OutBounce; // 缓动曲线
-    this->m_upBtn->clicked();
+    
     //设置上次指向
     this->m_lastBtn = ui->all_music_toolButton;
     //qDebug()<<"点击默认列表";

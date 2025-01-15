@@ -6,7 +6,6 @@
 #define CHANNEL_H
 
 #include"PartWidget.h"
-#include"UpToolButton.h"
 
 #include <QWidget>
 
@@ -41,10 +40,6 @@ private:
 private slots:
     void handleWheelValue(const int& value);
 
-    void onUpBtnClicked();
-
-    void onUpBtnShowOrNot();
-
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
@@ -53,7 +48,7 @@ protected:
 private:
     Ui::Channel *ui;
     std::unique_ptr<QButtonGroup> m_buttonGroup{};
-    std::unique_ptr<UpToolButton> m_upBtn{};
+    QWidget* m_parent{};
     //14个Widget
     std::unique_ptr<PartWidget> m_recommendWidget{};
     std::unique_ptr<PartWidget> m_djWidget{};
@@ -74,7 +69,5 @@ private:
     std::vector<QString> m_pixPathVector{};
     //垂直滚动条
     QScrollBar* m_vScrollBar{};
-    //专门处理回到最顶部按钮
-    QTimer*     m_scrollBarTimer{};  // 定时器
 };
 #endif //CHANNEL_H

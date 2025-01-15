@@ -5,9 +5,8 @@
 #ifndef MVWIDGET_H
 #define MVWIDGET_H
 
-#include"UpToolButton.h"
-
 #include <QWidget>
+
 class QScrollBar;
 class QButtonGroup;
 
@@ -38,13 +37,6 @@ private:
 
     const QString parseTitle(const QString &title);
 
-private slots:
-    void handleWheelValue(const int& value);
-
-    void onUpBtnClicked();
-
-    void onUpBtnShowOrNot();
-
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
@@ -68,7 +60,6 @@ private slots:
 private:
     Ui::MVWidget *ui;
     std::unique_ptr<QButtonGroup> m_buttonGroup{};
-    std::unique_ptr<UpToolButton> m_upBtn{};
     QWidget* m_parent{};
 
     struct MusicInfo {
@@ -95,8 +86,6 @@ private:
     std::vector<MusicInfo> m_honorOfKingsVector{};
     std::vector<MusicInfo> m_awardCeremonyVector{};
     std::vector<MusicInfo> m_hotMVVector{};
-    //专门处理回到最顶部按钮
-    QTimer*     m_scrollBarTimer{};  // 定时器
 };
 
 
