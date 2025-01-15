@@ -5,8 +5,6 @@
 #ifndef MUSICREPOLIST_H
 #define MUSICREPOLIST_H
 
-#include"MusicRepoList.h"
-
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE

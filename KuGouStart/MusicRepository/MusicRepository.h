@@ -7,7 +7,6 @@
 
 #include"MyBlockWidget.h"
 
-#include <QWidget>
 class QButtonGroup;
 
 QT_BEGIN_NAMESPACE
