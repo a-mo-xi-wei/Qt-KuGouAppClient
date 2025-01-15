@@ -5,36 +5,46 @@
 #ifndef MYSCROLLAREA_H
 #define MYSCROLLAREA_H
 
+#include"UpToolButton.h"
+
 #include <QScrollArea>
+#include <QEasingCurve>
 
 class MyScrollArea : public QScrollArea {
     Q_OBJECT
 
 public:
-    enum ScrollAreaKind {
-        Outside,
-        Inside
-    };
-
     explicit MyScrollArea(QWidget *parent = nullptr);
 
     void setAnimating(const bool &animating);
 
     void setIgnore(const bool &ignore);
 
-    void setScrollAreaKind(const ScrollAreaKind &kind);
+    void setEasingCurve(const QEasingCurve &curve);
 
 protected:
     void wheelEvent(QWheelEvent *event) override;
 
+    void resizeEvent(QResizeEvent *event) override;
+
 signals:
     void wheelValue(const int &value);
+
+private slots:
+    void onUpBtnClicked();
+
+    void onUpBtnShowOrNot();
 
 private:
     bool m_isAnimating = false; // 标记动画是否正在进行
     bool m_ignore = false;
-    ScrollAreaKind m_scrollAreaKind = ScrollAreaKind::Outside;
+
+    QWidget* m_parent{};
+
+    std::unique_ptr<UpToolButton> m_upBtn{};
+    //专门处理回到最顶部按钮
+    QTimer*     m_scrollBarTimer{};  // 定时器
+    //设置回到最顶部的特效
+    QEasingCurve m_curve = QEasingCurve::OutBounce;
 };
-
-
 #endif //MYSCROLLAREA_H
