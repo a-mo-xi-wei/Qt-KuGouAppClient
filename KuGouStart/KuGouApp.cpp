@@ -487,13 +487,6 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
     ui->song_info_widget->setFixedWidth(this->width()/8+20);
     //更新文字数量
     if(!this->m_player->source().isEmpty() && !this->m_songInfoVector.isEmpty())update_cover_singer_song_HLayout();
-    //stackedWidget宽度处理
-    if(!ui->menu_scrollArea->isHidden()) {
-        ui->stackedWidget->setFixedWidth((this->width() - ui->menu_scrollArea->width() - 30));
-    }
-    else {
-        ui->stackedWidget->setFixedWidth(this->width() - 30);
-    }
 
 }
 
