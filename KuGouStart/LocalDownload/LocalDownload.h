@@ -9,7 +9,6 @@
 #include"SortOptionMenu.h"
 
 #include<QQueue>
-#include<QWidget>
 
 class QMediaPlayer;
 class QScrollBar;

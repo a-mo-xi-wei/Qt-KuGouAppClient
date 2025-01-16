@@ -14,13 +14,11 @@
 #include <QFileDialog>
 #include <QMediaMetaData>
 #include <QMediaPlayer>
-#include <QPropertyAnimation>
 #include <QStringList>
 #include <QRandomGenerator>
 #include <QRegularExpression>
 #include <QResizeEvent>
 #include <QScreen>
-#include <QScrollBar>
 #include <QTimer>
 
 
