@@ -112,5 +112,5 @@ void RecommendForYou::initTabWidget() {
 
 void RecommendForYou::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
-    ui->scrollArea->setFixedHeight(this->m_parent->height() - 200);
+    ui->scrollArea->setFixedHeight(this->m_parent->height() - 180);
 }

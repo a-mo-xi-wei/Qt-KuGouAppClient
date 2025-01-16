@@ -335,7 +335,7 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
     }
 
     // 设置scrollArea的高度
-    ui->scrollArea->setFixedHeight(this->m_topWindow->height() - 200);
+    ui->scrollArea->setFixedHeight(this->m_topWindow->height() - 180);
 
 }
 
