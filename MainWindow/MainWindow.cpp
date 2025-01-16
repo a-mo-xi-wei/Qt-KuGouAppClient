@@ -26,7 +26,7 @@ void MainWindow::paintEvent(QPaintEvent *event) {
     QPainterPath path1;
     path1.setFillRule(Qt::WindingFill);
     path1.addRoundedRect(SHADOW_WIDTH,SHADOW_WIDTH, this->width() - SHADOW_WIDTH * 2, this->height() - SHADOW_WIDTH * 2,RADIUS,RADIUS);
-    QColor color(50, 50, 50, 55);
+    QColor color(150, 150, 150, 55);
     for (int i = 0; i != SHADOW_WIDTH; ++i)
     {
         QPainterPath path;
