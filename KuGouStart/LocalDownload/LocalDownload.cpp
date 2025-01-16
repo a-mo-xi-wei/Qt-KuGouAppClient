@@ -556,7 +556,7 @@ void LocalDownload::onItemUpLoad() {
 
 void LocalDownload::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
-    ui->scrollArea->setFixedHeight(this->m_parent->height() - 335);
+    ui->scrollArea->setFixedHeight(this->m_parent->height() - 340);
 }
 
 void LocalDownload::on_local_sort_toolButton_clicked() {
