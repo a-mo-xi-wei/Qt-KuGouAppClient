@@ -26,14 +26,14 @@ void MainWindow::paintEvent(QPaintEvent *event) {
     QPainterPath path1;
     path1.setFillRule(Qt::WindingFill);
     path1.addRoundedRect(SHADOW_WIDTH,SHADOW_WIDTH, this->width() - SHADOW_WIDTH * 2, this->height() - SHADOW_WIDTH * 2,RADIUS,RADIUS);
-    QColor color(150, 150, 150, 55);
+    QColor color(50, 50, 50, 55);
     for (int i = 0; i != SHADOW_WIDTH; ++i)
     {
         QPainterPath path;
         path.setFillRule(Qt::WindingFill);
         path.addRoundedRect(SHADOW_WIDTH - i, SHADOW_WIDTH- i, this->width() - (SHADOW_WIDTH- i) * 2,
                             this->height() - (SHADOW_WIDTH- i) * 2, RADIUS, RADIUS);
-        color.setAlpha(180 - static_cast<int>(qSqrt(i) * 80));
+        color.setAlpha(240 - static_cast<int>(qSqrt(i) * 80));
         painter.setPen(color);
         painter.drawPath(path);
     }

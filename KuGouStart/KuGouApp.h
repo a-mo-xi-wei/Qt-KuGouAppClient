@@ -29,7 +29,6 @@ class QAudioOutput;
 class QButtonGroup;
 class QSizeGrip;
 class QPropertyAnimation;
-class QScrollBar;
 
 QT_BEGIN_NAMESPACE
 
@@ -199,8 +198,6 @@ public slots:
 
     void onSubSongInfo(const SongInfor &info);
 
-    void onScrollBarValueChanged(const int& value);
-
     void onKeyPause();
 
     void onKeyLeft();
@@ -259,11 +256,5 @@ private:
     QVector<SongInfor>      m_songInfoVector;
     QVector<SongInfor>      m_lastSongInfoVector;//保留上一次排序的结果
     int                     m_songIndex = -1;//播放的歌曲的下标
-
-    QScrollBar*             m_vScrollBar{};
-
-    //专门处理回到最顶部按钮
-    QTimer*                 m_scrollBarTimer{};  // 定时器
-    int                     m_scrollValue;  // 存储最新的滚动值
 };
 #endif // KUGOUAPP_H
