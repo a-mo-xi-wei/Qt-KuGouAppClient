@@ -27,6 +27,8 @@ protected:
 
     void resizeEvent(QResizeEvent *event) override;
 
+    void hideEvent(QHideEvent *event) override;
+
 signals:
     void wheelValue(const int &value);
 
@@ -42,6 +44,8 @@ private:
     QWidget* m_parent{};
 
     std::unique_ptr<UpToolButton> m_upBtn{};
+    //按钮位置
+    //QPos
     //专门处理回到最顶部按钮
     QTimer*     m_scrollBarTimer{};  // 定时器
     //设置回到最顶部的特效

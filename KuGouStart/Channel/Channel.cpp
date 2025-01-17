@@ -9,8 +9,8 @@
 #include "MyScrollArea.h"
 #include "ChannelBlock.h"
 
-#include<QFile>
-#include<QButtonGroup>
+#include <QFile>
+#include <QButtonGroup>
 #include <QPropertyAnimation>
 #include <QScrollBar>
 #include <QTimer>

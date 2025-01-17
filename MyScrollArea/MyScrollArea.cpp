@@ -13,8 +13,8 @@ MyScrollArea::MyScrollArea(QWidget *parent)
     : QScrollArea(parent)
     , m_upBtn(std::make_unique<UpToolButton>(this))
     , m_scrollBarTimer(new QTimer(this))
-    , m_parent(this->window())
 {
+    this->m_parent = this->window();
     //回到最顶部信号
     connect(this->m_upBtn.get(), &QToolButton::clicked, this, &MyScrollArea::onUpBtnClicked);
     connect(this->m_scrollBarTimer, &QTimer::timeout, this, &MyScrollArea::onUpBtnShowOrNot);
@@ -34,6 +34,7 @@ void MyScrollArea::setEasingCurve(const QEasingCurve &curve) {
 
 void MyScrollArea::wheelEvent(QWheelEvent *event) {
     if (this->verticalScrollBar()) {
+        //qDebug()<<"value : "<<this->verticalScrollBar()->value();
         emit wheelValue(this->verticalScrollBar()->value());
         // 启动定时器，延迟处理
         if (!this->m_scrollBarTimer->isActive()) {
@@ -58,13 +59,17 @@ void MyScrollArea::wheelEvent(QWheelEvent *event) {
 void MyScrollArea::resizeEvent(QResizeEvent *event) {
     QScrollArea::resizeEvent(event);
     //UpWidget移动
-    this->m_upBtn->move(this->m_parent->width() - this->m_upBtn->width() - 206,
-                        this->m_parent->height() - this->m_upBtn->height() - 190);
+    this->m_upBtn->move(this->width() - this->m_upBtn->width() - 12,
+                        this->height() - this->m_upBtn->height() - 20);
     this->m_upBtn->raise();
 }
 
-void MyScrollArea::onUpBtnClicked() {
+void MyScrollArea::hideEvent(QHideEvent *event) {
+    QScrollArea::hideEvent(event);
+    this->m_scrollBarTimer->stop();
+}
 
+void MyScrollArea::onUpBtnClicked() {
     // 标记动画开始
     this->setAnimating(true); //开始禁用滚轮
 
@@ -84,9 +89,10 @@ void MyScrollArea::onUpBtnClicked() {
     animation->start(QAbstractAnimation::DeleteWhenStopped); // 动画结束后自动删除
 }
 
-
 void MyScrollArea::onUpBtnShowOrNot() {
-    if (this->verticalScrollBar()->value() > 200)this->m_upBtn->show();
+    if (this->verticalScrollBar()->value() > 200) {
+        //qDebug()<<"show upBtn pos() : "<<this->m_upBtn->geometry();
+        this->m_upBtn->show();
+    }
     else this->m_upBtn->hide();
-
 }
