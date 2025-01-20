@@ -37,19 +37,19 @@ protected:
     void leaveEvent(QEvent *event) override;
 
 private:
-    QSize m_enterIconSize;
-    QSize m_leaveIconSize;
-    int m_enterFontSize;
-    int m_leaveFontSize;
-    QColor m_hoverFontColor = QColor(255, 255, 255);
-    bool m_changeSize = false;
-    bool m_isHover = false;
-    bool m_isApproach = false;
+    QSize m_enterIconSize;  //进入时图标大小
+    QSize m_leaveIconSize;  //离开时图标大小
+    int m_enterFontSize;    //进入时字体大小
+    int m_leaveFontSize;    //离开时字体大小
+    QColor m_hoverFontColor = QColor(255, 255, 255);    //悬停时字体颜色
+    bool m_changeSize = false;  //是否需要改变按钮内图标或文字大小
+    bool m_isHover = false;     //判断是否悬停
+    bool m_isApproach = false;  //是否靠近
     //水平方向左右两边边距
-    int m_padding = 15;
+    int m_padding = 15;         //边距默认为15
     //hover图标
-    QIcon m_enterIcon = {};
-    QIcon m_leaveIcon = {};
+    QIcon m_enterIcon = {};     //悬停时的图标
+    QIcon m_leaveIcon = {};     //离开时的图标
 };
 
 
