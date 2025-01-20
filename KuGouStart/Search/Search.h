@@ -8,6 +8,7 @@
 
 #include <QWidget>
 class QButtonGroup;
+class QPushButton;
 
 QT_BEGIN_NAMESPACE
 
@@ -38,6 +39,8 @@ private:
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
+    void showEvent(QShowEvent *event) override;
+
 private slots:
     void on_recommend_pushButton_clicked();
 
@@ -48,6 +51,8 @@ private slots:
     void on_channel_pushButton_clicked();
 private:
     Ui::Search *ui;
+    QWidget* m_parent{};
+    QPushButton* m_currentBtn{};
     std::unique_ptr<QButtonGroup> m_buttonGroup;
     std::vector<QPixmap> m_coverVector;//存放图片
     std::vector<QString> m_descVector;//存放描述

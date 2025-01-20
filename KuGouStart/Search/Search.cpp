@@ -6,11 +6,11 @@
 
 #include "Search.h"
 #include "ui_Search.h"
-#include"MyFlowLayout.h"
+#include "MyFlowLayout.h"
 
-#include<QFile>
-#include<QButtonGroup>
-#include<QRandomGenerator>
+#include <QFile>
+#include <QButtonGroup>
+#include <QRandomGenerator>
 
 #include <mutex>
 
@@ -30,6 +30,7 @@ namespace SearchFlag {
 Search::Search(QWidget *parent) :
     QWidget(parent), ui(new Ui::Search)
     ,m_buttonGroup(std::make_unique<QButtonGroup>(this))
+    ,m_parent(this->window())
 {
     ui->setupUi(this);
     QFile file(GET_CURRENT_DIR + QStringLiteral("/search.css"));
@@ -41,7 +42,7 @@ Search::Search(QWidget *parent) :
     }
     initStackWidget();
     initUi();
-
+    this->m_currentBtn = ui->recommend_pushButton;
 }
 
 Search::~Search() {
@@ -131,7 +132,7 @@ void Search::initCoverVector() {
 void Search::initDescVector() {
     QStringList list = {"酷歌词","抖音潮流区","开车必备歌曲专区","抖音DJ",
         "2021抖音最火歌曲","DJ必备歌曲","伤感音乐","车载DJ","植物大战僵尸",
-        "抖音热歌","刀郎老哥合集","魔道祖师","邓丽君老歌合集","学生党专区",
+        "抖音热歌","刀郎老歌合集","魔道祖师","邓丽君老歌合集","学生党专区",
         "夜听伤感频道","纯音乐路的尽头会是温柔和月光","鞠婧祎的歌","快手抖音最火歌曲集合",
         "肖战","KG大神","我的世界","神仙翻唱","岁月陈酿过的粤语老歌","治愈专区",
         "林俊杰音乐汇","第五人格角色曲","满载回忆的华语经典","云南山歌-单曲-专辑精选汇聚",
@@ -158,13 +159,12 @@ void Search::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     //qDebug()<<"Search::resizeEvent";
     // 获取顶级窗口的指针
-    QWidget *topLevelWindow = this->window();
-    if (!topLevelWindow) {
+    if (!this->m_parent) {
         qWarning() << "无法获取顶级窗口！";
         return;
     }
 
-    const int topLevelWidth = topLevelWindow->width();
+    const int topLevelWidth = this->m_parent->width();
     //qDebug()<<"顶级窗口宽度为："<<topLevelWidth<<" 当前窗口宽度为："<<this->width();
     if(this->width() > topLevelWidth) {
         auto geo = this->geometry();
@@ -185,7 +185,12 @@ void Search::resizeEvent(QResizeEvent *event) {
         //    }
         //}
     }
+    if (this->m_currentBtn)this->m_currentBtn->clicked();
+}
 
+void Search::showEvent(QShowEvent *event) {
+    QWidget::showEvent(event);
+    if (this->m_currentBtn)this->m_currentBtn->clicked();
 }
 
 void Search::on_recommend_pushButton_clicked() {
@@ -221,7 +226,8 @@ void Search::on_recommend_pushButton_clicked() {
     };
     std::call_once(SearchFlag::flag1,handle);
     ui->stackedWidget->setCurrentWidget(this->m_recommendWidget.get());
-    ui->stackedWidget->setFixedHeight(this->m_recommendWidget->height()+30);
+    ui->stackedWidget->setFixedHeight(this->m_recommendWidget->height());
+    this->m_currentBtn = ui->recommend_pushButton;
 }
 
 void Search::on_rank_pushButton_clicked() {
@@ -257,7 +263,8 @@ void Search::on_rank_pushButton_clicked() {
     };
     std::call_once(SearchFlag::flag2,handle);
     ui->stackedWidget->setCurrentWidget(this->m_rankWidget.get());
-    ui->stackedWidget->setFixedHeight(this->m_rankWidget->height()+30);
+    ui->stackedWidget->setFixedHeight(this->m_rankWidget->height());
+    this->m_currentBtn = ui->rank_pushButton;
 }
 
 void Search::on_special_pushButton_clicked() {
@@ -293,7 +300,8 @@ void Search::on_special_pushButton_clicked() {
     };
     std::call_once(SearchFlag::flag3,handle);
     ui->stackedWidget->setCurrentWidget(this->m_specialWidget.get());
-    ui->stackedWidget->setFixedHeight(this->m_specialWidget->height()+30);
+    ui->stackedWidget->setFixedHeight(this->m_specialWidget->height());
+    this->m_currentBtn = ui->special_pushButton;
 }
 
 void Search::on_channel_pushButton_clicked() {
@@ -329,7 +337,8 @@ void Search::on_channel_pushButton_clicked() {
     };
     std::call_once(SearchFlag::flag4,handle);
     ui->stackedWidget->setCurrentWidget(this->m_channelWidget.get());
-    ui->stackedWidget->setFixedHeight(this->m_channelWidget->height()+30);
+    ui->stackedWidget->setFixedHeight(this->m_channelWidget->height());
+    this->m_currentBtn = ui->channel_pushButton;
     //qDebug()<<"this->height() : "<<this->height()<<
     //    "this->m_channelWidget->height() : "<<this->m_channelWidget->height();
 }
