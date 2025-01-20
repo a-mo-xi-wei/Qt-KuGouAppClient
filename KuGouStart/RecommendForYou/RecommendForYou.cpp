@@ -58,7 +58,7 @@ void RecommendForYou::initAdvertiseBoard() const {
         //qDebug()<<"图片路径为："<<path;
         //const QPixmap pix(path);
         //if(pix.isNull())qDebug()<<"图像错误";
-        ui->advertise_board_widget->addPoster(QPixmap(QString(":/RecommendForYou/Res/recommend/poster/%1.jpg").arg(i)));
+        ui->advertise_board_widget->addPoster(QPixmap(QStringLiteral(":/RecommendForYou/Res/recommend/poster/%1.jpg").arg(i)));
     }
 }
 
@@ -75,24 +75,24 @@ void RecommendForYou::initClassifyWidget() const {
     ui->scene_music_toolButton->setChangeSize(true);
     ui->music_quality_toolButton->setChangeSize(true);
 
-    ui->recommend_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/rili.svg"));
+    ui->recommend_toolButton->setIcon(QIcon(QStringLiteral(":/RecommendForYou/Res/recommend/tabIcon/rili.svg")));
     ui->recommend_toolButton->setEnterIconSize(QSize(35, 35));
     ui->recommend_toolButton->setLeaveIconSize(QSize(30, 30));
 
-    ui->ranking_list_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/rank.svg"));
+    ui->ranking_list_toolButton->setIcon(QIcon(QStringLiteral(":/RecommendForYou/Res/recommend/tabIcon/rank.svg")));
     ui->ranking_list_toolButton->setEnterIconSize(QSize(40, 40));
     ui->ranking_list_toolButton->setLeaveIconSize(QSize(35, 35));
 
-    ui->classify_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/classification.svg"));
+    ui->classify_toolButton->setIcon(QIcon(QStringLiteral(":/RecommendForYou/Res/recommend/tabIcon/classification.svg")));
     ui->classify_toolButton->setEnterIconSize(QSize(40, 40));
     ui->classify_toolButton->setLeaveIconSize(QSize(35, 35));
 
-    ui->scene_music_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/shafa.svg"));
+    ui->scene_music_toolButton->setIcon(QIcon(QStringLiteral(":/RecommendForYou/Res/recommend/tabIcon/shafa.svg")));
     ui->scene_music_toolButton->setEnterIconSize(QSize(45, 45));
     ui->scene_music_toolButton->setLeaveIconSize(QSize(40, 40));
     ui->scene_music_toolButton->setEnterFontSize(13);
 
-    ui->music_quality_toolButton->setIcon(QIcon(":/RecommendForYou/Res/recommend/tabIcon/dish.svg"));
+    ui->music_quality_toolButton->setIcon(QIcon(QStringLiteral(":/RecommendForYou/Res/recommend/tabIcon/dish.svg")));
     ui->music_quality_toolButton->setEnterIconSize(QSize(40, 40));
     ui->music_quality_toolButton->setLeaveIconSize(QSize(35, 35));
 }
