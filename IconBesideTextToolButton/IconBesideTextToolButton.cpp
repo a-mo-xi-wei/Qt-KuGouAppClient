@@ -73,17 +73,17 @@ void IconBesideTextToolButton::paintEvent(QPaintEvent *event) {
     QRect buttonRect = rect();
 
     // 计算文字和图标的大小
-    QFontMetrics fm = painter.fontMetrics();
-    int textWidth = fm.horizontalAdvance(originalText);
-    int textHeight = fm.height();
-    QSize iconSize = this->iconSize();
-    int iconWidth = iconSize.width();
-    int iconHeight = iconSize.height();
-    int left = buttonRect.left();
-    int right = buttonRect.right();
-    int top = buttonRect.top();
-    int height = buttonRect.height();
-    int width = buttonRect.width();
+    const QFontMetrics fm = painter.fontMetrics();
+    const int textWidth = fm.horizontalAdvance(originalText);
+    const int textHeight = fm.height();
+    const QSize iconSize = this->iconSize();
+    const int iconWidth = iconSize.width();
+    const int iconHeight = iconSize.height();
+    const int left = buttonRect.left();
+    const int right = buttonRect.right();
+    const int top = buttonRect.top();
+    const int height = buttonRect.height();
+    const int width = buttonRect.width();
     QRect textRect;
     QRect iconRect;
     if (this->m_isApproach) {
@@ -112,6 +112,8 @@ void IconBesideTextToolButton::enterEvent(QEnterEvent *event) {
             this->setIcon(this->m_enterIcon);
         return QToolButton::enterEvent(event);
     }
+    if(!this->m_enterIcon.isNull())
+        this->setIcon(this->m_enterIcon);
     QFont font = this->font();
     font.setPointSize(this->m_enterFontSize);
     this->setFont(font);
@@ -122,10 +124,12 @@ void IconBesideTextToolButton::enterEvent(QEnterEvent *event) {
 void IconBesideTextToolButton::leaveEvent(QEvent *event) {
     this->m_isHover = false;
     if (!this->m_changeSize) {
-        if(!this->m_enterIcon.isNull())
+        if(!this->m_leaveIcon.isNull())
             this->setIcon(this->m_leaveIcon);
         return QToolButton::leaveEvent(event);
     }
+    if(!this->m_leaveIcon.isNull())
+        this->setIcon(this->m_leaveIcon);
     QFont font = this->font();
     font.setPointSize(this->m_leaveFontSize); // 恢复默认字体大小
     this->setFont(font);
