@@ -52,9 +52,21 @@ void SongList::initUi() {
         ui->all_toolButton->setEnterIconSize(QSize(10,10));
         ui->all_toolButton->setLeaveIconSize(QSize(10,10));
     }
-    auto lay = new MyFlowLayout(ui->table_widget,10, -1, 2);
+    shuffleVector();
+    //ui->table_widget->setContentsMargins(9,9,9,10);
+    //auto lay = new MyFlowLayout(ui->table_widget,16, -1, 10);
+    auto lay = new MyFlowLayout(ui->table_widget,true,0);
+    lay->setContentsMargins(0,20,0,20);
     ui->table_widget->setLayout(lay);
-
+    //for (int  i = 0; i < this->m_descVector.size(); ++i) {
+    const auto size = std::min(this->m_coverVector.size(), this->m_descVector.size());
+    for (int  i = 0; i < size; ++i) {
+        auto block = new SongBlock(this);
+        block->setCoverPix(this->m_coverVector[i]);
+        block->setShowTip();
+        block->setDescText(this->m_descVector[i]);
+        lay->addWidget(block);
+    }
 }
 
 void SongList::initCoverVector() {
@@ -64,15 +76,15 @@ void SongList::initCoverVector() {
 }
 
 void SongList::initDescVector() {
-    QFile file(GET_CURRENT_DIR + QStringLiteral("/title.json"));
+    QFile file(GET_CURRENT_DIR + QStringLiteral("/descs.json"));
     if (!file.open(QIODevice::ReadOnly)) {
-        qWarning() << "Could not open file for reading title.json";
+        qWarning() << "Could not open file for reading descs.json";
         return;
     }
     auto obj = QJsonDocument::fromJson(file.readAll());
     auto arr = obj.array();
     for (const auto &item : arr) {
-        QString title = item.toObject().value("title").toString();
+        QString title = item.toObject().value("desc").toString();
         this->m_descVector.emplace_back(title);
     }
     file.close();
@@ -90,8 +102,5 @@ void SongList::shuffleVector() {
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     // 随机打乱 QVector
     std::shuffle(this->m_coverVector.begin(), this->m_coverVector.end(), std::default_random_engine(seed));
-    for (int  i = 0; i < this->m_descVector.size(); ++i) {
-        auto block = new SongBlock(this);
-    }
-
+    std::shuffle(this->m_descVector.begin(), this->m_descVector.end(), std::default_random_engine(seed));
 }

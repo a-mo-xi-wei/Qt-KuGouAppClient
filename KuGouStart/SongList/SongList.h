@@ -36,7 +36,7 @@ private:
 private:
     Ui::SongList *ui;
 
-    std::vector<QPixmap> m_coverVector;//存放图片
+    std::vector<QString> m_coverVector;//存放图片
     std::vector<QString> m_descVector;//存放描述
 };
 
