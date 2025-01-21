@@ -4,9 +4,9 @@
 
 #ifndef SONGLIST_H
 #define SONGLIST_H
+#include "ListOptionMenu.h"
 
 #include <QWidget>
-
 
 QT_BEGIN_NAMESPACE
 
@@ -33,11 +33,17 @@ private:
     void initDescVector();
     //打乱
     void shuffleVector();
+
+private slots:
+    void on_all_toolButton_clicked();
+
 private:
     Ui::SongList *ui;
 
     std::vector<QString> m_coverVector;//存放图片
     std::vector<QString> m_descVector;//存放描述
+    //菜单相关
+    ListOptionMenu* m_menu{};
 };
 
 

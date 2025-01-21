@@ -6,6 +6,7 @@
 #include "SongOptionMenu.h"
 #include "SortOptionMenu.h"
 #include "TitleOptionMenu.h"
+#include "ListOptionMenu.h"
 
 MyMenu::MyMenu(const MenuKind &kind, QWidget *parent)
     : QWidget(parent)
@@ -25,7 +26,12 @@ MyMenu::MyMenu(const MenuKind &kind, QWidget *parent)
             this->m_menu = new TitleOptionMenu(this);
             break;
         }
+        case ListOption: {
+            this->m_menu = new ListOptionMenu(this);
+            break;
+        }
         case None: break;
+        default: break;
     }
     // 使用策略初始化菜单
     if (m_menu) {

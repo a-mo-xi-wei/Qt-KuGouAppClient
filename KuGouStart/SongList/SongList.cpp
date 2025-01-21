@@ -8,6 +8,7 @@
 #include "ui_SongList.h"
 #include "SongBlock.h"
 #include "MyFlowLayout.h"
+#include "MyMenu.h"
 
 #include <QFile>
 #include <QJsonArray>
@@ -34,6 +35,12 @@ SongList::SongList(QWidget *parent)
     initCoverVector();
     initDescVector();
     initUi();
+
+    auto menu = new MyMenu(MyMenu::MenuKind::ListOption,this);
+    m_menu = menu->getMenu<ListOptionMenu>();
+
+    connect(ui->all_toolButton,&QToolButton::clicked,this,&SongList::on_all_toolButton_clicked);
+
 }
 
 SongList::~SongList() {
@@ -103,4 +110,21 @@ void SongList::shuffleVector() {
     // 随机打乱 QVector
     std::shuffle(this->m_coverVector.begin(), this->m_coverVector.end(), std::default_random_engine(seed));
     std::shuffle(this->m_descVector.begin(), this->m_descVector.end(), std::default_random_engine(seed));
+}
+
+void SongList::on_all_toolButton_clicked() {
+    //显示菜单
+    // 计算 Y 坐标，确保 m_menu 位于 all_toolButton 下方 20 个像素
+    //const int yPos = ui->all_toolButton->mapToGlobal(QPoint(0,0)).y() + ui->all_toolButton->height() + 10;
+//
+    //// 计算 X 坐标，使 m_menu 位于主窗口最右边减去自身宽度再左移 20 个像素
+    //const int xPos = this->window()->geometry().right() - this->m_menu->width() - 20;
+    //this->m_menu->setGeometry(xPos,yPos, this->m_menu->width(), this->m_menu->height());
+    //this->m_menu->show();
+    m_menu->exec(
+    ui->all_toolButton->mapToGlobal(
+        QPoint(ui->all_toolButton->width() * 2 - m_menu->width(),
+               ui->all_toolButton->height() + 10)
+        )
+    );
 }

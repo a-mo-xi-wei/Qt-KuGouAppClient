@@ -19,6 +19,7 @@ public:
         SongOption,
         SortOption,
         TitleOption,
+        ListOption,
         None
     };
 
