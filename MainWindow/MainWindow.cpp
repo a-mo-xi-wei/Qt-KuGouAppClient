@@ -57,7 +57,7 @@ void MainWindow::mousePressEvent(QMouseEvent *ev) {
         mousePs = ev->globalPosition().toPoint();
         isPress = true;
         // 获取鼠标在那个区域
-        mouse_press_region = GetMouseRegion(ev->pos().x(), ev->pos().y());
+        mouse_press_region = getMouseRegion(ev->pos().x(), ev->pos().y());
     }
 }
 
@@ -72,7 +72,7 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *event) {
 void MainWindow::mouseMoveEvent(QMouseEvent *event) {
     QWidget::mouseMoveEvent(event);
     // 设置鼠标的形状
-    SetMouseCursor(event->pos().x(), event->pos().y());
+    setMouseCursor(event->pos().x(), event->pos().y());
 // 计算的鼠标移动偏移量, 就是鼠标全局坐标 - 减去点击时鼠标坐标
     this->point_offset = event->globalPosition().toPoint() - mousePs;
 
@@ -116,10 +116,10 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event) {
     }
 }
 
-void MainWindow::SetMouseCursor(int x, int y) {
+void MainWindow::setMouseCursor(const int& x, const int& y) {
     // 鼠标形状对象
     Qt::CursorShape cursor{Qt::ArrowCursor};
-    int region = GetMouseRegion(x, y);
+    int region = getMouseRegion(x, y);
     switch (region) {
         case kMousePositionLeftTop:
         case kMousePositionRightBottom:
@@ -144,7 +144,7 @@ void MainWindow::SetMouseCursor(int x, int y) {
     setCursor(cursor);
 }
 
-int MainWindow::GetMouseRegion(int x, int y) {
+int MainWindow::getMouseRegion(const int& x, const int& y) const {
     int region_x = 0, region_y = 0;
     // 鼠标的X坐标小于 边界5 说明他在最上层区域 第一区域
     if (x < Area::kMouseRegionLeft) {
