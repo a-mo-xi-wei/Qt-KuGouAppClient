@@ -60,10 +60,10 @@ protected:
 
 private:
     //根据鼠标的设置鼠标样式，用于拉伸
-    void SetMouseCursor(int x, int y);
+    void setMouseCursor(const int& x, const int& y);
 
     //判断鼠标的区域，用于拉伸
-    int GetMouseRegion(int x, int y);
+    int getMouseRegion(const int& x, const int& y) const;
 
 public:
     bool isPress = false;
