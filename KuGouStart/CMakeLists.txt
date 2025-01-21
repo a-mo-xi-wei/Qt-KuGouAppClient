@@ -58,7 +58,7 @@ add_subdirectory(Search)
 add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia
-                        RecommendForYou MusicRepository Channel StartVideo Live
+                        RecommendForYou MusicRepository Channel Live
                         SongList DailyRecommend MyCollection LocalDownload
                         MusicCloudDisk PurchasedMusic RecentlyPlayed AllMusic
                         ListenBook Search MyStackedWidget
