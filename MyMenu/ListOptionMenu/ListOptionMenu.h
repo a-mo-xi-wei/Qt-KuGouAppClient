@@ -15,9 +15,21 @@ public:
 
     void initMenu() override;
 
-    const ListOptionMenu* getMenu()const override;
+    //初始化各个窗口
+    void initSceneWidget(QWidget* widget);
 
-signals:
+    void initThemeWidget(QWidget* widget);
+
+    void initLanguageWidget(QWidget* widget);
+
+    void initStyleWidget(QWidget* widget);
+
+    void initMoodWidget(QWidget* widget);
+
+    void initPeriodWidget(QWidget* widget);
+
+    //重写获取菜单
+    const ListOptionMenu* getMenu()const override;
 
 };
 
