@@ -50,6 +50,7 @@ SongList::~SongList() {
 void SongList::initUi() {
     {
         //初始化全部按钮
+        ui->all_toolButton->setMouseTracking(true);
         ui->all_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
         ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg")));
         ui->all_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
@@ -121,10 +122,39 @@ void SongList::on_all_toolButton_clicked() {
     //const int xPos = this->window()->geometry().right() - this->m_menu->width() - 20;
     //this->m_menu->setGeometry(xPos,yPos, this->m_menu->width(), this->m_menu->height());
     //this->m_menu->show();
-    m_menu->exec(
-    ui->all_toolButton->mapToGlobal(
-        QPoint(ui->all_toolButton->width() * 2 - m_menu->width(),
-               ui->all_toolButton->height() + 10)
-        )
-    );
+    if (ui->all_toolButton->isChecked()) {
+        // 更新按钮图标为向上图标
+        ui->all_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/up-gray.svg")));
+        ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/up-blue.svg")));
+        ui->all_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/up-gray.svg")));
+
+        // 设置菜单的位置
+        const QPoint globalPos = ui->all_toolButton->mapToGlobal(
+            QPoint(ui->all_toolButton->width() * 2 - m_menu->width(),
+                   ui->all_toolButton->height() + 10));
+
+        // 设置菜单属性，不夺取焦点
+        //m_menu->setWindowFlags(static_cast<Qt::WindowFlags>(m_menu->windowFlags() | Qt::NoFocus));
+        // 菜单显示为非阻塞模式
+        //m_menu->setWindowFlags(Qt::Popup );
+        m_menu->setFocusPolicy(Qt::NoFocus);
+        m_menu->setAttribute(Qt::WA_TransparentForMouseEvents, false);
+
+        // 连接菜单的隐藏信号到按钮状态更新槽
+        connect(m_menu, &QMenu::aboutToHide, this, [this]() {
+            ui->all_toolButton->setChecked(false);
+            ui->all_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
+            ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg")));
+            ui->all_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
+        });
+
+        // 显示菜单
+        m_menu->exec(globalPos);
+    } else {
+        // 更新按钮图标为向下图标
+        ui->all_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
+        ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg")));
+        ui->all_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
+    }
+
 }
