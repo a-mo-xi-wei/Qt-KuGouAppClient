@@ -5,7 +5,7 @@
 #ifndef LISTOPTIONMENU_H
 #define LISTOPTIONMENU_H
 
-#include "BaseMenu.h"
+#include "../BaseMenu.h"
 
 class ListOptionMenu : public BaseMenu {
     Q_OBJECT

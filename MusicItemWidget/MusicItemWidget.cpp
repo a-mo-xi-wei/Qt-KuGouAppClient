@@ -15,7 +15,7 @@
 #include <QtMath>
 #include <QPointF>
 
-#include "SongOptionMenu.h"
+#include "../MyMenu/SongOptionMenu/SongOptionMenu.h"
 //图片大小
 #define PIX_SIZE 50
 //图片圆角

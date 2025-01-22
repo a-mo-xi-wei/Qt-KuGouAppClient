@@ -3,10 +3,10 @@
 //
 
 #include "MyMenu.h"
-#include "SongOptionMenu.h"
-#include "SortOptionMenu.h"
-#include "TitleOptionMenu.h"
-#include "ListOptionMenu.h"
+#include "SongOptionMenu/SongOptionMenu.h"
+#include "SortOptionMenu/SortOptionMenu.h"
+#include "TitleOptionMenu/TitleOptionMenu.h"
+#include "ListOptionMenu/ListOptionMenu.h"
 
 MyMenu::MyMenu(const MenuKind &kind, QWidget *parent)
     : QWidget(parent)

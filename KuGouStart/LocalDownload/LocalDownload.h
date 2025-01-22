@@ -6,7 +6,7 @@
 #define LOCALDOWNLOAD_H
 
 #include"MusicItemWidget.h"
-#include"SortOptionMenu.h"
+#include "../../MyMenu/SortOptionMenu/SortOptionMenu.h"
 
 #include<QQueue>
 

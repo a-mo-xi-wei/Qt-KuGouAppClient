@@ -5,7 +5,7 @@
 #ifndef SORTOPTIONMENU_H
 #define SORTOPTIONMENU_H
 
-#include "BaseMenu.h"
+#include "../BaseMenu.h"
 
 class SortOptionMenu : public BaseMenu {
     Q_OBJECT

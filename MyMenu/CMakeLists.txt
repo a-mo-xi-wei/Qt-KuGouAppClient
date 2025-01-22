@@ -11,8 +11,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
-file(GLOB SRC_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
-file(GLOB SRC_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+#file(GLOB SRC_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+#file(GLOB SRC_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+
+#更加地通用
+file(GLOB_RECURSE SRC_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+file(GLOB_RECURSE SRC_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 
 set(SOURCE_FILE
     ${SRC_CPP}
@@ -23,6 +27,11 @@ set(SOURCE_FILE
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
 # 指定库的包含目录
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(${PROJECT_NAME} PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/ListOptionMenu
+        ${CMAKE_CURRENT_SOURCE_DIR}/SortOptionMenu
+        ${CMAKE_CURRENT_SOURCE_DIR}/SongOptionMenu
+        ${CMAKE_CURRENT_SOURCE_DIR}/TitleOptionMenu)
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets)

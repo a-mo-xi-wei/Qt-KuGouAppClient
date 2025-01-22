@@ -5,7 +5,7 @@
 #ifndef SONGOPTIONMENU_H
 #define SONGOPTIONMENU_H
 
-#include "BaseMenu.h"
+#include "../BaseMenu.h"
 
 class SongOptionMenu : public BaseMenu {
     Q_OBJECT

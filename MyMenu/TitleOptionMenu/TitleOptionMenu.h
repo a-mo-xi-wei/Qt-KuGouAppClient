@@ -5,7 +5,7 @@
 #ifndef TITLEOPTIONMENU_H
 #define TITLEOPTIONMENU_H
 
-#include "BaseMenu.h"
+#include "../BaseMenu.h"
 
 class TitleOptionMenu : public BaseMenu {
     Q_OBJECT

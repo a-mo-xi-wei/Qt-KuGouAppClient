@@ -2,7 +2,7 @@
 #define MUSICITEMWIDGET_H
 
 #include "MyMenu.h"
-#include "SongOptionMenu.h"
+#include "../MyMenu/SongOptionMenu/SongOptionMenu.h"
 
 #include <QDateTime>
 #include <QFrame>
