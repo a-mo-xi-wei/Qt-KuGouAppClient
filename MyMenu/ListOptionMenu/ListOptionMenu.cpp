@@ -45,6 +45,7 @@ void ListOptionMenu::initMenu() {
     const auto contentWidget_scene = new QWidget(contentWidget);
     initSceneWidget(contentWidget_scene);
     const auto separator1 = new QFrame(contentWidget);
+    separator1->setFixedWidth(650);
     separator1->setObjectName("separator");
     separator1->setFrameShape(QFrame::HLine);  // 水平分隔线
     separator1->setFrameShadow(QFrame::Sunken);
@@ -52,6 +53,7 @@ void ListOptionMenu::initMenu() {
     const auto contentWidget_theme = new QWidget(contentWidget);
     initThemeWidget(contentWidget_theme);
     const auto separator2 = new QFrame(contentWidget);
+    separator2->setFixedWidth(650);
     separator2->setObjectName("separator");
     separator2->setFrameShape(QFrame::HLine);  // 水平分隔线
     separator2->setFrameShadow(QFrame::Sunken);
@@ -59,6 +61,7 @@ void ListOptionMenu::initMenu() {
     const auto contentWidget_language = new QWidget(contentWidget);
     initLanguageWidget(contentWidget_language);
     const auto separator3 = new QFrame(contentWidget);
+    separator3->setFixedWidth(650);
     separator3->setObjectName("separator");
     separator3->setFrameShape(QFrame::HLine);  // 水平分隔线
     separator3->setFrameShadow(QFrame::Sunken);
@@ -66,6 +69,7 @@ void ListOptionMenu::initMenu() {
     const auto contentWidget_style = new QWidget(contentWidget);
     initStyleWidget(contentWidget_style);
     const auto separator4 = new QFrame(contentWidget);
+    separator4->setFixedWidth(650);
     separator4->setObjectName("separator");
     separator4->setFrameShape(QFrame::HLine);  // 水平分隔线
     separator4->setFrameShadow(QFrame::Sunken);
@@ -73,6 +77,7 @@ void ListOptionMenu::initMenu() {
     const auto contentWidget_mood = new QWidget(contentWidget);
     initMoodWidget(contentWidget_mood);
     const auto separator5 = new QFrame(contentWidget);
+    separator5->setFixedWidth(650);
     separator5->setObjectName("separator");
     separator5->setFrameShape(QFrame::HLine);  // 水平分隔线
     separator5->setFrameShadow(QFrame::Sunken);
