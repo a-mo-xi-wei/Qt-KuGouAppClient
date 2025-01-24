@@ -87,10 +87,10 @@ void IconBesideTextToolButton::paintEvent(QPaintEvent *event) {
     QRect textRect;
     QRect iconRect;
     if (this->m_isApproach) {
-        textRect = QRect(left + (width-textWidth-iconWidth+5)/2,
+        textRect = QRect(left + (width-textWidth-iconWidth+7)/2,
                         top + (height - textHeight) / 2,
                         textWidth, textHeight);
-        iconRect = QRect(right - (width-textWidth-iconWidth+5)/2,
+        iconRect = QRect(right - (width-textWidth-iconWidth+7)/2,
                         top + (height - iconHeight) / 2,
                        iconWidth,iconHeight);
     } else {
