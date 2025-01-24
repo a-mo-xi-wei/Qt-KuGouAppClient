@@ -1,0 +1,56 @@
+QLabel#top_cover_label{
+    border-radius: 18px;
+    border-image: url(':/Res/tablisticon/top_cover.jpg');
+    background-color: #e7e7e7;
+}
+QLabel#under_label{
+    color: #808080;
+}
+QLabel#monthLab{
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: bold;
+}
+QLabel#dayLab{
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+QToolButton#play_toolButton{
+    margin-left: 20px;
+    padding-left: 15px;
+    border-radius: 17px;
+    background-color: #2EA5FF;
+    color: white;
+}
+QToolButton#play_toolButton:hover{
+    background-color: #2291E6;
+}
+QToolButton#vip_toolButton{
+    margin-left: 10px;
+    padding-left: 5px;
+    border-radius: 17px;
+    background-color: #E7C481;
+    color: white;
+}
+QToolButton#vip_toolButton:hover{
+    background-color: #DDB76F;
+}
+
+QWidget#small_widget QToolButton{
+    border-radius: 17px;
+    background-color: #dee5ea;
+}
+QLabel#count_label{
+    color: #808080;
+}
+QLabel#money_label{
+    color: #E8AE40;
+}
+
+QWidget#desc_widget{
+    padding-left: 20px;
+    border-radius: 10px;
+    background-color: #eae9e2;
+}

@@ -5,8 +5,10 @@
 #ifndef DAILYRECOMMEND_H
 #define DAILYRECOMMEND_H
 
+#include "MusicItemWidget.h"
 #include <QWidget>
 
+class QLabel;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class DailyRecommend; }
@@ -20,7 +22,18 @@ public:
     ~DailyRecommend() override;
 
 private:
+    void initUi();
+
+    void initDateLab();
+
+    void initTableWidget();
+
+    void initMusicItem(MusicItemWidget *item);
+
+private:
     Ui::DailyRecommend *ui;
+    QLabel* m_monthLab{};
+    QLabel* m_dayLab{};
 };
 
 
