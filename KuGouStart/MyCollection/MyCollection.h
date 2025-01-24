@@ -28,7 +28,12 @@ public:
 
     ~MyCollection() override;
 
+private:
     void initStackedWidget();
+
+    void initUi();
+
+    void initIndexLab();
 
     void initSingleSong();
 
@@ -41,6 +46,9 @@ public:
     void initSinger();
 
     void initDevice();
+
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
 
 private slots:
     void on_singleSong_pushButton_clicked();
