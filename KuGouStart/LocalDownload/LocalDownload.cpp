@@ -5,9 +5,6 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_LocalDownload.h" resolved
 
 #include "LocalDownload.h"
-
-#include <qabstractanimation.h>
-
 #include "ui_LocalDownload.h"
 
 #include <QStandardPaths>
