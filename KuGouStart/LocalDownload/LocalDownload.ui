@@ -65,6 +65,9 @@
               <bold>true</bold>
              </font>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="text">
              <string>本地歌曲</string>
             </property>
@@ -89,6 +92,9 @@
               <pointsize>-1</pointsize>
               <bold>true</bold>
              </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
              <string notr="true">color:#26a1ff;font-size:16px;font-weight:bold;</string>
@@ -183,6 +189,9 @@ margin-top:0px;</string>
               <bold>true</bold>
              </font>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="text">
              <string>下载歌曲</string>
             </property>
@@ -202,6 +211,9 @@ margin-top:0px;</string>
           </item>
           <item>
            <widget class="QLabel" name="downloaded_music_number_label">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="text">
              <string>0</string>
             </property>
@@ -286,6 +298,9 @@ margin-top:0px;</string>
               <bold>true</bold>
              </font>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="text">
              <string>下载视频</string>
             </property>
@@ -305,6 +320,9 @@ margin-top:0px;</string>
           </item>
           <item>
            <widget class="QLabel" name="downloaded_video_number_label">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="text">
              <string>0</string>
             </property>
@@ -389,6 +407,9 @@ margin-top:0px;</string>
               <bold>true</bold>
              </font>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="text">
              <string>正在下载</string>
             </property>
@@ -408,6 +429,9 @@ margin-top:0px;</string>
           </item>
           <item>
            <widget class="QLabel" name="downloading_number_label">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="text">
              <string>0</string>
             </property>
