@@ -13,47 +13,84 @@
   <property name="windowTitle">
    <string>SingleSong</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <widget class="QWidget" name="widget_2" native="true">
+    <widget class="QWidget" name="operation_widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_9">
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
+      </property>
       <item>
        <widget class="QToolButton" name="collect_play_toolButton">
         <property name="minimumSize">
          <size>
           <width>80</width>
-          <height>40</height>
+          <height>35</height>
          </size>
         </property>
-        <property name="maximumSize">
-         <size>
-          <width>80</width>
-          <height>40</height>
-         </size>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="text">
-         <string>播放</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QToolButton" name="collect_download_toolButton">
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="toolTip">
-         <string>下载</string>
+         <string>顺序播放</string>
         </property>
         <property name="text">
-         <string/>
+         <string>全部播放</string>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
         </property>
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacer_7">
+       <widget class="QToolButton" name="collect_add_toolButton">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string>添加歌曲</string>
+        </property>
+        <property name="text">
+         <string>添加</string>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="collect_upload_toolButton">
+        <property name="minimumSize">
+         <size>
+          <width>115</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string>上传到云</string>
+        </property>
+        <property name="text">
+         <string>备份到云盘</string>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_16">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -288,7 +325,7 @@
    </item>
    <item>
     <widget class="QWidget" name="widget_3" native="true">
-     <layout class="QVBoxLayout" name="verticalLayout_8">
+     <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <spacer name="verticalSpacer_2">
         <property name="orientation">
@@ -318,21 +355,24 @@
          </spacer>
         </item>
         <item row="0" column="1">
-         <widget class="QLabel" name="label_16">
+         <widget class="QLabel" name="prompt_label">
           <property name="font">
            <font>
-            <pointsize>12</pointsize>
+            <pointsize>11</pointsize>
            </font>
           </property>
           <property name="text">
            <string>这里没有内容显示~</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
-        <item row="0" column="2" rowspan="2">
+        <item row="0" column="2">
          <spacer name="horizontalSpacer_9">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -345,22 +385,7 @@
           </property>
          </spacer>
         </item>
-        <item row="1" column="1" rowspan="2">
-         <widget class="QPushButton" name="pushButton_7">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="text">
-           <string>发现更多音乐</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
+        <item row="1" column="0">
          <spacer name="horizontalSpacer_11">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -373,7 +398,34 @@
           </property>
          </spacer>
         </item>
-        <item row="2" column="2">
+        <item row="1" column="1">
+         <widget class="QPushButton" name="search_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="text">
+           <string>发现更多音乐</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
          <spacer name="horizontalSpacer_10">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>

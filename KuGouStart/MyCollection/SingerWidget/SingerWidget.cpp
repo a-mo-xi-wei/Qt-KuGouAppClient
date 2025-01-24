@@ -7,10 +7,22 @@
 #include "SingerWidget.h"
 #include "ui_SingerWidget.h"
 
+#include <QFile>
+
+#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 SingerWidget::SingerWidget(QWidget *parent) :
     QWidget(parent), ui(new Ui::SingerWidget) {
     ui->setupUi(this);
+    {
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/singer.css"));
+        if (file.open(QIODevice::ReadOnly)) {
+            this->setStyleSheet(file.readAll());
+        } else {
+            qDebug() << "样式表打开失败QAQ";
+            return;
+        }
+    }
 }
 
 SingerWidget::~SingerWidget() {

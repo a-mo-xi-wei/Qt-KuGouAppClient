@@ -1,0 +1,77 @@
+
+/*--------------------operation_widget------------------------------*/
+QWidget#operation_widget > QToolButton {
+    background-color: #e2e5ff;
+    border: none;
+    border-radius: 17px;
+    padding-left: 15px;
+}
+QWidget#operation_widget > QToolButton:hover {
+    background-color: #dadeff;
+}
+
+QWidget#operation_widget QToolButton#collect_play_toolButton{
+    background-color:#269dff;
+}
+QWidget#operation_widget QToolButton#collect_play_toolButton:hover{
+    background-color:#2085d9;
+}
+/*--------------------small_widget------------------------------*/
+QWidget#small_widget{
+    border: 1px solid #b4bcff;
+    border-radius:15px;
+}
+QWidget#small_widget > QFrame{
+    border:none;
+    background-color:#dadeff;
+}
+
+QWidget#small_widget > QToolButton {
+    background-color: transparent;
+}
+QToolButton#collect_share_toolButton {
+    border-image:url(":/Res/titlebar/share-gray.svg");
+}
+QToolButton#collect_share_toolButton:hover {
+    border-image:url(":/Res/titlebar/share-blue.svg");
+}
+
+QToolButton#collect_batch_toolButton {
+    border-image:url(":/Res/titlebar/batch-gray.svg");
+}
+QToolButton#collect_batch_toolButton:hover {
+    border-image:url(":/Res/titlebar/batch-blue.svg");
+}
+
+QToolButton#collect_zhuanji_toolButton {
+    border-image:url(":/Res/titlebar/zhuanji-gray.svg");
+}
+QToolButton#collect_zhuanji_toolButton:hover {
+    border-image:url(":/Res/titlebar/zhuanji-blue.svg");
+}
+
+QToolButton#collect_sort_toolButton {
+    border-image:url(":/Res/titlebar/sort-gray.svg");
+}
+QToolButton#collect_sort_toolButton:hover {
+    border-image:url(":/Res/titlebar/sort-blue.svg");
+}
+
+QLineEdit#collect_search_lineEdit{
+    border-radius: 12px;
+    background-color: #e2e5ff;
+    padding-left: 5px;
+}
+QLineEdit#collect_search_lineEdit:hover{
+    background-color: #dadeff;
+    color:#269dff;
+}
+/**************content_widget*************/
+QLabel#prompt_label{
+    color: #afafaf;
+}
+QPushButton#search_pushButton{
+    border: 1px solid #75b6e8;
+    border-radius: 17px;
+    color: #75b6e8;
+}

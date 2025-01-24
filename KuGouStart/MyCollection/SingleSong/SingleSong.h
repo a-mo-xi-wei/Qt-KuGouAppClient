@@ -20,7 +20,11 @@ public:
     ~SingleSong() override;
 
 private:
+    void initUi();
+
+private:
     Ui::SingleSong *ui;
+    QAction *m_searchAction; //专门为了设置图片
 };
 
 

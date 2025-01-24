@@ -7,10 +7,24 @@
 #include "DeviceWidget.h"
 #include "ui_DeviceWidget.h"
 
+#include <QFile>
 
-DeviceWidget::DeviceWidget(QWidget *parent) :
-    QWidget(parent), ui(new Ui::DeviceWidget) {
+#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+
+DeviceWidget::DeviceWidget(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::DeviceWidget)
+{
     ui->setupUi(this);
+    {
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/device.css"));
+        if (file.open(QIODevice::ReadOnly)) {
+            this->setStyleSheet(file.readAll());
+        } else {
+            qDebug() << "样式表打开失败QAQ";
+            return;
+        }
+    }
 }
 
 DeviceWidget::~DeviceWidget() {

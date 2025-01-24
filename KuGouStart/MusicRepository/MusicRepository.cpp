@@ -287,7 +287,7 @@ void MusicRepository::resizeEvent(QResizeEvent *event) {
     }
     //BlockWidget设置
     static int lastVisibleState = -1; // 记录上一次的可见状态
-    int currentWidth = this->width();
+    const int currentWidth = this->width();
     int newVisibleState;
 
     // 根据宽度确定状态
