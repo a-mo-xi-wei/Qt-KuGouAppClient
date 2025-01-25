@@ -127,3 +127,8 @@ void DailyRecommend::initMusicItem(MusicItemWidget *item) {
     item->setRadius(12);
     item->setInterval(1);
 }
+
+void DailyRecommend::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+    ui->scrollArea->setFixedHeight(this->height() - 250);
+}

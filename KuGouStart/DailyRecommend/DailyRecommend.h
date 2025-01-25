@@ -30,6 +30,9 @@ private:
 
     void initMusicItem(MusicItemWidget *item);
 
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 private:
     Ui::DailyRecommend *ui;
     QLabel* m_monthLab{};

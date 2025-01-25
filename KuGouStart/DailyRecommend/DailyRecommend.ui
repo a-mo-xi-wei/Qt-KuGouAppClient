@@ -17,6 +17,9 @@
    <item>
     <widget class="QWidget" name="widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QLabel" name="top_cover_label">
         <property name="sizePolicy">
@@ -101,10 +104,22 @@
             <item>
              <widget class="IconBesideTextToolButton" name="history_recommend_toolButton">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>16777215</height>
+               </size>
               </property>
               <property name="cursor">
                <cursorShape>PointingHandCursor</cursorShape>
@@ -486,7 +501,7 @@
         <x>0</x>
         <y>0</y>
         <width>862</width>
-        <height>127</height>
+        <height>136</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
