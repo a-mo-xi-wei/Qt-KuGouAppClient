@@ -37,6 +37,10 @@ QWidget#title_widget QPushButton:checked {
 QLineEdit#search_lineEdit {
     border-radius: 15px;
     background-color: #d1d5f6;
+    font-size: 15px;
+    font-weight: bold;
+    selection-color: #00cb9f;            /* 设置选中文本的颜色 */
+    selection-background-color: #75498c;  /* 设置选中文本的背景颜色 */
 }
 QLineEdit#search_lineEdit:hover {
     background-color: #CCCCFF;

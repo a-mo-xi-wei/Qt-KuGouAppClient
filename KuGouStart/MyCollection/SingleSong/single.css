@@ -61,10 +61,13 @@ QLineEdit#collect_search_lineEdit{
     border-radius: 12px;
     background-color: #e2e5ff;
     padding-left: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    selection-color: #00cb9f;            /* 设置选中文本的颜色 */
+    selection-background-color: #75498c;  /* 设置选中文本的背景颜色 */
 }
 QLineEdit#collect_search_lineEdit:hover{
     background-color: #dadeff;
-    color:#269dff;
 }
 /**************content_widget*************/
 QLabel#prompt_label{

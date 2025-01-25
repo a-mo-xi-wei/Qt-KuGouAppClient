@@ -1,0 +1,34 @@
+QToolButton{
+    background-color: #e2e5ff;
+    border:none;
+    border-radius: 17px;
+}
+QToolButton:hover {
+    background-color: #dadeff;
+}
+QToolButton#batch_toolButton{
+    background-color: #e2e5ff;
+    border:none;
+    border-radius: 17px;
+    padding-left: 10px;
+}
+
+QToolButton#batch_toolButton:hover {
+    background-color: #dadeff;
+}
+QLineEdit{
+    border: 1px solid #d7d7d7;
+    border-radius: 12px;
+    background-color: rgba(255,255,255,0);
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    selection-color: #00cb9f;            /* 设置选中文本的颜色 */
+    selection-background-color: #75498c;  /* 设置选中文本的背景颜色 */
+}
+QLineEdit:hover{
+    background-color: rgba(255,255,255,0);
+}
+QLineEdit[placeholderText] {
+    color: #000000;
+}
