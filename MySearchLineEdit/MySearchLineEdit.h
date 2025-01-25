@@ -22,6 +22,8 @@ protected:
 
     void focusOutEvent(QFocusEvent *event) override;
 
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
 private:
     QPropertyAnimation *m_animation;
     int m_startWidth;
