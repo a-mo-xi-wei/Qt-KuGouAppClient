@@ -344,6 +344,9 @@
       </item>
       <item>
        <layout class="QGridLayout" name="gridLayout">
+        <property name="verticalSpacing">
+         <number>15</number>
+        </property>
         <item row="0" column="0">
          <spacer name="horizontalSpacer_8">
           <property name="orientation">
@@ -371,7 +374,7 @@
            <bool>false</bool>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignBottom|Qt::AlignHCenter</set>
           </property>
          </widget>
         </item>

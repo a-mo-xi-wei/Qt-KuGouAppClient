@@ -17,8 +17,11 @@
    <item>
     <widget class="QWidget" name="widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
       <item>
-       <widget class="QToolButton" name="toolButton">
+       <widget class="QToolButton" name="batch_toolButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -27,13 +30,13 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>90</width>
           <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>16777215</width>
+          <width>90</width>
           <height>35</height>
          </size>
         </property>
@@ -43,19 +46,22 @@
         <property name="text">
          <string>批量操作</string>
         </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
        </widget>
       </item>
       <item>
-       <widget class="QToolButton" name="toolButton_2">
+       <widget class="QToolButton" name="import_toolButton">
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>110</width>
           <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>16777215</width>
+          <width>110</width>
           <height>35</height>
          </size>
         </property>
@@ -81,12 +87,24 @@
        </spacer>
       </item>
       <item>
-       <widget class="MySearchLineEdit" name="lineEdit">
+       <widget class="MySearchLineEdit" name="search_lineEdit">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>75</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>75</width>
+          <height>25</height>
+         </size>
         </property>
         <property name="placeholderText">
          <string>搜索</string>
