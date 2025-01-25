@@ -58,7 +58,6 @@ void MySearchLineEdit::focusOutEvent(QFocusEvent *event) {
 
 bool MySearchLineEdit::eventFilter(QObject *watched, QEvent *event) {
     if (event->type() == QEvent::MouseButtonPress) {
-
         auto me = static_cast<QMouseEvent*>(event);
         //qDebug()<<"鼠标按下 : "<<mapFromGlobal(me->globalPosition().toPoint());
         if (!rect().contains(mapFromGlobal(me->globalPosition().toPoint()))) {
@@ -67,5 +66,24 @@ bool MySearchLineEdit::eventFilter(QObject *watched, QEvent *event) {
         }
     }
     return QLineEdit::eventFilter(watched, event);
+}
+
+void MySearchLineEdit::keyPressEvent(QKeyEvent *event) {
+    if (echoMode() == QLineEdit::Password)
+    {
+        if (event->matches(QKeySequence::SelectAll))
+        {
+            return; //如果lineEdit设置成密码的形式，不可以全选
+        }
+        if (event->matches(QKeySequence::Copy))
+        {
+            return; //如果lineEdit设置成密码的形式，不可以拷贝
+        }
+        if (event->matches(QKeySequence::Paste))
+        {
+            return; //如果lineEdit设置成密码的形式，不可以粘贴
+        }
+    }
+    return QLineEdit::keyPressEvent(event);
 }
 

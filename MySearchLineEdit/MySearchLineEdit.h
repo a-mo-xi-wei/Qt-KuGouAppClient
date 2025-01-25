@@ -24,6 +24,8 @@ protected:
 
     bool eventFilter(QObject *watched, QEvent *event) override;
 
+    void keyPressEvent(QKeyEvent *event) override;
+
 private:
     QPropertyAnimation *m_animation;
     int m_startWidth;
