@@ -128,6 +128,8 @@ signals:
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
 private:
     Ui::LocalDownload *ui;
     std::unique_ptr<QMediaPlayer> m_player;

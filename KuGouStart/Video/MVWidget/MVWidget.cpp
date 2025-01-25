@@ -229,10 +229,22 @@ void MVWidget::initUi() {
     ui->advertise_widget->setAutoSlide(4000);
     ui->advertise_widget->setContentsMargins(0,0,0,0);
     //搜索框
-    const auto action = new QAction(this);
-    action->setIcon(QIcon(QStringLiteral(":/Res/titlebar/search-black.svg")));
-    action->setIconVisibleInMenu(false);
-    ui->search_lineEdit->addAction(action, QLineEdit::TrailingPosition);
+    this->m_searchAction = new QAction(this);
+    this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-black.svg")));
+    this->m_searchAction->setIconVisibleInMenu(false);
+    ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition);
+    QToolButton* searchButton = nullptr;
+    foreach (QToolButton* btn, ui->search_lineEdit->findChildren<QToolButton*>()) {
+        if (btn->defaultAction() == this->m_searchAction) {
+            searchButton = btn;
+            break;
+        }
+    }
+
+    // 安装事件过滤器
+    if (searchButton) {
+        searchButton->installEventFilter(this);
+    }
     //隐藏后四个按钮
     ui->pushButton5->hide();
     ui->pushButton6->hide();
@@ -302,6 +314,18 @@ void MVWidget::mouseReleaseEvent(QMouseEvent *event) {
 
 void MVWidget::mouseDoubleClickEvent(QMouseEvent *event) {
     event->ignore();
+}
+
+bool MVWidget::eventFilter(QObject *watched, QEvent *event) {
+    const auto button = qobject_cast<QToolButton*>(watched);
+    if (button && button->defaultAction() == this->m_searchAction) {
+        if (event->type() == QEvent::Enter) {
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-blue.svg")));
+        } else if (event->type() == QEvent::Leave) {
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-black.svg")));
+        }
+    }
+    return QObject::eventFilter(watched, event);
 }
 
 void MVWidget::on_recommend_pushButton_clicked() {

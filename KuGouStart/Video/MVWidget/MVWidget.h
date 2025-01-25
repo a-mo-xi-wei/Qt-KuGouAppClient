@@ -48,6 +48,8 @@ protected:
 
     void mouseDoubleClickEvent(QMouseEvent *event) override;
 
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
 private slots:
     void on_recommend_pushButton_clicked();
 
@@ -61,6 +63,7 @@ private:
     Ui::MVWidget *ui;
     std::unique_ptr<QButtonGroup> m_buttonGroup{};
     QWidget* m_parent{};
+    QAction* m_searchAction{};
 
     struct MusicInfo {
         // 添加构造函数

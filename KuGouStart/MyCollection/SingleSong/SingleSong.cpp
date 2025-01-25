@@ -43,4 +43,28 @@ void SingleSong::initUi() {
     this->m_searchAction->setIconVisibleInMenu(false); // 仅显示图标
     ui->collect_search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition);
     ui->collect_search_lineEdit->setWidth(150);
+    QToolButton* searchButton = nullptr;
+    foreach (QToolButton* btn, ui->collect_search_lineEdit->findChildren<QToolButton*>()) {
+        if (btn->defaultAction() == this->m_searchAction) {
+            searchButton = btn;
+            break;
+        }
+    }
+
+    // 安装事件过滤器
+    if (searchButton) {
+        searchButton->installEventFilter(this);
+    }
+}
+
+bool SingleSong::eventFilter(QObject *watched, QEvent *event) {
+    const auto button = qobject_cast<QToolButton*>(watched);
+    if (button && button->defaultAction() == this->m_searchAction) {
+        if (event->type() == QEvent::Enter) {
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-blue.svg")));
+        } else if (event->type() == QEvent::Leave) {
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-black.svg")));
+        }
+    }
+    return QObject::eventFilter(watched, event);
 }

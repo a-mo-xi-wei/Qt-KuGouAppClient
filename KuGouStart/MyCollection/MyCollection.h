@@ -12,8 +12,6 @@
 #include"SingerWidget.h"
 #include"DeviceWidget.h"
 
-#include <QWidget>
-
 class QButtonGroup;
 
 QT_BEGIN_NAMESPACE
@@ -73,7 +71,6 @@ private:
     std::unique_ptr<CollectVideo>   m_collectVideo{};
     std::unique_ptr<SingerWidget>   m_singerWidget{};
     std::unique_ptr<DeviceWidget>   m_deviceWidget{};
-
 
 };
 
