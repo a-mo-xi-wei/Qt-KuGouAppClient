@@ -48,6 +48,8 @@ private:
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
+    void mousePressEvent(QMouseEvent *event) override;
+
 private slots:
     void on_singleSong_pushButton_clicked();
 

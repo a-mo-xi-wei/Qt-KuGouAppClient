@@ -9,6 +9,7 @@
 
 #include <QButtonGroup>
 #include <QFile>
+#include <QMouseEvent>
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
@@ -53,6 +54,7 @@ void MyCollection::initStackedWidget() {
 void MyCollection::initUi() {
     initStackedWidget();
     initIndexLab();
+    ui->singleSong_pushButton->clicked();
 }
 
 void MyCollection::initIndexLab() {
@@ -353,7 +355,56 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
     return QWidget::eventFilter(watched, event);
 }
 
+void MyCollection::mousePressEvent(QMouseEvent *event) {
+    QWidget::mousePressEvent(event);
+    if (event->button() == Qt::LeftButton) {
+        // 获取 singleSong_number_label 的矩形区域
+        const auto labelRect1 = ui->singleSong_number_label     ->geometry();
+        const auto labelRect2 = ui->songList_number_label       ->geometry();
+        const auto labelRect3 = ui->specialAlbum_number_label   ->geometry();
+        const auto labelRect4 = ui->collectVideo_number_label   ->geometry();
+        const auto labelRect5 = ui->singer_number_label         ->geometry();
+        const auto labelRect6 = ui->device_number_label         ->geometry();
+        // 将点击坐标转换为标签父控件的坐标系
+        const QPoint clickPos1 = ui->singleSong_number_label    ->parentWidget()->mapFrom(this, event->pos());
+        const QPoint clickPos2 = ui->songList_number_label      ->parentWidget()->mapFrom(this, event->pos());
+        const QPoint clickPos3 = ui->specialAlbum_number_label  ->parentWidget()->mapFrom(this, event->pos());
+        const QPoint clickPos4 = ui->collectVideo_number_label  ->parentWidget()->mapFrom(this, event->pos());
+        const QPoint clickPos5 = ui->singer_number_label        ->parentWidget()->mapFrom(this, event->pos());
+        const QPoint clickPos6 = ui->device_number_label        ->parentWidget()->mapFrom(this, event->pos());
+
+        //qDebug() << "Label Rect:" << labelRect;
+        //qDebug() << "Click Pos (Converted):" << clickPos;
+
+        if (labelRect1.contains(clickPos1)) {
+            //qDebug() << "Label clicked!";
+            ui->singleSong_pushButton->clicked();
+        }
+        if (labelRect2.contains(clickPos2)) {
+            ui->songList_pushButton->clicked();
+        }
+        if (labelRect3.contains(clickPos3)) {
+            ui->specialAlbum_pushButton->clicked();
+        }
+        if (labelRect4.contains(clickPos4)) {
+            ui->collectVideo_pushButton->clicked();
+        }
+        if (labelRect5.contains(clickPos5)) {
+            ui->singer_pushButton->clicked();
+        }
+        if (labelRect6.contains(clickPos6)) {
+            ui->device_pushButton->clicked();
+        }
+    }
+}
+
 void MyCollection::on_singleSong_pushButton_clicked() {
+    // 判断当前显示的页面是否是 m_singleSong 页面，如果是则直接返回
+    if (ui->stackedWidget->currentWidget() == this->m_singleSong.get()) {
+        //qDebug() << "当前页面已经是 Single Song 页面，无需切换";
+        return;  // 页面已是目标页面，无需切换
+    }
+    ui->singleSong_pushButton->setChecked(true);
     ui->stackedWidget->setCurrentWidget(this->m_singleSong.get());
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
@@ -370,6 +421,8 @@ void MyCollection::on_singleSong_pushButton_clicked() {
 }
 
 void MyCollection::on_songList_pushButton_clicked() {
+    if (ui->stackedWidget->currentWidget() == this->m_songList.get())return;
+    ui->songList_pushButton->setChecked(true);
     ui->stackedWidget->setCurrentWidget(this->m_songList.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
@@ -386,6 +439,8 @@ void MyCollection::on_songList_pushButton_clicked() {
 }
 
 void MyCollection::on_specialAlbum_pushButton_clicked() {
+    if (ui->stackedWidget->currentWidget() == this->m_specialAlbum.get())return;
+    ui->specialAlbum_pushButton->setChecked(true);
     ui->stackedWidget->setCurrentWidget(this->m_specialAlbum.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -402,6 +457,8 @@ void MyCollection::on_specialAlbum_pushButton_clicked() {
 }
 
 void MyCollection::on_collectVideo_pushButton_clicked() {
+    if (ui->stackedWidget->currentWidget() == this->m_collectVideo.get())return;
+    ui->collectVideo_pushButton->setChecked(true);
     ui->stackedWidget->setCurrentWidget(this->m_collectVideo.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -418,6 +475,8 @@ void MyCollection::on_collectVideo_pushButton_clicked() {
 }
 
 void MyCollection::on_singer_pushButton_clicked() {
+    if (ui->stackedWidget->currentWidget() == this->m_singerWidget.get())return;
+    ui->singer_pushButton->setChecked(true);
     ui->stackedWidget->setCurrentWidget(this->m_singerWidget.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -434,6 +493,8 @@ void MyCollection::on_singer_pushButton_clicked() {
 }
 
 void MyCollection::on_device_pushButton_clicked() {
+    if (ui->stackedWidget->currentWidget() == this->m_deviceWidget.get())return;
+    ui->device_pushButton->setChecked(true);
     ui->stackedWidget->setCurrentWidget(this->m_deviceWidget.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
