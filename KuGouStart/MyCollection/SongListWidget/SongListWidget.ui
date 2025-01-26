@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>825</width>
-    <height>395</height>
+    <height>327</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>SongListWidget</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QWidget" name="widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
@@ -116,22 +116,26 @@
    </item>
    <item>
     <widget class="QWidget" name="table_widget" native="true">
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>297</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>200</height>
+      </size>
+     </property>
     </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>5</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>

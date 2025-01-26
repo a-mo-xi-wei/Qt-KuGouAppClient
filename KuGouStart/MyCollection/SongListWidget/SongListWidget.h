@@ -5,8 +5,7 @@
 #ifndef SONGLISTWIDGET_H
 #define SONGLISTWIDGET_H
 
-#include <QWidget>
-
+#include "SongListBlockWidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -27,6 +26,9 @@ public:
 private:
     void initUi();
 
+    void initBlock() const;
+
+    void addBlockWidget(SongListBlockWidget* block) const;
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 

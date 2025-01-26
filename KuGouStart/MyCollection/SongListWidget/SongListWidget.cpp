@@ -61,9 +61,29 @@ void SongListWidget::initUi() {
     //
     //  });
     // 连接点击事件
-    connect(this->m_searchAction, &QAction::triggered, [](){
-        qDebug() << "按钮被点击";
-    });
+    //connect(this->m_searchAction, &QAction::triggered, [](){
+    //    qDebug() << "按钮被点击";
+    //});
+    initBlock();
+}
+
+void SongListWidget::initBlock() const {
+    const auto lay = new QHBoxLayout(ui->table_widget);
+    ui->table_widget->setLayout(lay);
+    const QString arr[] = {" 我喜欢"," 默认收藏"," 默认列表"};
+    for (int i = 0; i < 3; ++i) {
+        const auto block = new SongListBlockWidget(ui->table_widget);
+        block->setTitleText(arr[i]);
+        if (i == 0)block->setCoverPix(QStringLiteral(":/Res/tabIcon/like.jpg"));
+        else block->setCoverPix(QStringLiteral(":/Res/tabIcon/playlist.jpg"));
+        addBlockWidget(block);
+    }
+    lay->addSpacerItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum));
+}
+
+void SongListWidget::addBlockWidget(SongListBlockWidget *block) const {
+    const auto lay = static_cast<QHBoxLayout*>(ui->table_widget->layout());
+    lay->addWidget(block);
 }
 
 bool SongListWidget::eventFilter(QObject *watched, QEvent *event) {
