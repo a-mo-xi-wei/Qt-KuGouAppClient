@@ -12,10 +12,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 set(SOURCE_FILE
-        SongListWidget.cpp
-        SongListWidget.h
-        SongListWidget.ui
-        song.css
+    SongListWidget.cpp
+    SongListWidget.h
+    SongListWidget.ui
+    SongListBlockwidget.h
+    SongListBlockwidget.cpp
+    SongListBlockWidget.ui
+    song.css
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
@@ -23,4 +26,4 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySearchLineEdit)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySearchLineEdit MyBlockWidget)
