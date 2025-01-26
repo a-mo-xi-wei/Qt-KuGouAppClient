@@ -488,7 +488,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QScrollArea" name="scrollArea">
+    <widget class="MyScrollArea" name="scrollArea">
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
@@ -501,7 +501,7 @@
         <x>0</x>
         <y>0</y>
         <width>862</width>
-        <height>136</height>
+        <height>127</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -549,6 +549,12 @@
    <class>IconBesideTextToolButton</class>
    <extends>QToolButton</extends>
    <header>IconBesideTextToolButton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyScrollArea</class>
+   <extends>QScrollArea</extends>
+   <header>MyScrollArea.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
