@@ -28,7 +28,6 @@ private:
 
     void initBlock() const;
 
-    void addBlockWidget(SongListBlockWidget* block) const;
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 

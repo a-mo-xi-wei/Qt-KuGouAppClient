@@ -32,7 +32,13 @@ void SongListBlockWidget::setTitleText(const QString &title) const {
 }
 
 void SongListBlockWidget::initUi() const {
-    ui->cover_widget->setFixedSize(150,150);
+    //blockWidget设置
+    ui->cover_widget->setExpandRespond(false);
+    ui->cover_widget->setPopularDirection(1);
+    ui->cover_widget->setHaveNumberUnit(false);
+    ui->cover_widget->setLeftPopularBtnIcon("");
+    ui->cover_widget->setPopularBtnText("0首");
+    ui->cover_widget->setPopularBtnLeftPadding(0);
     //遮罩设置
     auto& mask = ui->cover_widget->getMask();
     mask.setDefaultFillCircleColor(Qt::white);
@@ -40,21 +46,18 @@ void SongListBlockWidget::initUi() const {
     mask.setDefaultFillTriangleColor(QColor(QStringLiteral("#666666")));
     mask.setHoverFillTriangleColor(QColor(QStringLiteral("#666666")));
     mask.setMaskColor(QColor(0, 0, 0, 100));
-    //扩展MyBlockWidget响应范围
-    ui->cover_widget->setPopularDirection(1);
-    ui->cover_widget->setHaveNumberUnit(false);
-    ui->cover_widget->setLeftPopularBtnIcon("");
-    ui->cover_widget->setPopularBtnText("0首");
+    mask.setEnterWidgetChangeCursor(false);
+    mask.setCursor(Qt::ArrowCursor);
 }
 
 void SongListBlockWidget::enterEvent(QEnterEvent *event) {
     QWidget::enterEvent(event);
-    ui->cover_widget->onShowMask();
+    //ui->cover_widget->onShowMask();
 }
 
 void SongListBlockWidget::leaveEvent(QEvent *event) {
     QWidget::leaveEvent(event);
-    ui->cover_widget->onHideMask();
+    //ui->cover_widget->onHideMask();
 }
 
 void SongListBlockWidget::mousePressEvent(QMouseEvent *event) {
