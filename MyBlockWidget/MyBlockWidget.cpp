@@ -142,10 +142,22 @@ void MyBlockWidget::setExpandRespond(const bool &expandRespond) {
 }
 
 void MyBlockWidget::setRightPopularBtnIcon(const QString &icon)const {
+    if (icon.isEmpty()) {
+        //qDebug()<<"icon为空";
+        this->m_rightPopularBtn->setToolButtonStyle(Qt::ToolButtonTextOnly);
+        this->m_rightPopularBtn->setFixedWidth(30);
+        return;
+    }
     this->m_rightPopularBtn->setIcon(QIcon(icon));
 }
 
 void MyBlockWidget::setLeftPopularBtnIcon(const QString &icon)const {
+    if (icon.isEmpty()) {
+        //qDebug()<<"icon为空";
+        this->m_leftPopularBtn->setToolButtonStyle(Qt::ToolButtonTextOnly);
+        this->m_leftPopularBtn->setFixedWidth(30);
+        return;
+    }
     this->m_leftPopularBtn->setIcon(QIcon(icon));
 }
 
