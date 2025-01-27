@@ -102,7 +102,10 @@ void DailyRecommend::initDateLab() {
 }
 
 void DailyRecommend::initTableWidget() {
-    for (int i = 0; i < 30; i++) {SongInfor tempInformation;
+    const auto layout = dynamic_cast<QVBoxLayout *>(ui->daily_song_list_widget->layout());
+    if (!layout)return;
+    for (int i = 0; i < 30; i++) {
+        SongInfor tempInformation;
         tempInformation.index = i;
         tempInformation.cover = QPixmap(QString(":/Res/tablisticon/pix%1.png").arg(i%10+1));
         tempInformation.songName = "未知歌曲";
@@ -113,13 +116,13 @@ void DailyRecommend::initTableWidget() {
         tempInformation.playCount = 0;
 
         //加载相关信息
-        auto item = new MusicItemWidget(tempInformation, this);
+        const auto item = new MusicItemWidget(tempInformation, this);
         //初始化item
         initMusicItem(item);
-        const auto layout = dynamic_cast<QVBoxLayout *>(ui->daily_song_list_widget->layout());
-        if (!layout)return;
+
         layout->insertWidget(layout->count(), item);
     }
+    layout->addSpacerItem(new QSpacerItem(1, 30, QSizePolicy::Fixed, QSizePolicy::Fixed));
 }
 
 void DailyRecommend::initMusicItem(MusicItemWidget *item) {
