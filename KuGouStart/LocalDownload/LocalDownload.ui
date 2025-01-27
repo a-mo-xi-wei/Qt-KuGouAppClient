@@ -32,7 +32,7 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_11">
         <property name="spacing">
-         <number>0</number>
+         <number>2</number>
         </property>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -56,6 +56,7 @@
             <property name="font">
              <font>
               <family>Microsoft YaHei UI</family>
+              <pointsize>10</pointsize>
               <bold>true</bold>
              </font>
             </property>
@@ -156,7 +157,7 @@ margin-top:0px;</string>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_12">
         <property name="spacing">
-         <number>0</number>
+         <number>2</number>
         </property>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_8">
@@ -180,6 +181,7 @@ margin-top:0px;</string>
             <property name="font">
              <font>
               <family>Microsoft YaHei UI</family>
+              <pointsize>10</pointsize>
               <bold>true</bold>
              </font>
             </property>
@@ -205,6 +207,11 @@ margin-top:0px;</string>
           </item>
           <item>
            <widget class="QLabel" name="downloaded_music_number_label">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
@@ -265,7 +272,7 @@ margin-top:0px;</string>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_14">
         <property name="spacing">
-         <number>0</number>
+         <number>2</number>
         </property>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_10">
@@ -289,6 +296,7 @@ margin-top:0px;</string>
             <property name="font">
              <font>
               <family>Microsoft YaHei UI</family>
+              <pointsize>10</pointsize>
               <bold>true</bold>
              </font>
             </property>
@@ -314,6 +322,11 @@ margin-top:0px;</string>
           </item>
           <item>
            <widget class="QLabel" name="downloaded_video_number_label">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
@@ -374,7 +387,7 @@ margin-top:0px;</string>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_13">
         <property name="spacing">
-         <number>0</number>
+         <number>2</number>
         </property>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_11">
@@ -398,6 +411,7 @@ margin-top:0px;</string>
             <property name="font">
              <font>
               <family>Microsoft YaHei UI</family>
+              <pointsize>10</pointsize>
               <bold>true</bold>
              </font>
             </property>
@@ -423,6 +437,11 @@ margin-top:0px;</string>
           </item>
           <item>
            <widget class="QLabel" name="downloading_number_label">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
@@ -481,10 +500,7 @@ margin-top:0px;</string>
     </widget>
    </item>
    <item>
-    <widget class="QStackedWidget" name="stackedWidget">
-     <widget class="QWidget" name="page"/>
-     <widget class="QWidget" name="page_2"/>
-    </widget>
+    <widget class="QStackedWidget" name="stackedWidget"/>
    </item>
   </layout>
  </widget>
