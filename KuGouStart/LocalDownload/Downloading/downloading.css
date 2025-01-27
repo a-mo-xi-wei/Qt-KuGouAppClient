@@ -1,0 +1,50 @@
+/**************content_widget*************/
+QLabel#prompt_label{
+    color: #afafaf;
+}
+QPushButton#search_pushButton{
+    border: 1px solid #1eb8ff;
+    border-radius: 17px;
+    color: #1eb8ff;
+}
+/********************************/
+QToolButton#start_toolButton{
+    padding-left: 14px;
+    font-size: 13px;
+    border: none;
+    border-radius: 16px;
+    background-color:#269dff;
+    color: white;
+}
+QToolButton#start_toolButton:hover{
+    background-color:#2085d9;;
+}
+QToolButton#stop_toolButton{
+    padding-left: 14px;
+    font-size: 13px;
+    border: none;
+    border-radius: 16px;
+    background-color: #e7e7e7;
+}
+QToolButton#stop_toolButton:hover{
+    background-color: #d3d3d3;
+}
+QToolButton#clear_toolButton{
+    padding-left: 14px;
+    font-size: 13px;
+    border: none;
+    border-radius: 16px;
+    background-color: #e7e7e7;
+}
+QToolButton#clear_toolButton:hover{
+    background-color: #d3d3d3;;
+}
+QToolButton#setting_toolButton{
+    outline: 1px solid #9f9f9f;/*无用，被覆盖*/
+    border-radius: 9px;
+    background-color: rgba(255,255,255,0);
+    border-image: url(":/Res/menuIcon/settings-black.svg");
+}
+QToolButton#setting_toolButton:hover{
+    border-image: url(":/Res/menuIcon/settings-blue.svg");
+}

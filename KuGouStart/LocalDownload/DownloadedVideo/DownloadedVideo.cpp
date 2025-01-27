@@ -7,10 +7,24 @@
 #include "DownloadedVideo.h"
 #include "ui_DownloadedVideo.h"
 
+#include <QFile>
 
-DownloadedVideo::DownloadedVideo(QWidget *parent) :
-    QWidget(parent), ui(new Ui::DownloadedVideo) {
+#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+
+DownloadedVideo::DownloadedVideo(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::DownloadedVideo)
+{
     ui->setupUi(this);
+    {
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/downloadedvideo.css"));
+        if (file.open(QIODevice::ReadOnly)) {
+            this->setStyleSheet(file.readAll());
+        } else {
+            qDebug() << "样式表打开失败QAQ";
+            return;
+        }
+    }
 }
 
 DownloadedVideo::~DownloadedVideo() {

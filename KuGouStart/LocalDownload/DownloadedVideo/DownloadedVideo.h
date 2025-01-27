@@ -9,16 +9,20 @@
 
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class DownloadedVideo; }
+
+namespace Ui {
+    class DownloadedVideo;
+}
+
 QT_END_NAMESPACE
 
 class DownloadedVideo : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit DownloadedVideo(QWidget *parent = nullptr);
-    ~DownloadedVideo() override;
 
+    ~DownloadedVideo() override;
 private:
     Ui::DownloadedVideo *ui;
 };
