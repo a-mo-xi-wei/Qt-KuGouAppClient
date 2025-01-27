@@ -8,9 +8,6 @@
 #include "ui_LocalDownload.h"
 
 #include <QFile>
-#include <QStringList>
-#include <QResizeEvent>
-#include <QTimer>
 #include <QButtonGroup>
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分

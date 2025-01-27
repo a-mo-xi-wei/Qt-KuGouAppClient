@@ -7,7 +7,6 @@
 #include "LocalSong.h"
 #include "ui_LocalSong.h"
 
-#include <QFile>
 #include <QFileDialog>
 #include <QMediaMetaData>
 #include <QMediaPlayer>
