@@ -25,3 +25,13 @@ QWidget#guide_widget QLabel {
     padding-top:0px;
     margin: 0px;
 }
+
+QToolButton#download_history_toolButton{
+    font-size: 13px;
+    border:none;
+    border-radius: 12px;
+    background-color: #e2e5ff;
+}
+QToolButton#download_history_toolButton:hover {
+    background-color: #dadeff;
+}

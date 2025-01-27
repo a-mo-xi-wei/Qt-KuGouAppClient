@@ -65,6 +65,8 @@ void LocalDownload::initStackedWidget() {
 }
 
 void LocalDownload::initUi() {
+    //隐藏download_history_toolButton 按钮
+    ui->download_history_toolButton->hide();
     //下标图片
     ui->idx1_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
     ui->idx2_lab->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
@@ -73,9 +75,8 @@ void LocalDownload::initUi() {
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
     ui->idx4_lab->hide();
-
+    //初始化堆栈窗口
     initStackedWidget();
-
     //默认点击本地音乐
     ui->local_music_pushButton->clicked();
 }
@@ -104,6 +105,7 @@ void LocalDownload::initDownloading() {
 void LocalDownload::on_local_music_pushButton_clicked() {
     //切换堆栈界面
     if (ui->stackedWidget->currentWidget() == this->m_localSong.get())return;
+    if (!ui->download_history_toolButton->isHidden())ui->download_history_toolButton->hide();
     ui->stackedWidget->setCurrentWidget(this->m_localSong.get());
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
@@ -118,6 +120,7 @@ void LocalDownload::on_local_music_pushButton_clicked() {
 void LocalDownload::on_downloaded_music_pushButton_clicked() {
     //切换堆栈界面
     if (ui->stackedWidget->currentWidget() == this->m_downloadedSong.get())return;
+    ui->download_history_toolButton->show();
     ui->stackedWidget->setCurrentWidget(this->m_downloadedSong.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
@@ -132,6 +135,7 @@ void LocalDownload::on_downloaded_music_pushButton_clicked() {
 void LocalDownload::on_downloaded_video_pushButton_clicked() {
     //切换堆栈界面
     if (ui->stackedWidget->currentWidget() == this->m_downloadedVideo.get())return;
+    if (!ui->download_history_toolButton->isHidden())ui->download_history_toolButton->hide();
     ui->stackedWidget->setCurrentWidget(this->m_downloadedVideo.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -146,6 +150,7 @@ void LocalDownload::on_downloaded_video_pushButton_clicked() {
 void LocalDownload::on_downloading_pushButton_clicked() {
     //切换堆栈界面
     if (ui->stackedWidget->currentWidget() == this->m_downloading.get())return;
+    if (!ui->download_history_toolButton->isHidden())ui->download_history_toolButton->hide();
     ui->stackedWidget->setCurrentWidget(this->m_downloading.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
