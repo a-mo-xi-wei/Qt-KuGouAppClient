@@ -93,7 +93,7 @@ public slots:
 
     void onItemAddToCollect();
 
-    void onItemAddtoPlayList();
+    void onItemAddToPlayList();
 
     void onItemDownload();
 
@@ -147,6 +147,7 @@ private:
 
     //菜单相关
     SortOptionMenu *m_sortOptMenu{};
+    bool m_isSorting = false;
     QPoint m_menuPosition;
 
     //滚动条相关
