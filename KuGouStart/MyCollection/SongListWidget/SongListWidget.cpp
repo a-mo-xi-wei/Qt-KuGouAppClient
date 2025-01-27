@@ -75,8 +75,8 @@ void SongListWidget::initBlock() const {
     for (int i = 0; i < 3; ++i) {
         const auto block = new SongListBlockWidget(ui->table_widget);
         block->setTitleText(arr[i]);
-        if (i == 0)block->setCoverPix(QStringLiteral(":/Res/tabIcon/like.jpg"));
-        else block->setCoverPix(QStringLiteral(":/Res/tabIcon/playlist.jpg"));
+        if (i == 0)block->setCoverPix(QStringLiteral(":/Res/tabIcon/like.png"));
+        else block->setCoverPix(QStringLiteral(":/Res/tabIcon/playlist.png"));
         lay->addWidget(block);
     }
     lay->addStretch();
