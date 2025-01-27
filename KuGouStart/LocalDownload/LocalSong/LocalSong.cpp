@@ -166,6 +166,8 @@ void LocalSong::getMetaData() {
             if (!layout)return;
             layout->insertWidget(layout->count() - 2, item);
             //ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
+            emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size()));
+
             //加载下一首歌
             loadNextSong();
         }
@@ -504,6 +506,8 @@ void LocalSong::onItemDeleteSong(const int &idx) {
     this->m_locationMusicVector.erase(m_locationMusicVector.cbegin() + idx);
     this->m_MusicItemVector.erase(m_MusicItemVector.cbegin() + idx);
     //ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
+    emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size()));
+
     //更新下标
     int index = -1;
     for (auto &val: this->m_locationMusicVector) {

@@ -111,6 +111,9 @@ signals:
     //同步(更新)Vec
     void syncSongInfo(QVector<SongInfor> &vec);
 
+    //更新数量标签
+    void updateCountLabel(const int &count);
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
