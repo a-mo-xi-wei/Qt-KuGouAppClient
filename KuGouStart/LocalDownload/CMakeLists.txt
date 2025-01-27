@@ -11,17 +11,26 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia)
 
+#更加地通用
+file(GLOB_RECURSE SRC_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+file(GLOB_RECURSE SRC_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+file(GLOB_RECURSE SRC_UI ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)
+
 set(SOURCE_FILE
-        LocalDownload.cpp
-        LocalDownload.h
-        LocalDownload.ui
-        local.css
+    ${SRC_CPP}
+    ${SRC_H}
+    ${SRC_UI}
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
 # 指定库的包含目录
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(${PROJECT_NAME} PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/LocalSong
+        ${CMAKE_CURRENT_SOURCE_DIR}/DownloadedSong
+        ${CMAKE_CURRENT_SOURCE_DIR}/DownloadedVideo
+        ${CMAKE_CURRENT_SOURCE_DIR}/Downloading)
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia
         MusicItemWidget MySearchLineEdit UpToolButton MyScrollArea)
