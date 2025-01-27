@@ -6,6 +6,7 @@
 #define SORTOPTIONMENU_H
 
 #include "../BaseMenu.h"
+#include "../MenuBtn.h"
 
 class SortOptionMenu : public BaseMenu {
     Q_OBJECT
@@ -13,9 +14,11 @@ class SortOptionMenu : public BaseMenu {
 public:
     SortOptionMenu(QWidget *parent = nullptr);
 
-    void initMenu() override;
-
     const SortOptionMenu* getMenu()const override;
+
+    void btnClickAgain() const;
+private:
+    void initMenu() override;
 
 signals:
     //音乐选中相关
@@ -36,6 +39,10 @@ signals:
     void playCountSort(const bool &down = true);
 
     void randomSort();
+
+private:
+    //记录最后一次是谁选用了哪种排序方式
+    MenuBtn* m_sortBtn{};
 
 };
 

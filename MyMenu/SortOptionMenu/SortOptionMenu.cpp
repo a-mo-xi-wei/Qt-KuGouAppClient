@@ -10,10 +10,11 @@ SortOptionMenu::SortOptionMenu(QWidget *parent)
     : BaseMenu(parent)
 {
 }
+
 void SortOptionMenu::initMenu() {
     this->setFixedSize(140, 280);
     //默认排序
-    auto a_sortByDefaultAction = new QWidgetAction(this); {
+    const auto a_sortByDefaultAction = new QWidgetAction(this); {
         auto a_sortByDefaultToolBtn = new MenuBtn(this);
         a_sortByDefaultToolBtn->removeFilter();
         a_sortByDefaultToolBtn->setFixedSize(120, 35);
@@ -29,6 +30,7 @@ void SortOptionMenu::initMenu() {
             //清除之前的图标
             checkSelection();
             this->m_lastSelect = this->m_curSelect;
+            this->m_sortBtn = a_sortByDefaultToolBtn;
         });
         connect(a_sortByDefaultAction, &QWidgetAction::hovered, this, [a_sortByDefaultToolBtn,this] {
             checkHover();
@@ -39,7 +41,7 @@ void SortOptionMenu::initMenu() {
         });
     }
     //添加时间
-    auto a_sortByAddTimeAction = new QWidgetAction(this); {
+    const auto a_sortByAddTimeAction = new QWidgetAction(this); {
         auto a_sortByAddTimeToolBtn = new MenuBtn(this);
         a_sortByAddTimeToolBtn->removeFilter();
         a_sortByAddTimeToolBtn->setFixedSize(120, 35);
@@ -67,6 +69,7 @@ void SortOptionMenu::initMenu() {
                     a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
                 }
             }
+            this->m_sortBtn = a_sortByAddTimeToolBtn;
         });
         connect(a_sortByAddTimeAction, &QWidgetAction::hovered, this, [a_sortByAddTimeToolBtn,this] {
             checkHover();
@@ -77,7 +80,7 @@ void SortOptionMenu::initMenu() {
         });
     }
     //歌曲名
-    auto a_sortBySongNameAction = new QWidgetAction(this); {
+    const auto a_sortBySongNameAction = new QWidgetAction(this); {
         auto a_sortBySongNameToolBtn = new MenuBtn(this);
         a_sortBySongNameToolBtn->removeFilter();
         a_sortBySongNameToolBtn->setFixedSize(120, 35);
@@ -105,6 +108,7 @@ void SortOptionMenu::initMenu() {
                     a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
                 }
             }
+            this->m_sortBtn = a_sortBySongNameToolBtn;
         });
         connect(a_sortBySongNameAction, &QWidgetAction::hovered, this, [a_sortBySongNameToolBtn,this] {
             checkHover();
@@ -115,7 +119,7 @@ void SortOptionMenu::initMenu() {
         });
     }
     //歌手
-    auto a_sortBySingerAction = new QWidgetAction(this); {
+    const auto a_sortBySingerAction = new QWidgetAction(this); {
         auto a_sortBySingerToolBtn = new MenuBtn(this);
         a_sortBySingerToolBtn->removeFilter();
         a_sortBySingerToolBtn->setFixedSize(120, 35);
@@ -141,6 +145,7 @@ void SortOptionMenu::initMenu() {
                     a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
                 }
             }
+            this->m_sortBtn = a_sortBySingerToolBtn;
         });
         connect(a_sortBySingerAction, &QWidgetAction::hovered, this, [a_sortBySingerToolBtn,this] {
             checkHover();
@@ -151,7 +156,7 @@ void SortOptionMenu::initMenu() {
         });
     }
     //时长
-    auto a_sortByDurationAction = new QWidgetAction(this); {
+    const auto a_sortByDurationAction = new QWidgetAction(this); {
         auto a_sortByDurationToolBtn = new MenuBtn(this);
         a_sortByDurationToolBtn->removeFilter();
         a_sortByDurationToolBtn->setFixedSize(120, 35);
@@ -177,6 +182,7 @@ void SortOptionMenu::initMenu() {
                     a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
                 }
             }
+            this->m_sortBtn = a_sortByDurationToolBtn;
         });
         connect(a_sortByDurationAction, &QWidgetAction::hovered, this, [a_sortByDurationToolBtn,this] {
             checkHover();
@@ -187,7 +193,7 @@ void SortOptionMenu::initMenu() {
         });
     }
     //播放次数
-    auto a_sortByPlayCountAction = new QWidgetAction(this); {
+    const auto a_sortByPlayCountAction = new QWidgetAction(this); {
         auto a_sortByPlayCountToolBtn = new MenuBtn(this);
         a_sortByPlayCountToolBtn->removeFilter();
         a_sortByPlayCountToolBtn->setFixedSize(120, 35);
@@ -213,6 +219,7 @@ void SortOptionMenu::initMenu() {
                     a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
                 }
             }
+            this->m_sortBtn = a_sortByPlayCountToolBtn;
         });
         connect(a_sortByPlayCountAction, &QWidgetAction::hovered, this, [a_sortByPlayCountToolBtn,this] {
             checkHover();
@@ -223,7 +230,7 @@ void SortOptionMenu::initMenu() {
         });
     }
     //随机排序
-    auto a_sortByRandomAction = new QWidgetAction(this); {
+    const auto a_sortByRandomAction = new QWidgetAction(this); {
         auto a_sortByRandomToolBtn = new MenuBtn(this);
         a_sortByRandomToolBtn->setFixedSize(120, 35);
         a_sortByRandomToolBtn->removeFilter();
@@ -259,5 +266,10 @@ void SortOptionMenu::initMenu() {
 
 const SortOptionMenu * SortOptionMenu::getMenu() const {
     return this;
+}
+
+void SortOptionMenu::btnClickAgain() const {
+    if (this->m_sortBtn)
+        this->m_sortBtn->clicked();
 }
 
