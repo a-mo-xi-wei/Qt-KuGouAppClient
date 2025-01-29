@@ -40,7 +40,7 @@ private:
     void initMusicItem(MusicItemWidget *item);
 private slots:
     //ui相关
-    void on_local_play_toolButton_clicked();
+    void on_local_all_play_toolButton_clicked();
 
     void on_local_add_toolButton_clicked();
 

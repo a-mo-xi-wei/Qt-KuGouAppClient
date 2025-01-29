@@ -77,7 +77,7 @@ void LocalSong::initUi() {
     layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
     layout->setContentsMargins(0, 0, 0, 0);
 
-    ui->local_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")));
+    ui->local_all_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")));
     ui->local_add_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/add-gray.svg")));
     ui->upload_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/upload-cloud-gray.svg")));
 
@@ -292,7 +292,7 @@ void LocalSong::initMusicItem(MusicItemWidget *item) {
     connect(item, &MusicItemWidget::deleteSong, this, &LocalSong::onItemDeleteSong);
 }
 
-void LocalSong::on_local_play_toolButton_clicked() {
+void LocalSong::on_local_all_play_toolButton_clicked() {
     emit startPlay();
 }
 

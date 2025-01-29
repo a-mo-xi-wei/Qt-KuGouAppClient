@@ -21,7 +21,7 @@
     <number>0</number>
    </property>
    <property name="topMargin">
-    <number>0</number>
+    <number>15</number>
    </property>
    <property name="rightMargin">
     <number>0</number>
@@ -33,10 +33,16 @@
     <widget class="QWidget" name="operation_widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_9">
       <item>
-       <widget class="QToolButton" name="local_play_toolButton">
+       <widget class="QToolButton" name="local_all_play_toolButton">
         <property name="minimumSize">
          <size>
-          <width>80</width>
+          <width>100</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
           <height>35</height>
          </size>
         </property>
@@ -44,7 +50,7 @@
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="mouseTracking">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
         <property name="toolTip">
          <string>顺序播放</string>
@@ -60,6 +66,12 @@
       <item>
        <widget class="QToolButton" name="local_add_toolButton">
         <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
          <size>
           <width>80</width>
           <height>35</height>
@@ -82,6 +94,12 @@
       <item>
        <widget class="QToolButton" name="upload_toolButton">
         <property name="minimumSize">
+         <size>
+          <width>115</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
          <size>
           <width>115</width>
           <height>35</height>

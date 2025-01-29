@@ -10,32 +10,47 @@
     <height>391</height>
    </rect>
   </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
   <property name="windowTitle">
    <string>DownloadedSong</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
-    <number>0</number>
+    <number>6</number>
    </property>
    <property name="topMargin">
     <number>0</number>
    </property>
    <item>
     <widget class="QWidget" name="operation_widget" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="topMargin">
+       <number>25</number>
+      </property>
       <item>
        <widget class="QToolButton" name="local_play_toolButton">
         <property name="minimumSize">
          <size>
           <width>80</width>
-          <height>35</height>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>32</height>
          </size>
         </property>
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
-        <property name="toolTip">
-         <string>顺序播放</string>
+        <property name="mouseTracking">
+         <bool>false</bool>
         </property>
         <property name="text">
          <string>播放</string>

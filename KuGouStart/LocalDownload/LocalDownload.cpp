@@ -36,7 +36,7 @@ LocalDownload::LocalDownload(QWidget *parent)
     connect(this->m_localSong.get(), &LocalSong::syncSongInfo, this, [this](QVector<SongInfor> &vec){emit syncSongInfo(vec);});
     connect(this->m_localSong.get(), &LocalSong::playMusic, this, [this](const int& index){emit playMusic(index);});
     connect(this->m_localSong.get(), &LocalSong::startPlay, this, [this]{emit startPlay();});
-    connect(this->m_localSong.get(), &LocalSong::updateCountLabel, this, &LocalDownload::on_local_music_label_changed);
+    connect(this->m_localSong.get(), &LocalSong::updateCountLabel, this, &LocalDownload::local_music_label_changed);
 }
 
 LocalDownload::~LocalDownload() {
@@ -163,7 +163,7 @@ void LocalDownload::on_downloading_pushButton_clicked() {
     ui->local_music_number_label->setStyleSheet("");
 }
 
-void LocalDownload::on_local_music_label_changed(const int &num) {
+void LocalDownload::local_music_label_changed(const int &num) {
     ui->local_music_number_label->setText(QString::number(num));
 }
 

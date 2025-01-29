@@ -9,10 +9,11 @@ QWidget#operation_widget > QToolButton:hover {
     background-color: #dadeff;
 }
 
-QWidget#operation_widget QToolButton#local_play_toolButton{
+QWidget#operation_widget QToolButton#local_all_play_toolButton{
+    color:white;
     background-color:#269dff;
 }
-QWidget#operation_widget QToolButton#local_play_toolButton:hover{
+QWidget#operation_widget QToolButton#local_all_play_toolButton:hover{
     background-color:#2085d9;
 }
 /*--------------------small_widget------------------------------*/

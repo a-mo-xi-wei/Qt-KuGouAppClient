@@ -7,18 +7,18 @@ QLabel#local_download_label {
 /*--------------------guide_widget------------------------------*/
 QWidget#guide_widget QPushButton {
     color:black;
-    font-size:15px;
+    font-size:16px;
     border: none;
     padding: 0px;
     margin: 0px;
 }
 QWidget#guide_widget QPushButton:checked {
     color:#26a1ff;
-    font-size:17px;
+    font-size:18px;
     font-weight:bold;
 }
 QWidget#guide_widget QPushButton:hover {
-    font-size:16px;
+    font-size:17px;
     font-weight:bold;
 }
 QWidget#guide_widget QLabel {
@@ -27,11 +27,11 @@ QWidget#guide_widget QLabel {
 }
 
 QToolButton#download_history_toolButton{
-    font-size: 13px;
+    font-size: 12px;
     border:none;
     border-radius: 12px;
-    background-color: #e2e5ff;
+    background-color: #e7e7e7;
 }
 QToolButton#download_history_toolButton:hover {
-    background-color: #dadeff;
+    background-color: #d3d3d3;
 }
