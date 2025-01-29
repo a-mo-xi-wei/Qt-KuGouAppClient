@@ -7,12 +7,67 @@
 #include "UploadedSong.h"
 #include "ui_UploadedSong.h"
 
+#include <QFile>
 
-UploadedSong::UploadedSong(QWidget *parent) :
-    QWidget(parent), ui(new Ui::UploadedSong) {
+#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+
+UploadedSong::UploadedSong(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::UploadedSong)
+    , m_searchAction(new QAction(this))
+{
     ui->setupUi(this);
+    {
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/uploaded.css"));
+        if (file.open(QIODevice::ReadOnly)) {
+            this->setStyleSheet(file.readAll());
+        } else {
+            qDebug() << "样式表打开失败QAQ";
+            return;
+        }
+    }
+
+    initUi();
 }
 
 UploadedSong::~UploadedSong() {
     delete ui;
+}
+
+void UploadedSong::initUi() {
+    ui->cloud_play_toolButton->setIcon(QIcon(QStringLiteral(":Res/tabIcon/play3-gray.svg")));
+    ui->cloud_upload_toolButton->setIcon(QIcon(QStringLiteral(":Res/menuIcon/upload-white.svg")));
+    ui->cloud_download_toolButton->setIcon(QIcon(QStringLiteral(":Res/tabIcon/download-gray.svg")));
+    ui->cloud_delete_toolButton->setIcon(QIcon(QStringLiteral(":Res/menuIcon/delete-gray.svg")));
+
+    //使用 addAction 添加右侧图标
+    this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-black.svg")));
+    this->m_searchAction->setIconVisibleInMenu(false); // 仅显示图标
+    ui->cloud_search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition);
+    ui->cloud_search_lineEdit->setWidth(150);
+    QToolButton* searchButton = nullptr;
+    foreach (QToolButton* btn, ui->cloud_search_lineEdit->findChildren<QToolButton*>()) {
+        if (btn->defaultAction() == this->m_searchAction) {
+            searchButton = btn;
+            break;
+        }
+    }
+
+    // 安装事件过滤器
+    if (searchButton) {
+        searchButton->installEventFilter(this);
+    }
+
+}
+
+bool UploadedSong::eventFilter(QObject *watched, QEvent *event) {
+    const auto button = qobject_cast<QToolButton*>(watched);
+    if (button && button->defaultAction() == this->m_searchAction) {
+        if (event->type() == QEvent::Enter) {
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-blue.svg")));
+        } else if (event->type() == QEvent::Leave) {
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-black.svg")));
+        }
+    }
+    return QObject::eventFilter(watched, event);
 }

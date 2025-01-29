@@ -1,0 +1,75 @@
+QToolButton#cloud_play_toolButton{
+    border: none;
+    border-radius: 17px;
+    color: #829eb6;
+    background-color: #e2e5ff;
+    padding-left: 20px;
+}
+QToolButton#cloud_upload_toolButton{
+    border: none;
+    border-radius: 17px;
+    color: white;
+    background-color: #66d366;
+    padding-left: 20px;
+}
+QToolButton#cloud_download_toolButton,
+QToolButton#cloud_delete_toolButton{
+    border: none;
+    border-radius: 17px;
+    background-color: #e2e5ff;
+}
+/*--------------------small_widget------------------------------*/
+QWidget#small_widget{
+    border: 1px solid #b4bcff;
+    border-radius:15px;
+}
+QWidget#small_widget > QFrame{
+    border:none;
+    background-color:#dadeff;
+}
+
+QWidget#small_widget > QToolButton {
+    background-color: transparent;
+}
+QToolButton#cloud_share_toolButton {
+    border-image:url(":/Res/titlebar/share-gray.svg");
+}
+QToolButton#cloud_share_toolButton:hover {
+    border-image:url(":/Res/titlebar/share-blue.svg");
+}
+
+QToolButton#cloud_batch_toolButton {
+    border-image:url(":/Res/titlebar/batch-gray.svg");
+}
+QToolButton#cloud_batch_toolButton:hover {
+    border-image:url(":/Res/titlebar/batch-blue.svg");
+}
+
+QToolButton#cloud_sort_toolButton {
+    border-image:url(":/Res/titlebar/sort-gray.svg");
+}
+QToolButton#cloud_sort_toolButton:hover {
+    border-image:url(":/Res/titlebar/sort-blue.svg");
+}
+
+QLineEdit#cloud_search_lineEdit{
+    border-radius: 12px;
+    background-color: #e2e5ff;
+    padding-left: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    selection-color: #00cb9f;            /* 设置选中文本的颜色 */
+    selection-background-color: #75498c;  /* 设置选中文本的背景颜色 */
+}
+QLineEdit#cloud_search_lineEdit:hover{
+    background-color: #dadeff;
+}
+/**************content_widget*************/
+QLabel#prompt_label{
+    color: #afafaf;
+}
+QPushButton#search_pushButton{
+    border: 1px solid #1eb8ff;
+    border-radius: 17px;
+    color: #1eb8ff;
+}
