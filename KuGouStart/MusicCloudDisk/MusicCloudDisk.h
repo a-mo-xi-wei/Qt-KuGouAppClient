@@ -24,6 +24,11 @@ public:
 
     ~MusicCloudDisk() override;
 
+private:
+    void initUi();
+
+    void initIndexLab();
+
     void initStackedWidget();
 
     void initUploadedSong();
@@ -34,6 +39,11 @@ private slots:
     void on_uploaded_song_pushButton_clicked();
 
     void on_uploading_song_pushButton_clicked();
+
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
+    void mousePressEvent(QMouseEvent *event) override;
 
 private:
     Ui::MusicCloudDisk *ui;
