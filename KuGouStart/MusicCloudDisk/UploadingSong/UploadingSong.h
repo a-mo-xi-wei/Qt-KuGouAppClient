@@ -9,15 +9,23 @@
 
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class UploadingSong; }
+
+namespace Ui {
+    class UploadingSong;
+}
+
 QT_END_NAMESPACE
 
 class UploadingSong : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit UploadingSong(QWidget *parent = nullptr);
+
     ~UploadingSong() override;
+
+private:
+    void initUi();
 
 private:
     Ui::UploadingSong *ui;

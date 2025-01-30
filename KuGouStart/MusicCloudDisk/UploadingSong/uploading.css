@@ -1,0 +1,28 @@
+QToolButton#cloud_upload_toolButton{
+    border: none;
+    border-radius: 17px;
+    color: white;
+    background-color: #66d366;
+    padding-left: 18px;
+}
+QToolButton#cloud_upload_toolButton:hover{
+    background-color: #59b759;
+}
+QToolButton#cloud_start_toolButton,
+QToolButton#cloud_clear_toolButton,
+QToolButton#cloud_pause_toolButton{
+    border: none;
+    border-radius: 17px;
+    color: #829eb6;
+    background-color: #e2e5ff;
+    padding-left: 18px;
+}
+/**************content_widget*************/
+QLabel#prompt_label{
+    color: #afafaf;
+}
+QPushButton#search_pushButton{
+    border: 1px solid #1eb8ff;
+    border-radius: 17px;
+    color: #1eb8ff;
+}
