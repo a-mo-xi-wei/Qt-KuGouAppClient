@@ -1,6 +1,12 @@
 #ifndef SLIDESHOW_H
 #define SLIDESHOW_H
 
+/*
+ *  此处参考开源项目 ：iwxyi 大神的 [Qt] 简单易用的轮播图
+ *  项目地址为 ： https://github.com/iwxyi/Qt-SlideShow
+ *  非常实用，有兴趣的可以star
+ */
+
 #include "InteractiveButtonBase.h"
 #include "SideHideLabel.h"
 #include <QVBoxLayout>
