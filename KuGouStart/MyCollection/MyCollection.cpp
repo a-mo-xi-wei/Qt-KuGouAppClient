@@ -117,7 +117,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
             ui->singleSong_pushButton->setStyleSheet(R"(
                 QPushButton {
                     color:#26a1ff;
-                    font-size:15px;
+                    font-size:16px;
                     border: none;
                     padding: 0px;
                     margin: 0px;
@@ -136,7 +136,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
             ui->singleSong_pushButton->setStyleSheet(R"(
                 QPushButton {
                     color:black;
-                    font-size:15px;
+                    font-size:16px;
                     border: none;
                     padding: 0px;
                     margin: 0px;
@@ -157,7 +157,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
             ui->songList_pushButton->setStyleSheet(R"(
                 QPushButton {
                     color:#26a1ff;
-                    font-size:15px;
+                    font-size:16px;
                     border: none;
                     padding: 0px;
                     margin: 0px;
@@ -176,7 +176,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
             ui->songList_pushButton->setStyleSheet(R"(
                 QPushButton {
                     color:black;
-                    font-size:15px;
+                    font-size:16px;
                     border: none;
                     padding: 0px;
                     margin: 0px;
@@ -197,7 +197,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
             ui->specialAlbum_pushButton->setStyleSheet(R"(
                 QPushButton {
                     color:#26a1ff;
-                    font-size:15px;
+                    font-size:16px;
                     border: none;
                     padding: 0px;
                     margin: 0px;
@@ -216,7 +216,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
             ui->specialAlbum_pushButton->setStyleSheet(R"(
                 QPushButton {
                     color:black;
-                    font-size:15px;
+                    font-size:16px;
                     border: none;
                     padding: 0px;
                     margin: 0px;
@@ -237,7 +237,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
             ui->collectVideo_pushButton->setStyleSheet(R"(
                 QPushButton {
                     color:#26a1ff;
-                    font-size:15px;
+                    font-size:16px;
                     border: none;
                     padding: 0px;
                     margin: 0px;
@@ -256,7 +256,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
             ui->collectVideo_pushButton->setStyleSheet(R"(
                 QPushButton {
                     color:black;
-                    font-size:15px;
+                    font-size:16px;
                     border: none;
                     padding: 0px;
                     margin: 0px;
@@ -277,7 +277,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
             ui->singer_pushButton->setStyleSheet(R"(
                 QPushButton {
                     color:#26a1ff;
-                    font-size:15px;
+                    font-size:16px;
                     border: none;
                     padding: 0px;
                     margin: 0px;
@@ -296,7 +296,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
             ui->singer_pushButton->setStyleSheet(R"(
                 QPushButton {
                     color:black;
-                    font-size:15px;
+                    font-size:16px;
                     border: none;
                     padding: 0px;
                     margin: 0px;
@@ -317,7 +317,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
             ui->device_pushButton->setStyleSheet(R"(
                 QPushButton {
                     color:#26a1ff;
-                    font-size:15px;
+                    font-size:16px;
                     border: none;
                     padding: 0px;
                     margin: 0px;
@@ -336,7 +336,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
             ui->device_pushButton->setStyleSheet(R"(
                 QPushButton {
                     color:black;
-                    font-size:15px;
+                    font-size:16px;
                     border: none;
                     padding: 0px;
                     margin: 0px;
