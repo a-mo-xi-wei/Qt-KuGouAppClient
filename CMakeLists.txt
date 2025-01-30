@@ -50,5 +50,8 @@ add_subdirectory(MyScrollArea)
 #菜单模块
 add_subdirectory(MyMenu)
 
+#复选框模块
+add_subdirectory(MyCheckBox)
+
 #开始模块
 add_subdirectory(KuGouStart)
