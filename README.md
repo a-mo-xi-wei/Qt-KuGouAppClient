@@ -32,3 +32,6 @@ Based on Qt Widget + UiTools module+ Custom control +QSS
 ![输入图片说明](image-show/image19.png)
 ![输入图片说明](image-show/image20.png)
 ![输入图片说明](image-show/image21.png)
+![输入图片说明](image-show/image22.png)
+![输入图片说明](image-show/image23.png)
+![输入图片说明](image-show/image24.png)
