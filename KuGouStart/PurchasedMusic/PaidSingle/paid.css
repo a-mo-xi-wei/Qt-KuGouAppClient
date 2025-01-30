@@ -49,6 +49,18 @@ QToolButton#single_sort_toolButton {
 QToolButton#single_sort_toolButton:hover {
     border-image:url(":/Res/titlebar/sort-blue.svg");
 }
+QLineEdit#paid_search_lineEdit{
+    border-radius: 12px;
+    background-color: #e2e5ff;
+    padding-left: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    selection-color: #00cb9f;            /* 设置选中文本的颜色 */
+    selection-background-color: #75498c;  /* 设置选中文本的背景颜色 */
+}
+QLineEdit#paid_search_lineEdit:hover{
+    background-color: #dadeff;
+}
 /**************content_widget*************/
 QLabel#prompt_label{
     color: #afafaf;

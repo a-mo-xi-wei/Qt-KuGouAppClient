@@ -1,21 +1,23 @@
 
 /*--------------------operation_widget------------------------------*/
-QWidget#operation_widget > QToolButton {
-    background-color: #e2e5ff;
+QToolButton#collect_play_toolButton{
     border: none;
     border-radius: 17px;
     padding-left: 13px;
-}
-QWidget#operation_widget > QToolButton:hover {
-    background-color: #dadeff;
-}
-
-QWidget#operation_widget QToolButton#collect_play_toolButton{
     background-color:#269dff;
 }
-QWidget#operation_widget QToolButton#collect_play_toolButton:hover{
+QToolButton#collect_play_toolButton:hover{
     background-color:#2085d9;
 }
+QToolButton#collect_download_toolButton{
+    border: none;
+    border-radius: 17px;
+    background-color:#e2e5ff;
+}
+QToolButton#collect_download_toolButton:hover{
+    background-color:#dadeff;
+}
+
 /*--------------------small_widget------------------------------*/
 QWidget#small_widget{
     border: 1px solid #b4bcff;

@@ -27,8 +27,13 @@ public:
 private:
     void initUi();
 
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
 private:
     Ui::PaidSingle *ui;
+    QAction *m_searchAction; //专门为了设置图片
+
 };
 
 

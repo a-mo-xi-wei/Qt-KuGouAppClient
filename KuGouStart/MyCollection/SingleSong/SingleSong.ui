@@ -17,6 +17,9 @@
    <item>
     <widget class="QWidget" name="operation_widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_9">
+      <property name="spacing">
+       <number>20</number>
+      </property>
       <property name="leftMargin">
        <number>3</number>
       </property>
@@ -49,46 +52,30 @@
        </widget>
       </item>
       <item>
-       <widget class="QToolButton" name="collect_add_toolButton">
+       <widget class="QToolButton" name="collect_download_toolButton">
         <property name="minimumSize">
          <size>
-          <width>80</width>
-          <height>35</height>
+          <width>34</width>
+          <height>34</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>34</width>
+          <height>34</height>
          </size>
         </property>
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="toolTip">
-         <string>添加歌曲</string>
+         <string>下载</string>
         </property>
         <property name="text">
-         <string>添加</string>
+         <string/>
         </property>
         <property name="toolButtonStyle">
-         <enum>Qt::ToolButtonTextBesideIcon</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QToolButton" name="collect_upload_toolButton">
-        <property name="minimumSize">
-         <size>
-          <width>115</width>
-          <height>35</height>
-         </size>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="toolTip">
-         <string>上传到云</string>
-        </property>
-        <property name="text">
-         <string>备份到云盘</string>
-        </property>
-        <property name="toolButtonStyle">
-         <enum>Qt::ToolButtonTextBesideIcon</enum>
+         <enum>Qt::ToolButtonIconOnly</enum>
         </property>
        </widget>
       </item>

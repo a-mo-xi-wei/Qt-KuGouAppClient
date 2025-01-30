@@ -24,7 +24,7 @@
     <widget class="QWidget" name="widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
-       <number>20</number>
+       <number>10</number>
       </property>
       <item>
        <widget class="QToolButton" name="single_play_toolButton">
@@ -62,6 +62,9 @@
           <height>34</height>
          </size>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -79,6 +82,31 @@
          </size>
         </property>
        </spacer>
+      </item>
+      <item>
+       <widget class="MySearchLineEdit" name="paid_search_lineEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="placeholderText">
+         <string/>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QWidget" name="small_widget" native="true">
@@ -368,6 +396,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MySearchLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>MySearchLineEdit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
