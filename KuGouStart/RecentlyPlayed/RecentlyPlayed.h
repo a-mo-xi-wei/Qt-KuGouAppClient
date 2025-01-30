@@ -27,7 +27,12 @@ public:
 
     ~RecentlyPlayed() override;
 
-    void initStackedWidet();
+private:
+    void initUi();
+
+    void initIndexLab();
+
+    void initStackedWidget();
 
     void initSingleSong();
 
@@ -40,15 +45,20 @@ public:
     void initMVChannel();
 
 private slots:
-    void on_singleSong_pushButton_clicked();
+    void on_single_song_pushButton_clicked();
 
-    void on_songList_pushButton_clicked();
+    void on_song_list_pushButton_clicked();
 
     void on_video_pushButton_clicked();
 
     void on_song_channel_pushButton_clicked();
 
     void on_MV_channel_pushButton_clicked();
+
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
+    void mousePressEvent(QMouseEvent *event) override;
 
 private:
     Ui::RecentlyPlayed *ui;
