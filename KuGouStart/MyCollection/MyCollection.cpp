@@ -141,7 +141,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
                     padding: 0px;
                     margin: 0px;
                 }
-                QWidget#guide_widget QPushButton:checked {
+                QPushButton:checked {
                     color:#26a1ff;
                     font-size:18px;
                     font-weight:bold;
@@ -181,7 +181,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
                     padding: 0px;
                     margin: 0px;
                 }
-                QWidget#guide_widget QPushButton:checked {
+                QPushButton:checked {
                     color:#26a1ff;
                     font-size:18px;
                     font-weight:bold;
@@ -221,7 +221,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
                     padding: 0px;
                     margin: 0px;
                 }
-                QWidget#guide_widget QPushButton:checked {
+                QPushButton:checked {
                     color:#26a1ff;
                     font-size:18px;
                     font-weight:bold;
@@ -261,7 +261,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
                     padding: 0px;
                     margin: 0px;
                 }
-                QWidget#guide_widget QPushButton:checked {
+                QPushButton:checked {
                     color:#26a1ff;
                     font-size:18px;
                     font-weight:bold;
@@ -301,7 +301,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
                     padding: 0px;
                     margin: 0px;
                 }
-                QWidget#guide_widget QPushButton:checked {
+                QPushButton:checked {
                     color:#26a1ff;
                     font-size:18px;
                     font-weight:bold;
@@ -341,7 +341,7 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
                     padding: 0px;
                     margin: 0px;
                 }
-                QWidget#guide_widget QPushButton:checked {
+                QPushButton:checked {
                     color:#26a1ff;
                     font-size:18px;
                     font-weight:bold;
