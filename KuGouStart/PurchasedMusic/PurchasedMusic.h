@@ -25,6 +25,11 @@ public:
 
     ~PurchasedMusic() override;
 
+private:
+    void initUi();
+
+    void initIndexLab();
+
     void initStackedWidget();
 
     void initPaidSingle();
@@ -38,7 +43,12 @@ private slots:
 
     void on_purchased_albums_pushButton_clicked();
 
-    void on_purchased_videos_pushButton_clicked();
+    void on_purchased_video_pushButton_clicked();
+
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
+    void mousePressEvent(QMouseEvent *event) override;
 
 private:
     Ui::PurchasedMusic *ui;
