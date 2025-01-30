@@ -74,7 +74,7 @@ void Video::initVideoWidget() {
 }
 void Video::on_video_channel_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_videoChannelWidget.get());
-    qDebug()<<"点击videoChannelWidget";
+    //qDebug()<<"点击videoChannelWidget";
     ui->index_label1->show();
     ui->index_label2->hide();
     ui->index_label3->hide();
@@ -82,7 +82,7 @@ void Video::on_video_channel_pushButton_clicked() {
 
 void Video::on_MV_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_MVWidget.get());
-    qDebug()<<"点击MVWidget";
+    //qDebug()<<"点击MVWidget";
     ui->index_label1->hide();
     ui->index_label2->show();
     ui->index_label3->hide();
@@ -90,7 +90,7 @@ void Video::on_MV_pushButton_clicked() {
 
 void Video::on_video_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_videoWidget.get());
-    qDebug()<<"点击videoWidget";
+    //qDebug()<<"点击videoWidget";
     ui->index_label1->hide();
     ui->index_label2->hide();
     ui->index_label3->show();
