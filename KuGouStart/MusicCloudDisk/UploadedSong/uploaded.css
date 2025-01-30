@@ -3,14 +3,17 @@ QToolButton#cloud_play_toolButton{
     border-radius: 17px;
     color: #829eb6;
     background-color: #e2e5ff;
-    padding-left: 20px;
+    padding-left: 18px;
 }
 QToolButton#cloud_upload_toolButton{
     border: none;
     border-radius: 17px;
     color: white;
     background-color: #66d366;
-    padding-left: 20px;
+    padding-left: 18px;
+}
+QToolButton#cloud_upload_toolButton:hover{
+    background-color: #59b759;
 }
 QToolButton#cloud_download_toolButton,
 QToolButton#cloud_delete_toolButton{
