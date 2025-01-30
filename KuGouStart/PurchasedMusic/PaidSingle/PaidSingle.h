@@ -9,15 +9,23 @@
 
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class PaidSingle; }
+
+namespace Ui {
+    class PaidSingle;
+}
+
 QT_END_NAMESPACE
 
 class PaidSingle : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit PaidSingle(QWidget *parent = nullptr);
+
     ~PaidSingle() override;
+
+private:
+    void initUi();
 
 private:
     Ui::PaidSingle *ui;

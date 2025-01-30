@@ -1,0 +1,60 @@
+
+QToolButton#single_play_toolButton{
+    border: none;
+    border-radius: 17px;
+    padding-left: 18px;
+    background-color:#269dff;
+}
+QToolButton#single_play_toolButton:hover{
+    background-color:#2085d9;
+}
+QToolButton#single_download_toolButton{
+    border: none;
+    border-radius: 17px;
+    background-color: #e2e5ff;
+}
+QToolButton#single_download_toolButton:hover{
+    background-color: #dadeff;
+}
+
+
+/*--------------------small_widget------------------------------*/
+QWidget#small_widget{
+    border: 1px solid #b4bcff;
+    border-radius:15px;
+}
+QWidget#small_widget > QFrame{
+    border:none;
+    background-color:#dadeff;
+}
+QWidget#small_widget > QToolButton {
+    background-color: transparent;
+}
+QToolButton#single_share_toolButton {
+    border-image:url(":/Res/titlebar/share-gray.svg");
+}
+QToolButton#single_share_toolButton:hover {
+    border-image:url(":/Res/titlebar/share-blue.svg");
+}
+QToolButton#single_batch_toolButton {
+    border-image:url(":/Res/titlebar/batch-gray.svg");
+}
+QToolButton#single_batch_toolButton:hover {
+    border-image:url(":/Res/titlebar/batch-blue.svg");
+}
+
+QToolButton#single_sort_toolButton {
+    border-image:url(":/Res/titlebar/sort-gray.svg");
+}
+QToolButton#single_sort_toolButton:hover {
+    border-image:url(":/Res/titlebar/sort-blue.svg");
+}
+/**************content_widget*************/
+QLabel#prompt_label{
+    color: #afafaf;
+}
+QPushButton#search_pushButton{
+    border: 1px solid #1eb8ff;
+    border-radius: 17px;
+    color: #1eb8ff;
+}

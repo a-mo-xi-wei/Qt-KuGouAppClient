@@ -24,36 +24,39 @@
     <widget class="QWidget" name="widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QToolButton" name="toolButton">
+       <widget class="QToolButton" name="single_play_toolButton">
         <property name="minimumSize">
          <size>
           <width>80</width>
-          <height>35</height>
+          <height>34</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>80</width>
-          <height>35</height>
+          <height>34</height>
          </size>
         </property>
         <property name="text">
          <string>播放</string>
         </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
        </widget>
       </item>
       <item>
-       <widget class="QToolButton" name="toolButton_3">
+       <widget class="QToolButton" name="single_download_toolButton">
         <property name="minimumSize">
          <size>
-          <width>35</width>
-          <height>35</height>
+          <width>34</width>
+          <height>34</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>35</width>
-          <height>35</height>
+          <width>34</width>
+          <height>34</height>
          </size>
         </property>
         <property name="text">
@@ -224,6 +227,9 @@
    <item>
     <widget class="QWidget" name="widget_4" native="true">
      <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
       <item>
        <spacer name="verticalSpacer_3">
         <property name="orientation">
