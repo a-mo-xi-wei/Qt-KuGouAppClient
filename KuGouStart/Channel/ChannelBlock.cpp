@@ -83,13 +83,13 @@ void ChannelBlock::updateSingerSongText()const {
 void ChannelBlock::enterEvent(QEnterEvent *event) {
     QWidget::enterEvent(event);
     ui->cover_widget->onShowMask();
-    ui->title_label->setStyleSheet("color:#2FAEFF;");
+    ui->title_label->setStyleSheet(QStringLiteral("color:#2FAEFF;"));
 }
 
 void ChannelBlock::leaveEvent(QEvent *event) {
     QWidget::leaveEvent(event);
     ui->cover_widget->onHideMask();
-    ui->title_label->setStyleSheet("color:black;");
+    ui->title_label->setStyleSheet(QStringLiteral("color:black;"));
 }
 
 void ChannelBlock::mousePressEvent(QMouseEvent *event) {
