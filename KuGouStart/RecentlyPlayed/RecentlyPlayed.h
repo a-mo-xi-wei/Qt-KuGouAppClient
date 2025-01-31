@@ -60,6 +60,8 @@ protected:
 
     void mousePressEvent(QMouseEvent *event) override;
 
+    void showEvent(QShowEvent *event) override;
+
 private:
     Ui::RecentlyPlayed *ui;
     std::unique_ptr<QButtonGroup>       m_buttonGroup{};

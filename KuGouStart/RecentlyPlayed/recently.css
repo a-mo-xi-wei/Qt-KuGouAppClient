@@ -1,16 +1,16 @@
 /*--------------------guide_widget------------------------------*/
-QWidget#guide_widget QPushButton {
+QPushButton {
     color:black;
     font-size:16px;
     border: none;
     padding: 0px;
     margin: 0px;
 }
-QWidget#guide_widget QPushButton:checked {
+QPushButton:checked {
     color:#26a1ff;
     font-size:18px;
     font-weight:bold;
 }
-QWidget#guide_widget QPushButton:hover {
+QPushButton:hover {
     color:#26a1ff;
 }

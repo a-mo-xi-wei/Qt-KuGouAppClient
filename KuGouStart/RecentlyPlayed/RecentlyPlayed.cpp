@@ -16,7 +16,7 @@
 RecentlyPlayed::RecentlyPlayed(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::RecentlyPlayed)
-    ,m_buttonGroup((std::make_unique<QButtonGroup>(this)))
+    , m_buttonGroup((std::make_unique<QButtonGroup>(this)))
 {
     ui->setupUi(this);
     {
@@ -429,4 +429,13 @@ void RecentlyPlayed::mousePressEvent(QMouseEvent *event) {
         }
     }
 
+}
+
+void RecentlyPlayed::showEvent(QShowEvent *event) {
+    QWidget::showEvent(event);
+
+    // 创建一个悬停事件
+    //QHoverEvent hoverEvent(QEvent::HoverEnter, QPoint(10, 10), QPoint(-1, -1));
+    // 立即发送事件到目标控件
+    //QApplication::sendEvent(ui->single_song_pushButton, &hoverEvent);
 }
