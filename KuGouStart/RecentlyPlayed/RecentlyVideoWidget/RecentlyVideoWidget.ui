@@ -13,28 +13,28 @@
   <property name="windowTitle">
    <string>RecentlyVideoWidget</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QWidget" name="widget_3" native="true">
-     <layout class="QVBoxLayout" name="verticalLayout_8">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="2,1,3">
       <item>
        <spacer name="verticalSpacer_2">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>100</height>
+          <height>40</height>
          </size>
         </property>
        </spacer>
       </item>
       <item>
        <layout class="QGridLayout" name="gridLayout">
+        <property name="verticalSpacing">
+         <number>15</number>
+        </property>
         <item row="0" column="0">
          <spacer name="horizontalSpacer_8">
           <property name="orientation">
@@ -49,21 +49,24 @@
          </spacer>
         </item>
         <item row="0" column="1">
-         <widget class="QLabel" name="label_16">
+         <widget class="QLabel" name="prompt_label">
           <property name="font">
            <font>
-            <pointsize>12</pointsize>
+            <pointsize>11</pointsize>
            </font>
           </property>
           <property name="text">
            <string>这里没有内容显示~</string>
           </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignBottom|Qt::AlignHCenter</set>
           </property>
          </widget>
         </item>
-        <item row="0" column="2" rowspan="2">
+        <item row="0" column="2">
          <spacer name="horizontalSpacer_9">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -76,22 +79,7 @@
           </property>
          </spacer>
         </item>
-        <item row="1" column="1" rowspan="2">
-         <widget class="QPushButton" name="pushButton_7">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="text">
-           <string>发现更多音乐</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
+        <item row="1" column="0">
          <spacer name="horizontalSpacer_11">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -104,7 +92,34 @@
           </property>
          </spacer>
         </item>
-        <item row="2" column="2">
+        <item row="1" column="1">
+         <widget class="QPushButton" name="search_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="text">
+           <string>发现更多音乐</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
          <spacer name="horizontalSpacer_10">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
