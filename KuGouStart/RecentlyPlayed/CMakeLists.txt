@@ -19,15 +19,15 @@ set(SOURCE_FILE
 )
 
 #包含单曲模块
-add_subdirectory(SingleSong)
+add_subdirectory(RecentlySingleSong)
 #包含歌单模块
 add_subdirectory(RecentlySongList)
 #包含视频模块
 add_subdirectory(RecentlyVideoWidget)
 #包含音乐频道模块
-add_subdirectory(SongChannel)
+add_subdirectory(RecentlySongChannel)
 #包含MV频道模块
-add_subdirectory(MVChannel)
+add_subdirectory(RecentlyMVChannel)
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 

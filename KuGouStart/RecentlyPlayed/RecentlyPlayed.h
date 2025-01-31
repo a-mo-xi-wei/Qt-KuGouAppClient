@@ -5,11 +5,11 @@
 #ifndef RECENTLYPLAYED_H
 #define RECENTLYPLAYED_H
 
-#include"SingleSong.h"
+#include"RecentlySingleSong.h"
 #include"RecentlySongList.h"
 #include"RecentlyVideoWidget.h"
-#include"SongChannel.h"
-#include"MVChannel.h"
+#include"RecentlySongChannel.h"
+#include"RecentlyMVChannel.h"
 
 #include <QWidget>
 
@@ -66,11 +66,11 @@ private:
     Ui::RecentlyPlayed *ui;
     std::unique_ptr<QButtonGroup>       m_buttonGroup{};
     //堆栈窗口
-    std::unique_ptr<SingleSong>         m_singleSong{};
+    std::unique_ptr<RecentlySingleSong>         m_singleSong{};
     std::unique_ptr<RecentlySongList>   m_songList{};
     std::unique_ptr<RecentlyVideoWidget>        m_videoWidget{};
-    std::unique_ptr<SongChannel>        m_songChannel{};
-    std::unique_ptr<MVChannel>          m_mvChannel{};
+    std::unique_ptr<RecentlySongChannel>        m_songChannel{};
+    std::unique_ptr<RecentlyMVChannel>          m_mvChannel{};
 };
 
 

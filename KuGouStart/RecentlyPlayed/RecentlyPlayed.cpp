@@ -76,7 +76,7 @@ void RecentlyPlayed::initStackedWidget() {
 }
 
 void RecentlyPlayed::initSingleSong() {
-    this->m_singleSong = std::make_unique<SingleSong>(ui->stackedWidget);
+    this->m_singleSong = std::make_unique<RecentlySingleSong>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_singleSong.get());
     ui->stackedWidget->setCurrentWidget(this->m_singleSong.get());
 }
@@ -92,12 +92,12 @@ void RecentlyPlayed::initVideoWidget() {
 }
 
 void RecentlyPlayed::initSongChannel() {
-    this->m_songChannel = std::make_unique<SongChannel>(ui->stackedWidget);
+    this->m_songChannel = std::make_unique<RecentlySongChannel>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_songChannel.get());
 }
 
 void RecentlyPlayed::initMVChannel() {
-    this->m_mvChannel = std::make_unique<MVChannel>(ui->stackedWidget);
+    this->m_mvChannel = std::make_unique<RecentlyMVChannel>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_mvChannel.get());
 }
 
