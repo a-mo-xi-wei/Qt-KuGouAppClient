@@ -12,11 +12,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 set(SOURCE_FILE
-    RecentlySongChannel.cpp
     RecentlySongChannel.h
+    RecentlySongChannel.cpp
     RecentlySongChannel.ui
-    RecentlyChannelBlock.cpp
     RecentlyChannelBlock.h
+    RecentlyChannelBlock.cpp
     RecentlyChannelBlock.ui
     song.css
     block.css
