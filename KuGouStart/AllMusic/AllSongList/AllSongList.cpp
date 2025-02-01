@@ -7,10 +7,22 @@
 #include "AllSongList.h"
 #include "ui_AllSongList.h"
 
+#include <QFile>
+
+#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 AllSongList::AllSongList(QWidget *parent) :
     QWidget(parent), ui(new Ui::AllSongList) {
     ui->setupUi(this);
+    {
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/list.css"));
+        if (file.open(QIODevice::ReadOnly)) {
+            this->setStyleSheet(file.readAll());
+        } else {
+            qDebug() << "样式表打开失败QAQ";
+            return;
+        }
+    }
 }
 
 AllSongList::~AllSongList() {
