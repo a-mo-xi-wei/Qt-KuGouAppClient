@@ -38,6 +38,7 @@ void SongBlock::initUi() {
     mask.setDefaultFillTriangleColor(QColor(QStringLiteral("#666666")));
     mask.setHoverFillTriangleColor(QColor(QStringLiteral("#666666")));
     mask.setEnterWidgetChangeCursor(true);
+    mask.setStander(130);
     //MyBlockWidget设置
     this->m_cover->setPopularDirection(2);
     this->m_cover->setHaveNumberUnit(false);

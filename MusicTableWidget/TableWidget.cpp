@@ -709,6 +709,7 @@ void ItemListWidget::initUi() {
     this->m_mask->setEnterWidgetChangeCursor(false);
     this->m_mask->move(this->m_coverLab->pos());
     this->m_mask->setFixedSize(this->m_coverLab->size());
+    this->m_mask->setStander(70);
     this->m_mask->hide();
     //初始隐藏按钮
     this->m_optionWidget->show();
@@ -772,6 +773,7 @@ ItemBlockWidget::ItemBlockWidget(const QString &path, const QString &desc, QWidg
     this->m_mask->setParent(this->m_bacWidget);
     this->m_mask->move(this->m_bacWidget->pos());
     this->m_mask->setFixedSize(this->m_bacWidget->size());
+    this->m_mask->setStander(130);
     this->m_mask->hide();
 }
 

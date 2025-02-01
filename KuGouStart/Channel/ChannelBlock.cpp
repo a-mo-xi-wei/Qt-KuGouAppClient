@@ -45,6 +45,7 @@ void ChannelBlock::initUi()const {
     mask.setHoverFillCircleColor(QColor(QStringLiteral("#5192FE")));
     mask.setDefaultFillTriangleColor(QColor(QStringLiteral("#666666")));
     mask.setHoverFillTriangleColor(QColor(QStringLiteral("#666666")));
+    mask.setStander(120);
     //扩展MyBlockWidget响应范围
     ui->cover_widget->setExpandRespond(true);
     ui->cover_widget->setPopularDirection(1);

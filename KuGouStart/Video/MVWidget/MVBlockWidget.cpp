@@ -57,6 +57,7 @@ void MVBlockWidget::initUi() {
     mask.setDefaultFillTriangleColor(QColor(QStringLiteral("#666666")));
     mask.setHoverFillTriangleColor(QColor(QStringLiteral("#666666")));
     mask.setMaskColor(QColor(0,0,0,100));
+    mask.setStander(120);
     ui->cover_widget->setAspectRatio(2);
 
 }
