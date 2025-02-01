@@ -23,6 +23,8 @@ public:
 
     void setMaskColor(const QColor &color);
 
+    void setStander(const int &stander);
+
 private:
     void calOnce();
 
@@ -63,6 +65,8 @@ private:
     bool m_isEnterCircle = false;
     //border-radius
     int m_borderRadius = 8;
+    //基准
+    int m_stander = 0;
 };
 
 #endif // SMASKWIDGET_H

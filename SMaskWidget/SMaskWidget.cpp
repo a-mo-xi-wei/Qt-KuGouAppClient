@@ -44,16 +44,23 @@ void SMaskWidget::setMaskColor(const QColor &color) {
     this->m_maskColor = color;
 }
 
+void SMaskWidget::setStander(const int &stander) {
+    this->m_stander = stander;
+    calOnce();
+}
+
 void SMaskWidget::calOnce() {
     m_w = static_cast<const float>(rect().width());
     m_h = static_cast<const float>(rect().height());
-    auto tmp = std::min(m_w,m_h);
-    m_radius = static_cast<float>(tmp)/5;
+    float stander = 0;
+    if (!this->m_stander) stander = std::min(m_w,m_h);
+    else stander = this->m_stander;
+    m_radius = stander/5;
     m_centerX = static_cast<const float>(rect().width())/2;
     m_centerY = static_cast<const float>(rect().height())/2;
-    m_ap = static_cast<const QPointF>(QPointF(m_centerX - tmp / 26, m_centerY - tmp / 18));
-    m_bp = static_cast<const QPointF>(QPointF(m_centerX - tmp / 26, m_centerY + tmp / 18));
-    m_cp = static_cast<const QPointF>(QPointF(m_centerX + tmp / 15, m_centerY));
+    m_ap = static_cast<const QPointF>(QPointF(m_centerX - stander / 26, m_centerY - stander / 18));
+    m_bp = static_cast<const QPointF>(QPointF(m_centerX - stander / 26, m_centerY + stander / 18));
+    m_cp = static_cast<const QPointF>(QPointF(m_centerX + stander / 15, m_centerY));
 }
 
 bool SMaskWidget::isMouseInCircle(const float &mouseX, const float &mouseY)const {
@@ -137,18 +144,16 @@ void SMaskWidget::mouseMoveEvent(QMouseEvent *event) {
     QWidget::mouseMoveEvent(event);
     const auto x = static_cast<float>(event->pos().x());
     const auto y= static_cast<float>(event->pos().y());
-    if(this->m_isEnterCircle != isMouseInCircle(x,y)) {
-        this->m_isEnterCircle = isMouseInCircle(x,y);
-        if(this->m_isEnterWidgetChangeCursor) {//立马变指向
-            this->setCursor(Qt::PointingHandCursor);
-        }
-        else {//进入圆圈再变指向
-            if(this->m_isEnterCircle)this->setCursor(Qt::PointingHandCursor);
-            else this->setCursor(Qt::ArrowCursor);
-        }
-        //qDebug() << "鼠标移动";
-        update();
+    this->m_isEnterCircle = isMouseInCircle(x,y);
+    if(this->m_isEnterWidgetChangeCursor) {//立马变指向
+        this->setCursor(Qt::PointingHandCursor);
     }
+    else {//进入圆圈再变指向
+        if(this->m_isEnterCircle)this->setCursor(Qt::PointingHandCursor);
+        else this->setCursor(Qt::ArrowCursor);
+    }
+    //qDebug() << "鼠标移动";
+    update();
 
 }
 
