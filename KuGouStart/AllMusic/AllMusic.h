@@ -29,6 +29,11 @@ public:
 
     ~AllMusic() override;
 
+private:
+    void initUi();
+
+    void initIndexLab();
+
     void initStackedWidget();
 
     void initAllWidget();
@@ -60,6 +65,11 @@ private slots:
 
     void on_cloud_disk_pushButton_clicked();
 
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
+    void mousePressEvent(QMouseEvent *event) override;
+
 private:
     Ui::AllMusic *ui;
     std::unique_ptr<QButtonGroup>   m_buttonGroup{};
@@ -71,6 +81,8 @@ private:
     std::unique_ptr<AllLocal>       m_allLocal{};
     std::unique_ptr<AllPaid>        m_allPaid{};
     std::unique_ptr<AllCloudDisk>   m_allCloudDisk{};
+    QAction *m_searchAction; //专门为了设置图片
+
 };
 
 
