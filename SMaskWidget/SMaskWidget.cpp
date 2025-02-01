@@ -55,6 +55,7 @@ void SMaskWidget::calOnce() {
     float stander = 0;
     if (!this->m_stander) stander = std::min(m_w,m_h);
     else stander = this->m_stander;
+    //qDebug()<<"当前标准: "<<stander;
     m_radius = stander/5;
     m_centerX = static_cast<const float>(rect().width())/2;
     m_centerY = static_cast<const float>(rect().height())/2;
