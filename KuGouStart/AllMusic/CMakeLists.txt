@@ -38,6 +38,6 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets
-                        MySearchLineEdit MyStackedWidget AllWidget
-                        AllLove AllSongList AllRecent AllLocal AllPaid AllCloudDisk)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySearchLineEdit
+                        MyStackedWidget AllWidget AllLove AllSongList
+                        AllRecent AllLocal AllPaid AllCloudDisk)
