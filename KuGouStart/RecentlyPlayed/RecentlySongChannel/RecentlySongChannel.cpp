@@ -59,7 +59,7 @@ void RecentlySongChannel::initUi() {
     //处理RecentlyChannelBlock
     const auto  lay = new QHBoxLayout(ui->table_widget);
     const auto block = new RecentlyChannelBlock(ui->table_widget);
-    block->setCoverPix(QStringLiteral(":/Res/tabIcon/like.png"));
+    block->setCoverPix(QStringLiteral(":/Res/tabIcon/guess-you-love.jpg"));
     lay->addWidget(block);
     lay->addStretch();
 }
