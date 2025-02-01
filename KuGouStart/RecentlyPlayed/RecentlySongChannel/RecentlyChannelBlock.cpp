@@ -44,8 +44,12 @@ void RecentlyChannelBlock::initUi() const {
     mask.setHoverFillCircleColor(QColor(QStringLiteral("#5192FE")));
     mask.setDefaultFillTriangleColor(QColor(QStringLiteral("#666666")));
     mask.setHoverFillTriangleColor(QColor(QStringLiteral("#666666")));
+    mask.setEnterWidgetChangeCursor(false);
+    mask.setMaskColor(QColor(0, 0, 0, 100));
+    mask.setStander(100);
     //扩展MyBlockWidget响应范围
     ui->cover_widget->setExpandRespond(true);
+
 }
 
 void RecentlyChannelBlock::mousePressEvent(QMouseEvent *event) {
@@ -58,4 +62,15 @@ void RecentlyChannelBlock::mouseReleaseEvent(QMouseEvent *event) {
 
 void RecentlyChannelBlock::mouseDoubleClickEvent(QMouseEvent *event) {
     event->ignore();
+}
+
+void RecentlyChannelBlock::enterEvent(QEnterEvent *event) {
+    QWidget::enterEvent(event);
+    //qDebug()<<"cover_widget宽度："<<ui->cover_widget->width()<<" 整体宽度："<<this->width();
+    ui->cover_widget->onShowMask();
+}
+
+void RecentlyChannelBlock::leaveEvent(QEvent *event) {
+    QWidget::leaveEvent(event);
+    ui->cover_widget->onHideMask();
 }
