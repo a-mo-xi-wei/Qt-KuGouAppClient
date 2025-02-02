@@ -5,8 +5,9 @@
 #ifndef RECENTLYSINGLESONG_H
 #define RECENTLYSINGLESONG_H
 
-#include <QWidget>
+#include "SortOptionMenu.h"
 
+#include <QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,12 +28,20 @@ public:
 private:
     void initUi();
 
+    void getMenuPosition(const QPoint &pos);
+
+private slots:
+    void on_recently_sort_toolButton_clicked();
+
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
     Ui::RecentlySingleSong *ui;
     QAction *m_searchAction; //专门为了设置图片
+    //菜单相关
+    SortOptionMenu *m_sortOptMenu{};
+    QPoint m_menuPosition;
 
 };
 #endif //RECENTLYSINGLESONG_H

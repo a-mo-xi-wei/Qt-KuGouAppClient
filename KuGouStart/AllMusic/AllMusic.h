@@ -5,13 +5,14 @@
 #ifndef ALLMUSIC_H
 #define ALLMUSIC_H
 
-#include"AllWidget.h"
-#include"AllLove.h"
-#include"AllSongList.h"
-#include"AllRecent.h"
-#include"AllLocal.h"
-#include"AllPaid.h"
-#include"AllCloudDisk.h"
+#include "AllWidget.h"
+#include "AllLove.h"
+#include "AllSongList.h"
+#include "AllRecent.h"
+#include "AllLocal.h"
+#include "AllPaid.h"
+#include "AllCloudDisk.h"
+#include "SortOptionMenu.h"
 
 #include <QWidget>
 
@@ -50,6 +51,8 @@ private:
 
     void initAllCloudDisk();
 
+    void getMenuPosition(const QPoint &pos);
+
 private slots:
     void on_all_pushButton_clicked();
 
@@ -64,6 +67,8 @@ private slots:
     void on_paid_pushButton_clicked();
 
     void on_cloud_disk_pushButton_clicked();
+
+    void on_all_sort_toolButton_clicked();
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
@@ -83,6 +88,9 @@ private:
     std::unique_ptr<AllCloudDisk>   m_allCloudDisk{};
     QAction *m_searchAction; //专门为了设置图片
 
+    //菜单相关
+    SortOptionMenu *m_sortOptMenu{};
+    QPoint m_menuPosition;
 };
 
 
