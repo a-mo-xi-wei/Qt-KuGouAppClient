@@ -81,7 +81,7 @@ void DailyRecommend::initDateLab() {
     this->m_monthLab->setText(monthStr);
 
     // 设置日期文本（数字形式）
-    const QString dayStr = QString::number(currentDate.day());
+    const QString dayStr =  QString("%1").arg(currentDate.day(), 2, 10, QChar('0'));
     this->m_dayLab->setFixedHeight(40);
     this->m_dayLab->setText(dayStr);
 
