@@ -19,20 +19,4 @@ QLabel#subscribe_label{
     color: gray;
     margin-bottom: 2px;
 }
-/*******classify_widget****************/
-QWidget#classify_widget > QToolButton{
-    background-color: #D1D5F6;
-    border-radius: 18px;
-}
-QWidget#classify_widget > QToolButton:hover{
-    color: #26A1FF;
-}
-QToolButton#refresh_toolButton{
-    color: black;
-}
-QToolButton#refresh_toolButton:hover{
-    color: #26A1FF;
-}
-
-/*******tab_widget****************/
 
