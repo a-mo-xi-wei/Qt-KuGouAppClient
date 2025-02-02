@@ -9,15 +9,23 @@
 
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class AllLocal; }
+
+namespace Ui {
+    class AllLocal;
+}
+
 QT_END_NAMESPACE
 
 class AllLocal : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit AllLocal(QWidget *parent = nullptr);
+
     ~AllLocal() override;
+
+private:
+    void initUi();
 
 private:
     Ui::AllLocal *ui;

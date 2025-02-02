@@ -9,15 +9,23 @@
 
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class AllWidget; }
+
+namespace Ui {
+    class AllWidget;
+}
+
 QT_END_NAMESPACE
 
 class AllWidget : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit AllWidget(QWidget *parent = nullptr);
+
     ~AllWidget() override;
+
+private:
+    void initUi();
 
 private:
     Ui::AllWidget *ui;

@@ -8,11 +8,18 @@
 #include "ui_AllWidget.h"
 
 
-AllWidget::AllWidget(QWidget *parent) :
-    QWidget(parent), ui(new Ui::AllWidget) {
+AllWidget::AllWidget(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::AllWidget)
+{
     ui->setupUi(this);
+    initUi();
 }
 
 AllWidget::~AllWidget() {
     delete ui;
+}
+
+void AllWidget::initUi() {
+
 }
