@@ -15,7 +15,6 @@
 #include <QtMath>
 #include <QPointF>
 
-#include "../MyMenu/SongOptionMenu/SongOptionMenu.h"
 //图片大小
 #define PIX_SIZE 50
 //图片圆角
@@ -155,13 +154,13 @@ void MusicItemWidget::setPlayState(const bool &state) {
 void MusicItemWidget::getMenuPosition(const QPoint& pos) {
     this->m_menuPosition = pos;
     // 获取屏幕的尺寸
-    QScreen *screen = QGuiApplication::primaryScreen();
-    QRect screenGeometry = screen->geometry();
+    const QScreen *screen = QGuiApplication::primaryScreen();
+    const QRect screenGeometry = screen->geometry();
 
     // 计算菜单右侧的全局位置
     //int menuLeftPos = pos.x() - m_menu->width();
-    int menuRightPos  = pos.x() + m_songOptMenu->width();
-    int menuBottomPos = pos.y() + m_songOptMenu->height();
+    const int menuRightPos  = pos.x() + m_songOptMenu->width();
+    const int menuBottomPos = pos.y() + m_songOptMenu->height();
     //int menuTopPos = pos.y() - m_menu->height();
     // 若菜单左侧超出屏幕左侧 (不存在)
     //if(menuLeftPos < 0) {
@@ -171,13 +170,13 @@ void MusicItemWidget::getMenuPosition(const QPoint& pos) {
     // 如果菜单右侧超出屏幕右侧
     if (menuRightPos > screenGeometry.right()) {
         // 动态调整菜单位置，使其在屏幕内显示
-        int offset = menuRightPos - screenGeometry.right() + 5;
+        const int offset = menuRightPos - screenGeometry.right() + 5;
         m_menuPosition.setX(pos.x() - offset);
     }
     // 如果菜单下侧超出屏幕下侧
     if (menuBottomPos > screenGeometry.bottom()) {
         // 动态调整菜单位置，使其在屏幕内显示
-        int offset = menuBottomPos - screenGeometry.bottom() + 5;
+        const int offset = menuBottomPos - screenGeometry.bottom() + 5;
         m_menuPosition.setY(pos.y() - offset);
     }
     // 如果菜单下侧超出屏幕下侧（不存在）
