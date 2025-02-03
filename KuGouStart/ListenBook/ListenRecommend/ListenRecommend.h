@@ -5,8 +5,9 @@
 #ifndef LISTENRECOMMEND_H
 #define LISTENRECOMMEND_H
 
-#include <QWidget>
+#include "ListenOptionMenu/ListenOptionMenu.h"
 
+#include <QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,11 +28,16 @@ public:
 private:
     void initUi();
 
+private slots:
+    void on_all_classify_toolButton_clicked();
+
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
     Ui::ListenRecommend *ui;
+    //菜单相关
+    ListenOptionMenu* m_menu{};
 };
 
 

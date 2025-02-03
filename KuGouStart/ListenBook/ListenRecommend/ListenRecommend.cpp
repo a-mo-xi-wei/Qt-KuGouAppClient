@@ -6,6 +6,7 @@
 
 #include "ListenRecommend.h"
 #include "ui_ListenRecommend.h"
+#include "MyMenu.h"
 
 #include <QFile>
 
@@ -26,6 +27,9 @@ ListenRecommend::ListenRecommend(QWidget *parent)
         }
     }
     initUi();
+    auto menu = new MyMenu(MyMenu::MenuKind::ListenOption,this);
+    m_menu = menu->getMenu<ListenOptionMenu>();
+
 }
 
 ListenRecommend::~ListenRecommend() {
@@ -46,6 +50,45 @@ void ListenRecommend::initUi() {
     ui->refresh_toolButton->setText(" 换一批");
     ui->refresh_toolButton->installEventFilter(this);
 
+}
+
+void ListenRecommend::on_all_classify_toolButton_clicked() {
+    //qDebug()<<"点击了全部分类按钮";
+    if (ui->all_classify_toolButton->isChecked()){
+        // 更新按钮图标为向上图标
+        ui->all_classify_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/up-gray.svg")));
+        ui->all_classify_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/up-blue.svg")));
+        ui->all_classify_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/up-gray.svg")));
+
+        // 设置菜单的位置
+        const QPoint globalPos = ui->all_classify_toolButton->mapToGlobal(
+            QPoint(ui->all_classify_toolButton->width() - m_menu->width(),
+                   ui->all_classify_toolButton->height() + 10));
+
+        // 设置菜单属性，不夺取焦点
+        //m_menu->setWindowFlags(static_cast<Qt::WindowFlags>(m_menu->windowFlags() | Qt::NoFocus));
+        // 菜单显示为非阻塞模式
+        //m_menu->setWindowFlags(Qt::Popup );
+        m_menu->setFocusPolicy(Qt::NoFocus);
+        m_menu->setAttribute(Qt::WA_TransparentForMouseEvents, false);
+
+        // 连接菜单的隐藏信号到按钮状态更新槽
+        connect(m_menu, &QMenu::aboutToHide, this, [this]() {
+            ui->all_classify_toolButton->setChecked(false);
+            ui->all_classify_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
+            ui->all_classify_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg")));
+            ui->all_classify_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
+        });
+
+        // 显示菜单
+        m_menu->exec(globalPos);
+    }
+    else {
+        // 更新按钮图标为向下图标
+        ui->all_classify_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
+        ui->all_classify_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg")));
+        ui->all_classify_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
+    }
 }
 
 bool ListenRecommend::eventFilter(QObject *watched, QEvent *event) {

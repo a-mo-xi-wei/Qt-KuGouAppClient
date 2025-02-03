@@ -6,6 +6,14 @@ QWidget#classify_widget > QToolButton{
 QWidget#classify_widget > QToolButton:hover{
     color: #26A1FF;
 }
+/*QToolButton#all_classify_toolButton{*/
+/*    background-color: #eaeaea;*/
+/*}*/
+/* 组合父控件和子控件的ID，提高特定性 */
+QWidget#classify_widget > QToolButton#all_classify_toolButton {
+    border: 1px solid #D1D5F6;
+    background-color: transparent;
+}
 QToolButton#refresh_toolButton{
     color: black;
 }
