@@ -11,7 +11,7 @@ class ListOptionMenu : public BaseMenu {
     Q_OBJECT
 
 public:
-    ListOptionMenu(QWidget *parent = nullptr);
+    explicit ListOptionMenu(QWidget *parent = nullptr);
 
 private:
     void initMenu() override;
