@@ -13,6 +13,7 @@ class ListOptionMenu : public BaseMenu {
 public:
     ListOptionMenu(QWidget *parent = nullptr);
 
+private:
     void initMenu() override;
 
     //初始化各个窗口
