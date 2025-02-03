@@ -84,7 +84,6 @@ void ListOptionMenu::initMenu() {
     //年代
     const auto contentWidget_period = new QWidget(contentWidget);
     initPeriodWidget(contentWidget_period);
-    const auto separator6 = new QFrame(contentWidget);
     // 设置滚动区域的内容窗口
     layout->addWidget(contentWidget_scene);
     layout->addWidget(separator1);
@@ -97,8 +96,7 @@ void ListOptionMenu::initMenu() {
     layout->addWidget(contentWidget_mood);
     layout->addWidget(separator5);
     layout->addWidget(contentWidget_period);
-    layout->addWidget(separator6);
-    
+
     contentWidget->setLayout(layout);
     area->setWidget(contentWidget);
 
