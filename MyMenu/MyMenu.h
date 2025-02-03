@@ -20,6 +20,7 @@ public:
         SortOption,
         TitleOption,
         ListOption,
+        ListenOption,
         None
     };
 

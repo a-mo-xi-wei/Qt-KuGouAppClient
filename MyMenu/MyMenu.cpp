@@ -7,6 +7,7 @@
 #include "SortOptionMenu/SortOptionMenu.h"
 #include "TitleOptionMenu/TitleOptionMenu.h"
 #include "ListOptionMenu/ListOptionMenu.h"
+#include "ListenOptionMenu/ListenOptionMenu.h"
 
 MyMenu::MyMenu(const MenuKind &kind, QWidget *parent)
     : QWidget(parent)
@@ -28,6 +29,10 @@ MyMenu::MyMenu(const MenuKind &kind, QWidget *parent)
         }
         case ListOption: {
             this->m_menu = new ListOptionMenu(this);
+            break;
+        }
+        case ListenOption: {
+            this->m_menu = new ListenOptionMenu(this);
             break;
         }
         case None: break;
