@@ -1,0 +1,50 @@
+/***********option_widget**********/
+QToolButton {
+    background-color: #e2e5ff;
+    border: none;
+    border-radius: 17px;
+    padding-left: 15px;
+}
+QToolButton:hover {
+    background-color: #dadeff;
+}
+QToolButton#downloading_play_toolButton{
+    color: white;
+    border: none;
+    border-radius: 17px;
+    padding-left: 13px;
+    background-color:#269dff;
+}
+QToolButton#downloading_play_toolButton:hover{
+    background-color:#2085d9;
+}
+QToolButton#downloading_clear_toolButton {
+    padding-left: 27px;
+}
+QToolButton#downloading_setting_toolButton{
+    padding-right: 15px;
+    color: #696969;
+}
+QToolButton#downloading_setting_toolButton:hover{
+    color: #696969;
+}
+/**************property_widget*************/
+QWidget#property_widget QLabel{
+    color: #696969;
+    background-color: transparent;
+}
+/***************水平线********************/
+QFrame#HLine{
+    border: none;
+    background-color: #b9b9b9;
+}
+
+/**************content_widget*************/
+QLabel#prompt_label{
+    color: #afafaf;
+}
+QPushButton#search_pushButton{
+    border: 1px solid #1eb8ff;
+    border-radius: 17px;
+    color: #1eb8ff;
+}
