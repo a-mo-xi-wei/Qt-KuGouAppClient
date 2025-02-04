@@ -7,10 +7,24 @@
 #include "ListenRecentlyPlay.h"
 #include "ui_ListenRecentlyPlay.h"
 
+#include <QFile>
 
-ListenRecentlyPlay::ListenRecentlyPlay(QWidget *parent) :
-    QWidget(parent), ui(new Ui::ListenRecentlyPlay) {
+#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+
+ListenRecentlyPlay::ListenRecentlyPlay(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::ListenRecentlyPlay)
+{
     ui->setupUi(this);
+    {
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/play.css"));
+        if (file.open(QIODevice::ReadOnly)) {
+            this->setStyleSheet(file.readAll());
+        } else {
+            qDebug() << "样式表打开失败QAQ";
+            return;
+        }
+    }
 }
 
 ListenRecentlyPlay::~ListenRecentlyPlay() {
