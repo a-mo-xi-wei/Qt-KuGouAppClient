@@ -50,6 +50,18 @@ void ListenRecommend::initUi() {
     ui->refresh_toolButton->setText(" 换一批");
     ui->refresh_toolButton->installEventFilter(this);
 
+    //设置每日推荐画廊
+    QList<GalleryPhotoData> list;
+    for (int i = 0; i < 10; i++)
+    {
+        const QPixmap pixmap(":/Res/window/portrait.jpg");
+        const QString title = "凤翎谱" + QString::number(i);
+        const QString subTitle = "作者：北宫懒懒" + QString::number(i);
+        GalleryPhotoData data{pixmap, title, subTitle};
+        list.append(data);
+    }
+    ui->daily_recommend_gallery_widget->loadData(list);
+
 }
 
 void ListenRecommend::on_all_classify_toolButton_clicked() {

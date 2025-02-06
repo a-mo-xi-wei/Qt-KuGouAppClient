@@ -7,10 +7,9 @@
  *  非常实用，感兴趣的可以star
  */
 
-#include "MyScrollArea.h"
-#include "galleryphotowidget.h"
+#include "GalleryPhotoWidget.h"
 
-class GalleryWidget : public MyScrollArea {
+class GalleryWidget : public QWidget {
     Q_OBJECT
 
 public:
@@ -32,7 +31,6 @@ public:
 
 private:
     QList<GalleryPhotoWidget *> widgets;
-    QWidget *center_widget;
 };
 
 #endif // GALLERYWIDGET_H
