@@ -11,9 +11,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
+set(WaterZoomButtonFile
+    WaterZoomButton/WaterZoomButton.h
+    WaterZoomButton/WaterZoomButton.cpp)
+	
 set(SOURCE_FILE
     InteractiveButtonBase.h
     InteractiveButtonBase.cpp
+     ${WaterZoomButtonFile}
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})

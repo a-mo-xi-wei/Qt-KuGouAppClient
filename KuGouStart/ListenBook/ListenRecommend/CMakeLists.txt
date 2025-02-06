@@ -11,11 +11,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
+set(GalleryFile
+    Gallery/GalleryPhotoWidget.h
+    Gallery/GalleryPhotoWidget.cpp
+    Gallery/GalleryWidget.h
+    Gallery/GalleryWidget.cpp
+)
+
 set(SOURCE_FILE
     ListenRecommend.cpp
     ListenRecommend.h
     ListenRecommend.ui
-    recommend.css
+    ${GalleryFile}
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
@@ -23,4 +30,5 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets IconBesideTextToolButton MyMenu)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets IconBesideTextToolButton MyMenu
+                        InteractiveButtonBase MyScrollArea)
