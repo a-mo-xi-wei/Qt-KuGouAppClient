@@ -12,8 +12,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 set(BOARDFILE
-	SlideBoard/InteractiveButtonBase.h
-	SlideBoard/InteractiveButtonBase.cpp
 	SlideBoard/SideHideLabel.h
 	SlideBoard/SideHideLabel.cpp
 	SlideBoard/SlideShow.h
@@ -39,6 +37,8 @@ set(SOURCE_FILE
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
 # 指定库的包含目录
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(${PROJECT_NAME} PUBLIC
+		${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyScrollArea UpToolButton MyBlockWidget)
+target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Widgets MyScrollArea UpToolButton
+		MyBlockWidget InteractiveButtonBase)

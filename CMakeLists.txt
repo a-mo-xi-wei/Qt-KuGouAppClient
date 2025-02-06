@@ -29,6 +29,9 @@ add_subdirectory(SMaskWidget)
 #涟漪模块
 add_subdirectory(RippleButton)
 
+#交互模块
+add_subdirectory(InteractiveButtonBase)
+
 #音量调节模块
 add_subdirectory(VolumeToolBtn)
 
