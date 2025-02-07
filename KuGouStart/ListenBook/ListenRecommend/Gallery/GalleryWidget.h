@@ -15,7 +15,7 @@ class GalleryWidget : public QWidget {
 public:
     explicit GalleryWidget(QWidget *parent = nullptr);
 
-    void loadData(const QList<GalleryPhotoData>& list);
+    void addData(GalleryPhotoWidget* it);
 
     void resizeGallery(QPoint emit_pos = QPoint(0, 0));
 
