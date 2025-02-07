@@ -47,7 +47,7 @@ void MyBlockWidget::initUi() {
     this->m_tipLab->move(6, 6);
     //两个流行人数按钮都初始化
     this->m_rightPopularBtn->setEnabled(false);
-    this->m_rightPopularBtn->setFixedSize(70, 20);
+    this->m_rightPopularBtn->setFixedSize(80, 20);
     this->m_rightPopularBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     this->m_rightPopularBtn->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/popular-white.svg")));
     this->setPopularBtnText(QString::number(QRandomGenerator::global()->generateDouble() * 1000, 'f', 1));
@@ -56,7 +56,7 @@ void MyBlockWidget::initUi() {
     this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle+"background-color: rgba(128, 128, 128, 127);");
 
     this->m_leftPopularBtn->setEnabled(false);
-    this->m_leftPopularBtn->setFixedSize(70, 20);
+    this->m_leftPopularBtn->setFixedSize(80, 20);
     this->m_leftPopularBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     this->m_leftPopularBtn->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/person-white.svg")));
     this->m_leftPopularBtn->setContentsMargins(5, 0, 5, 0);
