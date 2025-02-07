@@ -19,6 +19,8 @@ public:
 
     void resizeGallery(QPoint emit_pos = QPoint(0, 0));
 
+    QVector<GalleryPhotoWidget*>& getWidgets();
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
@@ -30,7 +32,7 @@ public:
     static int item_spacing_v;
 
 private:
-    QList<GalleryPhotoWidget *> widgets;
+    QVector<GalleryPhotoWidget *> widgets;
 };
 
 #endif // GALLERYWIDGET_H

@@ -65,6 +65,10 @@ void GalleryWidget::resizeGallery(QPoint emit_pos)
     }
 }
 
+QVector<GalleryPhotoWidget *> & GalleryWidget::getWidgets() {
+    return this->widgets;
+}
+
 void GalleryWidget::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
