@@ -9,12 +9,21 @@
 #include "MyMenu.h"
 
 #include <QFile>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QTimer>
 
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+
+static int idx[20] = {0};
+static ListenTableWidget* refreshObj{};
 
 ListenRecommend::ListenRecommend(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::ListenRecommend)
+    , m_refreshTimer(new QTimer(this))
+
 {
     ui->setupUi(this);
     {
@@ -29,6 +38,9 @@ ListenRecommend::ListenRecommend(QWidget *parent)
     initUi();
     auto menu = new MyMenu(MyMenu::MenuKind::ListenOption,this);
     m_menu = menu->getMenu<ListenOptionMenu>();
+
+    connect(ui->daily_recommend_widget,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    connect(this->m_refreshTimer, &QTimer::timeout, this, &ListenRecommend::onRefreshTimeout);
 
 }
 
@@ -45,22 +57,87 @@ void ListenRecommend::initUi() {
     ui->all_classify_toolButton->setIconSize(QSize(10, 10));
     ui->all_classify_toolButton->setApproach(true);
 
-    //设置换一批按钮
-    ui->refresh_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/refresh-gray.svg")));
-    ui->refresh_toolButton->setText(" 换一批");
-    ui->refresh_toolButton->installEventFilter(this);
+    //设置定时器只启动一次
+    this->m_refreshTimer->setSingleShot(true);
 
     //设置每日推荐画廊
-    QList<GalleryPhotoData> list;
-    for (int i = 0; i < 10; i++)
+    initDailyRecommendGalleryWidget();
+
+    //初始化其他画廊
+    initTableWidgets();
+}
+
+void ListenRecommend::initTableWidgets() {
+    const auto lay = new QVBoxLayout(ui->table_widgets);
+    lay->setContentsMargins(0,0,0,0);
+    const auto audioNovel = new ListenTableWidget(ui->table_widgets);
+    audioNovel->setCnt(1);
+    audioNovel->setTitle("有声小说");
+    initOtherGalleryWidget("audioNovel",audioNovel);
+
+    lay->addWidget(audioNovel);
+}
+
+void ListenRecommend::initDailyRecommendGalleryWidget() {
+    //解析json文件
     {
-        const QPixmap pixmap(":/Res/window/portrait.jpg");
-        const QString title = "凤翎谱" + QString::number(i);
-        const QString subTitle = "作者：北宫懒懒" + QString::number(i);
-        GalleryPhotoData data{pixmap, title, subTitle};
-        list.append(data);
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/jsonFiles/dailyRecommend.json"));
+        if (!file.open(QIODevice::ReadOnly)) {
+            qWarning() << "Could not open file for reading dailyRecommend.json";
+            return;
+        }
+        const auto obj = QJsonDocument::fromJson(file.readAll());
+        auto arr = obj.array();
+        for (const auto &item : arr) {
+            QString title = item.toObject().value("title").toString();
+            QString playCount = item.toObject().value("play_count").toString();
+            this->m_galleryVector[0].emplace_back(title,playCount);
+        }
+        file.close();
     }
-    ui->daily_recommend_gallery_widget->loadData(list);
+    const QString subTitle = "哈,哈,哈,没有提示文本哦,官网爬不到,我是搬砖的小行家,哒哒哒,哒哒哒。。。";
+    for (int i = 0 ; i < 10 ; ++i)
+    {
+        const auto it = new GalleryPhotoWidget(ui->daily_recommend_widget->getGalleryWidget());
+        it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(20 + idx[0]));
+        it->setTitleText(this->m_galleryVector[0][idx[0]].first);
+        it->setPopularText(this->m_galleryVector[0][idx[0]].second);
+        it->setDescribeText(subTitle);
+        ui->daily_recommend_widget->getGalleryWidget()->addData(it);
+        idx[0] = ++idx[0] % static_cast<int>(this->m_galleryVector[0].size());
+    }
+
+}
+
+void ListenRecommend::initOtherGalleryWidget(const QString &jsonFileName, const ListenTableWidget *gallery) {
+    const auto cnt = gallery->getCnt();
+    //解析json文件
+    {
+        QFile file(GET_CURRENT_DIR + QString("/jsonFiles/%1.json").arg(jsonFileName));
+        if (!file.open(QIODevice::ReadOnly)) {
+            qWarning() << QString("Could not open file for reading %1.json").arg(jsonFileName);
+            return;
+        }
+        const auto obj = QJsonDocument::fromJson(file.readAll());
+        auto arr = obj.array();
+        for (const auto &item : arr) {
+            QString title = item.toObject().value("desc").toString();
+            QString playCount = item.toObject().value("people").toString();
+            this->m_galleryVector[cnt].emplace_back(title,playCount);
+        }
+        file.close();
+    }
+    const QString subTitle = "哈,哈,哈,没有提示文本哦,官网爬不到,我是搬砖的小行家,哒哒哒,哒哒哒。。。";
+    for (int i = 0 ; i < 10 ; ++i)
+    {
+        const auto it = new GalleryPhotoWidget(gallery->getGalleryWidget());
+        it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg((cnt+1)*20 + idx[cnt]));
+        it->setTitleText(this->m_galleryVector[cnt][idx[cnt]].first);
+        it->setPopularText(this->m_galleryVector[cnt][idx[cnt]].second);
+        it->setDescribeText(subTitle);
+        gallery->getGalleryWidget()->addData(it);
+        idx[cnt] = ++idx[cnt] % static_cast<int>(this->m_galleryVector[cnt].size());
+    }
 
 }
 
@@ -103,21 +180,25 @@ void ListenRecommend::on_all_classify_toolButton_clicked() {
     }
 }
 
-bool ListenRecommend::eventFilter(QObject *watched, QEvent *event) {
-    // 检查是否是 refresh_toolButton 的事件
-    if (watched == ui->refresh_toolButton) {
-        if (event->type() == QEvent::Enter) {
-            // 鼠标进入 refresh_toolButton
-            //qDebug() << "Mouse entered refresh_toolButton";
-            ui->refresh_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/refresh-blue.svg")));
-            return true; // 如果希望阻止默认行为，可以返回 true
-        }
-        if (event->type() == QEvent::Leave) {
-            // 鼠标离开 refresh_toolButton
-            //qDebug() << "Mouse left refresh_toolButton";
-            ui->refresh_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/refresh-gray.svg")));
-            return true;
-        }
+void ListenRecommend::onToolButtonClicked(const int& cnt) {
+    // 启动定时器，延迟处理
+    if (!this->m_refreshTimer->isActive()) {
+        this->m_refreshTimer->start(500); // 500ms 延迟，避免过于频繁地触发
     }
-    return QWidget::eventFilter(watched, event);
+    refreshObj = qobject_cast<ListenTableWidget*>(sender());
 }
+
+void ListenRecommend::onRefreshTimeout() {
+//qDebug()<<"刷新一下";
+    const auto cnt = refreshObj->getCnt();
+    for (const auto& it : refreshObj->getGalleryWidget()->getWidgets())
+    {
+        it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg((cnt +1)*20 + idx[cnt]));
+        it->setTitleText(this->m_galleryVector[cnt][idx[cnt]].first);
+        it->setPopularText(this->m_galleryVector[cnt][idx[cnt]].second);
+        it->update();
+        idx[cnt] = ++idx[cnt] % static_cast<int>(this->m_galleryVector[cnt].size());
+
+    }
+}
+

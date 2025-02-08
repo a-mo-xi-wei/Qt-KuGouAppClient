@@ -6,6 +6,7 @@
 #define LISTENRECOMMEND_H
 
 #include "ListenOptionMenu/ListenOptionMenu.h"
+#include "ListenTableWidget.h"
 
 #include <QWidget>
 
@@ -28,16 +29,27 @@ public:
 private:
     void initUi();
 
+    void initTableWidgets();
+
+    void initDailyRecommendGalleryWidget();
+
+    void initOtherGalleryWidget(const QString& jsonFileName, const ListenTableWidget* gallery);
+
 private slots:
     void on_all_classify_toolButton_clicked();
 
-protected:
-    bool eventFilter(QObject *watched, QEvent *event) override;
+    void onToolButtonClicked(const int& cnt);
+
+    void onRefreshTimeout();
 
 private:
     Ui::ListenRecommend *ui;
     //菜单相关
     ListenOptionMenu* m_menu{};
+    //画廊标题vector
+    std::vector<std::pair<QString,QString>> m_galleryVector[17];
+    //设置定时器，防止刷新次数太多，导致显示问题
+    QTimer *m_refreshTimer;
 };
 
 

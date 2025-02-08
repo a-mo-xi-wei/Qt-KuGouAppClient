@@ -7,8 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>852</width>
-    <height>608</height>
+    <height>429</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>ListenRecommend</string>
@@ -46,7 +52,7 @@
         <x>0</x>
         <y>0</y>
         <width>852</width>
-        <height>608</height>
+        <height>429</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -425,98 +431,26 @@
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="title_widget" native="true">
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QLabel" name="label_2">
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>每日推荐</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>641</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QToolButton" name="refresh_toolButton">
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="text">
-             <string>换一批</string>
-            </property>
-            <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextBesideIcon</enum>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="GalleryWidget" name="daily_recommend_gallery_widget" native="true">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>100</height>
-          </size>
+        <widget class="ListenTableWidget" name="daily_recommend_widget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="rank_widget" native="true">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>101</height>
-          </size>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <widget class="QWidget" name="widget_7" native="true"/>
-          </item>
-          <item>
-           <widget class="QWidget" name="widget_8" native="true"/>
-          </item>
-          <item>
-           <widget class="QWidget" name="widget_9" native="true"/>
-          </item>
-         </layout>
-        </widget>
+        <widget class="ListenRankWidget" name="rank_widget" native="true"/>
        </item>
        <item>
-        <widget class="QWidget" name="widget_6" native="true">
-         <layout class="QVBoxLayout" name="verticalLayout_4">
-          <item>
-           <spacer name="verticalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>534</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
+        <widget class="QWidget" name="table_widgets" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
         </widget>
        </item>
       </layout>
@@ -532,15 +466,21 @@
    <header>IconBesideTextToolButton.h</header>
   </customwidget>
   <customwidget>
-   <class>GalleryWidget</class>
-   <extends>QWidget</extends>
-   <header>GalleryWidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>MyScrollArea</class>
    <extends>QScrollArea</extends>
    <header>MyScrollArea.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ListenTableWidget</class>
+   <extends>QWidget</extends>
+   <header>ListenTableWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ListenRankWidget</class>
+   <extends>QWidget</extends>
+   <header>ListenRankWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
