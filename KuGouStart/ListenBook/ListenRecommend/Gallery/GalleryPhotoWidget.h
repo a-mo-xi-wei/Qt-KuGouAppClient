@@ -32,6 +32,8 @@ protected:
 
     void leaveEvent(QEvent *event) override;
 
+    void enterEvent(QEnterEvent *event) override;
+
 public:
     static int fixed_width, fixed_height;
     static int content_width, content_height;

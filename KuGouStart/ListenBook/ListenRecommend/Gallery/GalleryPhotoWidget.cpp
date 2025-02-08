@@ -1,6 +1,7 @@
 #include "GalleryPhotoWidget.h"
 
 #include <QFile>
+#include <QGraphicsDropShadowEffect>
 #include <QLabel>
 #include <QMouseEvent>
 #include <QPainter>
@@ -58,6 +59,13 @@ void GalleryPhotoWidget::setPopularText(const QString &text) const {
 }
 
 void GalleryPhotoWidget::initUi() {
+    // 创建阴影效果
+    //const auto shadow = new QGraphicsDropShadowEffect;
+    //shadow->setBlurRadius(10);     // 阴影模糊半径
+    //shadow->setColor(Qt::gray);    // 阴影颜色
+    //shadow->setOffset(3, 3);       // 阴影偏移量 (x, y)
+    //shadow->setEnabled(false);
+    //this->setGraphicsEffect(shadow);
     //设置背景色
     this->setBgColor(QColor(QStringLiteral("#F0F8FF")));
     this->setBgColor(QColor(QStringLiteral("#ECF6FF")),this->press_bg);
@@ -213,4 +221,9 @@ void GalleryPhotoWidget::mouseMoveEvent(QMouseEvent *event) {
 void GalleryPhotoWidget::leaveEvent(QEvent *event) {
     WaterZoomButton::leaveEvent(event);
     this->m_titleLab->setStyleSheet("QLabel#titleLab { color: black; font-size: 15px; }");
+
+}
+
+void GalleryPhotoWidget::enterEvent(QEnterEvent *event) {
+    WaterZoomButton::enterEvent(event);
 }
