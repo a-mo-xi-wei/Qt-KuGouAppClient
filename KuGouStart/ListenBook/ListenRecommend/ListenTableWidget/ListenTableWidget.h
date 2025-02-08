@@ -23,20 +23,29 @@ public:
 
     ~ListenTableWidget() override;
 
-    QToolButton* getToolBtn() const;
-
     void setTitle(const QString& title) const;
 
     GalleryWidget* getGalleryWidget() const;
+
+    void setCnt(const int& cnt) ;
+
+    int getCnt() const;
+
+private:
+    void initUi() const;
+
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
 
 private slots:
     void on_toolButton_clicked();
 
 signals:
-    void toolBtnClicked();
+    void toolBtnClicked(const int& cnt);
 
 private:
     Ui::ListenTableWidget *ui;
+    int m_cnt = 0;
 };
 
 

@@ -27,10 +27,12 @@ set(ListenTableWidgetFile
 set(ListenRankWidgetFile
     ListenRankWidget/ListenRankWidget.h
     ListenRankWidget/ListenRankWidget.cpp
-    ListenRankWidget/ListenRankWidget.ui
     ListenRankWidget/RankPartWidget.h
     ListenRankWidget/RankPartWidget.cpp
     ListenRankWidget/RankPartWidget.ui
+    ListenRankWidget/RankListWidget.h
+    ListenRankWidget/RankListWidget.cpp
+    ListenRankWidget/RankListWidget.ui
 )
 
 set(SOURCE_FILE
@@ -46,7 +48,9 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
-        ${CMAKE_CURRENT_SOURCE_DIR}/Gallery)
+        ${CMAKE_CURRENT_SOURCE_DIR}/Gallery
+        ${CMAKE_CURRENT_SOURCE_DIR}/ListenTableWidget
+        ${CMAKE_CURRENT_SOURCE_DIR}/ListenRankWidget)
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets IconBesideTextToolButton MyMenu
                         InteractiveButtonBase MyScrollArea MyBlockWidget)
