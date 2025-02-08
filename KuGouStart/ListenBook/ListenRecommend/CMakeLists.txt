@@ -18,11 +18,28 @@ set(GalleryFile
     Gallery/GalleryWidget.cpp
 )
 
+set(ListenTableWidgetFile
+    ListenTableWidget/ListenTableWidget.h
+    ListenTableWidget/ListenTableWidget.cpp
+    ListenTableWidget/ListenTableWidget.ui
+)
+
+set(ListenRankWidgetFile
+    ListenRankWidget/ListenRankWidget.h
+    ListenRankWidget/ListenRankWidget.cpp
+    ListenRankWidget/ListenRankWidget.ui
+    ListenRankWidget/RankPartWidget.h
+    ListenRankWidget/RankPartWidget.cpp
+    ListenRankWidget/RankPartWidget.ui
+)
+
 set(SOURCE_FILE
     ListenRecommend.cpp
     ListenRecommend.h
     ListenRecommend.ui
     ${GalleryFile}
+    ${ListenTableWidgetFile}
+    ${ListenRankWidgetFile}
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
