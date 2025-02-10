@@ -32,7 +32,7 @@ public:
     int getCnt() const;
 
 private:
-    void initUi() const;
+    void initUi();
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
@@ -41,7 +41,7 @@ private slots:
     void on_toolButton_clicked();
 
 signals:
-    void toolBtnClicked(const int& cnt);
+    void toolBtnClicked();
 
 private:
     Ui::ListenTableWidget *ui;

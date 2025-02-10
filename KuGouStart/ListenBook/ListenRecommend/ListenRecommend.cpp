@@ -70,12 +70,122 @@ void ListenRecommend::initUi() {
 void ListenRecommend::initTableWidgets() {
     const auto lay = new QVBoxLayout(ui->table_widgets);
     lay->setContentsMargins(0,0,0,0);
+    lay->setSpacing(0);
+    //有声小说
     const auto audioNovel = new ListenTableWidget(ui->table_widgets);
     audioNovel->setCnt(1);
     audioNovel->setTitle("有声小说");
+    connect(audioNovel,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
     initOtherGalleryWidget("audioNovel",audioNovel);
+    //儿童天地
+    const auto childrenWorld = new ListenTableWidget(ui->table_widgets);
+    childrenWorld->setCnt(2);
+    childrenWorld->setTitle("儿童天地");
+    connect(childrenWorld,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("childrenWorld",childrenWorld);
+    //评书
+    const auto commentBook = new ListenTableWidget(ui->table_widgets);
+    commentBook->setCnt(3);
+    commentBook->setTitle("评书");
+    connect(commentBook,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("commentBook",commentBook);
+    //助眠解压
+    const auto helpSleep = new ListenTableWidget(ui->table_widgets);
+    helpSleep->setCnt(4);
+    helpSleep->setTitle("助眠解压");
+    connect(helpSleep,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("sleepHelp",helpSleep);
+    //人文
+    const auto humanities = new ListenTableWidget(ui->table_widgets);
+    humanities->setCnt(5);
+    humanities->setTitle("人文");
+    connect(humanities,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("humanity",humanities);
+    //自我充电
+    const auto selfCharge = new ListenTableWidget(ui->table_widgets);
+    selfCharge->setCnt(6);
+    selfCharge->setTitle("自我充电");
+    connect(selfCharge,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("chongdian",selfCharge);
+    //相声曲艺
+    const auto voiceArt = new ListenTableWidget(ui->table_widgets);
+    voiceArt->setCnt(7);
+    voiceArt->setTitle("相声曲艺");
+    connect(voiceArt,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("xiangsheng",voiceArt);
+    //情感生活
+    const auto emotionLife = new ListenTableWidget(ui->table_widgets);
+    emotionLife->setCnt(8);
+    emotionLife->setTitle("情感生活");
+    connect(emotionLife,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("qinggan",emotionLife);
+    //广播剧
+    const auto radioDrama = new ListenTableWidget(ui->table_widgets);
+    radioDrama->setCnt(9);
+    radioDrama->setTitle("广播剧");
+    connect(radioDrama,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("guangboju",radioDrama);
+    //娱乐段子
+    const auto entertainmentJoke = new ListenTableWidget(ui->table_widgets);
+    entertainmentJoke->setCnt(10);
+    entertainmentJoke->setTitle("娱乐段子");
+    connect(entertainmentJoke,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("yule",entertainmentJoke);
+    //二次元
+    const auto anime = new ListenTableWidget(ui->table_widgets);
+    anime->setCnt(11);
+    anime->setTitle("二次元");
+    connect(anime,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("erciyuan",anime);
+    //播客
+    const auto podcast = new ListenTableWidget(ui->table_widgets);
+    podcast->setCnt(12);
+    podcast->setTitle("播客");
+    connect(podcast,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("boke",podcast);
+    //粤语
+    const auto yue = new ListenTableWidget(ui->table_widgets);
+    yue->setCnt(13);
+    yue->setTitle("粤语");
+    connect(yue,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("yueyu",yue);
+    //外语
+    const auto foreignLanguage = new ListenTableWidget(ui->table_widgets);
+    foreignLanguage->setCnt(14);
+    foreignLanguage->setTitle("外语");
+    connect(foreignLanguage,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("waiyu",foreignLanguage);
+    //创作翻唱
+    const auto creativeSing = new ListenTableWidget(ui->table_widgets);
+    creativeSing->setCnt(15);
+    creativeSing->setTitle("创作翻唱");
+    connect(creativeSing,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("createCover",creativeSing);
+    //DJ电音
+    const auto djElectronic = new ListenTableWidget(ui->table_widgets);
+    djElectronic->setCnt(16);
+    djElectronic->setTitle("DJ电音");
+    connect(djElectronic,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
+    initOtherGalleryWidget("djElectronic",djElectronic);
+
 
     lay->addWidget(audioNovel);
+    lay->addWidget(childrenWorld);
+    lay->addWidget(commentBook);
+    lay->addWidget(helpSleep);
+    lay->addWidget(humanities);
+    lay->addWidget(selfCharge);
+    lay->addWidget(voiceArt);
+    lay->addWidget(emotionLife);
+    lay->addWidget(radioDrama);
+    lay->addWidget(entertainmentJoke);
+    lay->addWidget(anime);
+    lay->addWidget(podcast);
+    lay->addWidget(yue);
+    lay->addWidget(foreignLanguage);
+    lay->addWidget(creativeSing);
+    lay->addWidget(djElectronic);
+
 }
 
 void ListenRecommend::initDailyRecommendGalleryWidget() {
@@ -180,9 +290,10 @@ void ListenRecommend::on_all_classify_toolButton_clicked() {
     }
 }
 
-void ListenRecommend::onToolButtonClicked(const int& cnt) {
+void ListenRecommend::onToolButtonClicked() {
     // 启动定时器，延迟处理
     if (!this->m_refreshTimer->isActive()) {
+        //qDebug()<<"启动定时器";
         this->m_refreshTimer->start(500); // 500ms 延迟，避免过于频繁地触发
     }
     refreshObj = qobject_cast<ListenTableWidget*>(sender());
@@ -191,9 +302,10 @@ void ListenRecommend::onToolButtonClicked(const int& cnt) {
 void ListenRecommend::onRefreshTimeout() {
 //qDebug()<<"刷新一下";
     const auto cnt = refreshObj->getCnt();
+    //qDebug()<<"当前刷新第："<<cnt<<" 个tableWidget";
     for (const auto& it : refreshObj->getGalleryWidget()->getWidgets())
     {
-        it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg((cnt +1)*20 + idx[cnt]));
+        it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg((cnt +1)*20 + idx[cnt] % 20));
         it->setTitleText(this->m_galleryVector[cnt][idx[cnt]].first);
         it->setPopularText(this->m_galleryVector[cnt][idx[cnt]].second);
         it->update();

@@ -38,7 +38,7 @@ private:
 private slots:
     void on_all_classify_toolButton_clicked();
 
-    void onToolButtonClicked(const int& cnt);
+    void onToolButtonClicked();
 
     void onRefreshTimeout();
 

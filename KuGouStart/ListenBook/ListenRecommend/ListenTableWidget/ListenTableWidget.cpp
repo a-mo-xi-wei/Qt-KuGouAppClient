@@ -36,7 +36,7 @@ int ListenTableWidget::getCnt() const {
     return this->m_cnt;
 }
 
-void ListenTableWidget::initUi() const {
+void ListenTableWidget::initUi() {
     ui->toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/refresh-gray.svg")));
     ui->toolButton->setStyleSheet(R"(
         QToolButton#toolButton{
@@ -46,7 +46,7 @@ void ListenTableWidget::initUi() const {
             color: #26A1FF;
         }
     )");
-
+    ui->toolButton->installEventFilter(this);
 }
 
 bool ListenTableWidget::eventFilter(QObject *watched, QEvent *event) {
@@ -68,5 +68,5 @@ bool ListenTableWidget::eventFilter(QObject *watched, QEvent *event) {
 }
 
 void ListenTableWidget::on_toolButton_clicked() {
-    emit toolBtnClicked(this->m_cnt);
+    emit toolBtnClicked();
 }
