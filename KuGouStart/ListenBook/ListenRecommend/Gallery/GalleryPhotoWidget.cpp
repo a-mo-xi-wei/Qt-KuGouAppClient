@@ -20,11 +20,12 @@ GalleryPhotoWidget::GalleryPhotoWidget(QWidget *parent)
     , m_coverWidget(new MyBlockWidget(this))
     , m_titleLab(new QLabel(this))
     , m_descLab(new QLabel(this))
+    , m_shadowEffect(new QGraphicsDropShadowEffect(this))
 {
     setNormalColor(Qt::white);
     setHoverColor(Qt::white);
     setChoking(10);
-    setRadius(5, 10);
+    setRadius(15, 15);
     setFixedSize(fixed_width, fixed_height);
     //初始化ui界面
     initUi();
@@ -60,12 +61,11 @@ void GalleryPhotoWidget::setPopularText(const QString &text) const {
 
 void GalleryPhotoWidget::initUi() {
     // 创建阴影效果
-    //const auto shadow = new QGraphicsDropShadowEffect;
-    //shadow->setBlurRadius(10);     // 阴影模糊半径
-    //shadow->setColor(Qt::gray);    // 阴影颜色
-    //shadow->setOffset(3, 3);       // 阴影偏移量 (x, y)
-    //shadow->setEnabled(false);
-    //this->setGraphicsEffect(shadow);
+    m_shadowEffect->setBlurRadius(10);            // 阴影模糊半径
+    m_shadowEffect->setColor(Qt::gray);         // 阴影颜色
+    m_shadowEffect->setOffset(3,3);      // 阴影偏移量 (x, y)
+    m_shadowEffect->setEnabled(false);
+    this->setGraphicsEffect(this->m_shadowEffect);
     //设置背景色
     this->setBgColor(QColor(QStringLiteral("#F0F8FF")));
     this->setBgColor(QColor(QStringLiteral("#ECF6FF")),this->press_bg);
@@ -221,9 +221,10 @@ void GalleryPhotoWidget::mouseMoveEvent(QMouseEvent *event) {
 void GalleryPhotoWidget::leaveEvent(QEvent *event) {
     WaterZoomButton::leaveEvent(event);
     this->m_titleLab->setStyleSheet("QLabel#titleLab { color: black; font-size: 15px; }");
-
+    m_shadowEffect->setEnabled(false);
 }
 
 void GalleryPhotoWidget::enterEvent(QEnterEvent *event) {
     WaterZoomButton::enterEvent(event);
+    m_shadowEffect->setEnabled(true);
 }

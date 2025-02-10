@@ -4,6 +4,8 @@
 #include "MyBlockWidget.h"
 #include "WaterZoomButton/WaterZoomButton.h"
 
+class QGraphicsDropShadowEffect;
+
 class GalleryPhotoWidget : public WaterZoomButton {
     Q_OBJECT
 
@@ -19,7 +21,7 @@ public:
     void setPopularText(const QString& text) const;
 
 private:
-     void initUi();
+    void initUi();
 
     void updateTitleText()const;
 
@@ -46,6 +48,8 @@ private:
     //text
     QString m_titleText;
     QString m_describeText;
+    //阴影
+    QGraphicsDropShadowEffect* m_shadowEffect{};
 };
 
 #endif // GALLERYPHOTOWIDGET_H
