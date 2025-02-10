@@ -1,6 +1,7 @@
 #include "GalleryWidget.h"
 
 #include <QPropertyAnimation>
+#include <QResizeEvent>
 
 int GalleryWidget::item_spacing_h = 1;
 int GalleryWidget::item_spacing_v = 1;
@@ -9,7 +10,7 @@ GalleryWidget::GalleryWidget(QWidget *parent)
     : QWidget(parent)
 {
     this->setCursor(Qt::PointingHandCursor);
-    this->setContentsMargins(0,0,0,0);
+    this->setAttribute(Qt::WA_OpaquePaintEvent);
 }
 
 /**
@@ -37,7 +38,7 @@ void GalleryWidget::resizeGallery(QPoint emit_pos)
         col_count = static_cast<int>(widgets.size());
     const int row_count = qMax((static_cast<int>(widgets.size()) + col_count - 1) / col_count, 1); // 行数
     const int total_height = row_count * (gpw_height + item_spacing_v) + item_spacing_v*2;
-    this->setMinimumHeight(total_height);
+    this->setMinimumHeight(total_height + 5);
     this->resize(this->width(), total_height);
     const int total_left = (this->width() - col_count * (gpw_width + item_spacing_h)) / 2;
     const int total_top = item_spacing_v;
@@ -72,5 +73,6 @@ QVector<GalleryPhotoWidget *> & GalleryWidget::getWidgets() {
 void GalleryWidget::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
+    //qDebug()<<"现在的高度："<<this->height();
     resizeGallery();
 }
