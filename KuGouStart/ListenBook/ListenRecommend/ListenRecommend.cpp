@@ -209,7 +209,7 @@ void ListenRecommend::initDailyRecommendGalleryWidget() {
     for (int i = 0 ; i < 10 ; ++i)
     {
         const auto it = new GalleryPhotoWidget(ui->daily_recommend_widget->getGalleryWidget());
-        it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(20 + idx[0]));
+        it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(10 + idx[0]));
         it->setTitleText(this->m_galleryVector[0][idx[0]].first);
         it->setPopularText(this->m_galleryVector[0][idx[0]].second);
         it->setDescribeText(subTitle);
@@ -241,7 +241,7 @@ void ListenRecommend::initOtherGalleryWidget(const QString &jsonFileName, const 
     for (int i = 0 ; i < 10 ; ++i)
     {
         const auto it = new GalleryPhotoWidget(gallery->getGalleryWidget());
-        it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg((cnt+1)*20 + idx[cnt]));
+        it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(10 + cnt*20 + idx[cnt]));
         it->setTitleText(this->m_galleryVector[cnt][idx[cnt]].first);
         it->setPopularText(this->m_galleryVector[cnt][idx[cnt]].second);
         it->setDescribeText(subTitle);
@@ -305,7 +305,7 @@ void ListenRecommend::onRefreshTimeout() {
     //qDebug()<<"当前刷新第："<<cnt<<" 个tableWidget";
     for (const auto& it : refreshObj->getGalleryWidget()->getWidgets())
     {
-        it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg((cnt +1)*20 + idx[cnt] % 20));
+        it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(10 + cnt*20 + idx[cnt] % 20));
         it->setTitleText(this->m_galleryVector[cnt][idx[cnt]].first);
         it->setPopularText(this->m_galleryVector[cnt][idx[cnt]].second);
         it->update();
