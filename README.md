@@ -13,7 +13,7 @@
 
 ---
 
-### 介绍
+### 项目介绍
 Based on Qt Widget + UiTools module + Custom control + QSS
 
 使用CMake进行模块化管理，参照酷狗酷狗客户端，高仿并且优化界面，
