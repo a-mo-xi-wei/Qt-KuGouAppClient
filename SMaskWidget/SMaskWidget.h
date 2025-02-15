@@ -3,8 +3,12 @@
 
 #include <QWidget>
 
+class QPropertyAnimation;
+
 class SMaskWidget : public QWidget {
     Q_OBJECT
+    Q_PROPERTY(int animatedY READ animatedY WRITE setAnimatedY NOTIFY animatedYChanged)
+    Q_PROPERTY(int alpha READ alpha WRITE setAlpha NOTIFY alphaChanged)
 
 public:
     explicit SMaskWidget(QWidget *parent = nullptr);
@@ -24,6 +28,25 @@ public:
     void setMaskColor(const QColor &color);
 
     void setStander(const int &stander);
+
+    void setMove(const bool& move);
+
+    bool getMove();
+
+    int animatedY() const { return m_animatedY; }
+    int alpha() const { return m_alpha; }
+
+    void animationUp();
+
+    void animationDown();
+
+public slots:
+    void setAnimatedY(int y);
+    void setAlpha(int alpha);
+
+signals:
+    void animatedYChanged(int);
+    void alphaChanged(int);
 
 private:
     void calOnce();
@@ -67,6 +90,14 @@ private:
     int m_borderRadius = 8;
     //基准
     int m_stander = 0;
+    //动画相关
+    int m_animatedY;
+    int m_alpha = 0;
+
+    QPropertyAnimation* m_posAnimation;
+    QPropertyAnimation* m_alphaAnimation;
+    bool m_isMove = false; // 控制动画是否启用的开关
+
 };
 
 #endif // SMASKWIDGET_H

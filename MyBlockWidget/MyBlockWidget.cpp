@@ -231,6 +231,8 @@ void MyBlockWidget::enterEvent(QEnterEvent *ev) {
         if(!this->m_isHoverCover) {//如果之前是离开
             this->m_isHoverCover = true;
             this->m_mask->show();
+            if (this->m_mask->getMove())
+                this->m_mask->animationUp();
             this->m_mask->raise();
             this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle + "background-color: rgba(60,60,60, 127);");
             update();
@@ -243,6 +245,8 @@ void MyBlockWidget::leaveEvent(QEvent *ev) {
     if(!this->m_isExpandRespond) {
         if(this->m_isHoverCover) {
             this->m_isHoverCover = false;
+            if (this->m_mask->getMove())
+                this->m_mask->animationDown();
             this->m_mask->hide();
             this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle + "background-color: rgba(60,60,60, 127);");
             update();
