@@ -1,0 +1,32 @@
+//
+// Created by WeiWang on 25-2-17.
+//
+
+#ifndef LIVEBLOCKWIDGET_H
+#define LIVEBLOCKWIDGET_H
+
+#include <QWidget>
+
+
+QT_BEGIN_NAMESPACE
+
+namespace Ui {
+    class LiveBlockWidget;
+}
+
+QT_END_NAMESPACE
+
+class LiveBlockWidget : public QWidget {
+    Q_OBJECT
+
+public:
+    explicit LiveBlockWidget(QWidget *parent = nullptr);
+
+    ~LiveBlockWidget() override;
+
+private:
+    Ui::LiveBlockWidget *ui;
+};
+
+
+#endif //LIVEBLOCKWIDGET_H
