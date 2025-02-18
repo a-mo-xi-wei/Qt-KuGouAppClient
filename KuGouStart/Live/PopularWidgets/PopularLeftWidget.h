@@ -7,6 +7,7 @@
 
 #include <QWidget>
 
+class QLabel;
 class QPropertyAnimation;
 class QToolButton;
 
@@ -44,6 +45,10 @@ private:
     //动画相关
     int m_animatedY;
     QPropertyAnimation* m_posAnimation;
+    //下方三个label
+    QLabel *m_stopLab{};
+    QLabel *m_refreshLab{};
+    QLabel *m_muteLab{};
 
 };
 
