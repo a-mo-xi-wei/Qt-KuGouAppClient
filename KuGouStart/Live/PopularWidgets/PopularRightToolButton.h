@@ -35,5 +35,4 @@ private:
     QString m_leftBottomText ;
 };
 
-
 #endif //POPULARRIGHTTOOLBUTTON_H

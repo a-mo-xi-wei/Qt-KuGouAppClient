@@ -18,7 +18,15 @@ PopularRightToolButton::PopularRightToolButton(QWidget *parent)
 {
     ui->setupUi(this);
     this->setCursor(Qt::PointingHandCursor);
-    this->setStyleSheet("border: 3px solid rgb(69, 164, 255);border-radius:10px;");
+    // 设置普通状态样式
+    this->setStyleSheet(R"(
+        QToolButton {
+            border-radius: 10px;
+        }
+        QToolButton:checked {
+            border: 3px solid rgb(69, 164, 255);
+        }
+    )");
 }
 
 PopularRightToolButton::~PopularRightToolButton() {
@@ -26,7 +34,18 @@ PopularRightToolButton::~PopularRightToolButton() {
 }
 
 void PopularRightToolButton::setBackgroundImg(const QString &path) {
-    const QString style = QString("border: 3px solid rgb(69, 164, 255);border-radius:10px; background-image: url(%1);background-repeat: no-repeat;background-position: center;").arg(path);
+    const QString style = QString(R"(
+        QToolButton {
+            border-radius: 10px;
+            background-image: url(%1);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        QToolButton:checked{
+            border: 3px solid rgb(69, 164, 255);
+        }
+    )").arg(path);
+    // 合并正常样式和选中样式
     this->setStyleSheet(style);
 
 }
