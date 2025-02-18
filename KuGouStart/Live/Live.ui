@@ -370,7 +370,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_5">
        <property name="leftMargin">
-        <number>0</number>
+        <number>13</number>
        </property>
        <property name="topMargin">
         <number>0</number>
@@ -389,9 +389,21 @@
            <height>400</height>
           </size>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="8,3">
+         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,1">
           <property name="spacing">
-           <number>20</number>
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
           </property>
           <item>
            <widget class="PopularLeftWidget" name="left_widget" native="true">
@@ -406,14 +418,59 @@
           <item>
            <widget class="QWidget" name="right_widget" native="true">
             <layout class="QVBoxLayout" name="verticalLayout">
+             <property name="leftMargin">
+              <number>13</number>
+             </property>
              <item>
-              <widget class="QWidget" name="widget_4" native="true"/>
+              <widget class="PopularRightToolButton" name="toolButton_1">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item>
-              <widget class="QWidget" name="widget_5" native="true"/>
+              <widget class="PopularRightToolButton" name="toolButton_2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item>
-              <widget class="QWidget" name="widget_6" native="true"/>
+              <widget class="PopularRightToolButton" name="toolButton_3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>
@@ -624,6 +681,11 @@
    <extends>QWidget</extends>
    <header>PopularWidgets/PopularLeftWidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PopularRightToolButton</class>
+   <extends>QToolButton</extends>
+   <header>PopularWidgets/PopularRightToolButton.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -34,9 +34,9 @@ set(DIRFILE4
 set(DIRFILE5
     PopularWidgets/PopularLeftWidget.h
     PopularWidgets/PopularLeftWidget.cpp
-    PopularWidgets/PopularRightWidget.h
-    PopularWidgets/PopularRightWidget.cpp
-    PopularWidgets/PopularRightWidget.ui
+    PopularWidgets/PopularRightToolButton.h
+    PopularWidgets/PopularRightToolButton.cpp
+    PopularWidgets/PopularRightToolButton.ui
 )
 
 set(SOURCE_FILE

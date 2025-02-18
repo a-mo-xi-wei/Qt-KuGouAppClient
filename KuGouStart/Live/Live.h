@@ -9,6 +9,7 @@
 #include "LiveMusicPartWidget/LiveMusicPartWidget.h"
 #include "LiveBigLeftWidget/LiveBigLeftWidget.h"
 
+class QLabel;
 class QScrollBar;
 class QButtonGroup;
 
@@ -53,7 +54,7 @@ private:
 
     //垂直滚动条
     QScrollBar* m_vScrollBar{};
+    QLabel* m_arrowLab{};
 };
-
 
 #endif //LIVE_H

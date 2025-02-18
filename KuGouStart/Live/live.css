@@ -13,3 +13,9 @@ QPushButton:checked{
     background-color: #e1d2d2;
     color: black;
 }
+/*****popularWidget*******/
+QWidget#popular_widget{
+    border:none;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.1);
+}
