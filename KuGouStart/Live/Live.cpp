@@ -40,7 +40,6 @@ Live::Live(QWidget *parent)
     }
     initButtonGroup();
     initUi();
-    ui->toolButton_1->clicked();
 }
 
 Live::~Live() {
@@ -135,6 +134,7 @@ void Live::initPopularWidget() {
 
         // 3. 计算三角形位置（按钮左侧中间偏移）
         const QPoint startPoint = localButtonPos + QPoint(-20, ui->toolButton_1->height() / 2 - 15);
+        qDebug()<<"startPoint: "<<startPoint;
 
         this->m_arrowLab->move(startPoint);
         this->m_arrowLab->raise();
@@ -222,9 +222,8 @@ void Live::resizeEvent(QResizeEvent *event) {
 
         // 3. 计算三角形位置（按钮左侧中间偏移）
         const QPoint startPoint = localButtonPos + QPoint(-20, selectedButton->height() / 2 - 15);
-
+        //qDebug()<<"startPoint: "<<startPoint;
         this->m_arrowLab->move(startPoint);
         this->m_arrowLab->raise();
     }
-
 }
