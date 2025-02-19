@@ -27,7 +27,6 @@ Live::Live(QWidget *parent)
     , m_appearanceWidget(std::make_unique<LiveBigLeftWidget>(this))
     , m_danceWidget(std::make_unique<LiveCommonPartWidget>(this))
     , m_gameWidget(std::make_unique<LiveBigLeftWidget>(this))
-    , m_arrowLab(new QLabel(this))
 {
     ui->setupUi(this);
     {
@@ -39,7 +38,6 @@ Live::Live(QWidget *parent)
             return;
         }
     }
-    m_arrowLab->hide();
     initButtonGroup();
     initUi();
 }
@@ -123,57 +121,43 @@ void Live::initPopularWidget() {
     ui->toolButton_3->setBackgroundImg(":/RectCover/Res/rectcover/music-rect-cover22.jpg");
 
     //放置label
-    this->m_arrowLab->setObjectName("arrowLab");
-    this->m_arrowLab->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
-    this->m_arrowLab->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
-    this->m_arrowLab->setFixedSize(30,30);
-    connect(ui->toolButton_1,&QToolButton::toggled,[this] {
-        // 1. 获取按钮在屏幕上的全局坐标
-        const QPoint globalButtonPos = ui->toolButton_1->mapToGlobal(QPoint(0, 0));
-        //qDebug()<<"globalButtonPos: " << globalButtonPos;
-        // 2. 将全局坐标转换为当前窗口的局部坐标
-        const QPoint localButtonPos = this->mapFromGlobal(globalButtonPos);
-        //qDebug()<<"localButtonPos: " << localButtonPos;
+    ui->index_label_1->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
+    ui->index_label_1->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
+    ui->index_label_1->setFixedSize(20,30);
+    ui->index_label_1->show();
+    ui->index_label_2->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
+    ui->index_label_2->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
+    ui->index_label_2->setFixedSize(20,30);
+    ui->index_label_2->hide();
+    ui->index_label_3->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
+    ui->index_label_3->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
+    ui->index_label_3->setFixedSize(20,30);
+    ui->index_label_3->hide();
 
-        // 3. 计算三角形位置（按钮左侧中间偏移）
-        const QPoint startPoint = localButtonPos + QPoint(-20, ui->toolButton_1->height() / 2 - 15);
-        //qDebug()<<"startPoint: "<<startPoint;
-        m_arrowLab->show();
-        this->m_arrowLab->move(startPoint);
-        this->m_arrowLab->raise();
-        //qDebug()<<"lab的位置："<<lab->pos()<<"按钮的位置："<<ui->toolButton_1->mapFromParent(QPoint(0,0))+ui->right_widget->mapFromParent(QPoint(0,0));
+    connect(ui->toolButton_1,&QToolButton::toggled,[this] {
+        ui->index_label_1->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
+        ui->index_label_2->setPixmap(QPixmap());
+        ui->index_label_3->setPixmap(QPixmap());
+
+        ui->index_label_1->show();
+        ui->index_label_2->hide();
+        ui->index_label_3->hide();
     });
     connect(ui->toolButton_2,&QToolButton::toggled,[this] {
-
-        // 1. 获取按钮在屏幕上的全局坐标
-        const QPoint globalButtonPos = ui->toolButton_2->mapToGlobal(QPoint(0, 0));
-
-        // 2. 将全局坐标转换为当前窗口的局部坐标
-        const QPoint localButtonPos = this->mapFromGlobal(globalButtonPos);
-
-        // 3. 计算三角形位置（按钮左侧中间偏移）
-        const QPoint startPoint = localButtonPos + QPoint(-20, ui->toolButton_1->height() / 2 - 15);
-
-        m_arrowLab->show();
-        this->m_arrowLab->move(startPoint);
-        this->m_arrowLab->raise();
-        //qDebug()<<"lab的位置："<<lab->pos();
+        ui->index_label_1->setPixmap(QPixmap());
+        ui->index_label_2->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
+        ui->index_label_3->setPixmap(QPixmap());
+        ui->index_label_1->hide();
+        ui->index_label_2->show();
+        ui->index_label_3->hide();
     });
     connect(ui->toolButton_3,&QToolButton::toggled,[this] {
-
-        // 1. 获取按钮在屏幕上的全局坐标
-        const QPoint globalButtonPos = ui->toolButton_3->mapToGlobal(QPoint(0, 0));
-
-        // 2. 将全局坐标转换为当前窗口的局部坐标
-        const QPoint localButtonPos = this->mapFromGlobal(globalButtonPos);
-
-        // 3. 计算三角形位置（按钮左侧中间偏移）
-        const QPoint startPoint = localButtonPos + QPoint(-20, ui->toolButton_1->height() / 2 - 15);
-
-        m_arrowLab->show();
-        this->m_arrowLab->move(startPoint);
-        this->m_arrowLab->raise();
-        //qDebug()<<"lab的位置："<<lab->pos();
+        ui->index_label_1->setPixmap(QPixmap());
+        ui->index_label_2->setPixmap(QPixmap());
+        ui->index_label_3->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
+        ui->index_label_1->hide();
+        ui->index_label_2->hide();
+        ui->index_label_3->show();
     });
 
 }
@@ -239,29 +223,4 @@ void Live::handleWheelValue(const int &value) {
 void Live::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     ui->scrollArea->setFixedHeight(this->window()->height() - 255);
-    // 查找被选中的按钮
-    QToolButton* selectedButton = nullptr;
-    if (ui->toolButton_1->isChecked()) {
-        selectedButton = ui->toolButton_1;
-    } else if (ui->toolButton_2->isChecked()) {
-        selectedButton = ui->toolButton_2;
-    } else if (ui->toolButton_3->isChecked()) {
-        selectedButton = ui->toolButton_3;
-    }
-
-    if (selectedButton) {
-        // 1. 获取按钮在屏幕上的全局坐标
-        const QPoint globalButtonPos = selectedButton->mapToGlobal(QPoint(0, 0));
-        //qDebug()<<"globalButtonPos: " << globalButtonPos;
-        // 2. 将全局坐标转换为当前窗口的局部坐标
-        const QPoint localButtonPos = this->mapFromGlobal(globalButtonPos);
-        //qDebug()<<"localButtonPos: " << localButtonPos;
-
-        // 3. 计算三角形位置（按钮左侧中间偏移）
-        const QPoint startPoint = localButtonPos + QPoint(-20, selectedButton->height() / 2 - 15);
-        //qDebug()<<"startPoint: "<<startPoint;
-        m_arrowLab->show();
-        this->m_arrowLab->move(startPoint);
-        this->m_arrowLab->raise();
-    }
 }
