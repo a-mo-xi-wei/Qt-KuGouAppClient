@@ -15,9 +15,13 @@
 ### 项目介绍
 Based on Qt Widget + UiTools module + Custom control + QSS
 
-使用CMake进行模块化管理，参照酷狗酷狗客户端，高仿并且优化界面，
+使用**CMake**进行模块化管理，实现**模块解耦**（UI/播放器/网络分层），参照酷狗酷狗客户端，高仿并且优化界面，
 
-QMediaPlayer和QAudioOutput来实现音频播放，提供更好的音乐播放体验，
+**QMediaPlayer**和**QAudioOutput**来实现音频播放，提供更好的音乐播放体验，
+
+采用SQLite存储音乐元数据（标题/专辑/路径），使用Qt SQL模块实现播放记录管理
+
+通过**QNetworkAccessManager**实现在线音乐流媒体播放
 
 有着丰富的自定义控件和事件响应，解决诸多难题如：遮罩绘图，控件拉伸，特效绘制，页面切换动画等。
 
