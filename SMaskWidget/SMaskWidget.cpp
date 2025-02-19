@@ -4,6 +4,7 @@
 #include <QPainterPath>
 #include <QPainter>
 #include <QPropertyAnimation>
+#include <QParallelAnimationGroup>
 
 SMaskWidget::SMaskWidget(QWidget *parent)
     : QWidget(parent)
@@ -12,6 +13,7 @@ SMaskWidget::SMaskWidget(QWidget *parent)
     ,m_radius(0)
     ,m_centerX(0)
     ,m_centerY(0)
+    ,m_aniGroup(new QParallelAnimationGroup(this))
 {
     setWindowFlags(Qt::FramelessWindowHint);
     this->setMouseTracking(true);
@@ -23,7 +25,11 @@ SMaskWidget::SMaskWidget(QWidget *parent)
     // 透明度动画
     m_alphaAnimation = new QPropertyAnimation(this, "alpha");
     m_alphaAnimation->setDuration(300);
-    m_alphaAnimation->setEasingCurve(QEasingCurve::OutQuad);
+    m_alphaAnimation->setEasingCurve(QEasingCurve::InOutQuad);
+
+    this->m_aniGroup->addAnimation(m_posAnimation);
+    this->m_aniGroup->addAnimation(m_alphaAnimation);
+
 
 }
 
@@ -71,44 +77,40 @@ bool SMaskWidget::getMove() {
 void SMaskWidget::animationUp() {
     //qDebug()<<"开始动画向上";
     // 位置动画：从3/4高度到2/4高度
-    this->m_posAnimation->stop();
+    this->m_aniGroup->stop();
+
     this->m_posAnimation->setStartValue(3*height()/4);
     this->m_posAnimation->setEndValue(height()/2);
-    this->m_posAnimation->start();
 
     // 透明度动画：从0到255
-    this->m_alphaAnimation->stop();
     this->m_alphaAnimation->setStartValue(0);
     this->m_alphaAnimation->setEndValue(255);
-    this->m_alphaAnimation->start();
+
+    this->m_aniGroup->start();
 }
 
 void SMaskWidget::animationDown() {
     //qDebug()<<"开始动画向下";
     // 反向动画
-    this->m_posAnimation->stop();
+    this->m_aniGroup->stop();
     this->m_posAnimation->setStartValue(height()/2);
     this->m_posAnimation->setEndValue(3*height()/4);
-    this->m_posAnimation->start();
 
-    this->m_alphaAnimation->stop();
     this->m_alphaAnimation->setStartValue(255);
     this->m_alphaAnimation->setEndValue(0);
-    this->m_alphaAnimation->start();
+    this->m_aniGroup->start();
 }
 
 void SMaskWidget::setAnimatedY(int y) {
     m_animatedY = y;
     //qDebug()<<"当前动画高度: "<<m_animatedY;
     update();
-    emit animatedYChanged(y);
 }
 
 void SMaskWidget::setAlpha(int alpha) {
     m_alpha = alpha;
     //qDebug()<<"当前透明度: "<<alpha;
     update();
-    emit alphaChanged(alpha);
 }
 
 void SMaskWidget::calOnce() {
@@ -154,6 +156,9 @@ void SMaskWidget::paintEvent(QPaintEvent *event) {
 
     // 2. 动态调整三角形顶点位置（仅当启用动画时）
     if (m_isMove) {
+        // 设置透明度
+        qDebug()<<"m_alpha: "<<m_alpha;
+        painter.setOpacity(m_alpha / 255.0);  // m_alpha 范围是0到255
         const float stander = m_stander ? m_stander : std::min(m_w, m_h);
         const float offsetY = stander / 18;
         m_ap.setY(m_animatedY - offsetY);

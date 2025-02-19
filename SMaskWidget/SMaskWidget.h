@@ -3,12 +3,13 @@
 
 #include <QWidget>
 
+class QParallelAnimationGroup;
 class QPropertyAnimation;
 
 class SMaskWidget : public QWidget {
     Q_OBJECT
-    Q_PROPERTY(int animatedY READ animatedY WRITE setAnimatedY NOTIFY animatedYChanged)
-    Q_PROPERTY(int alpha READ alpha WRITE setAlpha NOTIFY alphaChanged)
+    Q_PROPERTY(int animatedY READ animatedY WRITE setAnimatedY)
+    Q_PROPERTY(int alpha READ alpha WRITE setAlpha)
 
 public:
     explicit SMaskWidget(QWidget *parent = nullptr);
@@ -43,10 +44,6 @@ public:
 public slots:
     void setAnimatedY(int y);
     void setAlpha(int alpha);
-
-signals:
-    void animatedYChanged(int);
-    void alphaChanged(int);
 
 private:
     void calOnce();
@@ -96,6 +93,8 @@ private:
 
     QPropertyAnimation* m_posAnimation;
     QPropertyAnimation* m_alphaAnimation;
+    QParallelAnimationGroup* m_aniGroup{};
+
     bool m_isMove = false; // 控制动画是否启用的开关
 
 };

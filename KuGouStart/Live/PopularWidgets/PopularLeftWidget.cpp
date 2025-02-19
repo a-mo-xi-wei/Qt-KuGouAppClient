@@ -1,13 +1,14 @@
 //
 // Created by WeiWang on 25-2-17.
-//
 
 #include "PopularLeftWidget.h"
 
 #include <QFile>
+#include <QGraphicsEffect>
 #include <QToolButton>
 #include <QMovie>
 #include <QPropertyAnimation>
+#include <QParallelAnimationGroup>
 #include <QLabel>
 #include <QPainter>
 #include <QTimer>
@@ -17,6 +18,8 @@
 PopularLeftWidget::PopularLeftWidget(QWidget *parent)
     : QWidget(parent)
     , m_enterLivBtn(new QToolButton(this))
+    , m_opacityEffect(new QGraphicsOpacityEffect(this))
+    , m_aniGroup(new QParallelAnimationGroup(this))
     , m_stopLab(new QLabel(this))
     , m_refreshLab(new QLabel(this))
     , m_muteLab(new QLabel(this))
@@ -40,13 +43,26 @@ PopularLeftWidget::PopularLeftWidget(QWidget *parent)
     m_posAnimation = new QPropertyAnimation(this, "animatedY");
     m_posAnimation->setDuration(300);
     m_posAnimation->setEasingCurve(QEasingCurve::OutQuad);
+    // 创建两个动画，一个从0到255，一个从255到0
+    m_alphaAnimation = new QPropertyAnimation(this, "alpha");
+    m_alphaAnimation->setDuration(300);
+    m_alphaAnimation->setEasingCurve(QEasingCurve::InOutQuad);  // 使用平滑的缓入缓出动画曲线
+
+    this->m_aniGroup->addAnimation(m_posAnimation);
+    this->m_aniGroup->addAnimation(m_alphaAnimation);
+
+    m_enterLivBtn->setGraphicsEffect(m_opacityEffect);
 }
 
 void PopularLeftWidget::setAnimatedY(int y) {
     m_animatedY = y;
     //qDebug()<<"当前动画高度: "<<m_animatedY;
     update();
-    emit animatedYChanged(y);
+}
+
+void PopularLeftWidget::setAlpha(int alpha) {
+    m_alpha = alpha;
+    update();  // 更新窗口，触发重绘事件
 }
 
 void PopularLeftWidget::initUi() {
@@ -86,17 +102,27 @@ void PopularLeftWidget::initUi() {
 }
 
 void PopularLeftWidget::animationUp() const {
-    this->m_posAnimation->stop();
+    this->m_aniGroup->stop();
+
     this->m_posAnimation->setStartValue(this->height()/2-this->m_enterLivBtn->height()/2 + 35);
     this->m_posAnimation->setEndValue(this->height()/2-this->m_enterLivBtn->height()/2);
-    this->m_posAnimation->start();
+
+    this->m_alphaAnimation->setStartValue(0);
+    this->m_alphaAnimation->setEndValue(255);
+
+    this->m_aniGroup->start();
 }
 
 void PopularLeftWidget::animationDown() const {
-    this->m_posAnimation->stop();
+    this->m_aniGroup->stop();
+
     this->m_posAnimation->setStartValue(this->height()/2-this->m_enterLivBtn->height()/2);
     this->m_posAnimation->setEndValue(this->height()/2-this->m_enterLivBtn->height()/2 + 35);
-    this->m_posAnimation->start();
+
+    this->m_alphaAnimation->setStartValue(255);
+    this->m_alphaAnimation->setEndValue(0);
+
+    this->m_aniGroup->start();
 }
 
 void PopularLeftWidget::paintEvent(QPaintEvent *event) {
@@ -111,6 +137,9 @@ void PopularLeftWidget::paintEvent(QPaintEvent *event) {
 
     this->m_enterLivBtn->move(this->width()/2-this->m_enterLivBtn->width()/2,
         this->m_animatedY);
+    // 设置按钮的透明度
+    m_opacityEffect->setOpacity(m_alpha / 255.0);  // alpha 范围是0到255
+
     this->m_stopLab->move(20,this->height()-50);
     this->m_refreshLab->move(this->width()-100,this->height()-53);
     this->m_muteLab->move(this->width()-50,this->height()-50);
