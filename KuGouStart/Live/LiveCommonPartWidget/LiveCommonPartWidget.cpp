@@ -8,11 +8,17 @@
 #include "ui_LiveCommonPartWidget.h"
 
 
-LiveCommonPartWidget::LiveCommonPartWidget(QWidget *parent) :
-    QWidget(parent), ui(new Ui::LiveCommonPartWidget) {
+LiveCommonPartWidget::LiveCommonPartWidget(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::LiveCommonPartWidget)
+{
     ui->setupUi(this);
 }
 
 LiveCommonPartWidget::~LiveCommonPartWidget() {
     delete ui;
+}
+
+void LiveCommonPartWidget::setTitleName(const QString &name) {
+    ui->title_label->setText(name);
 }

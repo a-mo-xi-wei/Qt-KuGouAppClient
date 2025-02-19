@@ -25,6 +25,9 @@ public:
     ~LiveCommonPartWidget() override;
 
 private:
+    void setTitleName(const QString& name);
+
+private:
     Ui::LiveCommonPartWidget *ui;
 };
 
