@@ -46,6 +46,7 @@ void ChannelBlock::initUi()const {
     mask.setDefaultFillTriangleColor(QColor(QStringLiteral("#666666")));
     mask.setHoverFillTriangleColor(QColor(QStringLiteral("#666666")));
     mask.setStander(120);
+    //mask.setMove(true);
     //扩展MyBlockWidget响应范围
     ui->cover_widget->setExpandRespond(true);
     ui->cover_widget->setPopularDirection(1);
@@ -84,12 +85,14 @@ void ChannelBlock::updateSingerSongText()const {
 void ChannelBlock::enterEvent(QEnterEvent *event) {
     QWidget::enterEvent(event);
     ui->cover_widget->onShowMask();
+    //ui->cover_widget->getMask().animationUp();
     ui->title_label->setStyleSheet(QStringLiteral("color:#2FAEFF;"));
 }
 
 void ChannelBlock::leaveEvent(QEvent *event) {
     QWidget::leaveEvent(event);
     ui->cover_widget->onHideMask();
+    //ui->cover_widget->getMask().animationDown();
     ui->title_label->setStyleSheet(QStringLiteral("color:black;"));
 }
 
