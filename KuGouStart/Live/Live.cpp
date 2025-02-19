@@ -11,6 +11,7 @@
 #include <QButtonGroup>
 #include <QFile>
 #include <QPainter>
+#include <QPainterPath>
 #include <QScrollBar>
 #include <QWheelEvent>
 
@@ -38,6 +39,7 @@ Live::Live(QWidget *parent)
             return;
         }
     }
+    m_arrowLab->hide();
     initButtonGroup();
     initUi();
 }
@@ -96,6 +98,7 @@ void Live::initUi() {
     connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &Live::handleWheelValue);
 
     initPopularWidget();
+    initAttentionWidget();
 }
 
 void Live::initPopularWidget() {
@@ -134,8 +137,8 @@ void Live::initPopularWidget() {
 
         // 3. 计算三角形位置（按钮左侧中间偏移）
         const QPoint startPoint = localButtonPos + QPoint(-20, ui->toolButton_1->height() / 2 - 15);
-        qDebug()<<"startPoint: "<<startPoint;
-
+        //qDebug()<<"startPoint: "<<startPoint;
+        m_arrowLab->show();
         this->m_arrowLab->move(startPoint);
         this->m_arrowLab->raise();
         //qDebug()<<"lab的位置："<<lab->pos()<<"按钮的位置："<<ui->toolButton_1->mapFromParent(QPoint(0,0))+ui->right_widget->mapFromParent(QPoint(0,0));
@@ -151,6 +154,7 @@ void Live::initPopularWidget() {
         // 3. 计算三角形位置（按钮左侧中间偏移）
         const QPoint startPoint = localButtonPos + QPoint(-20, ui->toolButton_1->height() / 2 - 15);
 
+        m_arrowLab->show();
         this->m_arrowLab->move(startPoint);
         this->m_arrowLab->raise();
         //qDebug()<<"lab的位置："<<lab->pos();
@@ -166,10 +170,43 @@ void Live::initPopularWidget() {
         // 3. 计算三角形位置（按钮左侧中间偏移）
         const QPoint startPoint = localButtonPos + QPoint(-20, ui->toolButton_1->height() / 2 - 15);
 
+        m_arrowLab->show();
         this->m_arrowLab->move(startPoint);
         this->m_arrowLab->raise();
         //qDebug()<<"lab的位置："<<lab->pos();
     });
+
+}
+
+QPixmap Live::roundedPixmap(const QPixmap &src, const QSize &size, const int &radius) {
+    const QPixmap scaled = src.scaled(size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+    QPixmap dest(size);
+    dest.fill(Qt::transparent);
+
+    QPainter painter(&dest);
+    painter.setRenderHint(QPainter::Antialiasing);
+    QPainterPath path;
+    path.addRoundedRect(0, 0, size.width(), size.height(), radius, radius);
+    painter.setClipPath(path);
+    painter.drawPixmap(0, 0, scaled);
+
+    return dest;
+}
+
+void Live::initAttentionWidget() {
+    const QPixmap roundedPix = roundedPixmap(QPixmap(QStringLiteral(":/Res/window/portrait.jpg")),
+                                       ui->portrait_label->size(), 15);
+    // 设置圆角半径
+    ui->portrait_label->setPixmap(roundedPix);
+    //设置互斥
+    const auto group = new QButtonGroup(this);
+    group->addButton(ui->pushButton_1);
+    group->addButton(ui->pushButton_2);
+    group->addButton(ui->pushButton_3);
+    group->addButton(ui->pushButton_4);
+    group->setExclusive(true);
+    ui->empty_label->setFixedSize(390,230);
+    ui->empty_label->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/empty.png"));
 
 }
 
@@ -223,6 +260,7 @@ void Live::resizeEvent(QResizeEvent *event) {
         // 3. 计算三角形位置（按钮左侧中间偏移）
         const QPoint startPoint = localButtonPos + QPoint(-20, selectedButton->height() / 2 - 15);
         //qDebug()<<"startPoint: "<<startPoint;
+        m_arrowLab->show();
         this->m_arrowLab->move(startPoint);
         this->m_arrowLab->raise();
     }

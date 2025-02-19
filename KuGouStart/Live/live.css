@@ -19,3 +19,27 @@ QWidget#popular_widget{
     border-radius: 10px;
     background-color: rgba(0,0,0,0.1);
 }
+/*****attention_widget*******/
+QWidget#attention_widget QPushButton{
+    font-size: 13px;
+    color: #4d4d4d;
+    border: none;
+    background-color: rgba(255,255,255,0);
+}
+QWidget#attention_widget QPushButton:hover{
+    color: #3AA1FF;
+}
+QWidget#attention_widget QPushButton:checked{
+    color: #3AA1FF;
+    font-weight: bold;
+}
+QToolButton#all_toolButton{
+    font-size: 11px;
+    color: #9f9f9f;
+}
+QToolButton#all_toolButton:hover{
+    color: #3AA1FF;
+}
+QLabel#empty_text_label{
+    color: #4d4d4d;
+}

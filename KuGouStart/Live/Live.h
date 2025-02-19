@@ -36,6 +36,10 @@ private:
 
     void initPopularWidget();
 
+    QPixmap roundedPixmap(const QPixmap &src,const QSize& size,const int& radius);
+
+    void initAttentionWidget();
+
 private slots:
     void handleWheelValue(const int& value);
 
