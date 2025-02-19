@@ -2,21 +2,14 @@
 // Created by WeiWang on 25-2-18.
 //
 
-// You may need to build the project (run Qt uic code generator) to get "ui_PopularRightToolButton.h" resolved
-
 #include "PopularRightToolButton.h"
-#include "ui_PopularRightToolButton.h"
 
 #include <QFile>
 #include <QPainter>
 
-
-
 PopularRightToolButton::PopularRightToolButton(QWidget *parent)
     : QToolButton(parent)
-    , ui(new Ui::PopularRightToolButton)
 {
-    ui->setupUi(this);
     this->setCursor(Qt::PointingHandCursor);
     // 设置普通状态样式
     this->setStyleSheet(R"(
@@ -27,10 +20,6 @@ PopularRightToolButton::PopularRightToolButton(QWidget *parent)
             border: 3px solid rgb(69, 164, 255);
         }
     )");
-}
-
-PopularRightToolButton::~PopularRightToolButton() {
-    delete ui;
 }
 
 void PopularRightToolButton::setBackgroundImg(const QString &path) {
