@@ -72,6 +72,13 @@ void Live::initUi() {
     lay->insertWidget(lay->count() - 1, this->m_danceWidget.get());
     lay->insertWidget(lay->count() - 1, this->m_gameWidget.get());
 
+    this->m_recommendWidget->hide();
+    this->m_musicWidget->hide();
+    this->m_newStarWidget->hide();
+    this->m_appearanceWidget->hide();
+    this->m_danceWidget->hide();
+    this->m_gameWidget->hide();
+
     this->m_vScrollBar = ui->scrollArea->verticalScrollBar();
     //处理信号
     connect(ui->recommend_pushButton, &QPushButton::clicked, this, [this] {
@@ -97,6 +104,13 @@ void Live::initUi() {
 
     initPopularWidget();
     initAttentionWidget();
+    initRecommendWidget();
+    //initMusicWidget();
+    //initNewStarWidget();
+    //initAppearanceWidget();
+    //initDanceWidget();
+    //initGameWidget();
+
 }
 
 void Live::initPopularWidget() {
@@ -123,15 +137,15 @@ void Live::initPopularWidget() {
     //放置label
     ui->index_label_1->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
     ui->index_label_1->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
-    ui->index_label_1->setFixedSize(18,30);
+    ui->index_label_1->setFixedSize(20,30);
     ui->index_label_1->show();
     ui->index_label_2->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
     ui->index_label_2->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
-    ui->index_label_2->setFixedSize(18,30);
+    ui->index_label_2->setFixedSize(20,30);
     ui->index_label_2->hide();
     ui->index_label_3->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
     ui->index_label_3->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
-    ui->index_label_3->setFixedSize(18,30);
+    ui->index_label_3->setFixedSize(20,30);
     ui->index_label_3->hide();
 
     connect(ui->toolButton_1,&QToolButton::toggled,[this] {
@@ -194,6 +208,35 @@ void Live::initAttentionWidget() {
 
 }
 
+void Live::initRecommendWidget() {
+    const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
+    const auto widget = new LiveCommonPartWidget(this);
+    //初始化widget
+    widget->setLineTow();
+    widget->setTitleName("推荐");
+    lay->insertWidget(lay->count() - 1, widget);
+}
+
+void Live::initMusicWidget() {
+    const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
+    const auto widget = new LiveMusicPartWidget(this);
+    //初始化widget
+    widget->setTitleName("音乐");
+    lay->insertWidget(lay->count() - 1, widget);
+}
+
+void Live::initNewStarWidget() {
+}
+
+void Live::initAppearanceWidget() {
+}
+
+void Live::initDanceWidget() {
+}
+
+void Live::initGameWidget() {
+}
+
 void Live::handleWheelValue(const int &value) {
     if (value >= this->m_recommendWidget->mapToParent(QPoint(0, 0)).y() &&
     value < this->m_musicWidget->mapToParent(QPoint(0, 0)).y()) {
@@ -225,5 +268,5 @@ void Live::resizeEvent(QResizeEvent *event) {
     ui->scrollArea->setFixedHeight(this->window()->height() - 255);
     //等比例缩放popular_widget
     ui->popular_widget->setFixedHeight(ui->popular_widget->width()*2/5);
-
+    //qDebug()<<"this->width(): "<<this->width();
 }

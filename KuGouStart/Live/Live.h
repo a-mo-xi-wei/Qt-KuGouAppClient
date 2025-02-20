@@ -39,6 +39,18 @@ private:
 
     void initAttentionWidget();
 
+    void initRecommendWidget();
+
+    void initMusicWidget();
+
+    void initNewStarWidget();
+
+    void initAppearanceWidget();
+
+    void initDanceWidget();
+
+    void initGameWidget();
+
 private slots:
     void handleWheelValue(const int& value);
 
