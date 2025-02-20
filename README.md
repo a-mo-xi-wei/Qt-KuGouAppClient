@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/C%2B%2B-17-%2300599C?logo=c%2B%2B" />
 </p>
 
-#### <span style="color: #b9ff4b;">你的 <span style="color: #fc269c;font-size: 25px;">star</span> 是我最大的动力</span>
+#### 你的 <span style="color: #fc269c;font-size: 25px;">star</span> 是我最大的动力
 
 ### 本项目代码不用于商用，仅限研究和学习使用，资源版权归音乐平台所有。
 
