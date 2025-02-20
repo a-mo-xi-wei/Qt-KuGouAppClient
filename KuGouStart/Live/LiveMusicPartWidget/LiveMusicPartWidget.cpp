@@ -16,3 +16,6 @@ LiveMusicPartWidget::LiveMusicPartWidget(QWidget *parent) :
 LiveMusicPartWidget::~LiveMusicPartWidget() {
     delete ui;
 }
+
+void LiveMusicPartWidget::setTitleName(const QString &name) {
+}

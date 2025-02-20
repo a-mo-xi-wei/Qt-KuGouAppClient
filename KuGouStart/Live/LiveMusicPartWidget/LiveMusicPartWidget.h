@@ -24,6 +24,11 @@ public:
 
     ~LiveMusicPartWidget() override;
 
+    void setTitleName(const QString& name);
+
+private:
+    void initUi();
+
 private:
     Ui::LiveMusicPartWidget *ui;
 };
