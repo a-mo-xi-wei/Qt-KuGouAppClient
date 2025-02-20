@@ -24,6 +24,20 @@ public:
 
     ~LiveBlockWidget() override;
 
+    void setCoverPix(const QString &pixmapPath) const;
+
+private:
+    void initUi();
+
+protected:
+    void mousePressEvent(QMouseEvent *event) override;
+
+    void mouseReleaseEvent(QMouseEvent *event) override;
+
+    void mouseDoubleClickEvent(QMouseEvent *event) override;
+
+    void resizeEvent(QResizeEvent *event) override;
+
 private:
     Ui::LiveBlockWidget *ui;
 };
