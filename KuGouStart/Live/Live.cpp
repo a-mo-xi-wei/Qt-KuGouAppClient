@@ -123,15 +123,15 @@ void Live::initPopularWidget() {
     //放置label
     ui->index_label_1->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
     ui->index_label_1->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
-    ui->index_label_1->setFixedSize(20,30);
+    ui->index_label_1->setFixedSize(18,30);
     ui->index_label_1->show();
     ui->index_label_2->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
     ui->index_label_2->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
-    ui->index_label_2->setFixedSize(20,30);
+    ui->index_label_2->setFixedSize(18,30);
     ui->index_label_2->hide();
     ui->index_label_3->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
     ui->index_label_3->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
-    ui->index_label_3->setFixedSize(20,30);
+    ui->index_label_3->setFixedSize(18,30);
     ui->index_label_3->hide();
 
     connect(ui->toolButton_1,&QToolButton::toggled,[this] {
@@ -223,4 +223,7 @@ void Live::handleWheelValue(const int &value) {
 void Live::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     ui->scrollArea->setFixedHeight(this->window()->height() - 255);
+    //等比例缩放popular_widget
+    ui->popular_widget->setFixedHeight(ui->popular_widget->width()*2/5);
+
 }
