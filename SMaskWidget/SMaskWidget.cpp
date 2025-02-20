@@ -157,7 +157,7 @@ void SMaskWidget::paintEvent(QPaintEvent *event) {
     // 2. 动态调整三角形顶点位置（仅当启用动画时）
     if (m_isMove) {
         // 设置透明度
-        qDebug()<<"m_alpha: "<<m_alpha;
+        //qDebug()<<"m_alpha: "<<m_alpha;
         painter.setOpacity(m_alpha / 255.0);  // m_alpha 范围是0到255
         const float stander = m_stander ? m_stander : std::min(m_w, m_h);
         const float offsetY = stander / 18;
