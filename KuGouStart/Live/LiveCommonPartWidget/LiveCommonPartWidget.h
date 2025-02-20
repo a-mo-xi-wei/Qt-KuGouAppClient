@@ -7,6 +7,7 @@
 
 #include <QWidget>
 
+class LiveBlockWidget;
 
 QT_BEGIN_NAMESPACE
 
@@ -24,11 +25,19 @@ public:
 
     ~LiveCommonPartWidget() override;
 
-private:
+    void setLineTow();
+
     void setTitleName(const QString& name);
 
 private:
+    void initUi();
+
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
+private:
     Ui::LiveCommonPartWidget *ui;
+    LiveBlockWidget* m_blockArr[12] = {nullptr};
 };
 
 
