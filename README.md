@@ -1,18 +1,25 @@
 # 🎵 高仿酷狗音乐客户端 - 用Qt重塑极致音乐体验
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Qt%20Music%20Client-v1.0.0-%23007ACC?logo=qt" />
+  <br>
+  <span>🔥</span>
   <img src="https://img.shields.io/badge/Qt-6.6.2-%2341CD52?logo=qt" />
   <img src="https://img.shields.io/badge/CLion-2023.3-%23000000?logo=clion" />
   <img src="https://img.shields.io/badge/C%2B%2B-17-%2300599C?logo=c%2B%2B" />
+  <span>🔥</span>
 </p>
 
-#### 你的 <font style="color: #fc269c;font-size: 25px;">**star**</font> 是我最大的动力
+#### 
+<p align="center">
+🎁如果你喜欢该项目，请点击右上角的星星，你的 <strong>Star</strong>是我最大的动力
+</p>
 
 ### 本项目代码不用于商用，仅限研究和学习使用，资源版权归音乐平台所有。
 
 ---
 
-### 项目介绍
+### 📚项目介绍
 Based on Qt Widget + UiTools module + Custom control + QSS
 
 使用**CMake**进行模块化管理，实现**模块解耦**（UI/播放器/网络分层），参照酷狗酷狗客户端，高仿并且优化界面，
