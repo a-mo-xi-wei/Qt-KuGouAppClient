@@ -155,10 +155,29 @@ void MyBlockWidget::setLeftPopularBtnIcon(const QString &icon)const {
     if (icon.isEmpty()) {
         //qDebug()<<"icon为空";
         this->m_leftPopularBtn->setToolButtonStyle(Qt::ToolButtonTextOnly);
-        this->m_leftPopularBtn->setFixedWidth(30);
         return;
     }
     this->m_leftPopularBtn->setIcon(QIcon(icon));
+}
+
+void MyBlockWidget::setRightPopularBtnWidth(const int &width) const {
+    this->m_rightPopularBtn->setFixedWidth(width);
+}
+
+void MyBlockWidget::setLeftPopularBtnWidth(const int &width) const {
+    this->m_leftPopularBtn->setFixedWidth(width);
+}
+
+void MyBlockWidget::setRightPopularBtnFontSize(const int &size) const {
+    auto font = this->m_leftPopularBtn->font();
+    font.setPixelSize(size);
+    this->m_leftPopularBtn->setFont(font);
+}
+
+void MyBlockWidget::setLefttPopularBtnFontSize(const int &size) const {
+    auto font = this->m_leftPopularBtn->font();
+    font.setPixelSize(size);
+    this->m_leftPopularBtn->setFont(font);
 }
 
 void MyBlockWidget::setAspectRatio(const float &aspectRatio) {
@@ -169,10 +188,22 @@ void MyBlockWidget::setPopularBtnLeftPadding(const int &leftPadding) {
     if(!this->m_popularDirection)return;
 
     if(this->m_popularDirection == 1) {
+        if (leftPadding == 0) {
+            this->m_leftPopularBtn->setLayoutDirection(Qt::LeftToRight);
+            this->m_leftPopularBtnStyle += "qproperty-alignment: 'AlignLeft | AlignVCenter';background-color:red;text-align: left;padding-left: 0px;";
+            //qDebug()<<"m_leftPopularBtnStyle: "<<this->m_leftPopularBtnStyle;
+            this->m_leftPopularBtn->setStyleSheet(this->m_leftPopularBtnStyle);
+            return;
+        }
         this->m_leftPopularBtnStyle += QString("padding-left:%1;").arg(leftPadding);
         this->m_leftPopularBtn->setStyleSheet(this->m_leftPopularBtnStyle);
     }
     else if(this->m_popularDirection == 2) {
+        if (leftPadding == 0) {
+            this->m_rightPopularBtnStyle += "text-align : left;";
+            this->m_leftPopularBtn->setStyleSheet(this->m_leftPopularBtnStyle);
+            return;
+        }
         this->m_rightPopularBtnStyle += QString("padding-left:%1;").arg(leftPadding);
         this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle+"background-color: rgba(128, 128, 128, 127);");
     }

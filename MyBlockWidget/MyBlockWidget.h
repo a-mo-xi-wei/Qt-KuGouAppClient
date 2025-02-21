@@ -1,6 +1,7 @@
 //
 // Created by WeiWang on 24-11-23.
 //
+/*遵循一个原则：需要接口就自己添加*/
 
 #ifndef MYBLOCKWIDGET_H
 #define MYBLOCKWIDGET_H
@@ -31,6 +32,14 @@ public:
     void setRightPopularBtnIcon(const QString &icon) const;
 
     void setLeftPopularBtnIcon(const QString &icon) const;
+
+    void setRightPopularBtnWidth(const int& width) const;
+
+    void setLeftPopularBtnWidth(const int& width) const;
+
+    void setRightPopularBtnFontSize(const int &size) const;
+
+    void setLefttPopularBtnFontSize(const int &size) const;
 
     void setAspectRatio(const float &aspectRatio);
 
