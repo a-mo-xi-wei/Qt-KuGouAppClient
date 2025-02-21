@@ -212,9 +212,10 @@ void Live::initRecommendWidget() {
     const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
     const auto widget = new LiveCommonPartWidget(ui->table_widget);
     //初始化widget
-    widget->setLineTow();
+    widget->setLineTwo();
     widget->setTitleName("推荐");
     lay->insertWidget(lay->count() - 1, widget);
+    lay->setStretchFactor(widget, 1);
 }
 
 void Live::initMusicWidget() {
@@ -223,6 +224,7 @@ void Live::initMusicWidget() {
     //初始化widget
     widget->setTitleName("音乐");
     lay->insertWidget(lay->count() - 1, widget);
+    lay->setStretchFactor(widget, 1);
 }
 
 void Live::initNewStarWidget() {
@@ -267,12 +269,17 @@ void Live::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     ui->scrollArea->setFixedHeight(this->window()->height() - 255);
     ui->popular_widget->setFixedHeight(ui->popular_widget->width()*2/5);
-    ui->table_widget->setFixedWidth(ui->popular_widget->width());
+    //qDebug()<<"ui->popular_widget->width(): "<<ui->popular_widget->width();
+    ui->table_widget->setFixedWidth(this->window()->width()-50);
+    //qDebug()<<"ui->table_widget->width(): "<<ui->table_widget->width();
+    //qDebug()<<"ui->scrollArea->width(): "<<ui->scrollArea->width();
+    //qDebug()<<"this->window()->width(): "<<this->window()->width();
+
 }
 
 void Live::showEvent(QShowEvent *event) {
     QWidget::showEvent(event);
     //等比例缩放popular_widget
     ui->popular_widget->setFixedHeight(ui->popular_widget->width()*2/5);
-    ui->table_widget->setFixedWidth(ui->popular_widget->width());
+    ui->table_widget->setFixedWidth(this->window()->width()-50);
 }
