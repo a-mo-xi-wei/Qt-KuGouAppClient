@@ -57,6 +57,8 @@ private slots:
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
+    void showEvent(QShowEvent *event) override;
+
 private:
     Ui::Live *ui;
     std::unique_ptr<QButtonGroup> m_buttonGroup{};

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1059</width>
-    <height>414</height>
+    <width>945</width>
+    <height>387</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -348,8 +348,8 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-403</y>
-        <width>1024</width>
+        <y>0</y>
+        <width>910</width>
         <height>743</height>
        </rect>
       </property>
@@ -368,6 +368,12 @@
        </property>
        <item>
         <widget class="QWidget" name="popular_widget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -376,19 +382,19 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="8,3">
           <property name="spacing">
-           <number>0</number>
+           <number>2</number>
           </property>
           <property name="leftMargin">
-           <number>0</number>
+           <number>2</number>
           </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>2</number>
           </property>
           <property name="rightMargin">
-           <number>0</number>
+           <number>2</number>
           </property>
           <property name="bottomMargin">
-           <number>0</number>
+           <number>2</number>
           </property>
           <item>
            <widget class="PopularLeftWidget" name="left_widget" native="true">
@@ -403,6 +409,9 @@
           <item>
            <widget class="QWidget" name="right_widget" native="true">
             <layout class="QVBoxLayout" name="verticalLayout_9">
+             <property name="spacing">
+              <number>13</number>
+             </property>
              <property name="leftMargin">
               <number>0</number>
              </property>
@@ -981,7 +990,7 @@
        <item>
         <widget class="QWidget" name="table_widget" native="true">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
