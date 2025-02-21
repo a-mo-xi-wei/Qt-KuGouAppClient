@@ -26,6 +26,8 @@ public:
 
     void setCoverPix(const QString &pixmapPath) const;
 
+    void setLeftBottomText(const QString& text);
+
 private:
     void initUi();
 

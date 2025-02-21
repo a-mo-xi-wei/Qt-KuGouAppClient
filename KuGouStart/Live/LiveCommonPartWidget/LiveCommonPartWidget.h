@@ -25,7 +25,7 @@ public:
 
     ~LiveCommonPartWidget() override;
 
-    void setLineTow();
+    void setLineTwo();
 
     void setTitleName(const QString& name);
 
@@ -38,6 +38,7 @@ protected:
 private:
     Ui::LiveCommonPartWidget *ui;
     LiveBlockWidget* m_blockArr[12] = {nullptr};
+    std::vector<QString> m_leftBottomTextVec;
 };
 
 
