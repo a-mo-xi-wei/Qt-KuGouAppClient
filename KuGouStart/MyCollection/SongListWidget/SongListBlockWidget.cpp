@@ -37,6 +37,7 @@ void SongListBlockWidget::initUi() const {
     ui->cover_widget->setPopularDirection(1);
     ui->cover_widget->setHaveNumberUnit(false);
     ui->cover_widget->setLeftPopularBtnIcon("");
+    ui->cover_widget->setLeftPopularBtnWidth(30);
     ui->cover_widget->setPopularBtnText("0首");
     ui->cover_widget->setPopularBtnLeftPadding(0);
     //遮罩设置
