@@ -7,3 +7,6 @@
 #忽略QC构建产生的build目录、CMakeLists.txt.user文件
 /build
 CMakeLists.txt.user
+#忽略VS构建产生的CMakePresets
+CMakePresets.json
+CMakeUserPresets.json

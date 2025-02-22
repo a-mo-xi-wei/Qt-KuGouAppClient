@@ -99,10 +99,13 @@ void LocalSong::initUi() {
         searchButton->installEventFilter(this);
     }
 
-    //先直接往里面嵌入一首歌
-    this->m_mediaPath = QStringLiteral("qrc:/Res/audio/紫荆花盛开.mp3");
+    //先直接往里面嵌入两首歌
+    this->m_mediaPath = QStringLiteral("qrc:/Res/audio/zi-jing-hua.mp3");
     this->m_player->setSource(QUrl(this->m_mediaPath));
     this->m_player->play(); // 触发状态改变信号，获取元数据信息
+    this->m_mediaPath = QStringLiteral("qrc:/Res/audio/qing-hua-ci.mp3");
+    this->m_player->setSource(QUrl(this->m_mediaPath));
+    this->m_player->play();
 }
 
 void LocalSong::getMetaData() {

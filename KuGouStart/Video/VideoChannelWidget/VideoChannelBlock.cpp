@@ -83,7 +83,7 @@ void VideoChannelBlock::initUi() {
 }
 
 void VideoChannelBlock::initCoverTextFont() {
-    int fontId = QFontDatabase::addApplicationFont(":/Res/font/青柠幼圆.ttf");
+    int fontId = QFontDatabase::addApplicationFont(":/Res/font/qing-ning-you-yuan.ttf");
     if (fontId == -1) {
         qWarning() << "字体加载失败。。。";
         return;
