@@ -7,6 +7,7 @@
 #include "LiveCommonPartWidget.h"
 #include "ui_LiveCommonPartWidget.h"
 #include "LiveBlockWidget/LiveBlockWidget.h"
+#include "Async.h"
 
 #include <QFile>
 #include <QJsonArray>
@@ -16,7 +17,7 @@
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
-LiveCommonPartWidget::LiveCommonPartWidget(QWidget *parent)
+LiveCommonPartWidget::LiveCommonPartWidget(QWidget *parent, const int lines)
     : QWidget(parent)
     , ui(new Ui::LiveCommonPartWidget)
 {
@@ -30,58 +31,71 @@ LiveCommonPartWidget::LiveCommonPartWidget(QWidget *parent)
             return;
         }
     }
-    initUi();
+    initUi(lines);
 }
 
 LiveCommonPartWidget::~LiveCommonPartWidget() {
     delete ui;
 }
 
-void LiveCommonPartWidget::setLineTwo() {
-    //初始化line_widget_2
-    const auto lay2 = new QHBoxLayout(ui->line_widget_2);
-    //lay2->setSpacing(15);
-    lay2->setContentsMargins(0,0,0,0);
-    for (int i = 6; i < 12; ++i) {
-        const auto w = new LiveBlockWidget(ui->line_widget_2);
-        w->setLeftBottomText(this->m_leftBottomTextVec[i + 20]);
-        lay2->addWidget(w);
-        w->show();
-        if (i == 11)w->hide();
-        this->m_blockArr[i] = w;
-    }
-    ui->line_widget_2->setLayout(lay2);
-}
-
 void LiveCommonPartWidget::setTitleName(const QString &name) {
     ui->title_label->setText(name);
 }
 
-void LiveCommonPartWidget::initUi() {
+void LiveCommonPartWidget::initUi(const int& lines) {
     //初始化右上角两个按钮图标
     ui->left_label->setStyleSheet(QString("border-image: url('%1/liveRes/left.svg')").arg(GET_CURRENT_DIR));
     ui->right_label->setStyleSheet(QString("border-image: url('%1/liveRes/right.svg')").arg(GET_CURRENT_DIR));
     //初始化block左下角文字vec
-    //解析json文件
-    {
-        QFile file(GET_CURRENT_DIR + QStringLiteral("/liveRes/text.json"));
-        if (!file.open(QIODevice::ReadOnly)) {
-            qWarning() << "Could not open file for reading text.json";
+    // 异步解析 JSON 文件
+    QString jsonPath = GET_CURRENT_DIR + QStringLiteral("/liveRes/text.json");
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), &LiveCommonPartWidget::parseJsonFile,
+        this,jsonPath);
+    // 结果处理回调
+    Async::onResultReady(future, this, [this,lines](const QList<QString> &texts) {
+        if (texts.isEmpty()) {
+            qWarning() << "No valid data parsed from JSON";
             return;
         }
-        const auto obj = QJsonDocument::fromJson(file.readAll());
-        auto arr = obj.array();
-        for (const auto &item : arr) {
-            QString title = item.toObject().value("text").toString();
-            this->m_leftBottomTextVec.emplace_back(title);
-        }
-        file.close();
-    }
-    // 使用当前时间作为随机数种子
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-    // 随机打乱 QVector
-    std::shuffle(this->m_leftBottomTextVec.begin(), this->m_leftBottomTextVec.end(), std::default_random_engine(seed));
+        // 更新成员变量
+        this->m_leftBottomTextVec = texts;
 
+        // 打乱数据顺序
+        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+        std::shuffle(
+            this->m_leftBottomTextVec.begin(),
+            this->m_leftBottomTextVec.end(),
+            std::default_random_engine(seed)
+        );
+        //qDebug()<<"当前m_leftBottomTextVec大小："<<this->m_leftBottomTextVec.size();
+        this->initLineOne();
+        if (lines == 2)initLineTwo();
+    });
+}
+
+QList<QString> LiveCommonPartWidget::parseJsonFile(const QString &filePath) {
+    QList<QString> texts;
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadOnly)) {
+        qWarning() << "Failed to open JSON file:" << filePath;
+        return texts;
+    }
+    QJsonParseError parseError;
+    const QJsonDocument doc = QJsonDocument::fromJson(file.readAll(), &parseError);
+    if (parseError.error != QJsonParseError::NoError) {
+        qWarning() << "JSON parse error:" << parseError.errorString();
+        return texts;
+    }
+    QJsonArray arr = doc.array();
+    for (const auto &item : arr) {
+        QString text = item.toObject().value("text").toString();
+        texts.append(text);
+    }
+    file.close();
+    return texts;
+}
+
+void LiveCommonPartWidget::initLineOne() {
     //初始化line_widget_1
     const auto lay1 = new QHBoxLayout(ui->line_widget_1);
     //lay1->setSpacing(15);
@@ -95,6 +109,22 @@ void LiveCommonPartWidget::initUi() {
         this->m_blockArr[i] = w;
     }
     ui->line_widget_1->setLayout(lay1);
+}
+
+void LiveCommonPartWidget::initLineTwo() {
+    //初始化line_widget_2
+    const auto lay2 = new QHBoxLayout(ui->line_widget_2);
+    //lay2->setSpacing(15);
+    lay2->setContentsMargins(0,0,0,0);
+    for (int i = 6; i < 12; ++i) {
+        const auto w = new LiveBlockWidget(ui->line_widget_2);
+        w->setLeftBottomText(this->m_leftBottomTextVec[i + 20]);
+        lay2->addWidget(w);
+        w->show();
+        if (i == 11)w->hide();
+        this->m_blockArr[i] = w;
+    }
+    ui->line_widget_2->setLayout(lay2);
 }
 
 void LiveCommonPartWidget::resizeEvent(QResizeEvent *event) {
