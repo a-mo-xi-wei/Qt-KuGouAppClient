@@ -31,7 +31,7 @@ public:
 
     void setRightPopularBtnIcon(const QString &icon) const;
 
-    void setLeftPopularBtnIcon(const QString &icon) const;
+    void setLeftPopularBtnIcon(const QString &icon);
 
     void setRightPopularBtnWidth(const int& width) const;
 
@@ -39,7 +39,7 @@ public:
 
     void setRightPopularBtnFontSize(const int &size) const;
 
-    void setLefttPopularBtnFontSize(const int &size) const;
+    void setLeftPopularBtnFontSize(const int &size) const;
 
     void setAspectRatio(const float &aspectRatio);
 

@@ -43,9 +43,8 @@ void LiveBlockWidget::initUi() {
     };
     ui->cover_widget->setPopularDirection(1);
     ui->cover_widget->setLeftPopularBtnIcon("");
-    ui->cover_widget->setLeftPopularBtnWidth(100);
     ui->cover_widget->setPopularBtnLeftPadding(0);
-    ui->cover_widget->setLefttPopularBtnFontSize(13);
+    ui->cover_widget->setLeftPopularBtnFontSize(13);
     ui->cover_widget->setAspectRatio(0.8);
     ui->cover_widget->setShowTip();
     ui->cover_widget->setTipArr(tipArr);

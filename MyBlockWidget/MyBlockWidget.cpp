@@ -124,6 +124,8 @@ void MyBlockWidget::setPopularBtnText(const QString &text)const {
             this->m_leftPopularBtn->setText(QStringLiteral(" ") + text + QStringLiteral("万"));
         else
             this->m_leftPopularBtn->setText(QStringLiteral(" ") + text);
+        this->m_leftPopularBtn->setFixedWidth(this->m_leftPopularBtn->fontMetrics().horizontalAdvance(text) +
+            this->m_leftPopularBtn->contentsMargins().left() + this->m_leftPopularBtn->contentsMargins().right());
     }
     else if(this->m_popularDirection == 2) {
         if (this->m_haveUnit)
@@ -151,10 +153,16 @@ void MyBlockWidget::setRightPopularBtnIcon(const QString &icon)const {
     this->m_rightPopularBtn->setIcon(QIcon(icon));
 }
 
-void MyBlockWidget::setLeftPopularBtnIcon(const QString &icon)const {
+void MyBlockWidget::setLeftPopularBtnIcon(const QString &icon) {
     if (icon.isEmpty()) {
-        //qDebug()<<"icon为空";
         this->m_leftPopularBtn->setToolButtonStyle(Qt::ToolButtonTextOnly);
+        // 1. 移除固定大小限制      没有效果，不知道为什么
+        this->m_leftPopularBtn->setMinimumSize(0, 0);
+        this->m_leftPopularBtn->setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
+
+        update();
+        qDebug()<<"当前左流行按钮宽度："<<this->m_leftPopularBtn->width();
+
         return;
     }
     this->m_leftPopularBtn->setIcon(QIcon(icon));
@@ -174,7 +182,7 @@ void MyBlockWidget::setRightPopularBtnFontSize(const int &size) const {
     this->m_leftPopularBtn->setFont(font);
 }
 
-void MyBlockWidget::setLefttPopularBtnFontSize(const int &size) const {
+void MyBlockWidget::setLeftPopularBtnFontSize(const int &size) const {
     auto font = this->m_leftPopularBtn->font();
     font.setPixelSize(size);
     this->m_leftPopularBtn->setFont(font);
@@ -189,9 +197,7 @@ void MyBlockWidget::setPopularBtnLeftPadding(const int &leftPadding) {
 
     if(this->m_popularDirection == 1) {
         if (leftPadding == 0) {
-            this->m_leftPopularBtn->setLayoutDirection(Qt::LeftToRight);
-            this->m_leftPopularBtnStyle += "qproperty-alignment: 'AlignLeft | AlignVCenter';background-color:red;text-align: left;padding-left: 0px;";
-            //qDebug()<<"m_leftPopularBtnStyle: "<<this->m_leftPopularBtnStyle;
+            this->m_leftPopularBtnStyle += "text-align: left;";
             this->m_leftPopularBtn->setStyleSheet(this->m_leftPopularBtnStyle);
             return;
         }
