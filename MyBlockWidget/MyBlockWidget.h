@@ -39,7 +39,7 @@ public:
 
     void setRightPopularBtnFontSize(const int &size) const;
 
-    void setLeftPopularBtnFontSize(const int &size) const;
+    void setLeftPopularBtnFontSize(const int &size,const bool& isBold) const;
 
     void setAspectRatio(const float &aspectRatio);
 

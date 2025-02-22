@@ -160,9 +160,6 @@ void MyBlockWidget::setLeftPopularBtnIcon(const QString &icon) {
         this->m_leftPopularBtn->setMinimumSize(0, 0);
         this->m_leftPopularBtn->setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
 
-        update();
-        qDebug()<<"当前左流行按钮宽度："<<this->m_leftPopularBtn->width();
-
         return;
     }
     this->m_leftPopularBtn->setIcon(QIcon(icon));
@@ -182,9 +179,10 @@ void MyBlockWidget::setRightPopularBtnFontSize(const int &size) const {
     this->m_leftPopularBtn->setFont(font);
 }
 
-void MyBlockWidget::setLeftPopularBtnFontSize(const int &size) const {
+void MyBlockWidget::setLeftPopularBtnFontSize(const int &size,const bool& isBold) const {
     auto font = this->m_leftPopularBtn->font();
     font.setPixelSize(size);
+    font.setBold(isBold);
     this->m_leftPopularBtn->setFont(font);
 }
 
