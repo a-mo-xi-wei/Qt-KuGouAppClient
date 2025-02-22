@@ -89,16 +89,27 @@ void PopularLeftWidget::initUi() {
     this->m_stopLab->setObjectName("stopLab");
     this->m_stopLab->setFixedSize(30,30);
     this->m_stopLab->setCursor(Qt::PointingHandCursor);
-    this->m_stopLab->setStyleSheet(QString("border-image:url('%1')").arg(GET_CURRENT_DIR + QStringLiteral("/liveRes/stop.png")));
+    const auto stopLabImgPath = GET_CURRENT_DIR + QStringLiteral("/liveRes/stop.png");
+    this->m_stopLab->setStyleSheet(QString("border-image: url('%1');").arg(stopLabImgPath));
+    //this->m_stopLab->setStyleSheet(QString("background-color:red;"));
+
     this->m_refreshLab->setObjectName("refreshLab");
     this->m_refreshLab->setFixedSize(35,35);
     this->m_refreshLab->setCursor(Qt::PointingHandCursor);
-    this->m_refreshLab->setStyleSheet(QString("border-image:url('%1')").arg(GET_CURRENT_DIR + QStringLiteral("/liveRes/refresh.png")));
+    const auto refreshLabImgPath = GET_CURRENT_DIR + QStringLiteral("/liveRes/refresh.png");
+    this->m_refreshLab->setStyleSheet(QString("border-image:url('%1');").arg(refreshLabImgPath));
+    //this->m_refreshLab->setStyleSheet(QString("background-color:red;"));
+
     this->m_muteLab->setObjectName("muteLab");
     this->m_muteLab->setFixedSize(30,30);
     this->m_muteLab->setCursor(Qt::PointingHandCursor);
-    this->m_muteLab->setStyleSheet(QString("border-image:url('%1')").arg(GET_CURRENT_DIR + QStringLiteral("/liveRes/mute.png")));
+    const auto muteLabImgPath = GET_CURRENT_DIR + QStringLiteral("/liveRes/mute.png");
+    this->m_muteLab->setStyleSheet(QString("border-image:url('%1');").arg(muteLabImgPath));
+    //this->m_muteLab->setStyleSheet(QString("background-color:red;"));
 
+    qDebug()<<"当前m_stopLab样式："<<this->m_stopLab->styleSheet()
+    <<"当前m_refreshLab样式："<<this->m_refreshLab->styleSheet()
+    <<"当前m_muteLab样式："<<this->m_muteLab->styleSheet();
 }
 
 void PopularLeftWidget::animationUp() const {
