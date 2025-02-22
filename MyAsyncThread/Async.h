@@ -87,7 +87,7 @@ template <typename Result, typename... Args>
 struct functionTraits<Result(Args...)>
 {
     using ResultType = Result;
-    static const unsigned arity = sizeof...(Args); // TODO const -> constexpr with MSVC2015
+    static const unsigned arity = sizeof...(Args);
 
     template <unsigned i>
     struct argument
@@ -139,7 +139,7 @@ struct functionTraits
 {
     using callableTraits = functionTraits<decltype(&Callable::operator())>;
     using ResultType = typename callableTraits::ResultType;
-    static const unsigned arity = callableTraits::arity - 1; // ignore object pointer arg // TODO const -> constexpr with MSVC2015
+    static const unsigned arity = callableTraits::arity - 1; // ignore object pointer arg 
 
     template <unsigned i>
     struct argument
