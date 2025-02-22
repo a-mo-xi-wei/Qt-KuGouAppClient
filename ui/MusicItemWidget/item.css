@@ -1,0 +1,18 @@
+*{
+    border:none;
+    background-color: transparent;
+}
+QWidget#window{
+    border-radius: 12px;
+}
+QLabel#coverLab{
+    border-radius: 10px;
+}
+QLabel#indexLab,QLabel#durationLab{
+    color:#8c8d8d;
+}
+QToolButton{
+    icon-size:18px;
+    margin-left:3px;
+    margin-right:3px;
+}

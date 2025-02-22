@@ -1,0 +1,47 @@
+QToolButton{
+    border-radius: 6px;
+    background-color: rgba(255,255,255,0);
+    font-size: 13px;
+    font-family: "Microsoft YaHei UI";
+    padding-left: 10px;
+}
+QToolButton:hover{
+    background-color: #e6edfe;
+    color: #268cff;
+}
+QToolButton#wallPaperBtn,QToolButton#phonePlayBtn,QToolButton#uploadToDeviceBtn,QToolButton#earnCoinBtn {
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 12px;
+    padding: 5px;
+}
+QToolButton#wallPaperBtn:hover,QToolButton#phonePlayBtn:hover,QToolButton#uploadToDeviceBtn:hover,QToolButton#earnCoinBtn:hover{
+    background-color: #eff2f7;
+    color: #268cff;
+}
+
+QWidget{
+    border-radius: 6px;
+    background-color: rgba(255,255,255,0);
+}
+QWidget:hover{
+    background-color: #e6edfe;
+    color: #268cff;
+}
+QWidget#listWidget{
+    background-color: rgba(255,255,255,0);
+}
+QWidget#listWidget:hover {
+    background-color: rgba(255,255,255,0);
+}
+QMenu{
+    border-radius: 8px;
+    background-color: #f6f9ff;
+    margin: 5px;
+    padding: 10px 5px 10px 5px;
+}
+QMenu::separator { /* 菜单子控件separator，定义菜单项之间的分隔线 */
+    height: 1px;
+    background: #eeeeee;
+    margin: 2px; /* 距离菜单边界2px */
+}

@@ -1,0 +1,36 @@
+QMenu{
+    border-radius: 20px;
+    background-color: #fbfcff;
+    margin: 5px;
+    padding: 10px 5px 10px 5px;
+}
+QMenu::separator { /* 菜单子控件separator，定义菜单项之间的分隔线 */
+    height: 1px;
+    background: #eeeeee;
+    margin: 2px; /* 距离菜单边界2px */
+}
+QLabel{
+    background-color: rgba(255,255,255,0);
+    font-size: 13px;
+    font-weight: bolder;
+    border:none;
+    border-radius: 15px;
+    color: black;
+}
+QLabel:hover{
+    background-color: #f3efef;
+    color: #3AA1FF;
+}
+QLabel#titleLab{
+    background-color: rgba(255,255,255,0);
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+QLabel#titleLab:hover{
+    background-color: rgba(255,255,255,0);
+    color: #3AA1FF;
+}
+QFrame#separator{
+    background-color: rgba(217, 217, 217, 50);
+}
