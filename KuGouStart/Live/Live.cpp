@@ -210,9 +210,8 @@ void Live::initAttentionWidget() {
 
 void Live::initRecommendWidget() {
     const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
-    const auto widget = new LiveCommonPartWidget(ui->table_widget);
+    const auto widget = new LiveCommonPartWidget(ui->table_widget,2);
     //初始化widget
-    widget->setLineTwo();
     widget->setTitleName("推荐");
     lay->insertWidget(lay->count() - 1, widget);
     lay->setStretchFactor(widget, 1);
