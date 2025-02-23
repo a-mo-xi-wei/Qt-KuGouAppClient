@@ -419,7 +419,7 @@ void VideoWidget::initUi() {
             "アイドル","絶対敵対メチャキライャ-","aespa《Hot Mess》MV"
         };
         const QString author[] = {
-            "","HOYO-MiX","すりい","マサラダ","YOASOBI","aespa"
+            "","HOYO-MiX","すりい","マサラダ","YOASOBI","aespa","Strategy"
         };
         for (int i = 0; i < 2; ++i) {
             for (int j = 1; j <= 3; ++j) {
