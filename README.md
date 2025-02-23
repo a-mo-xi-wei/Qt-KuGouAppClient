@@ -2,11 +2,12 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Qt%20Music%20Client-v1.0.0-%23007ACC?logo=qt" />
+  <img src="https://img.shields.io/badge/Qt-6.6.2-%2341CD52?logo=qt" />
   <br>
   <span>🔥</span>
-  <img src="https://img.shields.io/badge/Qt-6.6.2-%2341CD52?logo=qt" />
   <img src="https://img.shields.io/badge/CLion-2023.3-%23000000?logo=clion" />
   <img src="https://img.shields.io/badge/C%2B%2B-17-%2300599C?logo=c%2B%2B" />
+<img src="https://img.shields.io/badge/MinGW-Native-A42E2B?logo=gnu" />
   <span>🔥</span>
 </p>
 
@@ -17,6 +18,8 @@
 </p>
 
 ---
+### 编译请使用 **_MinGW_** , *MSVC* 虽然能编译通过，但是播放音乐有个BUG，不知道怎么回事。
+
 
 ### 📚项目介绍
 Based on Qt Widget + UiTools module + Custom control + QSS
