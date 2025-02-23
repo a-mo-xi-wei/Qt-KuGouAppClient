@@ -19,7 +19,17 @@
 
 ---
 ### 编译请使用 **_MinGW_** , *MSVC* 虽然能编译通过，但是播放音乐有个BUG，不知道怎么回事。
+| [Ubuntu/macOS][lin-link] | [Windows][win-link] | [License][license-link] |
+| :----------------------: | :-----------------: | :---------------------: |
+|       ![lin-badge]       |    ![win-badge]     |    ![license-badge]     |
 
+[lin-link]: https://你的Ubuntu/macOS构建状态链接
+[win-link]: https://你的Windows构建状态链接
+[license-link]: https://你的License文件链接
+
+[lin-badge]: https://img.shields.io/badge/Ubuntu/macOS-Unknown-lightgrey?logo=linux
+[win-badge]: https://img.shields.io/badge/Windows-Passing-success?logo=windows
+[license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
 
 ### 📚项目介绍
 Based on Qt Widget + UiTools module + Custom control + QSS
@@ -124,3 +134,9 @@ graph TD
     卡拉OK模式：逐字染色+波形同步
     
     双语对照：智能歌词时间轴对齐
+
+
+---
+## 打赏
+<img src="image-show/reward_1.png" style="width: 50%;" /><img src="image-show/reward_2.jpg" style="width: 46%;" />
+### 觉得分享的内容还不错, 就请作者喝杯奶茶吧~~
