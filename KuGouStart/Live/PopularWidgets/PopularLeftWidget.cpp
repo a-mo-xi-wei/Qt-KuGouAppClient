@@ -73,7 +73,7 @@ void PopularLeftWidget::initUi() {
     this->m_enterLivBtn->setText("点击进入直播间");
     this->m_enterLivBtn->setFixedSize(210,60);
     this->m_enterLivBtn->setIconSize(QSize(60,40));
-    const auto movie = new QMovie(GET_CURRENT_DIR + QStringLiteral("/liveRes/music.gif"));
+    const auto movie = new QMovie(":/Live/Res/live/music.gif");
 
     // Start the movie to begin playing the GIF
     movie->start();
@@ -89,27 +89,27 @@ void PopularLeftWidget::initUi() {
     this->m_stopLab->setObjectName("stopLab");
     this->m_stopLab->setFixedSize(30,30);
     this->m_stopLab->setCursor(Qt::PointingHandCursor);
-    const auto stopLabImgPath = GET_CURRENT_DIR + QStringLiteral("/liveRes/stop.png");
+    const auto stopLabImgPath = ":/Live/Res/live/stop.png";
     this->m_stopLab->setStyleSheet(QString("border-image: url('%1');").arg(stopLabImgPath));
     //this->m_stopLab->setStyleSheet(QString("background-color:red;"));
 
     this->m_refreshLab->setObjectName("refreshLab");
     this->m_refreshLab->setFixedSize(35,35);
     this->m_refreshLab->setCursor(Qt::PointingHandCursor);
-    const auto refreshLabImgPath = GET_CURRENT_DIR + QStringLiteral("/liveRes/refresh.png");
+    const auto refreshLabImgPath = ":/Live/Res/live/refresh.png";
     this->m_refreshLab->setStyleSheet(QString("border-image:url('%1');").arg(refreshLabImgPath));
     //this->m_refreshLab->setStyleSheet(QString("background-color:red;"));
 
     this->m_muteLab->setObjectName("muteLab");
     this->m_muteLab->setFixedSize(30,30);
     this->m_muteLab->setCursor(Qt::PointingHandCursor);
-    const auto muteLabImgPath = GET_CURRENT_DIR + QStringLiteral("/liveRes/mute.png");
+    const auto muteLabImgPath = ":/Live/Res/live/mute.png";
     this->m_muteLab->setStyleSheet(QString("border-image:url('%1');").arg(muteLabImgPath));
     //this->m_muteLab->setStyleSheet(QString("background-color:red;"));
 
-    qDebug()<<"当前m_stopLab样式："<<this->m_stopLab->styleSheet()
-    <<"当前m_refreshLab样式："<<this->m_refreshLab->styleSheet()
-    <<"当前m_muteLab样式："<<this->m_muteLab->styleSheet();
+    //qDebug()<<"当前m_stopLab样式："<<this->m_stopLab->styleSheet()
+    //<<"当前m_refreshLab样式："<<this->m_refreshLab->styleSheet()
+    //<<"当前m_muteLab样式："<<this->m_muteLab->styleSheet();
 }
 
 void PopularLeftWidget::animationUp() const {

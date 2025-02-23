@@ -44,17 +44,17 @@ void LiveCommonPartWidget::setTitleName(const QString &name) {
 
 void LiveCommonPartWidget::initUi(const int& lines) {
     //初始化右上角两个按钮图标
-    const auto leftLabImgPath = GET_CURRENT_DIR + QStringLiteral("/liveRes/left.svg");
+    const auto leftLabImgPath = ":/Live/Res/live/left.svg";
     ui->left_label->setStyleSheet(QString("border-image:url('%1');").arg(leftLabImgPath));
 
-    const auto rightLabImgPath = GET_CURRENT_DIR + QStringLiteral("/liveRes/right.svg");
+    const auto rightLabImgPath = ":/Live/Res/live/right.svg";
     ui->right_label->setStyleSheet(QString("border-image:url('%1');").arg(rightLabImgPath));
     //qDebug()<<"ui->left_label样式："<<ui->left_label->styleSheet()
     //<<"ui->right_label样式："<<ui->right_label->styleSheet();
 
     //初始化block左下角文字vec
     // 异步解析 JSON 文件
-    QString jsonPath = GET_CURRENT_DIR + QStringLiteral("/liveRes/text.json");
+    QString jsonPath = GET_CURRENT_DIR + QStringLiteral("/text.json");
     const auto future = Async::runAsync(QThreadPool::globalInstance(), &LiveCommonPartWidget::parseJsonFile,
         this,jsonPath);
     // 结果处理回调
