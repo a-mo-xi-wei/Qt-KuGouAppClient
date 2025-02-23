@@ -1,9 +1,7 @@
 #忽略CLion打开时产生的.idea文件夹
 /.idea
 #忽略CLion编译cmake的时候产生的cmake-build-debug文件
-/cmake-build-debug
-/cmake-build-release
-/cmake-build-debug-mingw-qt
+cmake*
 #忽略QC构建产生的build目录、CMakeLists.txt.user文件
 /build
 CMakeLists.txt.user
