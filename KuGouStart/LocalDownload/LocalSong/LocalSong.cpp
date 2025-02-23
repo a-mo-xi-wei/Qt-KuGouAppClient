@@ -103,9 +103,22 @@ void LocalSong::initUi() {
     this->m_mediaPath = QStringLiteral("qrc:/Res/audio/zi-jing-hua.mp3");
     this->m_player->setSource(QUrl(this->m_mediaPath));
     this->m_player->play(); // 触发状态改变信号，获取元数据信息
-    this->m_mediaPath = QStringLiteral("qrc:/Res/audio/qing-hua-ci.mp3");
-    this->m_player->setSource(QUrl(this->m_mediaPath));
-    this->m_player->play();
+    // 使用 QMetaObject::Connection 跟踪连接
+    QMetaObject::Connection* connection = new QMetaObject::Connection;
+
+    *connection = connect(this, &LocalSong::updateCountLabel, this,
+        [this, connection]() { // 捕获连接指针
+            // 处理第二首歌
+            this->m_mediaPath = QStringLiteral("qrc:/Res/audio/qing-hua-ci.mp3");
+            this->m_player->setSource(QUrl(this->m_mediaPath));
+            this->m_player->play();
+
+            // 断开连接并清理
+            QObject::disconnect(*connection);
+            delete connection;
+        },
+        Qt::QueuedConnection // 确保异步执行
+    );
 }
 
 void LocalSong::getMetaData() {
