@@ -136,20 +136,20 @@ void Live::initPopularWidget() {
 
     //放置label
     ui->index_label_1->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
-    ui->index_label_1->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
+    ui->index_label_1->setPixmap(QPixmap(":Live/Res/live/arrow-left.svg"));
     ui->index_label_1->setFixedSize(20,30);
     ui->index_label_1->show();
     ui->index_label_2->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
-    ui->index_label_2->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
+    ui->index_label_2->setPixmap(QPixmap(":Live/Res/live/arrow-left.svg"));
     ui->index_label_2->setFixedSize(20,30);
     ui->index_label_2->hide();
     ui->index_label_3->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
-    ui->index_label_3->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
+    ui->index_label_3->setPixmap(QPixmap(":Live/Res/live/arrow-left.svg"));
     ui->index_label_3->setFixedSize(20,30);
     ui->index_label_3->hide();
 
     connect(ui->toolButton_1,&QToolButton::toggled,[this] {
-        ui->index_label_1->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
+        ui->index_label_1->setPixmap(QPixmap(":Live/Res/live/arrow-left.svg"));
         ui->index_label_2->setPixmap(QPixmap());
         ui->index_label_3->setPixmap(QPixmap());
 
@@ -159,7 +159,7 @@ void Live::initPopularWidget() {
     });
     connect(ui->toolButton_2,&QToolButton::toggled,[this] {
         ui->index_label_1->setPixmap(QPixmap());
-        ui->index_label_2->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
+        ui->index_label_2->setPixmap(QPixmap(":Live/Res/live/arrow-left.svg"));
         ui->index_label_3->setPixmap(QPixmap());
         ui->index_label_1->hide();
         ui->index_label_2->show();
@@ -168,7 +168,7 @@ void Live::initPopularWidget() {
     connect(ui->toolButton_3,&QToolButton::toggled,[this] {
         ui->index_label_1->setPixmap(QPixmap());
         ui->index_label_2->setPixmap(QPixmap());
-        ui->index_label_3->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/arrow-left.svg"));
+        ui->index_label_3->setPixmap(QPixmap(":Live/Res/live/arrow-left.svg"));
         ui->index_label_1->hide();
         ui->index_label_2->hide();
         ui->index_label_3->show();
@@ -204,7 +204,7 @@ void Live::initAttentionWidget() {
     group->addButton(ui->pushButton_4);
     group->setExclusive(true);
     ui->empty_label->setFixedSize(390,230);
-    ui->empty_label->setPixmap(GET_CURRENT_DIR + QStringLiteral("/PopularWidgets/liveRes/empty.png"));
+    ui->empty_label->setPixmap(QPixmap(":Live/Res/live/empty.png"));
 
 }
 

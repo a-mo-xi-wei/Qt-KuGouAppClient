@@ -49,7 +49,7 @@ Channel::Channel(QWidget *parent) : QWidget(parent)
             return;
         }
         ui->title_label->setStyleSheet(
-            QString("border:none;border-image: url(%1/music-channel.png);").arg(GET_CURRENT_DIR));
+            QString("border:none;border-image: url('%1');").arg(":/Res/window/music-channel.png"));
     }
     initButtonGroup();
     initTotalWidget();
