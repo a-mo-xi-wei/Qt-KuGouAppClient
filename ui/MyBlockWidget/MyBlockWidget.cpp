@@ -235,6 +235,7 @@ void MyBlockWidget::setHaveNumberUnit(const bool &haveNumberUnit) {
 
 void MyBlockWidget::setTipArr(const std::vector<QString> &tipArr) {
     this->m_tipArr = tipArr;
+    this->setTipLabText(m_tipArr[QRandomGenerator::global()->bounded(0, static_cast<int>(m_tipArr.size()))]);
 }
 
 void MyBlockWidget::setTipStyleSheet(const QString &style) const {

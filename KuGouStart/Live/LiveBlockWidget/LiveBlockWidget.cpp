@@ -28,10 +28,11 @@ void LiveBlockWidget::setCoverPix(const QString &pixmapPath) const {
 
 void LiveBlockWidget::setLeftBottomText(const QString &text) {
     ui->cover_widget->setPopularBtnText(text);
+    ui->cover_widget->setToolTip(text);
     update();
 }
 
-void LiveBlockWidget::initUi() {
+void LiveBlockWidget::initUi() const {
     //设置tip数组
     std::vector<QString> tipArr {
         "第一开播","第二天开播","第三天开播","第四天开播","第五天开播","第六天开播",
@@ -48,7 +49,7 @@ void LiveBlockWidget::initUi() {
     ui->cover_widget->setAspectRatio(0.8);
     ui->cover_widget->setShowTip();
     ui->cover_widget->setTipArr(tipArr);
-    ui->cover_widget->setTipStyleSheet(QStringLiteral("border-radius:10px;background-color:rgba(0,0,0,50%);color:white;"));
+    ui->cover_widget->setTipStyleSheet(QStringLiteral("border:1px solid rgba(255,255,255,50%);border-radius:10px;background-color:rgba(0,0,0,50%);color:white;"));
     ui->cover_widget->setHaveNumberUnit(false);
 
     //遮罩设置

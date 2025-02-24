@@ -29,7 +29,7 @@ public:
     void setLeftBottomText(const QString& text);
 
 private:
-    void initUi();
+    void initUi() const;
 
 protected:
     void mousePressEvent(QMouseEvent *event) override;
