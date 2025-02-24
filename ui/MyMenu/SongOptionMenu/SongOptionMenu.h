@@ -13,9 +13,10 @@ class SongOptionMenu : public BaseMenu {
 public:
     SongOptionMenu(QWidget* parent = nullptr);
 
-    void initMenu() override;
-
     const SongOptionMenu* getMenu()const override;
+
+private:
+    void initMenu() override;
 
 signals:
     //MusicItem设置相关
