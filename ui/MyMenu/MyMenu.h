@@ -21,6 +21,7 @@ public:
         TitleOption,
         ListOption,
         ListenOption,
+        GLOption,
         None
     };
 
