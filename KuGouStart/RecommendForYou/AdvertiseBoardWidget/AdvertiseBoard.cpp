@@ -1,10 +1,10 @@
 #include "AdvertiseBoard.h"
-#include<QPixmap>
-#include<QTimer>
-#include<QPaintevent>
-#include<QPainter>
-#include<QPainterPath>
-#include<QMouseEvent>
+
+#include <QPixmap>
+#include <QTimer>
+#include <QPainter>
+#include <QPainterPath>
+#include <QMouseEvent>
 
 static constexpr int G_Radius = 4;  //圆球半径
 static constexpr int G_Space = 2 * G_Radius;   //圆球之间的间隔
