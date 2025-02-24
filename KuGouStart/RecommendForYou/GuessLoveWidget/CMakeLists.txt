@@ -21,4 +21,4 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 #通过这种方式，你告诉 CMake 将该目录添加为包含目录，使得源代码能够包含同一目录中的头文件。
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets IconBesideTextToolButton MyMenu)
