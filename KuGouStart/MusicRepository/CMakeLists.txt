@@ -24,8 +24,6 @@ set(SOURCE_FILE
     MusicRepoVideo.cpp
     MusicRepoVideo.h
     MusicRepoVideo.ui
-    musicrepo.css
-    repolist.css
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})

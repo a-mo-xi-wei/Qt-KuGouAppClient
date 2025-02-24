@@ -15,10 +15,9 @@ set(SOURCE_FILE
     SongListWidget.cpp
     SongListWidget.h
     SongListWidget.ui
-    SongListBlockwidget.h
-    SongListBlockwidget.cpp
+    SongListBlockWidget.h
+    SongListBlockWidget.cpp
     SongListBlockWidget.ui
-    song.css
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
