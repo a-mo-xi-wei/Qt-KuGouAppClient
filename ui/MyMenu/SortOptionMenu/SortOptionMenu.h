@@ -16,9 +16,9 @@ public:
 
     const SortOptionMenu* getMenu()const override;
 
-    void btnClickAgain() const;
-private:
     void initMenu() override;
+
+    void btnClickAgain() const;
 
 signals:
     //音乐选中相关
