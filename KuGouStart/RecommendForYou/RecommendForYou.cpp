@@ -9,7 +9,6 @@
 #include "TableWidget.h"
 
 #include <QDir>
-#include <QPropertyAnimation>
 #include <QResizeEvent>
 #include <QScrollBar>
 #include <QTimer>
