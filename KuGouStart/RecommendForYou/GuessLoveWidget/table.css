@@ -1,0 +1,53 @@
+/*--------------------guess_love_widget------------------------------*/
+GLTabWidget{
+    border-image: url(":/Res/tabIcon/cover.jpg");
+    border-radius:10px;
+    border:none;
+    background-color: rgba(255,255,255,0);
+}
+QLabel#glLab{
+    font-size: 25px;
+    color: white;
+}
+QLabel#songNameLab{
+    font-size: 15px;
+    color: white;
+}
+QLabel#singerLab{
+    font-size: 11px;
+    color: #e0e0e0;
+}
+QToolButton#playToolBtn {
+    height: 30px;
+    width: 30px;
+    border-image: url(":/Res/tabIcon/play-white.svg");
+}
+QToolButton#playToolBtn:hover {
+    border-image: url(":/Res/tabIcon/play-blue.svg");
+}
+QToolButton#nextToolBtn {
+    border-image: url(":/Res/tabIcon/next-song-white.svg");
+}
+QToolButton#nextToolBtn:hover {
+    border-image: url(":/Res/tabIcon/next-song-blue.svg");
+}
+QToolButton#likeToolBtn {
+    border-image: url(":/Res/tabIcon/like-white.svg");
+}
+QToolButton#likeToolBtn:hover {
+    border-image: url(":/Res/tabIcon/like-blue.svg");
+}
+QToolButton#dislikeToolBtn {
+    border-image: url(":/Res/tabIcon/dislike-white.svg");
+}
+QToolButton#dislikeToolBtn:hover {
+    border-image: url(":/Res/tabIcon/dislike-blue.svg");
+}
+QToolButton#modelBtn{
+    color: white;
+    font-size: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,30%);
+    margin-left: 2px;
+}

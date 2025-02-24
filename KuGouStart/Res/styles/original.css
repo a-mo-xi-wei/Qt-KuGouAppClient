@@ -111,9 +111,7 @@ QScrollArea#menu_scrollArea QToolButton:checked{
     background-color:#268cff;
     font-size: 14px;
 }
-
 /*--------------------play_widget------------------------------*/
-
 QWidget#play_widget {
     background-color:rgba(255,255,255,0);
     border-bottom-left-radius: 8px;
@@ -164,44 +162,8 @@ QSizeGrip#sizegrip{
     background-color:rgba(255,255,255,0);
     border-image:url(':/Res/playbar/bottom-mark.svg');
 }
-/*--------------------guess_love_widget------------------------------*/
-
-GLTabWidget#guess_love_widget {
-    border-image: url(":/Res/tabIcon/cover.jpg");
-    border-radius:10px;
-    border:none;
-}
-GLTabWidget#guess_love_widget QLabel {
-    font-size: 25px;
-    color: white;
-}
-GLTabWidget#guess_love_widget QToolButton#playToolBtn {
-    border-image: url(":/Res/tabIcon/play-white.svg");
-}
-GLTabWidget#guess_love_widget QToolButton#playToolBtn:hover {
-    border-image: url(":/Res/tabIcon/play-blue.svg");
-}
-GLTabWidget#guess_love_widget QToolButton#nextToolBtn {
-    border-image: url(":/Res/tabIcon/next-song-white.svg");
-}
-GLTabWidget#guess_love_widget QToolButton#nextToolBtn:hover {
-    border-image: url(":/Res/tabIcon/next-song-blue.svg");
-}
-GLTabWidget#guess_love_widget QToolButton#likeToolBtn {
-    border-image: url(":/Res/tabIcon/like-white.svg");
-}
-GLTabWidget#guess_love_widget QToolButton#likeToolBtn:hover {
-    border-image: url(":/Res/tabIcon/like-blue.svg");
-}
-GLTabWidget#guess_love_widget QToolButton#dislikeToolBtn {
-    border-image: url(":/Res/tabIcon/dislike-white.svg");
-}
-GLTabWidget#guess_love_widget QToolButton#dislikeToolBtn:hover {
-    border-image: url(":/Res/tabIcon/dislike-blue.svg");
-}
 
 /*--------------------QSlider------------------------------*/
-
 QSlider {
     background-color: rgba(0, 255, 190, 30);
 }
