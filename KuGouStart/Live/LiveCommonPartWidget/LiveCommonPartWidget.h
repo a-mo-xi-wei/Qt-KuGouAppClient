@@ -27,6 +27,8 @@ public:
 
     void setTitleName(const QString& name) const;
 
+    void setNoTipLab();
+
 private:
     void initUi(const int& lines);
 

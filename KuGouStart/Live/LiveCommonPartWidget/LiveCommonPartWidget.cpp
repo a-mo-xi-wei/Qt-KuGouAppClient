@@ -42,6 +42,14 @@ void LiveCommonPartWidget::setTitleName(const QString &name) const {
     ui->title_label->setText(name);
 }
 
+void LiveCommonPartWidget::setNoTipLab() {
+    for (const auto & val : this->m_blockArr) {
+        if (val) {
+            val->setNoTipLab();
+        }
+    }
+}
+
 void LiveCommonPartWidget::initUi(const int& lines) {
     //初始化右上角两个按钮图标
     const auto leftLabImgPath = ":/Live/Res/live/left.svg";

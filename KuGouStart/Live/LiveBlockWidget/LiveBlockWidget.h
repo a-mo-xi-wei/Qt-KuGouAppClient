@@ -30,6 +30,8 @@ public:
 
     void setTipLabText(const QString& text) const;
 
+    void setNoTipLab() const;
+
 private:
     void initUi() const;
 
