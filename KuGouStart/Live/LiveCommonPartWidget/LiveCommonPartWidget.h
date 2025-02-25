@@ -25,7 +25,7 @@ public:
 
     ~LiveCommonPartWidget() override;
 
-    void setTitleName(const QString& name);
+    void setTitleName(const QString& name) const;
 
 private:
     void initUi(const int& lines);

@@ -38,7 +38,7 @@ LiveCommonPartWidget::~LiveCommonPartWidget() {
     delete ui;
 }
 
-void LiveCommonPartWidget::setTitleName(const QString &name) {
+void LiveCommonPartWidget::setTitleName(const QString &name) const {
     ui->title_label->setText(name);
 }
 
@@ -54,7 +54,7 @@ void LiveCommonPartWidget::initUi(const int& lines) {
 
     //初始化block左下角文字vec
     // 异步解析 JSON 文件
-    QString jsonPath = GET_CURRENT_DIR + QStringLiteral("/text.json");
+    QString jsonPath = GET_CURRENT_DIR + QStringLiteral("/../text.json");
     const auto future = Async::runAsync(QThreadPool::globalInstance(), &LiveCommonPartWidget::parseJsonFile,
         this,jsonPath);
     // 结果处理回调
