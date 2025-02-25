@@ -28,6 +28,8 @@ public:
 
     void setLeftBottomText(const QString& text);
 
+    void setTipLabText(const QString& text) const;
+
 private:
     void initUi() const;
 

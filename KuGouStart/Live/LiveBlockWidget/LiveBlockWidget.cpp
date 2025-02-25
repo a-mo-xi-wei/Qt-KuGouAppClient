@@ -32,6 +32,10 @@ void LiveBlockWidget::setLeftBottomText(const QString &text) {
     update();
 }
 
+void LiveBlockWidget::setTipLabText(const QString& text) const {
+    ui->cover_widget->setTipLabText(text);
+}
+
 void LiveBlockWidget::initUi() const {
     //设置tip数组
     std::vector<QString> tipArr {
