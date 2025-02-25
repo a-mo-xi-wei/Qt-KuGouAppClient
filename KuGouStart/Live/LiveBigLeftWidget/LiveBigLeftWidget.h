@@ -24,8 +24,24 @@ public:
 
     ~LiveBigLeftWidget() override;
 
+    void setTitleName(const QString& name) const;
+
+    void setNoTipLab() const;
+
+private:
+    void initUi();
+
+    QList<QString> parseJsonFile(const QString &filePath);
+
+    void initBlockWidget();
+
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 private:
     Ui::LiveBigLeftWidget *ui;
+    QList<QString> m_leftBottomTextVec;
+
 };
 
 
