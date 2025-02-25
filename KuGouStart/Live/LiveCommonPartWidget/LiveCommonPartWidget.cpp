@@ -144,7 +144,7 @@ void LiveCommonPartWidget::initLineTwo() {
 void LiveCommonPartWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     //qDebug()<<"当前宽度为："<<this->width();
-    if (this->width() < 1180) {
+    if (this->width() < 1200) {
         if (this->m_blockArr[5]) {
             this->m_blockArr[5]->hide();
         }

@@ -144,10 +144,10 @@ void LiveMusicPartWidget::initBlockWidget() {
 void LiveMusicPartWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     //qDebug()<<"this->width(): "<<this->width();
-    if (this->width() > 1250) {
+    if (this->width() > 1200) {
         ui->widget_4->show();
     }
-    if (this->width() < 1250) {
+    else {
         ui->widget_4->hide();
     }
 }
