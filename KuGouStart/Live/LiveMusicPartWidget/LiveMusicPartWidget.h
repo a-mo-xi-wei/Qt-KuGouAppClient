@@ -24,14 +24,22 @@ public:
 
     ~LiveMusicPartWidget() override;
 
-    void setTitleName(const QString& name);
+    void setTitleName(const QString& name) const;
 
 private:
     void initUi();
 
+    QList<QString> parseJsonFile(const QString &filePath);
+
+    void initBlockWidget();
+
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 private:
     Ui::LiveMusicPartWidget *ui;
-};
+    QList<QString> m_leftBottomTextVec;
 
+};
 
 #endif //LIVEMUSICPARTWIDGET_H

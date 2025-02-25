@@ -1,0 +1,38 @@
+QPushButton#all_pushButton{
+    font-size: 11px;
+    color: #9f9f9f;
+}
+QPushButton#all_pushButton:hover{
+    color: #3AA1FF;
+}
+QLabel#desc_label_1,
+QLabel#desc_label_2,
+QLabel#desc_label_3,
+QLabel#desc_label_4{
+    color: #8f8f8f;
+}
+QLabel#title_label_1,
+QLabel#title_label_2,
+QLabel#title_label_3,
+QLabel#title_label_4{
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QWidget#widget_1{
+    background-color: #E3FCE7;
+    border-radius: 20px;
+}
+QWidget#widget_2{
+    background-color: #FFE5D7;
+    border-radius: 20px;
+}
+QWidget#widget_3{
+    background-color: #FFEFDB;
+    border-radius: 20px;
+}
+QWidget#widget_4{
+    background-color: #D7E0FF;
+    border-radius: 20px;
+}
