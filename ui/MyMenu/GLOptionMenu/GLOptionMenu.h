@@ -18,6 +18,8 @@ public:
 private:
     void initMenu() override;
 
+signals:
+    void getModel(const QString& model);
 };
 
 
