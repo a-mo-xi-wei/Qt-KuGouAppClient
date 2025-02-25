@@ -105,11 +105,11 @@ void Live::initUi() {
     initPopularWidget();
     initAttentionWidget();
     initRecommendWidget();
-    //initMusicWidget();
-    //initNewStarWidget();
-    //initAppearanceWidget();
-    //initDanceWidget();
-    //initGameWidget();
+    initMusicWidget();
+    initNewStarWidget();
+    initAppearanceWidget();
+    initDanceWidget();
+    initGameWidget();
 
 }
 
@@ -227,15 +227,41 @@ void Live::initMusicWidget() {
 }
 
 void Live::initNewStarWidget() {
+    const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
+    const auto widget = new LiveCommonPartWidget(ui->table_widget,1);
+    //初始化widget
+    widget->setTitleName("新秀");
+    widget->setNoTipLab();
+    lay->insertWidget(lay->count() - 1, widget);
+    lay->setStretchFactor(widget, 1);
 }
 
 void Live::initAppearanceWidget() {
+    const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
+    const auto widget = new LiveBigLeftWidget(ui->table_widget);
+    //初始化widget
+    widget->setTitleName("颜值");
+    lay->insertWidget(lay->count() - 1, widget);
+    lay->setStretchFactor(widget, 1);
 }
 
 void Live::initDanceWidget() {
+    const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
+    const auto widget = new LiveCommonPartWidget(ui->table_widget,1);
+    //初始化widget
+    widget->setTitleName("舞蹈");
+    widget->setNoTipLab();
+    lay->insertWidget(lay->count() - 1, widget);
+    lay->setStretchFactor(widget, 1);
 }
 
 void Live::initGameWidget() {
+    const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
+    const auto widget = new LiveBigLeftWidget(ui->table_widget);
+    //初始化widget
+    widget->setTitleName("弹幕游戏");
+    lay->insertWidget(lay->count() - 1, widget);
+    lay->setStretchFactor(widget, 1);
 }
 
 void Live::handleWheelValue(const int &value) {
