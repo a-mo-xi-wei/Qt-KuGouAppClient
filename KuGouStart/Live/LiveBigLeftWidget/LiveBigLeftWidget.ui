@@ -6,14 +6,26 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>479</width>
-    <height>279</height>
+    <width>345</width>
+    <height>193</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>LiveBigLeftWidget</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="QWidget" name="widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -119,12 +131,24 @@
     <widget class="QWidget" name="content_widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,4">
       <property name="spacing">
-       <number>15</number>
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
       </property>
       <item>
        <widget class="LiveBlockWidget" name="left_widget" native="true">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -134,13 +158,25 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <property name="spacing">
-         <number>20</number>
+         <number>6</number>
         </property>
         <item>
          <widget class="QWidget" name="line_widget_1" native="true">
           <layout class="QHBoxLayout" name="horizontalLayout">
            <property name="spacing">
-            <number>15</number>
+            <number>10</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
            </property>
            <item>
             <widget class="LiveBlockWidget" name="widget_1" native="true"/>
@@ -161,7 +197,19 @@
          <widget class="QWidget" name="line_widget_2" native="true">
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <property name="spacing">
-            <number>15</number>
+            <number>10</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
            </property>
            <item>
             <widget class="LiveBlockWidget" name="widget_5" native="true"/>
