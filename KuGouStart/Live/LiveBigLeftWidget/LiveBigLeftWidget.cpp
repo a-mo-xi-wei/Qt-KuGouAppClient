@@ -120,7 +120,7 @@ void LiveBigLeftWidget::initBlockWidget() {
     ui->left_widget->setCircleStander(120);
     ui->left_widget->setLeftPopularBtnFontSize(14,true);
     ui->left_widget->setLeftBottomText(this->m_leftBottomTextVec[5]);
-    ui->left_widget->setTipStyleSheet(QStringLiteral("font-size: 13px;border-radius:10px;background-color:black;color:white;height: 30px;"));
+    ui->left_widget->setTipStyleSheet(QStringLiteral("font-size: 12px;border-radius:10px;background-color:black;color:white;height: 30px;"));
     ui->left_widget->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
             arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res/standcover")))));
 

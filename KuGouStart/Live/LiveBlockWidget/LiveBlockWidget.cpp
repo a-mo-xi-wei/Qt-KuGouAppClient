@@ -37,7 +37,7 @@ void LiveBlockWidget::setLeftPopularBtnFontSize(const int &size, const bool &isB
 }
 
 void LiveBlockWidget::setTipLabText(const QString& text) const {
-    ui->cover_widget->setTipLabText(text);
+    ui->cover_widget->setTipLabText(" " + text + " ");
 }
 
 void LiveBlockWidget::setNoTipLab() const {
