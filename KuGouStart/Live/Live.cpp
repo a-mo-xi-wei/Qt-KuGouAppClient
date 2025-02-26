@@ -21,12 +21,6 @@ Live::Live(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Live)
     , m_buttonGroup(std::make_unique<QButtonGroup>(this))
-    , m_recommendWidget(std::make_unique<LiveCommonPartWidget>(this))
-    , m_musicWidget(std::make_unique<LiveMusicPartWidget>(this))
-    , m_newStarWidget(std::make_unique<LiveCommonPartWidget>(this))
-    , m_appearanceWidget(std::make_unique<LiveBigLeftWidget>(this))
-    , m_danceWidget(std::make_unique<LiveCommonPartWidget>(this))
-    , m_gameWidget(std::make_unique<LiveBigLeftWidget>(this))
 {
     ui->setupUi(this);
     {
@@ -59,6 +53,45 @@ void Live::initButtonGroup() const {
 }
 
 void Live::initUi() {
+
+    this->m_vScrollBar = ui->scrollArea->verticalScrollBar();
+    //处理信号
+    connect(ui->popular_pushButton, &QPushButton::clicked, this, [this] {
+        this->m_vScrollBar->setValue(ui->popular_widget->mapToParent(QPoint(0, 0)).y());
+    });
+    connect(ui->attention_pushButton, &QPushButton::clicked, this, [this] {
+        this->m_vScrollBar->setValue(ui->attention_widget->mapToParent(QPoint(0, 0)).y());
+    });
+    connect(ui->recommend_pushButton, &QPushButton::clicked, this, [this] {
+        this->m_vScrollBar->setValue(this->m_recommendWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y());
+    });
+    connect(ui->music_pushButton, &QPushButton::clicked, this, [this] {
+        this->m_vScrollBar->setValue(this->m_musicWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y());
+    });
+    connect(ui->new_star_pushButton, &QPushButton::clicked, this, [this] {
+        this->m_vScrollBar->setValue(this->m_newStarWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y());
+    });
+    connect(ui->appearance_pushButton, &QPushButton::clicked, this, [this] {
+        this->m_vScrollBar->setValue(this->m_appearanceWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y());
+    });
+    connect(ui->dance_pushButton, &QPushButton::clicked, this, [this] {
+        this->m_vScrollBar->setValue(this->m_danceWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y());
+    });
+    connect(ui->barrage_game_pushButton, &QPushButton::clicked, this, [this] {
+        this->m_vScrollBar->setValue(this->m_gameWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y());
+    });
+    connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &Live::handleWheelValue);
+    connect(this->m_vScrollBar, &QScrollBar::valueChanged,this, &Live::handleWheelValue);
+
+    initPopularWidget();
+    initAttentionWidget();
+    initRecommendWidget();
+    initMusicWidget();
+    initNewStarWidget();
+    initAppearanceWidget();
+    initDanceWidget();
+    initGameWidget();
+
     //加入布局
     auto lay = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout());
     if (!lay) {
@@ -71,45 +104,6 @@ void Live::initUi() {
     lay->insertWidget(lay->count() - 1, this->m_appearanceWidget.get());
     lay->insertWidget(lay->count() - 1, this->m_danceWidget.get());
     lay->insertWidget(lay->count() - 1, this->m_gameWidget.get());
-
-    this->m_recommendWidget->hide();
-    this->m_musicWidget->hide();
-    this->m_newStarWidget->hide();
-    this->m_appearanceWidget->hide();
-    this->m_danceWidget->hide();
-    this->m_gameWidget->hide();
-
-    this->m_vScrollBar = ui->scrollArea->verticalScrollBar();
-    //处理信号
-    connect(ui->recommend_pushButton, &QPushButton::clicked, this, [this] {
-        this->m_vScrollBar->setValue(this->m_recommendWidget->mapToParent(QPoint(0, 0)).y());
-    });
-    connect(ui->music_pushButton, &QPushButton::clicked, this, [this] {
-        this->m_vScrollBar->setValue(this->m_musicWidget->mapToParent(QPoint(0, 0)).y());
-    });
-    connect(ui->new_star_pushButton, &QPushButton::clicked, this, [this] {
-        this->m_vScrollBar->setValue(this->m_newStarWidget->mapToParent(QPoint(0, 0)).y());
-    });
-    connect(ui->appearance_pushButton, &QPushButton::clicked, this, [this] {
-        this->m_vScrollBar->setValue(this->m_appearanceWidget->mapToParent(QPoint(0, 0)).y());
-    });
-    connect(ui->dance_pushButton, &QPushButton::clicked, this, [this] {
-        this->m_vScrollBar->setValue(this->m_danceWidget->mapToParent(QPoint(0, 0)).y());
-    });
-    connect(ui->barrage_game_pushButton, &QPushButton::clicked, this, [this] {
-        this->m_vScrollBar->setValue(this->m_gameWidget->mapToParent(QPoint(0, 0)).y());
-    });
-    connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &Live::handleWheelValue);
-    connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &Live::handleWheelValue);
-
-    initPopularWidget();
-    initAttentionWidget();
-    initRecommendWidget();
-    initMusicWidget();
-    initNewStarWidget();
-    initAppearanceWidget();
-    initDanceWidget();
-    initGameWidget();
 
 }
 
@@ -210,82 +204,90 @@ void Live::initAttentionWidget() {
 
 void Live::initRecommendWidget() {
     const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
-    const auto widget = new LiveCommonPartWidget(ui->table_widget,2);
+    this->m_recommendWidget = std::make_unique<LiveCommonPartWidget>(ui->table_widget,2);
     //初始化widget
-    widget->setTitleName("推荐");
-    lay->insertWidget(lay->count() - 1, widget);
-    lay->setStretchFactor(widget, 1);
+    this->m_recommendWidget->setTitleName("推荐");
+    lay->insertWidget(lay->count() - 1, this->m_recommendWidget.get());
+    lay->setStretchFactor(this->m_recommendWidget.get(), 1);
 }
 
 void Live::initMusicWidget() {
     const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
-    const auto widget = new LiveMusicPartWidget(ui->table_widget);
+    this->m_musicWidget = std::make_unique<LiveMusicPartWidget>(ui->table_widget);
     //初始化widget
-    widget->setTitleName("音乐");
-    lay->insertWidget(lay->count() - 1, widget);
-    lay->setStretchFactor(widget, 1);
+    this->m_musicWidget->setTitleName("音乐");
+    lay->insertWidget(lay->count() - 1, this->m_musicWidget.get());
+    lay->setStretchFactor(this->m_musicWidget.get(), 1);
 }
 
 void Live::initNewStarWidget() {
     const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
-    const auto widget = new LiveCommonPartWidget(ui->table_widget,1);
+    this->m_newStarWidget = std::make_unique<LiveCommonPartWidget>(ui->table_widget,1);
     //初始化widget
-    widget->setTitleName("新秀");
-    widget->setNoTipLab();
-    lay->insertWidget(lay->count() - 1, widget);
-    lay->setStretchFactor(widget, 1);
+    this->m_newStarWidget->setTitleName("新秀");
+    this->m_newStarWidget->setNoTipLab();
+    lay->insertWidget(lay->count() - 1, this->m_newStarWidget.get());
+    lay->setStretchFactor(this->m_newStarWidget.get(), 1);
 }
 
 void Live::initAppearanceWidget() {
     const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
-    const auto widget = new LiveBigLeftWidget(ui->table_widget);
+    this->m_appearanceWidget = std::make_unique<LiveBigLeftWidget>(ui->table_widget);
     //初始化widget
-    widget->setTitleName("颜值");
-    lay->insertWidget(lay->count() - 1, widget);
-    lay->setStretchFactor(widget, 1);
+    this->m_appearanceWidget->setTitleName("颜值");
+    lay->insertWidget(lay->count() - 1, this->m_appearanceWidget.get());
+    lay->setStretchFactor(this->m_appearanceWidget.get(), 1);
 }
 
 void Live::initDanceWidget() {
     const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
-    const auto widget = new LiveCommonPartWidget(ui->table_widget,1);
+    this->m_danceWidget = std::make_unique<LiveCommonPartWidget>(ui->table_widget,1);
     //初始化widget
-    widget->setTitleName("舞蹈");
-    widget->setNoTipLab();
-    lay->insertWidget(lay->count() - 1, widget);
-    lay->setStretchFactor(widget, 1);
+    this->m_danceWidget->setTitleName("舞蹈");
+    this->m_danceWidget->setNoTipLab();
+    lay->insertWidget(lay->count() - 1, this->m_danceWidget.get());
+    lay->setStretchFactor(this->m_danceWidget.get(), 1);
 }
 
 void Live::initGameWidget() {
     const auto lay = static_cast<QVBoxLayout *>(ui->table_widget->layout());
-    const auto widget = new LiveBigLeftWidget(ui->table_widget);
+    this->m_gameWidget = std::make_unique<LiveBigLeftWidget>(ui->table_widget);
     //初始化widget
-    widget->setTitleName("弹幕游戏");
-    lay->insertWidget(lay->count() - 1, widget);
-    lay->setStretchFactor(widget, 1);
+    this->m_gameWidget->setTitleName("弹幕游戏");
+    lay->insertWidget(lay->count() - 1, this->m_gameWidget.get());
+    lay->setStretchFactor(this->m_gameWidget.get(), 1);
 }
 
 void Live::handleWheelValue(const int &value) {
-    if (value >= this->m_recommendWidget->mapToParent(QPoint(0, 0)).y() &&
-    value < this->m_musicWidget->mapToParent(QPoint(0, 0)).y()) {
+    if (value >= ui->popular_widget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
+    value < ui->attention_widget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y()) {
+        ui->popular_pushButton->setChecked(true);
+    }
+    else if (value >= ui->attention_widget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
+    value < this->m_recommendWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y()) {
+        ui->attention_pushButton->setChecked(true);
+    }
+    else if (value >= this->m_recommendWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
+    value < this->m_musicWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y()) {
         ui->recommend_pushButton->setChecked(true);
     }
-    else if (value >= this->m_musicWidget->mapToParent(QPoint(0, 0)).y() &&
-               value < this->m_newStarWidget->mapToParent(QPoint(0, 0)).y()) {
+    else if (value >= this->m_musicWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
+               value < this->m_newStarWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y()) {
         ui->music_pushButton->setChecked(true);
     }
-    else if (value >= this->m_newStarWidget->mapToParent(QPoint(0, 0)).y() &&
-               value < this->m_appearanceWidget->mapToParent(QPoint(0, 0)).y()) {
+    else if (value >= this->m_newStarWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
+               value < this->m_appearanceWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y()) {
         ui->new_star_pushButton->setChecked(true);
     }
-    else if (value >= this->m_appearanceWidget->mapToParent(QPoint(0, 0)).y() &&
-               value < this->m_danceWidget->mapToParent(QPoint(0, 0)).y()) {
+    else if (value >= this->m_appearanceWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
+               value < this->m_danceWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y()) {
         ui->appearance_pushButton->setChecked(true);
     }
-    else if (value >= this->m_danceWidget->mapToParent(QPoint(0, 0)).y() &&
-               value < this->m_gameWidget->mapToParent(QPoint(0, 0)).y()) {
+    else if (value >= this->m_danceWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
+               value < this->m_gameWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y()) {
         ui->dance_pushButton->setChecked(true);
     }
-    else if (value >= this->m_gameWidget->mapToParent(QPoint(0, 0)).y()) {
+    else if (value >= this->m_gameWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y()) {
         ui->barrage_game_pushButton->setChecked(true);
     }
 }
