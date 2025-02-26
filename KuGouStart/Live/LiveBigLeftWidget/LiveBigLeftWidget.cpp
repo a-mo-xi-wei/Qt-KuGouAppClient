@@ -5,6 +5,9 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_LiveBigLeftWidget.h" resolved
 
 #include "LiveBigLeftWidget.h"
+
+#include <QDir>
+
 #include "ui_LiveBigLeftWidget.h"
 #include "Async.h"
 
@@ -12,9 +15,8 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <random>
 #include <QRandomGenerator>
-
+#include <random>
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
@@ -114,15 +116,50 @@ QList<QString> LiveBigLeftWidget::parseJsonFile(const QString &filePath) {
 
 void LiveBigLeftWidget::initBlockWidget() {
     ui->left_widget->setLeftBottomText(this->m_leftBottomTextVec[5]);
-    ui->widget_1->setLeftBottomText(this->m_leftBottomTextVec[10]);
-    ui->widget_2->setLeftBottomText(this->m_leftBottomTextVec[15]);
-    ui->widget_3->setLeftBottomText(this->m_leftBottomTextVec[20]);
-    ui->widget_4->setLeftBottomText(this->m_leftBottomTextVec[25]);
-    ui->widget_5->setLeftBottomText(this->m_leftBottomTextVec[30]);
-    ui->widget_6->setLeftBottomText(this->m_leftBottomTextVec[35]);
-    ui->widget_7->setLeftBottomText(this->m_leftBottomTextVec[40]);
-    ui->widget_8->setLeftBottomText(this->m_leftBottomTextVec[45]);
+    ui->left_widget->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res/standcover")))));
 
+    ui->widget_1->setLeftBottomText(this->m_leftBottomTextVec[10]);
+    ui->widget_1->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res/standcover")))));
+    ui->widget_2->setLeftBottomText(this->m_leftBottomTextVec[15]);
+    ui->widget_2->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res/standcover")))));
+    ui->widget_3->setLeftBottomText(this->m_leftBottomTextVec[20]);
+    ui->widget_3->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res/standcover")))));
+    ui->widget_4->setLeftBottomText(this->m_leftBottomTextVec[25]);
+    ui->widget_4->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res/standcover")))));
+    ui->widget_5->setLeftBottomText(this->m_leftBottomTextVec[30]);
+    ui->widget_5->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res/standcover")))));
+    ui->widget_6->setLeftBottomText(this->m_leftBottomTextVec[35]);
+    ui->widget_6->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res/standcover")))));
+    ui->widget_7->setLeftBottomText(this->m_leftBottomTextVec[40]);
+    ui->widget_7->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res/standcover")))));
+    ui->widget_8->setLeftBottomText(this->m_leftBottomTextVec[45]);
+    ui->widget_8->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res/standcover")))));
+
+}
+
+int LiveBigLeftWidget::getFileCount(const QString &folderPath) {
+    QDir dir(folderPath);
+
+    if (!dir.exists()) {
+        qWarning("目录不存在: %s", qPrintable(folderPath));
+        return 0;
+    }
+
+    const auto filters = QDir::Files | QDir::NoSymLinks | QDir::NoDotAndDotDot;
+
+    // 仅统计当前目录下的文件
+    const int fileCount = static_cast<int>(dir.entryList(filters, QDir::Name).size());
+
+    return fileCount;
 }
 
 void LiveBigLeftWidget::resizeEvent(QResizeEvent *event) {

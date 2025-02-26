@@ -5,6 +5,9 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_LiveCommonPartWidget.h" resolved
 
 #include "LiveCommonPartWidget.h"
+
+#include <QDir>
+
 #include "ui_LiveCommonPartWidget.h"
 #include "LiveBlockWidget/LiveBlockWidget.h"
 #include "Async.h"
@@ -13,6 +16,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QRandomGenerator>
 #include <random>
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -43,13 +47,37 @@ void LiveCommonPartWidget::setTitleName(const QString &name) const {
 }
 
 void LiveCommonPartWidget::setNoTipLab() {
-    for (const auto & val : this->m_blockArr) {
-        if (val) {
-            val->setNoTipLab();
+    connect(this, &LiveCommonPartWidget::initOK, this, [this] {
+        for (const auto & val : this->m_blockArr) {
+            if (val) {
+                val->setNoTipLab();
+            }
         }
-    }
+    });
 }
 
+
+/**
+ * @brief 获取指定文件夹中的文件数量
+ * @param folderPath 文件夹路径
+ * @param includeSubDirs 是否包括子文件夹中的文件
+ * @return 文件数量
+ */
+int LiveCommonPartWidget::getFileCount(const QString &folderPath) {
+    QDir dir(folderPath);
+
+    if (!dir.exists()) {
+        qWarning("目录不存在: %s", qPrintable(folderPath));
+        return 0;
+    }
+
+    const auto filters = QDir::Files | QDir::NoSymLinks | QDir::NoDotAndDotDot;
+
+        // 仅统计当前目录下的文件
+    const int fileCount = static_cast<int>(dir.entryList(filters, QDir::Name).size());
+
+    return fileCount;
+}
 void LiveCommonPartWidget::initUi(const int& lines) {
     //初始化右上角两个按钮图标
     const auto leftLabImgPath = ":/Live/Res/live/left.svg";
@@ -116,6 +144,8 @@ void LiveCommonPartWidget::initLineOne() {
     lay1->setContentsMargins(0,0,0,0);
     for (int i = 0; i < 6; ++i) {
         const auto w = new LiveBlockWidget(ui->line_widget_1);
+        w->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res/standcover")))));
         w->setLeftBottomText(this->m_leftBottomTextVec[i]);
         lay1->addWidget(w);
         w->show();
@@ -123,6 +153,7 @@ void LiveCommonPartWidget::initLineOne() {
         this->m_blockArr[i] = w;
     }
     ui->line_widget_1->setLayout(lay1);
+    emit initOK();
 }
 
 void LiveCommonPartWidget::initLineTwo() {
@@ -132,6 +163,8 @@ void LiveCommonPartWidget::initLineTwo() {
     lay2->setContentsMargins(0,0,0,0);
     for (int i = 6; i < 12; ++i) {
         const auto w = new LiveBlockWidget(ui->line_widget_2);
+        w->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res/standcover")))));
         w->setLeftBottomText(this->m_leftBottomTextVec[i + 20]);
         lay2->addWidget(w);
         w->show();
@@ -139,6 +172,7 @@ void LiveCommonPartWidget::initLineTwo() {
         this->m_blockArr[i] = w;
     }
     ui->line_widget_2->setLayout(lay2);
+    emit initOK();
 }
 
 void LiveCommonPartWidget::resizeEvent(QResizeEvent *event) {

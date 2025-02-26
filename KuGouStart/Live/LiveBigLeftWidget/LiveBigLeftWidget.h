@@ -35,6 +35,8 @@ private:
 
     void initBlockWidget();
 
+    int getFileCount(const QString &folderPath);
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 

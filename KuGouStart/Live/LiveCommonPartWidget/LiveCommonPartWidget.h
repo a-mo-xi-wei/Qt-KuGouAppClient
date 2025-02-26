@@ -38,8 +38,13 @@ private:
 
     void initLineTwo();
 
+    int getFileCount(const QString &folderPath);
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
+
+signals:
+    void initOK();
 
 private:
     Ui::LiveCommonPartWidget *ui;
