@@ -28,9 +28,17 @@ public:
 
     void setLeftBottomText(const QString& text);
 
+    void setLeftPopularBtnFontSize(const int &size,const bool& isBold) const;
+
     void setTipLabText(const QString& text) const;
 
     void setNoTipLab() const;
+
+    void setAspectRatio(const float& aspectRatio);
+
+    void setCircleStander(const int& stander) const;
+
+    void setTipStyleSheet(const QString& styleSheet) const;
 
 private:
     void initUi() const;
@@ -46,6 +54,7 @@ protected:
 
 private:
     Ui::LiveBlockWidget *ui;
+    float m_aspectRatio = 0.8;
 };
 
 

@@ -32,12 +32,30 @@ void LiveBlockWidget::setLeftBottomText(const QString &text) {
     update();
 }
 
+void LiveBlockWidget::setLeftPopularBtnFontSize(const int &size, const bool &isBold) const {
+    ui->cover_widget->setLeftPopularBtnFontSize(size,isBold);
+}
+
 void LiveBlockWidget::setTipLabText(const QString& text) const {
     ui->cover_widget->setTipLabText(text);
 }
 
 void LiveBlockWidget::setNoTipLab() const {
     ui->cover_widget->setShowTip(false);
+}
+
+void LiveBlockWidget::setAspectRatio(const float &aspectRatio) {
+    this->m_aspectRatio = aspectRatio;
+    ui->cover_widget->setAspectRatio(aspectRatio);
+}
+
+void LiveBlockWidget::setCircleStander(const int &stander) const {
+    auto &mask = ui->cover_widget->getMask();
+    mask.setStander(stander);
+}
+
+void LiveBlockWidget::setTipStyleSheet(const QString &styleSheet) const {
+    ui->cover_widget->setTipStyleSheet(styleSheet);
 }
 
 void LiveBlockWidget::initUi() const {
@@ -54,7 +72,7 @@ void LiveBlockWidget::initUi() const {
     ui->cover_widget->setLeftPopularBtnIcon("");
     ui->cover_widget->setPopularBtnLeftPadding(0);
     ui->cover_widget->setLeftPopularBtnFontSize(13,true);
-    ui->cover_widget->setAspectRatio(0.8);
+    ui->cover_widget->setAspectRatio(this->m_aspectRatio);
     ui->cover_widget->setShowTip();
     ui->cover_widget->setTipArr(tipArr);
     ui->cover_widget->setTipStyleSheet(QStringLiteral("border:1px solid rgba(255,255,255,50%);border-radius:10px;background-color:rgba(0,0,0,50%);color:white;"));
@@ -86,7 +104,7 @@ void LiveBlockWidget::mouseDoubleClickEvent(QMouseEvent *event) {
 void LiveBlockWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     //ui->cover_widget->setFixedHeight(ui->cover_widget->width()*5/4);
-    ui->cover_widget->setFixedHeight(ui->cover_widget->width()*5/4);
+    ui->cover_widget->setFixedHeight(ui->cover_widget->width()/m_aspectRatio);
     //qDebug()<<"ui->cover_widget->width(): "<<ui->cover_widget->width()
     //<<"ui->cover_widget->height(): "<<ui->cover_widget->height();
 }
