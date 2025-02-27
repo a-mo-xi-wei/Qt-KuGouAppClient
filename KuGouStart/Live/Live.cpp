@@ -9,13 +9,31 @@
 #include "MyScrollArea.h"
 
 #include <QButtonGroup>
+#include <QDir>
 #include <QFile>
 #include <QPainter>
 #include <QPainterPath>
+#include <QRandomGenerator>
 #include <QScrollBar>
 #include <QWheelEvent>
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+
+static int getFileCount(const QString &folderPath) {
+    QDir dir(folderPath);
+
+    if (!dir.exists()) {
+        qWarning("目录不存在: %s", qPrintable(folderPath));
+        return 0;
+    }
+
+    const auto filters = QDir::Files | QDir::NoSymLinks | QDir::NoDotAndDotDot;
+
+    // 仅统计当前目录下的文件
+    const int fileCount = static_cast<int>(dir.entryList(filters, QDir::Name).size());
+
+    return fileCount;
+}
 
 Live::Live(QWidget *parent)
     : QWidget(parent)
@@ -115,18 +133,30 @@ void Live::initPopularWidget() {
     group->addButton(ui->toolButton_3);
     group->setExclusive(true);
 
-    ui->toolButton_1->setLeftBottomText("HS一白月光");
-    ui->toolButton_2->setLeftBottomText("cy菜菜");
-    ui->toolButton_3->setLeftBottomText("乔希玥");
+    const QString descArr[] = {"HS一白月光", "cy菜菜", "乔希玥",
+        "涉外北北同学", "优优luck", "多肉小甜豆","ZY佳美", "露娜6",
+        "滚滚d", "YE茜茜", "Msn新人星语","Mor阿满", "BE佳琳y",
+        "jy十一", "优优luck", "小圆OO","90卿卿", "新人富贵","90清清",
+        "初夏y2", "ke乐乐", "驴十三", "姜妧", "紫霞", "驴鹏", "刘诗诗v"};
+    const auto idx = QRandomGenerator::global()->bounded(0, descArr->size()-3);
+    ui->toolButton_1->setLeftBottomText(descArr[idx]);
+    ui->toolButton_2->setLeftBottomText(descArr[idx + 1]);
+    ui->toolButton_3->setLeftBottomText(descArr[idx + 2]);
 
     ui->toolButton_1->setToolButtonStyle(Qt::ToolButtonIconOnly);
     ui->toolButton_2->setToolButtonStyle(Qt::ToolButtonIconOnly);
     ui->toolButton_3->setToolButtonStyle(Qt::ToolButtonIconOnly);
 
     //后面估计要加图片
-    ui->toolButton_1->setBackgroundImg(":/RectCover/Res/rectcover/music-rect-cover20.jpg");
-    ui->toolButton_2->setBackgroundImg(":/RectCover/Res/rectcover/music-rect-cover21.jpg");
-    ui->toolButton_3->setBackgroundImg(":/RectCover/Res/rectcover/music-rect-cover22.jpg");
+    ui->toolButton_1->setBackgroundImg(QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").
+    arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../Res/rectcover")))));
+
+    ui->toolButton_2->setBackgroundImg(QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").
+    arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../Res/rectcover")))));
+
+    ui->toolButton_3->setBackgroundImg(QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").
+    arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../Res/rectcover")))));
+
 
     //放置label
     ui->index_label_1->setStyleSheet("background-color: rgba(0,0,0,0);border: none;");
