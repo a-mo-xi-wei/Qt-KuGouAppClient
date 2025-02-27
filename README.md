@@ -41,6 +41,7 @@ Based on Qt Widget + UiTools module + Custom control + QSS
 采用SQLite存储音乐元数据（标题/专辑/路径），使用Qt SQL模块实现播放记录管理
 
 通过**QNetworkAccessManager**实现在线音乐流媒体播放，采用 **QtConcurrent** + **QFutureWatcher** 实现**非阻塞式**线程任务调度
+，基于 **QThreadPool** 实现 动态弹性线程池，通过 QRunnable 封装任务单元，自动回收线程资源。
 
 有着丰富的自定义控件和事件响应，解决诸多难题如：遮罩绘图，控件拉伸，特效绘制，页面切换动画等。
 
