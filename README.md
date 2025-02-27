@@ -14,7 +14,7 @@
 <p align="center">
 🎁如果你喜欢该项目，请点击右上角的星星，你的 <strong>Star</strong>是我最大的动力
 <br>
-<strong>本项目代码不用于商用，仅限研究和学习使用，资源版权归音乐平台所有</strong>
+<strong>本项目代码仅限研究和学习使用，资源版权归音乐平台所有</strong>
 </p>
 
 ---
@@ -40,7 +40,7 @@ Based on Qt Widget + UiTools module + Custom control + QSS
 
 采用SQLite存储音乐元数据（标题/专辑/路径），使用Qt SQL模块实现播放记录管理
 
-通过**QNetworkAccessManager**实现在线音乐流媒体播放
+通过**QNetworkAccessManager**实现在线音乐流媒体播放，采用 **QtConcurrent** + **QFutureWatcher** 实现**非阻塞式**线程任务调度
 
 有着丰富的自定义控件和事件响应，解决诸多难题如：遮罩绘图，控件拉伸，特效绘制，页面切换动画等。
 
@@ -114,6 +114,10 @@ graph TD
 ![输入图片说明](image-show/image29.png)
 ![输入图片说明](image-show/image30.png)
 ![输入图片说明](image-show/image31.png)
+### 15.直播界面
+![输入图片说明](image-show/image32.png)
+![输入图片说明](image-show/image33.png)
+![输入图片说明](image-show/image34.png)
 
 ---
 
