@@ -56,9 +56,9 @@
 #endif
 
 #if (LOGGER_LEVEL <= LOG_LEVEL_ERROR)
-#	define	 LOG_ERROR(fmt, ...) 		spdlog::log({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::error, fmt, ##__VA_ARGS__);
-#	define 	 PRINT_ERROR(fmt,...) 		mylog::logger::get().printf({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::error, fmt, ##__VA_ARGS__);
-#	define	 STREAM_ERROR() 			mylog::logger::log_stream({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::error, "")
+#	define	 LOG_ERROR(fmt, ...) 		spdlog::log({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::err, fmt, ##__VA_ARGS__);
+#	define 	 PRINT_ERROR(fmt,...) 		mylog::logger::get().printf({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::err, fmt, ##__VA_ARGS__);
+#	define	 STREAM_ERROR() 			mylog::logger::log_stream({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::err, "")
 #else
 #	define	 LOG_ERROR(fmt, ...)
 #	define 	 PRINT_ERROR(fmt,...)
@@ -66,9 +66,9 @@
 #endif
 
 #if (LOGGER_LEVEL <= LOG_LEVEL_FATAL)
-#	define	 LOG_FATAL(fmt, ...) 		spdlog::log({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::fatal, fmt, ##__VA_ARGS__);
-#	define 	 PRINT_FATAL(fmt,...) 		mylog::logger::get().printf({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::fatal, fmt, ##__VA_ARGS__);
-#	define	 STREAM_FATAL() 			mylog::logger::log_stream({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::fatal, "")
+#	define	 LOG_FATAL(fmt, ...) 		spdlog::log({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::critical, fmt, ##__VA_ARGS__);
+#	define 	 PRINT_FATAL(fmt,...) 		mylog::logger::get().printf({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::critical, fmt, ##__VA_ARGS__);
+#	define	 STREAM_FATAL() 			mylog::logger::log_stream({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::critical, "")
 #else
 #	define	 LOG_FATAL(fmt, ...)
 #	define 	 PRINT_FATAL(fmt,...)
