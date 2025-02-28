@@ -63,4 +63,4 @@ target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia
                         MusicCloudDisk PurchasedMusic RecentlyPlayed AllMusic
                         ListenBook Search MyStackedWidget StartVideo
                         BasicWidget MyScrollArea MySearchLineEdit UpToolButton
-                        RippleButton VolumeToolBtn SliderWidget MainWindow )
+                        RippleButton VolumeToolBtn SliderWidget MainWindow MySpdlog)
