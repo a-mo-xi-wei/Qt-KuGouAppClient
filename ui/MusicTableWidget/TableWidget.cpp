@@ -1,4 +1,5 @@
 #include "TableWidget.h"
+#include "logger.hpp"
 
 #include <QLabel>
 #include <QToolButton>
@@ -17,12 +18,19 @@
 
 TableWidget::TableWidget(const QString &title, KIND kind, QWidget *parent)
     : QWidget(parent)
-      , m_titleLab(new QLabel(title, this))
-      , m_kind(kind)
-      , m_tabHLayout(std::make_unique<QHBoxLayout>())
-      , m_gridLayout(std::make_unique<QGridLayout>())
-      , m_gridContainer(std::make_unique<QWidget>(this))
-      , m_refreshTimer(new QTimer(this)) {
+    , m_titleLab(new QLabel(title, this))
+    , m_kind(kind)
+    , m_tabHLayout(std::make_unique<QHBoxLayout>())
+    , m_gridLayout(std::make_unique<QGridLayout>())
+    , m_gridContainer(std::make_unique<QWidget>(this))
+    , m_refreshTimer(new QTimer(this))
+{
+    using namespace mylog;
+    if (!logger::get().init("logs/TableWidget.log")) {
+        return;
+    }
+    logger::get().set_level(spdlog::level::info);
+
     this->m_play_ToolBtn = new QToolButton(this);
     this->m_adjust_ToolBtn = new QToolButton(this);
     this->m_refresh_ToolBtn = new QToolButton(this);
@@ -47,6 +55,10 @@ TableWidget::TableWidget(const QString &title, KIND kind, QWidget *parent)
 
     connect(this->m_refresh_ToolBtn, &QToolButton::clicked, this, &TableWidget::onRefreshBtnClicked);
     connect(this->m_refreshTimer, &QTimer::timeout, this, &TableWidget::onRefreshTimeout);
+}
+
+TableWidget::~TableWidget() {
+    mylog::logger::get().shutdown();
 }
 
 void TableWidget::paintEvent(QPaintEvent *ev) {
@@ -74,7 +86,7 @@ void TableWidget::resizeEvent(QResizeEvent *event) {
     if (this->m_kind == KIND::ItemList) {
         this->m_topWindow = this->window();
         if (!m_topWindow) {
-            qWarning() << "无法获取顶级窗口！";
+            STREAM_WARN()<<"无法获取顶级窗口！";
             return;
         }
         int topLevelWidth = m_topWindow->width();
@@ -123,7 +135,7 @@ void TableWidget::initUi() {
     if (file.open(QIODevice::ReadOnly)) {
         this->setStyleSheet(file.readAll());
     } else {
-        qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR()<< "样式表打开失败QAQ";
         return;
     }
     m_tabHLayout->setSpacing(0);
@@ -576,7 +588,7 @@ ItemListWidget::ItemListWidget(QPixmap coverPix, const QString &name, const QStr
     if (file.open(QIODevice::ReadOnly)) {
         this->setStyleSheet(file.readAll());
     } else {
-        qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
     initUi();
@@ -742,7 +754,7 @@ void ItemListWidget::updateSinger() const {
 }
 
 void ItemListWidget::onHide() {
-    qDebug() << "隐藏/显示";
+    STREAM_INFO() << "隐藏/显示";
     this->setHidden(!this->isHidden());
     update();
 }
