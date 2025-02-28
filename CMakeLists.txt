@@ -61,3 +61,6 @@ add_subdirectory(KuGouStart)
 
 #异步线程模块
 add_subdirectory(util/MyAsyncThread)
+
+#日志模块
+add_subdirectory(util/MySpdlog)
