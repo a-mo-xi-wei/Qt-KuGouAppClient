@@ -10,19 +10,19 @@
 int main(int argc, char *argv[])
 {
     using namespace mylog;
-    if (!logger::get().init("logs/test.log")) {
+    if (!logger::get().init("logs/main.log")) {
         return 1;
     }
     logger::get().set_level(spdlog::level::trace);
     //三种方式
-    STREAM_DEBUG() << "STM_DEBUG : 程序开始（trace）" << 1;
-    PRINT_WARN("PRINT_WARN : 程序开始, %d", 1);
-    LOG_INFO("LOG_INFO：程序开始 {}", 1);
+    STREAM_DEBUG() << "STREAM_DEBUG : 程序开始（trace）" << 1;
+    PRINT_DEBUG("PRINT_DEBUG : 程序开始（trace）%d",1);
+    LOG_DEBUG("LOG_DEBUG : 程序开始（trace）{}" , 1);
 
-    logger::get().set_level(spdlog::level::info);
-    STREAM_DEBUG() << "STM_DEBUG : 程序开始（info）" << 2;
-    PRINT_WARN("PRINT_WARN, %d", 2);
-    LOG_INFO("LOG_INFO {}", 2);
+    logger::get().set_level(spdlog::level::debug);
+    STREAM_DEBUG() << "STREAM_DEBUG : 程序开始（debug）" << 2;
+    PRINT_WARN("PRINT_WARN : 程序开始（debug）, %d", 2);
+    LOG_INFO("LOG_INFO : 程序开始（debug） {}", 2);
 
     //qInstallMessageHandler(myMessageHandler);
     QApplication a(argc, argv);
