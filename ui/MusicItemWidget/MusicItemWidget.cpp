@@ -1,4 +1,5 @@
 #include "MusicItemWidget.h"
+#include "logger.hpp"
 
 #include <QLabel>
 #include <QToolButton>
@@ -42,7 +43,7 @@ MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     ,m_information(std::move(info))
     ,timer(new QTimer(this))
 {
-
+    mylog::logger::get().set_level(spdlog::level::info);
     this->m_index           = m_information.index;
     this->m_name            = m_information.songName;
     this->m_duration        = m_information.duration;
@@ -50,6 +51,8 @@ MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     this->m_singer          = m_information.singer;
     //qDebug()<<"m_index: "<<m_index<<" name: "<<m_name<<" duration: "<<m_duration<<
     //    " cover: "<<m_cover<<"m_singer: "<<m_singer;
+    PRINT_INFO("index: %d , name: %s , duration: %s , singer: %s ",
+        m_index, m_name.toStdString(), m_duration.toStdString(), m_singer.toStdString());
     this->m_indexLab        = new QLabel(QString("%1").arg(this->m_index + 1, 2, 10, QChar('0')), this);
     this->m_coverLab        = new QLabel(this);
     this->m_coverLab->setAlignment(Qt::AlignCenter);
@@ -82,7 +85,8 @@ MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     if (file.open(QIODevice::ReadOnly)) {
         this->setStyleSheet(file.readAll());
     } else {
-        qDebug() << "样式表打开失败QAQ";
+        //qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR() << "样式表 item.css 打开失败QAQ";
         return;
     }
 
