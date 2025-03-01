@@ -1,5 +1,6 @@
 #include "KuGouApp.h"
 #include "ui_KuGouApp.h"
+#include "logger.hpp"
 
 #include <QMediaMetaData>
 #include <QMediaPlayer>
@@ -116,6 +117,8 @@ KuGouApp::KuGouApp(MainWindow *parent)
 }
 
 KuGouApp::~KuGouApp() {
+    // call before spdlog static variables destroy
+    mylog::logger::get().shutdown();
     delete ui;
 }
 

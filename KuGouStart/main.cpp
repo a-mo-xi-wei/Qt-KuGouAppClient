@@ -28,7 +28,5 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     KuGouApp w;
     w.show();
-    // call before spdlog static variables destroy
-    logger::get().shutdown();
     return a.exec();
 }
