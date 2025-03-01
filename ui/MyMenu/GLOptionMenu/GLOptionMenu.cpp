@@ -3,6 +3,7 @@
 //
 
 #include "GLOptionMenu.h"
+#include "logger.hpp"
 
 #include <QCoreApplication>
 #include <QWidgetAction>
@@ -90,4 +91,5 @@ void GLOptionMenu::initMenu() {
     this->addAction(a_minorityAction);
     this->addAction(a_30sAction);
     this->hide();
+    STREAM_INFO()<<"GLOptionMenu 成功初始化";
 }

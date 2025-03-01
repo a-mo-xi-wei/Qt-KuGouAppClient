@@ -3,6 +3,7 @@
 //
 
 #include "SortOptionMenu.h"
+#include "logger.hpp"
 
 #include <QWidgetAction>
 
@@ -262,6 +263,7 @@ void SortOptionMenu::initMenu() {
     this->addAction(a_sortByPlayCountAction);
     this->addAction(a_sortByRandomAction);
     this->hide();
+    STREAM_INFO()<<"SortOptionMenu 初始化成功";
 }
 
 const SortOptionMenu * SortOptionMenu::getMenu() const {

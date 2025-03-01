@@ -25,8 +25,6 @@ public:
 
     explicit TableWidget(const QString &title, KIND kind, QWidget *parent = nullptr);
 
-    ~TableWidget() override;
-
 protected:
     void paintEvent(QPaintEvent *ev) override;
 

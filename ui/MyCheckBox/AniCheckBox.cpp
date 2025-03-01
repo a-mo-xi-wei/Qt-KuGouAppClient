@@ -1,4 +1,5 @@
 #include "AniCheckBox.h"
+#include "logger.hpp"
 
 #include <QPropertyAnimation>
 #include <QPainter>
@@ -7,9 +8,9 @@
 AniCheckBox::AniCheckBox(QWidget *parent) : QCheckBox(parent)
 {
     setCursor(Qt::PointingHandCursor);
-
+    mylog::logger::get().set_level(spdlog::level::info);
     connect(this, &QCheckBox::stateChanged, this, [=](int state) {
-        // qInfo() << "状态变化：" << static_cast<Qt::CheckState>(state);
+        STREAM_INFO() << "状态改变";
         checkStateChanged(state);
     });
 }

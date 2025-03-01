@@ -25,11 +25,7 @@ TableWidget::TableWidget(const QString &title, KIND kind, QWidget *parent)
     , m_gridContainer(std::make_unique<QWidget>(this))
     , m_refreshTimer(new QTimer(this))
 {
-    using namespace mylog;
-    if (!logger::get().init("logs/TableWidget.log")) {
-        return;
-    }
-    logger::get().set_level(spdlog::level::info);
+    mylog::logger::get().set_level(spdlog::level::info);
 
     this->m_play_ToolBtn = new QToolButton(this);
     this->m_adjust_ToolBtn = new QToolButton(this);
@@ -55,10 +51,6 @@ TableWidget::TableWidget(const QString &title, KIND kind, QWidget *parent)
 
     connect(this->m_refresh_ToolBtn, &QToolButton::clicked, this, &TableWidget::onRefreshBtnClicked);
     connect(this->m_refreshTimer, &QTimer::timeout, this, &TableWidget::onRefreshTimeout);
-}
-
-TableWidget::~TableWidget() {
-    mylog::logger::get().shutdown();
 }
 
 void TableWidget::paintEvent(QPaintEvent *ev) {
@@ -487,7 +479,7 @@ void TableWidget::onRefreshBtnClicked() {
 }
 
 void TableWidget::onRefreshTimeout() {
-    //qDebug()<<"刷新";
+    STREAM_INFO()<<"刷新TableWidget";
     if (this->m_kind == KIND::BlockList) {
         shuffleBlockCover();
         this->m_gridContainer->setUpdatesEnabled(false);

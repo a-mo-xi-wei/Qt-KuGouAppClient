@@ -3,6 +3,7 @@
 //
 
 #include "BaseMenu.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QPainter>
@@ -27,7 +28,7 @@ BaseMenu::BaseMenu(QWidget *parent)
         if (file.open(QIODevice::ReadOnly)) {
             this->setStyleSheet(file.readAll());
         } else {
-            qDebug() << "样式表打开失败QAQ";
+            STREAM_INFO() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -58,7 +59,7 @@ void BaseMenu::checkSelection() const {
         if (m_lastSelect == m_curSelect)return;
         if (!m_lastSelect->icon().isNull()) {
             m_lastSelect->setIcon(QIcon());
-            //qDebug()<<"图标设置为空";
+            STREAM_WARN()<<"图标设置为空";
         }
     }
 }

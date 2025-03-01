@@ -2,6 +2,7 @@
 // Created by WeiWang on 24-10-16.
 //
 #include "MyScrollArea.h"
+#include "logger.hpp"
 
 #include <QEasingCurve>
 #include <QPropertyAnimation>
@@ -82,12 +83,14 @@ void MyScrollArea::onUpBtnClicked() {
     animation->setEasingCurve(this->m_curve); // 缓动曲线
 
     // 在动画结束后标记动画停止
-    connect(animation, &QPropertyAnimation::finished, this, [this]() {
+    connect(animation, &QPropertyAnimation::finished, this, [=] {
         this->setAnimating(false); //动画结束启用滚轮
+        STREAM_INFO()<<"回到顶部动画结束";
     });
 
     // 启动动画
     animation->start(QAbstractAnimation::DeleteWhenStopped); // 动画结束后自动删除
+    STREAM_INFO()<<"回到顶部动画开始";
 }
 
 void MyScrollArea::onUpBtnShowOrNot() {
