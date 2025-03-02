@@ -7,6 +7,7 @@
 #include "Live.h"
 #include "ui_Live.h"
 #include "MyScrollArea.h"
+#include "logger.hpp"
 
 #include <QButtonGroup>
 #include <QDir>
@@ -24,6 +25,7 @@ static int getFileCount(const QString &folderPath) {
 
     if (!dir.exists()) {
         qWarning("目录不存在: %s", qPrintable(folderPath));
+        PRINT_WARN("目录不存在: %s", folderPath.toStdString());
         return 0;
     }
 
@@ -47,6 +49,7 @@ Live::Live(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -114,6 +117,7 @@ void Live::initUi() {
     auto lay = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout());
     if (!lay) {
         qWarning() << "布局不存在";
+        STREAM_WARN() << "布局不存在";
         return;
     }
     lay->insertWidget(lay->count() - 1, this->m_recommendWidget.get());

@@ -6,6 +6,7 @@
 
 #include "ListenBook.h"
 #include "ui_ListenBook.h"
+#include "logger.hpp"
 
 #include <QButtonGroup>
 #include <QFile>
@@ -24,6 +25,7 @@ ListenBook::ListenBook(QWidget *parent)
         this->setStyleSheet(file.readAll());
     } else {
         qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
     initUi();

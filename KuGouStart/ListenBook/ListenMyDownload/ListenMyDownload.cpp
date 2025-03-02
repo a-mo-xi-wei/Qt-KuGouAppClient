@@ -6,9 +6,9 @@
 
 #include "ListenMyDownload.h"
 #include "ui_ListenMyDownload.h"
+#include "logger.hpp"
 
 #include <QFile>
-
 #include <QButtonGroup>
 #include <QMouseEvent>
 
@@ -28,6 +28,7 @@ ListenMyDownload::ListenMyDownload(QWidget *parent)
         }
         else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -163,10 +164,10 @@ void ListenMyDownload::mousePressEvent(QMouseEvent *event) {
     QWidget::mousePressEvent(event);
     if (event->button() == Qt::LeftButton) {
         const auto labelRect1 = ui->downloaded_number_label     ->geometry();
-        const auto labelRect2 = ui->downloading_number_label       ->geometry();
+        const auto labelRect2 = ui->downloading_number_label    ->geometry();
         // 将点击坐标转换为标签父控件的坐标系
         const QPoint clickPos1 = ui->downloaded_number_label    ->parentWidget()->mapFrom(this, event->pos());
-        const QPoint clickPos2 = ui->downloading_number_label      ->parentWidget()->mapFrom(this, event->pos());
+        const QPoint clickPos2 = ui->downloading_number_label   ->parentWidget()->mapFrom(this, event->pos());
 
         if (labelRect1.contains(clickPos1)) {
             ui->downloaded_pushButton->clicked();

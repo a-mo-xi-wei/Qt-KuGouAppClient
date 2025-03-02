@@ -46,6 +46,7 @@ Channel::Channel(QWidget *parent) : QWidget(parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
         ui->title_label->setStyleSheet(
@@ -102,6 +103,7 @@ void Channel::initUi() {
         auto lay = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout());
         if (!lay) {
             qWarning() << "布局不存在";
+            STREAM_WARN() << "布局不存在";
             return;
         }
         lay->insertWidget(lay->count() - 1, this->m_recommendWidget.get());

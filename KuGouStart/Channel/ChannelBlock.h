@@ -7,7 +7,7 @@
 
 #include <QMouseEvent>
 #include <QWidget>
-
+#include "logger.hpp"
 
 QT_BEGIN_NAMESPACE
 
