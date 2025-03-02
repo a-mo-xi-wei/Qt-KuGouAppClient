@@ -581,7 +581,6 @@ void TitleOptionMenu::initMenu() {
     this->addAction(a_logOutAction);
     this->addAction(a_exitAction);
     this->hide();
-    STREAM_INFO()<<"TitleOptionMenu 初始化成功";
 }
 
 const TitleOptionMenu * TitleOptionMenu::getMenu() const {

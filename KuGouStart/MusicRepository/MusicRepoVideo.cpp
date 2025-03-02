@@ -6,6 +6,7 @@
 
 #include "MusicRepoVideo.h"
 #include "ui_MusicRepoVideo.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QMouseEvent>
@@ -25,6 +26,7 @@ MusicRepoVideo::MusicRepoVideo(QWidget *parent) :
         this->setStyleSheet(file.readAll());
     } else {
         qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
     initUi();

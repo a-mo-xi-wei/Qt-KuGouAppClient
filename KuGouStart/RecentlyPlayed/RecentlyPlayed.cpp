@@ -6,6 +6,7 @@
 
 #include "RecentlyPlayed.h"
 #include "ui_RecentlyPlayed.h"
+#include "logger.hpp"
 
 #include <QButtonGroup>
 #include <QFile>
@@ -25,6 +26,7 @@ RecentlyPlayed::RecentlyPlayed(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -104,6 +106,7 @@ void RecentlyPlayed::initMVChannel() {
 void RecentlyPlayed::on_single_song_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_singleSong.get())return;
     ui->single_song_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换单曲界面";
     ui->stackedWidget->setCurrentWidget(this->m_singleSong.get());
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
@@ -122,6 +125,7 @@ void RecentlyPlayed::on_single_song_pushButton_clicked() {
 void RecentlyPlayed::on_song_list_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_songList.get())return;
     ui->song_list_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换歌单界面";
     ui->stackedWidget->setCurrentWidget(this->m_songList.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
@@ -140,6 +144,7 @@ void RecentlyPlayed::on_song_list_pushButton_clicked() {
 void RecentlyPlayed::on_video_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_videoWidget.get())return;
     ui->video_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换视频界面";
     ui->stackedWidget->setCurrentWidget(this->m_videoWidget.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -158,6 +163,7 @@ void RecentlyPlayed::on_video_pushButton_clicked() {
 void RecentlyPlayed::on_song_channel_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_songChannel.get())return;
     ui->song_channel_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换音乐频道界面";
     ui->stackedWidget->setCurrentWidget(this->m_songChannel.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -176,6 +182,7 @@ void RecentlyPlayed::on_song_channel_pushButton_clicked() {
 void RecentlyPlayed::on_MV_channel_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_mvChannel.get())return;
     ui->MV_channel_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换MV频道界面";
     ui->stackedWidget->setCurrentWidget(this->m_mvChannel.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();

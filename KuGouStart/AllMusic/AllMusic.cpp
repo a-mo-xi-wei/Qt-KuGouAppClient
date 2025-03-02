@@ -26,6 +26,7 @@ AllMusic::AllMusic(QWidget *parent) :
         if (file.open(QIODevice::ReadOnly)) {
             this->setStyleSheet(file.readAll());
         } else {
+            qDebug() << "样式表打开失败QAQ";
             STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
@@ -180,6 +181,7 @@ void AllMusic::getMenuPosition(const QPoint &pos)  {
 void AllMusic::on_all_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allWidget.get())return;
     ui->all_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换全部界面";
     ui->stackedWidget->setCurrentWidget(this->m_allWidget.get());
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
@@ -200,6 +202,7 @@ void AllMusic::on_all_pushButton_clicked() {
 void AllMusic::on_love_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allLove.get())return;
     ui->love_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换喜欢界面";
     ui->stackedWidget->setCurrentWidget(this->m_allLove.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
@@ -220,6 +223,7 @@ void AllMusic::on_love_pushButton_clicked() {
 void AllMusic::on_song_list_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allSongList.get())return;
     ui->song_list_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换歌单界面";
     ui->stackedWidget->setCurrentWidget(this->m_allSongList.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -240,6 +244,7 @@ void AllMusic::on_song_list_pushButton_clicked() {
 void AllMusic::on_recent_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allRecent.get())return;
     ui->recent_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换最近界面";
     ui->stackedWidget->setCurrentWidget(this->m_allRecent.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -260,6 +265,7 @@ void AllMusic::on_recent_pushButton_clicked() {
 void AllMusic::on_local_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allLocal.get())return;
     ui->local_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换本地界面";
     ui->stackedWidget->setCurrentWidget(this->m_allLocal.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -280,6 +286,7 @@ void AllMusic::on_local_pushButton_clicked() {
 void AllMusic::on_paid_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allPaid.get())return;
     ui->paid_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换已购界面";
     ui->stackedWidget->setCurrentWidget(this->m_allPaid.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -300,6 +307,7 @@ void AllMusic::on_paid_pushButton_clicked() {
 void AllMusic::on_cloud_disk_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allCloudDisk.get())return;
     ui->cloud_disk_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换云盘界面";
     ui->stackedWidget->setCurrentWidget(this->m_allCloudDisk.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();

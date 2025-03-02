@@ -7,6 +7,7 @@
 #include "Search.h"
 #include "ui_Search.h"
 #include "MyFlowLayout.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QButtonGroup>
@@ -38,6 +39,7 @@ Search::Search(QWidget *parent) :
         this->setStyleSheet(file.readAll());
     } else {
         qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
     initStackWidget();
@@ -161,6 +163,7 @@ void Search::resizeEvent(QResizeEvent *event) {
     // 获取顶级窗口的指针
     if (!this->m_parent) {
         qWarning() << "无法获取顶级窗口！";
+        STREAM_WARN() << "无法获取顶级窗口！";
         return;
     }
 
@@ -202,7 +205,8 @@ void Search::on_recommend_pushButton_clicked() {
         refresh();
         auto lay = static_cast<MyFlowLayout*>(this->m_recommendWidget->layout());
         if(!lay) {
-            qDebug()<<"布局错误";
+            qDebug()<<" m_recommendWidget 布局错误";
+            STREAM_ERROR()<<" m_recommendWidget 布局错误";
             return;
         }
         //54个图片、描述
@@ -239,7 +243,8 @@ void Search::on_rank_pushButton_clicked() {
         refresh();
         auto lay = static_cast<MyFlowLayout*>(this->m_rankWidget->layout());
         if(!lay) {
-            qDebug()<<"布局错误";
+            qDebug()<<" m_rankWidget 布局错误";
+            STREAM_ERROR()<<" m_rankWidget 布局错误";
             return;
         }
         //19个图片、描述
@@ -276,7 +281,8 @@ void Search::on_special_pushButton_clicked() {
         refresh();
         auto lay = static_cast<MyFlowLayout*>(this->m_specialWidget->layout());
         if(!lay) {
-            qDebug()<<"布局错误";
+            qDebug()<<" m_specialWidget 布局错误";
+            STREAM_ERROR()<<" m_specialWidget 布局错误";
             return;
         }
         //27个图片、描述
@@ -313,7 +319,8 @@ void Search::on_channel_pushButton_clicked() {
         refresh();
         auto lay = static_cast<MyFlowLayout*>(this->m_channelWidget->layout());
         if(!lay) {
-            qDebug()<<"布局错误";
+            qDebug()<<" m_channelWidget 布局错误";
+            STREAM_ERROR()<<" m_channelWidget 布局错误";
             return;
         }
         //7个图片、描述
@@ -323,7 +330,7 @@ void Search::on_channel_pushButton_clicked() {
             btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
             btn->setIconSize(QSize(IMAGE_WIDTH, IMAGE_WIDTH));
             btn->setIcon(this->m_coverVector[i]);
-            QFont font("微软雅黑",10);
+            QFont font(btn->font().family(),10);
             QFontMetrics fm(font);
             auto text = this->m_descVector[i];
             auto elidedText = fm.elidedText(text,Qt::ElideRight,IMAGE_WIDTH);

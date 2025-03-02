@@ -49,6 +49,7 @@ KuGouApp::KuGouApp(MainWindow *parent)
         this->setStyleSheet(file.readAll());
     } else {
         qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
     initUi();
@@ -88,7 +89,8 @@ KuGouApp::KuGouApp(MainWindow *parent)
                                     [=](const QMediaPlayer::MediaStatus &status) {
                                         if (status == QMediaPlayer::EndOfMedia) {
                                             if (this->m_isOrderPlay) {
-                                                //qDebug()<<"结束，开始播放下一首";
+                                                qDebug()<<"结束，开始播放下一首";
+                                                STREAM_INFO() << "结束，开始播放下一首";
                                                 addOrderIndex();
                                             }
                                         }
@@ -653,10 +655,12 @@ void KuGouApp::onSyncSongInfoVector(QVector<SongInfor> &vec) {
 
 void KuGouApp::on_title_return_toolButton_clicked() {
     qDebug() << "返回，估计要使用堆栈";
+    STREAM_INFO() << "返回，估计要使用堆栈";
 }
 
 void KuGouApp::on_title_refresh_toolButton_clicked() {
     qDebug() << "刷新界面";
+    STREAM_INFO() << "刷新界面";
     ui->center_widget->repaint();
 }
 
@@ -723,10 +727,12 @@ void KuGouApp::on_min_toolButton_clicked() {
     //this->m_animation->start(); // 启动动画
     //// 最小化窗口
     //connect(this->m_animation.get(), &QPropertyAnimation::finished, this, [&]() {this->showMinimized();});
+    STREAM_INFO()<<"最小化窗口";
     this->showMinimized();
 }
 
 void KuGouApp::on_max_toolButton_clicked() {
+    STREAM_INFO()<<"最大化窗口";
     if (m_isMaxScreen) {
         this->m_isMaxScreen = false;//现在是正常化
         m_endGeometry = m_startGeometry; // 获取普通尺寸时的几何形状
@@ -782,6 +788,7 @@ void KuGouApp::on_max_toolButton_clicked() {
 }
 
 void KuGouApp::on_close_toolButton_clicked() {
+    STREAM_INFO()<<"退出应用程序";
     QApplication::quit(); // 退出应用程序
 }
 
@@ -801,7 +808,8 @@ void KuGouApp::on_music_repository_toolButton_clicked() {
 
     //设置上次指向
     this->m_lastBtn = ui->music_repository_toolButton;
-    //qDebug()<<"点击乐库";
+    qDebug()<<"点击乐库";
+    STREAM_INFO()<<"切换乐库界面";
 }
 
 void KuGouApp::on_channel_toolButton_clicked() {
@@ -811,7 +819,8 @@ void KuGouApp::on_channel_toolButton_clicked() {
 
     //设置上次指向
     this->m_lastBtn = ui->channel_toolButton;
-    //qDebug()<<"点击频道";
+    qDebug()<<"点击频道";
+    STREAM_INFO()<<"切换频道界面";
 }
 
 void KuGouApp::on_video_toolButton_clicked() {
@@ -821,12 +830,14 @@ void KuGouApp::on_video_toolButton_clicked() {
 
     //设置上次指向
     this->m_lastBtn = ui->video_toolButton;
-    //qDebug()<<"点击视频";
+    qDebug()<<"点击视频";
+    STREAM_INFO()<<"切换视频界面";
 }
 
 void KuGouApp::on_live_toolButton_clicked() {
     ui->title_live_pushButton->clicked();
     ui->title_live_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换直播界面";
 }
 
 void KuGouApp::on_song_list_toolButton_clicked() {
@@ -836,7 +847,8 @@ void KuGouApp::on_song_list_toolButton_clicked() {
 
     //设置上次指向
     this->m_lastBtn = ui->song_list_toolButton;
-    //qDebug()<<"点击歌单";
+    qDebug()<<"点击歌单";
+    STREAM_INFO()<<"切换歌单界面";
 }
 
 void KuGouApp::on_daily_recommend_toolButton_clicked() {
@@ -846,7 +858,8 @@ void KuGouApp::on_daily_recommend_toolButton_clicked() {
 
     //设置上次指向
     this->m_lastBtn = ui->daily_recommend_toolButton;
-    //qDebug()<<"点击每日推荐";
+    qDebug()<<"点击每日推荐";
+    STREAM_INFO()<<"切换每日推荐界面";
 }
 
 void KuGouApp::on_local_download_toolButton_clicked() {
@@ -856,6 +869,8 @@ void KuGouApp::on_local_download_toolButton_clicked() {
 
     //设置上次指向
     this->m_lastBtn = ui->local_download_toolButton;
+    qDebug()<<"点击本地与下载";
+    STREAM_INFO()<<"切换本地与下载界面";
 }
 
 void KuGouApp::on_my_collection_toolButton_clicked() {
@@ -865,7 +880,8 @@ void KuGouApp::on_my_collection_toolButton_clicked() {
 
     //设置上次指向
     this->m_lastBtn = ui->my_collection_toolButton;
-    //qDebug()<<"点击我的收藏";
+    qDebug()<<"点击我的收藏";
+    STREAM_INFO()<<"切换我的收藏界面";
 }
 
 void KuGouApp::on_music_cloud_disk_toolButton_clicked() {
@@ -875,7 +891,8 @@ void KuGouApp::on_music_cloud_disk_toolButton_clicked() {
 
     //设置上次指向
     this->m_lastBtn = ui->music_cloud_disk_toolButton;
-    //qDebug()<<"点击音乐云盘";
+    qDebug()<<"点击音乐云盘";
+    STREAM_INFO()<<"切换音乐云盘界面";
 }
 
 void KuGouApp::on_purchased_music_toolButton_clicked() {
@@ -885,7 +902,8 @@ void KuGouApp::on_purchased_music_toolButton_clicked() {
 
     //设置上次指向
     this->m_lastBtn = ui->purchased_music_toolButton;
-    //qDebug()<<"点击已购音乐";
+    qDebug()<<"点击已购音乐";
+    STREAM_INFO()<<"切换音乐云盘界面";
 }
 
 void KuGouApp::on_recently_played_toolButton_clicked() {
@@ -895,7 +913,8 @@ void KuGouApp::on_recently_played_toolButton_clicked() {
 
     //设置上次指向
     this->m_lastBtn = ui->recently_played_toolButton;
-    //qDebug()<<"点击最近播放";
+    qDebug()<<"点击最近播放";
+    STREAM_INFO()<<"切换最近播放界面";
 }
 
 void KuGouApp::on_all_music_toolButton_clicked() {
@@ -905,7 +924,8 @@ void KuGouApp::on_all_music_toolButton_clicked() {
 
     //设置上次指向
     this->m_lastBtn = ui->all_music_toolButton;
-    //qDebug()<<"点击默认列表";
+    qDebug()<<"点击默认列表";
+    STREAM_INFO()<<"切换默认列表界面";
 }
 
 void KuGouApp::on_play_or_pause_toolButton_clicked() {
@@ -970,8 +990,10 @@ void KuGouApp::on_circle_toolButton_clicked() {
                                                     setPlayMusic(this->m_songIndex);
                                                 }
                                             });
-        } else
+        } else {
             qDebug() << "mediaStatusConnection is empty";
+            STREAM_WARN() << "mediaStatusConnection is empty";
+        }
     } else {
         //qDebug()<<"播放一次";
         if (mediaStatusConnection) {
@@ -986,9 +1008,10 @@ void KuGouApp::on_circle_toolButton_clicked() {
                                                     }
                                                 }
                                             });
-        } else
+        } else {
             qDebug() << "mediaStatusConnection is empty";
-
+            STREAM_WARN() << "mediaStatusConnection is empty";
+        }
         ui->circle_toolButton->setStyleSheet(R"(QToolButton{border-image:url(':/Res/playbar/list-loop-gray.svg');}
                                             QToolButton:hover{border-image:url(':/Res/playbar/list-loop-blue.svg');})");
     }

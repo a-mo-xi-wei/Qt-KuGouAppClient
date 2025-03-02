@@ -7,6 +7,7 @@
 #include "UploadedSong.h"
 #include "ui_UploadedSong.h"
 #include "MyMenu.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QScreen>
@@ -25,6 +26,7 @@ UploadedSong::UploadedSong(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }

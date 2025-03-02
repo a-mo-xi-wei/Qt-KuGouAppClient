@@ -13,16 +13,11 @@ int main(int argc, char *argv[])
     if (!logger::get().init("logs/main.log")) {
         return 1;
     }
-    logger::get().set_level(spdlog::level::trace);
+    logger::get().set_level(spdlog::level::info);
     //三种方式
-    STREAM_DEBUG() << "STREAM_DEBUG : 程序开始（trace）" << 1;
-    PRINT_DEBUG("PRINT_DEBUG : 程序开始（trace）%d",1);
-    LOG_DEBUG("LOG_DEBUG : 程序开始（trace）{}" , 1);
-
-    logger::get().set_level(spdlog::level::debug);
-    STREAM_DEBUG() << "STREAM_DEBUG : 程序开始（debug）" << 2;
-    PRINT_WARN("PRINT_WARN : 程序开始（debug）, %d", 2);
-    LOG_INFO("LOG_INFO : 程序开始（debug） {}", 2);
+    STREAM_INFO() << "STREAM_INFO : 程序开始（info）" << 1;
+    PRINT_INFO("PRINT_INFO : 程序开始（info）%d",1);
+    LOG_INFO("LOG_INFO : 程序开始（info）{}" , 1);
 
     //qInstallMessageHandler(myMessageHandler);
     QApplication a(argc, argv);

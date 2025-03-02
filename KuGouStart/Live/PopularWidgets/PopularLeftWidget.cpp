@@ -2,6 +2,7 @@
 // Created by WeiWang on 25-2-17.
 
 #include "PopularLeftWidget.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QGraphicsEffect>
@@ -31,6 +32,7 @@ PopularLeftWidget::PopularLeftWidget(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }

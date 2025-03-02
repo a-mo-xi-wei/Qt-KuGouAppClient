@@ -6,6 +6,7 @@
 
 #include "LocalSong.h"
 #include "ui_LocalSong.h"
+#include "logger.hpp"
 
 #include <QFileDialog>
 #include <QMediaMetaData>
@@ -32,6 +33,7 @@ LocalSong::LocalSong(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -320,7 +322,8 @@ void LocalSong::on_local_add_toolButton_clicked() {
     //QString fileName = QUrl::fromLocalFile(path).fileName();
     //qDebug() << "插入："<<paths.size()<<"条数据";
     for (auto &path: paths) {
-        //qDebug()<<"添加歌曲 ："<<path;
+        qDebug()<<"添加歌曲 ："<<path;
+        STREAM_INFO()<<"添加歌曲 ："<<path.toStdString();
         this->m_songQueue.enqueue(path);
     }
     this->loadNextSong();
@@ -514,7 +517,8 @@ void LocalSong::onItemViewSongInfo() {
 }
 
 void LocalSong::onItemDeleteSong(const int &idx) {
-    //qDebug()<<"收到删除信号，删除第 "<<idx<<" 项";
+    qDebug()<<"收到删除信号，删除第 "<<idx<<" 项";
+    PRINT_INFO("收到删除信号，删除第 %d 项",idx);
     this->m_lastLocationMusicVector = this->m_locationMusicVector;
     const auto widget = this->m_MusicItemVector[idx];
     widget->deleteLater();

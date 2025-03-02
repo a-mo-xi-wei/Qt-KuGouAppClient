@@ -6,6 +6,7 @@
 
 #include "MyCollection.h"
 #include "ui_MyCollection.h"
+#include "logger.hpp"
 
 #include <QButtonGroup>
 #include <QFile>
@@ -24,6 +25,7 @@ MyCollection::MyCollection(QWidget *parent) :
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -405,6 +407,7 @@ void MyCollection::on_singleSong_pushButton_clicked() {
         return;  // 页面已是目标页面，无需切换
     }
     ui->singleSong_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换单曲界面";
     ui->stackedWidget->setCurrentWidget(this->m_singleSong.get());
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
@@ -423,6 +426,7 @@ void MyCollection::on_singleSong_pushButton_clicked() {
 void MyCollection::on_songList_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_songList.get())return;
     ui->songList_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换歌单界面";
     ui->stackedWidget->setCurrentWidget(this->m_songList.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
@@ -441,6 +445,7 @@ void MyCollection::on_songList_pushButton_clicked() {
 void MyCollection::on_specialAlbum_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_specialAlbum.get())return;
     ui->specialAlbum_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换专辑界面";
     ui->stackedWidget->setCurrentWidget(this->m_specialAlbum.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -459,6 +464,7 @@ void MyCollection::on_specialAlbum_pushButton_clicked() {
 void MyCollection::on_collectVideo_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_collectVideo.get())return;
     ui->collectVideo_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换视频界面";
     ui->stackedWidget->setCurrentWidget(this->m_collectVideo.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -477,6 +483,7 @@ void MyCollection::on_collectVideo_pushButton_clicked() {
 void MyCollection::on_singer_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_singerWidget.get())return;
     ui->singer_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换歌手界面";
     ui->stackedWidget->setCurrentWidget(this->m_singerWidget.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -495,6 +502,7 @@ void MyCollection::on_singer_pushButton_clicked() {
 void MyCollection::on_device_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_deviceWidget.get())return;
     ui->device_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换设备界面";
     ui->stackedWidget->setCurrentWidget(this->m_deviceWidget.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();

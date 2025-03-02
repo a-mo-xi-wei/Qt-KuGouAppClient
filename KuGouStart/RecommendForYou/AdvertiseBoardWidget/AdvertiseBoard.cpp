@@ -1,4 +1,5 @@
 #include "AdvertiseBoard.h"
+#include "logger.hpp"
 
 #include <QPixmap>
 #include <QTimer>
@@ -38,14 +39,16 @@ AdvertiseBoard::AdvertiseBoard(QWidget *parent)
     this->m_leftLab->setAlignment(Qt::AlignCenter);
     this->m_rightLab->setAlignment(Qt::AlignCenter);
 
-    connect(this->m_leftLab, &MyLLabel::clicked, [this] {
+    connect(this->m_leftLab, &MyLLabel::clicked, [=] {
         posterIndex = (posterIndex - 1 + static_cast<int>(this->m_posters.size())) % static_cast<int>(this->m_posters.size());
         this->update();
         this->m_timer->start(3000);
+        STREAM_INFO()<<"手动切换上一张图片";
     });
-    connect(this->m_rightLab, &MyRLabel::clicked, [this] {
+    connect(this->m_rightLab, &MyRLabel::clicked, [=] {
         posterIndex = (posterIndex + 1) % static_cast<int>(this->m_posters.size());
         this->update();
+        STREAM_INFO()<<"手动切换下一张图片";
         this->m_timer->start(3000);
     });
 

@@ -6,10 +6,10 @@
 
 #include "VideoChannelBlock.h"
 #include "ui_VideoChannelBlock.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QRandomGenerator>
-#include <QFontMetrics>
 #include <QFontDatabase>
 #include <QLabel>
 
@@ -28,6 +28,7 @@ VideoChannelBlock::VideoChannelBlock(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -86,6 +87,7 @@ void VideoChannelBlock::initCoverTextFont() {
     int fontId = QFontDatabase::addApplicationFont(":/Res/font/qing-ning-you-yuan.ttf");
     if (fontId == -1) {
         qWarning() << "字体加载失败。。。";
+        STREAM_WARN() << "字体加载失败。。。";
         return;
     }
     auto fontFamily = QFontDatabase::applicationFontFamilies(fontId).at(0);

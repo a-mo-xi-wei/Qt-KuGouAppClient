@@ -6,6 +6,7 @@
 
 #include "Video.h"
 #include "ui_Video.h"
+#include "logger.hpp"
 
 #include<QButtonGroup>
 #include<QFile>
@@ -25,6 +26,7 @@ Video::Video(QWidget *parent) :
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -74,7 +76,7 @@ void Video::initVideoWidget() {
 }
 void Video::on_video_channel_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_videoChannelWidget.get());
-    //qDebug()<<"点击videoChannelWidget";
+    STREAM_INFO()<<"切换 videoChannelWidget 界面";
     ui->index_label1->show();
     ui->index_label2->hide();
     ui->index_label3->hide();
@@ -82,7 +84,7 @@ void Video::on_video_channel_pushButton_clicked() {
 
 void Video::on_MV_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_MVWidget.get());
-    //qDebug()<<"点击MVWidget";
+    STREAM_INFO()<<"切换 MVWidget 界面";
     ui->index_label1->hide();
     ui->index_label2->show();
     ui->index_label3->hide();
@@ -90,7 +92,7 @@ void Video::on_MV_pushButton_clicked() {
 
 void Video::on_video_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_videoWidget.get());
-    //qDebug()<<"点击videoWidget";
+    STREAM_INFO()<<"切换 videoWidget 界面";
     ui->index_label1->hide();
     ui->index_label2->hide();
     ui->index_label3->show();

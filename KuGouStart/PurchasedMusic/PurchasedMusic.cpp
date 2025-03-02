@@ -6,6 +6,7 @@
 
 #include "PurchasedMusic.h"
 #include "ui_PurchasedMusic.h"
+#include "logger.hpp"
 
 #include <QButtonGroup>
 #include <QFile>
@@ -25,6 +26,7 @@ PurchasedMusic::PurchasedMusic(QWidget *parent) :
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -88,6 +90,7 @@ void PurchasedMusic::on_paid_single_pushButton_clicked() {
         return;  // 页面已是目标页面，无需切换
     }
     ui->paid_single_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换付费单曲界面";
     ui->stackedWidget->setCurrentWidget(this->m_paidSingle.get());
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
@@ -102,6 +105,7 @@ void PurchasedMusic::on_purchased_albums_pushButton_clicked() {
         return;  // 页面已是目标页面，无需切换
     }
     ui->purchased_albums_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换已购专辑界面";
     ui->stackedWidget->setCurrentWidget(this->m_purchasedAlbums.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
@@ -116,6 +120,7 @@ void PurchasedMusic::on_purchased_video_pushButton_clicked() {
         return;  // 页面已是目标页面，无需切换
     }
     ui->purchased_video_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换已购视频界面";
     ui->stackedWidget->setCurrentWidget(this->m_purchasedVideos.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();

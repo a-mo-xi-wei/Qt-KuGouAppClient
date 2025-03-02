@@ -6,6 +6,7 @@
 
 #include "RecentlyMVChannel.h"
 #include "ui_RecentlyMVChannel.h"
+#include "logger.hpp"
 
 #include <QFile>
 
@@ -20,6 +21,7 @@ RecentlyMVChannel::RecentlyMVChannel(QWidget *parent) :
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }

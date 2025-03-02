@@ -7,6 +7,7 @@
 #include "LiveMusicPartWidget.h"
 #include "ui_LiveMusicPartWidget.h"
 #include "Async.h"
+#include "logger.hpp"
 
 #include <QDir>
 #include <QFile>
@@ -30,6 +31,7 @@ LiveMusicPartWidget::LiveMusicPartWidget(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -60,6 +62,7 @@ void LiveMusicPartWidget::initUi() {
     Async::onResultReady(future, this, [this](const QList<QString> &texts) {
         if (texts.isEmpty()) {
             qWarning() << "No valid data parsed from JSON";
+            STREAM_WARN() << "No valid data parsed from JSON";
             return;
         }
         // 更新成员变量
@@ -102,12 +105,14 @@ QList<QString> LiveMusicPartWidget::parseJsonFile(const QString &filePath) {
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly)) {
         qWarning() << "Failed to open JSON file:" << filePath;
+        STREAM_WARN() << "Failed to open JSON file:" << filePath.toStdString();
         return texts;
     }
     QJsonParseError parseError;
     const QJsonDocument doc = QJsonDocument::fromJson(file.readAll(), &parseError);
     if (parseError.error != QJsonParseError::NoError) {
         qWarning() << "JSON parse error:" << parseError.errorString();
+        STREAM_WARN() << "JSON parse error:" << parseError.errorString().toStdString();
         return texts;
     }
     QJsonArray arr = doc.array();
@@ -171,6 +176,7 @@ int LiveMusicPartWidget::getFileCount(const QString &folderPath) {
 
     if (!dir.exists()) {
         qWarning("目录不存在: %s", qPrintable(folderPath));
+        PRINT_WARN("目录不存在: %s", folderPath.toStdString());
         return 0;
     }
 

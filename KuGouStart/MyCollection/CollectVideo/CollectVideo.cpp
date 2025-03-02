@@ -6,6 +6,7 @@
 
 #include "CollectVideo.h"
 #include "ui_CollectVideo.h"
+#include "logger.hpp"
 
 #include <QFile>
 
@@ -22,6 +23,7 @@ CollectVideo::CollectVideo(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }

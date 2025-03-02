@@ -5,19 +5,17 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_LiveCommonPartWidget.h" resolved
 
 #include "LiveCommonPartWidget.h"
-
-#include <QDir>
-
 #include "ui_LiveCommonPartWidget.h"
 #include "LiveBlockWidget/LiveBlockWidget.h"
 #include "Async.h"
+#include "logger.hpp"
 
-#include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QRandomGenerator>
 #include <random>
+#include <QDir>
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
@@ -32,6 +30,7 @@ LiveCommonPartWidget::LiveCommonPartWidget(QWidget *parent, const int lines)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -68,6 +67,7 @@ int LiveCommonPartWidget::getFileCount(const QString &folderPath) {
 
     if (!dir.exists()) {
         qWarning("目录不存在: %s", qPrintable(folderPath));
+        PRINT_WARN("目录不存在: %s", folderPath.toStdString());
         return 0;
     }
 
@@ -94,9 +94,10 @@ void LiveCommonPartWidget::initUi(const int& lines) {
     const auto future = Async::runAsync(QThreadPool::globalInstance(), &LiveCommonPartWidget::parseJsonFile,
         this,jsonPath);
     // 结果处理回调
-    Async::onResultReady(future, this, [this,lines](const QList<QString> &texts) {
+    Async::onResultReady(future, this, [=](const QList<QString> &texts) {
         if (texts.isEmpty()) {
             qWarning() << "No valid data parsed from JSON";
+            STREAM_WARN() << "No valid data parsed from JSON";
             return;
         }
         // 更新成员变量
@@ -120,12 +121,14 @@ QList<QString> LiveCommonPartWidget::parseJsonFile(const QString &filePath) {
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly)) {
         qWarning() << "Failed to open JSON file:" << filePath;
+        STREAM_WARN() << "Failed to open JSON file:" << filePath.toStdString();
         return texts;
     }
     QJsonParseError parseError;
     const QJsonDocument doc = QJsonDocument::fromJson(file.readAll(), &parseError);
     if (parseError.error != QJsonParseError::NoError) {
         qWarning() << "JSON parse error:" << parseError.errorString();
+        STREAM_WARN() << "JSON parse error:" << parseError.errorString().toStdString();
         return texts;
     }
     QJsonArray arr = doc.array();

@@ -6,6 +6,7 @@
 
 #include "MusicRepository.h"
 #include "ui_MusicRepository.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QButtonGroup>
@@ -27,12 +28,14 @@ MusicRepository::MusicRepository(QWidget *parent)
         this->setStyleSheet(file.readAll());
     } else {
         qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
     initUi();
     this->m_topWindow = this->window();
     if (!m_topWindow) {
         qWarning() << "无法获取顶级窗口！";
+        STREAM_WARN() << "无法获取顶级窗口！";
         return;
     }
 }
@@ -358,16 +361,19 @@ void MusicRepository::on_chinese_pushButton_clicked() {
             int index = row * 3 + col; // 根据行列计算index
             if (index >= this->m_chineseVector.size()) {
                 qWarning() << "m_chineseVector out of range!";
+                STREAM_WARN() << "m_chineseVector out of range!";
                 return;
             }
             auto item = ui->gridLayout->itemAtPosition(row, col); // 按行列获取item
             if (!item) {
                 qWarning() << "item error at position:" << row << col;
+                STREAM_WARN() << "item error at position:" << row << col;
                 return;
             }
             auto widget = static_cast<MusicRepoList *>(item->widget());
             if (!widget) {
                 qWarning() << "widget error at position:" << row << col;
+                STREAM_WARN() << "widget error at position:" << row << col;
                 return;
             }
             // 更新对应的widget内容

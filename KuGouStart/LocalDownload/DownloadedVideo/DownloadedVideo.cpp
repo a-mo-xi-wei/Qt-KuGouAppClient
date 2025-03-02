@@ -6,6 +6,7 @@
 
 #include "DownloadedVideo.h"
 #include "ui_DownloadedVideo.h"
+#include "logger.hpp"
 
 #include <QFile>
 
@@ -22,6 +23,7 @@ DownloadedVideo::DownloadedVideo(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }

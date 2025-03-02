@@ -141,17 +141,20 @@ void ListenBook::initListenRecentlyPlay() {
 void ListenBook::on_listen_recommend_toolButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_listenRecommend.get())
         return;
+    STREAM_INFO()<<"切换推荐界面";
     ui->stackedWidget->setCurrentWidget(this->m_listenRecommend.get());
 }
 
 void ListenBook::on_listen_my_download_toolButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_listenMyDownload.get())
         return;
+    STREAM_INFO()<<"切换下载界面";
     ui->stackedWidget->setCurrentWidget(this->m_listenMyDownload.get());
 }
 
 void ListenBook::on_recently_play_toolButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_listenRecentlyPlay.get())
         return;
+    STREAM_INFO()<<"切换最近界面";
     ui->stackedWidget->setCurrentWidget(this->m_listenRecentlyPlay.get());
 }

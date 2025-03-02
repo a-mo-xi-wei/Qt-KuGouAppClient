@@ -6,6 +6,7 @@
 
 #include "MusicRepoBlock.h"
 #include "ui_MusicRepoBlock.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QMouseEvent>
@@ -23,6 +24,7 @@ MusicRepoBlock::MusicRepoBlock(QWidget *parent) :
         this->setStyleSheet(file.readAll());
     } else {
         qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
 }

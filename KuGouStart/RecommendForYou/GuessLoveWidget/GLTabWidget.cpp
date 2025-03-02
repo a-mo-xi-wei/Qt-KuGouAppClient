@@ -1,6 +1,7 @@
 #include "GLTabWidget.h"
 #include "IconBesideTextToolButton.h"
 #include "MyMenu.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QLabel>
@@ -62,6 +63,7 @@ void GLTabWidget::initUi() {
         this->setStyleSheet(file.readAll());
     } else {
         qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
 }

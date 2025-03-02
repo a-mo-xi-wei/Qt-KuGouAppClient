@@ -6,6 +6,7 @@
 
 #include "VideoChannelWidget.h"
 #include "ui_VideoChannelWidget.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QButtonGroup>
@@ -42,6 +43,7 @@ VideoChannelWidget::VideoChannelWidget(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -91,6 +93,7 @@ void VideoChannelWidget::initUi() {
         lay->setSpacing(0);
         if (!lay) {
             qWarning() << "布局不存在";
+            STREAM_WARN() << "布局不存在";
             return;
         }
         lay->insertWidget(lay->count() - 1, m_popularWidget.get());

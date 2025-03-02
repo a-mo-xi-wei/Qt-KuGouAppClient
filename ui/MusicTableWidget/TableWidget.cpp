@@ -78,6 +78,7 @@ void TableWidget::resizeEvent(QResizeEvent *event) {
     if (this->m_kind == KIND::ItemList) {
         this->m_topWindow = this->window();
         if (!m_topWindow) {
+            qWarning()<<"无法获取顶级窗口！";
             STREAM_WARN()<<"无法获取顶级窗口！";
             return;
         }
@@ -127,6 +128,7 @@ void TableWidget::initUi() {
     if (file.open(QIODevice::ReadOnly)) {
         this->setStyleSheet(file.readAll());
     } else {
+        qDebug()<< "样式表打开失败QAQ";
         STREAM_ERROR()<< "样式表打开失败QAQ";
         return;
     }
@@ -479,6 +481,7 @@ void TableWidget::onRefreshBtnClicked() {
 }
 
 void TableWidget::onRefreshTimeout() {
+    qDebug()<<"刷新TableWidget";
     STREAM_INFO()<<"刷新TableWidget";
     if (this->m_kind == KIND::BlockList) {
         shuffleBlockCover();
@@ -580,6 +583,7 @@ ItemListWidget::ItemListWidget(QPixmap coverPix, const QString &name, const QStr
     if (file.open(QIODevice::ReadOnly)) {
         this->setStyleSheet(file.readAll());
     } else {
+        qDebug() << "样式表打开失败QAQ";
         STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
@@ -746,6 +750,7 @@ void ItemListWidget::updateSinger() const {
 }
 
 void ItemListWidget::onHide() {
+    qDebug() << "隐藏/显示";
     STREAM_INFO() << "隐藏/显示";
     this->setHidden(!this->isHidden());
     update();

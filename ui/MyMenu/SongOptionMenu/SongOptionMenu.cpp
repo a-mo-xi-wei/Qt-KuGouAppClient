@@ -486,7 +486,6 @@ void SongOptionMenu::initMenu() {
     this->addAction(a_uploadAction);
     //qDebug() << "Exiting initSongOptionMenu";
     this->hide();
-    STREAM_INFO()<<"SongOptionMenu 初始化成功";
 }
 
 const SongOptionMenu* SongOptionMenu::getMenu() const {

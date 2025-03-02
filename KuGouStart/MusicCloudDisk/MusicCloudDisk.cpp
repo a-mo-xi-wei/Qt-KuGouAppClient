@@ -6,6 +6,7 @@
 
 #include "MusicCloudDisk.h"
 #include "ui_MusicCloudDisk.h"
+#include "logger.hpp"
 
 #include <QButtonGroup>
 #include <QFile>
@@ -24,6 +25,7 @@ MusicCloudDisk::MusicCloudDisk(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -86,6 +88,7 @@ void MusicCloudDisk::on_uploaded_song_pushButton_clicked() {
         return;  // 页面已是目标页面，无需切换
     }
     ui->uploaded_song_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换已上传歌曲界面";
     ui->stackedWidget->setCurrentWidget(this->m_uploadedSong.get());
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
@@ -98,6 +101,7 @@ void MusicCloudDisk::on_uploading_song_pushButton_clicked() {
         return;  // 页面已是目标页面，无需切换
     }
     ui->uploading_song_pushButton->setChecked(true);
+    STREAM_INFO()<<"切换正在上传界面";
     ui->stackedWidget->setCurrentWidget(this->m_uploadingSong.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->show();

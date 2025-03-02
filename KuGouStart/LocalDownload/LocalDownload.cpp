@@ -6,6 +6,7 @@
 
 #include "LocalDownload.h"
 #include "ui_LocalDownload.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QButtonGroup>
@@ -25,6 +26,7 @@ LocalDownload::LocalDownload(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -107,6 +109,7 @@ void LocalDownload::on_local_music_pushButton_clicked() {
     //切换堆栈界面
     if (ui->stackedWidget->currentWidget() == this->m_localSong.get())return;
     if (!ui->download_history_toolButton->isHidden())ui->download_history_toolButton->hide();
+    STREAM_INFO()<<"切换本地歌曲界面";
     ui->stackedWidget->setCurrentWidget(this->m_localSong.get());
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
@@ -122,6 +125,7 @@ void LocalDownload::on_downloaded_music_pushButton_clicked() {
     //切换堆栈界面
     if (ui->stackedWidget->currentWidget() == this->m_downloadedSong.get())return;
     ui->download_history_toolButton->show();
+    STREAM_INFO()<<"切换下载歌曲界面";
     ui->stackedWidget->setCurrentWidget(this->m_downloadedSong.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
@@ -137,6 +141,7 @@ void LocalDownload::on_downloaded_video_pushButton_clicked() {
     //切换堆栈界面
     if (ui->stackedWidget->currentWidget() == this->m_downloadedVideo.get())return;
     if (!ui->download_history_toolButton->isHidden())ui->download_history_toolButton->hide();
+    STREAM_INFO()<<"切换下载视频界面";
     ui->stackedWidget->setCurrentWidget(this->m_downloadedVideo.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
@@ -152,6 +157,7 @@ void LocalDownload::on_downloading_pushButton_clicked() {
     //切换堆栈界面
     if (ui->stackedWidget->currentWidget() == this->m_downloading.get())return;
     if (!ui->download_history_toolButton->isHidden())ui->download_history_toolButton->hide();
+    STREAM_INFO()<<"切换正在下载界面";
     ui->stackedWidget->setCurrentWidget(this->m_downloading.get());
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();

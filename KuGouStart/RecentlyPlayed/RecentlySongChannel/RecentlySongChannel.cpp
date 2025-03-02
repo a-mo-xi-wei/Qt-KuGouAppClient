@@ -7,6 +7,7 @@
 #include "RecentlySongChannel.h"
 #include "ui_RecentlySongChannel.h"
 #include "RecentlyChannelBlock.h"
+#include "logger.hpp"
 
 #include <QFile>
 
@@ -24,6 +25,7 @@ RecentlySongChannel::RecentlySongChannel(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }

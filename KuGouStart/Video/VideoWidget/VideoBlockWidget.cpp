@@ -6,6 +6,7 @@
 
 #include "VideoBlockWidget.h"
 #include "ui_VideoBlockWidget.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QPainter>
@@ -26,6 +27,7 @@ VideoBlockWidget::VideoBlockWidget(QWidget *parent) :
         this->setStyleSheet(file.readAll());
     } else {
         qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
     initUi();

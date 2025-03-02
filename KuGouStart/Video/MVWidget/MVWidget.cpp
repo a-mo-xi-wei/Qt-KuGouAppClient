@@ -6,12 +6,11 @@
 
 #include "MVWidget.h"
 #include "ui_MVWidget.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QMouseEvent>
 #include <QButtonGroup>
-#include <QPropertyAnimation>
-#include <QScrollBar>
 #include <QTimer>
 #include <random>
 #include <QJsonDocument>
@@ -34,6 +33,7 @@ MVWidget::MVWidget(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -114,6 +114,7 @@ void MVWidget::initVector() {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/title.json"));
         if (!file.open(QIODevice::ReadOnly)) {
             qWarning() << "Could not open file for reading title.json";
+            STREAM_WARN() << "Could not open file for reading title.json";
             return;
         }
         auto obj = QJsonDocument::fromJson(file.readAll());
@@ -336,16 +337,19 @@ void MVWidget::on_recommend_pushButton_clicked() {
             int index = row * 3 + col; // 根据行列计算index
             if (index >= this->m_recommendVector.size()) {
                 qWarning() << "m_recommendVector out of range!";
+                STREAM_WARN() << "m_recommendVector out of range!";
                 return;
             }
             auto item = layout->itemAtPosition(row, col); // 按行列获取item
             if (!item) {
                 qWarning() << "item error at position:" << row << col;
+                STREAM_WARN() << "item error at position:" << row << col;
                 return;
             }
             auto widget = static_cast<MVBlockWidget *>(item->widget());
             if (!widget) {
                 qWarning() << "widget error at position:" << row << col;
+                STREAM_WARN() << "widget error at position:" << row << col;
                 return;
             }
             // 更新对应的widget内容

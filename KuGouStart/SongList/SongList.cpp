@@ -9,6 +9,7 @@
 #include "SongBlock.h"
 #include "MyFlowLayout.h"
 #include "MyMenu.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QJsonArray>
@@ -29,6 +30,7 @@ SongList::SongList(QWidget *parent)
             this->setStyleSheet(file.readAll());
         } else {
             qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
@@ -87,6 +89,7 @@ void SongList::initDescVector() {
     QFile file(GET_CURRENT_DIR + QStringLiteral("/descs.json"));
     if (!file.open(QIODevice::ReadOnly)) {
         qWarning() << "Could not open file for reading descs.json";
+        STREAM_WARN() << "Could not open file for reading descs.json";
         return;
     }
     auto obj = QJsonDocument::fromJson(file.readAll());

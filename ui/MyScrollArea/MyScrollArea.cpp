@@ -85,11 +85,13 @@ void MyScrollArea::onUpBtnClicked() {
     // 在动画结束后标记动画停止
     connect(animation, &QPropertyAnimation::finished, this, [=] {
         this->setAnimating(false); //动画结束启用滚轮
+        qDebug()<<"回到顶部动画结束";
         STREAM_INFO()<<"回到顶部动画结束";
     });
 
     // 启动动画
     animation->start(QAbstractAnimation::DeleteWhenStopped); // 动画结束后自动删除
+    qDebug()<<"回到顶部动画开始";
     STREAM_INFO()<<"回到顶部动画开始";
 }
 

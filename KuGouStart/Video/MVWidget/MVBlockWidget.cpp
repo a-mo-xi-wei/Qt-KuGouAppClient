@@ -6,10 +6,10 @@
 
 #include "MVBlockWidget.h"
 #include "ui_MVBlockWidget.h"
+#include "logger.hpp"
 
 #include <QFile>
 #include <QMouseEvent>
-
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -22,6 +22,7 @@ MVBlockWidget::MVBlockWidget(QWidget *parent) :
         this->setStyleSheet(file.readAll());
     } else {
         qDebug() << "样式表打开失败QAQ";
+        STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
     initUi();
