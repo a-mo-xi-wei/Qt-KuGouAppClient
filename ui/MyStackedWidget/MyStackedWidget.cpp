@@ -4,8 +4,6 @@
 
 #include "MyStackedWidget.h"
 
-#include <QResizeEvent>
-
 MyStackedWidget::MyStackedWidget(QWidget *parent) :
     QStackedWidget(parent)
 {
