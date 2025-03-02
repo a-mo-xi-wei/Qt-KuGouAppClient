@@ -15,7 +15,6 @@ set(SOURCE_FILE
     AllMusic.cpp
     AllMusic.h
     AllMusic.ui
-    all.css
 )
 
 #添加"全部"模块

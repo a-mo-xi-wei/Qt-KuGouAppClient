@@ -15,11 +15,9 @@ set(SOURCE_FILE
     Channel.cpp
     Channel.h
     Channel.ui
-    channel.css
     ChannelBlock.cpp
     ChannelBlock.h
     ChannelBlock.ui
-    channelblock.css
     PartWidget.h
     PartWidget.cpp
 )
