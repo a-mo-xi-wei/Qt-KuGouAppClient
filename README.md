@@ -18,7 +18,7 @@
 </p>
 
 ---
-### 本人开发工具用的是CLion，非常简便，编译的话，生产器使用Ninja，工具链请使用 **_MinGW_** , *MSVC* 虽然能编译通过，但是播放音乐有个BUG，不知道怎么回事。
+### 本人开发工具用的是CLion，非常简便，编译的话，生产器使用Ninja， 工具链请使用 **_MinGW_** ,           *MSVC* 虽然能编译通过，但是播放音乐有个BUG，不知道怎么回事。
 | [Ubuntu/macOS][lin-link] | [Windows][win-link] | [License][license-link] |
 | :----------------------: | :-----------------: | :---------------------: |
 |       ![lin-badge]       |    ![win-badge]     |    ![license-badge]     |
