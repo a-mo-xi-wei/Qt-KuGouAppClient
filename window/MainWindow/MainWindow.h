@@ -3,6 +3,8 @@
 
 #include<QWidget>
 
+class SystemTrayIcon;
+
 namespace Area {
     /* 这里我们将一个窗口划分为9个区域，分别为
      左上角（1, 1）、中上（1，2）、右上角（1, 3）
@@ -66,6 +68,7 @@ private:
     int getMouseRegion(const int& x, const int& y) const;
 
 public:
+    SystemTrayIcon* m_trayIcon{};//桌面图标
     bool isPress = false;
     QPoint windowsLastPs;
     QPoint mousePs;

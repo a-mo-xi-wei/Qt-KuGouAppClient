@@ -1,5 +1,7 @@
 #include "MainWindow.h"
 #include "WaterDrop.h"
+#include "SystemTrayIcon.h"
+
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
@@ -7,9 +9,13 @@
 constexpr int SHADOW_WIDTH = 5;
 constexpr int RADIUS = 12;
 
-MainWindow::MainWindow(QWidget *parent) :
-    QWidget(parent)
+MainWindow::MainWindow(QWidget *parent)
+    : QWidget(parent)
+    , m_trayIcon(new SystemTrayIcon())
 {
+    m_trayIcon->setTrayIconPath(QPixmap(":/Res/window/windowIcon.ico"));
+    m_trayIcon->setMainWindow(this);
+    m_trayIcon->createTrayIcon();
 }
 
 void MainWindow::paintEvent(QPaintEvent *event) {
