@@ -6,6 +6,7 @@
 
 #include "AllRecent.h"
 #include "ui_AllRecent.h"
+#include "logger.hpp"
 
 #include <QFile>
 
@@ -19,7 +20,7 @@ AllRecent::AllRecent(QWidget *parent) :
         if (file.open(QIODevice::ReadOnly)) {
             this->setStyleSheet(file.readAll());
         } else {
-            qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }

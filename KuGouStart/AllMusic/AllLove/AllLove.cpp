@@ -6,6 +6,7 @@
 
 #include "AllLove.h"
 #include "ui_AllLove.h"
+#include "logger.hpp"
 
 #include <QFile>
 
@@ -19,7 +20,7 @@ AllLove::AllLove(QWidget *parent) :
         if (file.open(QIODevice::ReadOnly)) {
             this->setStyleSheet(file.readAll());
         } else {
-            qDebug() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
