@@ -7,6 +7,11 @@
 
 #include <QWidget>
 
+#if defined(ALLLOCAL_LIBRARY)
+#define ALLLOCAL_EXPORT Q_DECL_EXPORT
+#else
+#define ALLLOCAL_EXPORT Q_DECL_IMPORT
+#endif
 
 QT_BEGIN_NAMESPACE
 
@@ -16,7 +21,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class AllLocal : public QWidget {
+class ALLLOCAL_EXPORT AllLocal : public QWidget {
     Q_OBJECT
 
 public:

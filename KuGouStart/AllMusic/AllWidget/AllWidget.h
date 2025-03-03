@@ -7,16 +7,20 @@
 
 #include <QWidget>
 
+// 添加导出宏定义
+#if defined(ALLWIDGET_LIBRARY)
+#define ALLWIDGET_EXPORT Q_DECL_EXPORT
+#else
+#define ALLWIDGET_EXPORT Q_DECL_IMPORT
+#endif
 
 QT_BEGIN_NAMESPACE
-
 namespace Ui {
     class AllWidget;
 }
-
 QT_END_NAMESPACE
 
-class AllWidget : public QWidget {
+class ALLWIDGET_EXPORT AllWidget : public QWidget {
     Q_OBJECT
 
 public:

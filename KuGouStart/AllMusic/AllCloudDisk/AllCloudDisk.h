@@ -7,12 +7,17 @@
 
 #include <QWidget>
 
+#if defined(ALLCLOUDDISK_LIBRARY)
+#define ALLCLOUDDISK_EXPORT Q_DECL_EXPORT
+#else
+#define ALLCLOUDDISK_EXPORT Q_DECL_IMPORT
+#endif
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class AllCloudDisk; }
 QT_END_NAMESPACE
 
-class AllCloudDisk : public QWidget {
+class ALLCLOUDDISK_EXPORT AllCloudDisk : public QWidget {
 Q_OBJECT
 
 public:

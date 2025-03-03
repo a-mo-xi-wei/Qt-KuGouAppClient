@@ -32,11 +32,20 @@ add_subdirectory(AllPaid)
 #添加"云盘"模块
 add_subdirectory(AllCloudDisk)
 
-add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
+add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
+
+target_compile_definitions(${PROJECT_NAME} PRIVATE ALLMUSIC_LIBRARY)
+
+# 配置动态库输出路径到 bin/
+set_target_properties(${PROJECT_NAME} PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+        ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+)
 
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySearchLineEdit
+target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Widgets MySearchLineEdit
                         MyStackedWidget AllWidget AllLove AllSongList
                         AllRecent AllLocal AllPaid AllCloudDisk MyMenu)
+

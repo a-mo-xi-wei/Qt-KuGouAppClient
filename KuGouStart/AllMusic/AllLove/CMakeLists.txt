@@ -18,7 +18,15 @@ set(SOURCE_FILE
     love.css
 )
 
-add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
+add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
+
+target_compile_definitions(${PROJECT_NAME} PRIVATE ALLLOVE_LIBRARY)
+
+# 显式设置运行时 .dll 到 bin/, 导入库到 lib/
+set_target_properties(${PROJECT_NAME} PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+        ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+)
 
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

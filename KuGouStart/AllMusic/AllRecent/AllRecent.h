@@ -7,12 +7,17 @@
 
 #include <QWidget>
 
+#if defined(ALLRECENT_LIBRARY)
+#define ALLRECENT_EXPORT Q_DECL_EXPORT
+#else
+#define ALLRECENT_EXPORT Q_DECL_IMPORT
+#endif
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class AllRecent; }
 QT_END_NAMESPACE
 
-class AllRecent : public QWidget {
+class ALLRECENT_EXPORT AllRecent : public QWidget {
 Q_OBJECT
 
 public:
