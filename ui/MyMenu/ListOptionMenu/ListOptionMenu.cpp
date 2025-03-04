@@ -100,7 +100,6 @@ void ListOptionMenu::initMenu() {
 
     contentWidget->setLayout(layout);
     area->setWidget(contentWidget);
-    STREAM_INFO()<<"ListOptionMenu 初始化成功";
 }
 
 void ListOptionMenu::initSceneWidget(QWidget *widget) {

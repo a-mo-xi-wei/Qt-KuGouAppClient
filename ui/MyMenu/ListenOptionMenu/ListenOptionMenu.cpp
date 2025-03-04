@@ -156,7 +156,6 @@ void ListenOptionMenu::initMenu() {
     }
     contentWidget->setLayout(layout);
     area->setWidget(contentWidget);
-    STREAM_INFO()<<"ListenOptionMenu 成功初始化";
 }
 
 void ListenOptionMenu::initAudioNovelWidget(QWidget *widget) {
