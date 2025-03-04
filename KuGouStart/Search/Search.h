@@ -5,8 +5,14 @@
 #ifndef SEARCH_H
 #define SEARCH_H
 
-
 #include <QWidget>
+
+#if defined(SEARCH_LIBRARY)
+#define SEARCH_EXPORT Q_DECL_EXPORT
+#else
+#define SEARCH_EXPORT Q_DECL_IMPORT
+#endif
+
 class QButtonGroup;
 class QPushButton;
 
@@ -18,7 +24,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class Search : public QWidget {
+class SEARCH_EXPORT Search : public QWidget {
     Q_OBJECT
 
 public:

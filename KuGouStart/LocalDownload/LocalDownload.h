@@ -5,11 +5,16 @@
 #ifndef LOCALDOWNLOAD_H
 #define LOCALDOWNLOAD_H
 
-
 #include "LocalSong/LocalSong.h"
 #include "DownloadedSong/DownloadedSong.h"
 #include "DownloadedVideo/DownloadedVideo.h"
 #include "Downloading/Downloading.h"
+
+#if defined(LOCALDOWNLOAD_LIBRARY)
+#define LOCALDOWNLOAD_EXPORT Q_DECL_EXPORT
+#else
+#define LOCALDOWNLOAD_EXPORT Q_DECL_IMPORT
+#endif
 
 class QButtonGroup;
 
@@ -21,7 +26,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class LocalDownload : public QWidget {
+class LOCALDOWNLOAD_EXPORT LocalDownload : public QWidget {
     Q_OBJECT
 
 public:

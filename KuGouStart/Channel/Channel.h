@@ -9,6 +9,12 @@
 
 #include <QWidget>
 
+#if defined(CHANNEL_LIBRARY)
+#define CHANNEL_EXPORT Q_DECL_EXPORT
+#else
+#define CHANNEL_EXPORT Q_DECL_IMPORT
+#endif
+
 class QScrollBar;
 class QButtonGroup;
 
@@ -20,7 +26,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class Channel : public QWidget {
+class CHANNEL_EXPORT Channel : public QWidget {
     Q_OBJECT
 
 public:

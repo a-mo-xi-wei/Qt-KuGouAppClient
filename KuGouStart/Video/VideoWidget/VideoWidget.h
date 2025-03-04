@@ -8,6 +8,12 @@
 #include"VideoPartWidget.h"
 #include <QWidget>
 
+#if defined(VIDEOVIDEOWIDGET_LIBRARY)
+#define VIDEOVIDEOWIDGET_EXPORT Q_DECL_EXPORT
+#else
+#define VIDEOVIDEOWIDGET_EXPORT Q_DECL_IMPORT
+#endif
+
 class QScrollBar;
 class QButtonGroup;
 
@@ -19,7 +25,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class VideoWidget : public QWidget {
+class VIDEOVIDEOWIDGET_EXPORT VideoWidget : public QWidget {
     Q_OBJECT
 
 public:

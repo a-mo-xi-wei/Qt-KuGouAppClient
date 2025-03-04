@@ -11,13 +11,19 @@
 
 #include <QWidget>
 
+#if defined(PURCHASEDMUSIC_LIBRARY)
+#define PURCHASEDMUSIC_EXPORT Q_DECL_EXPORT
+#else
+#define PURCHASEDMUSIC_EXPORT Q_DECL_IMPORT
+#endif
+
 class QButtonGroup;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class PurchasedMusic; }
 QT_END_NAMESPACE
 
-class PurchasedMusic : public QWidget {
+class PURCHASEDMUSIC_EXPORT PurchasedMusic : public QWidget {
 Q_OBJECT
 
 public:

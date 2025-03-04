@@ -10,6 +10,12 @@
 
 #include <QWidget>
 
+#if defined(LISTENRECOMMEND_LIBRARY)
+#define LISTENRECOMMEND_EXPORT Q_DECL_EXPORT
+#else
+#define LISTENRECOMMEND_EXPORT Q_DECL_IMPORT
+#endif
+
 QT_BEGIN_NAMESPACE
 
 namespace Ui {
@@ -18,7 +24,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class ListenRecommend : public QWidget {
+class LISTENRECOMMEND_EXPORT ListenRecommend : public QWidget {
     Q_OBJECT
 
 public:

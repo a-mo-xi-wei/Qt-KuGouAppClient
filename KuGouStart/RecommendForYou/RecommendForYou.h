@@ -7,11 +7,17 @@
 
 #include <QWidget>
 
+#if defined(RECOMMENDFORYOU_LIBRARY)
+#define RECOMMENDFORYOU_EXPORT Q_DECL_EXPORT
+#else
+#define RECOMMENDFORYOU_EXPORT Q_DECL_IMPORT
+#endif
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class RecommendForYou; }
 QT_END_NAMESPACE
 
-class RecommendForYou : public QWidget {
+class RECOMMENDFORYOU_EXPORT RecommendForYou : public QWidget {
 Q_OBJECT
 
 public:

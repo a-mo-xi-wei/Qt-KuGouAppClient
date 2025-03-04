@@ -9,6 +9,12 @@
 
 #include <QWidget>
 
+#if defined(UPLOADEDSONG_LIBRARY)
+#define UPLOADEDSONG_EXPORT Q_DECL_EXPORT
+#else
+#define UPLOADEDSONG_EXPORT Q_DECL_IMPORT
+#endif
+
 QT_BEGIN_NAMESPACE
 
 namespace Ui {
@@ -17,7 +23,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class UploadedSong : public QWidget {
+class UPLOADEDSONG_EXPORT UploadedSong : public QWidget {
     Q_OBJECT
 
 public:

@@ -10,13 +10,19 @@
 
 #include <QWidget>
 
+#if defined(MUSICCLOUDDISK_LIBRARY)
+#define MUSICCLOUDDISK_EXPORT Q_DECL_EXPORT
+#else
+#define MUSICCLOUDDISK_EXPORT Q_DECL_IMPORT
+#endif
+
 class QButtonGroup;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MusicCloudDisk; }
 QT_END_NAMESPACE
 
-class MusicCloudDisk : public QWidget {
+class MUSICCLOUDDISK_EXPORT MusicCloudDisk : public QWidget {
 Q_OBJECT
 
 public:

@@ -10,6 +10,12 @@
 
 #include <QWidget>
 
+#if defined(LISTENMYDOWNLOAD_LIBRARY)
+#define LISTENMYDOWNLOAD_EXPORT Q_DECL_EXPORT
+#else
+#define LISTENMYDOWNLOAD_EXPORT Q_DECL_IMPORT
+#endif
+
 class QButtonGroup;
 
 QT_BEGIN_NAMESPACE
@@ -20,7 +26,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class ListenMyDownload : public QWidget {
+class LISTENMYDOWNLOAD_EXPORT ListenMyDownload : public QWidget {
     Q_OBJECT
 
 public:

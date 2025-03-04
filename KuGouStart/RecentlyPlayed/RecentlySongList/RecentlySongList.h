@@ -7,12 +7,17 @@
 
 #include <QWidget>
 
+#if defined(RECENTLYSONGLIST_LIBRARY)
+#define RECENTLYSONGLIST_EXPORT Q_DECL_EXPORT
+#else
+#define RECENTLYSONGLIST_EXPORT Q_DECL_IMPORT
+#endif
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class RecentlySongList; }
 QT_END_NAMESPACE
 
-class RecentlySongList : public QWidget {
+class RECENTLYSONGLIST_EXPORT RecentlySongList : public QWidget {
 Q_OBJECT
 
 public:

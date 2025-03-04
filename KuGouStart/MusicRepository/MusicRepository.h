@@ -7,6 +7,12 @@
 
 #include"MyBlockWidget.h"
 
+#if defined(MUSICREPOSITORY_LIBRARY)
+#define MUSICREPOSITORY_EXPORT Q_DECL_EXPORT
+#else
+#define MUSICREPOSITORY_EXPORT Q_DECL_IMPORT
+#endif
+
 class QButtonGroup;
 
 QT_BEGIN_NAMESPACE
@@ -17,7 +23,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class MusicRepository : public QWidget {
+class MUSICREPOSITORY_EXPORT MusicRepository : public QWidget {
     Q_OBJECT
 
 public:

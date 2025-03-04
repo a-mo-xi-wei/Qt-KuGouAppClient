@@ -13,13 +13,19 @@
 
 #include <QWidget>
 
+#if defined(RECENTLYPLAYED_LIBRARY)
+#define RECENTLYPLAYED_EXPORT Q_DECL_EXPORT
+#else
+#define RECENTLYPLAYED_EXPORT Q_DECL_IMPORT
+#endif
+
 class QButtonGroup;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class RecentlyPlayed; }
 QT_END_NAMESPACE
 
-class RecentlyPlayed : public QWidget {
+class RECENTLYPLAYED_EXPORT RecentlyPlayed : public QWidget {
 Q_OBJECT
 
 public:

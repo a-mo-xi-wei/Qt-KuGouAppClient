@@ -7,6 +7,12 @@
 
 #include "VideoChannelPartWidget.h"
 
+#if defined(VIDEOCHANNELWIDGET_LIBRARY)
+#define VIDEOCHANNELWIDGET_EXPORT Q_DECL_EXPORT
+#else
+#define VIDEOCHANNELWIDGET_EXPORT Q_DECL_IMPORT
+#endif
+
 class QScrollBar;
 class QButtonGroup;
 
@@ -18,7 +24,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class VideoChannelWidget : public QWidget {
+class VIDEOCHANNELWIDGET_EXPORT VideoChannelWidget : public QWidget {
     Q_OBJECT
 
 public:

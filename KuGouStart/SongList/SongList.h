@@ -8,6 +8,12 @@
 
 #include <QWidget>
 
+#if defined(SONGLIST_LIBRARY)
+#define SONGLIST_EXPORT Q_DECL_EXPORT
+#else
+#define SONGLIST_EXPORT Q_DECL_IMPORT
+#endif
+
 QT_BEGIN_NAMESPACE
 
 namespace Ui {
@@ -16,7 +22,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class SongList : public QWidget {
+class SONGLIST_EXPORT SongList : public QWidget {
     Q_OBJECT
 
 public:

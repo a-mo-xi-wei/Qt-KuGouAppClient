@@ -7,6 +7,12 @@
 
 #include "SongListBlockWidget.h"
 
+#if defined(COLLECTSONGLIST_LIBRARY)
+#define COLLECTSONGLIST_EXPORT Q_DECL_EXPORT
+#else
+#define COLLECTSONGLIST_EXPORT Q_DECL_IMPORT
+#endif
+
 QT_BEGIN_NAMESPACE
 
 namespace Ui {
@@ -15,7 +21,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class SongListWidget : public QWidget {
+class COLLECTSONGLIST_EXPORT SongListWidget : public QWidget {
     Q_OBJECT
 
 public:

@@ -3,6 +3,12 @@
 
 #include<QLabel>
 
+#if defined(ADVERTISEBOARD_LIBRARY)
+#define ADVERTISEBOARD_EXPORT Q_DECL_EXPORT
+#else
+#define ADVERTISEBOARD_EXPORT Q_DECL_IMPORT
+#endif
+
 class QPixmap;
 class QTimer;
 
@@ -62,7 +68,7 @@ protected:
     }
 };
 
-class AdvertiseBoard : public QWidget {
+class ADVERTISEBOARD_EXPORT AdvertiseBoard : public QWidget {
     Q_OBJECT
 
 public:
