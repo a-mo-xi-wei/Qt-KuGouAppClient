@@ -70,4 +70,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/ListenRankWidget)
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets IconBesideTextToolButton MyMenu
-        InteractiveButtonBase MyScrollArea MyBlockWidget)
+        ZoomButtonLibrary MyScrollArea MyBlockWidget)

@@ -2,7 +2,7 @@
 #define GALLERYPHOTOWIDGET_H
 
 #include "MyBlockWidget.h"
-#include "WaterZoomButton/WaterZoomButton.h"
+#include "WaterZoomButton.h"
 
 class QGraphicsDropShadowEffect;
 
