@@ -2,10 +2,16 @@
 #define MUSICITEMWIDGET_H
 
 #include "MyMenu.h"
-#include "../MyMenu/SongOptionMenu/SongOptionMenu.h"
+#include "SongOptionMenu/SongOptionMenu.h"
 
 #include <QDateTime>
 #include <QFrame>
+
+#if defined(MUSICITEMWIDGET_LIBRARY)
+#define MUSICITEMWIDGET_EXPORT Q_DECL_EXPORT
+#else
+#define MUSICITEMWIDGET_EXPORT Q_DECL_IMPORT
+#endif
 
 class QPointF;
 class QTimer;
@@ -29,7 +35,7 @@ typedef struct SongInformation {
     }
 } SongInfor;
 
-class MusicItemWidget : public QFrame {
+class MUSICITEMWIDGET_EXPORT MusicItemWidget : public QFrame {
     Q_OBJECT
 
 public:
