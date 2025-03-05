@@ -142,24 +142,24 @@ void SystemTrayIcon::createTrayIcon(QVector<tagTrayIconMenu> items)
         this, SLOT(slot_trayIconActivated(QSystemTrayIcon::ActivationReason)));
 
     // 建立信号槽
-    QSignalMapper* trayMap = new QSignalMapper(this);
-    connect(trayMap, SIGNAL(mapped(const QString&)), this, SLOT(slot_modifyState(const QString&)));
+    //QSignalMapper* trayMap = new QSignalMapper(this);
+    //connect(trayMap, SIGNAL(mapped(const QString&)), this, SLOT(slot_modifyState(const QString&)));
 
-    if(!items.isEmpty())
-    {
-        trayIconMenu = new QMenu();
-
-        for(int i=0;i<items.size();i++)
-        {
-            QAction* talkAction = new QAction(items[i].icon,items[i].name, this);
-            connect(talkAction, SIGNAL(triggered()), trayMap, SLOT(map()));
-            trayMap->setMapping(talkAction, items[i].name);
-
-            trayIconMenu->addAction(talkAction);
-        }
-
-        _trayIcon->setContextMenu(trayIconMenu);
-    }
+    //if(!items.isEmpty())
+    //{
+    //    trayIconMenu = new QMenu();
+//
+    //    for(int i=0;i<items.size();i++)
+    //    {
+    //        QAction* talkAction = new QAction(items[i].icon,items[i].name, this);
+    //        connect(talkAction, SIGNAL(triggered()), trayMap, SLOT(map()));
+    //        trayMap->setMapping(talkAction, items[i].name);
+//
+    //        trayIconMenu->addAction(talkAction);
+    //    }
+//
+    //    _trayIcon->setContextMenu(trayIconMenu);
+    //}
 
     _trayIcon->show();
 }
