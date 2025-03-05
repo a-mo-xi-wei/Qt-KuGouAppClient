@@ -50,6 +50,6 @@ endif()
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyStackedWidget MyCheckBox
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyStackedWidget AniCheckBox CheckBox1
                         RecentlySingleSong RecentlySongList RecentlyVideoWidget
                         RecentlySongChannel RecentlyMVChannel)

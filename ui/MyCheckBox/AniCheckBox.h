@@ -1,5 +1,5 @@
-#ifndef LINEARCHECKBOX_H
-#define LINEARCHECKBOX_H
+#ifndef ANICHECKBOX_H
+#define ANICHECKBOX_H
 /*
  *  此处参考开源项目 ：iwxyi 大神的 [Qt控件] 带动画的 CheckBox
  *  项目地址为 ： https://github.com/iwxyi/Qt-AniCheckBox
@@ -8,9 +8,15 @@
 #include <QCheckBox>
 #include <QEasingCurve>
 
+#if defined(ANICHECKBOX_LIBRARY)
+#define ANICHECKBOX_EXPORT Q_DECL_EXPORT
+#else
+#define ANICHECKBOX_EXPORT Q_DECL_IMPORT
+#endif
+
 class QPropertyAnimation;
 
-class AniCheckBox : public QCheckBox {
+class ANICHECKBOX_EXPORT AniCheckBox : public QCheckBox {
     Q_OBJECT
     Q_PROPERTY(double hover_prog READ getHoverProg WRITE setHoverProg)
     Q_PROPERTY(double part_prog READ getPartProg WRITE setPartProg)
@@ -59,4 +65,4 @@ protected:
     double checkProg = 0; // 选中的进度
 };
 
-#endif // LINEARCHECKBOX_H
+#endif // ANICHECKBOX_H
