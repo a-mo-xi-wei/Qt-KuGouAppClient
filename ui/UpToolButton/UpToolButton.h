@@ -7,7 +7,13 @@
 
 #include <QToolButton>
 
-class UpToolButton : public QToolButton {
+#if defined(UPWIDGET_LIBRARY)
+#define UPWIDGET_EXPORT Q_DECL_EXPORT
+#else
+#define UPWIDGET_EXPORT Q_DECL_IMPORT
+#endif
+
+class UPWIDGET_EXPORT UpToolButton : public QToolButton {
     Q_OBJECT
 
 public:

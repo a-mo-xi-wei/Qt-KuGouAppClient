@@ -8,10 +8,16 @@
 
 #include"SMaskWidget.h"
 
+#if defined(MYBLOCKWIDGET_LIBRARY)
+#define MYBLOCKWIDGET_EXPORT Q_DECL_EXPORT
+#else
+#define MYBLOCKWIDGET_EXPORT Q_DECL_IMPORT
+#endif
+
 class QLabel;
 class QToolButton;
 
-class MyBlockWidget : public QWidget {
+class MYBLOCKWIDGET_EXPORT MyBlockWidget : public QWidget {
     Q_OBJECT
 
 public:

@@ -3,10 +3,16 @@
 
 #include <QWidget>
 
+#if defined(SMASKWIDGET_LIBRARY)
+#define SMASKWIDGET_EXPORT Q_DECL_EXPORT
+#else
+#define SMASKWIDGET_EXPORT Q_DECL_IMPORT
+#endif
+
 class QParallelAnimationGroup;
 class QPropertyAnimation;
 
-class SMaskWidget : public QWidget {
+class SMASKWIDGET_EXPORT SMaskWidget : public QWidget {
     Q_OBJECT
     Q_PROPERTY(int animatedY READ animatedY WRITE setAnimatedY)
     Q_PROPERTY(int alpha READ alpha WRITE setAlpha)

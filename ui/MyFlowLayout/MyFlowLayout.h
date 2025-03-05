@@ -1,10 +1,16 @@
-#ifndef MyFlowLayout_H
-#define MyFlowLayout_H
+#ifndef MYFLOWLAYOUT_H
+#define MYFLOWLAYOUT_H
 
 #include <QLayout>
 #include <QStyle>
 
-class MyFlowLayout : public QLayout {
+#if defined(MYFLOWLAYOUT_LIBRARY)
+#define MYFLOWLAYOUT_EXPORT Q_DECL_EXPORT
+#else
+#define MYFLOWLAYOUT_EXPORT Q_DECL_IMPORT
+#endif
+
+class MYFLOWLAYOUT_EXPORT MyFlowLayout : public QLayout {
 public:
     explicit MyFlowLayout(QWidget *parent, int margin = -1, int hSpacing = -1, int vSpacing = -1);
 
@@ -52,4 +58,4 @@ private:
     bool m_home = false;
 };
 
-#endif // MyFlowLayout_H
+#endif // MYFLOWLAYOUT_H

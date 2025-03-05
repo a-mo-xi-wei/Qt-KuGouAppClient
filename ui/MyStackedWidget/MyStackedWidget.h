@@ -7,7 +7,13 @@
 
 #include <QStackedWidget>
 
-class MyStackedWidget : public QStackedWidget {
+#if defined(MYSTACKEDWIDGET_LIBRARY)
+#define MYSTACKEDWIDGET_EXPORT Q_DECL_EXPORT
+#else
+#define MYSTACKEDWIDGET_EXPORT Q_DECL_IMPORT
+#endif
+
+class MYSTACKEDWIDGET_EXPORT MyStackedWidget : public QStackedWidget {
     Q_OBJECT
 
 public:

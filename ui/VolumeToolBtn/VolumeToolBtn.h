@@ -3,13 +3,19 @@
 
 #include"SliderWidget.h"
 
+#if defined(VOLUMETOOLBTN_LIBRARY)
+#define VOLUMETOOLBTN_EXPORT Q_DECL_EXPORT
+#else
+#define VOLUMETOOLBTN_EXPORT Q_DECL_IMPORT
+#endif
+
 #include <QToolButton>
 #include <QLabel>
 
 class QTimer;
 class QVBoxLayout;
 
-class VolumeToolBtn : public QToolButton {
+class VOLUMETOOLBTN_EXPORT VolumeToolBtn : public QToolButton {
     Q_OBJECT
 
 public:
@@ -47,6 +53,5 @@ private:
     QTimer *m_leaveTimer{};
     QTimer *m_positionCheckTimer; // 检查鼠标位置是否在m_volumeWidget上面
 };
-
 
 #endif //VOLUMETOOLBTN_H

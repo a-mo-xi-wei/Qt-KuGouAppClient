@@ -9,10 +9,16 @@
 #include <QStyleOption>
 #include <QWheelEvent>
 
+#if defined(SLIDERWIDGET_LIBRARY)
+#define SLIDERWIDGET_EXPORT Q_DECL_EXPORT
+#else
+#define SLIDERWIDGET_EXPORT Q_DECL_IMPORT
+#endif
+
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 /*此处重写的QWidget的唯一目的就是作为中转传递信号。。。。*/
-class MyWidget : public QWidget {
+class SLIDERWIDGET_EXPORT MyWidget : public QWidget {
     Q_OBJECT
 public:
     explicit MyWidget(QWidget *parent = nullptr)
@@ -70,7 +76,7 @@ private:
     int m_delta;
 };
 
-class SliderWidget : public QSlider {
+class SLIDERWIDGET_EXPORT SliderWidget : public QSlider {
     Q_OBJECT
 
 public:

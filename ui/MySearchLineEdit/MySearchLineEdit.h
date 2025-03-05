@@ -5,11 +5,17 @@
 #ifndef MYSEARCHLINEEDIT_H
 #define MYSEARCHLINEEDIT_H
 
-class QPropertyAnimation;
-
 #include <QLineEdit>
 
-class MySearchLineEdit : public QLineEdit {
+#if defined(MYSEARCHLINEEDIT_LIBRARY)
+#define MYSEARCHLINEEDIT_EXPORT Q_DECL_EXPORT
+#else
+#define MYSEARCHLINEEDIT_EXPORT Q_DECL_IMPORT
+#endif
+
+class QPropertyAnimation;
+
+class MYSEARCHLINEEDIT_EXPORT MySearchLineEdit : public QLineEdit {
     Q_OBJECT
 
 public:

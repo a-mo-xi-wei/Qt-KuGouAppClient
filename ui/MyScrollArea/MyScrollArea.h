@@ -10,7 +10,13 @@
 #include <QScrollArea>
 #include <QEasingCurve>
 
-class MyScrollArea : public QScrollArea {
+#if defined(MYSCROLLAREA_LIBRARY)
+#define MYSCROLLAREA_EXPORT Q_DECL_EXPORT
+#else
+#define MYSCROLLAREA_EXPORT Q_DECL_IMPORT
+#endif
+
+class MYSCROLLAREA_EXPORT MyScrollArea : public QScrollArea {
     Q_OBJECT
 
 public:
