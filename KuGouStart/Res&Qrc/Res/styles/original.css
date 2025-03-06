@@ -1,0 +1,229 @@
+/*--------------------total_widget------------------------------*/
+QWidget#KuGou{
+    margin: 5px;
+}
+
+/*--------------------title_widget------------------------------*/
+QToolButton#title_return_toolButton{
+    background-color: rgba(255,255,255,0);
+    border-image: url(":/Res/titlebar/return-black.svg");
+}
+QToolButton#title_return_toolButton:hover {
+    border-image: url(":/Res/titlebar/return-blue.svg");
+}
+QToolButton#title_refresh_toolButton{
+    background-color: rgba(255,255,255,0);
+    border-image: url(":/Res/titlebar/refresh-black.svg");
+}
+QToolButton#title_refresh_toolButton:hover {
+    border-image: url(":/Res/titlebar/refresh-blue.svg");
+}
+
+QWidget#title_widget QLabel{
+    background-color: rgba(255,255,255,0);
+}
+QWidget#title_widget QPushButton{
+    background-color:rgba(255,255,255,0);
+    color:rgba(0,0,0,50%);
+}
+QWidget#title_widget QPushButton:hover {
+    color: #3366FF;
+    font-size: 20px;
+}
+QWidget#title_widget QPushButton:checked {
+    color: #3366FF;
+    font-size: 25px;
+}
+QLineEdit#search_lineEdit {
+    border-radius: 15px;
+    background-color: #d1d5f6;
+    font-size: 15px;
+    font-weight: bold;
+    selection-color: #00cb9f;            /* 设置选中文本的颜色 */
+    selection-background-color: #75498c;  /* 设置选中文本的背景颜色 */
+}
+QLineEdit#search_lineEdit:hover {
+    background-color: #CCCCFF;
+}
+QToolButton#listen_toolButton {
+    background-color:rgba(255,255,255,0);
+    border-image: url(":/Res/titlebar/listen-music-black.svg");
+    border-radius: 10px;
+}
+QToolButton#listen_toolButton:hover {
+    border-image: url(":/Res/titlebar/listen-music-blue.svg");
+}
+
+QToolButton#theme_toolButton {
+    background-color: rgba(255,255,255,0);
+    border-image: url(":/Res/titlebar/theme-black.svg");
+}
+QToolButton#theme_toolButton:hover {
+    border-image: url(":/Res/titlebar/theme-blue.svg");
+}
+
+QToolButton#message_toolButton {
+    background-color: rgba(255,255,255,0);
+    border-image: url(":/Res/titlebar/message-black.svg");
+}
+QToolButton#message_toolButton:hover {
+    border-image: url(":/Res/titlebar/message-blue.svg");
+}
+
+QToolButton#menu_toolButton {
+    background-color: rgba(255,255,255,0);
+    border-image: url(":/Res/titlebar/menu-black.svg");
+}
+QToolButton#menu_toolButton:hover {
+    border-image: url(":/Res/titlebar/menu-blue.svg");
+}
+
+QToolButton#min_toolButton,
+QToolButton#max_toolButton,
+QToolButton#close_toolButton {
+    background-color: rgba(255,255,255,0);
+    border-radius: 6px;
+    border: none;
+    height: 30px;
+    width: 30px;
+    icon-size: 12px 12px;
+}
+/*--------------------center_widget------------------------------*/
+QWidget#center_widget *{
+    background-color: rgba(255,255,255,0);
+}
+
+/*--------------------menu_scrollArea------------------------------*/
+QLabel#menu_find_music_label,QLabel#menu_myMusic_label{
+    color: #2d5a46;
+}
+
+QScrollArea#menu_scrollArea QToolButton{
+    padding-left:20px;
+    border-radius:10px;
+    border:none;
+}
+QScrollArea#menu_scrollArea QToolButton:hover{
+    background-color:#c0c0c0;
+    font-size: 14px;
+}
+QScrollArea#menu_scrollArea QToolButton:checked{
+    background-color:#268cff;
+    font-size: 14px;
+}
+/*--------------------play_widget------------------------------*/
+QWidget#play_widget {
+    background-color:rgba(255,255,255,0);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+QWidget#song_info_widget{
+    background-color:rgba(255,255,255,0);
+}
+QWidget#play_widget QToolButton {
+    background-color: rgba(255,255,255,0);
+    border: none;
+}
+QWidget#play_widget QLabel {
+    background-color: rgba(255,255,255,0);
+    border: none;
+}
+QWidget#play_widget QPushButton {
+    border-radius:5px;
+    border:1px solid black;
+    background-color:rgba(255,255,255,0);
+}
+QWidget#play_widget QPushButton:checked {
+    background-color: pink;
+}
+QToolButton#volume_toolButton{
+    background-color:rgba(255,255,255,0);
+}
+QLabel#cover_label{
+    border-radius:8px;
+    border-image:url(':/Res/playbar/default-cover-gray.svg');
+}
+QLabel#cover_label:hover{
+    border-image:url(':/Res/playbar/default-cover-blue.svg');
+}
+QLabel#song_name_label:hover{
+    color: #006fff;
+}
+QLabel#singer_label:hover{
+    color: #006fff;
+}
+QToolButton#circle_toolButton{
+    border-image:url(':/Res/playbar/list-loop-gray.svg');
+}
+QToolButton#circle_toolButton:hover{
+    border-image:url(':/Res/playbar/list-loop-blue.svg');
+}
+QSizeGrip#sizegrip{
+    background-color:rgba(255,255,255,0);
+    border-image:url(':/Res/playbar/bottom-mark.svg');
+}
+
+/*--------------------QSlider------------------------------*/
+QSlider {
+    background-color: rgba(0, 255, 190, 30);
+}
+QSlider::groove:horizontal {
+    border: 1px inset #c3e0c3;
+    height: 8px;
+    /*background-color: qlineargradient(spread:reflect, x1:0.500364, y1:0.0561364, x2:0.5, y2:0.517045, stop:0 rgba(168, 164, 168, 250), stop:1 rgba(232, 232, 232, 255));*/
+    background-color: #eafffa;
+    border-radius: 4px;
+}
+QSlider::handle:horizontal {
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.50565, fy:0.500409, stop:0 rgba(0, 0, 0, 255), stop:0.361582 rgba(0, 146, 146, 255), stop:0.649718 rgba(255, 255, 255, 255), stop:1 rgba(0, 177, 181, 255));
+    border: 1px solid #5c5c5c;
+    width: 14px;
+    margin: -4px 0px;
+    border-radius: 8px;
+}
+QSlider::sub-page:horizontal {
+    border: 1px solid #999999;
+    border-radius: 4px;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(231,80,229, 255), stop:1 rgba(7,208,255, 255));
+}
+
+/*-------------------滚动区域滚动条----------------------*/
+QScrollBar:vertical {
+    border: 0px solid rgb(231,166,190);
+    border-radius:4px;
+    background-color: rgb(231,166,190);
+    width: 10px;
+    margin: 20px 0px 20px 0px;
+}
+QScrollBar:vertical:hover {
+    border: 1px solid rgb(231,166,190);
+    border-radius:4px;
+    background-color: rgb(231,166,190);
+    width: 10px;
+    margin: 20px 0px 20px 0px;
+}
+/*--滑块---*/
+QScrollBar::handle:vertical {
+    background-color: rgb(237,188,206);
+    border-radius: 4px;
+}
+QScrollBar::handle:vertical:hover {
+    background-color: rgb(248,129,161);
+}
+/*---箭头---*/
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    background: none; /* 确保没有箭头 */
+}
+/*---空白区域---*/
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none; /* 防止长按时的背景色 */
+}
+QScrollBar::sub-line:vertical, QScrollBar::add-line:vertical {
+    background: none;
+}
+/*--------------------提示框--------------------------------*/
+QToolTip {
+    background-color: #FFFEEB
+    /*background-color: ;*/
+}
+
