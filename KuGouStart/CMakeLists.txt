@@ -18,12 +18,13 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia)
 
 file(GLOB SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+file(GLOB QRC_FILE ${CMAKE_CURRENT_SOURCE_DIR}/Res&Qrc/*.qrc)
 
 set(SOURCE_FILE
     ${SOURCE_CPP}
     ${SOURCE_H}
-    Res.qrc
-    Res/titleIcon.rc
+    ${QRC_FILE}
+    Res&Qrc/Res/titleIcon.rc
     KuGouApp.ui
 )
 ####       发现音乐       ####

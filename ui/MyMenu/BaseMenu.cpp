@@ -59,7 +59,7 @@ void BaseMenu::checkSelection() const {
         if (m_lastSelect == m_curSelect)return;
         if (!m_lastSelect->icon().isNull()) {
             m_lastSelect->setIcon(QIcon());
-            STREAM_WARN()<<"图标设置为空";
+            //STREAM_WARN()<<"图标设置为空";
         }
     }
 }
