@@ -142,7 +142,7 @@ QSqlDatabase NDBPool::getNewConnection(DB_Type paramDB_Type,QString paramHostNam
             return QSqlDatabase();
         }
     } else {
-        // 链接池不存在则创建并使用连接池
+        // 连接池不存在则创建并使用连接池
         NDBPool::mLock.lock();
         NDBPool_p * tempPool = new NDBPool_p();
         poolMap.insert(tempItem.poolName, tempPool);
@@ -164,7 +164,7 @@ void NDBPool::closeConnection(const QSqlDatabase &connection)
     bool tempFlag = false;
     bool longConnenct = false;
     QString tempConnectionName = connection.connectionName();
-    foreach (QString hostName, poolMap.keys()) {
+    /*foreach (QString hostName, poolMap.keys()) {
         NDBPool_p * tempPool = poolMap.value(hostName);
         if(tempPool->usedConnectionName.contains(tempConnectionName)){
             // 长连接关闭连接
@@ -172,7 +172,25 @@ void NDBPool::closeConnection(const QSqlDatabase &connection)
                 tempPool->closeConnection(tempConnectionName);
                 connectionLastActiveTimeMap.remove(tempConnectionName);
                 longConnenct = true;
-            } else {                
+            } else {
+                tempPool->unusedConnectionName.push(tempConnectionName);
+            }
+            tempPool->usedConnectionName.removeOne(tempConnectionName);
+            tempFlag = true;
+            tempPool->semaphore.release();
+        }
+    }*/
+    for (auto it = poolMap.begin(); it != poolMap.end(); ++it) {
+        NDBPool_p *tempPool = it.value();
+        const QString &hostName = it.key();
+
+        if (tempPool->usedConnectionName.contains(tempConnectionName)) {
+            if (connectionLastActiveTimeMap[tempConnectionName].longConnect) {
+                // 长连接关闭连接
+                tempPool->closeConnection(tempConnectionName);
+                connectionLastActiveTimeMap.remove(tempConnectionName);
+                longConnenct = true;
+            } else {
                 tempPool->unusedConnectionName.push(tempConnectionName);
             }
             tempPool->usedConnectionName.removeOne(tempConnectionName);
@@ -180,6 +198,7 @@ void NDBPool::closeConnection(const QSqlDatabase &connection)
             tempPool->semaphore.release();
         }
     }
+
     if(isDebug && tempFlag){
         if(longConnenct){
             QLOG_DEBUG()<<QString("long connect %1 is exist and closed").arg(tempConnectionName);

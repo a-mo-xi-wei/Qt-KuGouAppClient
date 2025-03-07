@@ -29,7 +29,7 @@ SqliteDataProvider::~SqliteDataProvider()
  *
  * @param dbPath 要连接的数据库的路径
  */
-bool SqliteDataProvider::connect(QString dbPath)
+bool SqliteDataProvider::connect(const QString &dbPath)
 {
     m_dbPath = dbPath;
 
@@ -43,7 +43,7 @@ bool SqliteDataProvider::connect(QString dbPath)
  * @param longConnect
  * @return
  */
-const RecordSetList SqliteDataProvider::execTransaction(const QStringList& sqls,QString connectionName,bool longConnect)
+RecordSetList SqliteDataProvider::execTransaction(const QStringList& sqls,QString connectionName,bool longConnect)
 {
     RecordSetList pRecordSetList;
 
@@ -125,7 +125,7 @@ const RecordSetList SqliteDataProvider::execTransaction(const QStringList& sqls,
  *
  * @return 如果成功获取到数据返回这个数据记录，否则抛出异常
  */
-const RecordSetList SqliteDataProvider::execSqls(const QStringList& sqls,
+RecordSetList SqliteDataProvider::execSqls(const QStringList& sqls,
                                                  QString connectionName,
                                                  bool longConnect)
 {
@@ -201,7 +201,7 @@ const RecordSetList SqliteDataProvider::execSqls(const QStringList& sqls,
  *
  * @return 如果成功获取到数据返回这个数据记录，否则抛出异常
  */
-const RecordSetList SqliteDataProvider::execInsertSql(const QString& sql,
+RecordSetList SqliteDataProvider::execInsertSql(const QString& sql,
                                                       QString connectionName,
                                                       bool longConnect)
 {
@@ -268,13 +268,13 @@ const RecordSetList SqliteDataProvider::execInsertSql(const QString& sql,
  *
  * @return 如果成功获取到数据返回这个数据记录，否则抛出异常
  */
-const RecordSetList SqliteDataProvider::execSql(const QString& sql,
+RecordSetList SqliteDataProvider::execSql(const QString& sql,
                                                 QString connectionName,
                                                 bool longConnect)
 {
     RecordSetList pRecordSetList;
 
-    QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,m_dbPath,"","","",1433,longConnect,connectionName);
+    const QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,m_dbPath,"","","",1433,longConnect,connectionName);
    // QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
 
     if(!tempDB.isOpen())
@@ -283,15 +283,15 @@ const RecordSetList SqliteDataProvider::execSql(const QString& sql,
         return pRecordSetList;
     }
 
-    QSqlQuery queryresult(tempDB);
+    QSqlQuery query_result(tempDB);
 
-    if(queryresult.exec(sql))
+    if(query_result.exec(sql))
     {
         try {
             do
             {
                 RecordSet pRecordSet;
-                QSqlRecord precord = queryresult.record();
+                QSqlRecord precord = query_result.record();
 
                 Row fieldNames;
                 for(int i=0;i<precord.count();i++)
@@ -302,12 +302,12 @@ const RecordSetList SqliteDataProvider::execSql(const QString& sql,
 
                 pRecordSet.setColumnHeaders(fieldNames);
 
-                while(queryresult.next())
+                while(query_result.next())
                 {
                     Row fieldDatas;
                     for(int i=0;i<precord.count();i++)
                     {
-                        fieldDatas.push_back(queryresult.value(i).toString());
+                        fieldDatas.push_back(query_result.value(i).toString());
                     }
 
                     pRecordSet.add(fieldDatas);
@@ -316,9 +316,9 @@ const RecordSetList SqliteDataProvider::execSql(const QString& sql,
                 if(!pRecordSet.isEmpty())
                     pRecordSetList.add(pRecordSet);
             }
-            while(queryresult.nextResult());
+            while(query_result.nextResult());
         } catch (...) {
-            QLOG_ERROR()<<"query error:"<<queryresult.lastError().text();
+            QLOG_ERROR()<<"query error:"<<query_result.lastError().text();
         }
     }
 
