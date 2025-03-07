@@ -1,7 +1,7 @@
-#include "../../../includes/database/ndbpool/sqlitedataprovider.h"
-#include "../../../includes/database/ndbpool/ndbpool.h"
-#include "../../../includes/QsLog/QsLog.h"
-
+#include "sqlitedataprovider.h"
+#include "ndbpool.h"
+#include "QsLog.h"
+#include <QSqlError>
 #include <QSqlRecord>
 
 //initialiseSingleton(SqliteDataProvider);
@@ -19,7 +19,7 @@ SqliteDataProvider::SqliteDataProvider(QObject *parent)
 /**
  * @brief SqliteDataProvider::~SqliteDataProvider 析构函数
  */
-SqliteDataProvider::~SqliteDataProvider(void)
+SqliteDataProvider::~SqliteDataProvider()
 {
     disconnect();
 }
@@ -330,7 +330,7 @@ const RecordSetList SqliteDataProvider::execSql(const QString& sql,
 /**
  * 关闭与数据库的连接
  */
-void SqliteDataProvider::disconnect(void)
+void SqliteDataProvider::disconnect()
 {
     //NDBPool::release();
 }

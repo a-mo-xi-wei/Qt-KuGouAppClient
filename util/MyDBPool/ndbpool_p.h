@@ -1,25 +1,18 @@
 ﻿#ifndef NDBPOOL_P_H
 #define NDBPOOL_P_H
 
-#include "../../common/common.h"
+#include "common/common.h"
 
-#include <QObject>
-#include <QSql>
-#include <QSqlDatabase>
-#include <QString>
 #include <QMutex>
 #include <QSemaphore>
 #include <QStack>
-#include <QUuid>
-#include <QSqlError>
-#include <QDebug>
 #include <QSqlQuery>
 #include <QTimer>
 
-class NDBPool_p: public QObject
-{
+class NDBPool_p : public QObject {
 public:
-    NDBPool_p(QObject *parent=0, bool paramDebug=true);
+    NDBPool_p(QObject *parent = nullptr, bool paramDebug = true);
+
     ~NDBPool_p();
 
 public:
@@ -35,7 +28,7 @@ public:
      * @param paramConnectionName 连接名字
      * @return
      */
-    bool closeConnection(const QString &paramConnectionName,bool isdirectdelete=false);
+    bool closeConnection(const QString &paramConnectionName, bool isdirectdelete = false);
 
     /**
      * @brief getHostName 数据主机地址的属性获取
@@ -155,7 +148,6 @@ public:
     QSemaphore semaphore;
 
 private:
-
     /**
      * @brief hostName 数据库主机地址
      */

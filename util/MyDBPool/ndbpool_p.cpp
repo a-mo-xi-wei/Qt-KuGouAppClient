@@ -1,5 +1,7 @@
-﻿#include "../../../includes/database/ndbpool/ndbpool_p.h"
-#include "../../../includes/QsLog/QsLog.h"
+﻿#include "ndbpool_p.h"
+#include "QsLog.h"
+
+#include <QSqlError>
 
 QMutex NDBPool_p::mutex;
 

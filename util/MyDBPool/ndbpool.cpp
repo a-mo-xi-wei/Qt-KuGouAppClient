@@ -1,5 +1,5 @@
-﻿#include "../../../includes/database/ndbpool/ndbpool.h"
-#include "../../../includes/QsLog/QsLog.h"
+﻿#include "ndbpool.h"
+#include "QsLog.h"
 
 #include <QThread>
 
@@ -14,10 +14,9 @@ void NDBPool::release()
 {
     QMutexLocker locker(&(NDBPool::mLock));
     foreach (QString hostName, poolMap.keys()) {
-        NDBPool_p * tempDBPool = poolMap.value(hostName);
-        if(tempDBPool){
+        if(NDBPool_p * tempDBPool = poolMap.value(hostName)){
             delete tempDBPool;
-            tempDBPool = NULL;
+            tempDBPool = nullptr;
         }
     }
 }
@@ -213,7 +212,7 @@ NDBPool::~NDBPool()
         NDBPool_p * tempDBPool = poolMap.value(hostName);
         if(tempDBPool){
             delete tempDBPool;
-            tempDBPool = NULL;
+            tempDBPool = nullptr;
         }
     }
 }
