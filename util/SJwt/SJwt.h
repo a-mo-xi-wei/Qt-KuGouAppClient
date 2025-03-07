@@ -10,7 +10,6 @@
 #define SJWT_EXPORT Q_DECL_IMPORT
 #endif
 
-
 using ParamInitList = QMap<QString, QVariant>;
 
 namespace SJwt
