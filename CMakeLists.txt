@@ -78,3 +78,6 @@ add_subdirectory(util/SJwt)
 
 #数据库连接池模块
 add_subdirectory(util/MyDBPool)
+
+#配置文件模块
+add_subdirectory(util/MyConfigFile)
