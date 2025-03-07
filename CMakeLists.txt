@@ -76,5 +76,5 @@ add_subdirectory(util/MyQsLog)
 #JWT模块
 add_subdirectory(util/SJwt)
 
-#JWT模块
+#数据库连接池模块
 add_subdirectory(util/MyDBPool)

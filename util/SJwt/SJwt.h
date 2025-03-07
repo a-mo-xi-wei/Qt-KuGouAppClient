@@ -3,6 +3,14 @@
 #include<QMap>
 #include<QJsonDocument>
 #include<QJsonObject>
+
+#if defined(SJWT_LIBRARY)
+#define SJWT_EXPORT Q_DECL_EXPORT
+#else
+#define SJWT_EXPORT Q_DECL_IMPORT
+#endif
+
+
 using ParamInitList = QMap<QString, QVariant>;
 
 namespace SJwt
@@ -104,7 +112,7 @@ static inline const char* reg_claims_to_str(registered_claims claim) noexcept
 }
 
 
-class SJwtObject
+class SJWT_EXPORT SJwtObject
 {
 public:
     enum class Status
