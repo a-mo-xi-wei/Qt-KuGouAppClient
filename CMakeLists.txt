@@ -81,3 +81,6 @@ add_subdirectory(util/MyDBPool)
 
 #配置文件模块
 add_subdirectory(util/MyConfigFile)
+
+#服务器模块
+add_subdirectory(util/JQHttpServer)
