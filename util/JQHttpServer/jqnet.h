@@ -27,10 +27,8 @@
 
 // Qt lib import
 #include <QSharedPointer>
-#include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QHttpMultiPart>
-#include <QNetworkInterface>
 #include <QNetworkAddressEntry>
 
 // JQLibrary lib import

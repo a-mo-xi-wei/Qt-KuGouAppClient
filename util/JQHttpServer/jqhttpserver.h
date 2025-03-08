@@ -30,15 +30,9 @@
 #include <functional>
 
 // Qt lib import
-#include <QObject>
-#include <QSharedPointer>
-#include <QPointer>
 #include <QVector>
-#include <QMap>
-#include <QSet>
 #include <QFuture>
 #include <QMutex>
-#include <QHostAddress>
 #include <QUrl>
 #ifndef QT_NO_SSL
 #   include <QSslCertificate>

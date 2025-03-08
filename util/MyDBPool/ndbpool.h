@@ -6,8 +6,8 @@
  * 版本: 1.0.7.0
  * 邮箱: daodaoliang@yeah.net
  */
-#include "common/common.h"
-#include "common/singleton.h"
+#include "common.h"
+#include "singleton.h"
 #include "ndbpool_p.h"
 #include <QTimer>
 

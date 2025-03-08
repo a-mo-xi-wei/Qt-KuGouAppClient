@@ -1,7 +1,7 @@
 ﻿#ifndef NDBPOOL_P_H
 #define NDBPOOL_P_H
 
-#include "common/common.h"
+#include "../MyCommon/common.h"
 
 #include <QMutex>
 #include <QSemaphore>

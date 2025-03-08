@@ -1,7 +1,7 @@
 #ifndef SQLITEDATAPROVIDER_H
 #define SQLITEDATAPROVIDER_H
 
-#include "common/recordset.h"
+#include "recordset.h"
 
 #include <QObject>
 #include <QString>

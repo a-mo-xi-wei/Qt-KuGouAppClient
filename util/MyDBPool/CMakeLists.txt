@@ -9,26 +9,19 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Sql Network)
+find_package(Qt6 REQUIRED COMPONENTS Sql Network Gui Widgets)
 
 file(GLOB SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 
-file(GLOB SOURCE_COMMON_CPP ${CMAKE_CURRENT_SOURCE_DIR}/common/*.cpp)
-file(GLOB SOURCE_COMMON_C ${CMAKE_CURRENT_SOURCE_DIR}/common/*.c)
-file(GLOB SOURCE_COMMON_H ${CMAKE_CURRENT_SOURCE_DIR}/common/*.h)
-
 set(SOURCE_FILE
     ${SOURCE_CPP}
     ${SOURCE_H}
-    ${SOURCE_COMMON_CPP}
-    ${SOURCE_COMMON_C}
-    ${SOURCE_COMMON_H}
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
 # 指定库的包含目录
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} PRIVATE ../MyCommon)
 
-target_link_libraries(${PROJECT_NAME} Qt6::Sql Qt6::Network MyQsLog)
+target_link_libraries(${PROJECT_NAME} Qt6::Sql Qt6::Network Qt6::Gui Qt6::Widgets MyQsLog)
