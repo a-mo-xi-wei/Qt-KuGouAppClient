@@ -61,9 +61,6 @@ add_subdirectory(ui/MyMenu)
 #复选框模块
 add_subdirectory(ui/MyCheckBox)
 
-#开始模块
-add_subdirectory(KuGouStart)
-
 #异步线程模块
 add_subdirectory(util/MyAsyncThread)
 
@@ -82,5 +79,11 @@ add_subdirectory(util/MyDBPool)
 #配置文件模块
 add_subdirectory(util/MyConfigFile)
 
-#服务器模块
+#JQHttpServer模块
 add_subdirectory(util/JQHttpServer)
+
+#开始模块
+add_subdirectory(KuGouStart)
+
+#服务器模块
+add_subdirectory(KuGouServer)
