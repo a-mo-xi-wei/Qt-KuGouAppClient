@@ -580,8 +580,8 @@ static NEDMALLOCNOALIASATTR mstate nedblkmstate(void *RESTRICT mem) THROWSPEC
 			    FLAG_BITS = bit 0 is CINUSE (currently in use unless is mmap), bit 1 is PINUSE (previous block currently
 				            in use unless mmap), bit 2 is UNUSED and currently is always zero.
 			*/
-			register void *RESTRICT leastusedaddress_=leastusedaddress;		/* Cache these to avoid register reloading */
-			register size_t largestusedblock_=largestusedblock;
+			void *RESTRICT leastusedaddress_=leastusedaddress;		/* Cache these to avoid register reloading */
+			size_t largestusedblock_=largestusedblock;
 			if(!is_aligned(mem)) return 0;		/* Would fail very rarely as all allocators return aligned blocks */
 			if(mem<leastusedaddress_) return 0;	/* Simple but effective */
 			{

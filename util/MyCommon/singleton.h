@@ -1,7 +1,7 @@
 #ifndef SINGLETON_H
 #define SINGLETON_H
 
-#include <assert.h>
+#include <cassert>
 
 #define initialiseSingleton(type) \
     template <> type * Singleton < type > :: mSingleton = 0
@@ -18,12 +18,12 @@ template < class type > class Singleton
 public:
     Singleton()
     {
-        assert(this->mSingleton == 0);
-        this->mSingleton = static_cast<type*>(this);
+        assert(this->mSingleton == nullptr);
+        mSingleton = static_cast<type*>(this);
     }
     virtual ~Singleton()
     {
-        this->mSingleton = 0;
+        mSingleton = 0;
     }
 
     static type & getSingleton() { assert(mSingleton); return *mSingleton; }

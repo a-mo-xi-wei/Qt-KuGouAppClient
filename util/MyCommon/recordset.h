@@ -64,7 +64,7 @@ public:
 	/// 检测当前记录是否为空
 	bool isEmpty() const;
 	/// 得到记录个数
-	inline int Count() { return (int)mRecordSets.size(); }
+	int Count() const { return static_cast<int>(mRecordSets.size()); }
 
 	/// 添加一行新的数据
 	void add(const RecordSet& rowset);

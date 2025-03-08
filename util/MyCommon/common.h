@@ -95,13 +95,6 @@
 //#define ENABLE_QCEFVIEW                             // 是否启用QCefView
 //#define ENABLE_WEBENGINE                          // 是否使用QWebEngine
 
-#if defined (WIN32)
-    //#define ENALBE_NEDALLOC  1                      // 默认启用Nedalloc
-    #define ENABLE_TCMALLOC  1                      // 启用tcmalloc
-#else
-    #define ENABLE_TCMALLOC  1                      // 启用tcmalloc
-#endif
-
 class QWebSocket;
 
 /**

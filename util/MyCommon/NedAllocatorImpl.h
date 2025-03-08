@@ -1,6 +1,8 @@
 ﻿#ifndef NEDALLOCATOR_IMPL_H_
 #define NEDALLOCATOR_IMPL_H_
 
+#include "common.h"
+
 #if defined(__cplusplus)
 extern "C" {
 #endif

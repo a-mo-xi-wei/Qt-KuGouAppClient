@@ -1,5 +1,4 @@
 ﻿#include "NedAllocatorImpl.h"
-#include "common.h"
 
 #if ENALBE_NEDALLOC == 1
     #include "nedmalloc.c"

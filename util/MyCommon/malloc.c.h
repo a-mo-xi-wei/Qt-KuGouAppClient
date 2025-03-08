@@ -5158,7 +5158,7 @@ void* dlmalloc(size_t bytes) {
       goto postaction;
     }
 
-    mem = sys_alloc(gm, nb);
+    mem = sys_alloc(gm, nb , 0);
 
   postaction:
     POSTACTION(gm);
@@ -5312,12 +5312,12 @@ void* dlrealloc(void* oldmem, size_t bytes) {
       return 0;
     }
 #endif /* FOOTERS */
-    return internal_realloc(m, oldmem, bytes);
+    return internal_realloc(m, oldmem, bytes,0,0);
   }
 }
 
 void* dlmemalign(size_t alignment, size_t bytes) {
-  return internal_memalign(gm, alignment, bytes);
+  return internal_memalign(gm, alignment, bytes ,0);
 }
 
 void** dlindependent_calloc(size_t n_elements, size_t elem_size,

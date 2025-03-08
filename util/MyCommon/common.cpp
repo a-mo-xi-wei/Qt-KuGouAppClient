@@ -1,8 +1,8 @@
 #include "common.h"
 #include "fastlz.h"
 #include "NedAllocatorImpl.h"
-#include "ndbpool.h"
-#include "QsLog.h"
+#include "../MyDBPool/ndbpool.h"
+#include "../MyQsLog/QsLog.h"
 
 #include "../MyBreakPad/exception_handler.h"
 
