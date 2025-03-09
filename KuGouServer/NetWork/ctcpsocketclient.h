@@ -11,10 +11,10 @@
 #include <QUrl>
 #include <QFile>
 
-#include "../common/singleton.h"
-#include "../common/common.h"
+#include "singleton.h"
+#include "common.h"
 #include "networkframemanager.h"
-#include "../common/NedAllocatedObject.h"
+#include "NedAllocatedObject.h"
 
 #define IDD_COMPRESS_BUFFER_SIZE 5120
 

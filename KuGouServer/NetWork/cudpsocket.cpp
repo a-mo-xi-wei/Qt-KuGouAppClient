@@ -1,7 +1,8 @@
-﻿#include "../../includes/network/cudpsocket.h"
-#include "../../includes/QsLog/QsLog.h"
-#include "../../includes/common/common.h"
+﻿#include "cudpsocket.h"
+#include "QsLog.h"
+#include "common.h"
 
+#include <random>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -45,9 +46,20 @@ CUdpSocket::CUdpSocket(QObject *parent,bool isEnableKcp,bool isEnableReciver,
     if(m_isEnableReciver)
     {
         if(m_receivePort == -1)
-        {
+        {/*
+            qsrand(time(NULL));
+            m_receivePort = qrand() % 1000 + 1000;*/
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            // Qt 6 使用 C++ 标准库
+            std::random_device rd;
+            std::mt19937 gen(rd());
+            std::uniform_int_distribution<> dis(1000, 1999);
+            m_receivePort = dis(gen);
+#else
+            // Qt 5 使用 qsrand 和 qrand
             qsrand(time(NULL));
             m_receivePort = qrand() % 1000 + 1000;
+#endif
         }
 
         m_UdpSocket.bind(m_receivePort,QUdpSocket::ShareAddress);

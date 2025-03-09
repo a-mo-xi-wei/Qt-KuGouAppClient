@@ -1,12 +1,12 @@
 ﻿#ifndef CHTTPSERVER_H
 #define CHTTPSERVER_H
 
-#include "../common/common.h"
-#include "../../includes/QsLog/QsLog.h"
+#include "common.h"
+#include "QsLog.h"
 #include "networkframemanager.h"
-#include "../common/NedAllocatedObject.h"
-#include "../common/resourcemanager.h"
-#include "JQLibrary/jqhttpserver.h"
+#include "NedAllocatedObject.h"
+//#include "resourcemanager.h"
+#include "jqhttpserver.h"
 
 #include <QObject>
 #include <QMutex>
@@ -32,7 +32,7 @@ public:
     /// 检测当前服务器是否在运行
     inline bool isRunning() { return m_serverisRunning; }
     /// 得到资源管理器
-    inline CResourceManager* getResourceManager() { return &m_ResourceManager; }
+    //inline CResourceManager* getResourceManager() { return &m_ResourceManager; }
     /// 设置当前工作目录
     inline void setCurrentWorkingPath(QString path) { m_currentWorkingPath = path; }
     /// 得到当前工作目录
@@ -72,7 +72,7 @@ private:
 
 private:
     bool m_serverisRunning;                  /**< 服务器是否在运行 */
-    CResourceManager m_ResourceManager;      /**< 资源管理器 */
+    //CResourceManager m_ResourceManager;      /**< 资源管理器 */
     QString m_currentWorkingPath;            /**< 当前工作目录 */
     bool m_isEnableSSL;                      /**< 是否启用SSL */
     NetworkFrameManager *m_NetworkFrameManager;

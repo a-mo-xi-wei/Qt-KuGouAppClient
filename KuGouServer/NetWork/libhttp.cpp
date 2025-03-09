@@ -1,8 +1,7 @@
-﻿#include "../../includes/network/libhttp.h"
-#include "../../includes/QsLog/QsLog.h"
+﻿#include "libhttp.h"
+#include "QsLog.h"
 
 #include <QEventLoop>
-#include <QTextCodec>
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -73,9 +72,15 @@ QString CLibhttp::UrlRequestGet(const QString url,const QString data,int timeout
             //QLOG_INFO()<<"UrlRequestPost:"<<(QDateTime::currentSecsSinceEpoch()-currenttime);
             emit signalshowlog(QString::asprintf("CLibhttp::UrlRequestGet:status code:%d",nStatusCode));
 
-            QTextCodec *codec = QTextCodec::codecForName("utf8");
+            /*QTextCodec *codec = QTextCodec::codecForName("utf8");
 
+            QString replyData = codec->toUnicode(reply->readAll());*/
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            QString replyData = QString::fromUtf8(reply->readAll());
+#else
+            QTextCodec *codec = QTextCodec::codecForName("UTF-8");
             QString replyData = codec->toUnicode(reply->readAll());
+#endif
             reply->deleteLater();
             reply=NULL;
 
@@ -144,9 +149,15 @@ QString CLibhttp::UrlRequestPost(const QString url,const QString data,int timeou
             //QLOG_INFO()<<"UrlRequestPost:"<<(QDateTime::currentSecsSinceEpoch()-currenttime);
             emit signalshowlog(QString::asprintf("CLibhttp::UrlRequestPost:status code:%d",nStatusCode));
 
-            QTextCodec *codec = QTextCodec::codecForName("utf8");
+            /*QTextCodec *codec = QTextCodec::codecForName("utf8");
 
+            QString replyData = codec->toUnicode(reply->readAll());*/
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            QString replyData = QString::fromUtf8(reply->readAll());
+#else
+            QTextCodec *codec = QTextCodec::codecForName("UTF-8");
             QString replyData = codec->toUnicode(reply->readAll());
+#endif
             reply->deleteLater();
             reply=NULL;
 

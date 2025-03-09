@@ -7,8 +7,8 @@
 #include <QMutex>
 #include <QSemaphore>
 
-#include "../common/common.h"
-#include "JQLibrary/jqhttpserver.h"
+#include "common.h"
+#include "jqhttpserver.h"
 
 QT_FORWARD_DECLARE_CLASS(QWebSocket)
 QT_FORWARD_DECLARE_CLASS(QTcpSocket)

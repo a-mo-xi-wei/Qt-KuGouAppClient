@@ -1,6 +1,4 @@
-﻿#include "../../includes/network/ccanbus.h"
-//#include "../../includes/QsLog/QsLog.h"
-#include "../../includes/common/common.h"
+﻿#include "ccanbus.h"
 
 #include <QCanBus>
 #include <QDateTime>

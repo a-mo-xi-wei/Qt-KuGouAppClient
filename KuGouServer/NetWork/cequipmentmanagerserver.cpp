@@ -1,12 +1,13 @@
-﻿#include "../../includes/network/cequipmentmanagerserver.h"
-#include "../../includes/QsLog/QsLog.h"
-#include "../../includes/common/common.h"
-#include "../../includes/scripts/cjsmanager.h"
-#include "../../includes/database/ndbpool/ndbpool.h"
+﻿#include "cequipmentmanagerserver.h"
+#include "QsLog.h"
+#include "common.h"
+#include "ndbpool.h"
 
 #include <QJsonArray>
 #include <QDebug>
 #include <QCryptographicHash>
+#include <QWebSocket>
+#include <QSQlError>
 
 #define IDD_USER 0     // 用户
 #define IDD_DEVIE 1    // 设备
@@ -617,7 +618,7 @@ void CEquipmentManagerServer::onProcessNetEquipmentRegister(QWebSocket *conn,QJs
         if(pDeviceList.isEmpty())
             continue;
 
-        QVector<int>::iterator iterDevDevice = qFind(pDeviceList.begin(),pDeviceList.end(),deviceid);
+        QVector<int>::iterator iterDevDevice = std::find(pDeviceList.begin(),pDeviceList.end(),deviceid);
 
         if(iterDevDevice != pDeviceList.end())
         {

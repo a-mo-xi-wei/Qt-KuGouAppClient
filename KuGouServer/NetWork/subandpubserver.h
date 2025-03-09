@@ -8,8 +8,7 @@
 #include "networkframemanager.h"
 #include "cwebsocketserver.h"
 #include "cwebsocketclient.h"
-#include "../common/common.h"
-#include "../QsLog/QsLog.h"
+#include "QsLog.h"
 
 class CWebSocketServer;
 class CWebSocketClient;

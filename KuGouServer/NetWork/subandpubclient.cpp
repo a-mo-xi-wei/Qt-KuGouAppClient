@@ -1,5 +1,5 @@
-﻿#include "../../includes/network/subandpubclient.h"
-#include "../../includes/QsLog/QsLog.h"
+﻿#include "subandpubclient.h"
+#include "QsLog.h"
 
 #include <QDateTime>
 #include <QUuid>
@@ -447,7 +447,7 @@ bool subandpubclient::loadConfigFile(QString filepath)
     {
         if(reader.isStartElement())
         {
-            if(reader.name() == "brotherclient")
+            if(reader.name().toString() == "brotherclient")
             {
                 QXmlStreamAttributes attributes = reader.attributes();
 

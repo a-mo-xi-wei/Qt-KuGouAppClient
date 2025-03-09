@@ -1,4 +1,4 @@
-﻿#include "../../includes/network/cmodbusserver.h"
+﻿#include "cmodbusserver.h"
 
 #include <QModbusRtuSerialSlave>
 #include <QModbusTcpServer>
@@ -74,6 +74,8 @@ void CModbusServer::createModbusServer(void)
     }
     else if (m_ModbusConnection == Modbus_Tcp)
     {
+        // 在连接信号前注册QTcpSocket*类型
+        qRegisterMetaType<QTcpSocket*>();
         QModbusTcpServer *pModbusTcpServer = new QModbusTcpServer(this);
         m_modbusServer = pModbusTcpServer;
 
@@ -261,10 +263,19 @@ bool CModbusServer::startupSerialPort(QString port,
                  tr("CModbusServer::startupSerialPort fail:") + m_modbusServer->errorString());
     }
 
-    printLog(QsLogging::Level::InfoLevel,
+    /*printLog(QsLogging::Level::InfoLevel,
              QString::asprintf("CModbusServer::startupSerialPort succesed,port:%d;",port)+
              QString::asprintf("server address:%d;",m_ServerAddress)+
-             QString::asprintf("Parity:%d BaudRate:%d DataBits:%d StopBits:%d",parity,baud,dataBits,stopBits));
+             QString::asprintf("Parity:%d BaudRate:%d DataBits:%d StopBits:%d",parity,baud,dataBits,stopBits));*/
+    printLog(QsLogging::Level::InfoLevel,
+         QString("CModbusServer::startupSerialPort succesed, port:%1; server address:%2; Parity:%3 BaudRate:%4 DataBits:%5 StopBits:%6")
+             .arg(port)
+             .arg(m_ServerAddress)
+             .arg(parity)
+             .arg(baud)
+             .arg(dataBits)
+             .arg(stopBits));
+
 
     m_isServerStartupSuccessed = isOk;
 

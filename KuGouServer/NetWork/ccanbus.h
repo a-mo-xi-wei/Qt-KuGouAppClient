@@ -7,7 +7,7 @@
 #include <QVariant>
 #include <QTimer>
 
-#include "../../includes/QsLog/QsLog.h"
+#include "QsLog.h"
 
 class ccanbus : public QObject
 {

@@ -11,10 +11,8 @@ CResourceManager::CResourceManager()
 {
     m_SystemWorkingPathTimer.setSingleShot(true);
 
-    connect(&m_SystemWorkingPathTimer, SIGNAL(timeout()),
-            this, SLOT(WorkingfileChanged()));
-    connect(&m_pSystemWorkingPathWatcher, SIGNAL(fileChanged(const QString)),
-            this, SLOT(WorkingfileChanging(const QString)));
+    connect(&m_SystemWorkingPathTimer, &QTimer::timeout,this, &CResourceManager::WorkingfileChanged);
+    connect(&m_pSystemWorkingPathWatcher,&QFileSystemWatcher::fileChanged,this,&CResourceManager::WorkingfileChanging);
 }
 
 CResourceManager::~CResourceManager()
@@ -156,7 +154,7 @@ QByteArray CResourceManager::getFileFromZip(QString filepath)
     QHash<QString,QList<QString>>::iterator iter = m_zipsubfileresources.begin();
     for(;iter != m_zipsubfileresources.end();++iter)
     {
-        QList<QString>::iterator iter2 = qFind(iter.value().begin(),
+        QList<QString>::iterator iter2 = std::find(iter.value().begin(),
                                                iter.value().end(),
                                                filepath);
         if(iter2 == iter.value().end())

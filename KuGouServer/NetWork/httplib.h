@@ -3734,7 +3734,7 @@ inline int Server::bind_to_any_port(const char *host, int socket_flags) {
 
 inline bool Server::listen_after_bind() { return listen_internal(); }
 
-inline bool Server::listen(const char *host, int port, int socket_flags) {
+inline bool Server::listen(const char *host, int port, int socket_flags,bool isLoop) {
   return bind_to_port(host, port, socket_flags) && listen_internal();
 }
 

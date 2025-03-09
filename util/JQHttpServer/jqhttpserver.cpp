@@ -28,7 +28,6 @@
 
 #include <QTcpServer>
 #include <QTcpSocket>
-#include <QLocalServer>
 #include <QLocalSocket>
 #ifndef QT_NO_SSL
 #   include <QSslKey>
@@ -120,10 +119,10 @@ static QString replyOptionsFormat(
 // Session
 QAtomicInt JQHttpServer::Session::remainSession_ = 0;
 
-JQHttpServer::Session::Session(const QPointer< QIODevice > &socket):
-    ioDevice_( socket ),
-    autoCloseTimer_( new QTimer ),
-    m_isSafeExit(0)
+JQHttpServer::Session::Session(const QPointer< QIODevice > &socket)
+    : m_isSafeExit(0)
+    , ioDevice_( socket )
+    , autoCloseTimer_( new QTimer )
 {
     ++remainSession_;
 //    qDebug() << "remainSession:" << remainSession_ << this;
@@ -847,7 +846,7 @@ void JQHttpServer::Session::onBytesWritten(const qint64 &written)
 
 // AbstractManage
 JQHttpServer::AbstractManage::AbstractManage(const int &handleMaxThreadCount)
-    : m_mainObj(NULL)
+    : m_mainObj(nullptr)
 {
     handleThreadPool_.reset( new QThreadPool );
     serverThreadPool_.reset( new QThreadPool );
@@ -953,7 +952,7 @@ void JQHttpServer::AbstractManage::handleAccepted(const QPointer< Session > &ses
         //emit onRedReady(session);
 
         if ( !this->httpAcceptedCallback_ ||
-             session == NULL)
+             session == nullptr)
         {
             qDebug() << "JQHttpServer::Manage::handleAccepted: error, httpAcceptedCallback_ is nullptr";
             return;
@@ -1109,7 +1108,7 @@ bool JQHttpServer::SslServerManage::listen(
     sslConfiguration_->setPeerVerifyDepth( 1 );
     sslConfiguration_->setLocalCertificate( sslCertificate );
     sslConfiguration_->setPrivateKey( sslKey );
-    sslConfiguration_->setProtocol( QSsl::TlsV1_1OrLater );
+    sslConfiguration_->setProtocol( QSsl::TlsV1_2OrLater );
     sslConfiguration_->setCaCertificates( caCertificates );
 
     return this->initialize();
@@ -1217,7 +1216,7 @@ void JQHttpServer::Service::registerProcessor( const QPointer< QObject > &proces
                         processor,
                         "sessionAccepted",
                         Qt::DirectConnection,
-                        Q_ARG( QPointer< JQHttpServer::Session >, session ) );
+                        Q_ARG( QPointer<JQHttpServer::Session>, session ) );
                 };
 
             continue;
@@ -1432,7 +1431,7 @@ void JQHttpServer::Service::onSessionAccepted(const QPointer< JQHttpServer::Sess
                     "certificateVerifier",
                     Qt::DirectConnection,
                     Q_ARG( QSslCertificate, session->peerCertificate() ),
-                    Q_ARG( QPointer< JQHttpServer::Session >, session )
+                    Q_ARG(QPointer<JQHttpServer::Session>, session )
                 );
 
         if ( session->replyHttpCode() >= 0 ) { return; }
@@ -1464,7 +1463,7 @@ void JQHttpServer::Service::onSessionAccepted(const QPointer< JQHttpServer::Sess
                                 it->process,
                                 it->slotName.toLatin1().data(),
                                 Qt::DirectConnection,
-                                Q_ARG( QPointer< JQHttpServer::Session >, session )
+                                Q_ARG(QPointer<JQHttpServer::Session>, session )
                             );
                     return;
                 }
@@ -1478,7 +1477,7 @@ void JQHttpServer::Service::onSessionAccepted(const QPointer< JQHttpServer::Sess
                                     it->slotName.toLatin1().data(),
                                     Qt::DirectConnection,
                                     Q_ARG( QVariantList, json.array().toVariantList() ),
-                                    Q_ARG( QPointer< JQHttpServer::Session >, session )
+                                    Q_ARG(QPointer<JQHttpServer::Session>, session )
                                 );
                         return;
                     }
@@ -1494,7 +1493,7 @@ void JQHttpServer::Service::onSessionAccepted(const QPointer< JQHttpServer::Sess
                                     it->slotName.toLatin1().data(),
                                     Qt::DirectConnection,
                                     Q_ARG( QVariantMap, json.object().toVariantMap() ),
-                                    Q_ARG( QPointer< JQHttpServer::Session >, session )
+                                    Q_ARG(QPointer<JQHttpServer::Session>, session )
                                 );
                         return;
                     }
@@ -1509,8 +1508,8 @@ void JQHttpServer::Service::onSessionAccepted(const QPointer< JQHttpServer::Sess
                                     it->process,
                                     it->slotName.toLatin1().data(),
                                     Qt::DirectConnection,
-                                    Q_ARG( QList< QVariantMap >, Service::variantListToListVariantMap( json.array().toVariantList() ) ),
-                                    Q_ARG( QPointer< JQHttpServer::Session >, session )
+                                    Q_ARG(QList<QVariantMap>, Service::variantListToListVariantMap( json.array().toVariantList() ) ),
+                                    Q_ARG(QPointer<JQHttpServer::Session>, session)
                                 );
                         return;
                     }

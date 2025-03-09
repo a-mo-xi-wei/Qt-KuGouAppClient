@@ -1,7 +1,6 @@
-﻿#include "../../includes/network/csvnversionclient.h"
-#include "../../includes/QsLog/QsLog.h"
-#include "../../includes/common/common.h"
-#include "../../includes/common/fastlz.h"
+﻿#include "csvnversionclient.h"
+#include "QsLog.h"
+#include "fastlz.h"
 
 #include <QDebug>
 #include <QDir>

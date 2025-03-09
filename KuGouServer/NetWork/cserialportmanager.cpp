@@ -1,7 +1,7 @@
-#include "../../includes/network/cserialportmanager.h"
-#include "../../includes/QsLog/QsLog.h"
+#include "cserialportmanager.h"
+#include "QsLog.h"
 
-#include <QtSerialPort/QSerialPortInfo>
+#include <QSerialPortInfo>
 #include <QDebug>
 #include <QJsonObject>
 #include <QJsonDocument>
@@ -103,16 +103,16 @@ void CSerialPort::openArduinoSerialPort()
                     + QObject::tr("Manufacturer:") + info.manufacturer() + "\n"
                     + QObject::tr("Serial number:") + info.serialNumber() + "\n"
                     + QObject::tr("Vendor Identifier:") + (info.hasVendorIdentifier() ? QString::number(info.vendorIdentifier(), 16) : QString()) + "\n"
-                    + QObject::tr("Product Identifier:") + (info.hasProductIdentifier() ? QString::number(info.productIdentifier(), 16) : QString()) + "\n"
-                    + QObject::tr("Busy:") + (info.isBusy() ? QObject::tr("Yes") : QObject::tr("No")) + "\n";
+                    + QObject::tr("Product Identifier:") + (info.hasProductIdentifier() ? QString::number(info.productIdentifier(), 16) : QString()) + "\n";
+                    //+ QObject::tr("Busy:") + (info.isBusy() ? QObject::tr("Yes") : QObject::tr("No")) + "\n";
 
-        if(!info.isBusy() && (info.description().contains("Arduino") || info.manufacturer().contains("Arduino")))
+        if(/*!info.isBusy() && */(info.description().contains("Arduino") || info.manufacturer().contains("Arduino")))
             portToUse = info;
         qDebug() << s;
         QLOG_INFO() << "CSerialPortManager::openSerialPort:" << s;
     }
 
-    if(portToUse.isNull() || !portToUse.isValid())
+    if(portToUse.isNull() || !portToUse.isNull())
     {
         qDebug() << "port is not valid:" << portToUse.portName();
         QLOG_ERROR() << "port is not valid:" << portToUse.portName();

@@ -3,6 +3,7 @@
 
 #include "networkframemanager.h"
 #include "cwebsocketclient.h"
+#include "common.h"
 
 #include <QObject>
 #include <QMap>

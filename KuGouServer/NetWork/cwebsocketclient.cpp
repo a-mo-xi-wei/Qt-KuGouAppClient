@@ -1,8 +1,7 @@
-﻿#include "../../includes/network/cwebsocketclient.h"
+﻿#include "cwebsocketclient.h"
 #include "QtWebSockets/qwebsocket.h"
-#include "../../includes/QsLog/QsLog.h"
+#include "QsLog.h"
 
-#include <QTextCodec>
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QFileInfo>
@@ -154,7 +153,8 @@ bool CWebSocketClient::sendFile(QString filepath,bool isExcludeUserInputEvents,Q
 
     m_totalfilesize = tmpByteArray.size();
     m_sendsize=0;
-    quint16 pdecchecknum = qChecksum(tmpByteArray.constData(),tmpByteArray.size());
+    //quint16 pdecchecknum = qChecksum(tmpByteArray.constData(),tmpByteArray.size());
+    quint16 pdecchecknum = qChecksum(QByteArrayView(tmpByteArray));
 
     QString tmpRealFilePath = filepath.mid(rootpath.size());
 
@@ -224,7 +224,7 @@ qint64 CWebSocketClient::sendBinaryMessage(const QByteArray &data,bool isExclude
 
     m_totaldatasize = tmpByteArray.size();
     m_sendsize=0;
-    quint16 pdecchecknum = qChecksum(tmpByteArray.constData(),tmpByteArray.size());
+    quint16 pdecchecknum = qChecksum(QByteArrayView(tmpByteArray));
 
     tagDataStruct ptagDataStruct;
     memset(&ptagDataStruct,0,sizeof(ptagDataStruct));
@@ -430,7 +430,7 @@ void CWebSocketClient::onPrcessRecvBinaryData(QWebSocket *pwebsocket,const QByte
         m_recvDataBytes.remove(0,m_tagDataStruct.compressdataSize);
 
         // 获取文件校验码
-        quint16 pdecchecknum = qChecksum(precvDataData.constData(),precvDataData.size());
+        quint16 pdecchecknum = qChecksum(QByteArrayView(precvDataData));
 
         if(m_tagDataStruct.checknum == pdecchecknum)
         {
@@ -498,7 +498,7 @@ void CWebSocketClient::onPrcessRecvFile(QWebSocket *pwebsocket,const QByteArray 
         m_recvFileBytes.remove(0,m_tagFileStruct.compressfileSize);
 
         // 获取文件校验码
-        quint16 pdecchecknum = qChecksum(precvFileData.constData(),precvFileData.size());
+        quint16 pdecchecknum = qChecksum(QByteArrayView(precvFileData));
 
         // 解压文件
         QByteArray precvFileBytes = qUncompress(precvFileData);

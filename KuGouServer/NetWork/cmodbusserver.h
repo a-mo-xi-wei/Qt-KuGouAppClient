@@ -8,14 +8,15 @@
 #include <QObject>
 #include <QVector>
 
-#include "../../includes/common/common.h"
-#include "../../includes/QsLog/QsLog.h"
+#include "common.h"
+#include "QsLog.h"
 
 class CModbusServer;
 class QTcpSocket;
 
 class CModbusTcpConnectionObserver : public QModbusTcpConnectionObserver
 {
+  Q_OBJECT
 public:
     CModbusTcpConnectionObserver(CModbusServer *mServer);
     ~CModbusTcpConnectionObserver();

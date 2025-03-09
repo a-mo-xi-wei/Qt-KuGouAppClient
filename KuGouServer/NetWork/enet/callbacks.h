@@ -5,13 +5,13 @@
 #ifndef __ENET_CALLBACKS_H__
 #define __ENET_CALLBACKS_H__
 
-#include <stdlib.h>
+#include "win32.h"
 
 typedef struct _ENetCallbacks
 {
-    void * (ENET_CALLBACK * malloc) (size_t size);
-    void (ENET_CALLBACK * free) (void * memory);
-    void (ENET_CALLBACK * no_memory) (void);
+    void* (ENET_CALLBACK * malloc)(size_t size);
+    void (ENET_CALLBACK * free)(void* memory);
+    void (ENET_CALLBACK * no_memory)(void);
 } ENetCallbacks;
 
 /** @defgroup callbacks ENet internal callbacks

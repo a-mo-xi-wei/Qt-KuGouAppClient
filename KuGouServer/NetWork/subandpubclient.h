@@ -8,8 +8,8 @@
 
 #include "networkframemanager.h"
 #include "cwebsocketclient.h"
-#include "../common/common.h"
-#include "../QsLog/QsLog.h"
+#include "common.h"
+#include "QsLog.h"
 
 class subandpubclient : public QObject , public NetworkFrameManager
 {

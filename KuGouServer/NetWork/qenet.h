@@ -1,8 +1,6 @@
 ﻿#ifndef _C_Q_ENET_H_INCLUDE_
 #define _C_Q_ENET_H_INCLUDE_
 
-//#include "../../includes/common/common.h"
-
 #include <QThread>
 #include <QTimer>
 #include <QHash>

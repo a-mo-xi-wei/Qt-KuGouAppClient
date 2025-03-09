@@ -1,8 +1,8 @@
 ﻿#ifndef _C_UDP_SOCKET_H_INCLUDE_
 #define _C_UDP_SOCKET_H_INCLUDE_
 
-#include "../../includes/common/common.h"
-#include "../../includes/common/NedAllocatedObject.h"
+#include "common.h"
+#include "NedAllocatedObject.h"
 
 #include <QObject>
 #include <QUdpSocket>

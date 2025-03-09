@@ -1,10 +1,10 @@
-﻿#include "../../includes/network/networkframemanager.h"
+﻿#include "networkframemanager.h"
 
 #include "QtWebSockets/qwebsocket.h"
-#include "../../includes/network/cwebsocketserver.h"
+#include "cwebsocketserver.h"
 
 #if defined (WIN32)
-#include "../../extends/enet/include/enet/enet.h"
+#include "enet/enet.h"
 #endif
 
 #include <QtSerialPort/QSerialPort>

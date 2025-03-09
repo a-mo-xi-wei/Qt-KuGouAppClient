@@ -1,4 +1,4 @@
-﻿#include "../../includes/network/cmodbusclient.h"
+﻿#include "cmodbusclient.h"
 
 #include <QDateTime>
 #include <QModbusRtuSerialMaster>
@@ -186,9 +186,17 @@ bool CModbusClient::startupSerialPort(QString port,
                  tr("CModbusClient::startupSerialPort fail:") + m_modbusClient->errorString());
     }
 
+//    printLog(QsLogging::Level::InfoLevel,
+//             QString::asprintf("CModbusClient::startupSerialPort succesed,port:%d;",port)+
+//             QString::asprintf("Parity:%d BaudRate:%d DataBits:%d StopBits:%d",parity,baud,dataBits,stopBits));
+
     printLog(QsLogging::Level::InfoLevel,
-             QString::asprintf("CModbusClient::startupSerialPort succesed,port:%d;",port)+
-             QString::asprintf("Parity:%d BaudRate:%d DataBits:%d StopBits:%d",parity,baud,dataBits,stopBits));
+         QString("CModbusClient::startupSerialPort succesed, port:%1; Parity:%2 BaudRate:%3 DataBits:%4 StopBits:%5")
+             .arg(port)
+             .arg(parity)
+             .arg(baud)
+             .arg(dataBits)
+             .arg(stopBits));
 
     m_isClientStartupSuccessed = isOk;
 

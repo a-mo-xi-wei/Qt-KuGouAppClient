@@ -1,8 +1,8 @@
-﻿#include "../../includes/network/qenet.h"
-#include "../../includes/QsLog/QsLog.h"
-#include "../../includes/common/common.h"
-#include "../../extends/enet/include/enet/enet.h"
-#include "../../includes/network/networkframemanager.h"
+﻿#include "qenet.h"
+#include "QsLog.h"
+#include "common.h"
+#include "enet/enet.h"
+#include "networkframemanager.h"
 
 #include <QUuid>
 #include <QDebug>

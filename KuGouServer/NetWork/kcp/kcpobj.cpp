@@ -6,10 +6,10 @@
  */
 
 
-#include "../../../includes/network/kcp/ikcp.h"
-#include "../../../includes/network/kcp/kcpobj.h"
-#include "../../../includes/QsLog/QsLog.h"
-#include "../../../includes/common/common.h"
+#include "kcp/ikcp.h"
+#include "kcp/kcpobj.h"
+#include "QsLog.h"
+#include "common.h"
 
 namespace HYKT {
 

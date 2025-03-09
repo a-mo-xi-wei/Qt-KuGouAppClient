@@ -1,7 +1,7 @@
-﻿#include "../../includes/network/csvnversionserver.h"
-#include "../../includes/QsLog/QsLog.h"
-#include "../../includes/common/common.h"
-#include "../../includes/database/ndbpool/ndbpool.h"
+﻿#include "csvnversionserver.h"
+#include "QsLog.h"
+#include "ndbpool.h"
+#include "QSqlError.h"
 
 #include <QDebug>
 #include <QCryptographicHash>
@@ -69,7 +69,7 @@ void CSVNVersionServer::insertuseroperatorlog(int userid,int type,int grade,QStr
 {
     QDateTime ptime = QDateTime::currentDateTime();
     m_sqliteDataProvider.execSql(QString("insert into operationlog (userid,grade,type,log,time) values(%1,%2,%3,'%4',%5)")
-                                  .arg(userid).arg(grade).arg(type).arg(logmsg).arg(ptime.toTime_t()));
+                                  .arg(userid).arg(grade).arg(type).arg(logmsg).arg(ptime.toSecsSinceEpoch()));
 
     emit on_signalemitLogMessage(QString::asprintf("%d(%d)[%d]:",userid,type,grade)+
                                  logmsg);
@@ -660,7 +660,7 @@ void CSVNVersionServer::onProcessNetVersionAdd(QWebSocket *conn,QJsonObject &mes
 
     QDateTime time = QDateTime::currentDateTime();
     pRecord = m_sqliteDataProvider.execInsertSql(QString("insert into verstions (mainid,subid,type,changefiles,log,updatetime) values (%1,%2,%3,'%4','%5',%6)")
-                                 .arg(mainid).arg(subid).arg(type).arg(changefiles).arg(log).arg(time.toTime_t()));
+                                 .arg(mainid).arg(subid).arg(type).arg(changefiles).arg(log).arg(time.toSecsSinceEpoch()));
 
     if(pRecord.isEmpty())
     {
@@ -971,7 +971,7 @@ void CSVNVersionServer::onProcessNetRegiterUser(QWebSocket *conn,QJsonObject &me
                                  .arg(userpwd)
                                  .arg(type)
                                  .arg(projects)
-                                 .arg(time.toTime_t())
+                                 .arg(time.toSecsSinceEpoch())
                                  .arg(devices));
 
     if(pRecord.isEmpty())

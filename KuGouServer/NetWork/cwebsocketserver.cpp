@@ -1,9 +1,8 @@
-#include "../../includes/network/cwebsocketserver.h"
+#include "cwebsocketserver.h"
 #include "QtWebSockets/qwebsocketserver.h"
 #include "QtWebSockets/qwebsocket.h"
-#include "../../includes/QsLog/QsLog.h"
+#include "QsLog.h"
 
-#include <QTextCodec>
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QCoreApplication>
@@ -127,7 +126,7 @@ bool CWebSocketServer::sendFile(QWebSocket *pwebsocket,QString filepath,bool isE
 
     m_totalfilesize = tmpByteArray.size();
     m_sendsize=0;
-    quint16 pdecchecknum = qChecksum(tmpByteArray.constData(),tmpByteArray.size());
+    quint16 pdecchecknum = qChecksum(QByteArrayView(tmpByteArray));
 
     QString tmpRealFilePath = filepath.mid(rootpath.size());
 
@@ -228,7 +227,7 @@ qint64 CWebSocketServer::SendByteArray(QWebSocket *pwebsocket,QByteArray &data,b
 
     m_totaldatasize = tmpByteArray.size();
     m_sendsize=0;
-    quint16 pdecchecknum = qChecksum(tmpByteArray.constData(),tmpByteArray.size());
+    quint16 pdecchecknum = qChecksum(QByteArrayView(tmpByteArray));
 
     tagDataStruct ptagDataStruct;
     memset(&ptagDataStruct,0,sizeof(ptagDataStruct));
@@ -779,7 +778,7 @@ void CWebSocketServer::onPrcessRecvFile(QWebSocket *pwebsocket,const QByteArray 
         m_webClients[pwebsocket].m_recvFileBytes.remove(0,m_webClients[pwebsocket].m_tagFileStruct.compressfileSize);
 
         // 获取文件校验码
-        quint16 pdecchecknum = qChecksum(precvFileData.constData(),precvFileData.size());
+        quint16 pdecchecknum = qChecksum(QByteArrayView(precvFileData));
 
         // 解压文件
         QByteArray precvFileBytes = qUncompress(precvFileData);
@@ -880,7 +879,7 @@ void CWebSocketServer::onPrcessRecvBinaryData(QWebSocket *pwebsocket,const QByte
         m_webClients[pwebsocket].m_recvDataBytes.remove(0,m_webClients[pwebsocket].m_tagDataStruct.compressdataSize);
 
         // 获取文件校验码
-        quint16 pdecchecknum = qChecksum(precvDataData.constData(),precvDataData.size());
+        quint16 pdecchecknum = qChecksum(QByteArrayView(precvDataData));
 
         if(m_webClients[pwebsocket].m_tagDataStruct.checknum == pdecchecknum)
         {

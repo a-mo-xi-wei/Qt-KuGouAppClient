@@ -1,6 +1,7 @@
-﻿#include "../../includes/network/chttpserver.h"
-//#include "../../includes/QsLog/QsLog.h"
-#include "../../includes/common/common.h"
+﻿#include "chttpserver.h"
+#include "QsLog.h"
+#include "common.h"
+#include "jqhttpserver.h"
 
 #include <QFileInfo>
 #include <QImageReader>

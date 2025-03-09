@@ -5,7 +5,7 @@
 #include "cwebsocketserver.h"
 //#include "cudpsocket.h"
 #include "networkframemanager.h"
-#include "../database/ndbpool/sqlitedataprovider.h"
+#include "sqlitedataprovider.h"
 
 #include <QObject>
 #include <QHash>

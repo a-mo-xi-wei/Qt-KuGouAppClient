@@ -9,8 +9,8 @@
 #include <QtCore/QHash>
 #include <QtCore/QByteArray>
 
-#include "../common/singleton.h"
-#include "../common/common.h"
+#include "singleton.h"
+#include "common.h"
 #include "networkframemanager.h"
 
 QT_FORWARD_DECLARE_CLASS(QWebSocketServer)

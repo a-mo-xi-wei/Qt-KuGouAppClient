@@ -5,9 +5,9 @@
 #include <QHash>
 #include <QVector>
 
-#include "../QsLog/QsLog.h"
-#include "../database/ndbpool/sqlitedataprovider.h"
-#include "../common/common.h"
+#include "QsLog.h"
+#include "sqlitedataprovider.h"
+#include "common.h"
 #include "networkframemanager.h"
 #include "cwebsocketserver.h"
 
@@ -53,7 +53,7 @@ struct tagGroupInfo
     /// 查找指定ID的成员是否存在
     inline bool isExistMember(int userid)
     {
-        QVector<int>::iterator iter = qFind(members.begin(),
+        QVector<int>::iterator iter = std::find(members.begin(),
                                             members.end(),
                                             userid);
         if(iter == members.end())
@@ -65,7 +65,7 @@ struct tagGroupInfo
     /// 删除指定ID的成员
     inline bool deleteMember(int userid)
     {
-        QVector<int>::iterator iter = qFind(members.begin(),
+        QVector<int>::iterator iter = std::find(members.begin(),
                                             members.end(),
                                             userid);
         if(iter == members.end())
@@ -111,7 +111,7 @@ struct tagUserInfo
     /// 查找指定ID的朋友是否存在
     inline bool isExistFriend(int userid)
     {
-        QVector<int>::iterator iter = qFind(friends.begin(),
+        QVector<int>::iterator iter = std::find(friends.begin(),
                                             friends.end(),
                                             userid);
         if(iter == friends.end())
@@ -123,7 +123,7 @@ struct tagUserInfo
     /// 删除指定ID的朋友
     inline bool deleteFriend(int userid)
     {
-        QVector<int>::iterator iter = qFind(friends.begin(),
+        QVector<int>::iterator iter = std::find(friends.begin(),
                                             friends.end(),
                                             userid);
         if(iter == friends.end())

@@ -5,12 +5,11 @@
 #include <QObject>
 #include <QTimer>
 #include <QMutex>
+#include <QSerialPort>
 
-#include <QtSerialPort/QSerialPort>
-
-#include "../common/singleton.h"
-#include "../common/common.h"
-#include "../common/NedAllocatedObject.h"
+#include "singleton.h"
+#include "common.h"
+#include "NedAllocatedObject.h"
 #include "networkframemanager.h"
 
 /**

@@ -5,7 +5,7 @@
 #ifdef _WIN32
 
 #define ENET_BUILDING_LIB 1
-#include "../include/enet/enet.h"
+#include "enet.h"
 #include <windows.h>
 #include <mmsystem.h>
 

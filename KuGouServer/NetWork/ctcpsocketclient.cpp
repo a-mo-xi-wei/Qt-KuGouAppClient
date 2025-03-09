@@ -1,7 +1,7 @@
-#include "../../includes/network/ctcpsocketclient.h"
-#include "../../includes/QsLog/QsLog.h"
-#include "../../includes/common/rc4.h"
-#include "../../includes/common/fastlz.h"
+#include "ctcpsocketclient.h"
+#include "QsLog.h"
+#include "rc4.h"
+#include "fastlz.h"
 
 #include <QJsonDocument>
 #include <QThread>
@@ -29,7 +29,15 @@ CTcpSocket::CTcpSocket(NetworkFrameManager *pNetworkFrameManager,
     connect(this, SIGNAL(readyRead()), this, SLOT(OnReadyRead()));
     connect(this, SIGNAL(connected()), this, SLOT(onConnected()));
     typedef void (QAbstractSocket::*QAbstractSocketErrorSignal)(QAbstractSocket::SocketError);
-    connect(this, static_cast<QAbstractSocketErrorSignal>(&QTcpSocket::error), this, &CTcpSocket::error);
+
+    //connect(this, static_cast<QAbstractSocketErrorSignal>(&QTcpSocket::error), this, &CTcpSocket::error);
+    // 兼容 Qt 5 和 Qt 6
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    connect(this, &QAbstractSocket::errorOccurred, this, &CTcpSocket::error);
+#else
+    connect(this, static_cast<void(QAbstractSocket::*)(QAbstractSocket::SocketError)>(&QAbstractSocket::error),
+            this, &CTcpSocket::error);
+#endif
     dis = connect(this, SIGNAL(disconnected()), this, SLOT(onDisconnected()));
 
     if(m_isReConnecting)

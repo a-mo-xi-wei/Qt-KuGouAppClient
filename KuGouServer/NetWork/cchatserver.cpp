@@ -1,5 +1,4 @@
-﻿#include "../../includes/network/cchatserver.h"
-#include "../../includes/common/common.h"
+﻿#include "cchatserver.h"
 
 #include <QDateTime>
 #include <QWebSocket>
@@ -150,7 +149,7 @@ void cchatserver::printLog(QsLogging::Level type,QString msg)
 bool cchatserver::deletegroup(int groupId)
 {
     if(m_allgrounps.isEmpty() || groupId <= 0)
-        return NULL;
+        return false;
 
     bool isOk = false;
 

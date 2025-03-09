@@ -1,8 +1,8 @@
 ﻿#ifndef CTCP_SOCKETSERVER_H
 #define CTCP_SOCKETSERVER_H
 
-#include "../common/singleton.h"
-#include "../common/common.h"
+#include "singleton.h"
+#include "common.h"
 #include "networkframemanager.h"
 #include "ctcpsocketclient.h"
 

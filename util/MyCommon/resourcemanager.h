@@ -9,7 +9,7 @@
 #include <QMutex>
 #include <QFileSystemWatcher>
 #include <QTimer>
-#include <qzipreader_p.h>
+#include <QtCore/private/qzipreader_p.h>
 
 struct tagResource
 {

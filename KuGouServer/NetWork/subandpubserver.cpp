@@ -1,5 +1,5 @@
-﻿#include "../../includes/network/subandpubserver.h"
-#include "../../includes/common/common.h"
+﻿#include "subandpubserver.h"
+#include "common.h"
 
 #include <QDateTime>
 #include <QUuid>
@@ -142,7 +142,7 @@ bool subandpubserver::loadBrotherServers(QString filepath)
     {
         if(reader.isStartElement())
         {
-            if(reader.name() == "server")
+            if(reader.name().toString() == "server")
             {
                 QXmlStreamAttributes attributes = reader.attributes();
 
@@ -156,7 +156,7 @@ bool subandpubserver::loadBrotherServers(QString filepath)
                          ip+
                          QString::asprintf(":%d",port));
             }
-            else if(reader.name() == "brotherservers")
+            else if(reader.name().toString() == "brotherservers")
             {
                 QXmlStreamAttributes attributes = reader.attributes();
 
@@ -412,7 +412,7 @@ bool subandpubserver::isExistClientSubMessage(QWebSocket* client,QString message
     if(iter == m_allsubscribes.end())
         return false;
 
-    QList<QWebSocket*>::iterator iter2 = qFind(iter.value().begin(),
+    QList<QWebSocket*>::iterator iter2 = std::find(iter.value().begin(),
                                            iter.value().end(),
                                            client);
     if(iter2 == iter.value().end())
@@ -436,7 +436,7 @@ bool subandpubserver::deleteclientFromSubMessage(QWebSocket* client,QString mess
     if(iter == m_allsubscribes.end())
         return false;
 
-    QList<QWebSocket*>::iterator iter2 = qFind(iter.value().begin(),
+    QList<QWebSocket*>::iterator iter2 = std::find(iter.value().begin(),
                                            iter.value().end(),
                                            client);
     if(iter2 == iter.value().end())
@@ -1047,7 +1047,7 @@ void subandpubserver::OnProcessDisconnectedNetMes(QWebSocket *conn)
     QHash<QString,QList<QWebSocket*>>::iterator iter2 = m_allsubscribes.begin();
     for(;iter2 != m_allsubscribes.end();)
     {
-        QList<QWebSocket*>::iterator iter3 = qFind(iter2.value().begin(),
+        QList<QWebSocket*>::iterator iter3 = std::find(iter2.value().begin(),
                                                iter2.value().end(),
                                                conn);
         if(iter3 == iter2.value().end())

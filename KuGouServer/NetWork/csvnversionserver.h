@@ -1,9 +1,10 @@
 ﻿#ifndef CSVNVERSIONSERVER_H
 #define CSVNVERSIONSERVER_H
 
-#include "../database/ndbpool/sqlitedataprovider.h"
+#include "sqlitedataprovider.h"
 #include "networkframemanager.h"
 #include "cwebsocketserver.h"
+#include "common.h"
 
 #include <QObject>
 #include <QJsonObject>

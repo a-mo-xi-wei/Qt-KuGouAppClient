@@ -1,5 +1,5 @@
-﻿#include "../../includes/network/ctcpsocketserver.h"
-#include "../../includes/QsLog/QsLog.h"
+﻿#include "ctcpsocketserver.h"
+#include "QsLog.h"
 
 #include <QtConcurrent/QtConcurrent>
 #include <QHostAddress>
@@ -286,6 +286,7 @@ void CTcpServer::incomingConnection(qintptr socketDescriptor) //多线程必须�
     }
 
     //NOTE:断开连接的处理，从列表移除，并释放断开的Tcpsocket，此槽必须实现，线程管理计数也是考的他
+    qRegisterMetaType<QThread*>();
     connect(tcpTemp,&CTcpSocket::sockDisConnect,
             this,&CTcpServer::sockDisConnectSlot,
             Qt::QueuedConnection);

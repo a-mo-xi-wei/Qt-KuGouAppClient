@@ -7,8 +7,8 @@
 #include <QObject>
 #include <QUrl>
 
-#include "../../includes/common/common.h"
-#include "../../includes/QsLog/QsLog.h"
+#include "common.h"
+#include "QsLog.h"
 
 class CModbusClient : public QObject
 {
