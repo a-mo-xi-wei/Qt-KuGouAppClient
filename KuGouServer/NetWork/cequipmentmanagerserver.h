@@ -1,5 +1,5 @@
-﻿#ifndef _C_EQUIPMENTMANAGER_SERVER_H
-#define _C_EQUIPMENTMANAGER_SERVER_H
+﻿#ifndef C_EQUIPMENTMANAGER_SERVER_H
+#define C_EQUIPMENTMANAGER_SERVER_H
 
 #include "csvnversionserver.h"
 #include "cwebsocketserver.h"
@@ -57,21 +57,21 @@ class CEquipmentManagerServer : public QObject , public NetworkFrameManager
 
 public:
     explicit CEquipmentManagerServer(QObject *parent = nullptr);
-    ~CEquipmentManagerServer();
+    ~CEquipmentManagerServer() override;
 
     /// 设置版本库所使用数据库
-    void setDataBase(QString dbPath);
+    void setDataBase(const QString &dbPath);
     /// 设置代理服务器启动参数
     void setAgentServerStartupParams(int serverPort,int maxClients);
     /// 设置反向代理服务器启动参数
     inline void setReverseProxyServerStartupParams(int serverPort) { m_ReverseProxyServerPort = serverPort; }
     /// 服务器是否已经启动
-    bool isStartup(void);
+    bool isStartup();
 
     /// 启动服务
-    void startupService(void);
+    void startupService();
     /// 停止服务
-    void stopService(void);
+    void stopService();
 
     /// 处理网络字符串消息
     virtual void OnProcessNetText(QWebSocket *conn,QString mes);
@@ -110,7 +110,7 @@ private:
 
 private:
     /// 检测指定用户ID和密码的用户是否存在
-    bool isExistUser(QWebSocket *conn,int id,QString pwd);
+    bool isExistUser(QWebSocket *conn,int id, const QString &pwd);
     /// 根据设备ID得到设备信息
     tagEquipmentItem* getDeviceInfoByID(int usertype,int deviceID);
     /// 向所有控制设备广播指定ID的受控设备的状态
@@ -137,4 +137,4 @@ private:
     QHash<QWebSocket*,QWebSocket*> m_onlinecontrolClientlist;    /**< 在线控制用户和受控设备的关系 */
 };
 
-#endif // CEQUIPMENTMANAGERSERVER_H
+#endif // C_EQUIPMENTMANAGER_SERVER_H

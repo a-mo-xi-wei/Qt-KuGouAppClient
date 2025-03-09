@@ -1,10 +1,6 @@
 ﻿#ifndef CWEBSOCKETCLIENT_H
 #define CWEBSOCKETCLIENT_H
 
-#include <QObject>
-#include <QTimer>
-#include <QtCore/QHash>
-#include <QtCore/QByteArray>
 #include <QWebSocket>
 #include <QTimer>
 #include <QUrl>
@@ -21,31 +17,31 @@ class CWebSocketClient : public QObject
     Q_OBJECT
 
 public:
-    explicit CWebSocketClient(NetworkFrameManager *pNetworkFrameManager=NULL,QObject *parent = nullptr);
-    ~CWebSocketClient();
+    explicit CWebSocketClient(NetworkFrameManager *pNetworkFrameManager=nullptr,QObject *parent = nullptr);
+    ~CWebSocketClient() override;
 
     /// 打开指定地址的网络连接
-    Q_INVOKABLE void Open(QUrl url);
+    Q_INVOKABLE void Open(const QUrl& url);
     /// 打开指定地址的网络连接
-    Q_INVOKABLE void Open2(QString serverip,int serverport);
+    Q_INVOKABLE void Open2(const QString& serverip,int serverport);
     /// 关闭连接
     Q_INVOKABLE void Close(bool isClosed=true);
     /// 得到要连接的服务器IP
-    Q_INVOKABLE QString getServerIP(void) { return m_serverIP; }
+    Q_INVOKABLE QString getServerIP() { return m_serverIP; }
     /// 得到要连接的服务器端口
-    Q_INVOKABLE int getServerPort(void) { return m_serverPort; }
+    Q_INVOKABLE int getServerPort() const { return m_serverPort; }
     /// 检测连接是否建立成功
-    Q_INVOKABLE bool isConnected(void);
+    Q_INVOKABLE bool isConnected();
     /// 设置是否断线重连
     Q_INVOKABLE void setDisReconnect(bool isconnect) { m_isDisreconnected = isconnect; }
     /// 是否断线重连
-    Q_INVOKABLE bool isDisReconnect(void) { return m_isDisreconnected; }
+    Q_INVOKABLE bool isDisReconnect() const { return m_isDisreconnected; }
     /// 得到网络客户端
-    Q_INVOKABLE inline QWebSocket* getWebSocket(void) { return &m_webSocket; }
+    Q_INVOKABLE inline QWebSocket* getWebSocket() { return &m_webSocket; }
     /// 发送字符串
-    Q_INVOKABLE qint64 Send(QString msg);
+    Q_INVOKABLE qint64 Send(const QString& msg);
     /// 发送文件(注意点：在网络中使用时一定要设置isExcludeUserInputEvents为false,这个参数是在界面中做防假卡死的)
-    Q_INVOKABLE bool sendFile(QString filepath,bool isExcludeUserInputEvents=true,QString rootpath="");
+    Q_INVOKABLE bool sendFile(const QString& filepath,bool isExcludeUserInputEvents=true,QString rootpath="");
     /// 发送二进制数据
     Q_INVOKABLE qint64 sendBinaryMessage(const QByteArray &data,bool isExcludeUserInputEvents=false);
     /// 设置网络消息处理框架
@@ -67,9 +63,9 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     /// 处理字符串消息
-    void onTextMessageReceived(QString message);
+    void onTextMessageReceived(const QString& message);
     /// 处理二进制消息
-    void onBinaryReceived(QByteArray message);
+    void onBinaryReceived(const QByteArray& message);
     /// 处理连接关闭
     void onDisconnected();
     /// 处理连接成功
@@ -111,17 +107,17 @@ private:
 class CWebSocketClientManager : public Singleton<CWebSocketClientManager>
 {
 public:
-     CWebSocketClientManager();
-     ~CWebSocketClientManager();
+     CWebSocketClientManager() = default;
+     ~CWebSocketClientManager() override;
 
      /// 添加一个客户端
-     bool addClient(QString clientName,CWebSocketClient* pClient);
+     bool addClient(const QString& clientName,CWebSocketClient* pClient);
      /// 得到一个客户端
-     CWebSocketClient* getClient(QString clientName);
+     CWebSocketClient* getClient(const QString& clientName);
      /// 清除所有的客户端
-     void clearAllClients(void);
+     void clearAllClients();
      /// 清除指定的客户端
-     bool deleteClient(QString clientName);
+     bool deleteClient(const QString& clientName);
 
 private:
     QHash<QString,CWebSocketClient*> m_WebSocketClients;

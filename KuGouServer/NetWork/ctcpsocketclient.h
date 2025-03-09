@@ -1,14 +1,8 @@
 #ifndef CTCPSOCKETCLIENT_H
 #define CTCPSOCKETCLIENT_H
 
-#include <QObject>
 #include <QTimer>
 #include <QByteArray>
-#include <QJsonObject>
-#include <QtCore/QHash>
-#include <QtCore/QByteArray>
-#include <QTcpSocket>
-#include <QUrl>
 #include <QFile>
 
 #include "singleton.h"
@@ -26,36 +20,36 @@ class CTcpSocket : public QTcpSocket , public NedAllocatedObject
     Q_OBJECT
 
 public:
-    explicit CTcpSocket(NetworkFrameManager *pNetworkFrameManager=NULL,
+    explicit CTcpSocket(NetworkFrameManager *pNetworkFrameManager=nullptr,
                         QObject *parent = nullptr,
                         bool isReConnecting=false,
                         qintptr socketDescriptor=-1,
                         bool enableencryption=true,
                         bool isencoded=true);
-    ~CTcpSocket();
+    ~CTcpSocket() override;
 
     /// 设置网络消息处理框架
     inline void SetNetworkFrameManager(NetworkFrameManager *pNetworkFrameManager) { m_NetworkFrameManager = pNetworkFrameManager; }
     /// 连接tcp服务器
     Q_INVOKABLE void connectTcpServer(const QString& ip, quint16 port);
     /// 关闭与tcp服务器的连接
-    Q_INVOKABLE void close(void);
+    Q_INVOKABLE void close() override;
     /// 发送json数据
     Q_INVOKABLE void sendJson(QJsonObject mes);
      /// 重新连接服务器
-    void reconnectTcpServer(void);   
+    void reconnectTcpServer();   
     /// 检测是否连接成功
-    bool isConnected(void);
+    bool isConnected();
     /// 得到连接的心跳计数
-    inline int getHeartCount(void) { return m_HeartCount; }
+    inline int getHeartCount() const { return m_HeartCount; }
     /// 设置当前使用线程
     inline void setUsingThread(QThread *thread) { m_curThread = thread; }
     /// 得到当前使用线程
-    inline QThread* getUsingThread(void) { return m_curThread; }
+    inline QThread* getUsingThread() const { return m_curThread; }
     /// 是否自行编码数据
     inline void setEncode(bool encode) { m_isencoded = encode; }
     /// 得到是否自行编码数据
-    inline bool isEncode(void) { return m_isencoded; }
+    inline bool isEncode() const { return m_isencoded; }
 
 signals:
     void dataPacketReady(QByteArray socketData);
@@ -87,7 +81,7 @@ private slots:
 
 private:
     /// 解析信息包
-    bool parsePacket(void);
+    bool parsePacket();
 
 private:
     QByteArray m_dataPacket;                                            /**< 用于存放接收的数据 */
@@ -108,4 +102,4 @@ private:
                   compressed_buffer[IDD_COMPRESS_BUFFER_SIZE];          /**< 用于存放解压后的数据 */
 };
 
-#endif // CWEBSOCKETCLIENT_H
+#endif // CTCPSOCKETCLIENT_H

@@ -1,15 +1,12 @@
-#ifndef _C_SERIALPORT_MANAGER_H_INCLUDE_
-#define _C_SERIALPORT_MANAGER_H_INCLUDE_
+#ifndef C_SERIALPORT_MANAGER_H_INCLUDE_
+#define C_SERIALPORT_MANAGER_H_INCLUDE_
 
-#include <QtCore/QtGlobal>
-#include <QObject>
 #include <QTimer>
-#include <QMutex>
 #include <QSerialPort>
+#include <utility>
 
 #include "singleton.h"
 #include "common.h"
-#include "NedAllocatedObject.h"
 #include "networkframemanager.h"
 
 /**
@@ -20,8 +17,8 @@ class CSerialPort : public QSerialPort /*, public NedAllocatedObject*/
     Q_OBJECT
 
 public:
-    explicit CSerialPort(QString name,NetworkFrameManager *pNetworkFrameManager=NULL,QObject *parent = 0);
-    ~CSerialPort();
+    explicit CSerialPort(const QString &name,NetworkFrameManager *pNetworkFrameManager=nullptr,QObject *parent = nullptr);
+    ~CSerialPort() override;
 
     /// 查找系统中Arduino专用串口，并打开
     void openArduinoSerialPort();
@@ -35,23 +32,23 @@ public:
     /// 关闭串口
     void closeSerialPort();
     /// 设置串口名称
-    inline void setName(QString name) { m_Name = name; }
+    inline void setName(QString name) { m_Name = std::move(name); }
     /// 得到串口名称
-    inline QString getName(void) { return m_Name; }
+    inline QString getName() { return m_Name; }
     /// 得到错误原因
-    inline QString getErrorMsg(void) { return m_errorMessage; }
+    inline QString getErrorMsg() { return m_errorMessage; }
     /// 设置是否使用自定义协议
     inline void setusemyselfprotocol(bool isuse) { m_usemyselfprotocol = isuse; }
     /// 得到是否使用自定义协议
-    inline bool isusemyselfprotocol(void) { return m_usemyselfprotocol; }
+    inline bool isusemyselfprotocol() const { return m_usemyselfprotocol; }
     /// 检测串口是否已经打开
-    inline bool isOpened(void) { return m_isOpened; }
+    inline bool isOpened() const { return m_isOpened; }
     /// 设置串口是否打开
     inline void setIsOpened(bool opened) { m_isOpened = opened; }
     /// 设置串口是否断线重连
     inline void setIsReconnected(bool conn) { m_isReconnected = conn; }
     /// 是否断线重连
-    inline bool isReconnected(void) { return m_isReconnected; }
+    inline bool isReconnected() const { return m_isReconnected; }
     /// 发送json数据
     void sendJson(QJsonObject mes);
     /// 发送二进制数据
@@ -70,11 +67,11 @@ private slots:
 
     void handleError(QSerialPort::SerialPortError error);
     /// 处理断线重连
-    void timerheartprocess(void);
+    void timerheartprocess();
 
 private:
     /// 解析信息包
-    bool parsePacket(void);
+    bool parsePacket();
 
 private:
     QString m_Name;                                             /**< 串口名称 */
@@ -99,7 +96,7 @@ class CSerialPortManager : public QObject
 
 public:
     explicit CSerialPortManager(QObject *parent = nullptr);
-    ~CSerialPortManager();
+    ~CSerialPortManager() override;
 
     /// 添加一个串口
     CSerialPort* addSerialPort(CSerialPort* pSerialPort,
@@ -115,19 +112,19 @@ public:
     /// 检测指定串口是否已经打开
     bool isSerialPortOpened(QString name);
     /// 删除所有的串口
-    void deleteAllSerialPorts(void);
+    void deleteAllSerialPorts();
     /// 清空所有串口的缓冲区
-    void clearAllSerialPorts(void);
+    void clearAllSerialPorts();
     /// 关闭所有的串口
-    void closeAllSerialPorts(void);
+    void closeAllSerialPorts();
     /// 打开所有的串口
-    bool openAllSerialPorts(void);
+    bool openAllSerialPorts();
     /// 清除指定的串口
     bool deleteSerialPort(QString name);
     /// 操作一组串口发送数据
     bool sendData(QStringList portNames,QByteArray data);
     /// 得到当前可用的所有串口
-    QStringList getavailablePorts(void);
+    QStringList getavailablePorts();
     /// 设置一组串口是否使用自定义协议
     void useMyselfProtocol(QStringList portNames,bool isUsing);
     /// 设置一组串口是否自动重连

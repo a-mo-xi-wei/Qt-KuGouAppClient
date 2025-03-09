@@ -1,10 +1,6 @@
 ﻿#ifndef NETWORK_FRAME_MANAGER_H
 #define NETWORK_FRAME_MANAGER_H
 
-#include <QObject>
-#include <QString>
-#include <QByteArray>
-#include <QMutex>
 #include <QSemaphore>
 
 #include "common.h"
@@ -20,7 +16,8 @@ class NetworkFrameManager
 {
 public:
     NetworkFrameManager();
-    ~NetworkFrameManager();
+
+    virtual ~NetworkFrameManager();
 
     /// 多线程中加锁操作
     inline void lock(void) { m_Mutex.lock(); }

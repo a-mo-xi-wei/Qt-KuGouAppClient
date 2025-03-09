@@ -124,6 +124,7 @@ size_t malloc_usable_size(void *);
  #endif
 #endif
 /* We need to consistently define DEBUG=0|1, _DEBUG and NDEBUG for dlmalloc */
+/*
 #if !defined(DEBUG) && !defined(NDEBUG)
  #ifdef __GNUC__
   #warning DEBUG may not be defined but without NDEBUG being defined allocator will run with assert checking! Define NDEBUG to run at full speed.
@@ -131,6 +132,7 @@ size_t malloc_usable_size(void *);
   #pragma message(__FILE__ ": WARNING: DEBUG may not be defined but without NDEBUG being defined allocator will run with assert checking! Define NDEBUG to run at full speed.")
  #endif
 #endif
+*/
 #undef DEBUG
 #undef _DEBUG
 #if NEDMALLOC_DEBUG
@@ -334,7 +336,8 @@ void (*sysfree)(void *);
 size_t (*sysblksize)(void *);
 #endif
 
-static FORCEINLINE NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void *CallMalloc(void *RESTRICT mspace, size_t size, size_t alignment, unsigned flags) THROWSPEC
+//static FORCEINLINE NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void *CallMalloc(void *RESTRICT mspace, size_t size, size_t alignment, unsigned flags) THROWSPEC
+static NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void *CallMalloc(void *RESTRICT mspace, size_t size, size_t alignment, unsigned flags) THROWSPEC
 {
 	void *RESTRICT ret=0;
 #if USE_MAGIC_HEADERS
@@ -386,7 +389,8 @@ static FORCEINLINE NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void *CallMalloc(void *
 	return ret;
 }
 
-static FORCEINLINE NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void *CallRealloc(void *RESTRICT mspace, void *RESTRICT mem, int isforeign, size_t oldsize, size_t newsize, size_t alignment, unsigned flags) THROWSPEC
+//static FORCEINLINE NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void *CallRealloc(void *RESTRICT mspace, void *RESTRICT mem, int isforeign, size_t oldsize, size_t newsize, size_t alignment, unsigned flags) THROWSPEC
+static NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void *CallRealloc(void *RESTRICT mspace, void *RESTRICT mem, int isforeign, size_t oldsize, size_t newsize, size_t alignment, unsigned flags) THROWSPEC
 {
 	void *RESTRICT ret=0;
 #if USE_MAGIC_HEADERS
@@ -450,7 +454,8 @@ static FORCEINLINE NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void *CallRealloc(void 
 	return ret;
 }
 
-static FORCEINLINE void CallFree(void *RESTRICT mspace, void *RESTRICT mem, int isforeign) THROWSPEC
+//static FORCEINLINE void CallFree(void *RESTRICT mspace, void *RESTRICT mem, int isforeign) THROWSPEC
+static void CallFree(void *RESTRICT mspace, void *RESTRICT mem, int isforeign) THROWSPEC
 {
 #if USE_MAGIC_HEADERS
 	mstate oldmspace=0;
@@ -1037,7 +1042,8 @@ static void DoStackWalk(logentry *p) THROWSPEC
 #endif
 #endif
 #endif
-static FORCEINLINE logentry *LogOperation(threadcache *tc, nedpool *np, LogEntryType type, int mspace, size_t size, void *mem, size_t alignment, unsigned flags, void *returned) THROWSPEC
+//static FORCEINLINE logentry *LogOperation(threadcache *tc, nedpool *np, LogEntryType type, int mspace, size_t size, void *mem, size_t alignment, unsigned flags, void *returned) THROWSPEC
+static logentry *LogOperation(threadcache *tc, nedpool *np, LogEntryType type, int mspace, size_t size, void *mem, size_t alignment, unsigned flags, void *returned) THROWSPEC
 {
 #if ENABLE_LOGGING
 	if(tc->logentries && NEDMALLOC_TESTLOGENTRY(tc, np, type, mspace, size, mem, alignment, flags, returned))
@@ -1075,7 +1081,8 @@ static FORCEINLINE logentry *LogOperation(threadcache *tc, nedpool *np, LogEntry
 	return 0;
 }
 
-static FORCEINLINE NEDMALLOCNOALIASATTR unsigned int size2binidx(size_t _size) THROWSPEC
+//static FORCEINLINE NEDMALLOCNOALIASATTR unsigned int size2binidx(size_t _size) THROWSPEC
+static NEDMALLOCNOALIASATTR unsigned int size2binidx(size_t _size) THROWSPEC
 {	/* 8=1000	16=10000	20=10100	24=11000	32=100000	48=110000	4096=1000000000000 */
 	unsigned int topbit, size=(unsigned int)(_size>>4);
 	/* 16=1		20=1	24=1	32=10	48=11	64=100	96=110	128=1000	4096=100000000 */
@@ -1873,7 +1880,8 @@ void neddisablethreadcache(nedpool *p) THROWSPEC
   } while (0)
 #endif
 
-static FORCEINLINE mstate GetMSpace(nedpool *RESTRICT p, threadcache *RESTRICT tc, int mymspace, size_t size) THROWSPEC
+//static FORCEINLINE mstate GetMSpace(nedpool *RESTRICT p, threadcache *RESTRICT tc, int mymspace, size_t size) THROWSPEC
+static mstate GetMSpace(nedpool *RESTRICT p, threadcache *RESTRICT tc, int mymspace, size_t size) THROWSPEC
 {	/* Returns a locked and ready for use mspace */
 	mstate m=p->m[mymspace];
 	assert(m);
@@ -1907,7 +1915,8 @@ static NOINLINE void GetThreadCache_cold2(nedpool *RESTRICT *RESTRICT p, threadc
 		*mymspace=-mycache-1;
 	}
 }
-static FORCEINLINE void GetThreadCache(nedpool *RESTRICT *RESTRICT p, threadcache *RESTRICT *RESTRICT tc, int *RESTRICT mymspace, size_t *RESTRICT size) THROWSPEC
+//static FORCEINLINE void GetThreadCache(nedpool *RESTRICT *RESTRICT p, threadcache *RESTRICT *RESTRICT tc, int *RESTRICT mymspace, size_t *RESTRICT size) THROWSPEC
+static void GetThreadCache(nedpool *RESTRICT *RESTRICT p, threadcache *RESTRICT *RESTRICT tc, int *RESTRICT mymspace, size_t *RESTRICT size) THROWSPEC
 {
 	int mycache;
 #if THREADCACHEMAX
@@ -2175,7 +2184,8 @@ size_t nedpmalloc_footprint(nedpool *p) THROWSPEC
 	}
 	return ret;
 }
-static FORCEINLINE NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void ** CallIndependentCalloc(void *RESTRICT m, size_t elemsno, size_t elemsize, void **chunks) THROWSPEC
+//static FORCEINLINE NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void ** CallIndependentCalloc(void *RESTRICT m, size_t elemsno, size_t elemsize, void **chunks) THROWSPEC
+static NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void ** CallIndependentCalloc(void *RESTRICT m, size_t elemsno, size_t elemsize, void **chunks) THROWSPEC
 {
     void **ret;
 #if USE_ALLOCATOR==0
@@ -2218,7 +2228,8 @@ NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void **nedpindependent_calloc(nedpool *p, 
 #endif
 	return ret;
 }
-static FORCEINLINE NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void **CallIndependentComalloc(void *RESTRICT m, size_t elems, size_t *RESTRICT sizes, void **chunks) THROWSPEC
+//static FORCEINLINE NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void **CallIndependentComalloc(void *RESTRICT m, size_t elems, size_t *RESTRICT sizes, void **chunks) THROWSPEC
+static NEDMALLOCNOALIASATTR NEDMALLOCPTRATTR void **CallIndependentComalloc(void *RESTRICT m, size_t elems, size_t *RESTRICT sizes, void **chunks) THROWSPEC
 {
 	void **ret;
 #if USE_ALLOCATOR==0

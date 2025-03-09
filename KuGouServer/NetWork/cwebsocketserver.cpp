@@ -1,12 +1,10 @@
 #include "cwebsocketserver.h"
-#include "QtWebSockets/qwebsocketserver.h"
-#include "QtWebSockets/qwebsocket.h"
+#include "qwebsocketserver.h"
+#include "qwebsocket.h"
 #include "QsLog.h"
 
-#include <QJsonObject>
-#include <QJsonDocument>
-#include <QCoreApplication>
 #include <QDir>
+#include <utility>
 
 QHash<QWebSocket*,tagWebClient> m_webClients;                          /**< 用于客户端文件和二进制数据处理 */
 
@@ -16,7 +14,7 @@ QT_USE_NAMESPACE
 
 CWebSocketServer::CWebSocketServer(QObject *parent) :
     QObject(parent),
-    m_NetworkFrameManager(NULL),
+    m_NetworkFrameManager(nullptr),
     m_processrecvFile(false),
     m_isautoDeleteSocket(true),
     m_pWebSocketServer(new QWebSocketServer(QStringLiteral("WebSocketServer"),
@@ -41,7 +39,7 @@ CWebSocketServer::~CWebSocketServer()
  */
 void CWebSocketServer::SetNetworkFrameManager(NetworkFrameManager *pNetworkFrameManager)
 {
-    if(pNetworkFrameManager == NULL)
+    if(pNetworkFrameManager == nullptr)
         return;
 
     m_NetworkFrameManager = pNetworkFrameManager;
@@ -54,7 +52,7 @@ void CWebSocketServer::SetNetworkFrameManager(NetworkFrameManager *pNetworkFrame
  */
 void CWebSocketServer::setMaxPendingConnections(int maxcount)
 {
-    if(m_pWebSocketServer == NULL)
+    if(m_pWebSocketServer == nullptr)
         return;
 
     m_pWebSocketServer->setMaxPendingConnections(maxcount);
@@ -68,7 +66,7 @@ void CWebSocketServer::setMaxPendingConnections(int maxcount)
  * @param rootpath
  * @return
  */
-bool CWebSocketServer::SendAllFile(QString filepath,bool isExcludeUserInputEvents,QString rootpath)
+bool CWebSocketServer::SendAllFile(const QString& filepath,bool isExcludeUserInputEvents,const QString& rootpath)
 {
     if(filepath.isEmpty() || m_clients.isEmpty())
         return false;
@@ -90,9 +88,9 @@ bool CWebSocketServer::SendAllFile(QString filepath,bool isExcludeUserInputEvent
  * @param rootpath 主路径，主要去除发送的文件路径，得到文件的相对路径
  * @return 如果文件发送成功返回真，否则返回假
  */
-bool CWebSocketServer::sendFile(QWebSocket *pwebsocket,QString filepath,bool isExcludeUserInputEvents,QString rootpath)
+bool CWebSocketServer::sendFile(QWebSocket *pwebsocket, const QString &filepath,bool isExcludeUserInputEvents,QString rootpath)
 {
-    if(pwebsocket == NULL || filepath.isEmpty())
+    if(pwebsocket == nullptr || filepath.isEmpty())
         return false;
 
     QFileInfo pfileinfo(filepath);
@@ -113,7 +111,7 @@ bool CWebSocketServer::sendFile(QWebSocket *pwebsocket,QString filepath,bool isE
 
     if(rootpath.isEmpty())
     {
-        int pos = filepath.lastIndexOf("/");
+        int pos = static_cast<int>(filepath.lastIndexOf("/"));
         if(pos > 0)
             rootpath = filepath.mid(0,pos+1);
     }
@@ -130,7 +128,7 @@ bool CWebSocketServer::sendFile(QWebSocket *pwebsocket,QString filepath,bool isE
 
     QString tmpRealFilePath = filepath.mid(rootpath.size());
 
-    tagFileStruct ptagFileStruct;
+    tagFileStruct ptagFileStruct{};
     memset(&ptagFileStruct,0,sizeof(ptagFileStruct));
 
     ptagFileStruct.mark[0] = 'F';
@@ -186,9 +184,9 @@ bool CWebSocketServer::sendFile(QWebSocket *pwebsocket,QString filepath,bool isE
  * @param msg 要发送的数据
  * @return 返回发送成功的数据大小
  */
-qint64 CWebSocketServer::Send(QWebSocket *pwebsocket,QString msg)
+qint64 CWebSocketServer::Send(QWebSocket *pwebsocket,const QString& msg)
 {
-    if(pwebsocket == NULL ||
+    if(pwebsocket == nullptr ||
             msg.isEmpty() ||
             !pwebsocket->isValid())
         return -1;
@@ -210,7 +208,7 @@ qint64 CWebSocketServer::Send(QWebSocket *pwebsocket,QString msg)
  */
 qint64 CWebSocketServer::SendByteArray(QWebSocket *pwebsocket,QByteArray &data,bool isExcludeUserInputEvents)
 {
-    if(pwebsocket == NULL ||
+    if(pwebsocket == nullptr ||
             !pwebsocket->isValid() ||
             data.isEmpty())
         return -1;
@@ -229,7 +227,7 @@ qint64 CWebSocketServer::SendByteArray(QWebSocket *pwebsocket,QByteArray &data,b
     m_sendsize=0;
     quint16 pdecchecknum = qChecksum(QByteArrayView(tmpByteArray));
 
-    tagDataStruct ptagDataStruct;
+    tagDataStruct ptagDataStruct{};
     memset(&ptagDataStruct,0,sizeof(ptagDataStruct));
 
     ptagDataStruct.mark[0] = 'D';
@@ -280,7 +278,7 @@ qint64 CWebSocketServer::SendByteArray(QWebSocket *pwebsocket,QByteArray &data,b
  * @param msg 要发送的字符串数据
  * @return 如果所有客户端发送成功返回真，否则返回假
  */
-bool CWebSocketServer::SendAll(QString msg)
+bool CWebSocketServer::SendAll(const QString& msg)
 {
     if(msg.isEmpty() || m_clients.isEmpty())
         return false;
@@ -292,7 +290,7 @@ bool CWebSocketServer::SendAll(QString msg)
     QHash<QWebSocket *,int>::iterator iter = m_clients.begin();
     for(;iter != m_clients.end();++iter)
     {
-        if(iter.key() == NULL ||
+        if(iter.key() == nullptr ||
                 !iter.key()->isValid() ||
                 iter.key()->state() != QAbstractSocket::ConnectedState)
             continue;
@@ -304,7 +302,7 @@ bool CWebSocketServer::SendAll(QString msg)
             pState = false;
 
             QHostAddress phostaddress = QHostAddress(iter.key()->peerAddress().toIPv4Address());
-            QLOG_ERROR()<<(phostaddress.toString() + "send size:" + QString::asprintf("%ld",len) + " ");
+            QLOG_ERROR()<<(phostaddress.toString() + "send size:" + QString::asprintf("%lld",len) + " ");
         }
     }
 
@@ -317,9 +315,9 @@ bool CWebSocketServer::SendAll(QString msg)
  * @param msg 要发送的数据
  * @return 如果所有客户端发送成功返回真，否则返回假
  */
-bool CWebSocketServer::SendAllOther(QWebSocket *pwebsocket,QString msg)
+bool CWebSocketServer::SendAllOther(QWebSocket *pwebsocket,const QString& msg)
 {
-    if(pwebsocket == NULL || msg.isEmpty())
+    if(pwebsocket == nullptr || msg.isEmpty())
         return false;
 
     bool pState = true;
@@ -329,7 +327,7 @@ bool CWebSocketServer::SendAllOther(QWebSocket *pwebsocket,QString msg)
     QHash<QWebSocket *,int>::iterator iter = m_clients.begin();
     for(;iter != m_clients.end();++iter)
     {
-        if(iter.key() == NULL ||
+        if(iter.key() == nullptr ||
                 !iter.key()->isValid() ||
                 iter.key()->state() != QAbstractSocket::ConnectedState || iter.key() == pwebsocket)
             continue;
@@ -341,7 +339,7 @@ bool CWebSocketServer::SendAllOther(QWebSocket *pwebsocket,QString msg)
             pState = false;
 
             QHostAddress phostaddress = QHostAddress(iter.key()->peerAddress().toIPv4Address());
-            QLOG_ERROR()<<(phostaddress.toString() + "send size:" + QString::asprintf("%ld",len) + " ");
+            QLOG_ERROR()<<(phostaddress.toString() + "send size:" + QString::asprintf("%lld",len) + " ");
         }
     }
 
@@ -352,7 +350,7 @@ bool CWebSocketServer::SendAllOther(QWebSocket *pwebsocket,QString msg)
  * @brief CWebSocketServer::getHostAddress 得到服务器IP
  * @return
  */
-QHostAddress CWebSocketServer::getHostAddress(void)
+QHostAddress CWebSocketServer::getHostAddress()
 {
     return m_pWebSocketServer ? m_pWebSocketServer->serverAddress() : QHostAddress();
 }
@@ -374,7 +372,7 @@ bool CWebSocketServer::SendAllByteArray(QByteArray &data)
     QHash<QWebSocket *,int>::iterator iter = m_clients.begin();
     for(;iter != m_clients.end();++iter)
     {
-        if(iter.key() == NULL ||
+        if(iter.key() == nullptr ||
                 !iter.key()->isValid() ||
                 iter.key()->state() != QAbstractSocket::ConnectedState)
             continue;
@@ -386,7 +384,7 @@ bool CWebSocketServer::SendAllByteArray(QByteArray &data)
             pState = false;
 
             QHostAddress phostaddress = QHostAddress(iter.key()->peerAddress().toIPv4Address());
-            QLOG_ERROR()<<(phostaddress.toString() + "send size:" + QString::asprintf("%ld",len) + " ");
+            QLOG_ERROR()<<(phostaddress.toString() + "send size:" + QString::asprintf("%lld",len) + " ");
         }
     }
 
@@ -401,7 +399,7 @@ bool CWebSocketServer::SendAllByteArray(QByteArray &data)
  */
 bool CWebSocketServer::SendAllOtherByteArray(QWebSocket *pwebsocket,QByteArray &data)
 {
-    if(pwebsocket == NULL || data.isEmpty())
+    if(pwebsocket == nullptr || data.isEmpty())
         return false;
 
     bool pState = true;
@@ -411,7 +409,7 @@ bool CWebSocketServer::SendAllOtherByteArray(QWebSocket *pwebsocket,QByteArray &
     QHash<QWebSocket *,int>::iterator iter = m_clients.begin();
     for(;iter != m_clients.end();++iter)
     {
-        if(iter.key() == NULL ||
+        if(iter.key() == nullptr ||
                 !iter.key()->isValid() ||
                 iter.key()->state() != QAbstractSocket::ConnectedState ||
                 iter.key() == pwebsocket)
@@ -424,7 +422,7 @@ bool CWebSocketServer::SendAllOtherByteArray(QWebSocket *pwebsocket,QByteArray &
             pState = false;
 
             QHostAddress phostaddress = QHostAddress(iter.key()->peerAddress().toIPv4Address());
-            QLOG_ERROR()<<(phostaddress.toString() + "send size:" + QString::asprintf("%ld",len) + " ");
+            QLOG_ERROR()<<(phostaddress.toString() + "send size:" + QString::asprintf("%lld",len) + " ");
         }
     }
 
@@ -435,9 +433,9 @@ bool CWebSocketServer::SendAllOtherByteArray(QWebSocket *pwebsocket,QByteArray &
  * @brief CWebSocketServer::isListening 服务器是否启动
  * @return
  */
-bool CWebSocketServer::isListening(void)
+bool CWebSocketServer::isListening()
 {
-    if(m_pWebSocketServer == NULL)
+    if(m_pWebSocketServer == nullptr)
         return false;
 
     return m_pWebSocketServer->isListening();
@@ -466,9 +464,9 @@ bool CWebSocketServer::OpenServer(int port)
  * @brief getServerPort 得到服务器打开的端口
  * @return
  */
-quint16 CWebSocketServer::getServerPort(void)
+quint16 CWebSocketServer::getServerPort()
 {
-    if(m_pWebSocketServer == NULL)
+    if(m_pWebSocketServer == nullptr)
         return 0;
 
     return m_pWebSocketServer->serverPort();
@@ -480,7 +478,7 @@ quint16 CWebSocketServer::getServerPort(void)
  */
 void CWebSocketServer::closeClient(QWebSocket *pwebsocket)
 {
-    if(pwebsocket == NULL)
+    if(pwebsocket == nullptr)
         return;
 
     pwebsocket->close();
@@ -510,7 +508,7 @@ void CWebSocketServer::closeClient(QWebSocket *pwebsocket)
 /**
  * @brief CWebSocketServer::CloseServer 关闭服务器
  */
-void CWebSocketServer::CloseServer(void)
+void CWebSocketServer::CloseServer()
 {
     m_WebSocketHeartTimeOutTimer.stop();
     if(m_pWebSocketServer) m_pWebSocketServer->close();
@@ -616,7 +614,7 @@ void CWebSocketServer::onNewConnection()
  * @brief CWebSocketServer::processTextMessage 处理新的消息到达
  * @param message 到达的消息
  */
-void CWebSocketServer::processTextMessage(QString message)
+void CWebSocketServer::processTextMessage(const QString& message)
 {
     QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
 
@@ -642,7 +640,7 @@ void CWebSocketServer::processTextMessage(QString message)
  * @brief CWebSocketServer::processBinaryMessage 处理新的二进制数据达到
  * @param message 到达的二进制数据
  */
-void CWebSocketServer::processBinaryMessage(QByteArray message)
+void CWebSocketServer::processBinaryMessage(const QByteArray& message)
 {
     QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
 
@@ -663,7 +661,7 @@ void CWebSocketServer::processBinaryMessage(QByteArray message)
  */
 void CWebSocketServer::socketDisconnected()
 {
-    QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
+    auto *pClient = qobject_cast<QWebSocket *>(sender());
 
     QMutexLocker pmutexlocker(&m_clientsMutex);
 
@@ -705,7 +703,7 @@ void CWebSocketServer::socketDisconnected()
 void CWebSocketServer::setIsProcessRecvFile(bool isProcess,QString recvfiledir)
 {
     m_processrecvFile = isProcess;
-    m_recvFileSaveDir = recvfiledir;
+    m_recvFileSaveDir = std::move(recvfiledir);
 }
 
 /**
@@ -713,7 +711,7 @@ void CWebSocketServer::setIsProcessRecvFile(bool isProcess,QString recvfiledir)
  *
  * @return 返回所有在线的客户端
  */
-QList<QWebSocket*> CWebSocketServer::getAllClients(void)
+QList<QWebSocket*> CWebSocketServer::getAllClients()
 {
     return m_clients.keys();
 }
@@ -723,14 +721,14 @@ QList<QWebSocket*> CWebSocketServer::getAllClients(void)
  * @param objName 对象名称
  * @return
  */
-QWebSocket* CWebSocketServer::getClient(QString objName)
+QWebSocket* CWebSocketServer::getClient(const QString& objName)
 {
     if(objName.isEmpty() || m_clientNames.isEmpty())
-        return NULL;
+        return nullptr;
 
     QHash<QString,QWebSocket*>::iterator iter = m_clientNames.find(objName);
     if(iter == m_clientNames.end())
-        return NULL;
+        return nullptr;
 
     return iter.value();
 }
@@ -900,9 +898,9 @@ void CWebSocketServer::onPrcessRecvBinaryData(QWebSocket *pwebsocket,const QByte
  * @param variant
  * @return
  */
-bool CWebSocketServer::setClientVariant(QWebSocket *client,QVariant variant)
+bool CWebSocketServer::setClientVariant(QWebSocket *client,const QVariant& variant)
 {
-    if(client == NULL || variant.isNull())
+    if(client == nullptr || variant.isNull())
         return false;
 
     //QHash<QWebSocket *,QVariant>::iterator iter = m_clientVariants.find(client);
@@ -920,12 +918,12 @@ bool CWebSocketServer::setClientVariant(QWebSocket *client,QVariant variant)
  */
 QVariant CWebSocketServer::getClientVariant(QWebSocket *client)
 {
-    if(client == NULL || m_clientVariants.isEmpty())
-        return QVariant();
+    if(client == nullptr || m_clientVariants.isEmpty())
+        return {};
 
     QHash<QWebSocket *,QVariant>::iterator iter = m_clientVariants.find(client);
     if(iter == m_clientVariants.end())
-        return QVariant();
+        return {};
 
     return iter.value();
 }
@@ -937,7 +935,7 @@ QVariant CWebSocketServer::getClientVariant(QWebSocket *client)
  */
 bool CWebSocketServer::deleteClientVariant(QWebSocket *client)
 {
-    if(client == NULL || m_clientVariants.isEmpty())
+    if(client == nullptr || m_clientVariants.isEmpty())
         return false;
 
     QHash<QWebSocket *,QVariant>::iterator iter = m_clientVariants.find(client);

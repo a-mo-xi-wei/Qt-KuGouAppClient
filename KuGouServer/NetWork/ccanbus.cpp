@@ -5,7 +5,7 @@
 
 ccanbus::ccanbus(QObject *parent)
     : QObject(parent),
-      m_CanBusDevice(NULL),
+      m_CanBusDevice(nullptr),
       m_busStatusTimer(new QTimer(this)),
       m_numberFramesWritten(0)
 {
@@ -192,7 +192,7 @@ void ccanbus::processReceivedFrames()
 
 void ccanbus::processErrors(QCanBusDevice::CanBusError error)
 {
-    if(m_CanBusDevice == NULL) return;
+    if(m_CanBusDevice == nullptr) return;
 
     switch (error) {
     case QCanBusDevice::ReadError:
@@ -225,7 +225,7 @@ void ccanbus::processFramesWritten(qint64 size)
  */
 bool ccanbus::sendFrame(const QCanBusFrame &frame)
 {
-    if(m_CanBusDevice == NULL || !frame.isValid()) return false;
+    if(m_CanBusDevice == nullptr || !frame.isValid()) return false;
 
     return m_CanBusDevice->writeFrame(frame);
 }

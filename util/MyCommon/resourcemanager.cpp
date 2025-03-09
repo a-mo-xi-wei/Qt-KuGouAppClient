@@ -39,7 +39,7 @@ void CResourceManager::deleteallzipfiles(void)
     m_zipsubfileresources.clear();
 }
 
-void CResourceManager::WorkingfileChanging(const QString filepath)
+void CResourceManager::WorkingfileChanging(const QString& filepath)
 {
     m_currentChangingFilePath = filepath;
     m_SystemWorkingPathTimer.start(2000);
@@ -55,7 +55,7 @@ void CResourceManager::WorkingfileChanged()
     m_currentChangingFilePath="";
 }
 
-void CResourceManager::loadFileResource(QString filepath,bool isAddPath)
+void CResourceManager::loadFileResource(const QString& filepath, const bool isAddPath)
 {
     QFileInfo pFileInfo(filepath);
     if(!pFileInfo.exists())
@@ -109,8 +109,8 @@ void CResourceManager::loadFileResource(QString filepath,bool isAddPath)
     {
         tagResource tmpResources;
         tmpResources.databytes = file.readAll();
-        tmpResources.checknum = qChecksum((const char*)tmpResources.databytes.data(),tmpResources.databytes.size());
-
+        //tmpResources.checknum = qChecksum((const char*)tmpResources.databytes.data(),tmpResources.databytes.size());
+        tmpResources.checknum = qChecksum(QByteArrayView(tmpResources.databytes));
         file.close();
 
         QHash<QString,tagResource>::iterator iter = m_resources.find(filepath);
@@ -135,7 +135,7 @@ void CResourceManager::loadFileResource(QString filepath,bool isAddPath)
  * @param filepath
  * @return
  */
-QByteArray CResourceManager::getFile(QString filepath)
+QByteArray CResourceManager::getFile(const QString& filepath)
 {
     loadFileResource(filepath,true);
 
@@ -147,7 +147,7 @@ QByteArray CResourceManager::getFile(QString filepath)
  * @param filepath
  * @return
  */
-QByteArray CResourceManager::getFileFromZip(QString filepath)
+QByteArray CResourceManager::getFileFromZip(const QString& filepath)
 {
     QMutexLocker tmpLocker(&m_resourceMutex);
 
@@ -172,7 +172,7 @@ QByteArray CResourceManager::getFileFromZip(QString filepath)
  * @param isautoupdate
  * @return
  */
-bool CResourceManager::addZipFile(QString filepath,bool isautoupdate)
+bool CResourceManager::addZipFile(const QString& filepath,bool isautoupdate)
 {
     QFileInfo pfilepath(filepath);
     if(!pfilepath.exists() || pfilepath.suffix() != "zip")

@@ -30,7 +30,7 @@ CSVNVersionServer::~CSVNVersionServer()
  * @brief CSVNVersionServer::setDataBase 设置版本库所使用数据库
  * @param dbPath 数据库文件路径
  */
-void CSVNVersionServer::setDataBase(QString dbPath)
+void CSVNVersionServer::setDataBase(const QString& dbPath)
 {
     if(dbPath.isEmpty())
         return;
@@ -53,7 +53,7 @@ void CSVNVersionServer::startServer(int serverPort,int maxClients)
 /**
  * @brief CSVNVersionServer::stopServer 停止服务器
  */
-void CSVNVersionServer::stopServer(void)
+void CSVNVersionServer::stopServer()
 {
     m_webSocketServer.CloseServer();
 }
@@ -65,7 +65,7 @@ void CSVNVersionServer::stopServer(void)
  * @param grade 日志等级：0-普通；1-警告；2-错误；3-致命
  * @param logmsg 日志内容
  */
-void CSVNVersionServer::insertuseroperatorlog(int userid,int type,int grade,QString logmsg)
+void CSVNVersionServer::insertuseroperatorlog(int userid,int type,int grade,const QString& logmsg)
 {
     QDateTime ptime = QDateTime::currentDateTime();
     m_sqliteDataProvider.execSql(QString("insert into operationlog (userid,grade,type,log,time) values(%1,%2,%3,'%4',%5)")
@@ -157,7 +157,7 @@ void CSVNVersionServer::OnProcessNetBinary(QWebSocket *conn,QByteArray &data)
  * @param data 要保存的数据
  * @return 如果操作成功返回真，否则返回假
  */
-bool CSVNVersionServer::addVersionData(int id,QByteArray data)
+bool CSVNVersionServer::addVersionData(int id,const QByteArray& data)
 {
     if(id <=0 || data.isEmpty())
         return false;
@@ -222,7 +222,7 @@ QByteArray CSVNVersionServer::getVersionData(int id)
  * @param pwd 用户密码
  * @return 如果用户存在返回真，否则返回假
  */
-bool CSVNVersionServer::isExistUser(QWebSocket *conn,int id,QString pwd)
+bool CSVNVersionServer::isExistUser(QWebSocket *conn,int id, const QString &pwd)
 {
     if(id <= 0 || pwd.isEmpty())
         return false;
@@ -353,7 +353,7 @@ void CSVNVersionServer::onProcessNetProjectGetUserInfo(QWebSocket *conn,QJsonObj
 
     QJsonArray usersArray;
 
-    for(int k=0;k<(int)pRecord(0).rows();k++)
+    for(int k=0;k<static_cast<int>(pRecord(0).rows());k++)
     {
         QJsonObject subproObj;
         subproObj["id"] = pRecord(0)(k,0).toInt();
@@ -406,7 +406,7 @@ void CSVNVersionServer::onProcessNetProjectGetVersionsInfo(QWebSocket *conn,QJso
 
     QJsonArray verstionsArray;
 
-    for(int k=0;k<(int)pRecord(0).rows();k++)
+    for(int k=0;k<static_cast<int>(pRecord(0).rows());k++)
     {
         QJsonObject subproObj;
         subproObj["id"] = pRecord(0)(k,0).toInt();
@@ -465,7 +465,7 @@ void CSVNVersionServer::onProcessNetProjectGetInfo(QWebSocket *conn,QJsonObject 
 
     QJsonArray mainproArray;
 
-    for(int i=0;i<(int)pRecord(0).rows();i++)
+    for(int i=0;i<static_cast<int>(pRecord(0).rows());i++)
     {
         QJsonObject mainproObj;
         mainproObj["id"] = pRecord(0)(i,0).toInt();
@@ -488,7 +488,7 @@ void CSVNVersionServer::onProcessNetProjectGetInfo(QWebSocket *conn,QJsonObject 
 
         if(!pRecord.isEmpty())
         {
-            for(int i=0;i<(int)pRecord(0).rows();i++)
+            for(int i=0;i<static_cast<int>(pRecord(0).rows());i++)
             {
                 QJsonObject subproObj;
                 subproObj["id"] = pRecord(0)(i,0).toInt();
@@ -502,9 +502,9 @@ void CSVNVersionServer::onProcessNetProjectGetInfo(QWebSocket *conn,QJsonObject 
     }
     else
     {
-        for(int i=0;i<subids.size();i++)
+        for(auto && subid : subids)
         {
-            pRecord = m_sqliteDataProvider.execSql(QString("select * from subproject where mainid=%1 and id=%2").arg(mainid).arg(subids[i].toObject()["subid"].toInt()));
+            pRecord = m_sqliteDataProvider.execSql(QString("select * from subproject where mainid=%1 and id=%2").arg(mainid).arg(subid.toObject()["subid"].toInt()));
             if(!pRecord.isEmpty())
             {
                 QJsonObject subproObj;
@@ -649,9 +649,9 @@ void CSVNVersionServer::onProcessNetVersionAdd(QWebSocket *conn,QJsonObject &mes
 
     QString changefiles;
 
-    for(int i=0;i<filechangedata.size();i++)
+    for(auto && i : filechangedata)
     {
-        changefiles += filechangedata[i].toString();
+        changefiles += i.toString();
         changefiles += "&";
     }
 
@@ -660,7 +660,7 @@ void CSVNVersionServer::onProcessNetVersionAdd(QWebSocket *conn,QJsonObject &mes
 
     QDateTime time = QDateTime::currentDateTime();
     pRecord = m_sqliteDataProvider.execInsertSql(QString("insert into verstions (mainid,subid,type,changefiles,log,updatetime) values (%1,%2,%3,'%4','%5',%6)")
-                                 .arg(mainid).arg(subid).arg(type).arg(changefiles).arg(log).arg(time.toSecsSinceEpoch()));
+                                 .arg(mainid).arg(subid).arg(type).arg(changefiles, log).arg(time.toSecsSinceEpoch()));
 
     if(pRecord.isEmpty())
     {
@@ -711,7 +711,7 @@ void CSVNVersionServer::onProcessNetProjectDel(QWebSocket *conn,QJsonObject &mes
         RecordSetList pRecord = m_sqliteDataProvider.execSql(QString("select * from subproject where mainid=%1").arg(mainproid));
         if(!pRecord.isEmpty())
         {
-            for(int i=0;i<(int)pRecord(0).rows();i++)
+            for(int i=0;i<static_cast<int>(pRecord(0).rows());i++)
             {
                 m_sqliteDataProvider.execSql(QString("delete from verstions where mainid=%1 and subid=%2")
                                              .arg(mainproid).arg(pRecord(0)(i,0).toInt()));
@@ -819,7 +819,7 @@ void CSVNVersionServer::onProcessNetProjectAdd(QWebSocket *conn,QJsonObject &mes
         }
 
         pRecord = m_sqliteDataProvider.execInsertSql(QString("insert into mainproject (name,describe) values ('%1','%2')")
-                                     .arg(name).arg(describe));
+                                     .arg(name, describe));
 
         if(pRecord.isEmpty())
         {
@@ -864,7 +864,7 @@ void CSVNVersionServer::onProcessNetProjectAdd(QWebSocket *conn,QJsonObject &mes
         }
 
         pRecord = m_sqliteDataProvider.execInsertSql(QString("insert into subproject (mainid,name,describe) values (%1,'%2','%3')")
-                                     .arg(mainid).arg(name).arg(describe));
+                                     .arg(mainid).arg(name, describe));
 
         if(pRecord.isEmpty())
         {
@@ -909,7 +909,7 @@ void CSVNVersionServer::onProcessNetLoginUser(QWebSocket *conn,QJsonObject &mesO
     QString userpwd = QCryptographicHash::hash(mesObj["userpwd"].toString().toLatin1(),QCryptographicHash::Md5).toHex();
 
     RecordSetList pRecord = m_sqliteDataProvider.execSql(QString("select * from users where username='%1' and userpwd='%2'")
-                                                         .arg(username).arg(userpwd));
+                                                         .arg(username, userpwd));
     if(pRecord.isEmpty())
     {
         QJsonObject mesObjReturn;
@@ -953,7 +953,7 @@ void CSVNVersionServer::onProcessNetRegiterUser(QWebSocket *conn,QJsonObject &me
     QString projects = mesObj["projects"].toString();
     QString devices = mesObj["devices"].toString();
 
-    RecordSetList pRecord = m_sqliteDataProvider.execSql(QString("select * from users where username='%1' and userpwd='%2'").arg(username).arg(userpwd));
+    RecordSetList pRecord = m_sqliteDataProvider.execSql(QString("select * from users where username='%1' and userpwd='%2'").arg(username, userpwd));
     if(!pRecord.isEmpty())
     {
         QJsonObject mesObjReturn;
@@ -967,8 +967,7 @@ void CSVNVersionServer::onProcessNetRegiterUser(QWebSocket *conn,QJsonObject &me
 
     QDateTime time = QDateTime::currentDateTime();
     pRecord = m_sqliteDataProvider.execInsertSql(QString("insert into users (username,userpwd,type,projects,devices,updatetime) values ('%1','%2',%3,'%4','%6',%5)")
-                                 .arg(username)
-                                 .arg(userpwd)
+                                 .arg(username, userpwd)
                                  .arg(type)
                                  .arg(projects)
                                  .arg(time.toSecsSinceEpoch())
@@ -1009,7 +1008,7 @@ void CSVNVersionServer::onProcessNetUpdateUser(QWebSocket *conn,QJsonObject &mes
     QString devices = mesObj["devices"].toString();
 
     m_sqliteDataProvider.execSql(QString("update users set username='%1',userpwd='%2',type=%3,projects='%4',devices='%6' where id=%5")
-                                 .arg(username).arg(userpwd).arg(type).arg(projects).arg(userid).arg(devices));
+                                 .arg(username, userpwd).arg(type).arg(projects).arg(userid).arg(devices));
 
     QJsonObject mesObjReturn;
     mesObjReturn["mesid"] = IDD_SVNVERION_USER;

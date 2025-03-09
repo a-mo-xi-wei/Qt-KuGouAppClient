@@ -29,7 +29,7 @@ CSVNVersionClient::~CSVNVersionClient()
 }
 
 /// 关闭与服务器的连接
-void CSVNVersionClient::stopClient(void)
+void CSVNVersionClient::stopClient()
 {
     m_WeSocketClient.Close();
     m_fileChangedlist.clear();
@@ -39,7 +39,7 @@ void CSVNVersionClient::stopClient(void)
  * @brief getUserData 得到当前玩家数据
  * @return
  */
-tagUserData* CSVNVersionClient::getUserData(void)
+tagUserData* CSVNVersionClient::getUserData()
 {
     return &m_UserData;
 }
@@ -48,7 +48,7 @@ tagUserData* CSVNVersionClient::getUserData(void)
  * @brief CSVNVersionClient::isConnected 检测连接是否建立成功
  * @return
  */
-bool CSVNVersionClient::isConnected(void)
+bool CSVNVersionClient::isConnected()
 {
     return m_WeSocketClient.isConnected();
 }
@@ -58,7 +58,7 @@ bool CSVNVersionClient::isConnected(void)
  * @param serverip 要连接的服务器的IP
  * @param port 要连接的服务器的端口
  */
-void CSVNVersionClient::startClient(QString serverip,int port)
+void CSVNVersionClient::startClient(const QString& serverip,int port)
 {
     if(serverip.isEmpty() || port <= 0)
         return;
@@ -72,7 +72,7 @@ void CSVNVersionClient::startClient(QString serverip,int port)
  * @param userName 用户名
  * @param userPwd 用户密码
  */
-void CSVNVersionClient::loginUser(QString userName,QString userPwd)
+void CSVNVersionClient::loginUser(const QString& userName,const QString& userPwd)
 {
     if(userName.isEmpty() || userPwd.isEmpty())
         return;
@@ -93,7 +93,7 @@ void CSVNVersionClient::loginUser(QString userName,QString userPwd)
  * @param type 用户类型：0-普通用户；1-超级用户
  * @param projects 用户所在项目，如果是普通用户，项目例子：12,2,3,5 32,6,7 （主项目ID,子项目ID列）,超级用户不需要项目列
  */
-void CSVNVersionClient::registerUser(QString userName,QString userpwd,int type,QString projects,QString devices)
+void CSVNVersionClient::registerUser(const QString& userName,const QString& userpwd,int type,const QString& projects,const QString& devices)
 {
     if(userName.isEmpty() || userpwd.isEmpty() || type < 0)
         return;
@@ -134,7 +134,7 @@ void CSVNVersionClient::getUserINfo(int userId)
  * @param type 用户类型：0-普通用户；1-超级用户
  * @param projects 用户所在项目，如果是普通用户，项目例子：12|2,3,5_32|6,7 （主项目ID|子项目ID列）,超级用户不需要项目列
  */
-void CSVNVersionClient::updateUser(int userid,QString userName,QString userpwd,int type,QString projects,QString devices)
+void CSVNVersionClient::updateUser(int userid,const QString& userName,const QString& userpwd,int type,const QString& projects,const QString& devices)
 {
     if(userid <= 0 || type < 0)
         return;
@@ -176,7 +176,7 @@ void CSVNVersionClient::deleteUser(int userid)
  * @param proName 项目名称
  * @param proDescribe 项目描述
  */
-void CSVNVersionClient::addMainProject(QString proName,QString proDescribe)
+void CSVNVersionClient::addMainProject(const QString& proName,const QString& proDescribe)
 {
     if(proName.isEmpty())
         return;
@@ -199,7 +199,7 @@ void CSVNVersionClient::addMainProject(QString proName,QString proDescribe)
  * @param proName 项目名称
  * @param proDescribe 项目描述
  */
-void CSVNVersionClient::addSubProject(int mainId,QString proName,QString proDescribe)
+void CSVNVersionClient::addSubProject(int mainId,const QString& proName,const QString& proDescribe)
 {
     if(mainId <= 0 || proName.isEmpty())
         return;
@@ -225,7 +225,7 @@ void CSVNVersionClient::addSubProject(int mainId,QString proName,QString proDesc
  * @param log 版本日志
  * @param pFileChangedData 改变的文件
  */
-void CSVNVersionClient::addVersion(int mainId,int subId,int type,QString log,QVector<tagFileChangedData> &pFileChangedData)
+void CSVNVersionClient::addVersion(int mainId,int subId,int type,const QString& log,QVector<tagFileChangedData> &pFileChangedData)
 {
     if(mainId <= 0 || subId <= 0)
         return;
@@ -242,13 +242,13 @@ void CSVNVersionClient::addVersion(int mainId,int subId,int type,QString log,QVe
 
     QJsonArray FileChangedDataArray;
 
-    for(int i=0;i<pFileChangedData.size();i++)
+    for(auto & i : pFileChangedData)
     {
         //QJsonObject md5Obj;
         //md5Obj["filename"] = pFileChangedData[i].fileName;
        // md5Obj["md5"] = pFileChangedData[i].md5;
 
-        FileChangedDataArray.push_back(pFileChangedData[i].fileName);
+        FileChangedDataArray.push_back(i.fileName);
     }
 
     mesObj["filechangedata"] = FileChangedDataArray;
@@ -263,7 +263,7 @@ void CSVNVersionClient::addVersion(int mainId,int subId,int type,QString log,QVe
  * @param verid 版本数据ID
  * @param data 版本数据
  */
-void CSVNVersionClient::addVersionData(int mainId,int subId,int verid,QByteArray data)
+void CSVNVersionClient::addVersionData(int mainId,int subId,int verid,const QByteArray& data)
 {
     if(mainId <= 0 || subId <= 0 || verid <= 0 || data.isEmpty())
         return;
@@ -279,7 +279,7 @@ void CSVNVersionClient::addVersionData(int mainId,int subId,int verid,QByteArray
     strncpy(pVersionOper.userpwd,m_UserData.pwd.toStdString().c_str(),64);
 
     QByteArray sendData;
-    sendData.append((const char*)&pVersionOper,sizeof(tagVersionOper));
+    sendData.append((const char *)&pVersionOper,sizeof(tagVersionOper));
     sendData.append(data);
 
     m_WeSocketClient.sendBinaryMessage(sendData,true);
@@ -372,7 +372,7 @@ void CSVNVersionClient::getProjectVersionsInfo(int mainId,int usbId)
  * @param mainId 项目的主ID
  * @param subIds 项目的子ID,等于-1的话，就得到主项目的所有子项目
  */
-void CSVNVersionClient::getProjectInfo(int mainId,QVector<int> subIds)
+void CSVNVersionClient::getProjectInfo(int mainId,const QVector<int>& subIds)
 {
     QJsonObject mesObj;
     mesObj["mesid"] = IDD_SVNVERSION_PROJECT;
@@ -381,10 +381,10 @@ void CSVNVersionClient::getProjectInfo(int mainId,QVector<int> subIds)
 
     QJsonArray subidArrays;
 
-    for(int i=0;i<subIds.size();i++)
+    for(const int subId : subIds)
     {
         QJsonObject subIdObj;
-        subIdObj["subid"] = subIds[i];
+        subIdObj["subid"] = subId;
 
         subidArrays.push_back(subIdObj);
     }
@@ -405,7 +405,7 @@ void CSVNVersionClient::getProjectInfo(int mainId,QVector<int> subIds)
 QString CSVNVersionClient::getFileMd5(const QString &path)
 {
     if(path.isEmpty())
-        return QString();
+        return {};
 
     QCryptographicHash md5Hash(QCryptographicHash::Md5);
     QFile file(path);
@@ -415,7 +415,7 @@ QString CSVNVersionClient::getFileMd5(const QString &path)
         {
             QString data = file.read(1024*1024);
             QByteArray curData=data.toLatin1();
-            md5Hash.addData(curData,curData.size());
+            md5Hash.addData(QByteArrayView(curData));
 
             QCoreApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
 
@@ -434,14 +434,14 @@ QString CSVNVersionClient::getFileMd5(const QString &path)
  * @param filePath 目标目录
  * @return 如果转换成功返回真，否则返回假
  */
-bool CSVNVersionClient::Convertpackagetofolder(QByteArray packageData,QString filePath)
+bool CSVNVersionClient::Convertpackagetofolder(const QByteArray& packageData,const QString& filePath)
 {
     if(packageData.isEmpty() || filePath.isEmpty())
         return false;
 
     QByteArray tempData = packageData;
 
-    tagSVNVersionPathStruct ptagSVNVersionPathStruct;
+    tagSVNVersionPathStruct ptagSVNVersionPathStruct{};
     memset(&ptagSVNVersionPathStruct,0,sizeof(tagSVNVersionPathStruct));
 
     memcpy(&ptagSVNVersionPathStruct,tempData.data(),sizeof(tagSVNVersionPathStruct));
@@ -454,22 +454,22 @@ bool CSVNVersionClient::Convertpackagetofolder(QByteArray packageData,QString fi
 
     qDebug()<<"Convertpackagetofolder1:"<<ptagSVNVersionPathStruct.srcDataSize;
 
-    unsigned char *uncompressed_buffer = (unsigned char*)malloc(ptagSVNVersionPathStruct.srcDataSize);
+    auto *uncompressed_buffer = static_cast<unsigned char *>(malloc(ptagSVNVersionPathStruct.srcDataSize));
     memset(uncompressed_buffer,0,ptagSVNVersionPathStruct.srcDataSize);
-    fastlz_decompress(tempData.data(),tempData.size(),uncompressed_buffer,ptagSVNVersionPathStruct.srcDataSize);
+    fastlz_decompress(tempData.data(),static_cast<int>(tempData.size()),uncompressed_buffer,ptagSVNVersionPathStruct.srcDataSize);
 
-    tempData = QByteArray((const char*)uncompressed_buffer,ptagSVNVersionPathStruct.srcDataSize);
+    tempData = QByteArray((const char *)uncompressed_buffer,ptagSVNVersionPathStruct.srcDataSize);
 
     qDebug()<<"Convertpackagetofolder2:"<<tempData.size();
 
     free(uncompressed_buffer);
-    uncompressed_buffer=NULL;
+    uncompressed_buffer=nullptr;
 
     m_fileChangedlist.clear();
 
     for(int i=0;i<ptagSVNVersionPathStruct.fileCount;i++)
     {
-        tagSVNVersionFileStruct ptagSVNVersionFileStruct;
+        tagSVNVersionFileStruct ptagSVNVersionFileStruct{};
         memset(&ptagSVNVersionFileStruct,0,sizeof(ptagSVNVersionFileStruct));
 
         memcpy(&ptagSVNVersionFileStruct,tempData.data(),sizeof(tagSVNVersionFileStruct));
@@ -499,7 +499,7 @@ bool CSVNVersionClient::Convertpackagetofolder(QByteArray packageData,QString fi
             precvFile.close();
         }
 
-        OnProcessBinaryOperProcess(NULL,2,i+1,ptagSVNVersionPathStruct.fileCount);
+        OnProcessBinaryOperProcess(nullptr,2,i+1,ptagSVNVersionPathStruct.fileCount);
 
         QCoreApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
     }
@@ -511,7 +511,7 @@ bool CSVNVersionClient::Convertpackagetofolder(QByteArray packageData,QString fi
  * @brief CSVNVersionClient::GetFileListMd5 得到指定文件夹下所有文件的信息和md5码
  * @return
  */
-QVector<tagFileChangedData> CSVNVersionClient::GetFileListMd5(void)
+QVector<tagFileChangedData> CSVNVersionClient::GetFileListMd5()
 {
     QVector<tagFileChangedData> returnFileList;
 
@@ -524,11 +524,11 @@ QVector<tagFileChangedData> CSVNVersionClient::GetFileListMd5(void)
     if(filecount < 0)
         return returnFileList;
 
-    for(int i=0;i<pfilelist.size();i++)
+    for(const auto & i : pfilelist)
     {
-        QString tmpRealFilePath = pfilelist[i].mid(m_currentWorkingPath.size());
+        QString tmpRealFilePath = i.mid(m_currentWorkingPath.size());
 
-        returnFileList.push_back(tagFileChangedData(tmpRealFilePath,getFileMd5(pfilelist[i])));
+        returnFileList.push_back(tagFileChangedData(tmpRealFilePath,getFileMd5(i)));
 
         QCoreApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
     }
@@ -541,7 +541,7 @@ QVector<tagFileChangedData> CSVNVersionClient::GetFileListMd5(void)
  * @param filePath 要转换的包
  * @return 返回转换后的包数据
  */
-QByteArray CSVNVersionClient::Convertfoldertopackage(QString filePath)
+QByteArray CSVNVersionClient::Convertfoldertopackage(const QString& filePath)
 {
     QByteArray returnData;
 
@@ -567,10 +567,10 @@ QByteArray CSVNVersionClient::Convertfoldertopackage(QString filePath)
 
             QString tmpRealFilePath = pfilelist[i].mid(filePath.size());
 
-            tagSVNVersionFileStruct ptagSVNVersionFileStruct;
+            tagSVNVersionFileStruct ptagSVNVersionFileStruct{};
 
             strncpy(ptagSVNVersionFileStruct.fileName,tmpRealFilePath.toUtf8().data(),MAX_FILENAME);
-            ptagSVNVersionFileStruct.fileSize = fileData.size();
+            ptagSVNVersionFileStruct.fileSize = static_cast<int>(fileData.size());
 
             filesData.append((const char*)&ptagSVNVersionFileStruct,sizeof(ptagSVNVersionFileStruct));
             filesData.append(fileData);
@@ -578,26 +578,26 @@ QByteArray CSVNVersionClient::Convertfoldertopackage(QString filePath)
             m_sendfile.close();
         }
 
-        OnProcessBinaryOperProcess(NULL,3,i+1,pfilelist.size());
+        OnProcessBinaryOperProcess(nullptr,3,i+1,pfilelist.size());
 
         QCoreApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
     }
 
-    tagSVNVersionPathStruct ptagSVNVersionPathStruct;
+    tagSVNVersionPathStruct ptagSVNVersionPathStruct{};
     ptagSVNVersionPathStruct.tag[0] = 'S';
     ptagSVNVersionPathStruct.tag[1] = 'V';
     ptagSVNVersionPathStruct.tag[2] = 'N';
-    ptagSVNVersionPathStruct.fileCount = pfilelist.size();
-    ptagSVNVersionPathStruct.srcDataSize = filesData.size();
+    ptagSVNVersionPathStruct.fileCount = static_cast<int>(pfilelist.size());
+    ptagSVNVersionPathStruct.srcDataSize = static_cast<int>(filesData.size());
 
     returnData.append((const char*)&ptagSVNVersionPathStruct,sizeof(ptagSVNVersionPathStruct));
     //returnData.append(filesData);
 
     //qDebug()<<"Convertfoldertopackage1:"<<filesData.size();
 
-    unsigned char *compressed_buffer = (unsigned char*)malloc(filesData.size());
+    auto *compressed_buffer = static_cast<unsigned char *>(malloc(filesData.size()));
     memset(compressed_buffer,0,filesData.size());
-    int compressedsize = fastlz_compress(filesData.data(),filesData.size(),compressed_buffer);
+    int compressedsize = fastlz_compress(filesData.data(),static_cast<int>(filesData.size()),compressed_buffer);
    // int compressedsize = fastlz_compress_level(2, filesData.data(),filesData.size(), compressed_buffer);
 
     //qDebug()<<"Convertfoldertopackage2:"<<compressedsize;
@@ -605,7 +605,7 @@ QByteArray CSVNVersionClient::Convertfoldertopackage(QString filePath)
     returnData.append(QByteArray((const char*)compressed_buffer,compressedsize));
 
     free(compressed_buffer);
-    compressed_buffer=NULL;
+    compressed_buffer=nullptr;
 
     return returnData;
     //return qCompress(returnData);
@@ -698,8 +698,8 @@ void CSVNVersionClient::OnProcessNetText(QWebSocket *conn,QString mes)
 
             QStringList pDeviceList = pdevices.split(";");
 
-            for(int i=0;i<pDeviceList.size();i++)
-                m_UserData.devices.push_back(pDeviceList[i].toInt());
+            for(const auto & i : pDeviceList)
+                m_UserData.devices.push_back(i.toInt());
 
             m_UserData.projects.clear();
 
@@ -707,9 +707,9 @@ void CSVNVersionClient::OnProcessNetText(QWebSocket *conn,QString mes)
             {
                 QStringList allprojlist = pprojects.split(";");
 
-                for(int i=0;i<allprojlist.size();i++)
+                for(const auto & i : allprojlist)
                 {
-                    QStringList projList = allprojlist[i].split(",");
+                    QStringList projList = i.split(",");
 
                     if(!projList.isEmpty() && projList.size() > 1)
                     {

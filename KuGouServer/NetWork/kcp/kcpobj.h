@@ -28,7 +28,7 @@ class KcpObj : public QObject
 
 public:
     KcpObj(QObject *parent = nullptr);
-    ~KcpObj();
+    ~KcpObj() override;
 
     enum Mode {
         Default,

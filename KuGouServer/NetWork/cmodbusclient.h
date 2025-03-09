@@ -1,11 +1,10 @@
-﻿#ifndef _C_MODBUSCLIENT_H_INCLUDE_
-#define _C_MODBUSCLIENT_H_INCLUDE_
+﻿#ifndef C_MODBUSCLIENT_H_INCLUDE_
+#define C_MODBUSCLIENT_H_INCLUDE_
 
 #include <QModbusClient>
 #include <QModbusReply>
 #include <QSerialPort>
 #include <QObject>
-#include <QUrl>
 
 #include "common.h"
 #include "QsLog.h"
@@ -16,7 +15,7 @@ class CModbusClient : public QObject
 
 public:
     explicit CModbusClient(QObject *parent = nullptr,ModbusConnection connection=Modbus_Tcp);
-    ~CModbusClient();
+    ~CModbusClient() override;
 
 #if QT_CONFIG(modbus_serialport)
     /// 启动串口
@@ -31,7 +30,7 @@ public:
     /// 启动TCP
     bool startupTCP2(QUrl url);
     /// 关闭客户端
-    void closeClient(void);
+    void closeClient();
 
     /// 从服务器读取指定的数据
     bool readRequest(const QModbusDataUnit &read, int serverAddress);
@@ -43,19 +42,19 @@ public:
     /// 设置响应服务器的超时时间
     inline void setResponseServerTimeOut(int time=1000) { m_responseTimeout = time; }
     /// 得到响应服务器的超时时间
-    inline int getResponseServerTimeOut(void) { return m_responseTimeout; }
+    inline int getResponseServerTimeOut() { return m_responseTimeout; }
     /// 设置客户端在请求失败之前将执行的重试次数。默认值设置为3
     inline void setNumberOfRetries(int retriy=3) { m_NumberOfRetries = retriy; }
     /// 得到客户端在请求失败之前将执行的重试次数
-    inline int getNumberOfRetries(void) { return m_NumberOfRetries; }
+    inline int getNumberOfRetries() { return m_NumberOfRetries; }
     /// 检测客户端是否启动成功
-    inline bool isClientStartupSuccessed(void) { return m_isClientStartupSuccessed; }
+    inline bool isClientStartupSuccessed() { return m_isClientStartupSuccessed; }
     /// 得到当前客户端连接状态
-    inline int getCurrentConnectingState(void) { return m_currentConnectingState; }
+    inline int getCurrentConnectingState() { return m_currentConnectingState; }
     /// 设置服务器地址
     inline void setServerAddress(int ServerAddress) { m_ServerAddress = ServerAddress; }
     /// 得到服务器地址
-    inline int getServerAddress(void) { return m_ServerAddress; }
+    inline int getServerAddress() { return m_ServerAddress; }
 
 signals:
     /// 日志消息
@@ -67,11 +66,11 @@ signals:
 
 private:
     /// 建立Modbus客户端
-    void createModbusClient(void);
+    void createModbusClient();
     /// 打印用户日志
     void printLog(QsLogging::Level type,QString msg);
     /// 得到当前时间
-    QString getCurrentDate(void);
+    QString getCurrentDate();
 
 private slots:
     void onStateChanged(int state);
@@ -90,4 +89,4 @@ private:
     int m_ServerAddress;                          /**< 要连接的服务器地址 */
 };
 
-#endif // CMODBUSCLIENT_H
+#endif // C_MODBUSCLIENT_H_INCLUDE_

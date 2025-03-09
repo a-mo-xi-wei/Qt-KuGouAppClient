@@ -1,29 +1,22 @@
 ﻿#include "cwebsocketclient.h"
-#include "QtWebSockets/qwebsocket.h"
 #include "QsLog.h"
-
-#include <QJsonObject>
-#include <QJsonDocument>
-#include <QFileInfo>
-#include <QCoreApplication>
-#include <QEventLoop>
-#include <QByteArray>
 #include <QDir>
+#include <utility>
 
 initialiseSingleton(CWebSocketClientManager);
 
 QT_USE_NAMESPACE
 
-CWebSocketClient::CWebSocketClient(NetworkFrameManager *pNetworkFrameManager,QObject *parent) :
-    QObject(parent),
+CWebSocketClient::CWebSocketClient(NetworkFrameManager *pNetworkFrameManager,QObject *parent)
+    :QObject(parent),
+    m_serverPort(0),
+    m_isCloseSocket(false),
+    m_isDisreconnected(true),
+    m_NetworkFrameManager(pNetworkFrameManager),
     m_recvFileState(false),
     m_processrecvFile(false),
     m_recvDataState(false),
-    m_processrecvData(false),
-    m_NetworkFrameManager(pNetworkFrameManager),
-    m_isCloseSocket(false),
-    m_isDisreconnected(true),
-    m_serverPort(0)
+    m_processrecvData(false)
 {
     //connect(&m_webSocket, &QWebSocket::connected, this, &CWebSocketClient::onConnected);
     //connect(&m_webSocket, &QWebSocket::disconnected, this, &CWebSocketClient::onDisconnected);
@@ -47,7 +40,7 @@ CWebSocketClient::~CWebSocketClient()
  * @param serverip
  * @param serverport
  */
-void CWebSocketClient::Open2(QString serverip,int serverport)
+void CWebSocketClient::Open2(const QString& serverip,int serverport)
 {
     if(serverip == "" || serverport <= 0)
         return;
@@ -62,7 +55,7 @@ void CWebSocketClient::Open2(QString serverip,int serverport)
  * @brief CWebSocketClient::Open 打开指定地址的网络连接
  * @param url 要打开的网址
  */
-void CWebSocketClient::Open(QUrl url)
+void CWebSocketClient::Open(const QUrl& url)
 {
     connect(&m_webSocket, &QWebSocket::connected, this, &CWebSocketClient::onConnected);
     connect(&m_webSocket, &QWebSocket::disconnected, this, &CWebSocketClient::onDisconnected);
@@ -79,7 +72,7 @@ void CWebSocketClient::Open(QUrl url)
  * @brief CWebSocketClient::isConnected 检测连接是否建立成功
  * @return
  */
-bool CWebSocketClient::isConnected(void)
+bool CWebSocketClient::isConnected()
 {
     return m_webSocket.state() == QAbstractSocket::ConnectedState ? true : false;
 }
@@ -89,7 +82,7 @@ bool CWebSocketClient::isConnected(void)
  * @param msg 要发送的字符串
  * @return 返回发送成功的字符串长度
  */
-qint64 CWebSocketClient::Send(QString msg)
+qint64 CWebSocketClient::Send(const QString& msg)
 {
     if(msg.isEmpty())
         return 0;
@@ -103,7 +96,7 @@ qint64 CWebSocketClient::Send(QString msg)
  */
 void CWebSocketClient::SetNetworkFrameManager(NetworkFrameManager *pNetworkFrameManager)
 {
-    if(pNetworkFrameManager == NULL)
+    if(pNetworkFrameManager == nullptr)
         return;
 
     m_NetworkFrameManager = pNetworkFrameManager;
@@ -117,7 +110,7 @@ void CWebSocketClient::SetNetworkFrameManager(NetworkFrameManager *pNetworkFrame
  * @param rootpath 主路径，主要去除发送的文件路径，得到文件的相对路径
  * @return 如果文件发送成功返回真，否则返回假
  */
-bool CWebSocketClient::sendFile(QString filepath,bool isExcludeUserInputEvents,QString rootpath)
+bool CWebSocketClient::sendFile(const QString& filepath,bool isExcludeUserInputEvents,QString rootpath)
 {
     if(filepath.isEmpty())
         return false;
@@ -140,7 +133,7 @@ bool CWebSocketClient::sendFile(QString filepath,bool isExcludeUserInputEvents,Q
 
     if(rootpath.isEmpty())
     {
-        int pos = filepath.lastIndexOf("/");
+        int pos = static_cast<int>(filepath.lastIndexOf("/"));
         if(pos > 0)
             rootpath = filepath.mid(0,pos+1);
     }
@@ -158,7 +151,7 @@ bool CWebSocketClient::sendFile(QString filepath,bool isExcludeUserInputEvents,Q
 
     QString tmpRealFilePath = filepath.mid(rootpath.size());
 
-    tagFileStruct ptagFileStruct;
+    tagFileStruct ptagFileStruct{};
     memset(&ptagFileStruct,0,sizeof(ptagFileStruct));
 
     ptagFileStruct.mark[0] = 'F';
@@ -226,7 +219,7 @@ qint64 CWebSocketClient::sendBinaryMessage(const QByteArray &data,bool isExclude
     m_sendsize=0;
     quint16 pdecchecknum = qChecksum(QByteArrayView(tmpByteArray));
 
-    tagDataStruct ptagDataStruct;
+    tagDataStruct ptagDataStruct{};
     memset(&ptagDataStruct,0,sizeof(ptagDataStruct));
 
     ptagDataStruct.mark[0] = 'D';
@@ -348,7 +341,7 @@ void CWebSocketClient::handleWebSocketHeartTimeOut()
  * @brief CWebSocketClient::onTextMessageReceived 处理接收到字符串时的情况
  * @param message 接收到的字符串
  */
-void CWebSocketClient::onTextMessageReceived(QString message)
+void CWebSocketClient::onTextMessageReceived(const QString& message)
 {
     QLOG_INFO()<<"CWebSocketClient::onTextMessageReceived:"<<message;
 
@@ -361,7 +354,7 @@ void CWebSocketClient::onTextMessageReceived(QString message)
  * @brief CWebSocketClient::onBinaryReceived 处理接收到二进制数据的情况
  * @param message 接收到的二进制数据
  */
-void CWebSocketClient::onBinaryReceived(QByteArray message)
+void CWebSocketClient::onBinaryReceived(const QByteArray& message)
 {
     // 是否处理接收文件
     if(m_processrecvFile)
@@ -379,7 +372,7 @@ void CWebSocketClient::onBinaryReceived(QByteArray message)
 void CWebSocketClient::setIsProcessRecvFile(bool isProcess,QString recvfiledir)
 {
     m_processrecvFile = isProcess;
-    m_recvFileSaveDir = recvfiledir;
+    m_recvFileSaveDir = std::move(recvfiledir);
 
     if(m_processrecvFile) m_recvFileState=false;
 }
@@ -564,11 +557,6 @@ void CWebSocketClient::onPrcessRecvFile(QWebSocket *pwebsocket,const QByteArray 
     }
 }
 
-CWebSocketClientManager::CWebSocketClientManager()
-{
-
-}
-
 CWebSocketClientManager::~CWebSocketClientManager()
 {
     clearAllClients();
@@ -577,13 +565,13 @@ CWebSocketClientManager::~CWebSocketClientManager()
 /**
  * @brief CWebSocketClientManager::clearAllClients 清除所有的客户端
  */
-void CWebSocketClientManager::clearAllClients(void)
+void CWebSocketClientManager::clearAllClients()
 {
     QHash<QString,CWebSocketClient*>::iterator iter = m_WebSocketClients.begin();
     for(;iter != m_WebSocketClients.end();++iter)
     {
         if((*iter)) delete (*iter);
-        (*iter) = NULL;
+        (*iter) = nullptr;
     }
 
     m_WebSocketClients.clear();
@@ -595,9 +583,9 @@ void CWebSocketClientManager::clearAllClients(void)
  * @param pClient 要添加的客户端
  * @return 如果客户端添加成功返回真，否则返回假
  */
-bool CWebSocketClientManager::addClient(QString clientName,CWebSocketClient* pClient)
+bool CWebSocketClientManager::addClient(const QString& clientName,CWebSocketClient* pClient)
 {
-    if(clientName.isEmpty() || pClient == NULL)
+    if(clientName.isEmpty() || pClient == nullptr)
         return false;
 
     CWebSocketClient *pReturnClient = getClient(clientName);
@@ -612,15 +600,15 @@ bool CWebSocketClientManager::addClient(QString clientName,CWebSocketClient* pCl
 /**
  * @brief CWebSocketClientManager::getClient 得到一个客户端
  * @param clientName 要得到的客户端的名称
- * @return 如果存在这个客户端返回这个客户端，否则返回NULL
+ * @return 如果存在这个客户端返回这个客户端，否则返回nullptr
  */
-CWebSocketClient* CWebSocketClientManager::getClient(QString clientName)
+CWebSocketClient* CWebSocketClientManager::getClient(const QString& clientName)
 {
     QHash<QString,CWebSocketClient*>::iterator iter = m_WebSocketClients.find(clientName);
     if(iter != m_WebSocketClients.end())
         return (*iter);
 
-    return NULL;
+    return nullptr;
 }
 
 /**
@@ -628,7 +616,7 @@ CWebSocketClient* CWebSocketClientManager::getClient(QString clientName)
  * @param clientName
  * @return
  */
-bool CWebSocketClientManager::deleteClient(QString clientName)
+bool CWebSocketClientManager::deleteClient(const QString& clientName)
 {
     if(clientName.isEmpty() || m_WebSocketClients.isEmpty())
         return false;
@@ -637,7 +625,7 @@ bool CWebSocketClientManager::deleteClient(QString clientName)
     if(iter != m_WebSocketClients.end())
     {
         delete (*iter);
-        (*iter) = NULL;
+        (*iter) = nullptr;
 
         m_WebSocketClients.erase(iter);
 

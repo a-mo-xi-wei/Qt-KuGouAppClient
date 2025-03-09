@@ -2,13 +2,12 @@
 #include "QsLog.h"
 
 #include <QSerialPortInfo>
-#include <QDebug>
 #include <QJsonObject>
 #include <QJsonDocument>
 
 //initialiseSingleton(CSerialPortManager);
 
-CSerialPort::CSerialPort(QString name,NetworkFrameManager *pNetworkFrameManager,QObject *parent) :
+CSerialPort::CSerialPort(const QString &name,NetworkFrameManager *pNetworkFrameManager,QObject *parent) :
     QSerialPort(parent),
     m_Name(name),
     m_NetworkFrameManager(pNetworkFrameManager),

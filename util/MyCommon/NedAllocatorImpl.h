@@ -23,8 +23,6 @@ void *Memorycalloc( size_t num,size_t size );
 
 void *Memoryrealloc( void* memblock, size_t size );
 
-void DestroyMemory();
-
 #if defined(__cplusplus)
 }
 #endif

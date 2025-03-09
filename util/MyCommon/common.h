@@ -351,7 +351,7 @@ struct tagpluginItem
     tagpluginItem(QString pname,QObject *pobj,QLibrary *plib=NULL)
         : name(pname),obj(pobj),lib(plib) {}
 
-    inline void clear(void)
+    inline void clear()
     {
         if(obj) obj->deleteLater();
 
@@ -396,7 +396,7 @@ static inline void itimeofday(long *sec, long *usec)
 }
 
 /* get clock in millisecond 64 */
-static inline long long iclock64(void)
+static inline long long iclock64()
 {
     long s, u;
     long long value;
@@ -412,10 +412,6 @@ static inline unsigned int iclock()
 
 #define MAX_FASTLZ_BUF_SIZE 10240
 
-/// 加载本静态库的资源
-void init_lib_resources(void);
-/// 卸载本静态库的资源
-void cleanup_lib_resources(void);
 /// 生成日志文件
 void init_log_file(const QString& filepath);
 /// 打印日志
@@ -423,11 +419,11 @@ void print_log(LogLevel level, const QString &msg, const QString &isprintscreen=
 /// 保存源文件到目标文件(主要网络传输中使用)
 bool sava_file(QString srcfile,QString decfile);
 /// 初始化崩溃系统
-void init_dump_system(void);
+void init_dump_system();
 /// 初始化数据库连接池
 void init_dbpool(bool paramIsDebug = false,QObject * parent = 0);
 /// 卸载数据库连接池
-void clean_dbpool(void);
+void clean_dbpool();
 /// 得到当前IP
 QHostAddress getLocalIP(int protocolType=QAbstractSocket::IPv4Protocol);
 /// 拷贝文件

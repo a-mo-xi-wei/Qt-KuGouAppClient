@@ -191,7 +191,7 @@ void CTcpServer::displayError(QAbstractSocket::SocketError socketError)
 /**
  * @brief CloseServer 关闭服务器
  */
-void CTcpServer::CloseServer(void)
+void CTcpServer::CloseServer()
 {
     clear();
 
@@ -204,7 +204,7 @@ void CTcpServer::CloseServer(void)
  * @param data
  * @return
  */
-qint64 CTcpServer::SendByteArray(qintptr socketDescriptor,QByteArray data)
+qint64 CTcpServer::SendByteArray(qintptr socketDescriptor, const QByteArray &data)
 {
     QHash<qint64, CTcpSocket *>::iterator iter = tcpClient.find(socketDescriptor);
     if(iter == tcpClient.end())
@@ -218,7 +218,7 @@ qint64 CTcpServer::SendByteArray(qintptr socketDescriptor,QByteArray data)
  * @param data
  * @return
  */
-bool CTcpServer::SendAllByteArray(QByteArray data)
+bool CTcpServer::SendAllByteArray(const QByteArray& data)
 {
     QHash<qint64, CTcpSocket *>::iterator iter = tcpClient.begin();
     for(;iter != tcpClient.end();++iter)
@@ -235,7 +235,7 @@ bool CTcpServer::SendAllByteArray(QByteArray data)
  * @param data
  * @return
  */
-bool CTcpServer::SendAllOtherByteArray(qintptr socketDescriptor,QByteArray data)
+bool CTcpServer::SendAllOtherByteArray(qintptr socketDescriptor,const QByteArray& data)
 {
     QHash<qint64, CTcpSocket *>::iterator iter = tcpClient.begin();
     for(;iter != tcpClient.end();++iter)
@@ -265,7 +265,7 @@ void CTcpServer::incomingConnection(qintptr socketDescriptor) //多线程必须�
         return;
     }
 
-    QThread* th = NULL;
+    QThread* th = nullptr;
 
     if(m_isUsingThread)
         th = ThreadHandle::getClass().getThread();
@@ -308,7 +308,7 @@ void CTcpServer::incomingConnection(qintptr socketDescriptor) //多线程必须�
     qDebug()<<"new connection" <<"socketDescriptor="<<socketDescriptor<<"Current number of connections:"<<nConnectCount;
 }
 
-void CTcpServer::sockBinMessageSlot(qint64 socketDescriptor,QByteArray data)
+void CTcpServer::sockBinMessageSlot(qint64 socketDescriptor, const QByteArray &data)
 {
     emit sockNetMessage(socketDescriptor,data);
 }

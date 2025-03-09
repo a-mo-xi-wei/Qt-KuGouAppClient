@@ -9,9 +9,9 @@
 
 chttpserver::chttpserver(QObject *parent,bool enablessl)
     : QObject(parent),
-      m_NetworkFrameManager(NULL),
-      m_serverisRunning(false),
-      m_isEnableSSL(enablessl)
+      m_serverIsRunning(false),
+      m_isEnableSSL(enablessl),
+      m_NetworkFrameManager(nullptr)
 {
     m_currentWorkingPath = QCoreApplication::applicationDirPath();
 
@@ -42,11 +42,11 @@ chttpserver::~chttpserver()
 bool chttpserver::listen(int port,QString server_crt,QString server_key)
 {
     if(!m_isEnableSSL)
-        m_serverisRunning = m_htmlServerManage.listen( QHostAddress::Any,
+        m_serverIsRunning = m_htmlServerManage.listen( QHostAddress::Any,
                                                        port);
     else
 #ifndef QT_NO_SSL
-        m_serverisRunning = m_htmlSslServerManage.listen(QHostAddress::Any,
+        m_serverIsRunning = m_htmlSslServerManage.listen(QHostAddress::Any,
                                                          port,
                                                          server_crt,
                                                          server_key);
@@ -56,20 +56,20 @@ bool chttpserver::listen(int port,QString server_crt,QString server_key)
              tr("chttpserver::listen:%1;").arg(port)+
              tr("isEnableSSL:%1;").arg((int)m_isEnableSSL)+
              tr("workingPath:")+m_currentWorkingPath+
-             tr(";startup status:%1").arg((int)m_serverisRunning));
+             tr(";startup status:%1").arg((int)m_serverIsRunning));
 
-    return m_serverisRunning;
+    return m_serverIsRunning;
 }
 
 /**
  * @brief chttpserver::onProcessHttpAccepted 处理http传输过来的数据
  * @param session
  */
-void chttpserver::onProcessHttpAccepted(const QPointer< JQHttpServer::Session > &session,QObject *mainObj)
+void chttpserver::onProcessHttpAccepted(const QPointer<JQHttpServer::Session> &session,QObject *mainObj)
 {
     QMutexLocker locker(&m_htmlServerMutex);
 
-    if(onprocesslocalfileload(session) || m_NetworkFrameManager == NULL)
+    if(onProcessLocalFileLoad(session) || m_NetworkFrameManager == nullptr)
         return;
 
     if(!m_NetworkFrameManager->OnProcessHttpAccepted(this,session))
@@ -79,10 +79,10 @@ void chttpserver::onProcessHttpAccepted(const QPointer< JQHttpServer::Session > 
 }
 
 /**
- * @brief chttpserver::onprocesslocalfileload 处理内部文件导入
+ * @brief chttpserver::onProcessLocalFileLoad 处理内部文件导入
  * @param session
  */
-bool chttpserver::onprocesslocalfileload(const QPointer< JQHttpServer::Session > &session)
+bool chttpserver::onProcessLocalFileLoad(const QPointer<JQHttpServer::Session> &session)
 {
     QString prequestUrl = session->requestUrl();
     bool isOk = false;
@@ -181,7 +181,7 @@ bool chttpserver::onprocesslocalfileload(const QPointer< JQHttpServer::Session >
  * @brief chttpserver::onHttpAccepted 处理http请求
  * @param session
  */
-void chttpserver::onHttpAccepted(const QPointer< JQHttpServer::Session > &session,QObject *mainObj)
+void chttpserver::onHttpAccepted(const QPointer<JQHttpServer::Session> &session,QObject *mainObj)
 {
     //QStringList requestUrlPath = session->requestUrlPathSplitToList();
     //QMap<QString,QString> header = session->requestUrlQuery();

@@ -5,7 +5,7 @@
 #include "QsLog.h"
 #include "networkframemanager.h"
 #include "NedAllocatedObject.h"
-//#include "resourcemanager.h"
+#include "resourcemanager.h"
 #include "jqhttpserver.h"
 
 #include <QObject>
@@ -16,8 +16,8 @@ class chttpserver : public QObject,public NedAllocatedObject
     Q_OBJECT
 
 public:    
-    explicit chttpserver(QObject *parent=NULL,bool enablessl=false);
-    ~chttpserver();
+    explicit chttpserver(QObject *parent=nullptr,bool enablessl=false);
+    ~chttpserver() override;
 
     /// 设置处理框架管理
     inline void setNetworkFrameManager(NetworkFrameManager *nfm)
@@ -25,26 +25,26 @@ public:
         m_NetworkFrameManager = nfm;
     }
     /// 得到处理框架管理
-    inline NetworkFrameManager* getNetworkFrameManager(void) { return m_NetworkFrameManager; }
+    inline NetworkFrameManager* getNetworkFrameManager() { return m_NetworkFrameManager; }
 
     /// 开始侦听
     bool listen(int port=8080,QString server_crt="",QString server_key="");
     /// 检测当前服务器是否在运行
-    inline bool isRunning() { return m_serverisRunning; }
+    bool isRunning() const { return m_serverIsRunning; }
     /// 得到资源管理器
-    //inline CResourceManager* getResourceManager() { return &m_ResourceManager; }
+    inline CResourceManager* getResourceManager() { return &m_ResourceManager; }
     /// 设置当前工作目录
     inline void setCurrentWorkingPath(QString path) { m_currentWorkingPath = path; }
     /// 得到当前工作目录
-    inline QString getCurrentWorkingPath(void) { return m_currentWorkingPath; }
+    inline QString getCurrentWorkingPath() { return m_currentWorkingPath; }
     /// 处理http传输过来的数据
-    void onProcessHttpAccepted(const QPointer< JQHttpServer::Session > &session,QObject *mainObj);
+    void onProcessHttpAccepted(const QPointer<JQHttpServer::Session> &session,QObject *mainObj);
     /// 是否启用ssl
     inline void enableSSL(bool isenable) { m_isEnableSSL = isenable; }
     /// 返回是否启用ssl
-    inline bool isenableSSL(void) { return m_isEnableSSL; }
+    inline bool isenableSSL() { return m_isEnableSSL; }
     /// 得到端口
-    inline int getPort(void)
+    inline int getPort()
     {
         int tmpPort = m_htmlServerManage.getListenPort();
 
@@ -62,17 +62,17 @@ signals:
 
 private:
     /// 处理http请求
-    static void onHttpAccepted(const QPointer< JQHttpServer::Session > &session,QObject *mainObj);
+    static void onHttpAccepted(const QPointer<JQHttpServer::Session> &session,QObject *mainObj);
     /// 处理内部文件导入
-    bool onprocesslocalfileload(const QPointer< JQHttpServer::Session > &session);
+    bool onProcessLocalFileLoad(const QPointer<JQHttpServer::Session> &session);
     /// 打印用户日志
     void printLog(QsLogging::Level type,QString msg);
     /// 得到当前时间
-    QString getCurrentDate(void);
+    QString getCurrentDate();
 
 private:
-    bool m_serverisRunning;                  /**< 服务器是否在运行 */
-    //CResourceManager m_ResourceManager;      /**< 资源管理器 */
+    bool m_serverIsRunning;                  /**< 服务器是否在运行 */
+    CResourceManager m_ResourceManager;      /**< 资源管理器 */
     QString m_currentWorkingPath;            /**< 当前工作目录 */
     bool m_isEnableSSL;                      /**< 是否启用SSL */
     NetworkFrameManager *m_NetworkFrameManager;

@@ -1,5 +1,5 @@
-﻿#ifndef _C_CANBUS_H_INCLUDE_
-#define _C_CANBUS_H_INCLUDE_
+﻿#ifndef C_CANBUS_H_INCLUDE_
+#define C_CANBUS_H_INCLUDE_
 
 #include <QCanBusDevice>
 #include <QObject>
@@ -17,7 +17,7 @@ public:
     typedef QPair<QCanBusDevice::ConfigurationKey, QVariant> ConfigurationItem;
 
     explicit ccanbus(QObject *parent = nullptr);
-    ~ccanbus();
+    ~ccanbus() override;
 
     /// 建立设备
     bool createDevice(const QString &plugin,
@@ -41,7 +41,7 @@ private:
     /// 打印用户日志
     void printLog(QsLogging::Level type,QString msg);
     /// 得到当前时间
-    QString getCurrentDate(void);
+    QString getCurrentDate();
 
 private slots:
     void processReceivedFrames();
@@ -55,4 +55,4 @@ private:
     qint64 m_numberFramesWritten;
 };
 
-#endif // CCANBUS_H
+#endif // C_CANBUS_H_INCLUDE_

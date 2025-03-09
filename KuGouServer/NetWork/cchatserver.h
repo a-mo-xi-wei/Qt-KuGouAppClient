@@ -1,9 +1,5 @@
-﻿#ifndef _C_CHATSERVER_H_INCLUDE_
-#define _C_CHATSERVER_H_INCLUDE_
-
-#include <QObject>
-#include <QHash>
-#include <QVector>
+﻿#ifndef C_CHATSERVER_H_INCLUDE_
+#define C_CHATSERVER_H_INCLUDE_
 
 #include "QsLog.h"
 #include "sqlitedataprovider.h"
@@ -77,7 +73,7 @@ struct tagGroupInfo
     }
 
     /// 得到群成员转字符串
-    inline QString getMemberString(void)
+    inline QString getMemberString()
     {
         QString returnStr;
 
@@ -147,19 +143,19 @@ class cchatserver : public QObject , public NetworkFrameManager
 
 public:
     explicit cchatserver(QObject *parent = nullptr);
-    ~cchatserver();
+    ~cchatserver() override;
 
     /// 启动服务器
     bool startServer(int port);
     /// 关闭服务器
     void closeServer(bool isprintlog=true);
     /// 检测服务器是否启动
-    bool isListening(void);
+    bool isListening();
 
     /// 打开指定的数据库
-    bool openDB(QString dbpath);
+    bool openDB(const QString &dbpath);
     /// 得到当前服务器信息
-    QString getCurrentServerInfo(void);
+    QString getCurrentServerInfo();
 
 signals:
     /// 日志消息
@@ -167,9 +163,9 @@ signals:
 
 private:
     /// 打印用户日志
-    void printLog(QsLogging::Level type,QString msg);
+    void printLog(QsLogging::Level type, const QString &msg);
     /// 得到当前时间
-    QString getCurrentDate(void);
+    QString getCurrentDate();
     /// 检测指定ID的用户是否在线
     bool isUserOnline(int userId);
     /// 根据用户ID得到用户数据
@@ -179,7 +175,7 @@ private:
     /// 解散指定ID的群
     bool deletegroup(int groupId);
     /// 得到所有的群
-    void getAllGroup(void);
+    void getAllGroup();
     /// 检测指定客户端是否在线
     bool inClientOnline(QWebSocket *conn);
 
@@ -233,4 +229,4 @@ private:
     QHash<QString,tagGroupInfo>      m_allgrounps;                                  /**< 管理所有的群 */
 };
 
-#endif // CCHATSERVER_H
+#endif // C_CHATSERVER_H_INCLUDE_

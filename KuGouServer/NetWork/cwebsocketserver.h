@@ -4,10 +4,6 @@
 #include <QObject>
 #include <QTimer>
 #include <QFile>
-#include <QVariant>
-#include <QHostAddress>
-#include <QtCore/QHash>
-#include <QtCore/QByteArray>
 
 #include "singleton.h"
 #include "common.h"
@@ -28,7 +24,7 @@ struct tagWebClient
         memset(&m_tagDataStruct,0,sizeof(m_tagDataStruct));
     }
 
-    void reset(void)
+    void reset()
     {
         m_recvFileState=false;
         memset(&m_tagFileStruct,0,sizeof(m_tagFileStruct));
@@ -56,37 +52,37 @@ class CWebSocketServer : public QObject/*, public Singleton<CWebSocketServer>*/
     Q_OBJECT
 public:
     explicit CWebSocketServer(QObject *parent = nullptr);
-    ~CWebSocketServer();
+    ~CWebSocketServer() override;
 
     /// 打开一个指定端口的服务器
     Q_INVOKABLE bool OpenServer(int port);
     /// 关闭服务器
-    Q_INVOKABLE void CloseServer(void);
+    Q_INVOKABLE void CloseServer();
     /// 设置服务器最大支持连接数量,默认为30个连接
     Q_INVOKABLE void setMaxPendingConnections(int maxcount);
     /// 关闭指定的客户端
     Q_INVOKABLE void closeClient(QWebSocket *pwebsocket);
     /// 服务器是否启动
-    Q_INVOKABLE bool isListening(void);
+    Q_INVOKABLE bool isListening();
     /// 得到服务器IP
-    QHostAddress getHostAddress(void);
+    QHostAddress getHostAddress();
     /// 得到服务器打开的端口
-    quint16 getServerPort(void);
+    quint16 getServerPort();
 
     /// 设置网络消息处理框架
     Q_INVOKABLE void SetNetworkFrameManager(NetworkFrameManager *pNetworkFrameManager);
     /// 给指定客户端发送文件(注意点：在网络中使用时一定要设置isExcludeUserInputEvents为false,这个参数是在界面中做防假卡死的)
-    Q_INVOKABLE bool sendFile(QWebSocket *pwebsocket,QString filepath,bool isExcludeUserInputEvents=false,QString rootpath="");
+    Q_INVOKABLE bool sendFile(QWebSocket *pwebsocket, const QString &filepath,bool isExcludeUserInputEvents=false,QString rootpath="");
     /// 给所有客户端发送文件
-    Q_INVOKABLE bool SendAllFile(QString filepath,bool isExcludeUserInputEvents=false,QString rootpath="");
+    Q_INVOKABLE bool SendAllFile(const QString& filepath,bool isExcludeUserInputEvents=false,const QString& rootpath="");
     /// 给指定客户端发送字符数据
-    Q_INVOKABLE qint64 Send(QWebSocket *pwebsocket,QString msg);
+    Q_INVOKABLE qint64 Send(QWebSocket *pwebsocket,const QString& msg);
     /// 给指定客户端发送二进制数据
     Q_INVOKABLE qint64 SendByteArray(QWebSocket *pwebsocket,QByteArray &data,bool isExcludeUserInputEvents=false);
     /// 给所有客户端发送字符数据
-    Q_INVOKABLE bool SendAll(QString msg);
+    Q_INVOKABLE bool SendAll(const QString& msg);
     /// 给除了指定客户端的其它客户端发送字符数据
-    Q_INVOKABLE bool SendAllOther(QWebSocket *pwebsocket,QString msg);
+    Q_INVOKABLE bool SendAllOther(QWebSocket *pwebsocket,const QString& msg);
     /// 给所有客户端发送二进制数据
     Q_INVOKABLE bool SendAllByteArray(QByteArray &data);
     /// 给除了指定客户端的其它客户端发送二进制数据
@@ -95,21 +91,21 @@ public:
     Q_INVOKABLE void setIsProcessRecvFile(bool isProcess,QString recvfiledir="");
 
     /// 客户端列表锁闭
-    Q_INVOKABLE inline void lockClients(void) { m_clientsMutex.lock(); }
+    Q_INVOKABLE inline void lockClients() { m_clientsMutex.lock(); }
     /// 客户端列表解锁
-    Q_INVOKABLE inline void unlockClients(void) { m_clientsMutex.unlock(); }
+    Q_INVOKABLE inline void unlockClients() { m_clientsMutex.unlock(); }
     /// 得到当前所有在线的客户端
-    Q_INVOKABLE QList<QWebSocket*> getAllClients(void);
+    Q_INVOKABLE QList<QWebSocket*> getAllClients();
     /// 根据名称得到指定的客户端
-    Q_INVOKABLE QWebSocket* getClient(QString objName);
+    Q_INVOKABLE QWebSocket* getClient(const QString& objName);
     /// 得到当前在线客户端数量
-    Q_INVOKABLE inline int getClientCount(void) { return m_clients.size(); }
+    Q_INVOKABLE inline int getClientCount() const { return m_clients.size(); }
     /// 设置是否自动删除socket
     Q_INVOKABLE void setAutoDeleteSocket(bool isDelete) { m_isautoDeleteSocket = isDelete; }
     /// 得到是否自动删除socket
-    Q_INVOKABLE bool isAutoDeleteSocket(void) { return m_isautoDeleteSocket; }
+    Q_INVOKABLE bool isAutoDeleteSocket() const { return m_isautoDeleteSocket; }
     /// 设置指定客户端的关联数据
-    Q_INVOKABLE bool setClientVariant(QWebSocket *client,QVariant variant);
+    Q_INVOKABLE bool setClientVariant(QWebSocket *client,const QVariant& variant);
     /// 得到指定客户端的关联数据
     Q_INVOKABLE QVariant getClientVariant(QWebSocket *client);
     /// 清除指定客户端的管理数据
@@ -131,9 +127,9 @@ private Q_SLOTS:
     /// 一个新的连接到达
     void onNewConnection();
     /// 新的字符串消息到达
-    void processTextMessage(QString message);
+    void processTextMessage(const QString& message);
     /// 新的二进制数据消息到达
-    void processBinaryMessage(QByteArray message);
+    void processBinaryMessage(const QByteArray& message);
     /// 一个客户端断开连接
     void socketDisconnected();
     /// 心跳处理

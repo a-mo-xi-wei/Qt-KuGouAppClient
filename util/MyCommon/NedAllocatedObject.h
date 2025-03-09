@@ -10,7 +10,8 @@ public:
 	{
 
 	}
-	~NedAllocatedObject()
+
+	virtual ~NedAllocatedObject()
 	{
 
 	}

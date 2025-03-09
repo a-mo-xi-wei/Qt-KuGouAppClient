@@ -1,14 +1,14 @@
 ﻿#include "cmodbusclient.h"
 
 #include <QDateTime>
-#include <QModbusRtuSerialMaster>
+#include <qmodbusrtuserialclient.h>
 #include <QModbusTcpClient>
 
 CModbusClient::CModbusClient(QObject *parent,ModbusConnection connection)
     : QObject(parent),
-      m_modbusClient(NULL),
+      m_modbusClient(nullptr),
       m_ModbusConnection(connection),
-      m_modbuslastRequest(NULL),
+      m_modbuslastRequest(nullptr),
       m_responseTimeout(1000),
       m_NumberOfRetries(3),
       m_isClientStartupSuccessed(false),
@@ -32,7 +32,7 @@ CModbusClient::~CModbusClient()
 /**
  * @brief CModbusClient::createModbusClient 建立Modbus客户端
  */
-void CModbusClient::createModbusClient(void)
+void CModbusClient::createModbusClient()
 {
     if (m_modbusClient)
     {
@@ -43,7 +43,7 @@ void CModbusClient::createModbusClient(void)
     if (m_ModbusConnection == Modbus_Serial)
     {
 #if QT_CONFIG(modbus_serialport)
-        m_modbusClient = new QModbusRtuSerialMaster(this);
+        m_modbusClient = new QModbusRtuSerialClient(this);
 #endif
     }
     else if (m_ModbusConnection == Modbus_Tcp)
@@ -51,7 +51,7 @@ void CModbusClient::createModbusClient(void)
         m_modbusClient = new QModbusTcpClient(this);
     }
 
-    if(m_modbusClient == NULL) return;
+    if(m_modbusClient == nullptr) return;
 
     connect(m_modbusClient,&QModbusClient::stateChanged,
             this,&CModbusClient::onStateChanged);
@@ -85,7 +85,7 @@ void CModbusClient::onStateChanged(int state)
 void CModbusClient::onErrorOccurred(QModbusDevice::Error newError)
 {
     if (newError == QModbusDevice::NoError ||
-        m_modbusClient == NULL)
+        m_modbusClient == nullptr)
         return;
 
     printLog(QsLogging::Level::ErrorLevel,
@@ -126,7 +126,7 @@ void CModbusClient::printLog(QsLogging::Level type,QString msg)
  * @brief CModbusClient::getCurrentDate 得到当前时间
  * @return
  */
-QString CModbusClient::getCurrentDate(void)
+QString CModbusClient::getCurrentDate()
 {
     QDateTime dateTime =QDateTime::currentDateTime();
     return dateTime.toString("<b>[yyyy-MM-dd hh:mm:ss]</b> ");
@@ -135,7 +135,7 @@ QString CModbusClient::getCurrentDate(void)
 /**
  * @brief CModbusClient::closeClient 关闭客户端
  */
-void CModbusClient::closeClient(void)
+void CModbusClient::closeClient()
 {
     m_isClientStartupSuccessed = false;
 
@@ -159,7 +159,7 @@ bool CModbusClient::startupSerialPort(QString port,
                        int dataBits,
                        int stopBits)
 {
-    if (m_modbusClient == NULL ||
+    if (m_modbusClient == nullptr ||
         m_modbusClient->state() == QModbusDevice::ConnectedState)
         return false;
 
@@ -212,7 +212,7 @@ bool CModbusClient::startupSerialPort(QString port,
  */
 bool CModbusClient::startupTCP(QString ip,int port)
 {
-    if (m_modbusClient == NULL ||
+    if (m_modbusClient == nullptr ||
         m_modbusClient->state() == QModbusDevice::ConnectedState ||
         (ip == "" || port <= 0))
         return false;
@@ -249,7 +249,7 @@ bool CModbusClient::startupTCP(QString ip,int port)
  */
 bool CModbusClient::startupTCP2(QUrl url)
 {
-    if (m_modbusClient == NULL ||
+    if (m_modbusClient == nullptr ||
         m_modbusClient->state() == QModbusDevice::ConnectedState ||
         !url.isValid())
         return false;
@@ -265,7 +265,7 @@ bool CModbusClient::startupTCP2(QUrl url)
  */
 bool CModbusClient::writeRequest(const QModbusDataUnit &write, int serverAddress)
 {
-    if (m_modbusClient == NULL ||
+    if (m_modbusClient == nullptr ||
         m_modbusClient->state() != QModbusDevice::ConnectedState ||
         (!write.isValid() || serverAddress <= 0))
     {
@@ -317,7 +317,7 @@ bool CModbusClient::writeRequest(const QModbusDataUnit &write, int serverAddress
  */
 bool CModbusClient::readwriteRequest(const QModbusDataUnit &read, const QModbusDataUnit &write, int serverAddress)
 {
-    if (m_modbusClient == NULL ||
+    if (m_modbusClient == nullptr ||
         m_modbusClient->state() != QModbusDevice::ConnectedState ||
         (!read.isValid() || !write.isValid() || serverAddress <= 0))
     {
@@ -350,7 +350,7 @@ bool CModbusClient::readwriteRequest(const QModbusDataUnit &read, const QModbusD
  */
 bool CModbusClient::readRequest(const QModbusDataUnit &read, int serverAddress)
 {
-    if (m_modbusClient == NULL ||
+    if (m_modbusClient == nullptr ||
         m_modbusClient->state() != QModbusDevice::ConnectedState ||
         (/*!read.isValid() ||*/ serverAddress <= 0))
     {

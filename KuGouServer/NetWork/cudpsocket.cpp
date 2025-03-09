@@ -3,14 +3,12 @@
 #include "common.h"
 
 #include <random>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <ctype.h>
-#include <string.h>
+#include <cstdio>
+#include <ctime>
+#include <cstring>
 #include <QDebug>
-#include <QtCore/QCoreApplication>
 #include <QCryptographicHash>
+#include <utility>
 
 /**
  * @brief CUdpSocket::CUdpSocket
@@ -24,20 +22,20 @@ CUdpSocket::CUdpSocket(QObject *parent,bool isEnableKcp,bool isEnableReciver,
                        int receivePort,bool isProcessDatagramHearder,
                        bool isServerUse)
     : QObject(parent),
-      m_isProcessDatagramHearder(false),
-      m_ikcp(NULL),
       m_address(QHostAddress::Broadcast),
       m_port(-1),
       m_enableKcp(isEnableKcp),
-      m_msgHeartCount(0),
-      m_currentHeartTime(0),
-      m_isEnableReciver(isEnableReciver),
-      m_receivePort(receivePort),
-      m_isSendHeart(true),
       m_currentUseKcp(true),
       m_isProcessBinaryData(isProcessDatagramHearder),
+      m_isSendHeart(true),
+      m_isEnableReciver(isEnableReciver),
+      m_msgHeartCount(0),
+      m_currentHeartTime(0),
+      m_receivePort(receivePort),
       m_isConnected(false),
-      m_isServerUsing(isServerUse)
+      m_isServerUsing(isServerUse),
+      m_isProcessDatagramHearder(false),
+      m_ikcp(nullptr)
 {
     m_ikcp = new HYKT::KcpObj(this);
 
@@ -47,7 +45,7 @@ CUdpSocket::CUdpSocket(QObject *parent,bool isEnableKcp,bool isEnableReciver,
     {
         if(m_receivePort == -1)
         {/*
-            qsrand(time(NULL));
+            qsrand(time(nullptr));
             m_receivePort = qrand() % 1000 + 1000;*/
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
             // Qt 6 使用 C++ 标准库
@@ -57,7 +55,7 @@ CUdpSocket::CUdpSocket(QObject *parent,bool isEnableKcp,bool isEnableReciver,
             m_receivePort = dis(gen);
 #else
             // Qt 5 使用 qsrand 和 qrand
-            qsrand(time(NULL));
+            qsrand(time(nullptr));
             m_receivePort = qrand() % 1000 + 1000;
 #endif
         }
@@ -76,11 +74,11 @@ CUdpSocket::CUdpSocket(QObject *parent,bool isEnableKcp,bool isEnableReciver,
     m_updateTimer.start(10);
 }
 
-CUdpSocket::~CUdpSocket(void)
+CUdpSocket::~CUdpSocket()
 {
     ReleaseKcp();
     if(m_ikcp) m_ikcp->deleteLater();
-    m_ikcp=NULL;
+    m_ikcp=nullptr;
 }
 
 /**
@@ -88,7 +86,7 @@ CUdpSocket::~CUdpSocket(void)
  * @param address 要设置的电脑IP地址
  * @param port 电脑端口
  */
-void CUdpSocket::Connect(QHostAddress address,int port)
+void CUdpSocket::Connect(const QHostAddress &address,int port)
 {
     m_address = address;
     m_port = port;
@@ -98,7 +96,7 @@ void CUdpSocket::Connect(QHostAddress address,int port)
  * @brief CUdpSocket::getName 得到socket的名称
  * @return
  */
-QString CUdpSocket::getName(void)
+QString CUdpSocket::getName()
 {
     return convert_to_ipv4_addr(m_address) + "_" + QString::asprintf("%ld",m_port);
 }
@@ -111,7 +109,7 @@ QString CUdpSocket::getName(void)
  */
 void CUdpSocket::onProcessSendData(const char * buf, int len)
 {
-    if(buf == NULL || len <= 0)
+    if(buf == nullptr || len <= 0)
         return;
 
     m_UdpSocket.writeDatagram(buf,len,m_address,m_port);
@@ -122,14 +120,14 @@ void CUdpSocket::onProcessSendData(const char * buf, int len)
  * @param Datagramdata 要发送的报文数据
  * @return 返回发送成功的数据长度
  */
-qint64 CUdpSocket::SendByte(QByteArray Datagramdata)
+qint64 CUdpSocket::SendByte(const QByteArray& Datagramdata)
 {
     if(Datagramdata.isEmpty() || m_port <= 0)
         return -1;
 
     QByteArray pSendDatagramData;
 
-    tagUdpDatagramHearder ptagDatagramHearder;
+    tagUdpDatagramHearder ptagDatagramHearder{};
     ptagDatagramHearder.version[0] = 'K';
     ptagDatagramHearder.version[1] = 'C';
     ptagDatagramHearder.version[2] = 'P';
@@ -176,12 +174,12 @@ qint64 CUdpSocket::SendByte(QByteArray Datagramdata)
  * @param len 要发送的报文数据长度
  * @return 返回发送成功的数据长度
  */
-int CUdpSocket::SendKcpData(QByteArray Datagramdata)
+int CUdpSocket::SendKcpData(const QByteArray& Datagramdata)
 {
     if(!m_isConnected &&
         Datagramdata.isEmpty() ||
         m_enableKcp == false ||
-        (m_ikcp == NULL || !m_ikcp->IsOpen()) ||
+        (m_ikcp == nullptr || !m_ikcp->IsOpen()) ||
         m_port <= 0)
         return -1;
 
@@ -189,7 +187,7 @@ int CUdpSocket::SendKcpData(QByteArray Datagramdata)
 
     QByteArray pSendDatagramData;
 
-    tagUdpDatagramHearder ptagDatagramHearder;
+    tagUdpDatagramHearder ptagDatagramHearder{};
     ptagDatagramHearder.version[0] = 'K';
     ptagDatagramHearder.version[1] = 'C';
     ptagDatagramHearder.version[2] = 'P';
@@ -207,7 +205,7 @@ int CUdpSocket::SendKcpData(QByteArray Datagramdata)
     pSendDatagramData.append((char*)&ptagDatagramHearder,sizeof(tagUdpDatagramHearder));
     pSendDatagramData.append(tmpDecData);
 
-    m_ikcp->KcpSend(pSendDatagramData.data(),pSendDatagramData.size());
+    m_ikcp->KcpSend(pSendDatagramData.data(),static_cast<int>(pSendDatagramData.size()));
 
     m_kcpMutex.unlock();
 
@@ -222,7 +220,7 @@ void CUdpSocket::KCPUpdate()
         m_isEnableReciver &&
         m_port > 0)
     {
-        qint64 tempTime = (qint64)time(NULL);
+        qint64 tempTime = (qint64)time(nullptr);
 
         //qDebug()<<tempTime<<" "<<m_currentHeartTime<<" "<<tempTime-m_currentHeartTime;
 
@@ -237,7 +235,7 @@ void CUdpSocket::KCPUpdate()
 
             // 如果心跳大于2次表示连接断开
             if(this->GetHeartCount() > 2 &&
-               (m_ikcp != NULL && m_ikcp->IsOpen()))
+               (m_ikcp != nullptr && m_ikcp->IsOpen()))
             {
                 this->ReleaseKcp();
 
@@ -256,9 +254,9 @@ void CUdpSocket::KCPUpdate()
 /**
  * @brief CUdpSocket::InitKcp 初始Kcp
  */
-void CUdpSocket::InitKcp(void)
+void CUdpSocket::InitKcp()
 {
-    if(m_ikcp == NULL ||
+    if(m_ikcp == nullptr ||
        m_ikcp->IsOpen())
         return;
 
@@ -278,9 +276,9 @@ void CUdpSocket::InitKcp(void)
 /**
  * @brief CUdpSocket::ReleaseKcp 释放Kcp
  */
-void CUdpSocket::ReleaseKcp(void)
+void CUdpSocket::ReleaseKcp()
 {
-    if(m_ikcp == NULL ||
+    if(m_ikcp == nullptr ||
        !m_ikcp->IsOpen())
         return;
 
@@ -297,7 +295,7 @@ void CUdpSocket::ReleaseKcp(void)
  * @brief CUdpSocket::onProcessReciverDatagramdata 处理接收到的报文
  * @param Datagramdata 要处理的接收到的报文
  */
-void CUdpSocket::onProcessReciverDatagramdata(void)
+void CUdpSocket::onProcessReciverDatagramdata()
 {
     while(!m_datagramData.isEmpty())
     {
@@ -383,7 +381,7 @@ void CUdpSocket::onProcessReciverKcpDatagramdata(QByteArray& Datagramdata,bool i
        (m_ikcp && m_ikcp->IsOpen()))
     {
         m_kcpMutex.lock();
-        m_ikcp->KcpInput(Datagramdata.data(), Datagramdata.size());
+        m_ikcp->KcpInput(Datagramdata.data(), static_cast<int>(Datagramdata.size()));
         m_kcpMutex.unlock();
     }
     else
@@ -423,7 +421,7 @@ void CUdpSocket::reciverPendingDatagram()
             // 如果心跳是1，是连接成功
             if(!m_isServerUsing &&
                this->GetHeartCount() == 1 &&
-               (m_ikcp != NULL && !m_ikcp->IsOpen()))
+               (m_ikcp != nullptr && !m_ikcp->IsOpen()))
             {
                 this->InitKcp();
 
@@ -449,7 +447,7 @@ void CUdpSocket::reciverPendingDatagram()
  */
 void CUdpSocket::DoKcpRecv(const char *buf, int len)
 {
-    if(buf == NULL || len <= 0)
+    if(buf == nullptr || len <= 0)
         return;
 
     m_datagramData.append(buf,len);
@@ -471,7 +469,7 @@ CUdpServer::CUdpServer(QObject *parent,bool isEnableKcp)
     m_updateTimer.start(1000);
 }
 
-CUdpServer::~CUdpServer(void)
+CUdpServer::~CUdpServer()
 {
     Clear();
 }
@@ -494,14 +492,14 @@ bool CUdpServer::open(int port,bool isenableKcp)
 }
 
 /// 关闭指定的socket
-void CUdpServer::closeSocket(CUdpSocket *socketid)
+void CUdpServer::closeSocket(const CUdpSocket *socketid)
 {
-    if(socketid == NULL) return;
+    if(socketid == nullptr) return;
 
     m_ClientMutex.lock();
 
     QHash<QString,CUdpSocket*>::iterator iter = m_udpClients.begin();
-    for(;iter != m_udpClients.end();)
+    while(iter != m_udpClients.end())
     {
         if(iter.value() != socketid)
             continue;
@@ -529,7 +527,7 @@ void CUdpServer::closeSocket(CUdpSocket *socketid)
 /**
  * @brief CUdpServer::stop 停止服务器
  */
-void CUdpServer::stop(void)
+void CUdpServer::stop()
 {
     m_UdpSocket.close();
 }
@@ -537,7 +535,7 @@ void CUdpServer::stop(void)
 /**
  * @brief CUdpServer::Clear 清除所有的数据
  */
-void CUdpServer::Clear(void)
+void CUdpServer::Clear()
 {
     m_ClientMutex.lock();
 
@@ -561,7 +559,7 @@ void CUdpServer::KCPUpdate()
     m_ClientMutex.lock();
 
     QHash<QString,CUdpSocket*>::iterator iter = m_udpClients.begin();
-    for(;iter != m_udpClients.end();)
+    while(iter != m_udpClients.end())
     {
         CUdpSocket *pClient = (*iter);
 
@@ -593,7 +591,7 @@ void CUdpServer::KCPUpdate()
  * @brief CUdpServer::SendAll 发送消息给所有人
  * @param datagramdata 要发送的数据包
  */
-void CUdpServer::SendAll(QByteArray datagramdata)
+void CUdpServer::SendAll(const QByteArray& datagramdata)
 {
     if(m_udpKcpClients.isEmpty())
         return;
@@ -611,7 +609,7 @@ void CUdpServer::SendAll(QByteArray datagramdata)
 }
 
 /// 发送除了指定socketid的其它人
-void CUdpServer::SendOther(QUdpSocket* socketid,QByteArray datagramdata)
+void CUdpServer::SendOther(const QUdpSocket* socketid,const QByteArray& datagramdata)
 {
     if(m_udpKcpClients.isEmpty())
         return;
@@ -632,7 +630,7 @@ void CUdpServer::SendOther(QUdpSocket* socketid,QByteArray datagramdata)
 }
 
 /// 发送给指定socketid
-void CUdpServer::SendTo(QUdpSocket* socketid,QByteArray datagramdata)
+void CUdpServer::SendTo(QUdpSocket* socketid,const QByteArray& datagramdata)
 {
     if(m_udpKcpClients.isEmpty())
         return;
@@ -651,7 +649,7 @@ void CUdpServer::SendTo(QUdpSocket* socketid,QByteArray datagramdata)
 
 void CUdpServer::on_process_processPendingDatagram(CUdpSocket* socketid,QByteArray datagramdata)
 {
-    emit signal_ClientReceiveMsg(socketid,datagramdata);
+    emit signal_ClientReceiveMsg(socketid,std::move(datagramdata));
 }
 
 void CUdpServer::reciverPendingDatagram()
@@ -671,13 +669,13 @@ void CUdpServer::reciverPendingDatagram()
 
             QString kcpName = sender.toString() + "_" + QString::asprintf("%ld",senderPort);
             QByteArray md5Str = QCryptographicHash::hash(kcpName.toUtf8(), QCryptographicHash::Md5);
-            CUdpSocket *pUdpSocket = NULL;
+            CUdpSocket *pUdpSocket = nullptr;
 
             QHash<QString,CUdpSocket*>::iterator iter = m_udpClients.find(md5Str.toHex());
             if(iter != m_udpClients.end())
                 pUdpSocket = iter.value();
 
-            if(pUdpSocket == NULL)
+            if(pUdpSocket == nullptr)
             {
                 pUdpSocket = new CUdpSocket(nullptr,m_enableKcp,false,-1,true,true);
                 pUdpSocket->Connect(sender,senderPort);
@@ -733,8 +731,8 @@ void CUdpServer::reciverPendingDatagram()
  */
 CUdpSocket* CUdpServer::getSocket(QUdpSocket *socketid)
 {
-    if(m_udpKcpClients.isEmpty() || socketid == NULL)
-        return NULL;
+    if(m_udpKcpClients.isEmpty() || socketid == nullptr)
+        return nullptr;
 
     m_ClientMutex.lock();
 
@@ -747,7 +745,7 @@ CUdpSocket* CUdpServer::getSocket(QUdpSocket *socketid)
 
     m_ClientMutex.unlock();
 
-    return NULL;
+    return nullptr;
 }
 
 /**
@@ -757,12 +755,12 @@ CUdpSocket* CUdpServer::getSocket(QUdpSocket *socketid)
  *
  * @return 返回新添加的客户端
  */
-CUdpSocket* CUdpServer::addSocket(QHostAddress address,int port)
+CUdpSocket* CUdpServer::addSocket(const QHostAddress& address,int port)
 {
     m_ClientMutex.lock();
 
     QString kcpName = address.toString() + "_" + QString::asprintf("%d",port);
-    CUdpSocket *pUdpSocket = NULL;
+    CUdpSocket *pUdpSocket = nullptr;
 
     QHash<QString,CUdpSocket*>::iterator iter = m_udpClients.find(kcpName);
     if(iter == m_udpClients.end())
@@ -791,12 +789,12 @@ CUdpSocket* CUdpServer::addSocket(QHostAddress address,int port)
 /**
  * @brief CUdpServer::getSocketByName 根据名称得到客户端
  * @param name 客户端的名称
- * @return 如果客户端存在返回这个客户端，否则返回NULL
+ * @return 如果客户端存在返回这个客户端，否则返回nullptr
  */
-CUdpSocket* CUdpServer::getSocketByName(QString name)
+CUdpSocket* CUdpServer::getSocketByName(const QString& name)
 {
     if(name.isEmpty())
-        return NULL;
+        return nullptr;
 
     m_ClientMutex.lock();
 
@@ -809,5 +807,5 @@ CUdpSocket* CUdpServer::getSocketByName(QString name)
 
     m_ClientMutex.unlock();
 
-    return NULL;
+    return nullptr;
 }

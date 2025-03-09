@@ -8,7 +8,6 @@
 
 #include "kcp/ikcp.h"
 #include "kcp/kcpobj.h"
-#include "QsLog.h"
 #include "common.h"
 
 namespace HYKT {
@@ -20,7 +19,7 @@ KcpObj::KcpObj(QObject *parent)
     : QObject(parent)
 {
     is_open_ = false;
-    kcp_p = NULL;
+    kcp_p = nullptr;
     conv_ = HYKT::s_KCP_ID;
     mode_ = HYKT::KcpObj::Normal;
     timer_p = new QTimer(this);
@@ -58,7 +57,7 @@ void KcpObj::WriteKcpLog(const char *log, struct IKCPCB *kcp, void *user) {
 void KcpObj::Open() {
     if(this->IsOpen()) return;
 
-    kcp_p = ikcp_create(conv_, static_cast<void*>(0));
+    kcp_p = ikcp_create(conv_, static_cast<void*>(nullptr));
     kcp_p->user = this;
     kcp_p->output = DoOutput;
     /*

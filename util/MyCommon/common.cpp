@@ -1,10 +1,8 @@
 #include "common.h"
 #include "fastlz.h"
 #include "NedAllocatorImpl.h"
-#include "../MyDBPool/ndbpool.h"
-#include "../MyQsLog/QsLog.h"
-
-#include "../MyBreakPad/exception_handler.h"
+#include "ndbpool.h"
+#include "QsLog.h"
 
 #include <iostream>
 #include <QDir>
@@ -23,48 +21,6 @@
 
 using namespace QsLogging;
 static NDBPool *mNDBPool = nullptr;
-
-#if defined (WIN32)
-bool dump_callback(const wchar_t *dump_path, const wchar_t *id, void *content, EXCEPTION_POINTERS *exinfo, MDRawAssertionInfo *assertion, bool succeeded)
-{
-    if(succeeded)
-    {
-        QLOG_ERROR()<<"系统已经崩溃,dmp已经生成成功,请联系开发人员!";
-    }
-    else
-    {
-        QLOG_ERROR()<<"系统已经崩溃,dmp生成失败,请联系开发人员!";
-    }
-
-    return succeeded;
-}
-#else
-static bool DumpCallback(const google_breakpad::MinidumpDescriptor& descriptor,
-                            void* context, bool succeeded)
-{
-  QLOG_ERROR()<< "Dump path:" << descriptor.path();
-  qDebug()<< "Dump path:" << descriptor.path();
-  //printf("Dump path: %s\n", descriptor.path());
-
-  return succeeded;
-}
-#endif
-
-/**
- * @brief init_lib_resources 加载本静态库的资源
- */
-void init_lib_resources()
-{
-    Q_INIT_RESOURCE(libqtcore);
-}
-
-/**
- * @brief clean_lib_resources 卸载本静态库的资源
- */
-void cleanup_lib_resources()
-{
-    Q_CLEANUP_RESOURCE(libqtcore);
-}
 
 /**
  * @brief init_log_file 生成日志文件
@@ -196,21 +152,6 @@ bool sava_file(QString srcfile,QString decfile)
     }
 
     return preturnState;
-}
-
-/**
- * @brief init_dump_system 初始化崩溃系统
- */
-void init_dump_system(void)
-{
-#if defined (WIN32)
-    google_breakpad::ExceptionHandler eh(
-        L".", nullptr, dump_callback, nullptr, google_breakpad::ExceptionHandler::HANDLER_ALL);
-#else
-    google_breakpad::MinidumpDescriptor minidump(".");
-    google_breakpad::ExceptionHandler breakpad(minidump, nullptr, DumpCallback, nullptr,
-        true, -1);
-#endif
 }
 
 //拷贝文件：
@@ -675,10 +616,10 @@ QByteArray EncData(QByteArray data,QString keyone,QString keytwo)
 QString getByteArrayMd5(QByteArray data)
 {
     if(data.isEmpty())
-        return QString();
+        return {};
 
     QCryptographicHash md5Hash(QCryptographicHash::Md5);
-    md5Hash.addData(data,data.size());
+    md5Hash.addData(QByteArrayView(data));
 
     return md5Hash.result().toHex();
 }

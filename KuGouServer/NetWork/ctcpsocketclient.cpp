@@ -99,7 +99,7 @@ void CTcpSocket::connectTcpServer(const QString& ip, quint16 port)
 /**
  * @brief CTcpSocket::close 关闭与tcp服务器的连接
  */
-void CTcpSocket::close(void)
+void CTcpSocket::close()
 {
     disConTcp(socketID);
 }
@@ -179,7 +179,7 @@ void CTcpSocket::onDisconnected()
 /**
  * @brief CTcpSocket::reconnectTcpServer 重新连接服务器
  */
-void CTcpSocket::reconnectTcpServer(void)
+void CTcpSocket::reconnectTcpServer()
 {
     if(!m_isReConnecting || m_TcpSocketReconnectTimer.isActive())
         return;
@@ -269,7 +269,7 @@ void CTcpSocket::OnReadyRead()
  *
  * @return 如果数据解包成功返回真，否则返回假
  */
-bool CTcpSocket::parsePacket(void)
+bool CTcpSocket::parsePacket()
 {
     if(!m_isencoded)
     {
@@ -362,7 +362,7 @@ bool CTcpSocket::parsePacket(void)
  * @brief CTcpSocket::isConnected 检测是否连接成功
  * @return 如果连接成功返回真，否则返回假
  */
-bool CTcpSocket::isConnected(void)
+bool CTcpSocket::isConnected()
 {
     return this->state() ==  QTcpSocket::ConnectedState ? true : false;
 }

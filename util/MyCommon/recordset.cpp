@@ -1,5 +1,5 @@
 ﻿#include "recordset.h"
-#include "../MyQsLog/QsLog.h"
+#include "QsLog.h"
 
 /** 
  * 初始的构造函数

@@ -1,8 +1,7 @@
 ﻿#include "cmodbusserver.h"
 
-#include <QModbusRtuSerialSlave>
+#include <qmodbusrtuserialserver>
 #include <QModbusTcpServer>
-#include <QRegularExpression>
 #include <QRegularExpressionValidator>
 #include <QTcpSocket>
 #include <QDateTime>
@@ -40,7 +39,7 @@ CModbusServer::CModbusServer(QObject *parent,ModbusConnection connection)
     : QObject(parent),
       m_ModbusConnection(connection),
       m_isClientConnected(false),
-      m_modbusServer(NULL),
+      m_modbusServer(nullptr),
       m_isServerStartupSuccessed(false)
 {
     createModbusServer();
@@ -58,7 +57,7 @@ CModbusServer::~CModbusServer()
 /**
  * @brief CModbusServer::createModbusServer 建立Modbus服务器
  */
-void CModbusServer::createModbusServer(void)
+void CModbusServer::createModbusServer()
 {
     if (m_modbusServer)
     {
@@ -68,9 +67,15 @@ void CModbusServer::createModbusServer(void)
 
     if (m_ModbusConnection == Modbus_Serial)
     {
+        /*
 #if QT_CONFIG(modbus_serialport)
         m_modbusServer = new QModbusRtuSerialSlave(this);
 #endif
+*/
+#if QT_CONFIG(modbus_serialport)
+        m_modbusServer = new QModbusRtuSerialServer(this);
+#endif
+
     }
     else if (m_ModbusConnection == Modbus_Tcp)
     {
@@ -87,7 +92,7 @@ void CModbusServer::createModbusServer(void)
                 &CModbusServer::onprocessmodbusClientDisconnected);
     }
 
-    if(m_modbusServer == NULL) return;
+    if(m_modbusServer == nullptr) return;
 
     connect(m_modbusServer,
             &QModbusServer::dataWritten,
@@ -115,7 +120,7 @@ void CModbusServer::onprocessmodbusClientDisconnected(QTcpSocket *modbusClient)
 /**
  * @brief CModbusServer::closeServer 关闭服务器
  */
-void CModbusServer::closeServer(void)
+void CModbusServer::closeServer()
 {
     m_isClientConnected = false;
     m_isServerStartupSuccessed = false;
@@ -141,7 +146,7 @@ void CModbusServer::closeServer(void)
  */
 bool CModbusServer::setModbusDataUnitMap(const QModbusDataUnitMap &map)
 {
-    if(m_modbusServer == NULL)
+    if(m_modbusServer == nullptr)
         return false;
 
     m_ModbusDataUnitMap = map;
@@ -157,7 +162,7 @@ bool CModbusServer::setModbusDataUnitMap(const QModbusDataUnitMap &map)
  */
 void CModbusServer::setServerListenOnly(bool isenable)
 {
-    if(m_modbusServer == NULL)
+    if(m_modbusServer == nullptr)
         return;
 
     m_isListenOnly = isenable;
@@ -171,7 +176,7 @@ void CModbusServer::setServerListenOnly(bool isenable)
  */
 void CModbusServer::setServerDeviceBusy(bool isenable)
 {
-    if(m_modbusServer == NULL)
+    if(m_modbusServer == nullptr)
         return;
 
     m_isDeviceBusy = isenable;
@@ -183,7 +188,7 @@ void CModbusServer::setServerDeviceBusy(bool isenable)
  * @brief CModbusServer::getCurrentDate 得到当前时间
  * @return
  */
-QString CModbusServer::getCurrentDate(void)
+QString CModbusServer::getCurrentDate()
 {
     QDateTime dateTime =QDateTime::currentDateTime();
     return dateTime.toString("<b>[yyyy-MM-dd hh:mm:ss]</b> ");
@@ -235,7 +240,7 @@ bool CModbusServer::startupSerialPort(QString port,
                        int dataBits,
                        int stopBits)
 {
-    if(m_modbusServer == NULL ||
+    if(m_modbusServer == nullptr ||
        m_isServerStartupSuccessed ||
        port.isEmpty() ||
        m_ServerAddress < 0)
@@ -290,7 +295,7 @@ bool CModbusServer::startupSerialPort(QString port,
  */
 bool CModbusServer::startupTCP2(QUrl url)
 {
-    if(m_modbusServer == NULL ||
+    if(m_modbusServer == nullptr ||
        !url.isValid())
         return false;
 
@@ -305,7 +310,7 @@ bool CModbusServer::startupTCP2(QUrl url)
  */
 bool CModbusServer::startupTCP(QString ip,int port)
 {
-    if(m_modbusServer == NULL ||
+    if(m_modbusServer == nullptr ||
        m_isServerStartupSuccessed ||
        m_ServerAddress < 0 ||
        ip == "" || port <= 0)
@@ -364,7 +369,7 @@ void CModbusServer::onStateChanged(int state)
 
 void CModbusServer::onDataWritten(QModbusDataUnit::RegisterType table, int address, int size)
 {
-    if(m_modbusServer == NULL ||
+    if(m_modbusServer == nullptr ||
        m_modbusServer->state() == QModbusDevice::UnconnectedState)
         return;
 
@@ -395,7 +400,7 @@ void CModbusServer::onDataWritten(QModbusDataUnit::RegisterType table, int addre
  */
 bool CModbusServer::setDatas(QModbusDataUnit::RegisterType table, int address, QVector<quint16> data)
 {
-    if(m_modbusServer == NULL ||
+    if(m_modbusServer == nullptr ||
        m_modbusServer->state() == QModbusDevice::UnconnectedState ||
        table == QModbusDataUnit::Invalid ||
        address < 0 || data.isEmpty())
@@ -424,7 +429,7 @@ bool CModbusServer::setDatas(QModbusDataUnit::RegisterType table, int address, Q
 
 bool CModbusServer::setData(QModbusDataUnit::RegisterType table, int address, quint16 data)
 {
-    if(m_modbusServer == NULL ||
+    if(m_modbusServer == nullptr ||
        m_modbusServer->state() == QModbusDevice::UnconnectedState ||
        table == QModbusDataUnit::Invalid ||
        address < 0 || data < 0)
@@ -440,7 +445,7 @@ bool CModbusServer::setData(QModbusDataUnit::RegisterType table, int address, qu
 void CModbusServer::onErrorOccurred(QModbusDevice::Error newError)
 {
     if (newError == QModbusDevice::NoError ||
-        m_modbusServer == NULL)
+        m_modbusServer == nullptr)
         return;
 
     printLog(QsLogging::Level::ErrorLevel,

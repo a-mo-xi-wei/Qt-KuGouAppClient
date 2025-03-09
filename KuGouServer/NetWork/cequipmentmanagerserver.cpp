@@ -32,7 +32,7 @@ CEquipmentManagerServer::~CEquipmentManagerServer()
  * @brief CEquipmentManagerServer::setDataBase 设置版本库所使用数据库
  * @param dbPath 数据库文件路径
  */
-void CEquipmentManagerServer::setDataBase(QString dbPath)
+void CEquipmentManagerServer::setDataBase(const QString &dbPath)
 {
     if(dbPath.isEmpty())
         return;
@@ -46,7 +46,7 @@ void CEquipmentManagerServer::setDataBase(QString dbPath)
  * @param pwd 用户密码
  * @return 如果用户存在返回真，否则返回假
  */
-bool CEquipmentManagerServer::isExistUser(QWebSocket *conn,int id,QString pwd)
+bool CEquipmentManagerServer::isExistUser(QWebSocket *conn,int id, const QString &pwd)
 {
     if(id <= 0 || pwd.isEmpty())
         return false;
@@ -257,7 +257,7 @@ void CEquipmentManagerServer::onProcessNetDownloadVersiontoDevice(QWebSocket *co
     }
 
     tagEquipmentItem *pEquipmentItem = getDeviceInfoByID(IDD_DEVIE,pdeviceid);
-    if(pEquipmentItem == NULL)
+    if(pEquipmentItem == nullptr)
     {
         QJsonObject mesObjReturn;
         mesObjReturn["mesid"] = IDD_JS_MESSAGE_PUTRESOURCEDATA;
@@ -289,7 +289,7 @@ void CEquipmentManagerServer::onProcessNetUserCommand(QWebSocket *conn,QJsonObje
 
     // 查找当前设备是否在线
     tagEquipmentItem *pEquipmentItem = getDeviceInfoByID(IDD_DEVIE,pdeviceId);
-    if(pEquipmentItem == NULL)
+    if(pEquipmentItem == nullptr)
     {
         QJsonObject mesObjReturn;
         mesObjReturn["mesid"] = IDD_JS_MESSAGE_COMMAND;
@@ -372,7 +372,7 @@ void CEquipmentManagerServer::onProcessNetEquipmentUserLogin(QWebSocket *conn,QJ
             if(pEquipmentItem)
                 m_onlineDevicelist[puserid][pDeviceList[i]] = pEquipmentItem->webClient;
             else
-                m_onlineDevicelist[puserid][pDeviceList[i]] = NULL;
+                m_onlineDevicelist[puserid][pDeviceList[i]] = nullptr;
         }
     }
 
@@ -399,7 +399,7 @@ void CEquipmentManagerServer::onProcessNetEquipmentGetData(QWebSocket *conn,QJso
 
     // 查找当前设备是否在线
     tagEquipmentItem *pEquipmentItem = getDeviceInfoByID(IDD_DEVIE,pdeviceId);
-    if(pEquipmentItem == NULL)
+    if(pEquipmentItem == nullptr)
     {
         QJsonObject mesObjReturn;
         mesObjReturn["mesid"] = IDD_EMS_MESSAGE_GETDEVICEDATA;
@@ -466,7 +466,7 @@ void CEquipmentManagerServer::onProcessNetEquipmentGetDeviceList(QWebSocket *con
 
     QJsonArray deviceArray;
 
-    for(int k=0;k<(int)pRecord(0).rows();k++)
+    for(int k=0;k<static_cast<int>(pRecord(0).rows());k++)
     {
         QString deviceName = pRecord(0)(k,1).toStdString().c_str();
         int deviceId = pRecord(0)(k,0).toInt();
@@ -483,7 +483,7 @@ void CEquipmentManagerServer::onProcessNetEquipmentGetDeviceList(QWebSocket *con
         deviceObj["subproname"] = pRecord(0)(k,9).toStdString().c_str();
 
         tagEquipmentItem *pEquipmentItem = getDeviceInfoByID(IDD_DEVIE,deviceId);
-        if(pEquipmentItem != NULL)
+        if(pEquipmentItem != nullptr)
         {
             deviceObj["udpaddress"] = pEquipmentItem->udpClient.sender.toString();
             deviceObj["udpport"] = pEquipmentItem->udpClient.senderPort;
@@ -542,7 +542,7 @@ tagEquipmentItem* CEquipmentManagerServer::getDeviceInfoByID(int usertype,int de
                 return &iter.value();
         }
 
-        return NULL;
+        return nullptr;
     }
 
     QHash<QWebSocket*,tagEquipmentItem>::iterator iter = m_Onlineequipmentlist.begin();
@@ -552,7 +552,7 @@ tagEquipmentItem* CEquipmentManagerServer::getDeviceInfoByID(int usertype,int de
             return &iter.value();
     }
 
-    return NULL;
+    return nullptr;
 }
 
 /// 得到指定玩家的设备列表
@@ -627,7 +627,7 @@ void CEquipmentManagerServer::onProcessNetEquipmentRegister(QWebSocket *conn,QJs
             if(pEquipmentItem)
                 m_onlineDevicelist[iterolUser.key()][deviceid] = pEquipmentItem->webClient;
             else
-                m_onlineDevicelist[iterolUser.key()][deviceid] = NULL;
+                m_onlineDevicelist[iterolUser.key()][deviceid] = nullptr;
         }
     }
 
@@ -679,7 +679,7 @@ void CEquipmentManagerServer::OnProcessNetBinary(QWebSocket *conn,QByteArray &da
         int pDeviceID = pVersionOper.mainid;
 
         tagEquipmentItem *pEquipmentItem = getDeviceInfoByID(IDD_DEVIE,pDeviceID);
-        if(pEquipmentItem == NULL)
+        if(pEquipmentItem == nullptr)
         {
             QJsonObject mesObjReturn;
             mesObjReturn["mesid"] = IDD_JS_MESSAGE_PUTRESOURCEDATA;
@@ -730,7 +730,7 @@ void CEquipmentManagerServer::OnProcessDisconnectedNetMes(QWebSocket *conn)
         else if(iter.value().type == 1)
         {
             QHash<int,QHash<int,QWebSocket*>>::iterator iterUser = m_onlineDevicelist.begin();
-            for(;iterUser != m_onlineDevicelist.end();)
+            while(iterUser != m_onlineDevicelist.end())
             {
                 QHash<int,QWebSocket*>::iterator iterDevice = iterUser.value().find(iter.value().deviceID);
                 if(iterDevice != iterUser.value().end())
@@ -754,7 +754,7 @@ void CEquipmentManagerServer::OnProcessDisconnectedNetMes(QWebSocket *conn)
         else
         {
             iter2 = m_onlinecontrolClientlist.begin();
-            for(;iter2 != m_onlinecontrolClientlist.end();)
+            while(iter2 != m_onlinecontrolClientlist.end())
             {
                 if(iter2.key() == conn || iter2.value() == conn)
                     iter2 = m_onlinecontrolClientlist.erase(iter2);
@@ -807,7 +807,7 @@ void CEquipmentManagerServer::ReverseProxyServer_reciverPendingDatagram()
                 int pUserId = mesObj["userid"].toInt();
 
                 tagEquipmentItem *pEquipmentItem = getDeviceInfoByID(IDD_DEVIE,pdeviceid);
-                if(pEquipmentItem != NULL)
+                if(pEquipmentItem != nullptr)
                 {
                     pEquipmentItem->udpClient.sender = sender;
                     pEquipmentItem->udpClient.senderPort = senderPort;
@@ -928,7 +928,7 @@ void CEquipmentManagerServer::onProcessNetP2pDevice(QWebSocket *conn,QJsonObject
 
     // 查找当前设备是否在线
     tagEquipmentItem *pEquipmentItem = getDeviceInfoByID(IDD_DEVIE,pdeviceId);
-    if(pEquipmentItem == NULL)
+    if(pEquipmentItem == nullptr)
     {
         QJsonObject mesObjReturn;
         mesObjReturn["mesid"] = IDD_EMS_MESSAGE_P2P_DEVICE;
@@ -952,7 +952,7 @@ void CEquipmentManagerServer::onProcessNetGetAllProjectInfo(QWebSocket *conn,QJs
 
     QJsonArray mainprojects;
 
-    for(int k=0;k<(int)pmainRecord(0).rows();k++)
+    for(int k=0;k<static_cast<int>(pmainRecord(0).rows());k++)
     {
         QJsonObject proObj;
         proObj["id"] = pmainRecord(0)(k,0).toInt();
@@ -963,7 +963,7 @@ void CEquipmentManagerServer::onProcessNetGetAllProjectInfo(QWebSocket *conn,QJs
 
     QJsonArray subprojects;
 
-    for(int k=0;k<(int)psubRecord(0).rows();k++)
+    for(int k=0;k<static_cast<int>(psubRecord(0).rows());k++)
     {
         QJsonObject proObj;
         proObj["id"] = psubRecord(0)(k,0).toInt();

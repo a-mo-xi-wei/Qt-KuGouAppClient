@@ -3,12 +3,6 @@
 #include "QtWebSockets/qwebsocket.h"
 #include "cwebsocketserver.h"
 
-#if defined (WIN32)
-#include "enet/enet.h"
-#endif
-
-#include <QtSerialPort/QSerialPort>
-
 NetworkFrameManager::NetworkFrameManager()
 {
 

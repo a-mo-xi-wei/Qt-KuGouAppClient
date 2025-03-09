@@ -7,14 +7,8 @@
 #include "ctcpsocketclient.h"
 
 #include <QThread>
-#include <QQueue>
-#include <QList>
 #include <QHash>
-#include <QTcpSocket>
-#include <QQueue>
 #include <QFutureWatcher>
-#include <QByteArray>
-#include <QTime>
 #include <QTcpServer>
 
 //开源项目地址:https://github.com/quan12jiale/QTcpSocket
@@ -60,40 +54,40 @@ class CTcpServer : public QTcpServer
     Q_OBJECT
 
 public:
-    explicit CTcpServer(NetworkFrameManager *pNetworkFrameManager=NULL,
+    explicit CTcpServer(NetworkFrameManager *pNetworkFrameManager=nullptr,
                         int numConnections = 10000,
                         bool isencoded=true,
                         QObject *parent = nullptr);
-    ~CTcpServer();
+    ~CTcpServer() override;
 
     /// 设置网络消息处理框架
     inline void SetNetworkFrameManager(NetworkFrameManager *pNetworkFrameManager) { m_NetworkFrameManager = pNetworkFrameManager; }
     /// 打开一个指定端口的服务器
     Q_INVOKABLE bool OpenServer(int port);
     /// 关闭服务器
-    Q_INVOKABLE void CloseServer(void);
+    Q_INVOKABLE void CloseServer();
     /// 关闭指定的客户端
-    Q_INVOKABLE void closeClient(qint64 conn, QThread * th=NULL);
+    Q_INVOKABLE void closeClient(qint64 conn, QThread * th=nullptr);
 
     /// 设置是否使用多线程
     inline void setUsingThread(bool isUse) { m_isUsingThread = isUse; }
     /// 得到是否使用多线程
-    inline bool isUsingThread(void) { return m_isUsingThread; }
+    inline bool isUsingThread() const { return m_isUsingThread; }
     /// 重写设置最大连接数函数
     void setMaxPendingConnections(int numConnections);
     /// 覆盖已获取多线程
-    void incomingConnection(qintptr socketDescriptor);
+    void incomingConnection(qintptr socketDescriptor) override;
     /// 是否自行编码数据
     inline void setEncode(bool encode) { m_isencoded = encode; }
     /// 得到是否自行编码数据
-    inline bool isEncode(void) { return m_isencoded; }
+    inline bool isEncode() const { return m_isencoded; }
 
     /// 给指定客户端发送二进制数据
-    Q_INVOKABLE qint64 SendByteArray(qintptr socketDescriptor,QByteArray data);
+    Q_INVOKABLE qint64 SendByteArray(qintptr socketDescriptor, const QByteArray &data);
     /// 给所有客户端发送二进制数据
-    Q_INVOKABLE bool SendAllByteArray(QByteArray data);
+    Q_INVOKABLE bool SendAllByteArray(const QByteArray& data);
     /// 给除了指定客户端的其它客户端发送二进制数据
-    Q_INVOKABLE bool SendAllOtherByteArray(qintptr socketDescriptor,QByteArray data);
+    Q_INVOKABLE bool SendAllOtherByteArray(qintptr socketDescriptor,const QByteArray& data);
 
 signals:
     void connectClient(qint64, const QString &, quint16);//发送新用户连接信息
@@ -106,7 +100,7 @@ public slots:
 private slots:
     void displayError(QAbstractSocket::SocketError socketError);
     void sockDisConnectSlot(qint64 socketDescriptor,const QString &ip, quint16 port, QThread *th);//断开连接的用户信息
-    void sockBinMessageSlot(qint64 socketDescriptor,QByteArray data);
+    void sockBinMessageSlot(qint64 socketDescriptor, const QByteArray &data);
 
 private:
     QHash<qint64, CTcpSocket *> tcpClient;                              /**< 管理连接的map */
@@ -117,4 +111,4 @@ private:
     bool m_isencoded;                                                   /**< 是否自行编码数据 */
 };
 
-#endif // CWEBSOCKETSERVER_H
+#endif // CTCP_SOCKETSERVER_H

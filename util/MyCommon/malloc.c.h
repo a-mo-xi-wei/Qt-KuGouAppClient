@@ -1704,7 +1704,8 @@ static FORCEINLINE void* posix_direct_mmap(size_t size) {
 #ifdef DEFAULT_GRANULARITY_ALIGNED
 static void* lastWin32mmap; /* Used as a hint */
 #endif /* DEFAULT_GRANULARITY_ALIGNED */
-static FORCEINLINE void* win32mmap(size_t size) {
+//FORCEINLINE static void* win32mmap(size_t size) {
+static void* win32mmap(size_t size) {
   void* baseaddress = 0;
   void* ptr = 0;
 #ifdef ENABLE_LARGE_PAGES
@@ -1793,7 +1794,8 @@ we turn it on on 32 bit and disable it on 64 bit.
 #endif
 #endif
 
-static FORCEINLINE void* win32direct_mmap(void **handle, size_t size, unsigned flags) {
+//static FORCEINLINE void* win32direct_mmap(void **handle, size_t size, unsigned flags) {
+static void* win32direct_mmap(void **handle, size_t size, unsigned flags) {
   void* ptr = 0;
   unsigned mremapvalue = (flags & M2_RESERVE_MASK)>>8;
 #if 0
@@ -1851,7 +1853,8 @@ static FORCEINLINE void* win32direct_mmap(void **handle, size_t size, unsigned f
 }
 
 /* Implementation of mremap for direct MMAP */
-static FORCEINLINE void* win32direct_mremap(void **handle, void *ptr, size_t oldsize, size_t newsize, int flags, unsigned flags2) {
+//static FORCEINLINE void* win32direct_mremap(void **handle, void *ptr, size_t oldsize, size_t newsize, int flags, unsigned flags2) {
+static void* win32direct_mremap(void **handle, void *ptr, size_t oldsize, size_t newsize, int flags, unsigned flags2) {
   void* newptr = 0;
   if (!*handle)
     return MFAIL; /* We only resize file mappings reserved with M2_RESERVE_* */
@@ -1894,7 +1897,8 @@ static FORCEINLINE void* win32direct_mremap(void **handle, void *ptr, size_t old
 }
 
 /* This function supports releasing coalesed segments */
-static FORCEINLINE int win32munmap(void *handle, void* ptr, size_t size) {
+//static FORCEINLINE int win32munmap(void *handle, void* ptr, size_t size) {
+static int win32munmap(void *handle, void* ptr, size_t size) {
   if (!handle) {
     MEMORY_BASIC_INFORMATION minfo;
     char* cptr = (char*)ptr;
@@ -2160,7 +2164,8 @@ struct win32_mlock_t {
 
 static MLOCK_T malloc_global_mutex = {0, "", 0, 0};
 
-static FORCEINLINE int win32_acquire_lock (MLOCK_T *sl) {
+//static FORCEINLINE int win32_acquire_lock (MLOCK_T *sl) {
+static int win32_acquire_lock (MLOCK_T *sl) {
   long mythreadid = CURRENT_THREAD;
   int spins = 0;
   for (;;) {
@@ -2183,7 +2188,8 @@ static FORCEINLINE int win32_acquire_lock (MLOCK_T *sl) {
   }
 }
 
-static FORCEINLINE void win32_release_lock (MLOCK_T *sl) {
+//static FORCEINLINE void win32_release_lock (MLOCK_T *sl) {
+static void win32_release_lock (MLOCK_T *sl) {
   assert(sl->threadid == CURRENT_THREAD);
   assert(sl->l != 0);
   if (--sl->c == 0) {
@@ -2192,7 +2198,8 @@ static FORCEINLINE void win32_release_lock (MLOCK_T *sl) {
   }
 }
 
-static FORCEINLINE int win32_try_lock (MLOCK_T *sl) {
+//static FORCEINLINE int win32_try_lock (MLOCK_T *sl) {
+static int win32_try_lock (MLOCK_T *sl) {
   long mythreadid = CURRENT_THREAD;
   if (sl->l != 0) {
     if (sl->threadid == mythreadid) {
@@ -5490,7 +5497,8 @@ size_t destroy_mspace(mspace msp) {
   versions. This is not so nice but better than the alternatives.
 */
 
-static FORCEINLINE void* mspace_malloc_implementation(mstate ms, size_t bytes, unsigned flags) {
+//static FORCEINLINE void* mspace_malloc_implementation(mstate ms, size_t bytes, unsigned flags) {
+static void* mspace_malloc_implementation(mstate ms, size_t bytes, unsigned flags) {
   if (!PREACTION(ms)) {
     void* mem;
     size_t nb = bytes;

@@ -3,13 +3,10 @@
 
 #include "singleton.h"
 
-#include <QObject>
-#include <QByteArray>
-#include <QHash>
 #include <QMutex>
 #include <QFileSystemWatcher>
 #include <QTimer>
-#include <QtCore/private/qzipreader_p.h>
+#include <qzipreader_p.h>
 
 struct tagResource
 {
@@ -31,20 +28,20 @@ public:
     ~CResourceManager();
 
     /// 得到指定路径的文件资源
-    QByteArray getFile(QString filepath);
+    QByteArray getFile(const QString& filepath);
 
     /// 添加zip文件到系统中
-    bool addZipFile(QString filepath,bool isautoupdate=true);
+    bool addZipFile(const QString& filepath,bool isautoupdate=true);
     /// 从zip文件中得到文件资源
-    QByteArray getFileFromZip(QString filepath);
+    QByteArray getFileFromZip(const QString& filepath);
 
 private slots:
-    void WorkingfileChanging(const QString filepath);
+    void WorkingfileChanging(const QString& filepath);
     void WorkingfileChanged();
 
 private:
-    void loadFileResource(QString filepath,bool isAddPath=true);
-    void deleteallzipfiles(void);
+    void loadFileResource(const QString& filepath,bool isAddPath=true);
+    void deleteallzipfiles();
 
 private:
     QHash<QString,tagResource> m_resources;              /**< 管理所有的文件资源 */

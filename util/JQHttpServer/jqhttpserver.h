@@ -65,7 +65,7 @@ public:
 
     ~Session();
 
-    inline void setHandleAcceptedCallback(const std::function< void(const QPointer< Session > &) > &callback) { handleAcceptedCallback_ = callback; }
+    inline void setHandleAcceptedCallback(const std::function< void(const QPointer<Session> &) > &callback) { handleAcceptedCallback_ = callback; }
 
     inline QPointer< QIODevice > ioDevice() { return ioDevice_; }
 
@@ -129,7 +129,7 @@ private:
     static QAtomicInt remainSession_;
 
     QPointer< QIODevice >                                ioDevice_;
-    std::function< void( const QPointer< Session > & ) > handleAcceptedCallback_;
+    std::function< void( const QPointer<Session> & ) > handleAcceptedCallback_;
     QSharedPointer< QTimer >                             autoCloseTimer_;
 
     QByteArray receiveBuffer_;
@@ -166,7 +166,7 @@ public:
     inline void setMainObject(QObject *obj) { m_mainObj = obj; }
     inline QObject* getMainObject(void) { return m_mainObj; }
 
-    inline void setHttpAcceptedCallback(const std::function< void(const QPointer< Session > &session,QObject *mainObj) > &httpAcceptedCallback)
+    inline void setHttpAcceptedCallback(const std::function< void(const QPointer<Session> &session,QObject *mainObj) > &httpAcceptedCallback)
     {
         httpAcceptedCallback_ = httpAcceptedCallback;
     }
@@ -193,9 +193,9 @@ protected:
 
     void stopServerThread();
 
-    void newSession(const QPointer< Session > &session);
+    void newSession(const QPointer<Session> &session);
 
-    void handleAccepted(const QPointer< Session > &session);
+    void handleAccepted(const QPointer<Session> &session);
 
 signals:
     void readyToClose();
@@ -207,7 +207,7 @@ protected:
 
     QMutex mutex_;
 
-    std::function< void(const QPointer< Session > &session,QObject *mainObj) > httpAcceptedCallback_;
+    std::function< void(const QPointer<Session> &session,QObject *mainObj) > httpAcceptedCallback_;
 
     QSet< Session * > availableSessions_;
 

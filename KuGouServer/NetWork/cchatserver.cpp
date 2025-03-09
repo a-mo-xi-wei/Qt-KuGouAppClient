@@ -77,7 +77,7 @@ bool cchatserver::isListening(void)
  * @param dbpath
  * @return
  */
-bool cchatserver::openDB(QString dbpath)
+bool cchatserver::openDB(const QString &dbpath)
 {
     if(dbpath.isEmpty())
         return false;
@@ -92,9 +92,9 @@ bool cchatserver::openDB(QString dbpath)
 QString cchatserver::getCurrentServerInfo(void)
 {
     QString tmpString = QString::fromLocal8Bit("在线用户总数:")+
-                        QString::asprintf("%d",m_onlineUsers.size())+
+                        QString::asprintf("%lld",m_onlineUsers.size())+
                         QString::fromLocal8Bit(" 在线群数量:")+
-                        QString::asprintf("%d",m_allgrounps.size());
+                        QString::asprintf("%lld",m_allgrounps.size());
 
     printLog(QsLogging::Level::InfoLevel,tmpString);
 
@@ -116,7 +116,7 @@ QString cchatserver::getCurrentDate(void)
  * @param type
  * @param msg
  */
-void cchatserver::printLog(QsLogging::Level type,QString msg)
+void cchatserver::printLog(QsLogging::Level type, const QString &msg)
 {
     switch (type)
     {
@@ -175,7 +175,7 @@ bool cchatserver::deletegroup(int groupId)
 tagGroupInfo* cchatserver::getGroupInfo(int groupId)
 {
     if(m_allgrounps.isEmpty() || groupId <= 0)
-        return NULL;
+        return nullptr;
 
     QHash<QString,tagGroupInfo>::iterator iter = m_allgrounps.begin();
     for(;iter != m_allgrounps.end();++iter)
@@ -184,7 +184,7 @@ tagGroupInfo* cchatserver::getGroupInfo(int groupId)
             return &iter.value();
     }
 
-    return NULL;
+    return nullptr;
 }
 
 /**
@@ -195,7 +195,7 @@ tagGroupInfo* cchatserver::getGroupInfo(int groupId)
 tagUserInfo* cchatserver::getUserInfo(int userId)
 {
     if(m_onlineUsers.isEmpty() || userId <= 0)
-        return NULL;
+        return nullptr;
 
     QHash<QWebSocket*,tagUserInfo>::iterator iter = m_onlineUsers.begin();
     for(;iter != m_onlineUsers.end();++iter)
@@ -204,7 +204,7 @@ tagUserInfo* cchatserver::getUserInfo(int userId)
             return &iter.value();
     }
 
-    return NULL;
+    return nullptr;
 }
 
 /**
@@ -265,7 +265,7 @@ bool cchatserver::isUserOnline(int userId)
  */
 bool cchatserver::inClientOnline(QWebSocket *conn)
 {
-    if(conn == NULL || m_onlineUsers.isEmpty())
+    if(conn == nullptr || m_onlineUsers.isEmpty())
         return false;
 
     // 检查发送者是否在线
@@ -439,7 +439,7 @@ void cchatserver::onProcessNetUserGroupGetChatRecord(QWebSocket *conn,QJsonObjec
 
     // 检测指定的群是否存在
     tagGroupInfo *pGroupInfo = getGroupInfo(groupid);
-    if(pGroupInfo == NULL)
+    if(pGroupInfo == nullptr)
     {
         QJsonObject retObj;
         retObj["msgId"] = IDD_CHATSERVER_GROUP;
@@ -601,7 +601,7 @@ void cchatserver::onProcessNetUserGroupChat(QWebSocket *conn,QJsonObject &msgObj
         for(int i=0;i<pGroupInfo->members.size();i++)
         {
             tagUserInfo *pUserInfo = getUserInfo(pGroupInfo->members[i]);
-            if(pUserInfo == NULL || pUserInfo->conn == NULL)
+            if(pUserInfo == nullptr || pUserInfo->conn == nullptr)
                 continue;
 
             m_MainWebSocketServer.Send(pUserInfo->conn,JsonToString(msgObj));
@@ -1209,7 +1209,7 @@ void cchatserver::onProcessNetUserDeleteGroup(QWebSocket *conn,QJsonObject &msgO
     }
 
     // 检测要解散的群是否存在
-    if(getGroupInfo(groupid) == NULL)
+    if(getGroupInfo(groupid) == nullptr)
     {
         QJsonObject retObj;
         retObj["msgId"] = IDD_CHATSERVER_GROUP;
@@ -1355,7 +1355,7 @@ void cchatserver::onProcessNetUserLeaveGroup(QWebSocket *conn,QJsonObject &msgOb
 
     // 检查指定ID的群是否存在
     tagGroupInfo *pGroupInfo = getGroupInfo(groupid);
-    if(pGroupInfo == NULL)
+    if(pGroupInfo == nullptr)
     {
         QJsonObject retObj;
         retObj["msgId"] = IDD_CHATSERVER_GROUP;
@@ -1451,7 +1451,7 @@ void cchatserver::onProcessNetUserJoinGroup(QWebSocket *conn,QJsonObject &msgObj
 
     // 检查指定ID的群是否存在
     tagGroupInfo *pGroupInfo = getGroupInfo(groupid);
-    if(pGroupInfo == NULL)
+    if(pGroupInfo == nullptr)
     {
         QJsonObject retObj;
         retObj["msgId"] = IDD_CHATSERVER_GROUP;

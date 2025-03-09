@@ -51,7 +51,7 @@ int RC4(const unsigned char* data, int data_len, const unsigned char* key, int k
 
     unsigned char mBox[BOX_LEN];
 
-    if(GetKey(key, key_len, mBox) == NULL)
+    if(GetKey(key, key_len, mBox) == 0)
         return 0;
 
     int x=0;

@@ -51,7 +51,9 @@ QSqlDatabase NDBPool_p::getNewConnection(const QString &paramConnectionName)
                 tempDB.open();
             }
             if(!tempDB.isOpenError()){
-                QSqlQuery tempQuery = tempDB.exec(testSql);
+                //QSqlQuery tempQuery = tempDB.exec(testSql);
+                QSqlQuery tempQuery(tempDB);
+                tempQuery.exec(testSql);
                 if((tempQuery.lastError().type() == QSqlError::NoError)){
                     return tempDB;
                 }
@@ -63,7 +65,7 @@ QSqlDatabase NDBPool_p::getNewConnection(const QString &paramConnectionName)
                 if(isDebug){
                     QLOG_DEBUG() << "Open old datatabase error-Create a new connection:" << tempDB.lastError().text();
                 }
-                return QSqlDatabase();
+                return {};
             }
         }
     }
@@ -119,7 +121,9 @@ QSqlDatabase NDBPool_p::getNewConnection(const QString &paramConnectionName)
         tempDBNew.open();
     }
     if(!tempDBNew.isOpenError()){
-        QSqlQuery tempQuery = tempDBNew.exec(testSql);
+        //QSqlQuery tempQuery = tempDBNew.exec(testSql);
+        QSqlQuery tempQuery(tempDBNew);
+        tempQuery.exec(testSql);
         if((tempQuery.lastError().type() == QSqlError::NoError)){
             return tempDBNew;
         }
