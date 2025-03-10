@@ -8,8 +8,6 @@ QT_FORWARD_DECLARE_CLASS(QWebSocket)
 QT_FORWARD_DECLARE_CLASS(QTcpSocket)
 QT_FORWARD_DECLARE_CLASS(QSerialPort)
 
-typedef struct _ENetPeer ENetPeer;
-
 class NetworkFrameManager
 {
 public:
@@ -49,13 +47,6 @@ public:
 
     /// 处理http请求
     virtual bool OnProcessHttpAccepted(QObject *obj,const QPointer< JQHttpServer::Session > &session);
-
-    /// 处理Enet二进制消息
-    virtual void OnProcessEnetNetBinary(ENetPeer *conn,QByteArray data);
-    /// 处理Enet一个新的连接到达
-    virtual void OnProcessEnetConnectedNetMes(ENetPeer *conn);
-    /// 处理Enet一个连接关闭
-    virtual void OnProcessEnetDisconnectedNetMes(ENetPeer *conn);
 
 protected:
     QMutex m_Mutex;

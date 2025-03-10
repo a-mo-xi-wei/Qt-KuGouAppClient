@@ -1,5 +1,5 @@
 ﻿#include "networkframemanager.h"
-#include "cwebsocketserver.h"
+//#include "cwebsocketserver.h"
 
 NetworkFrameManager::NetworkFrameManager()
 = default;
@@ -125,32 +125,4 @@ void NetworkFrameManager::OnProcessSerialPortBinary(QSerialPort *serialport,QByt
 bool NetworkFrameManager::OnProcessHttpAccepted(QObject *obj,const QPointer< JQHttpServer::Session > &session)
 {
     return false;
-}
-
-/**
- * @brief OnProcessEnetNetBinary 处理Enet二进制消息
- * @param conn
- * @param data
- */
-void NetworkFrameManager::OnProcessEnetNetBinary(ENetPeer *conn,QByteArray data)
-{
-
-}
-
-/**
- * @brief OnProcessEnetConnectedNetMes 处理Enet一个新的连接到达
- * @param conn
- */
-void NetworkFrameManager::OnProcessEnetConnectedNetMes(ENetPeer *conn)
-{
-
-}
-
-/**
- * @brief OnProcessEnetDisconnectedNetMes 处理Enet一个连接关闭
- * @param conn
- */
-void NetworkFrameManager::OnProcessEnetDisconnectedNetMes(ENetPeer *conn)
-{
-
 }

@@ -39,7 +39,6 @@
 #   include <QSslSocket>
 #endif
 
-// JQLibrary lib import
 #include "jqdeclare.hpp"
 
 class QIODevice;
@@ -55,7 +54,7 @@ class QSslConfiguration;
 namespace JQHttpServer
 {
 
-class JQLIBRARY_EXPORT Session: public QObject
+class Session: public QObject
 {
     Q_OBJECT
     Q_DISABLE_COPY( Session )
@@ -65,9 +64,9 @@ public:
 
     ~Session();
 
-    inline void setHandleAcceptedCallback(const std::function< void(const QPointer<Session> &) > &callback) { handleAcceptedCallback_ = callback; }
+    void setHandleAcceptedCallback(const std::function<void(const QPointer<Session> &) > &callback) { handleAcceptedCallback_ = callback; }
 
-    inline QPointer< QIODevice > ioDevice() { return ioDevice_; }
+    QPointer<QIODevice> ioDevice() { return ioDevice_; }
 
     QString requestSourceIp() const;
 
@@ -77,7 +76,7 @@ public:
 
     QString requestCrlf() const;
 
-    QMap< QString, QString > requestHeader() const;
+    QMap<QString, QString> requestHeader() const;
 
     QByteArray requestBody() const;
 
@@ -85,7 +84,7 @@ public:
 
     QStringList requestUrlPathSplitToList() const;
 
-    QMap< QString, QString > requestUrlQuery() const;
+    QMap<QString, QString> requestUrlQuery() const;
 
     int replyHttpCode() const;
 
@@ -153,7 +152,7 @@ private:
     QSharedPointer< QIODevice > replyIoDevice_;
 };
 
-class JQLIBRARY_EXPORT AbstractManage: public QObject
+class AbstractManage: public QObject
 {
     Q_OBJECT
     Q_DISABLE_COPY( AbstractManage )
@@ -163,17 +162,17 @@ public:
 
     virtual ~AbstractManage();
 
-    inline void setMainObject(QObject *obj) { m_mainObj = obj; }
-    inline QObject* getMainObject(void) { return m_mainObj; }
+    void setMainObject(QObject *obj) { m_mainObj = obj; }
+    QObject* getMainObject() { return m_mainObj; }
 
-    inline void setHttpAcceptedCallback(const std::function< void(const QPointer<Session> &session,QObject *mainObj) > &httpAcceptedCallback)
+    void setHttpAcceptedCallback(const std::function< void(const QPointer<Session> &session,QObject *mainObj) > &httpAcceptedCallback)
     {
         httpAcceptedCallback_ = httpAcceptedCallback;
     }
 
-    inline QSharedPointer< QThreadPool > handleThreadPool() { return handleThreadPool_; }
+    QSharedPointer< QThreadPool > handleThreadPool() { return handleThreadPool_; }
 
-    inline QSharedPointer< QThreadPool > serverThreadPool() { return serverThreadPool_; }
+    QSharedPointer< QThreadPool > serverThreadPool() { return serverThreadPool_; }
 
     virtual bool isRunning() = 0;
 
@@ -214,7 +213,7 @@ protected:
     QObject *m_mainObj;
 };
 
-class JQLIBRARY_EXPORT TcpServerManage: public AbstractManage
+class TcpServerManage: public AbstractManage
 {
     Q_OBJECT
     Q_DISABLE_COPY( TcpServerManage )
@@ -225,7 +224,7 @@ public:
     ~TcpServerManage();
 
     bool listen( const QHostAddress &address, const quint16 &port );
-    inline quint16 getListenPort(void) { return listenPort_; }
+    quint16 getListenPort() { return listenPort_; }
 
 private:
     bool isRunning();
@@ -244,7 +243,7 @@ private:
 #ifndef QT_NO_SSL
 class SslServerHelper;
 
-class JQLIBRARY_EXPORT SslServerManage: public AbstractManage
+class SslServerManage: public AbstractManage
 {
     Q_OBJECT
     Q_DISABLE_COPY( SslServerManage )
@@ -260,7 +259,7 @@ public:
                  const QString &                                        keyFilePath,
                  const QList< QPair< QString, QSsl::EncodingFormat > > &caFileList = {},    // [ { filePath, format } ]
                  const QSslSocket::PeerVerifyMode &                     peerVerifyMode = QSslSocket::VerifyNone );
-    inline quint16 getListenPort(void) { return listenPort_; }
+    quint16 getListenPort() { return listenPort_; }
 
 private:
     bool isRunning();

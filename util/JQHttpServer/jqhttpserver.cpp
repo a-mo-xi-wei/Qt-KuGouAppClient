@@ -119,7 +119,7 @@ static QString replyOptionsFormat(
 // Session
 QAtomicInt JQHttpServer::Session::remainSession_ = 0;
 
-JQHttpServer::Session::Session(const QPointer< QIODevice > &socket)
+JQHttpServer::Session::Session(const QPointer<QIODevice> &socket)
     : m_isSafeExit(0)
     , ioDevice_( socket )
     , autoCloseTimer_( new QTimer )

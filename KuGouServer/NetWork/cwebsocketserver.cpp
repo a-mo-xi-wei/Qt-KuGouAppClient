@@ -4,7 +4,6 @@
 #include "QsLog.h"
 
 #include <QDir>
-#include <utility>
 
 QHash<QWebSocket*,tagWebClient> m_webClients;                          /**< 用于客户端文件和二进制数据处理 */
 

@@ -40,8 +40,8 @@ QString CLibhttp::UrlRequestGet(const QString& url,const QString& data,int timeo
     QNetworkReply *reply = qnam.get(qnr);
     QEventLoop eventloop;
 
-    QObject::connect(reply,SIGNAL(finished()),&eventloop,SLOT(quit()));
-    QObject::connect(&timeout_timer,SIGNAL(timeout()),&eventloop,SLOT(quit()));
+    connect(reply,SIGNAL(finished()),&eventloop,SLOT(quit()));
+    connect(&timeout_timer,SIGNAL(timeout()),&eventloop,SLOT(quit()));
 
     timeout_timer.start();
     eventloop.exec();
