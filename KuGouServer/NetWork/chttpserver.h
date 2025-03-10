@@ -1,12 +1,10 @@
 ﻿#ifndef CHTTPSERVER_H
 #define CHTTPSERVER_H
 
-#include "common.h"
 #include "QsLog.h"
 #include "networkframemanager.h"
 #include "NedAllocatedObject.h"
 #include "resourcemanager.h"
-#include "jqhttpserver.h"
 
 #include <QObject>
 #include <QMutex>
@@ -20,31 +18,31 @@ public:
     ~chttpserver() override;
 
     /// 设置处理框架管理
-    inline void setNetworkFrameManager(NetworkFrameManager *nfm)
+    void setNetworkFrameManager(NetworkFrameManager *nfm)
     {
         m_NetworkFrameManager = nfm;
     }
     /// 得到处理框架管理
-    inline NetworkFrameManager* getNetworkFrameManager() { return m_NetworkFrameManager; }
+    NetworkFrameManager* getNetworkFrameManager() const { return m_NetworkFrameManager; }
 
     /// 开始侦听
     bool listen(int port=8080,QString server_crt="",QString server_key="");
     /// 检测当前服务器是否在运行
     bool isRunning() const { return m_serverIsRunning; }
     /// 得到资源管理器
-    inline CResourceManager* getResourceManager() { return &m_ResourceManager; }
+    CResourceManager* getResourceManager() { return &m_ResourceManager; }
     /// 设置当前工作目录
-    inline void setCurrentWorkingPath(QString path) { m_currentWorkingPath = path; }
+    void setCurrentWorkingPath(const QString &path) { m_currentWorkingPath = path; }
     /// 得到当前工作目录
-    inline QString getCurrentWorkingPath() { return m_currentWorkingPath; }
+    QString getCurrentWorkingPath() { return m_currentWorkingPath; }
     /// 处理http传输过来的数据
     void onProcessHttpAccepted(const QPointer<JQHttpServer::Session> &session,QObject *mainObj);
     /// 是否启用ssl
-    inline void enableSSL(bool isenable) { m_isEnableSSL = isenable; }
+    void enableSSL(bool isenable) { m_isEnableSSL = isenable; }
     /// 返回是否启用ssl
-    inline bool isenableSSL() { return m_isEnableSSL; }
+    bool isenableSSL() { return m_isEnableSSL; }
     /// 得到端口
-    inline int getPort()
+    int getPort()
     {
         int tmpPort = m_htmlServerManage.getListenPort();
 

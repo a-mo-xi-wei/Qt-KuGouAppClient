@@ -1,7 +1,6 @@
 ﻿#ifndef NETWORK_FRAME_MANAGER_H
 #define NETWORK_FRAME_MANAGER_H
 
-
 #include "common.h"
 #include "jqhttpserver.h"
 
@@ -19,9 +18,9 @@ public:
     virtual ~NetworkFrameManager();
 
     /// 多线程中加锁操作
-    inline void lock() { m_Mutex.lock(); }
+    void lock() { m_Mutex.lock(); }
     /// 多线程中解锁操作
-    inline void unlock() { m_Mutex.unlock(); }
+    void unlock() { m_Mutex.unlock(); }
 
     /// 处理网络字符串消息
     virtual void OnProcessNetText(QWebSocket *conn,QString mes);

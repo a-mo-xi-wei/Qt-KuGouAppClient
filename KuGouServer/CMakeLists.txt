@@ -14,24 +14,28 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED Core Sql)
-
-file(GLOB KUGOU_SERVER_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
-file(GLOB KUGOU_SERVER_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+find_package(Qt6 REQUIRED Core Sql SerialBus WebSockets)
 
 file(GLOB KUGOU_SERVER_NET_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/NetWork/*.cpp)
 file(GLOB KUGOU_SERVER_NET_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/NetWork/*.h)
 
-#message(STATUS "-----------------" ${CMAKE_CURRENT_SOURCE_DIR} ${KUGOU_SERVER__SOURCES})
+file(GLOB KUGOU_SERVER_KCP_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/NetWork/kcp/*.cpp)
+file(GLOB KUGOU_SERVER_KCP_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/NetWork/kcp/*.h)
 
 set(SOURCE_FILE
-    ${KUGOU_SERVER_HEADERS}
-    ${KUGOU_SERVER_SOURCES}
+    main.cpp
+    Server.h
+    Server.cpp
     ${KUGOU_SERVER_NET_HEADERS}
     ${KUGOU_SERVER_NET_SOURCES}
+    ${KUGOU_SERVER_KCP_SOURCES}
+    ${KUGOU_SERVER_KCP_HEADERS}
 )
 
-add_executable(${PROJECT_NAME} ${KUGOU_SERVER_SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Sql SJwt
-        MyQsLog JQHttpServer)
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
+        PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/NetWork)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Sql Qt6::SerialBus
+        Qt6::WebSockets SJwt MyQsLog JQHttpServer MyDBPoll)
