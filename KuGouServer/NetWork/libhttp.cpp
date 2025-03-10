@@ -2,15 +2,7 @@
 #include "QsLog.h"
 
 #include <QEventLoop>
-#include <QJsonObject>
-#include <QJsonArray>
-#include <QJsonDocument>
-#include <QSettings>
-#include <QDateTime>
-#include <QStandardPaths>
-#include <QProgressBar>
 #include <QFileDialog>
-#include <QHostAddress>
 #include <QTimer>
 
 CLibhttp::CLibhttp(QObject *parent)
@@ -18,10 +10,7 @@ CLibhttp::CLibhttp(QObject *parent)
 
 }
 
-CLibhttp::~CLibhttp(void)
-{
-
-}
+CLibhttp::~CLibhttp() = default;
 
 /**
  * @brief UrlRequestGet 向一个http发送一个get请求
@@ -29,7 +18,7 @@ CLibhttp::~CLibhttp(void)
  * @param timeout 连接超时时间
  * @return
  */
-QString CLibhttp::UrlRequestGet(const QString url,const QString data,int timeout)
+QString CLibhttp::UrlRequestGet(const QString& url,const QString& data,int timeout)
 {
     if(url == "" || timeout <= 0 || data == "")
         return "";
@@ -82,7 +71,7 @@ QString CLibhttp::UrlRequestGet(const QString url,const QString data,int timeout
             QString replyData = codec->toUnicode(reply->readAll());
 #endif
             reply->deleteLater();
-            reply=NULL;
+            reply=nullptr;
 
             return replyData;
         }
@@ -106,7 +95,7 @@ QString CLibhttp::UrlRequestGet(const QString url,const QString data,int timeout
  * @param data 要发送的http数据
  * @return 如果请求成功返回请求成功的数据，否则返回空
  */
-QString CLibhttp::UrlRequestPost(const QString url,const QString data,int timeout)
+QString CLibhttp::UrlRequestPost(const QString& url,const QString &data,int timeout)
 {
     if(url == "" || data == "" || timeout <= 0)
         return "";
@@ -123,7 +112,7 @@ QString CLibhttp::UrlRequestPost(const QString url,const QString data,int timeou
     timeout_timer.setInterval(timeout);
     timeout_timer.setSingleShot(true);
 
-    qint64 currenttime = QDateTime::currentSecsSinceEpoch();
+    //qint64 currenttime = QDateTime::currentSecsSinceEpoch();
 
     QNetworkReply *reply = qnam.post(qnr,data.toUtf8());
     QEventLoop eventloop;
@@ -159,7 +148,7 @@ QString CLibhttp::UrlRequestPost(const QString url,const QString data,int timeou
             QString replyData = codec->toUnicode(reply->readAll());
 #endif
             reply->deleteLater();
-            reply=NULL;
+            reply=nullptr;
 
             return replyData;
         }
@@ -195,7 +184,7 @@ QString CLibhttp::UrlRequestPost(const QString url,const QString data,int timeou
 
     QString replyData = codec->toUnicode(reply->readAll());
     reply->deleteLater();
-    reply=NULL;
+    reply=nullptr;
 
     return replyData;
 }*/
@@ -208,13 +197,13 @@ QString CLibhttp::UrlRequestPost(const QString url,const QString data,int timeou
  *
  * @return 如果文件上传成功返回真，否则返回假
  */
-bool CLibhttp::UploadFile(const QString strServerUrl,const QString srcFilePath,int timeout)
+bool CLibhttp::UploadFile(const QString& strServerUrl,const QString& srcFilePath,int timeout)
 {
     if(strServerUrl.isEmpty() || srcFilePath.isEmpty())
         return false;
 
     QNetworkAccessManager manager;
-    QHttpMultiPart *multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+    auto *multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
     QHttpPart filePart;
 
     QFileInfo fileInfo(srcFilePath);
@@ -224,9 +213,9 @@ bool CLibhttp::UploadFile(const QString strServerUrl,const QString srcFilePath,i
         return false;
     }
 
-    filePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"file\"; filename=\""+ fileInfo.fileName() + "\"")); // file为后端定义的key，filename即为excel文件名
+    filePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant(R"(form-data; name="file"; filename=")"+ fileInfo.fileName() + "\"")); // file为后端定义的key，filename即为excel文件名
 
-    QFile *file = new QFile(srcFilePath);
+    auto *file = new QFile(srcFilePath);
     if(!file->open(QIODevice::ReadOnly))
     {
         QLOG_ERROR()<<"CLibhttp::UploadFile:"<<srcFilePath<<" open fail.";
@@ -267,7 +256,7 @@ bool CLibhttp::UploadFile(const QString strServerUrl,const QString srcFilePath,i
  *
  * @return 如果文件下载成功返回真，否则返回假
  */
-bool CLibhttp::DownloadFile(const QString strServerUrl,const QString decFilePath,int timeout)
+bool CLibhttp::DownloadFile(const QString& strServerUrl,const QString& decFilePath,int timeout)
 {
     if(strServerUrl.isEmpty() || decFilePath.isEmpty())
         return false;
@@ -318,7 +307,7 @@ bool CLibhttp::DownloadFile(const QString strServerUrl,const QString decFilePath
             precvFile.close();
 
             reply->deleteLater();
-            reply=NULL;
+            reply=nullptr;
 
             return true;
         }

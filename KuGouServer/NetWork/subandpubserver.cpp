@@ -1,12 +1,8 @@
 ﻿#include "subandpubserver.h"
 #include "common.h"
 
-#include <QDateTime>
-#include <QUuid>
 #include <QFileInfo>
-#include <QXmlStreamWriter>
 #include <QXmlStreamReader>
-#include <QCryptographicHash>
 
 subandpubserver::subandpubserver(QObject *parent)
     : QObject(parent),
@@ -25,7 +21,7 @@ subandpubserver::~subandpubserver()
 /**
  * @brief subandpubserver::RandomGenerateServerUUID 生成一个随机的服务器ID
  */
-QString subandpubserver::RandomGenerateServerUUID(void)
+QString subandpubserver::RandomGenerateServerUUID()
 {
     return QUuid::createUuid().toString();
 }
@@ -34,7 +30,7 @@ QString subandpubserver::RandomGenerateServerUUID(void)
  * @brief subandpubserver::getCurrentDate 得到当前时间
  * @return
  */
-QString subandpubserver::getCurrentDate(void)
+QString subandpubserver::getCurrentDate()
 {
     QDateTime dateTime =QDateTime::currentDateTime();
     return dateTime.toString("<b>[yyyy-MM-dd hh:mm:ss]</b> ");
@@ -44,7 +40,7 @@ QString subandpubserver::getCurrentDate(void)
  * @brief subandpubserver::isRunning 检测服务器是否已经启动
  * @return
  */
-bool subandpubserver::isRunning(void)
+bool subandpubserver::isRunning()
 {
     return m_MainWebSocketServer.isListening();
 }
@@ -55,12 +51,12 @@ bool subandpubserver::isRunning(void)
  * @param port
  * @return
  */
-bool subandpubserver::addBrotherServer(QString ip,int port)
+bool subandpubserver::addBrotherServer(const QString& ip,int port)
 {
     if(ip.isEmpty() || port <= 0)
         return false;
 
-    CWebSocketClient *pwebclient = new CWebSocketClient(this,this);
+    auto *pwebclient = new CWebSocketClient(this,this);
     pwebclient->Open2(ip,port);
 
     m_brotherServers[pwebclient->getWebSocket()] = pwebclient;
@@ -73,7 +69,7 @@ bool subandpubserver::addBrotherServer(QString ip,int port)
  * @param filepath
  * @return
  */
-bool subandpubserver::savaBrotherServers(QString filepath)
+bool subandpubserver::savaBrotherServers(const QString& filepath)
 {
     QString tmpCurPath = (filepath == "" ? m_currentConfigFile : filepath);
 
@@ -101,8 +97,8 @@ bool subandpubserver::savaBrotherServers(QString filepath)
     for(;iter != m_allBrotherServerList.end();++iter)
     {
         xmlWriter.writeStartElement("server");
-        xmlWriter.writeAttribute("ip",(*iter).ip);
-        xmlWriter.writeAttribute("port", QString::asprintf("%d",(*iter).port));
+        xmlWriter.writeAttribute("ip",iter->ip);
+        xmlWriter.writeAttribute("port", QString::asprintf("%d",iter->port));
         xmlWriter.writeEndElement();
     }
 
@@ -119,7 +115,7 @@ bool subandpubserver::savaBrotherServers(QString filepath)
  * @param filepath
  * @return
  */
-bool subandpubserver::loadBrotherServers(QString filepath)
+bool subandpubserver::loadBrotherServers(const QString& filepath)
 {
     QFileInfo pfileinfo(filepath);
     if(!pfileinfo.exists())
@@ -180,12 +176,12 @@ bool subandpubserver::loadBrotherServers(QString filepath)
  */
 CWebSocketClient* subandpubserver::isExistClientInBrotherServers(QWebSocket* client)
 {
-    if(m_brotherServers.isEmpty() || client == NULL)
-        return NULL;
+    if(m_brotherServers.isEmpty() || client == nullptr)
+        return nullptr;
 
     QHash<QWebSocket*,CWebSocketClient*>::iterator iter = m_brotherServers.find(client);
     if(iter == m_brotherServers.end())
-        return NULL;
+        return nullptr;
 
     return iter.value();
 }
@@ -193,7 +189,7 @@ CWebSocketClient* subandpubserver::isExistClientInBrotherServers(QWebSocket* cli
 /**
  * @brief subandpubserver::closeAllBrotherServers 关闭所有的兄弟服务器
  */
-void subandpubserver::closeAllBrotherServers(void)
+void subandpubserver::closeAllBrotherServers()
 {
     QHash<QWebSocket*,CWebSocketClient*>::iterator iter = m_brotherServers.begin();
     for(;iter != m_brotherServers.end();++iter)
@@ -216,7 +212,7 @@ void subandpubserver::closeAllBrotherServers(void)
  * @param type
  * @param msg
  */
-void subandpubserver::printLog(QsLogging::Level type,QString msg)
+void subandpubserver::printLog(QsLogging::Level type,const QString& msg)
 {
     switch (type)
     {
@@ -244,7 +240,7 @@ void subandpubserver::printLog(QsLogging::Level type,QString msg)
 /**
  * @brief subandpubserver::startServer 启动服务器
  */
-bool subandpubserver::startServer(void)
+bool subandpubserver::startServer()
 {
     if(m_websocketServerPort <= 0)
         return false;
@@ -270,10 +266,10 @@ bool subandpubserver::startServer(void)
 
     closeAllBrotherServers();
 
-    for(int i=0;i<m_allBrotherServerList.size();i++)
+    for(auto & i : m_allBrotherServerList)
     {
-        if(addBrotherServer(m_allBrotherServerList[i].ip,
-                            m_allBrotherServerList[i].port))
+        if(addBrotherServer(i.ip,
+                            i.port))
         {
 
         }
@@ -315,7 +311,7 @@ void subandpubserver::stopServer(bool isShowlog)
 /**
  * @brief subandpubserver::system_update 系统更新定时器
  */
-void subandpubserver::timer_system_update(void)
+void subandpubserver::timer_system_update()
 {   
     QHash<QString,QList<tagSendFailMsgItem>>::iterator itermsg = m_allSendFailMessageList.begin();
     for(;itermsg != m_allSendFailMessageList.end();++itermsg)
@@ -324,21 +320,21 @@ void subandpubserver::timer_system_update(void)
             continue;
 
         QList<tagSendFailMsgItem>::iterator itersend = itermsg.value().begin();
-        for(;itersend != itermsg.value().end();)
+        while(itersend != itermsg.value().end())
         {
             bool isSendOk = false;
 
             // 检测客户端是否在线
             QHash<QString,tagSendFailClient>::iterator iterclient = m_allSendFailClientList.find(itermsg.key());
             if(iterclient != m_allSendFailClientList.end() &&
-               iterclient.value().socket != NULL &&
+               iterclient.value().socket != nullptr &&
                iterclient.value().socket->state() == QAbstractSocket::ConnectedState)
             {
                 if(iterclient.value().identity == IDENTITY_PUBLER)
                 {
-                    if(isExistClientSubMessage(iterclient.value().socket,(*itersend).message) &&
+                    if(isExistClientSubMessage(iterclient.value().socket,itersend->message) &&
                        m_MainWebSocketServer.Send(iterclient.value().socket,
-                                           (*itersend).contents) > 0)
+                                           itersend->contents) > 0)
                         isSendOk = true;
                 }
                 else if(iterclient.value().identity == IDENTITY_SERVER)
@@ -346,7 +342,7 @@ void subandpubserver::timer_system_update(void)
                     QHash<QWebSocket*,CWebSocketClient*>::iterator iterbro = m_brotherServers.find(iterclient.value().socket);
                     if(iterbro != m_brotherServers.end())
                     {
-                        if(iterbro.value()->Send((*itersend).contents) > 0)
+                        if(iterbro.value()->Send(itersend->contents) > 0)
                             isSendOk = true;
                     }
                 }
@@ -363,9 +359,9 @@ void subandpubserver::timer_system_update(void)
 /**
  * @brief subandpubserver::sendMessagetoBrother 给所有兄弟结点发送消息
  * @param data
- * @param conn
+ * @param client
  */
-void subandpubserver::sendMessagetoBrother(QString data,QWebSocket* client)
+void subandpubserver::sendMessagetoBrother(const QString& data, const QWebSocket* client)
 {
     if(data.isEmpty() || m_brotherServers.isEmpty())
         return;
@@ -373,7 +369,7 @@ void subandpubserver::sendMessagetoBrother(QString data,QWebSocket* client)
     QHash<QWebSocket*,CWebSocketClient*>::iterator iter = m_brotherServers.begin();
     for(;iter != m_brotherServers.end();++iter)
     {
-        if(client != NULL && iter.key() == client)
+        if(client != nullptr && iter.key() == client)
             continue;
 
         iter.value()->Send(data);
@@ -385,7 +381,7 @@ void subandpubserver::sendMessagetoBrother(QString data,QWebSocket* client)
  * @param message
  * @return
  */
-bool subandpubserver::isExistSubscribeMessage(QString message)
+bool subandpubserver::isExistSubscribeMessage(const QString& message)
 {
     if(message.isEmpty())
         return false;
@@ -403,9 +399,9 @@ bool subandpubserver::isExistSubscribeMessage(QString message)
  * @param message
  * @return
  */
-bool subandpubserver::isExistClientSubMessage(QWebSocket* client,QString message)
+bool subandpubserver::isExistClientSubMessage(const QWebSocket* client,const QString& message)
 {
-    if(client == NULL || message.isEmpty())
+    if(client == nullptr || message.isEmpty())
         return false;
 
     QHash<QString,QList<QWebSocket*>>::iterator iter = m_allsubscribes.find(message);
@@ -427,9 +423,9 @@ bool subandpubserver::isExistClientSubMessage(QWebSocket* client,QString message
  * @param message
  * @return
  */
-bool subandpubserver::deleteclientFromSubMessage(QWebSocket* client,QString message)
+bool subandpubserver::deleteclientFromSubMessage(const QWebSocket* client,const QString& message)
 {
-    if(client == NULL || message.isEmpty())
+    if(client == nullptr || message.isEmpty())
         return false;
 
     QHash<QString,QList<QWebSocket*>>::iterator iter = m_allsubscribes.find(message);
@@ -462,9 +458,9 @@ bool subandpubserver::deleteclientFromSubMessage(QWebSocket* client,QString mess
  * @param msg
  * @return
  */
-QString subandpubserver::generateMessageID(QWebSocket* client,QString msg)
+QString subandpubserver::generateMessageID(const QWebSocket* client,const QString& msg)
 {
-    if(client == NULL || msg == "")
+    if(client == nullptr || msg == "")
         return m_serverUUID;
 
     QString tmpString = client->localAddress().toString()+
@@ -481,7 +477,7 @@ QString subandpubserver::generateMessageID(QWebSocket* client,QString msg)
  * @param pwd
  * @return
  */
-bool subandpubserver::isSubscribeMessagePWDSame(QString message,QString pwd)
+bool subandpubserver::isSubscribeMessagePWDSame(const QString& message,const QString& pwd)
 {
     if(message == "" || pwd == "" || m_allsubscribePWDs.isEmpty())
         return false;
@@ -499,7 +495,7 @@ bool subandpubserver::isSubscribeMessagePWDSame(QString message,QString pwd)
  * @param message
  * @return
  */
-bool subandpubserver::isExistPWDsubMessage(QString message)
+bool subandpubserver::isExistPWDsubMessage(const QString& message)
 {
     if(message == "" || m_allsubscribePWDs.isEmpty())
         return false;
@@ -618,7 +614,7 @@ void subandpubserver::OnProcessNetText(QWebSocket *conn,QString mes)
         tagSendFailClient *pSendFailClient = getSendFailClient(conn);
 
         printLog(QsLogging::Level::InfoLevel,
-                 (pSendFailClient != NULL ? pSendFailClient->uuid : "")+
+                 (pSendFailClient != nullptr ? pSendFailClient->uuid : "")+
                  "["+
                  convert_to_ipv4_addr(conn->peerAddress())+
                  "_"+
@@ -671,7 +667,7 @@ void subandpubserver::OnProcessNetText(QWebSocket *conn,QString mes)
         tagSendFailClient *pSendFailClient = getSendFailClient(conn);
 
         printLog(QsLogging::Level::InfoLevel,
-                 (pSendFailClient != NULL ? pSendFailClient->uuid : "")+
+                 (pSendFailClient != nullptr ? pSendFailClient->uuid : "")+
                  "["+
                  convert_to_ipv4_addr(conn->peerAddress())+
                  "_"+
@@ -757,7 +753,7 @@ void subandpubserver::OnProcessNetText(QWebSocket *conn,QString mes)
         QHash<QString,tagSendFailClient>::iterator iterfail = m_allSendFailClientList.begin();
         for(;iterfail != m_allSendFailClientList.end();++iterfail)
         {
-            if(iterfail.value().socket != NULL)
+            if(iterfail.value().socket != nullptr)
                 continue;
 
             QHash<QString,QList<tagSendFailMsgItem>>::iterator itermsg = m_allSendFailMessageList.find(iterfail.value().uuid);
@@ -805,7 +801,7 @@ void subandpubserver::OnProcessNetText(QWebSocket *conn,QString mes)
         if(pSendFailClient)
         {
             printLog(QsLogging::Level::InfoLevel,
-                     (pSendFailClient != NULL ? pSendFailClient->uuid : "")+
+                     (pSendFailClient != nullptr ? pSendFailClient->uuid : "")+
                      "["+
                      convert_to_ipv4_addr(conn->peerAddress())+
                      "_"+
@@ -860,7 +856,7 @@ void subandpubserver::OnProcessNetText(QWebSocket *conn,QString mes)
     {
         QString clientuuid = msgObj["uuid"].toString();
         int subId = msgObj["subId"].isNull() ? -1 : msgObj["subId"].toInt();
-        ClientIdentity pClientIdentity = (ClientIdentity)msgObj["type"].toInt();
+        ClientIdentity pClientIdentity = static_cast<ClientIdentity>(msgObj["type"].toInt());
 
         if(subId == IDD_SUBANDPUB_SUCCESS ||
            subId == IDD_SUBANDPUB_CLIENT_EXIST)
@@ -876,8 +872,8 @@ void subandpubserver::OnProcessNetText(QWebSocket *conn,QString mes)
         }
 
         tagSendFailClient *pSendFailClient = getSendFailClient2(clientuuid);
-        if((pSendFailClient != NULL &&
-           pSendFailClient->socket != NULL) ||
+        if((pSendFailClient != nullptr &&
+           pSendFailClient->socket != nullptr) ||
            clientuuid == this->getServerUUID())
         {
             QJsonObject retObj;
@@ -920,9 +916,9 @@ void subandpubserver::OnProcessNetText(QWebSocket *conn,QString mes)
     }
 }
 
-tagSendFailClient* subandpubserver::getSendFailClient2(QString uuid)
+tagSendFailClient* subandpubserver::getSendFailClient2(const QString& uuid)
 {
-    if(uuid == "") return NULL;
+    if(uuid == "") return nullptr;
 
     QHash<QString,tagSendFailClient>::iterator iter = m_allSendFailClientList.find(uuid);
     if(iter != m_allSendFailClientList.end())
@@ -930,7 +926,7 @@ tagSendFailClient* subandpubserver::getSendFailClient2(QString uuid)
         return &iter.value();
     }
 
-    return NULL;
+    return nullptr;
 }
 
 /**
@@ -938,9 +934,9 @@ tagSendFailClient* subandpubserver::getSendFailClient2(QString uuid)
  * @param client
  * @return
  */
-tagSendFailClient* subandpubserver::getSendFailClient(QWebSocket *client)
+tagSendFailClient* subandpubserver::getSendFailClient(const QWebSocket *client)
 {
-    if(client == NULL) return NULL;
+    if(client == nullptr) return nullptr;
 
     QHash<QString,tagSendFailClient>::iterator iter = m_allSendFailClientList.begin();
     for(;iter != m_allSendFailClientList.end();++iter)
@@ -949,7 +945,7 @@ tagSendFailClient* subandpubserver::getSendFailClient(QWebSocket *client)
             return &iter.value();
     }
 
-    return NULL;
+    return nullptr;
 }
 
 /**
@@ -957,7 +953,7 @@ tagSendFailClient* subandpubserver::getSendFailClient(QWebSocket *client)
  * @param message
  * @param content
  */
-bool subandpubserver::sendMessageToClient(QString message,QString content)
+bool subandpubserver::sendMessageToClient(const QString& message,const QString& content)
 {
     if(message == "" || content == "" || m_allsubscribes.isEmpty())
         return false;
@@ -982,12 +978,12 @@ bool subandpubserver::sendMessageToClient(QString message,QString content)
 void subandpubserver::OnProcessConnectedNetMes(QWebSocket *conn)
 {
     CWebSocketClient *pbrotherclient = isExistClientInBrotherServers(conn);
-    if(pbrotherclient != NULL)
+    if(pbrotherclient != nullptr)
     {
         tagSendFailClient *pSendFailClient = getSendFailClient(conn);
         printLog(QsLogging::Level::InfoLevel,
                  QString::fromLocal8Bit("服务器:")+
-                 (pSendFailClient != NULL ? pSendFailClient->uuid : "")+
+                 (pSendFailClient != nullptr ? pSendFailClient->uuid : "")+
                  "["+
                  pbrotherclient->getServerIP()+
                  "_"+
@@ -1010,16 +1006,16 @@ void subandpubserver::OnProcessConnectedNetMes(QWebSocket *conn)
  * @brief subandpubserver::ResetSendFailClient 重置掉线客户端
  * @param client
  */
-void subandpubserver::ResetSendFailClient(QWebSocket *client)
+void subandpubserver::ResetSendFailClient(const QWebSocket *client)
 {
-    if(m_allSendFailClientList.isEmpty() || client == NULL)
+    if(m_allSendFailClientList.isEmpty() || client == nullptr)
         return;
 
     QHash<QString,tagSendFailClient>::iterator iterfail = m_allSendFailClientList.begin();
     for(;iterfail != m_allSendFailClientList.end();++iterfail)
     {
         if(iterfail.value().socket == client)
-            iterfail.value().socket = NULL;
+            iterfail.value().socket = nullptr;
     }
 }
 
@@ -1030,7 +1026,7 @@ void subandpubserver::ResetSendFailClient(QWebSocket *client)
 void subandpubserver::OnProcessDisconnectedNetMes(QWebSocket *conn)
 {
     CWebSocketClient *pbrotherclient = isExistClientInBrotherServers(conn);
-    if(pbrotherclient != NULL)
+    if(pbrotherclient != nullptr)
     {
         ResetSendFailClient(conn);
 
@@ -1045,7 +1041,7 @@ void subandpubserver::OnProcessDisconnectedNetMes(QWebSocket *conn)
 
     // 检测在线用户是否有订阅消息，如果有，就取消订阅
     QHash<QString,QList<QWebSocket*>>::iterator iter2 = m_allsubscribes.begin();
-    for(;iter2 != m_allsubscribes.end();)
+    while(iter2 != m_allsubscribes.end())
     {
         QList<QWebSocket*>::iterator iter3 = std::find(iter2.value().begin(),
                                                iter2.value().end(),
@@ -1059,7 +1055,7 @@ void subandpubserver::OnProcessDisconnectedNetMes(QWebSocket *conn)
         tagSendFailClient *pSendFailClient = getSendFailClient((*iter3));
 
         printLog(QsLogging::Level::InfoLevel,
-                 (pSendFailClient != NULL ? pSendFailClient->uuid : "")+
+                 (pSendFailClient != nullptr ? pSendFailClient->uuid : "")+
                  "["+
                  convert_to_ipv4_addr((*iter3)->peerAddress())+
                  "_"+
@@ -1094,7 +1090,7 @@ void subandpubserver::OnProcessDisconnectedNetMes(QWebSocket *conn)
 
             printLog(QsLogging::Level::InfoLevel,
                      QString::fromLocal8Bit("客户端:")+
-                     (pSendFailClient != NULL ? pSendFailClient->uuid : "")+
+                     (pSendFailClient != nullptr ? pSendFailClient->uuid : "")+
                      "["+
                      convert_to_ipv4_addr(conn->peerAddress())+
                      "_"+

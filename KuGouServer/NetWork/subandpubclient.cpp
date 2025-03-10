@@ -1,10 +1,7 @@
 ﻿#include "subandpubclient.h"
 #include "QsLog.h"
 
-#include <QDateTime>
-#include <QUuid>
 #include <QFileInfo>
-#include <QXmlStreamWriter>
 #include <QXmlStreamReader>
 
 subandpubclient::subandpubclient(QObject *parent)
@@ -27,7 +24,7 @@ subandpubclient::~subandpubclient()
  * @brief subandpubclient::Open 打开指定地址的网络连接
  * @param url
  */
-void subandpubclient::Open(QUrl url)
+void subandpubclient::Open(const QUrl& url)
 {
     if(m_clientUUID == "")
     {
@@ -44,7 +41,7 @@ void subandpubclient::Open(QUrl url)
  * @param ip
  * @param port
  */
-void subandpubclient::Open2(QString ip,int port)
+void subandpubclient::Open2(const QString& ip,int port)
 {
     if(ip == "" || port <= 0)
         return;
@@ -69,7 +66,7 @@ void subandpubclient::Open2(QString ip,int port)
 /**
  * @brief subandpubclient::Close 关闭连接
  */
-void subandpubclient::Close(void)
+void subandpubclient::Close()
 {
     m_updateTimer.stop();
 
@@ -80,7 +77,7 @@ void subandpubclient::Close(void)
 /**
  * @brief subandpubclient::timer_system_update 系统更新定时器
  */
-void subandpubclient::timer_system_update(void)
+void subandpubclient::timer_system_update()
 {
     if(m_isAutoSubMsgSuccesed &&
        m_pubMessageList.isEmpty() ||
@@ -88,12 +85,12 @@ void subandpubclient::timer_system_update(void)
         return;
 
     QList<tagPubMessage>::iterator iter = m_pubMessageList.begin();
-    for(;iter != m_pubMessageList.end();)
+    while(iter != m_pubMessageList.end())
     {
-        if(this->pubMessage((*iter).message,
-                            (*iter).content,
-                            (*iter).password,
-                            (*iter).time,
+        if(this->pubMessage(iter->message,
+                            iter->content,
+                            iter->password,
+                            iter->time,
                             false))
             iter = m_pubMessageList.erase(iter);
         else
@@ -105,7 +102,7 @@ void subandpubclient::timer_system_update(void)
  * @brief subandpubclient::isConnected 检测连接是否建立成功
  * @return
  */
-bool subandpubclient::isConnected(void)
+bool subandpubclient::isConnected()
 {
     return m_mainWebSocketClient.isConnected();
 }
@@ -114,7 +111,7 @@ bool subandpubclient::isConnected(void)
  * @brief subandpubclient::getCurrentDate 得到当前时间
  * @return
  */
-QString subandpubclient::getCurrentDate(void)
+QString subandpubclient::getCurrentDate()
 {
     QDateTime dateTime =QDateTime::currentDateTime();
     return dateTime.toString("<b>[yyyy-MM-dd hh:mm:ss]</b> ");
@@ -125,7 +122,7 @@ QString subandpubclient::getCurrentDate(void)
  * @param message
  * @param password
  */
-void subandpubclient::subMessage(QString message,QString password)
+void subandpubclient::subMessage(const QString& message,const QString& password)
 {
     if(!m_mainWebSocketClient.isConnected())
         return;
@@ -142,7 +139,7 @@ void subandpubclient::subMessage(QString message,QString password)
  * @brief subandpubclient::unSubMessage 退订消息
  * @param message
  */
-void subandpubclient::unSubMessage(QString message)
+void subandpubclient::unSubMessage(const QString& message)
 {
     if(!m_mainWebSocketClient.isConnected())
         return;
@@ -160,8 +157,8 @@ void subandpubclient::unSubMessage(QString message)
  * @param content
  * @param password
  */
-bool subandpubclient::pubMessage(QString message,QString content,
-                                 QString password,QString time,
+bool subandpubclient::pubMessage(const QString& message,const QString& content,
+                                 const QString& password,const QString& time,
                                  bool isAddofflinelist)
 {
     if(!m_mainWebSocketClient.isConnected())
@@ -211,7 +208,7 @@ bool subandpubclient::pubMessage(QString message,QString content,
  * @param type
  * @param msg
  */
-void subandpubclient::printLog(QsLogging::Level type,QString msg)
+void subandpubclient::printLog(QsLogging::Level type,const QString& msg)
 {
     switch (type)
     {
@@ -240,7 +237,7 @@ void subandpubclient::printLog(QsLogging::Level type,QString msg)
  * @brief subandpubclient::deleteSubMessage 清除指定的订阅消息
  * @param message
  */
-void subandpubclient::deleteSubMessage(QString message)
+void subandpubclient::deleteSubMessage(const QString& message)
 {
     if(message == "" || m_subMessageList.isEmpty())
         return;
@@ -366,7 +363,7 @@ void subandpubclient::OnProcessNetText(QWebSocket *conn,QString mes)
 /**
  * @brief subandpubclient::RandomGenerateClientUUID 生成一个随机的ID
  */
-QString subandpubclient::RandomGenerateClientUUID(void)
+QString subandpubclient::RandomGenerateClientUUID()
 {
     return QUuid::createUuid().toString();
 }
@@ -425,7 +422,7 @@ void subandpubclient::OnProcessDisconnectedNetMes(QWebSocket *conn)
  * @param filepath
  * @return
  */
-bool subandpubclient::loadConfigFile(QString filepath)
+bool subandpubclient::loadConfigFile(const QString& filepath)
 {
     QFileInfo pfileinfo(filepath);
     if(!pfileinfo.exists())
@@ -470,7 +467,7 @@ bool subandpubclient::loadConfigFile(QString filepath)
  * @param filepath
  * @return
  */
-bool subandpubclient::savaConfigFile(QString filepath)
+bool subandpubclient::savaConfigFile(const QString& filepath)
 {
     QString tmpCurPath = (filepath == "" ? m_currentConfigPath : filepath);
 

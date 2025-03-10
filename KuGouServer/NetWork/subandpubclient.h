@@ -1,11 +1,8 @@
-﻿#ifndef _SUBANDPUB_CLIENT_H_INCLUDE_
-#define _SUBANDPUB_CLIENT_H_INCLUDE_
+﻿#ifndef SUBANDPUB_CLIENT_H_INCLUDE_
+#define SUBANDPUB_CLIENT_H_INCLUDE_
 
 #include <QObject>
-#include <QHash>
-#include <QList>
-#include <QTimer>
-
+#include <utility>
 #include "networkframemanager.h"
 #include "cwebsocketclient.h"
 #include "common.h"
@@ -17,54 +14,54 @@ class subandpubclient : public QObject , public NetworkFrameManager
 
 public:
     explicit subandpubclient(QObject *parent = nullptr);
-    ~subandpubclient();
+    ~subandpubclient() override;
 
     /// 打开指定地址的网络连接
-    void Open2(QString ip,int port);
+    void Open2(const QString& ip,int port);
     /// 关闭连接
-    void Close(void);
+    void Close();
     /// 检测连接是否建立成功
-    bool isConnected(void);
+    bool isConnected();
     /// 是否断线重连后自动订阅消息
-    inline bool isAutoSubMessage(void) { return m_isAutosubMessage; }
+    inline bool isAutoSubMessage() const { return m_isAutosubMessage; }
     /// 设置是否断线重连后自动订阅消息
     inline void setAutoSubMessage(bool isenable) { m_isAutosubMessage = isenable; }
     /// 得到订阅的消息列表
-    inline QHash<QString,QString>& getsubMessageList(void) { return m_subMessageList; }
+    inline QHash<QString,QString>& getsubMessageList() { return m_subMessageList; }
     /// 清除订阅的消息列表
-    inline void clearSubMessages(void) { m_subMessageList.clear(); }
+    inline void clearSubMessages() { m_subMessageList.clear(); }
     /// 得到客户端唯一ID
-    inline QString getClientUUID(void) { return m_clientUUID; }
+    inline QString getClientUUID() { return m_clientUUID; }
     /// 设置客户端唯一ID
-    inline void setClientUUID(QString uuid) { m_clientUUID = uuid; }
+    inline void setClientUUID(QString uuid) { m_clientUUID = std::move(uuid); }
     /// 得到连接的服务器IP
-    inline QString getServerIP(void) { return m_serverip; }
+    inline QString getServerIP() { return m_serverip; }
     /// 设置连接的服务器IP
-    inline void setServerIP(QString ip) { m_serverip = ip; }
+    inline void setServerIP(QString ip) { m_serverip = std::move(ip); }
     /// 得到连接的服务器端口
-    inline int getServerPort(void) { return m_serverport; }
+    inline int getServerPort() const { return m_serverport; }
     /// 设置连接的服务器端口
     inline void setServerPort(int port) { m_serverport = port; }
     /// 生成一个随机的ID
-    QString RandomGenerateClientUUID(void);
+    QString RandomGenerateClientUUID();
     /// 通过配置文件
-    bool loadConfigFile(QString filepath);
+    bool loadConfigFile(const QString& filepath);
     /// 保存配置文件
-    bool savaConfigFile(QString filepath="");
+    bool savaConfigFile(const QString& filepath="");
 
     /// 订阅消息
-    void subMessage(QString message,QString password="");
+    void subMessage(const QString& message,const QString& password="");
     /// 退订消息
-    void unSubMessage(QString message);
+    void unSubMessage(const QString& message);
     /// 发布消息
-    bool pubMessage(QString message,QString content,
-                    QString password="",QString time="",
+    bool pubMessage(const QString& message,const QString& content,
+                    const QString& password="",const QString& time="",
                     bool isAddofflinelist=true);
 
 private:
     /// 清除指定的订阅消息
-    void deleteSubMessage(QString message);
-    void Open(QUrl url);
+    void deleteSubMessage(const QString& message);
+    void Open(const QUrl& url);
 
 signals:
     /// 日志消息
@@ -74,21 +71,21 @@ signals:
 
 private:
     /// 打印用户日志
-    void printLog(QsLogging::Level type,QString msg);
+    void printLog(QsLogging::Level type,const QString& msg);
     /// 得到当前时间
-    QString getCurrentDate(void);
+    QString getCurrentDate();
 
 protected:
     /// 处理网络字符串消息
-    virtual void OnProcessNetText(QWebSocket *conn,QString mes);
+    void OnProcessNetText(QWebSocket *conn,QString mes) override;
     /// 处理一个新的连接到达
-    virtual void OnProcessConnectedNetMes(QWebSocket *conn);
+    void OnProcessConnectedNetMes(QWebSocket *conn) override;
     /// 处理一个连接关闭
-    virtual void OnProcessDisconnectedNetMes(QWebSocket *conn);
+    void OnProcessDisconnectedNetMes(QWebSocket *conn) override;
 
 private slots:
     /// 系统更新定时器
-    void timer_system_update(void);
+    void timer_system_update();
 
 private:
     CWebSocketClient m_mainWebSocketClient;
@@ -103,4 +100,4 @@ private:
     QList<tagPubMessage> m_pubMessageList;              /**< 发送不成功消息列表 */
 };
 
-#endif // SUBANDPUBCLIENT_H
+#endif // SUBANDPUB_CLIENT_H_INCLUDE_

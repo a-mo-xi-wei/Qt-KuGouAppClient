@@ -1,17 +1,11 @@
 ﻿#include "networkframemanager.h"
-
-#include "QtWebSockets/qwebsocket.h"
 #include "cwebsocketserver.h"
 
 NetworkFrameManager::NetworkFrameManager()
-{
-
-}
+= default;
 
 NetworkFrameManager::~NetworkFrameManager()
-{
-
-}
+= default;
 
 /**
  * @brief NetworkFrameManager::OnProcessConnectedNetMes 处理一个新的连接到达
