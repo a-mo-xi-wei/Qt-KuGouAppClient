@@ -1,6 +1,8 @@
 ﻿#ifndef _NEDALLOCATED_OBJECT_H_
 #define _NEDALLOCATED_OBJECT_H_
 
+#include "common.h"
+
 class NedAllocatedObject {
 public:
     explicit NedAllocatedObject() {
