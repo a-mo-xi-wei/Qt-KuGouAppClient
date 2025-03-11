@@ -68,13 +68,28 @@ bool chttpserver::listen(int port,QString server_crt,QString server_key)
 void chttpserver::onProcessHttpAccepted(const QPointer<JQHttpServer::Session> &session,QObject *mainObj)
 {
     QMutexLocker locker(&m_htmlServerMutex);
-
+/*
     if(onProcessLocalFileLoad(session) || m_NetworkFrameManager == nullptr)
         return;
 
     if(!m_NetworkFrameManager->OnProcessHttpAccepted(this,session))
     {
         session->replyBytes(QString::fromLocal8Bit("当前页面不存在!").toUtf8(),"text/html; charset=UTF-8");
+    }
+*/
+    // 直接跳过静态文件处理
+    if (m_NetworkFrameManager == nullptr) {
+        session->replyBytes("Server error: No request handler", "text/plain");
+        return;
+    }
+
+    // 强制所有请求由 NetworkFrameManager 处理 (不再是Web应用服务器，而是API服务器)
+    if (!m_NetworkFrameManager->OnProcessHttpAccepted(this,session)) {
+        // 可自定义错误格式（如 JSON）
+        session->replyBytes(
+            R"({"error": "Endpoint not found"})",
+            "application/json; charset=UTF-8"
+        );
     }
 }
 
@@ -231,7 +246,7 @@ void chttpserver::printLog(QsLogging::Level type,QString msg)
  * @brief CModbusClient::getCurrentDate 得到当前时间
  * @return
  */
-QString chttpserver::getCurrentDate(void)
+QString chttpserver::getCurrentDate()
 {
     QDateTime dateTime =QDateTime::currentDateTime();
     return dateTime.toString("<b>[yyyy-MM-dd hh:mm:ss]</b> ");

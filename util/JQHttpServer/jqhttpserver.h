@@ -60,11 +60,11 @@ class Session: public QObject
     Q_DISABLE_COPY( Session )
 
 public:
-    Session( const QPointer< QIODevice > &socket );
+    Session( const QPointer<QIODevice> &socket );
 
     ~Session();
 
-    void setHandleAcceptedCallback(const std::function<void(const QPointer<Session> &) > &callback) { handleAcceptedCallback_ = callback; }
+    void setHandleAcceptedCallback(const std::function<void(const QPointer<Session> &)> &callback) { handleAcceptedCallback_ = callback; }
 
     QPointer<QIODevice> ioDevice() { return ioDevice_; }
 
@@ -127,9 +127,9 @@ private:
 private:
     static QAtomicInt remainSession_;
 
-    QPointer< QIODevice >                                ioDevice_;
-    std::function< void( const QPointer<Session> & ) > handleAcceptedCallback_;
-    QSharedPointer< QTimer >                             autoCloseTimer_;
+    QPointer<QIODevice>                                   ioDevice_;
+    std::function<void( const QPointer<Session> & )>      handleAcceptedCallback_;
+    QSharedPointer<QTimer>                                autoCloseTimer_;
 
     QByteArray receiveBuffer_;
 
@@ -138,7 +138,7 @@ private:
     QString                  requestUrl_;
     QString                  requestCrlf_;
     QByteArray               requestBody_;
-    QMap< QString, QString > requestHeader_;
+    QMap<QString, QString> requestHeader_;
 
     bool   headerAcceptedFinished_  = false;
     bool   contentAcceptedFinished_ = false;
@@ -149,7 +149,7 @@ private:
     qint64     replyBodySize_ = -1;
 
     qint64                      waitWrittenByteCount_ = -1;
-    QSharedPointer< QIODevice > replyIoDevice_;
+    QSharedPointer<QIODevice> replyIoDevice_;
 };
 
 class AbstractManage: public QObject
@@ -165,14 +165,14 @@ public:
     void setMainObject(QObject *obj) { m_mainObj = obj; }
     QObject* getMainObject() { return m_mainObj; }
 
-    void setHttpAcceptedCallback(const std::function< void(const QPointer<Session> &session,QObject *mainObj) > &httpAcceptedCallback)
+    void setHttpAcceptedCallback(const std::function<void(const QPointer<Session> &session,QObject *mainObj)> &httpAcceptedCallback)
     {
         httpAcceptedCallback_ = httpAcceptedCallback;
     }
 
-    QSharedPointer< QThreadPool > handleThreadPool() { return handleThreadPool_; }
+    QSharedPointer<QThreadPool> handleThreadPool() { return handleThreadPool_; }
 
-    QSharedPointer< QThreadPool > serverThreadPool() { return serverThreadPool_; }
+    QSharedPointer<QThreadPool> serverThreadPool() { return serverThreadPool_; }
 
     virtual bool isRunning() = 0;
 
@@ -198,17 +198,17 @@ protected:
 
 signals:
     void readyToClose();
-    //void onRedReady(const QPointer< JQHttpServer::Session > &session);
+    //void onRedReady(const QPointer<JQHttpServer::Session> &session);
 
 protected:
-    QSharedPointer< QThreadPool > serverThreadPool_;
-    QSharedPointer< QThreadPool > handleThreadPool_;
+    QSharedPointer<QThreadPool> serverThreadPool_;
+    QSharedPointer<QThreadPool> handleThreadPool_;
 
     QMutex mutex_;
 
-    std::function< void(const QPointer<Session> &session,QObject *mainObj) > httpAcceptedCallback_;
+    std::function<void(const QPointer<Session> &session,QObject *mainObj)> httpAcceptedCallback_;
 
-    QSet< Session * > availableSessions_;
+    QSet<Session *> availableSessions_;
 
     QObject *m_mainObj;
 };
@@ -234,7 +234,7 @@ private:
     void onFinish();
 
 private:
-    QPointer< QTcpServer > tcpServer_;
+    QPointer<QTcpServer> tcpServer_;
 
     QHostAddress listenAddress_ = QHostAddress::Any;
     quint16 listenPort_ = 0;
@@ -257,7 +257,7 @@ public:
                  const quint16 &                                        port,
                  const QString &                                        crtFilePath,
                  const QString &                                        keyFilePath,
-                 const QList< QPair< QString, QSsl::EncodingFormat > > &caFileList = {},    // [ { filePath, format } ]
+                 const QList<QPair<QString, QSsl::EncodingFormat>> &caFileList = {},    // [ { filePath, format } ]
                  const QSslSocket::PeerVerifyMode &                     peerVerifyMode = QSslSocket::VerifyNone );
     quint16 getListenPort() { return listenPort_; }
 
@@ -269,12 +269,12 @@ private:
     void onFinish();
 
 private:
-    QPointer< SslServerHelper > tcpServer_;
+    QPointer<SslServerHelper> tcpServer_;
 
     QHostAddress listenAddress_ = QHostAddress::Any;
     quint16      listenPort_    = 0;
 
-    QSharedPointer< QSslConfiguration > sslConfiguration_;
+    QSharedPointer<QSslConfiguration> sslConfiguration_;
 };
 
 
@@ -283,7 +283,7 @@ enum ServiceConfigEnum
     ServiceUnknownConfig,
     ServiceHttpListenPort,
     ServiceHttpsListenPort,
-    ServiceProcessor, // QPointer< QObject > or QList< QPointer< QObject > >
+    ServiceProcessor, // QPointer<QObject> or QList<QPointer<QObject>>
     ServiceUuid,
     ServiceSslCrtFilePath,
     ServiceSslKeyFilePath,
@@ -308,7 +308,7 @@ private:
 
     struct ApiConfig
     {
-        QPointer< QObject > process;
+        QPointer<QObject> process;
         QString             apiMethod;
         QString             apiName;
         QString             slotName;
@@ -318,11 +318,11 @@ private:
     class Recoder
     {
     public:
-        Recoder( const QPointer< JQHttpServer::Session > &session );
+        Recoder( const QPointer<JQHttpServer::Session> &session );
 
         ~Recoder();
 
-        QPointer< JQHttpServer::Session > session_;
+        QPointer<JQHttpServer::Session> session_;
         QDateTime                         acceptedTime_;
         QString                           serviceUuid_;
         QString                           apiName;
@@ -335,53 +335,53 @@ public:
     ~Service() = default;
 
 
-    static QSharedPointer< Service > createService( const QMap< ServiceConfigEnum, QVariant > &config );
+    static QSharedPointer<Service> createService( const QMap<ServiceConfigEnum, QVariant> &config );
 
 
-    void registerProcessor( const QPointer< QObject > &processor );
+    void registerProcessor( const QPointer<QObject> &processor );
 
 
-    virtual QJsonDocument extractPostJsonData( const QPointer< JQHttpServer::Session > &session );
+    virtual QJsonDocument extractPostJsonData( const QPointer<JQHttpServer::Session> &session );
 
     static void reply(
-        const QPointer< JQHttpServer::Session > &session,
+        const QPointer<JQHttpServer::Session> &session,
         const QJsonObject &data,
         const bool &isSucceed = true,
         const QString &message = { },
         const int &httpStatusCode = 200 );
 
     static void reply(
-        const QPointer< JQHttpServer::Session > &session,
+        const QPointer<JQHttpServer::Session> &session,
         const bool &isSucceed = true,
         const QString &message = { },
         const int &httpStatusCode = 200 );
 
 
-    virtual void httpGetPing( const QPointer< JQHttpServer::Session > &session );
+    virtual void httpGetPing( const QPointer<JQHttpServer::Session> &session );
 
-    virtual void httpGetFaviconIco( const QPointer< JQHttpServer::Session > &session );
+    virtual void httpGetFaviconIco( const QPointer<JQHttpServer::Session> &session );
 
-    virtual void httpOptions( const QPointer< JQHttpServer::Session > &session );
+    virtual void httpOptions( const QPointer<JQHttpServer::Session> &session );
 
 protected:
-    bool initialize( const QMap< ServiceConfigEnum, QVariant > &config );
+    bool initialize( const QMap<ServiceConfigEnum, QVariant> &config );
 
 private:
-    void onSessionAccepted( const QPointer< JQHttpServer::Session > &session );
+    void onSessionAccepted( const QPointer<JQHttpServer::Session> &session );
 
 
     static QString snakeCaseToCamelCase(const QString &source, const bool &firstCharUpper = false);
 
-    static QList< QVariantMap > variantListToListVariantMap(const QVariantList &source);
+    static QList<QVariantMap> variantListToListVariantMap(const QVariantList &source);
 
 private:
-    QSharedPointer< JQHttpServer::TcpServerManage > httpServerManage_;
-    QSharedPointer< JQHttpServer::SslServerManage > httpsServerManage_;
+    QSharedPointer<JQHttpServer::TcpServerManage> httpServerManage_;
+    QSharedPointer<JQHttpServer::SslServerManage> httpsServerManage_;
 
     QString                                     serviceUuid_;
-    QMap< QString, QMap< QString, ApiConfig > > schedules_;    // apiMethod -> apiName -> API
-    QMap< QString, std::function< void( const QPointer< JQHttpServer::Session > &session ) > > schedules2_; // apiPathPrefix -> callback
-    QPointer< QObject > certificateVerifier_;
+    QMap<QString, QMap<QString, ApiConfig>> schedules_;    // apiMethod -> apiName -> API
+    QMap<QString, std::function<void( const QPointer<JQHttpServer::Session> &session )>> schedules2_; // apiPathPrefix -> callback
+    QPointer<QObject> certificateVerifier_;
 };
 #endif
 

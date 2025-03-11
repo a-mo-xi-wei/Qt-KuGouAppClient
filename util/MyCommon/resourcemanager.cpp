@@ -127,7 +127,7 @@ void CResourceManager::loadFileResource(const QString& filepath, const bool isAd
         if(isAddPath) m_pSystemWorkingPathWatcher.addPath(filepath);
     }
 
-    QLOG_INFO() << "CResourceManager::loadFileResource:"+filepath+" load successed.";
+    QLOG_INFO() << "CResourceManager::loadFileResource: "+filepath+" load successed.";
 }
 
 /**
