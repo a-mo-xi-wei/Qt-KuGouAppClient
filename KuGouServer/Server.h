@@ -8,7 +8,8 @@
 #include "chttpserver.h"
 #include "sqlitedataprovider.h"
 
-class Server : public NetworkFrameManager {
+class Server : public QObject , public NetworkFrameManager {
+    Q_OBJECT
 public:
     Server();
 
@@ -19,7 +20,7 @@ private:
     bool OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServer::Session> &session) override;
 
 private:
-    chttpserver *httpserver;
+    chttpserver m_httpserver;
     SqliteDataProvider m_SqliteDataProvider;
 };
 
