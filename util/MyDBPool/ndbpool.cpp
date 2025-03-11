@@ -111,7 +111,8 @@ QSqlDatabase NDBPool::getNewConnection(DB_Type paramDB_Type,QString paramHostNam
                     NDBPool::mLock.unlock();
                     return innerDB;
                 }
-            } else {
+            }
+            else {
                 // 短连接
                 QString tempConnectionName = dbConnectPtr->unusedConnectionName.length()>0 ? dbConnectPtr->unusedConnectionName.pop() : QUuid::createUuid().toString();
                 QSqlDatabase innerDB = dbConnectPtr->getNewConnection(tempConnectionName);
@@ -144,7 +145,7 @@ QSqlDatabase NDBPool::getNewConnection(DB_Type paramDB_Type,QString paramHostNam
     } else {
         // 连接池不存在则创建并使用连接池
         NDBPool::mLock.lock();
-        NDBPool_p * tempPool = new NDBPool_p();
+        auto * tempPool = new NDBPool_p();
         poolMap.insert(tempItem.poolName, tempPool);
         tempPool->setHostName(paramHostName);
         tempPool->setDatabaseName(paramDatabaseName);
@@ -227,13 +228,20 @@ NDBPool::NDBPool(bool paramIsDebug, QObject *parent):QObject(parent)
 NDBPool::~NDBPool()
 {
     QMutexLocker locker(&(NDBPool::mLock));
-    foreach (QString hostName, poolMap.keys()) {
-        NDBPool_p * tempDBPool = poolMap.value(hostName);
-        if(tempDBPool){
+    // foreach (QString hostName, poolMap.keys()) {
+    //     NDBPool_p * tempDBPool = poolMap.value(hostName);
+    //     if(tempDBPool){
+    //         delete tempDBPool;
+    //         tempDBPool = nullptr;
+    //     }
+    // }
+    for (auto it = poolMap.begin(); it != poolMap.end(); ++it) {
+        if (const NDBPool_p *tempDBPool = it.value()) {
             delete tempDBPool;
-            tempDBPool = nullptr;
         }
     }
+    poolMap.clear();  // 清理 QMap
+
 }
 
 void NDBPool::slots_forceBreak()

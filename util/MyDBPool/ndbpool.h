@@ -13,9 +13,15 @@
 struct connectActive
 {
     connectActive()
-        : lastActiveTime(0),longConnect(false),curthread(nullptr) {}
-    connectActive(qint64 lat,QString pn,bool lc,Qt::HANDLE ct)
-        : lastActiveTime(lat),poolName(pn),longConnect(lc),curthread(ct) {}
+        : lastActiveTime(0)
+        , longConnect(false)
+        , curthread(nullptr) {}
+
+    connectActive(const qint64 lat, const QString &pn, const bool lc, const Qt::HANDLE ct)
+        : lastActiveTime(lat)
+        , poolName(pn)
+        , longConnect(lc)
+        , curthread(ct) {}
 
     qint64 lastActiveTime;
     QString poolName;
@@ -40,6 +46,7 @@ public:
 
     /**
      * @brief getNewConnection getNewConnection 获取一个可用的连接链接
+     * @param paramDB_Type 数据库类型
      * @param paramHostName 主机名
      * @param paramDatabaseName 数据库名字
      * @param paramUserName 数据库名字
@@ -47,7 +54,6 @@ public:
      * @param paramPort 数据库端口
      * @param longConnect 是否为长连接
      * @param longConnnectName 长连接名字
-     * @param paramDB_Type 数据库类型
      * @return
      */
     Q_INVOKABLE static QSqlDatabase getNewConnection(DB_Type paramDB_Type=QODBC,

@@ -19,7 +19,7 @@ public:
     // 建立与数据库的连接
     Q_INVOKABLE bool connect(const QString &dbPath);
     // 得到数据库文件路径
-    Q_INVOKABLE inline QString getdbPath() { return m_dbPath; }
+    Q_INVOKABLE QString getdbPath() { return m_dbPath; }
     // 执行SQL语句
     Q_INVOKABLE RecordSetList execSql(const QString& sql,QString connectionName="qt_sql_default_connection",bool longConnect=true);
     // 执行sql的insert语句

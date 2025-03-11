@@ -13,7 +13,8 @@
 SqliteDataProvider::SqliteDataProvider(QObject *parent)
     : QObject(parent)
 {
-
+    //初始化数据库连接池
+    init_dbpool(false,this);
 }
 
 /**
@@ -52,7 +53,7 @@ RecordSetList SqliteDataProvider::execTransaction(const QStringList& sqls,QStrin
 
     if(!tempDB.isOpen())
     {
-        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
+        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is valid:" << tempDB.isOpen() << "\n";
         return pRecordSetList;
     }
 

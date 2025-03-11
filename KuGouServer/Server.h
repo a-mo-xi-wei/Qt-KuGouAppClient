@@ -6,17 +6,21 @@
 #define SERVER_H
 
 #include "chttpserver.h"
+#include "sqlitedataprovider.h"
 
 class Server : public NetworkFrameManager {
 public:
     Server();
 
-    /// 处理http请求
+private:
+    void initDateBase();
+
+    // 处理http请求
     bool OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServer::Session> &session) override;
 
 private:
     chttpserver *httpserver;
+    SqliteDataProvider m_SqliteDataProvider;
 };
-
 
 #endif //SERVER_H
