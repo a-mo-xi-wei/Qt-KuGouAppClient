@@ -53,7 +53,7 @@ void init_log_file(const QString& filepath)
 void print_log(const LogLevel level, const QString &msg, const QString &isprintscreen)
 {
     QStringList printsreens = isprintscreen.split("|");
-    bool isPrint = (printsreens.size() > 0 && printsreens[0].toInt() == 1 ? true : false);
+    bool isPrint = (!printsreens.empty() && printsreens[0].toInt() == 1 ? true : false);
     bool isColor = (printsreens.size() > 1 && printsreens[1].toInt() == 1 ? true : false);
     bool isTime = (printsreens.size() > 2 && printsreens[2].toInt() == 1 ? true : false);
 
@@ -118,11 +118,11 @@ void clean_dbpool()
  *
  * @return 如果文件保存成功返回真，否则返回假
  */
-bool sava_file(QString srcfile,QString decfile)
+bool sava_file(const QString& srcfile,const QString& decfile)
 {
     bool preturnState = true;
 
-    QString appfiledir = decfile;
+    const QString& appfiledir = decfile;
     QString tmpFileDirPath = appfiledir.mid(0,appfiledir.lastIndexOf("/"));
 
     QDir dir(tmpFileDirPath);
@@ -155,7 +155,7 @@ bool sava_file(QString srcfile,QString decfile)
 }
 
 //拷贝文件：
-bool copyFileToPath(QString sourceDir ,QString toDir, bool coverFileIfExist)
+bool copyFileToPath(const QString& sourceDir ,QString toDir, bool coverFileIfExist)
 {
 	toDir.replace("\\","/");
 	if (sourceDir == toDir){
@@ -266,7 +266,7 @@ int FindFile(const QString& _filePath,QVector<QString> &filelist,
 
     //递归算法的核心部分
     do{
-        QFileInfo fileInfo = list.at(i);
+        const QFileInfo& fileInfo = list.at(i);
         //如果是文件夹，递归
         bool bisDir = fileInfo.isDir();
         if(bisDir) {
@@ -294,7 +294,7 @@ QString JsonToString(const QJsonObject& json)
 {
     if(json.isEmpty()) return "";
 
-    return QString(QJsonDocument(json).toJson(QJsonDocument::Compact));
+    return {QJsonDocument(json).toJson(QJsonDocument::Compact)};
 }
 
 /**
@@ -306,7 +306,7 @@ QString JsonArrayToString(const QJsonArray& json)
 {
     if(json.isEmpty()) return "";
 
-    return QString(QJsonDocument(json).toJson(QJsonDocument::Compact));
+    return {QJsonDocument(json).toJson(QJsonDocument::Compact)};
 }
 
 /**
@@ -383,7 +383,7 @@ bool removeFolderContent(const QString &folderDir,bool isDeleteDir)
                                |QDir::Readable|QDir::Writable
                                |QDir::Hidden|QDir::NoDotAndDotDot
                                ,QDir::Name);
-    while(fileList.size()>0)
+    while(!fileList.empty())
     {
         int infoNum=fileList.size();
         for(int i=infoNum-1;i>=0;i--)
@@ -402,7 +402,7 @@ bool removeFolderContent(const QString &folderDir,bool isDeleteDir)
                                                               |QDir::Readable|QDir::Writable
                                                               |QDir::Hidden|QDir::NoDotAndDotDot
                                                               ,QDir::Name);
-                if(fileList1.size()==0)//下层没有文件或文件夹
+                if(fileList1.empty())//下层没有文件或文件夹
                 {
                     dirTemp.rmdir(".");
                     fileList.removeAt(i);
@@ -434,7 +434,7 @@ bool FastlzCompressData(QByteArray srcdata,QByteArray &decdata)
     if(srcdata.isEmpty())
         return false;
 
-    unsigned char *fastlzBuffer = (unsigned char*)allocBytes(srcdata.size()*2);
+    auto *fastlzBuffer = static_cast<unsigned char *>(allocBytes(srcdata.size() * 2));
     memset(fastlzBuffer,0,srcdata.size()*2);
 
     int decSize = fastlz_compress(srcdata.data(),srcdata.size(),fastlzBuffer);
@@ -523,7 +523,7 @@ void appAutoRun(bool bAutoRun)
 #endif
 }
 
-QString convert_to_ipv4_addr(QHostAddress addr)
+QString convert_to_ipv4_addr(const QHostAddress& addr)
 {
     quint32  addr_origin = addr.toIPv4Address();
     QHostAddress addr_host = QHostAddress(addr_origin);
@@ -532,7 +532,7 @@ QString convert_to_ipv4_addr(QHostAddress addr)
 }
 
 /// 删除指定路径的文件或者文件夹
-bool DeleteTheFileOrFolder(QString path)
+bool DeleteTheFileOrFolder(const QString& path)
 {
     if(path.isEmpty())
         return false;
@@ -548,7 +548,7 @@ bool DeleteTheFileOrFolder(QString path)
 }
 
 /// 创建指定路径的文件或者文件夹
-bool CreateTheFileOrFolder(QString path,int type)
+bool CreateTheFileOrFolder(const QString& path,int type)
 {
     if(path.isEmpty())
         return false;
@@ -587,7 +587,7 @@ bool CreateTheFileOrFolder(QString path,int type)
  * @param key2
  * @return
  */
-QByteArray EncData(QByteArray data,QString keyone,QString keytwo)
+QByteArray EncData(QByteArray data,const QString& keyone,const QString& keytwo)
 {
     if(data.isEmpty() ||
        keyone.isEmpty() ||
@@ -613,7 +613,7 @@ QByteArray EncData(QByteArray data,QString keyone,QString keytwo)
  * @param data
  * @return
  */
-QString getByteArrayMd5(QByteArray data)
+QString getByteArrayMd5(const QByteArray& data)
 {
     if(data.isEmpty())
         return {};
@@ -633,7 +633,7 @@ QString generateMd5(const QString& str)
 {
     QByteArray bytes = str.toUtf8();
     QByteArray hash = QCryptographicHash::hash(bytes, QCryptographicHash::Md5);
-    return QString(hash.toHex());
+    return {hash.toHex()};
 }
 
 /**
@@ -649,12 +649,12 @@ QString generateFileMd5(const QString& filePath)
 
     QCryptographicHash hash(QCryptographicHash::Md5);
     if (hash.addData(&file))
-        return QString(hash.result().toHex());
+        return {hash.result().toHex()};
 
     return "";
 }
 
-bool convertImageToYUV420P(QImage& image, QByteArray& yuvData)
+bool convertImageToYUV420P(const QImage& image, QByteArray& yuvData)
 {
     if(image.isNull())
         return false;
@@ -669,8 +669,8 @@ bool convertImageToYUV420P(QImage& image, QByteArray& yuvData)
 
     // 将RGB数据转换为YUV420P
     yuvData.resize(image.width() * image.height() * 3 / 2);
-    uchar* yuvPtr = reinterpret_cast<uchar*>(yuvData.data());
-    const uchar* rgbPtr = reinterpret_cast<const uchar*>(rgbData.constData());
+    auto* yuvPtr = reinterpret_cast<uchar*>(yuvData.data());
+    const auto* rgbPtr = reinterpret_cast<const uchar*>(rgbData.constData());
     const int uvOffset = image.width() * image.height();
 
     for (int y = 0; y < image.height(); ++y) {
@@ -711,41 +711,41 @@ bool convertRGBToYUV420P(const QString& imagePath, int width, int height, QByteA
 }
 
 // 字符串转QSize
-QSize convertStringToSize(QString str,QString separator)
+QSize convertStringToSize(const QString& str,const QString& separator)
 {
     if(str == "" || separator == "")
-        return QSize();
+        return {};
 
     QStringList strParams = str.split(separator);
     if(strParams.size() != 2)
-        return QSize();
+        return {};
 
-    return QSize(strParams[0].toInt(),strParams[1].toInt());
+    return {strParams[0].toInt(),strParams[1].toInt()};
 }
 
 // 字符串转QPoint
-QPoint convertStringToPoint(QString str,QString separator)
+QPoint convertStringToPoint(const QString& str,const QString& separator)
 {
     if(str == "" || separator == "")
-        return QPoint();
+        return {};
 
     QStringList strParams = str.split(separator);
     if(strParams.size() != 2)
-        return QPoint();
+        return {};
 
-    return QPoint(strParams[0].toInt(),strParams[1].toInt());
+    return {strParams[0].toInt(),strParams[1].toInt()};
 }
 
 // 字符串转QRect
-QRect convertStringToRect(QString str,QString separator)
+QRect convertStringToRect(const QString& str,const QString& separator)
 {
     if(str == "" || separator == "")
-        return QRect();
+        return {};
 
     QStringList strParams = str.split(separator);
     if(strParams.size() != 4)
-        return QRect();
+        return {};
 
-    return QRect(QPoint(strParams[0].toInt(),strParams[1].toInt()),
-                 QSize(strParams[2].toInt(),strParams[3].toInt()));
+    return {QPoint(strParams[0].toInt(),strParams[1].toInt()),
+                 QSize(strParams[2].toInt(),strParams[3].toInt())};
 }

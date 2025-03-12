@@ -453,15 +453,15 @@ void appAutoRun(bool bAutoRun);
 /// fastlz压缩数据
 bool FastlzCompressData(QByteArray srcdata,QByteArray &decdata);
 /// fastlz解压数据
-bool FastlzDecompressData(QByteArray srcdata,QByteArray &decdata,qint32 deccSize);
+bool FastlzDecompressData(QByteArray srcdata, QByteArray &decdata,qint32 deccSize);
 /// IP地址格式化
-QString convert_to_ipv4_addr(QHostAddress addr);
+QString convert_to_ipv4_addr(const QHostAddress& addr);
 /// 创建指定路径的文件或者文件夹(0-文件；1-文件夹)
-bool CreateTheFileOrFolder(QString path,int type=0);
+bool CreateTheFileOrFolder(const QString& path,int type=0);
 /// 删除指定路径的文件或者文件夹
-bool DeleteTheFileOrFolder(QString path);
+bool DeleteTheFileOrFolder(const QString& path);
 /// 简单加解密
-QByteArray EncData(QByteArray data,QString keyone,QString keytwo);
+QByteArray EncData(QByteArray data,const QString& keyone,const QString& keytwo);
 // 生成字符串的MD5值
 QString generateMd5(const QString& str);
 // 生成文件内容的MD5值
@@ -470,12 +470,12 @@ QString generateFileMd5(const QString& filePath);
 QString getByteArrayMd5(QByteArray data);
 // 转换RGB888到YUV420P
 bool convertRGBToYUV420P(const QString& imagePath, int width, int height, QByteArray& yuvData);
-bool convertImageToYUV420P(QImage& image, QByteArray& yuvData);
+bool convertImageToYUV420P(const QImage& image, QByteArray& yuvData);
 // 字符串转QSize
-QSize convertStringToSize(QString str,QString separator=",");
+QSize convertStringToSize(const QString& str,const QString& separator=",");
 // 字符串转QPoint
-QPoint convertStringToPoint(QString str,QString separator=",");
+QPoint convertStringToPoint(const QString& str,const QString& separator=",");
 // 字符串转QRect
-QRect convertStringToRect(QString str,QString separator=",");
+QRect convertStringToRect(const QString& str,const QString& separator=",");
 
 #endif // COMMON_H

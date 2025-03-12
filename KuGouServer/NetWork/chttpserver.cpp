@@ -87,7 +87,7 @@ void chttpserver::onProcessHttpAccepted(const QPointer<JQHttpServer::Session> &s
     if (!m_NetworkFrameManager->OnProcessHttpAccepted(this,session)) {
         // 可自定义错误格式（如 JSON）
         session->replyBytes(
-            R"({"error": "Endpoint not found"})",
+            R"({"ERROR" : "Endpoint not found，please check your request"})",
             "application/json; charset=UTF-8"
         );
     }
@@ -202,7 +202,7 @@ void chttpserver::onHttpAccepted(const QPointer<JQHttpServer::Session> &session,
     //QMap<QString,QString> header = session->requestUrlQuery();
     //session->replyBytes(session->requestUrl().toUtf8(),"text/html; charset=UTF-8");
 
-    chttpserver *pchttpserver = dynamic_cast<chttpserver*>(mainObj);
+    auto *pchttpserver = dynamic_cast<chttpserver*>(mainObj);
     if(pchttpserver) pchttpserver->onProcessHttpAccepted(session,mainObj);
 }
 
