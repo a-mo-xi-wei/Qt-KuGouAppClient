@@ -23,7 +23,6 @@
 #include <spdlog/sinks/stdout_sinks.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
 
-
 /// spdlog wrap class
 
 namespace mylog {
@@ -78,9 +77,10 @@ public:
 			// constexpr std::size_t max_file_size = 50 * 1024 * 1024; // 50mb
 			spdlog::init_thread_pool(log_buffer_size, std::thread::hardware_concurrency());
 			std::vector<spdlog::sink_ptr> sinks;
+			//按时间（每日）或文件大小自动轮换日志文件
 			auto daily_sink = std::make_shared<spdlog::sinks::daily_file_sink_mt>(log_path.string(), 0, 2);
 			sinks.push_back(daily_sink);
-
+			//每次启动程序时清空原有日志文件
 			// auto file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>(log_path.string(), true);
 			// sinks.push_back(file_sink);
 

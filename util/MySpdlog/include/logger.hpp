@@ -12,8 +12,9 @@
 #define LOG_LEVEL_CLOSE    6
 
 
-// got short filename(exlude file directory)
-#define __FILENAME__ (mylog::logger::get_shortname(__FILE__))
+// got short filename(exclude file directory)
+//#define __FILENAME__ (mylog::logger::get_shortname(__FILE__))
+#define __FILENAME__ __FILE__
 
 #if (LOGGER_LEVEL <= LOG_LEVEL_TRACE)
 #	define	 LOG_TRACE(fmt, ...) 		spdlog::log({__FILENAME__, __LINE__, __FUNCTION__}, spdlog::level::trace, fmt, ##__VA_ARGS__);
