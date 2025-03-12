@@ -33,6 +33,9 @@
 
 #define QS_LOG_VERSION "2.0b3"
 
+//打印文件名和行号
+#define QS_LOG_LINE_NUMBERS
+
 namespace QsLogging
 {
 class Destination;
