@@ -19,6 +19,7 @@ MyCollection::MyCollection(QWidget *parent) :
     ,m_buttonGroup(std::make_unique<QButtonGroup>(this))
 {
     ui->setupUi(this);
+    qDebug() << "Logger instance address:" << mylog::Logger::get();
     {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/collection.css"));
         if (file.open(QIODevice::ReadOnly)) {

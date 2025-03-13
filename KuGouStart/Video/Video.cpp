@@ -19,8 +19,9 @@ Video::Video(QWidget *parent) :
     ,m_buttonGroup(std::make_unique<QButtonGroup>(this))
 {
     ui->setupUi(this);
+    qDebug() << "Logger instance address:" << mylog::Logger::get();
+    mylog::Logger::get()->set_level(spdlog::level::info);
     {
-        this->setObjectName("channel");
         QFile file(GET_CURRENT_DIR + QStringLiteral("/video.css"));
         if (file.open(QIODevice::ReadOnly)) {
             this->setStyleSheet(file.readAll());
@@ -76,7 +77,8 @@ void Video::initVideoWidget() {
 }
 void Video::on_video_channel_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_videoChannelWidget.get());
-    STREAM_INFO()<<"切换 videoChannelWidget 界面";
+    // 输出测试日志并立即刷新
+    STREAM_INFO() << "切换 videoChannelWidget 界面";
     ui->index_label1->show();
     ui->index_label2->hide();
     ui->index_label3->hide();
@@ -84,7 +86,7 @@ void Video::on_video_channel_pushButton_clicked() {
 
 void Video::on_MV_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_MVWidget.get());
-    STREAM_INFO()<<"切换 MVWidget 界面";
+    STREAM_INFO() << "切换 MVWidget 界面";
     ui->index_label1->hide();
     ui->index_label2->show();
     ui->index_label3->hide();
@@ -92,7 +94,7 @@ void Video::on_MV_pushButton_clicked() {
 
 void Video::on_video_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_videoWidget.get());
-    STREAM_INFO()<<"切换 videoWidget 界面";
+    STREAM_INFO() << "切换 videoWidget 界面";
     ui->index_label1->hide();
     ui->index_label2->hide();
     ui->index_label3->show();

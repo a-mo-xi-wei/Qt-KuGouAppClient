@@ -39,7 +39,7 @@ endif()
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Widgets MySpdlog)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySpdlog)
 
 # 输出一般日志信息
 # message(STATUS "---------------------------source path: ${CMAKE_BINARY_DIR}")
