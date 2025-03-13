@@ -5,7 +5,7 @@
 #include <QFileDialog>
 #include <QTimer>
 
-CLibhttp::CLibhttp(QObject *parent)
+CLibhttp::CLibhttp(QObject *parent):QObject(parent)
 {
 
 }

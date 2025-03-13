@@ -82,6 +82,9 @@ add_subdirectory(util/MyConfigFile)
 #JQHttpServer模块
 add_subdirectory(util/JQHttpServer)
 
+#http请求模块
+add_subdirectory(util/MyHttpClient)
+
 #开始模块
 add_subdirectory(KuGouStart)
 
