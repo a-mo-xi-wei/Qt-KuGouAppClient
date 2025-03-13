@@ -25,8 +25,6 @@ TableWidget::TableWidget(const QString &title, KIND kind, QWidget *parent)
     , m_gridContainer(std::make_unique<QWidget>(this))
     , m_refreshTimer(new QTimer(this))
 {
-    mylog::logger::get().set_level(spdlog::level::info);
-
     this->m_play_ToolBtn = new QToolButton(this);
     this->m_adjust_ToolBtn = new QToolButton(this);
     this->m_refresh_ToolBtn = new QToolButton(this);

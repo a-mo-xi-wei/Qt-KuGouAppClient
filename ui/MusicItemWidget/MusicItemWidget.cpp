@@ -43,7 +43,6 @@ MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     ,m_information(std::move(info))
     ,timer(new QTimer(this))
 {
-    mylog::logger::get().set_level(spdlog::level::info);
     this->m_index           = m_information.index;
     this->m_name            = m_information.songName;
     this->m_duration        = m_information.duration;

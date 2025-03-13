@@ -8,7 +8,6 @@
 AniCheckBox::AniCheckBox(QWidget *parent) : QCheckBox(parent)
 {
     setCursor(Qt::PointingHandCursor);
-    mylog::logger::get().set_level(spdlog::level::info);
     connect(this, &QCheckBox::stateChanged, this, [=](int state) {
         qDebug() << "状态改变";
         STREAM_INFO() << "选中框状态改变";
