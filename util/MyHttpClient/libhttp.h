@@ -4,7 +4,13 @@
 #include <QNetworkReply>
 #include <QHttpPart>
 
-class CLibhttp : public QObject
+#if defined(MYHTTPCLIENT_LIBRARY)
+#define LIBHTTP_EXPORT Q_DECL_EXPORT
+#else
+#define LIBHTTP_EXPORT Q_DECL_IMPORT
+#endif
+
+class LIBHTTP_EXPORT CLibhttp : public QObject
 {
     Q_OBJECT
 
