@@ -1,6 +1,6 @@
 #include "MainWindow.h"
 #include "WaterDrop.h"
-#include "SystemTrayIcon.h"
+#include "MyTrayIcon.h"
 
 #include <QMouseEvent>
 #include <QPainter>
@@ -11,11 +11,9 @@ constexpr int RADIUS = 12;
 
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
-    , m_trayIcon(new SystemTrayIcon())
+    , m_trayIcon(new MyTrayIcon(this))
 {
-    m_trayIcon->setTrayIconPath(QPixmap(":/Res/window/windowIcon.ico"));
-    m_trayIcon->setMainWindow(this);
-    m_trayIcon->createTrayIcon();
+
 }
 
 void MainWindow::paintEvent(QPaintEvent *event) {
