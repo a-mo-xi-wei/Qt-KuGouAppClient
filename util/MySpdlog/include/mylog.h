@@ -23,19 +23,29 @@
 #include <spdlog/sinks/stdout_sinks.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
 
+#include <QObject>
+#include <QDebug>
+#include <utility>
+
 /// spdlog wrap class
+///
+#if defined(SPDLOG_COMPILED_LIB)
+#define SPDLOG_COMPILED_EXPORT Q_DECL_EXPORT
+#else
+#define SPDLOG_COMPILED_EXPORT Q_DECL_IMPORT
+#endif
 
 namespace mylog {
-class logger final {
+class SPDLOG_COMPILED_EXPORT logger final {
 public:
 	/// let logger like stream
 	struct log_stream : public std::ostringstream
 	{
 	public:
-		log_stream(const spdlog::source_loc& _loc, spdlog::level::level_enum _lvl, std::string_view _prefix)
-			: loc(_loc)
-			, lvl(_lvl)
-			, prefix(_prefix)
+		log_stream(const spdlog::source_loc& _loc, spdlog::level::level_enum _lvl,std::shared_ptr<spdlog::logger> logger)
+			: _loc(_loc)
+			, _lvl(_lvl)
+			, _logger(std::move(logger))
 		{
 		}
 
@@ -44,72 +54,38 @@ public:
 			flush();
 		}
 
-		void flush()
+		/*void flush()
 		{
 			logger::get().log(loc, lvl, (prefix + str()).c_str());
+		}*/
+		void flush() {
+			if (_logger) {
+				_logger->log(_loc, _lvl, str().c_str());
+			}
+			str("");
 		}
 
 	private:
-		spdlog::source_loc loc;
-		spdlog::level::level_enum lvl = spdlog::level::info;
-		std::string prefix;
+		spdlog::source_loc _loc;
+		spdlog::level::level_enum _lvl = spdlog::level::info;
+		//std::string prefix;
+		std::shared_ptr<spdlog::logger> _logger;
 	};
 
 public:
-	static logger& get() {
-		static logger logger;
-		return logger;
+	// 新增公共访问函数
+	std::shared_ptr<spdlog::logger> get_logger() const {
+		return _logger;
 	}
 
-	bool init(std::string_view log_file_path) {
-        namespace fs = std::filesystem;
-		if (_is_inited) return true;
-		try
-		{
-			// check log path and try to create log directory
-			fs::path log_path(log_file_path);
-			fs::path log_dir = log_path.parent_path();
-			if (!fs::exists(log_path)) {
-				fs::create_directories(log_dir);
-			}
-			// initialize spdlog
-			constexpr std::size_t log_buffer_size = 32 * 1024; // 32kb
-			// constexpr std::size_t max_file_size = 50 * 1024 * 1024; // 50mb
-			spdlog::init_thread_pool(log_buffer_size, std::thread::hardware_concurrency());
-			std::vector<spdlog::sink_ptr> sinks;
-			//按时间（每日）或文件大小自动轮换日志文件
-			auto daily_sink = std::make_shared<spdlog::sinks::daily_file_sink_mt>(log_path.string(), 0, 2);
-			sinks.push_back(daily_sink);
-			//每次启动程序时清空原有日志文件
-			// auto file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>(log_path.string(), true);
-			// sinks.push_back(file_sink);
+	static logger& get();
 
-#if defined(_DEBUG) && defined(WIN32) && !defined(NO_CONSOLE_LOG)
-			auto ms_sink = std::make_shared<spdlog::sinks::msvc_sink_mt>();
-			sinks.push_back(ms_sink);
-#endif //  _DEBUG
+	bool init(std::string_view log_file_path);
 
-#if !defined(WIN32) && !defined(NO_CONSOLE_LOG)
-			auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
-			sinks.push_back(console_sink);
-#endif
-			spdlog::set_default_logger(std::make_shared<spdlog::logger>("", sinks.begin(), sinks.end()));
-
-			spdlog::set_pattern("%s(%#): [%L %D %T.%e %P %t %!] %v");
-			spdlog::flush_on(spdlog::level::warn);
-			spdlog::set_level(_log_level);
-		}
-		catch (std::exception_ptr e)
-		{
-			assert(false);
-			return false;
-		}
-		_is_inited = true;
-		return true;
+	void shutdown(){
+		spdlog::shutdown();
 	}
-
-	void shutdown() { spdlog::shutdown(); }
-
+/*
 	template <typename... Args>
 	void log(const spdlog::source_loc& loc, spdlog::level::level_enum lvl, const char* fmt, const Args &... args)
 	{
@@ -120,6 +96,28 @@ public:
 	void printf(const spdlog::source_loc& loc, spdlog::level::level_enum lvl, const char* fmt, const Args &... args)
 	{
 		spdlog::log(loc, lvl, fmt::sprintf(fmt, args...).c_str());
+	}
+*/
+	// 统一使用 _logger 实例的日志函数
+	template <typename... Args>
+	void log(const spdlog::source_loc& loc,
+			spdlog::level::level_enum lvl,
+			const char* fmt,
+			const Args&... args) {
+		if (_logger) {
+			_logger->log(loc, lvl, fmt, args...);
+		}
+	}
+
+	template <typename... Args>
+	void printf(const spdlog::source_loc& loc,
+			   spdlog::level::level_enum lvl,
+			   const char* fmt,
+			   const Args&... args) {
+		if (_logger) {
+			// 直接传递格式化结果到实例logger
+			_logger->log(loc, lvl, fmt::sprintf(fmt, args...));
+		}
 	}
 
 	spdlog::level::level_enum level() {
@@ -154,6 +152,7 @@ private:
 private:
 	std::atomic_bool _is_inited = false;
 	spdlog::level::level_enum _log_level = spdlog::level::trace;
+	std::shared_ptr<spdlog::logger> _logger; // 关键修改：显式持有logger实例
 };
 
 class logger_none {
