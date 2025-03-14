@@ -9,11 +9,11 @@
 //}
 int main(int argc, char *argv[])
 {
-    using namespace mylog;
-    if (!logger::get().init("logs/main.log")) {
+    if (!mylog::logger::get().init("logs/main.log")) {
         return 1;
     }
-    logger::get().set_level(spdlog::level::info);
+    qDebug() << "Logger instance address:" << &mylog::logger::get();
+    mylog::logger::get().set_level(spdlog::level::info);
     //三种方式
     STREAM_INFO() << "STREAM_INFO : 程序开始（info）" << 1;
     PRINT_INFO("PRINT_INFO : 程序开始（info）%d",1);
