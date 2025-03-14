@@ -19,6 +19,8 @@
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
+int offY = 297;
+
 VideoWidget::VideoWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::VideoWidget)
@@ -476,7 +478,7 @@ void VideoWidget::on_all_toolButton_toggled() {
         ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/up-blue.svg")));
         ui->all_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/up-gray.svg")));
         ui->title_widget2->show();
-        //update();
+        offY = 335;
     }
     else {
         ui->all_toolButton->setText(QStringLiteral("全部"));
@@ -484,9 +486,13 @@ void VideoWidget::on_all_toolButton_toggled() {
         ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg")));
         ui->all_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
         ui->title_widget2->hide();
-        //update();
+        offY = 297;
     }
+    // 直接更新滚动区域高度
+    auto parent = this->window();
+    ui->scrollArea->setFixedHeight(parent->height() - offY);
 
+    update(); // 触发重绘
 }
 
 void VideoWidget::handleWheelValue(const int &value) {
@@ -546,7 +552,7 @@ void VideoWidget::handleWheelValue(const int &value) {
 void VideoWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     auto parent = this->window();
-    ui->scrollArea->setFixedHeight(parent->height() - 320);
+    ui->scrollArea->setFixedHeight(parent->height() - offY);
 }
 
 void VideoWidget::mousePressEvent(QMouseEvent *event) {
