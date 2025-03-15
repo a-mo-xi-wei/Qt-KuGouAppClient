@@ -41,7 +41,7 @@ DownloadedSong::~DownloadedSong() {
 void DownloadedSong::initUi() {
     ui->local_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")));
     //使用 addAction 添加右侧图标
-    this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-black.svg")));
+    this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
     this->m_searchAction->setIconVisibleInMenu(false); // 仅显示图标
     ui->local_search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition);
     ui->local_search_lineEdit->setWidth(150);
@@ -107,9 +107,9 @@ bool DownloadedSong::eventFilter(QObject *watched, QEvent *event) {
     const auto button = qobject_cast<QToolButton*>(watched);
     if (button && button->defaultAction() == this->m_searchAction) {
         if (event->type() == QEvent::Enter) {
-            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-blue.svg")));
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-blue.svg")));
         } else if (event->type() == QEvent::Leave) {
-            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-black.svg")));
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
         }
     }
     return QObject::eventFilter(watched, event);

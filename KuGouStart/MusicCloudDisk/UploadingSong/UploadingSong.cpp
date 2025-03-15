@@ -35,8 +35,8 @@ UploadingSong::~UploadingSong() {
 }
 
 void UploadingSong::initUi() {
-    ui->cloud_upload_toolButton->setIcon(QIcon(QStringLiteral(":Res/menuIcon/upload-white.svg")));
+    ui->cloud_upload_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/upload-white.svg")));
     ui->cloud_start_toolButton->setIcon(QIcon(QStringLiteral(":Res/tabIcon/play3-gray.svg")));
     ui->cloud_pause_toolButton->setIcon(QIcon(QStringLiteral(":Res/tabIcon/stop-gray.svg")));
-    ui->cloud_clear_toolButton->setIcon(QIcon(QStringLiteral(":Res/menuIcon/delete-gray.svg")));
+    ui->cloud_clear_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/delete-gray.svg")));
 }

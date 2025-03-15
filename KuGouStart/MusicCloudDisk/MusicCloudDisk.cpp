@@ -41,9 +41,9 @@ void MusicCloudDisk::initUi() {
     initIndexLab();
     //初始化新增歌曲到曲库按钮
     ui->new_add_toolButton->setIconSize(QSize(10,10));
-    ui->new_add_toolButton->setIcon(QIcon(QStringLiteral(":Res/menuIcon/right-black.svg")));
-    ui->new_add_toolButton->setEnterIcon(QIcon(QStringLiteral(":Res/menuIcon/right-blue.svg")));
-    ui->new_add_toolButton->setLeaveIcon(QIcon(QStringLiteral(":Res/menuIcon/right-black.svg")));
+    ui->new_add_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")));
+    ui->new_add_toolButton->setEnterIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-blue.svg")));
+    ui->new_add_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")));
     ui->new_add_toolButton->setApproach(true);
     ui->new_add_toolButton->setHoverFontColor(QColor(QStringLiteral("#3AA1FF")));
     //初始化stackedWidget

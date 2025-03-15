@@ -59,15 +59,15 @@ void SortOptionMenu::initMenu() {
             if (a_sortByAddTimeToolBtn->icon().isNull()) {
                 //qDebug()<<"无图标，设置图标";
                 emit addTimeSort(true);
-                a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
+                a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortdown.svg")));
             } else {
                 a_sortByAddTimeToolBtn->m_cnt = (a_sortByAddTimeToolBtn->m_cnt + 1) % 2;
                 if (a_sortByAddTimeToolBtn->m_cnt & 1) {
                     emit addTimeSort(false);
-                    a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortup.svg")));
+                    a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortup.svg")));
                 } else {
                     emit addTimeSort(true);
-                    a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
+                    a_sortByAddTimeToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortdown.svg")));
                 }
             }
             this->m_sortBtn = a_sortByAddTimeToolBtn;
@@ -98,15 +98,15 @@ void SortOptionMenu::initMenu() {
 
             if (a_sortBySongNameToolBtn->icon().isNull()) {
                 emit songNameSort(true);
-                a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
+                a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortdown.svg")));
             } else {
                 a_sortBySongNameToolBtn->m_cnt = (a_sortBySongNameToolBtn->m_cnt + 1) % 2;
                 if (a_sortBySongNameToolBtn->m_cnt & 1) {
                     emit songNameSort(false);
-                    a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortup.svg")));
+                    a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortup.svg")));
                 } else {
                     emit songNameSort(true);
-                    a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
+                    a_sortBySongNameToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortdown.svg")));
                 }
             }
             this->m_sortBtn = a_sortBySongNameToolBtn;
@@ -135,15 +135,15 @@ void SortOptionMenu::initMenu() {
             this->m_lastSelect = this->m_curSelect;
             if (a_sortBySingerToolBtn->icon().isNull()) {
                 emit singerSort(true);
-                a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
+                a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortdown.svg")));
             } else {
                 a_sortBySingerToolBtn->m_cnt = (a_sortBySingerToolBtn->m_cnt + 1) % 2;
                 if (a_sortBySingerToolBtn->m_cnt & 1) {
                     emit singerSort(false);
-                    a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortup.svg")));
+                    a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortup.svg")));
                 } else {
                     emit singerSort(true);
-                    a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
+                    a_sortBySingerToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortdown.svg")));
                 }
             }
             this->m_sortBtn = a_sortBySingerToolBtn;
@@ -172,15 +172,15 @@ void SortOptionMenu::initMenu() {
             this->m_lastSelect = this->m_curSelect;
             if (a_sortByDurationToolBtn->icon().isNull()) {
                 emit durationSort(true);
-                a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
+                a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortdown.svg")));
             } else {
                 a_sortByDurationToolBtn->m_cnt = (a_sortByDurationToolBtn->m_cnt + 1) % 2;
                 if (a_sortByDurationToolBtn->m_cnt & 1) {
                     emit durationSort(false);
-                    a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortup.svg")));
+                    a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortup.svg")));
                 } else {
                     emit durationSort(true);
-                    a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
+                    a_sortByDurationToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortdown.svg")));
                 }
             }
             this->m_sortBtn = a_sortByDurationToolBtn;
@@ -209,15 +209,15 @@ void SortOptionMenu::initMenu() {
             this->m_lastSelect = this->m_curSelect;
             if (a_sortByPlayCountToolBtn->icon().isNull()) {
                 emit playCountSort(true);
-                a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
+                a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortdown.svg")));
             } else {
                 a_sortByPlayCountToolBtn->m_cnt = (a_sortByPlayCountToolBtn->m_cnt + 1) % 2;
                 if (a_sortByPlayCountToolBtn->m_cnt & 1) {
                     emit playCountSort(false);
-                    a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortup.svg")));
+                    a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortup.svg")));
                 } else {
                     emit playCountSort(true);
-                    a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/sortdown.svg")));
+                    a_sortByPlayCountToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/sortdown.svg")));
                 }
             }
             this->m_sortBtn = a_sortByPlayCountToolBtn;

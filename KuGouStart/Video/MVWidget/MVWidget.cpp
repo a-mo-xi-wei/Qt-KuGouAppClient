@@ -231,7 +231,7 @@ void MVWidget::initUi() {
     ui->advertise_widget->setContentsMargins(0,0,0,0);
     //搜索框
     this->m_searchAction = new QAction(this);
-    this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-black.svg")));
+    this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
     this->m_searchAction->setIconVisibleInMenu(false);
     ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition);
     QToolButton* searchButton = nullptr;
@@ -321,9 +321,9 @@ bool MVWidget::eventFilter(QObject *watched, QEvent *event) {
     const auto button = qobject_cast<QToolButton*>(watched);
     if (button && button->defaultAction() == this->m_searchAction) {
         if (event->type() == QEvent::Enter) {
-            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-blue.svg")));
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-blue.svg")));
         } else if (event->type() == QEvent::Leave) {
-            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-black.svg")));
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
         }
     }
     return QObject::eventFilter(watched, event);

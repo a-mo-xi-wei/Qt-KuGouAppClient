@@ -41,7 +41,7 @@ void SongListWidget::initUi() {
     ui->search_lineEdit->setPlaceholderText(QStringLiteral("搜索"));
     ui->search_lineEdit->setWidth(200);
     // 创建动作并设置图标
-    this->m_searchAction = new QAction(QIcon(":/Res/menuIcon/search-black.svg"), "搜索",ui->search_lineEdit);
+    this->m_searchAction = new QAction(QIcon(":/MenuIcon/Res/menuIcon/search-black.svg"), "搜索",ui->search_lineEdit);
 
     ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); // 右侧显示
     QToolButton* searchButton = nullptr;
@@ -88,9 +88,9 @@ bool SongListWidget::eventFilter(QObject *watched, QEvent *event) {
     const auto button = qobject_cast<QToolButton*>(watched);
     if (button && button->defaultAction() == this->m_searchAction) {
         if (event->type() == QEvent::Enter) {
-            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-blue.svg")));
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-blue.svg")));
         } else if (event->type() == QEvent::Leave) {
-            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-black.svg")));
+            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
         }
     }
     return QObject::eventFilter(watched, event);

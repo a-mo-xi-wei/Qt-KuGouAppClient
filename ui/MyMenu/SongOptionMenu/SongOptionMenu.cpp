@@ -21,9 +21,9 @@ void SongOptionMenu::initMenu() {
     auto a_playAction = new QWidgetAction(this); {
         auto a_playToolBtn = new MenuBtn(this);
         a_playToolBtn->setFixedSize(180, 35);
-        a_playToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/play-black.svg")));
-        a_playToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/play-black.svg")),
-                                QIcon(QStringLiteral(":/Res/menuIcon/play-blue.svg")));
+        a_playToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/play-black.svg")));
+        a_playToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/play-black.svg")),
+                                QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/play-blue.svg")));
         a_playToolBtn->setText(QStringLiteral("  播放"));
         a_playAction->setDefaultWidget(a_playToolBtn);
         connect(a_playToolBtn, &QToolButton::clicked, this, [this] {
@@ -44,9 +44,9 @@ void SongOptionMenu::initMenu() {
     auto a_nextPlayAction = new QWidgetAction(this); {
         auto a_nextPlayToolBtn = new MenuBtn(this);
         a_nextPlayToolBtn->setFixedSize(180, 35);
-        a_nextPlayToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/nextplay-black.svg")));
-        a_nextPlayToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/nextplay-black.svg")),
-                                    QIcon(QStringLiteral(":/Res/menuIcon/nextplay-blue.svg")));
+        a_nextPlayToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/nextplay-black.svg")));
+        a_nextPlayToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/nextplay-black.svg")),
+                                    QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/nextplay-blue.svg")));
         a_nextPlayToolBtn->setText(QStringLiteral("  下一首播放"));
         a_nextPlayAction->setDefaultWidget(a_nextPlayToolBtn);
         connect(a_nextPlayToolBtn, &QToolButton::clicked, this, [this] {
@@ -73,16 +73,16 @@ void SongOptionMenu::initMenu() {
         auto a_addToToolBtn = new MenuBtn(widget);
         a_addToToolBtn->setObjectName("addToToolBtn");
         a_addToToolBtn->setFixedSize(145, 35);
-        a_addToToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/add-black.svg")));
-        a_addToToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/add-black.svg")),
-                                 QIcon(QStringLiteral(":/Res/menuIcon/add-blue.svg")));
+        a_addToToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-black.svg")));
+        a_addToToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-black.svg")),
+                                 QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-blue.svg")));
         a_addToToolBtn->setText(QStringLiteral("  添加到"));
         auto a_addToRightBtn = new MenuBtn(widget);
         a_addToRightBtn->setFixedSize(35, 35);
         a_addToRightBtn->setToolButtonStyle(Qt::ToolButtonIconOnly);
-        a_addToRightBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/right-black.svg")));
-        a_addToRightBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/right-black.svg")),
-                                  QIcon(QStringLiteral(":/Res/menuIcon/right-blue.svg")));
+        a_addToRightBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")));
+        a_addToRightBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")),
+                                  QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-blue.svg")));
         layout->addWidget(a_addToToolBtn);
         layout->addWidget(a_addToRightBtn);
         a_addToAction->setDefaultWidget(widget);
@@ -105,9 +105,9 @@ void SongOptionMenu::initMenu() {
         auto a_playQueueAction = new QWidgetAction(this); {
             auto a_playQueueToolBtn = new MenuBtn(this);
             a_playQueueToolBtn->setFixedSize(130, 35);
-            a_playQueueToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/playqueue-black.svg")));
-            a_playQueueToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/playqueue-black.svg")),
-                                         QIcon(QStringLiteral(":/Res/menuIcon/playqueue-blue.svg")));
+            a_playQueueToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/playqueue-black.svg")));
+            a_playQueueToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/playqueue-black.svg")),
+                                         QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/playqueue-blue.svg")));
             a_playQueueToolBtn->setText(QStringLiteral("  播放队列"));
             a_playQueueAction->setDefaultWidget(a_playQueueToolBtn);
             connect(a_playQueueToolBtn, &QToolButton::clicked, this, [this] {
@@ -128,9 +128,9 @@ void SongOptionMenu::initMenu() {
         auto a_newPlayListAction = new QWidgetAction(this); {
             auto a_newPlayListToolBtn = new MenuBtn(this);
             a_newPlayListToolBtn->setFixedSize(130, 35);
-            a_newPlayListToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/add-black.svg")));
-            a_newPlayListToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/add-black.svg")),
-                                           QIcon(QStringLiteral(":/Res/menuIcon/add-blue.svg")));
+            a_newPlayListToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-black.svg")));
+            a_newPlayListToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-black.svg")),
+                                           QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-blue.svg")));
             a_newPlayListToolBtn->setText(QStringLiteral("  新建歌单"));
             a_newPlayListAction->setDefaultWidget(a_newPlayListToolBtn);
             connect(a_newPlayListToolBtn, &QToolButton::clicked, this, [this] {
@@ -151,9 +151,9 @@ void SongOptionMenu::initMenu() {
         auto a_likeAction = new QWidgetAction(this); {
             auto a_likeToolBtn = new MenuBtn(this);
             a_likeToolBtn->setFixedSize(130, 35);
-            a_likeToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/like-black.svg")));
-            a_likeToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/like-black.svg")),
-                                    QIcon(QStringLiteral(":/Res/menuIcon/like-blue.svg")));
+            a_likeToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/like-black.svg")));
+            a_likeToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/like-black.svg")),
+                                    QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/like-blue.svg")));
             a_likeToolBtn->setText(QStringLiteral("  我喜欢"));
             a_likeAction->setDefaultWidget(a_likeToolBtn);
             connect(a_likeToolBtn, &QToolButton::clicked, this, [this] {
@@ -174,9 +174,9 @@ void SongOptionMenu::initMenu() {
         auto a_defaultCollectAction = new QWidgetAction(this); {
             auto a_defaultCollectToolBtn = new MenuBtn(this);
             a_defaultCollectToolBtn->setFixedSize(130, 35);
-            a_defaultCollectToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/collect-black.svg")));
-            a_defaultCollectToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/collect-black.svg")),
-                                              QIcon(QStringLiteral(":/Res/menuIcon/collect-blue.svg")));
+            a_defaultCollectToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/collect-black.svg")));
+            a_defaultCollectToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/collect-black.svg")),
+                                              QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/collect-blue.svg")));
             a_defaultCollectToolBtn->setText(QStringLiteral("  默认收藏"));
             a_defaultCollectAction->setDefaultWidget(a_defaultCollectToolBtn);
             connect(a_defaultCollectToolBtn, &QToolButton::clicked, this, [this] {
@@ -197,9 +197,9 @@ void SongOptionMenu::initMenu() {
         auto a_defaultListAction = new QWidgetAction(this); {
             auto a_defaultListToolBtn = new MenuBtn(this);
             a_defaultListToolBtn->setFixedSize(130, 35);
-            a_defaultListToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/defaultlist-black.svg")));
-            a_defaultListToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/defaultlist-black.svg")),
-                                           QIcon(QStringLiteral(":/Res/menuIcon/defaultlist-blue.svg")));
+            a_defaultListToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/defaultlist-black.svg")));
+            a_defaultListToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/defaultlist-black.svg")),
+                                           QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/defaultlist-blue.svg")));
             a_defaultListToolBtn->setText(QStringLiteral("  默认列表"));
             a_defaultListAction->setDefaultWidget(a_defaultListToolBtn);
             connect(a_defaultListToolBtn, &QToolButton::clicked, this, [this] {
@@ -233,9 +233,9 @@ void SongOptionMenu::initMenu() {
     auto a_downloadAction = new QWidgetAction(this); {
         auto a_downloadToolBtn = new MenuBtn(this);
         a_downloadToolBtn->setFixedSize(180, 35);
-        a_downloadToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/download-black.svg")));
-        a_downloadToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/download-black.svg")),
-                                    QIcon(QStringLiteral(":/Res/menuIcon/download-blue.svg")));
+        a_downloadToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/download-black.svg")));
+        a_downloadToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/download-black.svg")),
+                                    QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/download-blue.svg")));
         a_downloadToolBtn->setText(QStringLiteral("  下载"));
         a_downloadAction->setDefaultWidget(a_downloadToolBtn);
         connect(a_downloadToolBtn, &QToolButton::clicked, this, [this] {
@@ -255,9 +255,9 @@ void SongOptionMenu::initMenu() {
     auto a_shareAction = new QWidgetAction(this); {
         auto a_shareToolBtn = new MenuBtn(this);
         a_shareToolBtn->setFixedSize(180, 35);
-        a_shareToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/share-black.svg")));
-        a_shareToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/share-black.svg")),
-                                 QIcon(QStringLiteral(":/Res/menuIcon/share-blue.svg")));
+        a_shareToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/share-black.svg")));
+        a_shareToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/share-black.svg")),
+                                 QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/share-blue.svg")));
         a_shareToolBtn->setText(QStringLiteral("  分享"));
         a_shareAction->setDefaultWidget(a_shareToolBtn);
         connect(a_shareToolBtn, &QToolButton::clicked, this, [this] {
@@ -277,9 +277,9 @@ void SongOptionMenu::initMenu() {
     auto a_commentAction = new QWidgetAction(this); {
         auto a_commentToolBtn = new MenuBtn(this);
         a_commentToolBtn->setFixedSize(180, 35);
-        a_commentToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/comment-black.svg")));
-        a_commentToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/comment-black.svg")),
-                                   QIcon(QStringLiteral(":/Res/menuIcon/comment-blue.svg")));
+        a_commentToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/comment-black.svg")));
+        a_commentToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/comment-black.svg")),
+                                   QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/comment-blue.svg")));
         a_commentToolBtn->setText(QStringLiteral("  查看评论"));
         a_commentAction->setDefaultWidget(a_commentToolBtn);
         connect(a_commentToolBtn, &QToolButton::clicked, this, [this] {
@@ -299,9 +299,9 @@ void SongOptionMenu::initMenu() {
     auto a_sameSongAction = new QWidgetAction(this); {
         auto a_sameSongToolBtn = new MenuBtn(this);
         a_sameSongToolBtn->setFixedSize(180, 35);
-        a_sameSongToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/same-black.svg")));
-        a_sameSongToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/same-black.svg")),
-                                    QIcon(QStringLiteral(":/Res/menuIcon/same-blue.svg")));
+        a_sameSongToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/same-black.svg")));
+        a_sameSongToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/same-black.svg")),
+                                    QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/same-blue.svg")));
         a_sameSongToolBtn->setText(QStringLiteral("  相似歌曲"));
         a_sameSongAction->setDefaultWidget(a_sameSongToolBtn);
         connect(a_sameSongToolBtn, &QToolButton::clicked, this, [this] {
@@ -321,9 +321,9 @@ void SongOptionMenu::initMenu() {
     auto a_songInfoAction = new QWidgetAction(this); {
         auto a_songInfoSongToolBtn = new MenuBtn(this);
         a_songInfoSongToolBtn->setFixedSize(180, 35);
-        a_songInfoSongToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/songinfo-black.svg")));
-        a_songInfoSongToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/songinfo-black.svg")),
-                                        QIcon(QStringLiteral(":/Res/menuIcon/songinfo-blue.svg")));
+        a_songInfoSongToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/songinfo-black.svg")));
+        a_songInfoSongToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/songinfo-black.svg")),
+                                        QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/songinfo-blue.svg")));
         a_songInfoSongToolBtn->setText(QStringLiteral("  查看歌曲信息"));
         a_songInfoAction->setDefaultWidget(a_songInfoSongToolBtn);
         connect(a_songInfoSongToolBtn, &QToolButton::clicked, this, [this] {
@@ -343,9 +343,9 @@ void SongOptionMenu::initMenu() {
     auto a_deleteAction = new QWidgetAction(this); {
         auto a_deleteSongToolBtn = new MenuBtn(this);
         a_deleteSongToolBtn->setFixedSize(180, 35);
-        a_deleteSongToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/delete-black.svg")));
-        a_deleteSongToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/delete-black.svg")),
-                                      QIcon(QStringLiteral(":/Res/menuIcon/delete-blue.svg")));
+        a_deleteSongToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/delete-black.svg")));
+        a_deleteSongToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/delete-black.svg")),
+                                      QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/delete-blue.svg")));
         a_deleteSongToolBtn->setText(QStringLiteral("  从列表中删除"));
         a_deleteAction->setDefaultWidget(a_deleteSongToolBtn);
         connect(a_deleteSongToolBtn, &QToolButton::clicked, this, [this] {
@@ -366,9 +366,9 @@ void SongOptionMenu::initMenu() {
     auto a_openFileAction = new QWidgetAction(this); {
         auto a_openFileSongToolBtn = new MenuBtn(this);
         a_openFileSongToolBtn->setFixedSize(180, 35);
-        a_openFileSongToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/openfile-black.svg")));
-        a_openFileSongToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/openfile-black.svg")),
-                                        QIcon(QStringLiteral(":/Res/menuIcon/openfile-blue.svg")));
+        a_openFileSongToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/openfile-black.svg")));
+        a_openFileSongToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/openfile-black.svg")),
+                                        QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/openfile-blue.svg")));
         a_openFileSongToolBtn->setText(QStringLiteral("  打开文件所在目录"));
         a_openFileAction->setDefaultWidget(a_openFileSongToolBtn);
         connect(a_openFileSongToolBtn, &QToolButton::clicked, this, [this] {
@@ -394,16 +394,16 @@ void SongOptionMenu::initMenu() {
         auto a_searchToolBtn = new MenuBtn(widget);
         a_searchToolBtn->setObjectName("searchToolBtn");
         a_searchToolBtn->setFixedSize(145, 35);
-        a_searchToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-black.svg")));
-        a_searchToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/search-black.svg")),
-                                  QIcon(QStringLiteral(":/Res/menuIcon/search-blue.svg")));
+        a_searchToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
+        a_searchToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")),
+                                  QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-blue.svg")));
         a_searchToolBtn->setText(QStringLiteral("  搜索"));
         auto a_addToRightBtn = new MenuBtn(widget);
         a_addToRightBtn->setFixedSize(35, 35);
         a_addToRightBtn->setToolButtonStyle(Qt::ToolButtonIconOnly);
-        a_addToRightBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/right-black.svg")));
-        a_addToRightBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/right-black.svg")),
-                                  QIcon(QStringLiteral(":/Res/menuIcon/right-blue.svg")));
+        a_addToRightBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")));
+        a_addToRightBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")),
+                                  QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-blue.svg")));
         layout->addWidget(a_searchToolBtn);
         layout->addWidget(a_addToRightBtn);
         a_searchAction->setDefaultWidget(widget);
@@ -450,9 +450,9 @@ void SongOptionMenu::initMenu() {
     auto a_uploadAction = new QWidgetAction(this); {
         auto a_uploadSongToolBtn = new MenuBtn(this);
         a_uploadSongToolBtn->setFixedSize(180, 35);
-        a_uploadSongToolBtn->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/upload-black.svg")));
-        a_uploadSongToolBtn->initIcon(QIcon(QStringLiteral(":/Res/menuIcon/upload-black.svg")),
-                                      QIcon(QStringLiteral(":/Res/menuIcon/upload-blue.svg")));
+        a_uploadSongToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/upload-black.svg")));
+        a_uploadSongToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/upload-black.svg")),
+                                      QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/upload-blue.svg")));
         a_uploadSongToolBtn->setText(QStringLiteral("  上传到音乐云盘"));
         a_uploadAction->setDefaultWidget(a_uploadSongToolBtn);
         connect(a_uploadSongToolBtn, &QToolButton::clicked, this, [this] {

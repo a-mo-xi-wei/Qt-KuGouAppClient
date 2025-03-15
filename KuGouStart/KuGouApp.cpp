@@ -258,7 +258,7 @@ void KuGouApp::initTitleWidget() {
     ui->title_index_label4->hide();
 
     ui->title_line->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/line-black.svg")));
-    ui->search_lineEdit->addAction(QIcon(QStringLiteral(":/Res/menuIcon/search-black.svg")),
+    ui->search_lineEdit->addAction(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")),
                                    QLineEdit::LeadingPosition);
 
     //除非自定义QToolButton否则达不到 CSS 中 border-image 的效果

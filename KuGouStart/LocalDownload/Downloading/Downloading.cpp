@@ -37,5 +37,5 @@ Downloading::~Downloading() {
 void Downloading::initUi() {
     ui->start_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")));
     ui->stop_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/stop-gray.svg")));
-    ui->clear_toolButton->setIcon(QIcon(QStringLiteral(":/Res/menuIcon/delete-black.svg")));
+    ui->clear_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/delete-black.svg")));
 }
