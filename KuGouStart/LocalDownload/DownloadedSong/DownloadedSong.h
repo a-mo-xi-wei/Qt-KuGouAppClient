@@ -5,7 +5,7 @@
 #ifndef DOWNLOADEDSONG_H
 #define DOWNLOADEDSONG_H
 
-#include "../../MyMenu/SortOptionMenu/SortOptionMenu.h"
+#include "SortOptionMenu/SortOptionMenu.h"
 
 #include <QWidget>
 

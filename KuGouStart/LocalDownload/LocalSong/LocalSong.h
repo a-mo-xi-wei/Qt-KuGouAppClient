@@ -6,7 +6,7 @@
 #define LOCALSONG_H
 
 #include "MusicItemWidget.h"
-#include "../../MyMenu/SortOptionMenu/SortOptionMenu.h"
+#include "SortOptionMenu/SortOptionMenu.h"
 
 #include <QQueue>
 #include <QWidget>

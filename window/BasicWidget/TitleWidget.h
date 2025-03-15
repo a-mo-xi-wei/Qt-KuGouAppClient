@@ -1,7 +1,7 @@
 #ifndef TITLEWIDGET_H
 #define TITLEWIDGET_H
 
-#include "../MyMenu/TitleOptionMenu/TitleOptionMenu.h"
+#include "TitleOptionMenu/TitleOptionMenu.h"
 
 #include <QWidget>
 

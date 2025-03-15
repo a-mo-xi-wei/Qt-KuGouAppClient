@@ -4,7 +4,7 @@
 
 #ifndef SONGLIST_H
 #define SONGLIST_H
-#include "../../MyMenu/ListOptionMenu/ListOptionMenu.h"
+#include "ListOptionMenu/ListOptionMenu.h"
 
 #include <QWidget>
 
