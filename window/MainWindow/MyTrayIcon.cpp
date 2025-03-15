@@ -17,7 +17,7 @@ MyTrayIcon::MyTrayIcon(QWidget *parent)
 {
     initSysTray();		// 初始化托盘
 
-    addSysTrayMenu();	// 初始化菜单
+    handleSysTrayMenu();	// 处理菜单
 
     this->show();		// 显示托盘
 
@@ -27,16 +27,6 @@ MyTrayIcon::MyTrayIcon(QWidget *parent)
 
     connect(m_flashTimer, &QTimer::timeout, this,&MyTrayIcon::onFlashingTrayIcon);
 
-}
-
-void MyTrayIcon::onIconActivated(QSystemTrayIcon::ActivationReason reason) {
-    if (reason == QSystemTrayIcon::Trigger) {		// 点击触发
-        m_pParent->activateWindow();
-        m_pParent->showNormal();
-
-    } else if (reason == QSystemTrayIcon::Context) {	// 右键触发
-        m_trayMenu->exec(QCursor::pos());
-    }
 }
 
 void MyTrayIcon::initSysTray() {
@@ -57,37 +47,24 @@ void MyTrayIcon::initSysTray() {
     connect(this, &MyTrayIcon::showTrayMessage, this, &MyTrayIcon::showMessage);
 }
 
-void MyTrayIcon::addSysTrayMenu() {
-    m_trayMenu = new QMenu(m_pParent);		// 新建菜单，指定父对象
-    // 新建菜单子项
-    QAction *action1 = new QAction(m_trayMenu);
-    QAction *action2 = new QAction(m_trayMenu);
+void MyTrayIcon::handleSysTrayMenu() {
+    auto menu = new MyMenu(MyMenu::MenuKind::TrayIcon,this->m_pParent);
 
-    action1->setIcon(QIcon("show.png"));	// 设置菜单图标
-    action1->setText(QString("Show"));		// 设置带单文本
-    action2->setIcon(QIcon("close.png"));
-    action2->setText(QString("Quit"));
+    this->m_trayMenu = menu->getMenu<TrayIconMenu>();
 
-
-    // 添加菜单子项
-    m_trayMenu->addAction(action1);
-    m_trayMenu->addAction(action2);
-
-    // 显示窗体
-    connect(action1, &QAction::triggered, [this](bool) {
+    connect(m_trayMenu, &TrayIconMenu::openWindow, this, [this]{
         m_pParent->activateWindow();
         m_pParent->showNormal();
     });
 
-    // 退出
-    connect(action2, &QAction::triggered, [this](bool) { this->m_pParent->close(); });
+    connect(m_trayMenu, &TrayIconMenu::exit, this, [this] { this->m_pParent->close(); });
 }
 
-void MyTrayIcon::showMessage() {
-    QSystemTrayIcon::showMessage("Notice",				            // 消息窗口标题
-                              "The form is minimized！",             // 消息内容
-                              QSystemTrayIcon::MessageIcon::Information,// 消息窗口图标
-                              1000);					            // 消息窗口显示时长(经测试，win10系统下，没有效果)
+void MyTrayIcon::showMessage(const QString& title, const QString& content) {// 消息窗口标题 消息内容
+    QSystemTrayIcon::showMessage(title,	content,
+                                QSystemTrayIcon::MessageIcon::Information,1000);
+    // 消息窗口图标
+    // 消息窗口显示时长(经测试，win10系统下，没有效果)
 }
 
 void MyTrayIcon::flashingTrayIcon(const int& msec) {
@@ -107,6 +84,17 @@ void MyTrayIcon::stopFlashingTrayIcon() {
 
     if (m_checkTimer->isActive())
         m_checkTimer->stop();
+}
+
+void MyTrayIcon::onIconActivated(QSystemTrayIcon::ActivationReason reason) {
+    if (reason == QSystemTrayIcon::Trigger) {		// 点击触发
+        m_pParent->activateWindow();
+        m_pParent->showNormal();
+        //emit showTrayMessage(); //测试成功
+        //flashingTrayIcon(400); //测试成功
+    } else if (reason == QSystemTrayIcon::Context) {	// 右键触发
+        m_trayMenu->exec(QCursor::pos());
+    }
 }
 
 void MyTrayIcon::checkTrayIconHover() {
