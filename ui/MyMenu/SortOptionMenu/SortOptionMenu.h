@@ -6,9 +6,15 @@
 #define SORTOPTIONMENU_H
 
 #include "../BaseMenu.h"
-#include "../MenuBtn.h"
+#include "../MenuBtn.hpp"
 
-class SortOptionMenu : public BaseMenu {
+#if defined(SORTOPTIONMENU_LIBRARY)
+#define SORTOPTIONMENU_EXPORT Q_DECL_EXPORT
+#else
+#define SORTOPTIONMENU_EXPORT Q_DECL_IMPORT
+#endif
+
+class SORTOPTIONMENU_EXPORT SortOptionMenu : public BaseMenu {
     Q_OBJECT
 
 public:

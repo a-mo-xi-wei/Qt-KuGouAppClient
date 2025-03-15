@@ -11,7 +11,13 @@
 
 #include <QWidget>
 
-class MyMenu : public QWidget {
+#if defined(MYWIDGETMENU_LIBRARY)
+#define MYWIDGETMENU_EXPORT Q_DECL_EXPORT
+#else
+#define MYWIDGETMENU_EXPORT Q_DECL_IMPORT
+#endif
+
+class MYWIDGETMENU_EXPORT MyMenu : public QWidget {
     Q_OBJECT
 
 public:

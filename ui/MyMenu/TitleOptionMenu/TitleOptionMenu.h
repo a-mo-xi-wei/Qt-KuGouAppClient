@@ -7,7 +7,13 @@
 
 #include "../BaseMenu.h"
 
-class TitleOptionMenu : public BaseMenu {
+#if defined(TITLEOPTIONMENU_LIBRARY)
+#define TITLEOPTIONMENU_EXPORT Q_DECL_EXPORT
+#else
+#define TITLEOPTIONMENU_EXPORT Q_DECL_IMPORT
+#endif
+
+class TITLEOPTIONMENU_EXPORT TitleOptionMenu : public BaseMenu {
     Q_OBJECT
 
 public:

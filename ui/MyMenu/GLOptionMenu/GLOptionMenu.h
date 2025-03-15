@@ -7,7 +7,13 @@
 
 #include "../BaseMenu.h"
 
-class GLOptionMenu : public BaseMenu {
+#if defined(GLOPTIONMENU_LIBRARY)
+#define GLOPTIONMENU__EXPORT Q_DECL_EXPORT
+#else
+#define GLOPTIONMENU__EXPORT Q_DECL_IMPORT
+#endif
+
+class GLOPTIONMENU__EXPORT GLOptionMenu : public BaseMenu {
 Q_OBJECT
 
 public:
