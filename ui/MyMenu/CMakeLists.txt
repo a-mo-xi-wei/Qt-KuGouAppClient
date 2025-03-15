@@ -36,6 +36,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
         SONGOPTIONMENU_LIBRARY
         SORTOPTIONMENU_LIBRARY
         TITLEOPTIONMENU_LIBRARY
+        TRAYICONMENU_LIBRARY
 )
 
 # 显式设置运行时 .dll 到 bin/, 导入库到 lib/
@@ -60,6 +61,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/SortOptionMenu
         ${CMAKE_CURRENT_SOURCE_DIR}/SongOptionMenu
         ${CMAKE_CURRENT_SOURCE_DIR}/TitleOptionMenu
-        ${CMAKE_CURRENT_SOURCE_DIR}/GLOptionMenu)
+        ${CMAKE_CURRENT_SOURCE_DIR}/GLOptionMenu
+        ${CMAKE_CURRENT_SOURCE_DIR}/TrayIconMenu)
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySpdlog)
