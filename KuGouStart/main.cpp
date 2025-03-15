@@ -12,7 +12,6 @@ int main(int argc, char *argv[])
     if (!mylog::logger::get().init("logs/main.log")) {
         return 1;
     }
-    qDebug() << "Logger instance address:" << &mylog::logger::get();
     mylog::logger::get().set_level(spdlog::level::info);
     //三种方式
     STREAM_INFO() << "STREAM_INFO : 程序开始（info）" << 1;

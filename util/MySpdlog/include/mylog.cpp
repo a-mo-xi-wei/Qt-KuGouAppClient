@@ -20,8 +20,7 @@ namespace mylog {
 
     bool logger::init(std::string_view log_file_path) {
         namespace fs = std::filesystem;
-        if (_is_inited) {
-            qDebug() << "Logger already initialized.";
+        if (_is_inited.exchange(true)) {
             return true;
         }
         try {
@@ -30,9 +29,6 @@ namespace mylog {
             fs::path log_dir = log_path.parent_path();
             if (!fs::exists(log_dir)) {
                 fs::create_directories(log_dir);
-                qDebug() << "Log directory created: " << log_dir.string();
-            } else {
-                qDebug() << "Log directory exists: " << log_dir.string();
             }
             // initialize spdlog
             constexpr std::size_t log_buffer_size = 32 * 1024; // 32kb
@@ -55,17 +51,54 @@ namespace mylog {
         auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
         sinks.push_back(console_sink);
 #endif
+            /*/
             auto logger = std::make_shared<spdlog::logger>("client_logger", sinks.begin(), sinks.end());
             spdlog::set_default_logger(logger);
             spdlog::set_pattern("%s(%#): [%L %D %T.%e %P %t %!] %v");
             spdlog::flush_on(spdlog::level::warn);
             spdlog::set_level(_log_level);
-
-            _is_inited = true;
+            */
+            _logger = std::make_shared<spdlog::async_logger>("client_logger", sinks.begin(), sinks.end(),spdlog::thread_pool(),
+               spdlog::async_overflow_policy::block);
+            _logger->set_pattern("%s(%#): [%L %D %T.%e %P %t %!] %v");
+            spdlog::flush_on(spdlog::level::warn);
+            _logger->set_level(_log_level);
+            // 注册为全局日志记录器（当前模块）
+            spdlog::set_default_logger(_logger);
+            //_is_inited = true;
             return true;
-        } catch (std::exception_ptr &e) {
+        } catch (std::exception &e) {
+            qCritical() << "Logger init failed:" << e.what();
+            _is_inited = false;
             return false;
         }
+    }
+
+    void logger::shutdown() {
+        if (_logger) {
+            _logger->flush();
+            spdlog::drop(_logger->name());
+            _logger.reset();
+        }
+        _is_inited = false;
+    }
+
+    void logger::set_level(spdlog::level::level_enum lvl) {
+        _log_level = lvl;
+        if (_logger) {
+            _logger->set_level(lvl);
+        }
+    }
+
+    void logger::set_flush_on(spdlog::level::level_enum lvl) {
+        if (_logger) {
+            _logger->flush_on(lvl);
+        }
+    }
+
+    const char * logger::get_shortname(std::string_view path) {
+        const size_t pos = path.find_last_of("/\\");
+        return (pos == std::string_view::npos) ? path.data() : path.data() + pos + 1;
     }
 
 #endif

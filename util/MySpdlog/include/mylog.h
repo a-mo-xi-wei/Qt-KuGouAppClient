@@ -49,15 +49,9 @@ public:
 		{
 		}
 
-		~log_stream()
-		{
-			flush();
-		}
+		~log_stream(){flush();}
 
-		void flush()
-		{
-			logger::get().log(_loc, _lvl, (_prefix + str()).c_str());
-		}
+		void flush(){mylog::logger::get().log(_loc, _lvl, (_prefix + str()).c_str());}
 
 	private:
 		spdlog::source_loc _loc;
@@ -66,11 +60,15 @@ public:
 	};
 
 public:
-
+	// 单例访问
 	static logger& get();
 
+	// 初始化日志系统（跨模块共享）
 	bool init(std::string_view log_file_path);
 
+	void shutdown();
+
+/*
 	void shutdown(){
 		spdlog::shutdown();
 	}
@@ -86,11 +84,29 @@ public:
 	{
 		spdlog::log(loc, lvl, fmt::sprintf(fmt, args...).c_str());
 	}
-
-	spdlog::level::level_enum level() {
-		return _log_level;
+*/
+	// 日志接口
+	template <typename... Args>
+	void log(const spdlog::source_loc& loc,
+			spdlog::level::level_enum lvl,
+			const char* fmt, const Args&... args) {
+		if (_logger) {
+			_logger->log(loc, lvl, fmt, args...);
+		}
 	}
 
+	template <typename... Args>
+	void printf(const spdlog::source_loc& loc,
+				spdlog::level::level_enum lvl,
+				const char* fmt, const Args&... args) {
+		if (_logger) {
+			_logger->log(loc, lvl, fmt::sprintf(fmt, args...).c_str());
+		}
+	}
+
+	spdlog::level::level_enum level() {return _log_level;}
+
+/*
 	void set_level(spdlog::level::level_enum lvl) {
 		_log_level = lvl;
 		spdlog::set_level(lvl);
@@ -108,6 +124,12 @@ public:
 		size_t pos = path.find_last_of("/\\");
 		return path.data() + ((pos == path.npos) ? 0 : pos + 1);
 	}
+	*/
+
+	void set_level(spdlog::level::level_enum lvl);
+	void set_flush_on(spdlog::level::level_enum lvl);
+	// 工具函数
+	static const char* get_shortname(std::string_view path);
 
 private:
 	logger() = default;
@@ -117,8 +139,10 @@ private:
 	void operator=(const logger&) = delete;
 
 private:
+	std::shared_ptr<spdlog::logger> _logger;  // 实际日志记录器
 	std::atomic_bool _is_inited = false;
 	spdlog::level::level_enum _log_level = spdlog::level::trace;
+
 };
 
 class logger_none {
@@ -130,9 +154,11 @@ public:
         return logger;
     }
 
-	logger_none& operator<<(const char* content) {
-		return *this;
-	}
+	// logger_none& operator<<(const char* content) {
+	// 	return *this;
+	// }
+	template<typename T>
+	logger_none& operator<<(const T&) { return *this; }
 };
 
 

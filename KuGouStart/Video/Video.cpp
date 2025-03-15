@@ -19,7 +19,6 @@ Video::Video(QWidget *parent) :
     ,m_buttonGroup(std::make_unique<QButtonGroup>(this))
 {
     ui->setupUi(this);
-    qDebug() << "Logger instance address:" << &mylog::logger::get();
     {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/video.css"));
         if (file.open(QIODevice::ReadOnly)) {
