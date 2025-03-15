@@ -55,26 +55,17 @@ namespace mylog {
         auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
         sinks.push_back(console_sink);
 #endif
-            /*auto logger = std::make_shared<spdlog::logger>("client_logger", sinks.begin(), sinks.end());
+            auto logger = std::make_shared<spdlog::logger>("client_logger", sinks.begin(), sinks.end());
             spdlog::set_default_logger(logger);
-            qDebug() << "Logger address:" << logger.get();
             spdlog::set_pattern("%s(%#): [%L %D %T.%e %P %t %!] %v");
             spdlog::flush_on(spdlog::level::warn);
-            spdlog::set_level(_log_level);*/
-            // 创建独立logger实例
-            _logger = std::make_shared<spdlog::logger>("client_logger",sinks.begin(),sinks.end());
-            _logger->set_pattern("%s(%#): [%L %D %T.%e %P %t %!] %v");
-            _logger->set_level(_log_level);
-            spdlog::flush_on(spdlog::level::warn);
-            qDebug() << "Logger address:" << _logger.get();
+            spdlog::set_level(_log_level);
 
             _is_inited = true;
             return true;
         } catch (std::exception_ptr &e) {
             return false;
         }
-        //_is_inited = true;
-        //return true;
     }
 
 #endif

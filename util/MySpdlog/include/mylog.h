@@ -42,10 +42,10 @@ public:
 	struct log_stream : public std::ostringstream
 	{
 	public:
-		log_stream(const spdlog::source_loc& _loc, spdlog::level::level_enum _lvl,std::shared_ptr<spdlog::logger> logger)
+		log_stream(const spdlog::source_loc& _loc, spdlog::level::level_enum _lvl, std::string_view _prefix)
 			: _loc(_loc)
 			, _lvl(_lvl)
-			, _logger(std::move(logger))
+			, _prefix(_prefix)
 		{
 		}
 
@@ -54,29 +54,18 @@ public:
 			flush();
 		}
 
-		/*void flush()
+		void flush()
 		{
-			logger::get().log(loc, lvl, (prefix + str()).c_str());
-		}*/
-		void flush() {
-			if (_logger) {
-				_logger->log(_loc, _lvl, str().c_str());
-			}
-			str("");
+			logger::get().log(_loc, _lvl, (_prefix + str()).c_str());
 		}
 
 	private:
 		spdlog::source_loc _loc;
 		spdlog::level::level_enum _lvl = spdlog::level::info;
-		//std::string prefix;
-		std::shared_ptr<spdlog::logger> _logger;
+		std::string _prefix;
 	};
 
 public:
-	// 新增公共访问函数
-	std::shared_ptr<spdlog::logger> get_logger() const {
-		return _logger;
-	}
 
 	static logger& get();
 
@@ -85,7 +74,7 @@ public:
 	void shutdown(){
 		spdlog::shutdown();
 	}
-/*
+
 	template <typename... Args>
 	void log(const spdlog::source_loc& loc, spdlog::level::level_enum lvl, const char* fmt, const Args &... args)
 	{
@@ -96,28 +85,6 @@ public:
 	void printf(const spdlog::source_loc& loc, spdlog::level::level_enum lvl, const char* fmt, const Args &... args)
 	{
 		spdlog::log(loc, lvl, fmt::sprintf(fmt, args...).c_str());
-	}
-*/
-	// 统一使用 _logger 实例的日志函数
-	template <typename... Args>
-	void log(const spdlog::source_loc& loc,
-			spdlog::level::level_enum lvl,
-			const char* fmt,
-			const Args&... args) {
-		if (_logger) {
-			_logger->log(loc, lvl, fmt, args...);
-		}
-	}
-
-	template <typename... Args>
-	void printf(const spdlog::source_loc& loc,
-			   spdlog::level::level_enum lvl,
-			   const char* fmt,
-			   const Args&... args) {
-		if (_logger) {
-			// 直接传递格式化结果到实例logger
-			_logger->log(loc, lvl, fmt::sprintf(fmt, args...));
-		}
 	}
 
 	spdlog::level::level_enum level() {
@@ -152,7 +119,6 @@ private:
 private:
 	std::atomic_bool _is_inited = false;
 	spdlog::level::level_enum _log_level = spdlog::level::trace;
-	std::shared_ptr<spdlog::logger> _logger; // 关键修改：显式持有logger实例
 };
 
 class logger_none {
