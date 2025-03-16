@@ -1,5 +1,6 @@
 #include "VolumeToolBtn.h"
 
+#include <QCoreApplication>
 #include<QTimer>
 #include<QHBoxLayout>
 #include<QLabel>
@@ -14,9 +15,11 @@ VolumeToolBtn::VolumeToolBtn(QWidget *parent)
     initUi();
     // 设置定时器为单次触发
     m_leaveTimer->setSingleShot(true);
-    connect(m_leaveTimer, &QTimer::timeout, this, [this]() { this->m_volumeWidget->hide(); });
-    connect(m_positionCheckTimer, &QTimer::timeout, this, &VolumeToolBtn::checkMousePosition);
+    connect(m_leaveTimer, &QTimer::timeout, this, [this] { this->m_volumeWidget->hide(); });
+
     m_positionCheckTimer->setInterval(100); // 每100毫秒检查一次
+    connect(m_positionCheckTimer, &QTimer::timeout, this, &VolumeToolBtn::checkMousePosition);
+
     connect(this, &QToolButton::clicked, this, [this] {
         m_isNoVolume = !m_isNoVolume;
         if (m_isNoVolume) {
@@ -39,7 +42,10 @@ VolumeToolBtn::VolumeToolBtn(QWidget *parent)
 
 void VolumeToolBtn::initVolumeWidget() {
     this->m_volumeParent = this->window();
-    if(this->m_volumeParent)this->m_volumeWidget->setParent(m_volumeParent);
+    if(this->m_volumeParent) {
+        this->m_volumeWidget->setParent(m_volumeParent);
+        m_volumeParent->installEventFilter(this);  // 安装事件过滤器
+    }
     else qDebug()<<"m_volumeParent is nullptr";
     this->m_volumeWidget->hide();
     this->m_volumeLab->setParent(this->m_volumeWidget.get());
@@ -75,18 +81,20 @@ void VolumeToolBtn::initUi() {
 void VolumeToolBtn::checkMousePosition() const {
     QPoint globalMousePos = QCursor::pos(); // 获取全局鼠标位置
     // 检查鼠标是否在 m_volumeWidget 内
-    if (!this->m_volumeWidget->isHidden()) {
+    if (!this->m_volumeWidget->isHidden()) {//如果显示
         if (this->m_volumeWidget->geometry().contains(this->m_volumeParent->mapFromGlobal(globalMousePos))) {
             this->m_volumeWidget->show();
             // 鼠标进入时取消定时器
             if (m_leaveTimer->isActive())
                 m_leaveTimer->stop();
-        } else {
+        }
+        else {
             //正在显示，但是鼠标不在范围内
             if (!m_leaveTimer->isActive())
                 this->m_leaveTimer->start();
         }
-    } else {
+    }
+    else {
         // 如果 m_volumeWidget 已经隐藏
         if (this->m_positionCheckTimer->isActive())
             this->m_positionCheckTimer->stop();
@@ -135,6 +143,17 @@ void VolumeToolBtn::showEvent(QShowEvent *event) {
     getVolumeWidgetPosition();
     //qDebug()<<this->m_volumePosition;
     this->m_volumeWidget->move(this->m_volumePosition);
+}
+
+bool VolumeToolBtn::eventFilter(QObject *watched, QEvent *event) {
+    if (watched == m_volumeParent && (event->type() == QEvent::Resize || event->type() == QEvent::Move)) {
+        // 主窗口调整大小或移动时更新音量部件位置
+        if (m_volumeWidget->isVisible()) {
+            getVolumeWidgetPosition();
+            m_volumeWidget->move(m_volumePosition);
+        }
+    }
+    return QToolButton::eventFilter(watched, event);
 }
 
 void VolumeToolBtn::onNoVolume(bool flag) {
