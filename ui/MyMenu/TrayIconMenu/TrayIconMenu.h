@@ -21,13 +21,21 @@ public:
 
     const TrayIconMenu* getMenu()const override;
 
+    void setShadow(const int &width, const int &radius,const QColor& color) override;
+
 private:
     void initMenu() override;
+
 signals:
     void openWindow();
 
     void exit();
 
+    void noVolume(const bool& flag);
+
+private:
+    //是否静音
+    bool m_flag = true;
 };
 
 

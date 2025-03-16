@@ -10,9 +10,6 @@
 #include <QPainterPath>
 #include <QCoreApplication>
 
-constexpr int SHADOW_WIDTH = 5;
-constexpr int RADIUS = 12;
-
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 BaseMenu::BaseMenu(QWidget *parent)
@@ -42,6 +39,10 @@ void BaseMenu::setCurIndex(const int &idx) {
     this->m_curIndex = idx;
 }
 
+QString BaseMenu::getStyleSheet() const {
+    return this->styleSheet();
+}
+
 void BaseMenu::checkHover() {
     if (!this->m_lastHover.isEmpty()) {
         QEvent leaveEvent(QEvent::Leave); // 创建进入事件
@@ -69,20 +70,19 @@ void BaseMenu::paintEvent(QPaintEvent *event) {
     //绘制阴影
     QPainterPath path;
     path.setFillRule(Qt::WindingFill);
-    path.addRoundedRect(SHADOW_WIDTH, SHADOW_WIDTH, this->width() - SHADOW_WIDTH * 2, this->height() - SHADOW_WIDTH * 2,
-                        RADIUS, RADIUS);
+    path.addRoundedRect(m_shadowWidth, m_shadowWidth, this->width() - m_shadowWidth * 2, this->height() - m_shadowWidth * 2,
+                        m_shadowRadius, m_shadowRadius);
 
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
 
-    QColor color(150, 150, 150, 55);
-    for (int i = 0; i != SHADOW_WIDTH; ++i) {
+    for (int i = 0; i != m_shadowWidth; ++i) {
         QPainterPath path;
         path.setFillRule(Qt::WindingFill);
-        path.addRoundedRect(SHADOW_WIDTH - i, SHADOW_WIDTH - i, this->width() - (SHADOW_WIDTH - i) * 2,
-                            this->height() - (SHADOW_WIDTH - i) * 2, RADIUS, RADIUS);
-        color.setAlpha(180 - static_cast<int>(qSqrt(i) * 80));
-        painter.setPen(color);
+        path.addRoundedRect(m_shadowWidth - i, m_shadowWidth - i, this->width() - (m_shadowWidth - i) * 2,
+                            this->height() - (m_shadowWidth - i) * 2, m_shadowRadius, m_shadowRadius);
+        m_shadowColor.setAlpha(180 - static_cast<int>(qSqrt(i) * 80));
+        painter.setPen(m_shadowColor);
         painter.drawPath(path);
     }
 }
@@ -90,7 +90,6 @@ void BaseMenu::paintEvent(QPaintEvent *event) {
 void BaseMenu::showEvent(QShowEvent *event) {
     QMenu::showEvent(event);
     //this->setFocus(); // 强制widget接收焦点
-    emit showSelf();
 }
 
 void BaseMenu::leaveEvent(QEvent *event) {

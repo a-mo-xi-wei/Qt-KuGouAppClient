@@ -30,6 +30,10 @@ public:
 
     void setCurIndex(const int &idx); //设置当前响应下标
 
+    QString getStyleSheet() const;
+
+    virtual void setShadow(const int& width,const int& radius,const QColor& color){};
+
 protected:
     void checkHover();
 
@@ -41,9 +45,6 @@ protected:
 
     void leaveEvent(QEvent *event) override;
 
-signals:
-    //显示
-    void showSelf();
 protected:
     //为了解决QWidgetAction没有与hovered相反的离开事件设置下面两个变量
     QVector<QWidget *> m_lastHover{};
@@ -55,6 +56,10 @@ protected:
 
     //item menu 相关
     int m_curIndex = -1; //当前让menu显示的那item的index
+
+    int m_shadowWidth = 4;
+    int m_shadowRadius = 12;
+    QColor m_shadowColor = QColor(150,150,150,55);
 };
 
 #endif //BASEMENU_H

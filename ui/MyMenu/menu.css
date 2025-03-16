@@ -2,7 +2,6 @@ QToolButton{
     border-radius: 6px;
     background-color: rgba(255,255,255,0);
     font-size: 13px;
-    font-family: "Microsoft YaHei UI";
     padding-left: 10px;
 }
 QToolButton:hover{
@@ -37,7 +36,7 @@ QWidget#listWidget:hover {
 QMenu{
     border-radius: 9px;
     background-color: #f6f9ff;
-    margin: 5px;
+    margin: 4px;
     padding: 10px 5px 10px 5px;
 }
 QMenu::separator { /* 菜单子控件separator，定义菜单项之间的分隔线 */
