@@ -33,6 +33,8 @@ public:
 
     void updateIcon(bool isHovered = false);
 
+    void setVolume(const int& value) const;
+
 protected:
     void enterEvent(QEnterEvent *event) override;
 

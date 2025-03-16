@@ -35,7 +35,7 @@ signals:
 
 private:
     //是否静音
-    bool m_flag = true;
+    bool m_flag = false;
 };
 
 

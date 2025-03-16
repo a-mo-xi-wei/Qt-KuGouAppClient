@@ -121,6 +121,10 @@ void VolumeToolBtn::updateIcon(bool isHovered) {
     }
 }
 
+void VolumeToolBtn::setVolume(const int &value) const {
+    this->m_volumeSlider->setValue(value);
+}
+
 void VolumeToolBtn::enterEvent(QEnterEvent *event) {
     QToolButton::enterEvent(event);
     updateIcon(true);
