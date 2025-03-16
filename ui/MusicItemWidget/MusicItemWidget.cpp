@@ -138,19 +138,50 @@ void MusicItemWidget::setInformation(const SongInfor &info) {
 
 void MusicItemWidget::setPlayState(const bool &state) {
     this->m_isPlaying = state;
-    if(this->m_isPlaying) {
-        //发送进入事件
-        // 创建一个进入事件
-        QEvent enterEvent(QEvent::Enter);
-        // 发送离开事件
-        QCoreApplication::sendEvent(this, &enterEvent);
-    }
-    else {
-        //发送离开事件
-        // 创建一个离开事件
-        QEvent leaveEvent(QEvent::Leave);
-        // 发送离开事件
-        QCoreApplication::sendEvent(this, &leaveEvent);
+    if (m_isPlaying) {
+        // 获取鼠标在控件内的坐标
+        QPoint globalPos = QCursor::pos(); // 全局坐标
+        QPoint localPos = mapFromGlobal(globalPos); // 转换为控件内坐标
+
+        // 检查鼠标是否在控件区域内（可选）
+        if (rect().contains(localPos)) {
+            mouse_point = localPos;
+        } else {
+            // 如果鼠标不在控件内，可以设置默认值（如控件中心）
+            mouse_point = rect().center();
+        }
+
+        // 启动定时器
+        if (!timer->isActive()) {
+            connect(timer, &QTimer::timeout, this, [=]{
+                radius += radius_var;
+                if (radius > max_radius) {
+                    timer->stop();
+                    return;
+                }
+                update();
+            });
+            timer->start();
+        }
+    } else {
+        // 停止时强制更新鼠标位置（不论是否在控件内）
+        QPoint globalPos = QCursor::pos();
+        QPoint localPos = mapFromGlobal(globalPos);
+
+        // 更新当前鼠标坐标（如果不在区域内使用中心坐标）
+        mouse_point = rect().contains(localPos) ? localPos : rect().center();
+
+        // 断开旧连接后建立收缩动画
+        timer->disconnect();
+        connect(timer, &QTimer::timeout, this, [=]{
+            radius -= radius_var;
+            if (radius < 0) {
+                timer->stop();
+                radius = 0; // 归零保持有效值
+            }
+            update();
+        });
+        timer->start(); // 立即启动收缩动画
     }
 }
 
@@ -192,7 +223,6 @@ void MusicItemWidget::getMenuPosition(const QPoint& pos) {
 
 void MusicItemWidget::enterEvent(QEnterEvent *event) {
     QFrame::enterEvent(event);
-
     mouse_point = event->position(); // 记录鼠标进入坐标
     timer->disconnect(); // 断开可能的timer的所有连接
     connect(timer, &QTimer::timeout, this, [=]{ // 定时器触发，半径增大

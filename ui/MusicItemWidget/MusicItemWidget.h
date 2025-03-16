@@ -181,7 +181,7 @@ public:
 private:
     //涟漪效果相关
     int timeInterval = 10; // 定时器时间间隔，单位：ms
-    QTimer *timer = Q_NULLPTR; // 定时器对象
+    QTimer *timer{}; // 定时器对象
     QPointF mouse_point; // 记录鼠标进入和离开时的坐标
     int max_radius; // 最大半径
     int radius = 0; // 绘制半径
