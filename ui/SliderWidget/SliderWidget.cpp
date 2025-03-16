@@ -1,5 +1,4 @@
 #include "SliderWidget.h"
-#include "logger.hpp"
 
 SliderWidget::SliderWidget(QWidget *parent,Qt::Orientation orientation)
     : QSlider(orientation, parent)
@@ -70,8 +69,7 @@ void SliderWidget::mouseMoveEvent(QMouseEvent *event) {
 void SliderWidget::mouseReleaseEvent(QMouseEvent *event) {
     // 鼠标释放时，重置按下标志
     m_isPressing = false;
-    qDebug()<<"调整进度";
-    STREAM_INFO()<<"调整进度";
+    //qDebug()<<"调整进度";
     QSlider::mouseReleaseEvent(event);
 }
 
@@ -115,8 +113,8 @@ void SliderWidget::showEvent(QShowEvent *event) {
 void SliderWidget::onNoVolume(bool flag) {
     if(flag) {
         this->setValue(0);
-        qDebug()<<"静音";
-        STREAM_INFO()<<"静音";
+        //qDebug()<<"静音";
+        //STREAM_INFO()<<"静音";
     }
     else {
         if(this->m_currentValue == 0) {
@@ -124,7 +122,7 @@ void SliderWidget::onNoVolume(bool flag) {
         }
         this->setValue(this->m_currentValue);
         //qDebug()<<"m_currentValue : "<<this->m_currentValue;
-        qDebug()<<"取消静音";
-        STREAM_INFO()<<"取消静音";
+        //qDebug()<<"取消静音";
+        //STREAM_INFO()<<"取消静音";
     }
 }

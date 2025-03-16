@@ -28,8 +28,12 @@ private:
 
     void stopFlashingTrayIcon();
 
+    void getMenuPosition(const QPoint &pos);
+
 signals:
     void showTrayMessage(QString title = "Notice",QString content = "How about today ?"); // 触发显示系统托盘消息框
+
+    void noVolume(const bool &flag);
 
 private slots:
     void onIconActivated(QSystemTrayIcon::ActivationReason reason); // 处理事件函数
@@ -38,10 +42,11 @@ private slots:
 
     void onFlashingTrayIcon();
 
-
 private:
     QWidget *m_pParent{}; // 父类，用于显示窗体
     TrayIconMenu *m_trayMenu{}; // 菜单
+    //菜单位置
+    QPoint m_menuPosition;
     // 托盘闪烁控制
     bool    m_showIcon;
     QIcon   m_emptyIcon{};

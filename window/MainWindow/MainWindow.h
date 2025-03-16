@@ -67,6 +67,9 @@ private:
     //判断鼠标的区域，用于拉伸
     int getMouseRegion(const int& x, const int& y) const;
 
+signals:
+    void fromTray_noVolume(const bool& flag);
+
 public:
     MyTrayIcon* m_trayIcon{};//桌面图标
     bool isPress = false;

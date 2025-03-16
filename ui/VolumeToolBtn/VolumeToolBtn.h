@@ -29,6 +29,8 @@ public:
 
     void getVolumeWidgetPosition();
 
+    int getVolumeValue() const;
+
 protected:
     void enterEvent(QEnterEvent *event) override;
 

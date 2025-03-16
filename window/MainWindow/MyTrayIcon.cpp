@@ -4,6 +4,8 @@
 
 #include "MyTrayIcon.h"
 
+#include <QGuiApplication>
+#include <QScreen>
 #include <QTimer>
 
 #pragma execution_character_set("utf-8")    // qt支持显示中文
@@ -57,6 +59,11 @@ void MyTrayIcon::handleSysTrayMenu() {
         m_pParent->showNormal();
     });
 
+    connect(m_trayMenu, &TrayIconMenu::noVolume,this,[this](const bool& flag) {
+        //qDebug()<<"MyTrayIcon 托盘图标点击: "<<(flag?"静音":"开启声音");
+        emit noVolume(flag);
+    });
+
     connect(m_trayMenu, &TrayIconMenu::exit, this, [this] { this->m_pParent->close(); });
 }
 
@@ -86,14 +93,48 @@ void MyTrayIcon::stopFlashingTrayIcon() {
         m_checkTimer->stop();
 }
 
+void MyTrayIcon::getMenuPosition(const QPoint &pos) {
+    this->m_menuPosition = pos;
+    // 获取屏幕的尺寸
+    const QScreen *screen = QGuiApplication::primaryScreen();
+    const QRect screenGeometry = screen->geometry();
+
+    // 计算菜单右侧的全局位置
+    //int menuLeftPos = pos.x() - m_menu->width();
+    const int menuRightPos = pos.x() + m_trayMenu->width();
+    const int menuBottomPos = pos.y() + m_trayMenu->height();
+    //int menuTopPos = pos.y() - m_menu->height();
+    // 若菜单左侧超出屏幕左侧 (不存在)
+    //if(menuLeftPos < 0) {
+    //    // 动态调整菜单位置，使其在屏幕内显示
+    //    m_menuPosition.setX(10);
+    //}
+    // 如果菜单右侧超出屏幕右侧
+    if (menuRightPos > screenGeometry.right()) {
+        // 动态调整菜单位置，使其在屏幕内显示
+        const int offset = menuRightPos - screenGeometry.right() + 5;
+        m_menuPosition.setX(pos.x() - offset);
+    }
+    // 如果菜单下侧超出屏幕下侧
+    if (menuBottomPos > screenGeometry.bottom()) {
+        // 动态调整菜单位置，使其在屏幕内显示
+        const int offset = menuBottomPos - screenGeometry.bottom() + 5;
+        m_menuPosition.setY(pos.y() - offset);
+    }
+}
+
 void MyTrayIcon::onIconActivated(QSystemTrayIcon::ActivationReason reason) {
     if (reason == QSystemTrayIcon::Trigger) {		// 点击触发
         m_pParent->activateWindow();
         m_pParent->showNormal();
         //emit showTrayMessage(); //测试成功
         //flashingTrayIcon(400); //测试成功
-    } else if (reason == QSystemTrayIcon::Context) {	// 右键触发
-        m_trayMenu->exec(QCursor::pos());
+    }
+    else if (reason == QSystemTrayIcon::Context) {	// 右键触发
+        //m_trayMenu->exec(QCursor::pos());
+        getMenuPosition(QCursor::pos());
+        this->m_trayMenu->move(this->m_menuPosition);
+        this->m_trayMenu->show();
     }
 }
 

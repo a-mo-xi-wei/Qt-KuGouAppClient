@@ -13,7 +13,11 @@ MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
     , m_trayIcon(new MyTrayIcon(this))
 {
-
+    //接收来自 trayIcon 的信号
+    connect(m_trayIcon, &MyTrayIcon::noVolume, this, [this](const bool& flag) {
+        //qDebug()<<"MainWindow 托盘图标点击: "<<(flag?"静音":"开启声音");
+        emit fromTray_noVolume(flag);
+    });
 }
 
 void MainWindow::paintEvent(QPaintEvent *event) {

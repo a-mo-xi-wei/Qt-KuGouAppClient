@@ -32,7 +32,9 @@ VolumeToolBtn::VolumeToolBtn(QWidget *parent)
         this->m_volumeLab->setText(" "+QString::number(this->m_volumeSlider->getValue()) + "%");
         emit volumeChange(this->m_volumeSlider->getValue());
     });
-    connect(this->m_volumeSlider.get(), &SliderWidget::noVolume,this,[this](bool flag){onNoVolume(flag);});
+    connect(this->m_volumeSlider.get(), &SliderWidget::noVolume,this,[this](bool flag) {
+        onNoVolume(flag);
+    });
 }
 
 void VolumeToolBtn::initVolumeWidget() {
@@ -97,6 +99,10 @@ void VolumeToolBtn::getVolumeWidgetPosition() {
     //qDebug() << "VolumeWidgetPosition : "<<this->m_volumePosition;
 }
 
+int VolumeToolBtn::getVolumeValue() const {
+    return this->m_volumeSlider->getValue();
+}
+
 void VolumeToolBtn::enterEvent(QEnterEvent *event) {
     QToolButton::enterEvent(event);
     if (m_isNoVolume)this->setIcon(QIcon(QStringLiteral(":/Res/playbar/volume-off-blue.svg")));
@@ -133,7 +139,6 @@ void VolumeToolBtn::showEvent(QShowEvent *event) {
 
 void VolumeToolBtn::onNoVolume(bool flag) {
     if(flag) {
-
         if(!this->m_isNoVolume) {
             this->m_isNoVolume = true;
             this->setIcon(QIcon(QStringLiteral(":/Res/playbar/volume-off-gray.svg")));

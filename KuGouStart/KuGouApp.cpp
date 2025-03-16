@@ -35,12 +35,12 @@ QPixmap roundedPixmap(const QPixmap &src, QSize size, int radius) {
 
 KuGouApp::KuGouApp(MainWindow *parent)
     : MainWindow(parent)
-      , ui(new Ui::KuGouApp)
-      , m_player(std::make_unique<QMediaPlayer>(this))
-      , m_audioOutput(std::make_unique<QAudioOutput>(this))
-      , m_menuBtnGroup(std::make_unique<QButtonGroup>(this))
-      , m_sizeGrip(std::make_unique<QSizeGrip>(this))
-      , m_animation(std::make_unique<QPropertyAnimation>(this, "geometry"))
+    , ui(new Ui::KuGouApp)
+    , m_player(std::make_unique<QMediaPlayer>(this))
+    , m_audioOutput(std::make_unique<QAudioOutput>(this))
+    , m_menuBtnGroup(std::make_unique<QButtonGroup>(this))
+    , m_sizeGrip(std::make_unique<QSizeGrip>(this))
+    , m_animation(std::make_unique<QPropertyAnimation>(this, "geometry"))
 {
     ui->setupUi(this);
     this->setObjectName("KuGou");
@@ -59,7 +59,14 @@ KuGouApp::KuGouApp(MainWindow *parent)
         const float volume = static_cast<float>(value) / 100; // 将值转换为0.0到1.0之间
         this->m_audioOutput->setVolume(volume); // 设置音量
     });
-
+    connect(this,&MainWindow::fromTray_noVolume,this,[this](const bool& flag) {
+        qDebug()<<"KuGouApp 托盘图标点击: "<<(flag?"静音":"开启声音");
+        if ((flag && ui->volume_toolButton->getVolumeValue()) || (!flag && !ui->volume_toolButton->getVolumeValue())) {
+            ui->volume_toolButton->clicked();
+            // 立即触发 leaveEvent
+             QCoreApplication::sendEvent(ui->volume_toolButton, new QEvent(QEvent::Enter));
+        }
+    });
     // 设置快捷键
     new QShortcut(QKeySequence("Space"), this, SLOT(onKeyPause())); // 空格键暂停/播放
     new QShortcut(QKeySequence("Right"), this, SLOT(onKeyRight())); // 右箭头快进
