@@ -31,6 +31,8 @@ public:
 
     int getVolumeValue() const;
 
+    void updateIcon(bool isHovered = false);
+
 protected:
     void enterEvent(QEnterEvent *event) override;
 

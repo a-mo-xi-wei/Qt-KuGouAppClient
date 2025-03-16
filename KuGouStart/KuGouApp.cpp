@@ -60,11 +60,11 @@ KuGouApp::KuGouApp(MainWindow *parent)
         this->m_audioOutput->setVolume(volume); // 设置音量
     });
     connect(this,&MainWindow::fromTray_noVolume,this,[this](const bool& flag) {
-        qDebug()<<"KuGouApp 托盘图标点击: "<<(flag?"静音":"开启声音");
+        //qDebug()<<"KuGouApp 托盘图标点击: "<<(flag?"静音":"开启声音");
         if ((flag && ui->volume_toolButton->getVolumeValue()) || (!flag && !ui->volume_toolButton->getVolumeValue())) {
             ui->volume_toolButton->clicked();
-            // 立即触发 leaveEvent
-             QCoreApplication::sendEvent(ui->volume_toolButton, new QEvent(QEvent::Enter));
+            // 立即触发 Enter
+            QCoreApplication::sendEvent(ui->volume_toolButton, new QEvent(QEvent::Enter));
         }
     });
     // 设置快捷键

@@ -66,11 +66,12 @@ void TrayIconMenu::initMenu() {
             this->m_flag = !this->m_flag;
             emit noVolume(this->m_flag);
             if (this->m_flag) {
-                a_openCloseToolBtn->setIcon(QIcon(QStringLiteral(":/Res/playbar/volume-off-gray.svg")));
+                a_openCloseToolBtn->setIcon(QIcon(QStringLiteral(":/Res/playbar/volume-off-blue.svg")));
                 a_openCloseToolBtn->initIcon(QIcon(QStringLiteral(":/Res/playbar/volume-off-gray.svg")),
                                              QIcon(QStringLiteral(":/Res/playbar/volume-off-blue.svg")));
-            } else {
-                a_openCloseToolBtn->setIcon(QIcon(QStringLiteral(":/Res/playbar/volume-on-gray.svg")));
+            }
+            else {
+                a_openCloseToolBtn->setIcon(QIcon(QStringLiteral(":/Res/playbar/volume-on-blue.svg")));
                 a_openCloseToolBtn->initIcon(QIcon(QStringLiteral(":/Res/playbar/volume-on-gray.svg")),
                                              QIcon(QStringLiteral(":/Res/playbar/volume-on-blue.svg")));
             }

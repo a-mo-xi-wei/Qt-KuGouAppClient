@@ -111,10 +111,19 @@ int VolumeToolBtn::getVolumeValue() const {
     return this->m_volumeSlider->getValue();
 }
 
+void VolumeToolBtn::updateIcon(bool isHovered) {
+    if (m_isNoVolume) {
+        setIcon(QIcon(isHovered ? ":/Res/playbar/volume-off-blue.svg"
+                                : ":/Res/playbar/volume-off-gray.svg"));
+    } else {
+        setIcon(QIcon(isHovered ? ":/Res/playbar/volume-on-blue.svg"
+                                : ":/Res/playbar/volume-on-gray.svg"));
+    }
+}
+
 void VolumeToolBtn::enterEvent(QEnterEvent *event) {
     QToolButton::enterEvent(event);
-    if (m_isNoVolume)this->setIcon(QIcon(QStringLiteral(":/Res/playbar/volume-off-blue.svg")));
-    else this->setIcon(QIcon(QStringLiteral(":/Res/playbar/volume-on-blue.svg")));
+    updateIcon(true);
     getVolumeWidgetPosition();
     this->m_volumeWidget->move(this->m_volumePosition);
     this->m_volumeWidget->show();
@@ -130,8 +139,7 @@ void VolumeToolBtn::enterEvent(QEnterEvent *event) {
 
 void VolumeToolBtn::leaveEvent(QEvent *event) {
     QToolButton::leaveEvent(event);
-    if (m_isNoVolume)this->setIcon(QIcon(QStringLiteral(":/Res/playbar/volume-off-gray.svg")));
-    else this->setIcon(QIcon(QStringLiteral(":/Res/playbar/volume-on-gray.svg")));
+    updateIcon(false);
     // 鼠标离开时启动1秒的延迟定时器
     m_leaveTimer->start(500);
     // 启动定时器开始检查鼠标位置
@@ -146,11 +154,29 @@ void VolumeToolBtn::showEvent(QShowEvent *event) {
 }
 
 bool VolumeToolBtn::eventFilter(QObject *watched, QEvent *event) {
-    if (watched == m_volumeParent && (event->type() == QEvent::Resize || event->type() == QEvent::Move)) {
-        // 主窗口调整大小或移动时更新音量部件位置
-        if (m_volumeWidget->isVisible()) {
-            getVolumeWidgetPosition();
-            m_volumeWidget->move(m_volumePosition);
+    if (watched == m_volumeParent) {
+        if (event->type() == QEvent::Resize || event->type() == QEvent::Move) {
+            // 主窗口调整大小或移动时更新音量部件位置
+            if (m_volumeWidget->isVisible()) {
+                getVolumeWidgetPosition();
+                m_volumeWidget->move(m_volumePosition);
+            }
+        } else if (event->type() == QEvent::MouseButtonPress) {
+            /*// 鼠标点击主窗口时，检查是否在音量控件或按钮外
+            QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
+            QPoint globalClickPos = mouseEvent->globalPosition().toPoint();
+            QPoint localClickPos = m_volumeParent->mapFromGlobal(globalClickPos);
+
+            // 判断点击位置是否在 m_volumeWidget 或 VolumeToolBtn 内
+            bool isInsideVolumeWidget = m_volumeWidget->geometry().contains(localClickPos);
+            bool isInsideButton = this->geometry().contains(this->mapFromGlobal(globalClickPos));
+
+            if (!isInsideVolumeWidget && !isInsideButton) {
+                // 点击外部区域，立即隐藏音量控件
+                m_volumeWidget->hide();
+                m_leaveTimer->stop(); // 停止可能正在运行的计时器
+            }*/
+            QCoreApplication::sendEvent(this, new QEvent(QEvent::Leave));
         }
     }
     return QToolButton::eventFilter(watched, event);
