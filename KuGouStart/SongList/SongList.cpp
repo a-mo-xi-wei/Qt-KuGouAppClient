@@ -21,8 +21,7 @@
 
 SongList::SongList(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::SongList)
-{
+      , ui(new Ui::SongList) {
     ui->setupUi(this);
     {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/list.css"));
@@ -38,19 +37,17 @@ SongList::SongList(QWidget *parent)
     initDescVector();
     initUi();
 
-    auto menu = new MyMenu(MyMenu::MenuKind::ListOption,this);
+    auto menu = new MyMenu(MyMenu::MenuKind::ListOption, this);
     m_menu = menu->getMenu<ListOptionMenu>();
 
-    connect(ui->all_toolButton,&QToolButton::clicked,this,&SongList::on_all_toolButton_clicked);
-
+    connect(ui->all_toolButton, &QToolButton::clicked, this, &SongList::on_all_toolButton_clicked);
 }
 
 SongList::~SongList() {
     delete ui;
 }
 
-void SongList::initUi() {
-    {
+void SongList::initUi() { {
         //初始化全部按钮
         ui->all_toolButton->setMouseTracking(true);
         ui->all_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
@@ -59,18 +56,18 @@ void SongList::initUi() {
         ui->all_toolButton->setHoverFontColor(QColor(QStringLiteral("#3AA1FF")));
         ui->all_toolButton->setApproach(true);
         ui->all_toolButton->setChangeSize(true);
-        ui->all_toolButton->setEnterIconSize(QSize(10,10));
-        ui->all_toolButton->setLeaveIconSize(QSize(10,10));
+        ui->all_toolButton->setEnterIconSize(QSize(10, 10));
+        ui->all_toolButton->setLeaveIconSize(QSize(10, 10));
     }
     shuffleVector();
     //ui->table_widget->setContentsMargins(9,9,9,10);
     //auto lay = new MyFlowLayout(ui->table_widget,16, -1, 10);
-    auto lay = new MyFlowLayout(ui->table_widget,true,0);
-    lay->setContentsMargins(0,20,0,20);
+    auto lay = new MyFlowLayout(ui->table_widget, true, 0);
+    lay->setContentsMargins(0, 20, 0, 20);
     ui->table_widget->setLayout(lay);
     //for (int  i = 0; i < this->m_descVector.size(); ++i) {
     const auto size = std::min(this->m_coverVector.size(), this->m_descVector.size());
-    for (int  i = 0; i < size; ++i) {
+    for (int i = 0; i < size; ++i) {
         auto block = new SongBlock(this);
         block->setCoverPix(this->m_coverVector[i]);
         block->setShowTip();
@@ -80,7 +77,7 @@ void SongList::initUi() {
 }
 
 void SongList::initCoverVector() {
-    for (int i = 1 ; i <= 210 ; ++i) {
+    for (int i = 1; i <= 210; ++i) {
         this->m_coverVector.emplace_back(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(i));
     }
 }
@@ -94,7 +91,7 @@ void SongList::initDescVector() {
     }
     auto obj = QJsonDocument::fromJson(file.readAll());
     auto arr = obj.array();
-    for (const auto &item : arr) {
+    for (const auto &item: arr) {
         QString title = item.toObject().value("desc").toString();
         this->m_descVector.emplace_back(title);
     }
@@ -105,7 +102,6 @@ void SongList::initDescVector() {
     // 使用 std::unique 去重，并调整容器大小
     auto last = std::unique(m_descVector.begin(), m_descVector.end());
     m_descVector.erase(last, m_descVector.end());
-
 }
 
 void SongList::shuffleVector() {
@@ -120,7 +116,7 @@ void SongList::on_all_toolButton_clicked() {
     //显示菜单
     // 计算 Y 坐标，确保 m_menu 位于 all_toolButton 下方 20 个像素
     //const int yPos = ui->all_toolButton->mapToGlobal(QPoint(0,0)).y() + ui->all_toolButton->height() + 10;
-//
+    //
     //// 计算 X 坐标，使 m_menu 位于主窗口最右边减去自身宽度再左移 20 个像素
     //const int xPos = this->window()->geometry().right() - this->m_menu->width() - 20;
     //this->m_menu->setGeometry(xPos,yPos, this->m_menu->width(), this->m_menu->height());
@@ -144,7 +140,7 @@ void SongList::on_all_toolButton_clicked() {
         m_menu->setAttribute(Qt::WA_TransparentForMouseEvents, false);
 
         // 连接菜单的隐藏信号到按钮状态更新槽
-        connect(m_menu, &QMenu::aboutToHide, this, [this]() {
+        connect(m_menu, &QMenu::aboutToHide, this, [this] {
             ui->all_toolButton->setChecked(false);
             ui->all_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
             ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg")));
@@ -159,5 +155,4 @@ void SongList::on_all_toolButton_clicked() {
         ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg")));
         ui->all_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
     }
-
 }
