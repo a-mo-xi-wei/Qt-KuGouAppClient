@@ -34,7 +34,7 @@
 [license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
 
 ### 📚项目介绍
-Based on Qt Widget + UiTools module + Custom control + QSS
+Based on Qt Widget + UiTools module + Custom control + QSS + QsLog + Custom **Spdlog** + JWT
 
 使用**CMake**进行模块化管理，实现**模块解耦**（UI/播放器/网络分层），参照酷狗客户端，高仿并且优化界面，
 
