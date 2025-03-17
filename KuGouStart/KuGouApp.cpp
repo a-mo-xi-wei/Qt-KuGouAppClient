@@ -15,6 +15,7 @@
 #include <QButtonGroup>
 #include <QSizeGrip>
 #include <QPropertyAnimation>
+#include <QSequentialAnimationGroup>
 #include <QShortcut>
 #include <QTimer>
 
@@ -276,9 +277,13 @@ void KuGouApp::initTitleWidget() {
     //ui->listen_toolButton->setIcon(QIcon(":/Res/titlebar/listen-music-black.svg"));
 
     QPixmap roundedPix = roundedPixmap(QPixmap(QStringLiteral(":/Res/window/portrait.jpg")),
-                                       ui->title_portrait_label->size(), 20);
+                                       ui->title_portrait_label->size(), ui->title_portrait_label->size().width()/2);
+    m_originalCover.load(QStringLiteral(":/Res/window/portrait.jpg"));
+
     // 设置圆角半径
     ui->title_portrait_label->setPixmap(roundedPix);
+    ui->title_portrait_label->setScaledContents(false); // 禁止 QLabel 自动缩放
+    ui->title_portrait_label->installEventFilter(this);
 
     ui->title_gender_label->setPixmap(QPixmap(QStringLiteral(":/Res/window/boy.svg")));
 
@@ -560,6 +565,42 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
                 if (!this->m_isPlaying)ui->play_or_pause_toolButton->clicked();
             }
         }
+    }
+    if (watched == ui->title_portrait_label && event->type() == QEvent::Enter) {
+
+        QSize originalSize = ui->title_portrait_label->size();
+        // 创建动画组
+        auto *group = new QSequentialAnimationGroup(this);
+
+        // 缩小动画
+        auto *shrink = new QPropertyAnimation(ui->title_portrait_label, "size");
+        shrink->setDuration(300);
+        shrink->setStartValue(originalSize);
+        shrink->setEndValue(originalSize * 0.7);
+
+        // 放大动画
+        auto *expand = new QPropertyAnimation(ui->title_portrait_label, "size");
+        expand->setDuration(300);
+        expand->setStartValue(originalSize * 0.7);
+        expand->setEndValue(originalSize);
+
+        group->addAnimation(shrink);
+        group->addAnimation(expand);
+
+        // 连接动画的 valueChanged 信号，动态更新 pixmap
+        connect(shrink, &QPropertyAnimation::valueChanged, this, [=](const QVariant &value) {
+            QSize newSize = value.toSize();
+            ui->title_portrait_label->setPixmap(roundedPixmap(m_originalCover, newSize, newSize.width()/2));
+        });
+        connect(expand, &QPropertyAnimation::valueChanged, this, [=](const QVariant &value) {
+            QSize newSize = value.toSize();
+            ui->title_portrait_label->setPixmap(roundedPixmap(m_originalCover, newSize, newSize.width()/2));
+        });
+
+        // 启动动画并自动删除
+        group->start(QAbstractAnimation::DeleteWhenStopped);
+        //qDebug()<<"开始动画";
+        return true;
     }
     return MainWindow::eventFilter(watched, event);
 }

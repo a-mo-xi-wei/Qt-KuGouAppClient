@@ -238,6 +238,7 @@ private:
     std::unique_ptr<Search>             m_search{};
     //标题菜单相关
     TitleWidget*                m_title{};
+    QPixmap                     m_originalCover;
     //窗口缩放相关
     bool                        m_isTransForming = false; //专门用于在窗口缩放动画播放时，禁用拖动事件
     bool                        m_isSingleCircle = false;
