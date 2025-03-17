@@ -125,11 +125,11 @@ QWidget#play_widget QLabel {
 }
 QWidget#play_widget QPushButton {
     border-radius:5px;
-    border:1px solid black;
+    border:1px solid #6fafa7;
     background-color:rgba(255,255,255,0);
 }
 QWidget#play_widget QPushButton:checked {
-    background-color: pink;
+    background-color: qlineargradient(spread:pad,x1:0, y1:0,x2:1, y2:0,stop:0 rgb(105, 225, 255), stop:1 rgba(255, 182, 193, 255)); /* 淡粉色 */
 }
 QToolButton#volume_toolButton{
     background-color:rgba(255,255,255,0);
