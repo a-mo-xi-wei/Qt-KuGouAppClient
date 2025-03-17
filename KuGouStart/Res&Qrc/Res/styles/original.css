@@ -173,7 +173,7 @@ QSlider::handle:horizontal {
     background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.50565, fy:0.500409, stop:0 rgba(0, 0, 0, 255), stop:0.361582 rgba(0, 146, 146, 255), stop:0.649718 rgba(255, 255, 255, 255), stop:1 rgba(0, 177, 181, 255));
     border: 1px solid #5c5c5c;
     width: 14px;
-    margin: -4px 0px;
+    margin: -4px 0;/* top and bottom | left and right */
     border-radius: 8px;
 }
 QSlider::sub-page:horizontal {
