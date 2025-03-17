@@ -3,6 +3,12 @@
 
 #include<QWidget>
 
+#if defined(MAINWINDOW_LIBRARY)
+#define MAINWINDOW_EXPORT Q_DECL_EXPORT
+#else
+#define MAINWINDOW_EXPORT Q_DECL_IMPORT
+#endif
+
 class MyTrayIcon;
 
 namespace Area {
@@ -43,7 +49,7 @@ enum MousePosition {
     kMousePositionRightBottom = 33,
 };
 
-class MainWindow : public QWidget {
+class MAINWINDOW_EXPORT MainWindow : public QWidget {
     Q_OBJECT
 
 public:
