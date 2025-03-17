@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-🎁如果你喜欢该项目，请点击右上角的✨星星✨，你的 <strong>Star</strong>是我最大的动力
+🎁如果你喜欢该项目，请点击右上角的✨星星✨，你的 <strong>Star</strong> 是我最大的动力
 <br>
 <strong>本项目代码仅限研究和学习使用，资源版权归音乐平台所有</strong>
 </p>
@@ -36,11 +36,11 @@
 ### 📚项目介绍
 Based on Qt Widget + UiTools module + Custom control + QSS
 
-使用**CMake**进行模块化管理，实现**模块解耦**（UI/播放器/网络分层），参照酷狗酷狗客户端，高仿并且优化界面，
+使用**CMake**进行模块化管理，实现**模块解耦**（UI/播放器/网络分层），参照酷狗客户端，高仿并且优化界面，
 
 **QMediaPlayer**和**QAudioOutput**来实现音频播放，提供更好的音乐播放体验，
 
-采用SQLite存储音乐元数据（标题/专辑/路径），使用Qt SQL模块实现播放记录管理
+采用**SQLite**存储音乐元数据（标题/专辑/路径），使用Qt SQL模块实现播放记录管理
 
 通过**QNetworkAccessManager**实现在线音乐流媒体播放，采用 **QtConcurrent** + **QFutureWatcher** 实现**非阻塞式**线程任务调度
 ，基于 **QThreadPool** 实现 动态弹性线程池，通过 QRunnable 封装任务单元，自动回收线程资源。
