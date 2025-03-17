@@ -87,7 +87,7 @@ void chttpserver::onProcessHttpAccepted(const QPointer<JQHttpServer::Session> &s
     if (!m_NetworkFrameManager->OnProcessHttpAccepted(this,session)) {
         // 可自定义错误格式（如 JSON）
         session->replyBytes(
-            R"({"ERROR" : "Endpoint not found，please check your request"})",
+            R"({"ERROR" : "Endpoint not found, please check your request"})",
             "application/json; charset=UTF-8"
         );
     }

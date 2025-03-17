@@ -24,15 +24,17 @@ private:
 private:
     //处理各种API
     //测试
-    static bool onApiTest(const QPointer<JQHttpServer::Session> &session);
+    bool onApiTest(const QPointer<JQHttpServer::Session> &session);
     //版本
-    static bool onApiVersion(const QPointer<JQHttpServer::Session> &session);
+    bool onApiVersion(const QPointer<JQHttpServer::Session> &session);
+    //获取本地歌曲列表
+    bool onApiLocalSongList(const QPointer<JQHttpServer::Session> &session);
     //搜索歌曲
-    static bool onApiSearchSong(const QPointer<JQHttpServer::Session> &session);
+    bool onApiSearchSong(const QPointer<JQHttpServer::Session> &session);
     //添加歌曲
-    static bool onApiAddSong(const QPointer<JQHttpServer::Session> &session);
+    bool onApiAddSong(const QPointer<JQHttpServer::Session> &session);
     //删除歌曲
-    static bool onApiDelSong(const QPointer<JQHttpServer::Session> &session);
+    bool onApiDelSong(const QPointer<JQHttpServer::Session> &session);
 
 private:
     chttpserver m_httpserver;

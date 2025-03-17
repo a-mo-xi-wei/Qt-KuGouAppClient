@@ -3,6 +3,16 @@
 //
 
 #include "Server.h"
+#include "SResultCode.h"
+
+#define CheckJsonParse(session)\
+        QJsonParseError error;\
+        QJsonDocument requestDoc = QJsonDocument::fromJson(session->requestBody(), &error);\
+        if (error.error != QJsonParseError::NoError) {\
+            QLOG_ERROR() << "JSON parse error:" << error.errorString();\
+            session->replyBytes(SResult::failure(SResultCode::ParamJsonInvalid),"application/json");\
+            return false;\
+        }
 
 Server::Server() {
     initDateBase();
@@ -54,10 +64,14 @@ void Server::initDateBase() {
 }
 
 void Server::initRouter() {
-    apiRouter["/api/test"] = &Server::onApiTest;
-    apiRouter["/api/version"] = &Server::onApiVersion;
-    apiRouter["/api/addSong"] = &Server::onApiAddSong;
-    apiRouter["/api/delSong"] = &Server::onApiDelSong;
+    //apiRouter["/api/test"] = std::bind(&Server::onApiTest, this, std::placeholders::_1);
+    apiRouter["/api/test"] = [this](auto && PH1) { return onApiTest(std::forward<decltype(PH1)>(PH1)); };
+    //apiRouter["/api/version"] = std::bind(&Server::onApiVersion, this, std::placeholders::_1);
+    apiRouter["/api/version"] = [this](auto && PH1) { return onApiVersion(std::forward<decltype(PH1)>(PH1)); };
+    apiRouter["/api/localSongList"] = [this](auto && PH1) { return onApiLocalSongList(std::forward<decltype(PH1)>(PH1)); };
+    apiRouter["/api/searchSong"] = [this](auto && PH1) { return onApiSearchSong(std::forward<decltype(PH1)>(PH1)); };
+    apiRouter["/api/addSong"] = [this](auto && PH1) { return onApiAddSong(std::forward<decltype(PH1)>(PH1)); };
+    apiRouter["/api/delSong"] = [this](auto && PH1) { return onApiDelSong(std::forward<decltype(PH1)>(PH1)); };
 }
 
 bool Server::OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServer::Session> &session) {
@@ -105,12 +119,91 @@ bool Server::onApiVersion(const QPointer<JQHttpServer::Session> &session) {
     return true;
 }
 
+bool Server::onApiLocalSongList(const QPointer<JQHttpServer::Session> &session) {
+    if (m_SqliteDataProvider.execSql("SELECT name FROM sqlite_master WHERE type='table' AND name='local_song_table';").isEmpty()) {
+
+    }
+    return false;
+}
+
 bool Server::onApiSearchSong(const QPointer<JQHttpServer::Session> &session) {
     return false;
 }
 
 bool Server::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
-    return false;
+    CheckJsonParse(session);
+    QJsonObject requestData = requestDoc.object();
+
+    // 校验必需字段
+    const QStringList requiredFields = {
+        "index", "songName", "singer",
+        "duration", "mediaPath", "addTime"
+    };
+    for (const auto &field : requiredFields) {
+        if (!requestData.contains(field)) {
+            QLOG_ERROR() << "Missing required field: " << field;
+            session->replyBytes(SResult::failure(SResultCode::ParamLoss),"application/json");
+            return false;
+        }
+    }
+
+    try {
+        // 提取数据
+        const int index = requestData["index"].toInt();
+        const QString songName = requestData["songName"].toString();
+        const QString singer = requestData["singer"].toString();
+        const QString duration = requestData["duration"].toString();
+        const QString mediaPath = requestData["mediaPath"].toString();
+        const QString addTime = requestData["addTime"].toString();
+
+        // 处理封面图片（Base64或空）
+        QString coverData;
+        if (requestData.contains("cover") && !requestData["cover"].isNull()) {
+            QByteArray imageData = QByteArray::fromBase64(
+                requestData["cover"].toString().toLatin1()
+            );
+
+            // 可选：验证图片有效性
+            if (!QImage::fromData(imageData).isNull()) {
+                coverData = requestData["cover"].toString();
+            } else {
+                QLOG_WARN() << "Invalid image data for index:" << index;
+            }
+        }
+
+        // 构造SQL语句（使用参数化查询防注入）
+        const QString sql = QString(
+           "INSERT INTO local_song_table "
+           "(index, cover, song, singer, duration, media_path, add_time) "
+           "VALUES (%1, %2, %3, %4, %5, %6, %7);"
+       )
+       .arg(index)  // 数值类型直接使用
+       .arg(coverData)
+       .arg(songName)
+       .arg(singer)
+       .arg(duration)
+       .arg(mediaPath)
+       .arg(addTime);
+        qDebug()<<sql;
+        return true;
+        // 执行SQL
+        if (!m_SqliteDataProvider.execSql(sql).isEmpty()) {
+            QJsonObject response;
+            response["status"] = "success";
+            response["index"] = index;
+            session->replyBytes(QJsonDocument(response).toJson(), "application/json");
+
+            QLOG_INFO() << "Song added successfully. Index:" << index;
+        } else {
+            QLOG_ERROR() << "Song added error for index:" << index;
+            session->replyBytes(SResult::failure(SResultCode::ServerSqlQueryError),"application/json");
+        }
+    } catch (const std::exception &e) {
+        QLOG_ERROR() << "Exception in onApiAddSong:" << e.what();
+        session->replyBytes(SResult::failure(SResultCode::ServerInnerError),"application/json");
+    }
+
+    return true;
 }
 
 bool Server::onApiDelSong(const QPointer<JQHttpServer::Session> &session) {
