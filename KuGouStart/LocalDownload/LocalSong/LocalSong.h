@@ -7,6 +7,7 @@
 
 #include "MusicItemWidget.h"
 #include "SortOptionMenu/SortOptionMenu.h"
+#include "libhttp.h"
 
 #include <QQueue>
 #include <QWidget>
@@ -143,6 +144,9 @@ private:
     QWidget *m_parent{};
     //垂直滚动条
     QScrollBar *m_vScrollBar{};
+
+    //发送网络请求
+    CLibhttp m_Libhttp;
 };
 
 

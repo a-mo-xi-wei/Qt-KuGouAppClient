@@ -5,10 +5,16 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_LocalSong.h" resolved
 
 #include "LocalSong.h"
+
+#include <QBuffer>
+
 #include "ui_LocalSong.h"
 #include "logger.hpp"
 
 #include <QFileDialog>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <qjsonvalue.h>
 #include <QMediaMetaData>
 #include <QMediaPlayer>
 #include <QRandomGenerator>
@@ -102,7 +108,7 @@ void LocalSong::initUi() {
     }
 
     //先直接往里面嵌入两首歌
-    this->m_mediaPath = QStringLiteral("qrc:/Res/audio/zi-jing-hua.mp3");
+    /*this->m_mediaPath = QStringLiteral("qrc:/Res/audio/zi-jing-hua.mp3");
     this->m_player->setSource(QUrl(this->m_mediaPath));
     this->m_player->play(); // 触发状态改变信号，获取元数据信息
     // 使用 QMetaObject::Connection 跟踪连接
@@ -116,11 +122,11 @@ void LocalSong::initUi() {
             this->m_player->play();
 
             // 断开连接并清理
-            QObject::disconnect(*connection);
+            disconnect(*connection);
             delete connection;
         },
         Qt::QueuedConnection // 确保异步执行
-    );
+    );*/
 }
 
 void LocalSong::getMetaData() {
@@ -163,11 +169,36 @@ void LocalSong::getMetaData() {
             tempInformation.addTime = QDateTime::currentDateTime();
             tempInformation.playCount = 0;
             //判重（通过元数据信息）
+            //TODO : 先要从数据库读出数据，放入vector
             const auto it = std::find(this->m_locationMusicVector.begin(),
                                 this->m_locationMusicVector.end(), tempInformation);
-            if (it == this->m_locationMusicVector.end())this->m_locationMusicVector.emplace_back(tempInformation);
+            if (it == this->m_locationMusicVector.end()) {
+                this->m_locationMusicVector.emplace_back(tempInformation);
+                // 将QPixmap转换为QImage并保存为PNG格式的字节流
+                QByteArray imageData;
+                QBuffer buffer(&imageData);
+                buffer.open(QIODevice::WriteOnly);
+                tempInformation.cover.toImage().save(&buffer, "PNG"); // 也可以使用"JPG"
+                buffer.close();
+
+                // 转换为Base64字符串
+                QString base64Image = QString::fromLatin1(imageData.toBase64().data());
+                auto postJson = QJsonObject{
+                    {"index", tempInformation.index},
+                    {"cover", base64Image},
+                    {"songName", tempInformation.songName},
+                    {"singer", tempInformation.singer},
+                    {"duration", tempInformation.duration},
+                    {"mediaPath", tempInformation.mediaPath},
+                    {"addTime", tempInformation.addTime.toString("yyyy-MM-dd hh:mm:ss")},
+                };
+                QJsonDocument doc(postJson);
+                QString jsonString = doc.toJson(QJsonDocument::Compact); // 紧凑格式无换行
+                QString reply = m_Libhttp.UrlRequestPost(QStringLiteral("http://127.0.0.1:8080/api/addSong"),jsonString);
+            }
             else {
-                //qDebug()<<title<<"已存在，请勿重复插入";
+                STREAM_INFO()<<title.toStdString()<<" 已存在，请勿重复插入";
+                qDebug()<<title<<" 已存在，请勿重复插入";
                 //加载下一首歌
                 loadNextSong();
                 return;
