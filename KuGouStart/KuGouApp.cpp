@@ -43,7 +43,7 @@ KuGouApp::KuGouApp(MainWindow *parent)
     , m_animation(std::make_unique<QPropertyAnimation>(this, "geometry"))
 {
     ui->setupUi(this);
-    this->setObjectName("KuGou");
+
     QFile file(GET_CURRENT_DIR + QStringLiteral("/Res&Qrc/Res/styles/original.css"));
     if (file.open(QIODevice::ReadOnly)) {
         this->setStyleSheet(file.readAll());
@@ -52,7 +52,9 @@ KuGouApp::KuGouApp(MainWindow *parent)
         STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
+
     initUi();
+
     this->m_player->setAudioOutput(this->m_audioOutput.get());
     this->m_audioOutput->setVolume(0.2);
     connect(ui->volume_toolButton, &VolumeToolBtn::volumeChange, this, [this](const int value) {
@@ -60,7 +62,7 @@ KuGouApp::KuGouApp(MainWindow *parent)
         this->m_audioOutput->setVolume(volume); // 设置音量
     });
     connect(this,&MainWindow::fromTray_noVolume,this,[this](const bool& flag) {
-        qDebug()<<"KuGouApp 托盘图标点击: "<<(flag?"静音":"开启声音");
+        STREAM_INFO()<<"KuGouApp 托盘图标点击: "<<(flag?"静音":"开启声音");
         if ((flag && ui->volume_toolButton->getVolumeValue()) || (!flag && !ui->volume_toolButton->getVolumeValue())) {
             // 立即触发 Enter
             QCoreApplication::sendEvent(ui->volume_toolButton, new QEvent(QEvent::Enter));
@@ -68,6 +70,7 @@ KuGouApp::KuGouApp(MainWindow *parent)
             //qDebug()<<"当前音量："<<ui->volume_toolButton->getVolumeValue();
         }
     });
+
     // 设置快捷键
     new QShortcut(QKeySequence("Space"), this, SLOT(onKeyPause())); // 空格键暂停/播放
     new QShortcut(QKeySequence("Right"), this, SLOT(onKeyRight())); // 右箭头快进
@@ -681,6 +684,8 @@ void KuGouApp::on_title_music_pushButton_clicked() {
     ui->menu_scrollArea->show();
     this->m_lastBtn->clicked();
     this->m_lastBtn->setChecked(true);
+    qDebug()<<"音乐";
+    STREAM_INFO()<<"切换音乐界面";
 }
 
 void KuGouApp::on_title_live_pushButton_clicked() {
@@ -694,6 +699,8 @@ void KuGouApp::on_title_live_pushButton_clicked() {
     ui->stackedWidget->setCurrentWidget(this->m_live.get());
 
     updateSize();
+    qDebug()<<"直播";
+    STREAM_INFO()<<"切换直播界面";
 }
 
 void KuGouApp::on_title_listen_book_pushButton_clicked() {
@@ -719,8 +726,9 @@ void KuGouApp::on_title_search_pushButton_clicked() {
     //显示窗口
     ui->stackedWidget->setCurrentWidget(this->m_search.get());
 
-
     updateSize();
+    qDebug()<<"探索";
+    STREAM_INFO()<<"切换探索界面";
 }
 
 void KuGouApp::on_min_toolButton_clicked() {
@@ -807,6 +815,8 @@ void KuGouApp::on_recommend_you_toolButton_clicked() {
 
     //设置上次指向
     this->m_lastBtn = ui->recommend_you_toolButton;
+    qDebug()<<"为你推荐";
+    STREAM_INFO()<<"切换为你推荐界面";
 }
 
 void KuGouApp::on_music_repository_toolButton_clicked() {
