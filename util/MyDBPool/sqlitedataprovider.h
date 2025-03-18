@@ -21,9 +21,9 @@ public:
     // 得到数据库文件路径
     Q_INVOKABLE QString getdbPath() { return m_dbPath; }
     // 执行SQL语句
-    Q_INVOKABLE RecordSetList execSql(const QString& sql,QString connectionName="qt_sql_default_connection",bool longConnect=true);
+    Q_INVOKABLE RecordSetList execSql(const QString& sql, const QString &connectionName="qt_sql_default_connection",bool longConnect=true);
     // 执行sql的insert语句
-    Q_INVOKABLE RecordSetList execInsertSql(const QString& sql,QString connectionName="qt_sql_default_connection",bool longConnect=true);
+    Q_INVOKABLE RecordSetList execInsertSql(const QString& sql, const QString &connectionName="qt_sql_default_connection",bool longConnect=true);
     // 执行多条语句
     Q_INVOKABLE RecordSetList execSqls(const QStringList& sqls,QString connectionName="qt_sql_default_connection",bool longConnect=true);
     // 执行事务

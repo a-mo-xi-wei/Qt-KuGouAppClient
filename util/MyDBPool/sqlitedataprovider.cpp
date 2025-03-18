@@ -13,8 +13,6 @@
 SqliteDataProvider::SqliteDataProvider(QObject *parent)
     : QObject(parent)
 {
-    //初始化数据库连接池
-    init_dbpool(false,this);
 }
 
 /**
@@ -33,7 +31,6 @@ SqliteDataProvider::~SqliteDataProvider()
 bool SqliteDataProvider::connect(const QString &dbPath)
 {
     m_dbPath = dbPath;
-
     return true;
 }
 
@@ -121,6 +118,72 @@ RecordSetList SqliteDataProvider::execTransaction(const QStringList& sqls,QStrin
 }
 
 /**
+ * 执行SQL语句
+ *
+ * @param sql 要执行的SQL语句
+ *
+ * @return 如果成功获取到数据返回这个数据记录，否则抛出异常
+ */
+RecordSetList SqliteDataProvider::execSql(const QString& sql,
+                                                const QString &connectionName,
+                                                bool longConnect)
+{
+    RecordSetList pRecordSetList;
+
+    const QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,m_dbPath,"","","",1433,longConnect,connectionName);
+
+    if(!tempDB.isOpen())
+    {
+        qDebug() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
+        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
+        return pRecordSetList;
+    }
+
+    QSqlQuery query_result(tempDB);
+
+    if(query_result.exec(sql))
+    {
+        try {
+            do
+            {
+                RecordSet pRecordSet;
+                QSqlRecord precord = query_result.record();
+
+                Row fieldNames;
+                for(int i=0;i<precord.count();i++)
+                {
+                    //qDebug()<<"query:"<<precord.fieldName(i);
+                    fieldNames.push_back(precord.fieldName(i));
+                }
+
+                pRecordSet.setColumnHeaders(fieldNames);
+
+                while(query_result.next())
+                {
+                    Row fieldDatas;
+                    for(int i=0;i<precord.count();i++)
+                    {
+                        fieldDatas.push_back(query_result.value(i).toString());
+                    }
+
+                    pRecordSet.add(fieldDatas);
+                }
+
+                if(!pRecordSet.isEmpty())
+                    pRecordSetList.add(pRecordSet);
+            }
+            while(query_result.nextResult());
+        } catch (...) {
+            QLOG_ERROR()<<"query error:"<<query_result.lastError().text();
+        }
+    }
+
+    //NDBPool::closeConnection(tempDB);
+
+    return pRecordSetList;
+}
+
+/**
  * @brief SqliteDataProvider::execSqls 执行多条语句
  * @param sqls 要执行的SQL语句
  *
@@ -132,7 +195,7 @@ RecordSetList SqliteDataProvider::execSqls(const QStringList& sqls,
 {
     RecordSetList pRecordSetList;
 
-    QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,m_dbPath,"","","",1433,longConnect,connectionName);
+    const QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,m_dbPath,"","","",1433,longConnect,connectionName);
     //QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
 
     if(!tempDB.isOpen())
@@ -203,16 +266,17 @@ RecordSetList SqliteDataProvider::execSqls(const QStringList& sqls,
  * @return 如果成功获取到数据返回这个数据记录，否则抛出异常
  */
 RecordSetList SqliteDataProvider::execInsertSql(const QString& sql,
-                                                      QString connectionName,
-                                                      bool longConnect)
+                                                  const QString &connectionName,
+                                                  bool longConnect)
 {
     RecordSetList pRecordSetList;
 
-    QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,m_dbPath,"","","",1433,longConnect,connectionName);
-    //QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
+    const QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,m_dbPath,"","","",1433,longConnect,connectionName);
+
 
     if(!tempDB.isOpen())
     {
+        qDebug() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
         QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
         return pRecordSetList;
     }
@@ -254,72 +318,6 @@ RecordSetList SqliteDataProvider::execInsertSql(const QString& sql,
             while(queryresult.nextResult());
         } catch (...) {
             QLOG_ERROR()<<"query error:"<<queryresult.lastError().text();
-        }
-    }
-
-    //NDBPool::closeConnection(tempDB);
-
-    return pRecordSetList;
-}
-
-/**
- * 执行SQL语句
- *
- * @param sql 要执行的SQL语句
- *
- * @return 如果成功获取到数据返回这个数据记录，否则抛出异常
- */
-RecordSetList SqliteDataProvider::execSql(const QString& sql,
-                                                QString connectionName,
-                                                bool longConnect)
-{
-    RecordSetList pRecordSetList;
-
-    const QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,m_dbPath,"","","",1433,longConnect,connectionName);
-   // QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
-
-    if(!tempDB.isOpen())
-    {
-        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
-        return pRecordSetList;
-    }
-
-    QSqlQuery query_result(tempDB);
-
-    if(query_result.exec(sql))
-    {
-        try {
-            do
-            {
-                RecordSet pRecordSet;
-                QSqlRecord precord = query_result.record();
-
-                Row fieldNames;
-                for(int i=0;i<precord.count();i++)
-                {
-                    //qDebug()<<"query:"<<precord.fieldName(i);
-                    fieldNames.push_back(precord.fieldName(i));
-                }
-
-                pRecordSet.setColumnHeaders(fieldNames);
-
-                while(query_result.next())
-                {
-                    Row fieldDatas;
-                    for(int i=0;i<precord.count();i++)
-                    {
-                        fieldDatas.push_back(query_result.value(i).toString());
-                    }
-
-                    pRecordSet.add(fieldDatas);
-                }
-
-                if(!pRecordSet.isEmpty())
-                    pRecordSetList.add(pRecordSet);
-            }
-            while(query_result.nextResult());
-        } catch (...) {
-            QLOG_ERROR()<<"query error:"<<query_result.lastError().text();
         }
     }
 
