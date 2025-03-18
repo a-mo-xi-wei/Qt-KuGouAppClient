@@ -35,10 +35,11 @@ public:
 	/*  #name:使用预处理器的字符串化操作符 # 将宏参数 name 转换成对应的字符串字面量  */
 	CODE(Success, 0, "成功~");
 	CODE(SuccessButNotData, 1, "成功~但是好像没有数据");
-	//参数错误[1000~1999)
+	//参数/路径错误[1000~1999)
 	CODE(ParamJsonInvalid, 1000, "请求参数Json无效");
 	CODE(ParamLoss, 1001, "缺少必要参数");
 	CODE(ParamParseError, 1002, "参数解析错误");
+	CODE(PathIllegal, 1003, "非法访问路径");
 	//服务器错误[2000~2999)
 	CODE(ServerSqlQueryError, 2000, "Sql 执行失败");
 	CODE(ServerInnerError, 2001, "服务器内部错误");
