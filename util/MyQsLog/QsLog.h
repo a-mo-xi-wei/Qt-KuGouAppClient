@@ -31,7 +31,7 @@
 #include <QDebug>
 #include <QString>
 
-#if defined(QSLOG_LIB)
+#if defined(QSLOG_IS_SHARED_LIBRARY)
 #define QSLOG_SHARED_OBJECT Q_DECL_EXPORT
 #else
 #define QSLOG_SHARED_OBJECT Q_DECL_IMPORT

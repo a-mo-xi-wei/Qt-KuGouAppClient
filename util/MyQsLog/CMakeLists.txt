@@ -21,7 +21,7 @@ set(SOURCE_FILE
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
 
-target_compile_definitions(${PROJECT_NAME} PRIVATE QSLOG_LIB)
+target_compile_definitions(${PROJECT_NAME} PRIVATE QSLOG_IS_SHARED_LIBRARY)
 
 # 显式设置运行时 .dll 到 bin/, 导入库到 lib/
 # 跨平台输出路径配置  （根据平台优化）
