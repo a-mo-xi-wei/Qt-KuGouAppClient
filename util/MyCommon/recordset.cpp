@@ -14,7 +14,7 @@ RecordSet::RecordSet()
  * 析构函数
  */
 RecordSet::~RecordSet()
-	throw()
+	noexcept
 {
 
 }
@@ -35,7 +35,7 @@ void RecordSet::clear()
  */
 bool RecordSet::isEmpty() const
 {
-	return (mRows.size() == 0);
+	return mRows.empty();
 }
 
 /** 
@@ -45,7 +45,7 @@ bool RecordSet::isEmpty() const
  */
 unsigned int RecordSet::rows() const
 {
-	return (unsigned int)mRows.size();
+	return static_cast<unsigned int>(mRows.size());
 }
 
 /** 
@@ -55,7 +55,15 @@ unsigned int RecordSet::rows() const
  */
 unsigned int RecordSet::cols() const
 {
-	return (unsigned int)mHeaders.size();
+	return static_cast<unsigned int>(mHeaders.size());
+}
+/**
+ * 获取字段名
+ *
+ * @param col 获取第几列的字段名
+ */
+QString RecordSet::getField(const int &col) {
+	return mHeaders[col];
 }
 
 /** 

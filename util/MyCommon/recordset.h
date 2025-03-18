@@ -30,6 +30,8 @@ public:
     unsigned int rows() const;
 	/// 得到当前记录有多少列
     unsigned int cols() const;
+	/// 得到指定行的字段名称
+	QString getField(const int& col);
 	/// 设置当前记录的列表头
     void setColumnHeaders(const Row& headers);
 	/// 添加一行新的数据
