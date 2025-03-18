@@ -192,17 +192,17 @@ void RecordSetList::clear()
  */
 bool RecordSetList::isEmpty() const
 {
-	return ((int)mRecordSets.size() == 0);
+	return static_cast<int>(mRecordSets.size()) == 0;
 }
 
 /** 
  * 添加一行新的数据
  *
- * @param row 要添加的一行数据
+ * @param rowset 要添加的一行数据
  */
-void RecordSetList::add(const RecordSet& row)
+void RecordSetList::add(const RecordSet& rowset)
 {
-	mRecordSets.push_back(row);
+	mRecordSets.push_back(rowset);
 }
 
 /** 
