@@ -9,7 +9,7 @@
 //}
 int main(int argc, char *argv[])
 {
-    if (!mylog::logger::get().init("logs/main.log")) {
+    if (!mylog::logger::get().init("../logs/main.log")) {
         return 1;
     }
     mylog::logger::get().set_level(spdlog::level::info);

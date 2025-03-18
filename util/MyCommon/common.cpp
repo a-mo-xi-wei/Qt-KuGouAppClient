@@ -31,6 +31,17 @@ void init_log_file(const QString& filepath)
     if(filepath.isEmpty())
         return;
 
+    // 创建日志目录（如果不存在）
+    QDir logDir(QApplication::applicationDirPath());
+    QString logPath = logDir.filePath(filepath);
+    QDir logFolder = QFileInfo(logPath).absoluteDir();
+    if (!logFolder.exists()) {
+        if (!logFolder.mkpath(".")) {
+            qWarning() << "Failed to create log directory:" << logFolder.path();
+            return;
+        }
+    }
+
     // 初始化日志机制
     Logger& logger = Logger::instance();
     logger.setLoggingLevel(QsLogging::TraceLevel);
