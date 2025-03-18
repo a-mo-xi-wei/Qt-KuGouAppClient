@@ -31,6 +31,12 @@
 #include <QDebug>
 #include <QString>
 
+#if defined(QSLOG_LIB)
+#define QSLOG_SHARED_OBJECT Q_DECL_EXPORT
+#else
+#define QSLOG_SHARED_OBJECT Q_DECL_IMPORT
+#endif
+
 #define QS_LOG_VERSION "2.0b3"
 
 //打印文件名和行号
