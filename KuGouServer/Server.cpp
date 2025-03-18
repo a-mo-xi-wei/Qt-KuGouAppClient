@@ -3,7 +3,12 @@
 //
 
 #include "Server.h"
+#include "SJwt.h"
 #include "SResultCode.h"
+
+#include <QRegularExpression>
+#include <QSqlError>
+
 
 #define CheckJsonParse(session)\
         QJsonParseError error;\
@@ -14,22 +19,49 @@
             return false;\
         }
 
+const char* SECRET = "weisang666";
+
+std::optional<QByteArray>CheckToken(const QPointer<JQHttpServer::Session> &session) {
+	//验证token
+	auto auth = session->requestHeader().value("Authorization");
+	//如果没有认证头
+	if (auth.isEmpty()) {
+		return SResult::failure(SResultCode::UserUnauthorized);
+	}
+	//必须以Bearer开头
+	if (!auth.startsWith("Bearer")) {
+		return SResult::failure(SResultCode::UserAuthFormatError);
+	}
+	//拿到token
+	auto token = auth.mid(strlen("Bearer")).toUtf8();
+	//验证token
+	auto jwtObject = SJwt::SJwtObject::decode(token, SJwt::SAlgorithm::HS256, SECRET);
+	if (jwtObject.status() == SJwt::SJwtObject::Status::Expired) {
+		return SResult::failure(SResultCode::UserAuthTokenExpired);
+	}
+	if (!jwtObject.isValid()) {
+		return SResult::failure(SResultCode::UserAuthTokenInvalid);
+	}
+	return {};
+}
+
 Server::Server() {
     initDateBase();
     initRouter();
     // 初始日志系统，设置日志文件路径
-    init_log_file(QCoreApplication::applicationDirPath() + QString("/logs/serve_%1.log").arg(QDateTime::currentDateTime().toString("yyyy-MM-dd")));
+    init_log_file(QCoreApplication::applicationDirPath() + QString("/../logs/serve_%1.log").arg(QDateTime::currentDateTime().toString("yyyy-MM-dd")));
     m_httpserver.setNetworkFrameManager(this);
     if (!m_httpserver.isRunning()) {
         m_httpserver.listen(8080);
-        QLOG_INFO()<< QDateTime::currentDateTime().toString("[yyyy-MM-dd hh:mm:ss] ") + "服务器启动成功";
+        QLOG_INFO()<< "服务器启动成功";
     }
 }
 
 void Server::initDateBase() {
+    init_dbpool(false,this);
     m_SqliteDataProvider.connect(QCoreApplication::applicationDirPath()+QString("SQLite.db"));
     //先判断是否存在usertable表,不存在则创建
-    if (m_SqliteDataProvider.execSql("SELECT name FROM sqlite_master WHERE type='table' AND name='user_table';").isEmpty()) {
+    if (m_SqliteDataProvider.execSql("SELECT name FROM sqlite_master WHERE type='table' AND name='user_table';","find_user_able",false).isEmpty()) {
         const QString sql =
            "CREATE TABLE \"usertable\" ("
            "\"portrait\" text,"
@@ -43,10 +75,10 @@ void Server::initDateBase() {
            "\"area_city\" text,"
            "\"signature\" text,"
            "PRIMARY KEY (\"account\", \"id\"));";
-        m_SqliteDataProvider.execSql(sql);
+        m_SqliteDataProvider.execSql(sql,"create_user_table",false);
     }
     //先判断是否存在local_song_table表,不存在则创建
-    if (m_SqliteDataProvider.execSql("SELECT name FROM sqlite_master WHERE type='table' AND name='local_song_table';").isEmpty()) {
+    if (m_SqliteDataProvider.execSql("SELECT name FROM sqlite_master WHERE type='table' AND name='local_song_table';","find_local_song_able",false).isEmpty()) {
         const QString sql =
             "CREATE TABLE \"local_song_table\" ("
             "\"index\" integer NOT NULL,"
@@ -58,12 +90,13 @@ void Server::initDateBase() {
             "\"add_time\" text NOT NULL,"
             "\"play_count\" integer NOT NULL DEFAULT 0,"
             "PRIMARY KEY (\"index\"));";
-        m_SqliteDataProvider.execSql(sql);
+        m_SqliteDataProvider.execSql(sql,"create_local_song_table",false);
     }
 
 }
 
 void Server::initRouter() {
+    m_SqliteDataProvider.connect(QCoreApplication::applicationDirPath()+QString("SQLite.db"));
     //apiRouter["/api/test"] = std::bind(&Server::onApiTest, this, std::placeholders::_1);
     apiRouter["/api/test"] = [this](auto && PH1) { return onApiTest(std::forward<decltype(PH1)>(PH1)); };
     //apiRouter["/api/version"] = std::bind(&Server::onApiVersion, this, std::placeholders::_1);
@@ -85,17 +118,22 @@ bool Server::OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServer::Se
     if(obj == &m_httpserver)
     {
         // 2. 根据路径和方法处理请求
-        if (method == "GET") {
-            if (apiRouter.contains(path)) {
-                isProcessed = apiRouter[path](session);
+        if (apiRouter.contains(path)) {
+            isProcessed = apiRouter[path](session);
+        }
+        else
+        {
+            // 兜底正则匹配（如果找不到路径）
+            static const QRegularExpression fallbackRegex(".*");
+            if (fallbackRegex.match(path).hasMatch())
+            {
+                session->replyBytes(SResult::failure(SResultCode::PathIllegal), "application/json");
+                isProcessed = true;
             }
         }
-
     }
 
-    QLOG_INFO()<< QDateTime::currentDateTime().toString("[yyyy-MM-dd hh:mm:ss] ")+
-                      "Server::OnProcessHttpAccepted:"+
-                      session->requestSourceIp();
+    QLOG_INFO()<< "Server::OnProcessHttpAccepted: "+ session->requestSourceIp();
 
     return isProcessed ? isProcessed : NetworkFrameManager::OnProcessHttpAccepted(obj,session);
 }
@@ -114,16 +152,84 @@ bool Server::onApiTest(const QPointer<JQHttpServer::Session> &session) {
 
 bool Server::onApiVersion(const QPointer<JQHttpServer::Session> &session) {
     QJsonObject response;
-    response["version"] = "1.0";
+    response["App-version"] = "1.0";
+    response["App-name"] = "我的酷狗";
+    response["App-datatime"] =  QDateTime::currentDateTime().toString("yyyy-MM-dd");
+    response["App-copyright"] = "威桑版权所有";
     session->replyBytes(QJsonDocument(response).toJson(),"application/json");
     return true;
 }
 
 bool Server::onApiLocalSongList(const QPointer<JQHttpServer::Session> &session) {
-    if (m_SqliteDataProvider.execSql("SELECT name FROM sqlite_master WHERE type='table' AND name='local_song_table';").isEmpty()) {
+    try {
+        // 构造带字段别名的SQL查询语句
+        const QString sql =
+            "SELECT "
+            "\"index\", "
+            "cover, "
+            "song, "
+            "singer, "
+            "duration, "
+            "media_path, "
+            "add_time "
+            "FROM local_song_table ;";
 
+        // 执行查询
+        auto resultRecord  = m_SqliteDataProvider.execSql(sql, "get_song_list", false);
+        if (!resultRecord .isEmpty()) {
+            // 构建响应数据
+            QJsonArray songsArray;
+            /*  //未重载迭代器
+            for (const auto& record : resultRecord) {
+                QJsonObject song;
+                song["index"] = record.value("index").toInt();
+                song["songName"] = record.value("songName").toString();
+                song["singer"] = record.value("singer").toString();
+                song["duration"] = record.value("duration").toString();
+                song["mediaPath"] = record.value("mediaPath").toString();
+                song["addTime"] = record.value("addTime").toString();
+
+                // 处理封面数据（Base64字符串或空）
+                if (record.contains("cover") && !record.value("cover").isNull()) {
+                    song["cover"] = record.value("cover").toString();
+                }
+
+                songsArray.append(song);
+            }
+            */
+            for (int k = 0; k < resultRecord.Count(); k++) {//一般只有一组结果
+                RecordSet resultSet = resultRecord(k);
+                for (int i = 0; i < resultSet.rows(); i++) {
+                    QJsonObject song;
+                    for (int j = 0; j < resultSet.cols(); j++) {
+                        // 遍历每一列，根据列名填充 QJsonObject
+                        if (resultSet.getField(j) == "index") {
+                            song["index"] = resultSet(i,j).toInt();
+                            continue;
+                        }
+                         song[resultSet.getField(j)] = resultSet(i,j);
+                    }
+                    songsArray.append(song);
+                }
+            }
+
+
+            // 构造成功响应
+            QJsonObject response;
+            response["status"] = "success";
+            response["data"] = songsArray;
+            session->replyBytes(QJsonDocument(response).toJson(), "application/json");
+
+            QLOG_INFO() << "Fetched" << songsArray.size() << "songs";
+            return true;
+        }
+        QLOG_INFO() << "Fetched Empty songs";
     }
-    return false;
+    catch (const std::exception &e) {
+        QLOG_ERROR() << "Exception in onApiLocalSongList:" << e.what();
+        session->replyBytes(SResult::failure(SResultCode::ServerInnerError), "application/json");
+        return false;
+    }
 }
 
 bool Server::onApiSearchSong(const QPointer<JQHttpServer::Session> &session) {
@@ -174,20 +280,19 @@ bool Server::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
         // 构造SQL语句（使用参数化查询防注入）
         const QString sql = QString(
            "INSERT INTO local_song_table "
-           "(index, cover, song, singer, duration, media_path, add_time) "
+           "(\"index\", cover, song, singer, duration, media_path, add_time) "
            "VALUES (%1, %2, %3, %4, %5, %6, %7);"
        )
-       .arg(index)  // 数值类型直接使用
-       .arg(coverData)
-       .arg(songName)
-       .arg(singer)
-       .arg(duration)
-       .arg(mediaPath)
-       .arg(addTime);
-        qDebug()<<sql;
-        return true;
+        .arg(safeNumber(index))         // 数值类型
+        .arg(safeString(coverData))         // Base64图像数据
+        .arg(safeString(songName))
+        .arg(safeString(singer))
+        .arg(safeString(duration))
+        .arg(safeString(mediaPath))
+        .arg(safeString(addTime));
+
         // 执行SQL
-        if (!m_SqliteDataProvider.execSql(sql).isEmpty()) {
+        if (!m_SqliteDataProvider.execInsertSql(sql,"add_song",false).isEmpty()) {
             QJsonObject response;
             response["status"] = "success";
             response["index"] = index;
