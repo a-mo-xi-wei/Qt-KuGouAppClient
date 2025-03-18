@@ -34,7 +34,6 @@
 #include <QDateTime>
 #include <QtGlobal>
 #include <cstdlib>
-#include <stdexcept>
 
 namespace QsLogging
 {
@@ -50,7 +49,7 @@ static const char FatalString[] = "FATAL";
 // not using Qt::ISODate because we need the milliseconds too
 static const QString fmtDateTime("yyyy-MM-dd hh:mm:ss.zzz");
 
-static Logger* sInstance = 0;
+static Logger* sInstance = nullptr;
 
 static const char* LevelToText(Level theLevel)
 {
@@ -149,7 +148,7 @@ Logger& Logger::instance()
 void Logger::destroyInstance()
 {
     delete sInstance;
-    sInstance = 0;
+    sInstance = nullptr;
 }
 
 // tries to extract the level from a string log message. If available, conversionSucceeded will
@@ -183,10 +182,10 @@ Logger::~Logger()
     d->threadPool.waitForDone();
 #endif
     delete d;
-    d = 0;
+    d = nullptr;
 }
 
-void Logger::addDestination(DestinationPtr destination)
+void Logger::addDestination(const DestinationPtr &destination)
 {
     Q_ASSERT(destination.data());
     d->destList.push_back(destination);
@@ -235,8 +234,9 @@ void Logger::Helper::writeToLog()
     }
     if (logger.includeTimestamp()) {
         completeMessage.
+                append("[").
                 append(QDateTime::currentDateTime().toString(fmtDateTime)).
-                append(' ');
+                append("] ");
     }
     completeMessage.append(buffer);
     Logger::instance().enqueueWrite(completeMessage, level);

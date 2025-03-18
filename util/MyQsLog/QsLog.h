@@ -31,12 +31,6 @@
 #include <QDebug>
 #include <QString>
 
-#if defined(QSLOG_IS_SHARED_LIBRARY)
-#define QSLOG_SHARED_OBJECT Q_DECL_EXPORT
-#else
-#define QSLOG_SHARED_OBJECT Q_DECL_IMPORT
-#endif
-
 #define QS_LOG_VERSION "2.0b3"
 
 //打印文件名和行号
@@ -57,7 +51,7 @@ public:
     ~Logger();
 
     //! Adds a log message destination. Don't add null destinations.
-    void addDestination(DestinationPtr destination);
+    void addDestination(const DestinationPtr &destination);
     //! Logging at a level < 'newLevel' will be ignored
     void setLoggingLevel(Level newLevel);
     //! The default level is INFO
