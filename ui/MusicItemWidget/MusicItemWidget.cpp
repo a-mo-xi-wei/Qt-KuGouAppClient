@@ -4,17 +4,12 @@
 #include <QLabel>
 #include <QToolButton>
 #include <QVBoxLayout>
-#include <QSpacerItem>
 #include <QFile>
 #include <QTimer>
-#include <QCursor>
 #include <QPainter>
 #include <QPaintEvent>
-#include <QBrush>
 #include <QGuiApplication>
 #include <QPainterPath>
-#include <QtMath>
-#include <QPointF>
 
 //图片大小
 #define PIX_SIZE 50
@@ -52,19 +47,8 @@ MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     //    " cover: "<<m_cover<<"m_singer: "<<m_singer;
     //PRINT_INFO("index: %d , name: %s , duration: %s , singer: %s ",
     //    m_index, m_name.toStdString(), m_duration.toStdString(), m_singer.toStdString());
-    this->m_indexLab        = new QLabel(QString("%1").arg(this->m_index + 1, 2, 10, QChar('0')), this);
-    this->m_coverLab        = new QLabel(this);
-    this->m_coverLab->setAlignment(Qt::AlignCenter);
-    this->m_coverLab->setFixedSize(PIX_SIZE,PIX_SIZE);
-    this->m_coverLab->setPixmap(roundedPix(this->m_cover,this->m_coverLab->size(),PIX_RADIUS));
-    this->m_nameLab         = new QLabel(this->m_name,this);
-    this->m_singerLab       = new QLabel(this->m_singer,this);
-    this->m_durationLab     = new QLabel(this->m_duration,this);
-    this->m_playToolBtn     = new QToolButton(this);
-    this->m_playNextToolBtn = new QToolButton(this);
-    this->m_downloadToolBtn = new QToolButton(this);
-    this->m_collectToolBtn  = new QToolButton(this);
-    this->m_moreToolBtn     = new QToolButton(this);
+    initUi();
+    setInformation(m_information);
 
     this->setObjectName(QStringLiteral("window"));
     this->m_indexLab->setObjectName(QStringLiteral("indexLab"));
@@ -90,7 +74,6 @@ MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     timer->setInterval(timeInterval); // 设置定时器时间间隔
     max_radius = static_cast<int>(qSqrt(width() * width() + height() * height())); // 计算最大半径
 
-    initUi();
     //smallWidget响应
     connect(this->m_playToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onPlayToolBtnClicked);
     connect(this->m_playNextToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onPlayNextToolBtnClicked);
@@ -128,8 +111,18 @@ void MusicItemWidget::setInformation(const SongInfor &info) {
     this->m_singer = info.singer;
     this->m_indexLab->setText(QString("%1").arg(this->m_index, 2, 10, QChar('0')));
     this->m_coverLab->setPixmap(roundedPix(this->m_cover, this->m_coverLab->size(), PIX_RADIUS));
-    this->m_nameLab->setText(this->m_name);
-    this->m_singerLab->setText(this->m_singer);
+    /*this->m_nameLab->setText(this->m_name);
+    this->m_singerLab->setText(this->m_singer);*/
+    //qDebug() << "m_nameLab width:" << m_nameLab->width();
+    QFontMetrics metrics(this->m_nameLab->font());
+    this->m_nameLab->setToolTip(this->m_name);
+    QString elidedName = metrics.elidedText(this->m_name, Qt::ElideRight, this->m_nameLab->width());
+    this->m_nameLab->setText(elidedName);
+    //qDebug() << "m_singerLab width:" << m_singerLab->width();
+    this->m_singerLab->setToolTip(this->m_singer);
+    QString elidedSinger = metrics.elidedText(this->m_singer, Qt::ElideRight, this->m_singerLab->width());
+    this->m_singerLab->setText(elidedSinger);
+
     this->m_durationLab->setText(this->m_duration);
     update(); // 重绘
 }
@@ -357,6 +350,23 @@ void MusicItemWidget::onUpLoad() {
 
 void MusicItemWidget::initUi()
 {
+    this->m_indexLab        = new QLabel(QString("%1").arg(this->m_index + 1, 2, 10, QChar('0')), this);
+    this->m_coverLab        = new QLabel(this);
+    this->m_coverLab->setAlignment(Qt::AlignCenter);
+    this->m_coverLab->setFixedSize(PIX_SIZE,PIX_SIZE);
+    this->m_coverLab->setPixmap(roundedPix(this->m_cover,this->m_coverLab->size(),PIX_RADIUS));
+    this->m_nameLab         = new QLabel(this);
+    this->m_singerLab       = new QLabel(this);
+    this->m_durationLab     = new QLabel(this);
+    this->m_playToolBtn     = new QToolButton(this);
+    this->m_playNextToolBtn = new QToolButton(this);
+    this->m_downloadToolBtn = new QToolButton(this);
+    this->m_collectToolBtn  = new QToolButton(this);
+    this->m_moreToolBtn     = new QToolButton(this);
+
+    this->m_nameLab->setFixedWidth(100);
+    this->m_singerLab->setFixedWidth(100);
+
     this->m_playToolBtn     ->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-gray.svg")));
     this->m_playNextToolBtn ->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/add-music-list-gray.svg")));
     this->m_downloadToolBtn ->setIcon(QIcon(QStringLiteral(":/Res/window/download.svg")));
@@ -373,8 +383,6 @@ void MusicItemWidget::initUi()
     hlayout->addWidget(this->m_indexLab);
     hlayout->addWidget(this->m_coverLab);
     auto vlayout = new QVBoxLayout;
-    this->m_nameLab->setFixedWidth(80);
-    this->m_singerLab->setFixedWidth(80);
     vlayout->addWidget(this->m_nameLab);
     vlayout->addWidget(this->m_singerLab);
     hlayout->addLayout(vlayout);
@@ -389,5 +397,5 @@ void MusicItemWidget::initUi()
     hlayout->addWidget(this->m_collectToolBtn);
     hlayout->addWidget(this->m_moreToolBtn);
 
-    this->m_durationLab->move(this->width()*5/6,(this->height() - this->m_durationLab->height()) / 2);
+    //this->m_durationLab->move(this->width()*5/6,(this->height() - this->m_durationLab->height()) / 2);
 }
