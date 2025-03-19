@@ -59,8 +59,6 @@ MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     this->m_coverLab->setPixmap(roundedPix(this->m_cover,this->m_coverLab->size(),PIX_RADIUS));
     this->m_nameLab         = new QLabel(this->m_name,this);
     this->m_singerLab       = new QLabel(this->m_singer,this);
-    this->m_spacerItem1     = new QSpacerItem(40,20,QSizePolicy::Expanding);
-    this->m_spacerItem2     = new QSpacerItem(40,20,QSizePolicy::Fixed);
     this->m_durationLab     = new QLabel(this->m_duration,this);
     this->m_playToolBtn     = new QToolButton(this);
     this->m_playNextToolBtn = new QToolButton(this);
@@ -257,8 +255,7 @@ void MusicItemWidget::paintEvent(QPaintEvent *event) {
 void MusicItemWidget::resizeEvent(QResizeEvent *event) {
     QFrame::resizeEvent(event);
     max_radius = static_cast<int>(qSqrt(width() * width() + height() * height())); // 重新计算最大半径
-    //设置弹簧宽度
-    this->m_spacerItem2->changeSize(this->width()/5,20,QSizePolicy::Fixed);
+
     //this->setGeometry(this->geometry().x(),this->geometry().y(),
     //    event->size().width(),this->geometry().height());
     //qDebug()<<"当前宽度："<<this->width();
@@ -376,12 +373,16 @@ void MusicItemWidget::initUi()
     hlayout->addWidget(this->m_indexLab);
     hlayout->addWidget(this->m_coverLab);
     auto vlayout = new QVBoxLayout;
+    this->m_nameLab->setFixedWidth(80);
+    this->m_singerLab->setFixedWidth(80);
     vlayout->addWidget(this->m_nameLab);
     vlayout->addWidget(this->m_singerLab);
     hlayout->addLayout(vlayout);
-    hlayout->addSpacerItem(this->m_spacerItem1);
+    // 添加第一个弹簧，拉伸系数为 2
+    hlayout->addStretch(2);
     hlayout->addWidget(this->m_durationLab);
-    hlayout->addSpacerItem(this->m_spacerItem2);
+    // 添加第二个弹簧，拉伸系数为 1
+    hlayout->addStretch(1);
     hlayout->addWidget(this->m_playToolBtn);
     hlayout->addWidget(this->m_playNextToolBtn);
     hlayout->addWidget(this->m_downloadToolBtn);

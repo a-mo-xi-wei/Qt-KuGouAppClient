@@ -156,8 +156,6 @@ private:
     QLabel *m_nameLab{};
     QLabel *m_singerLab{};
     QLabel *m_durationLab{};
-    QSpacerItem *m_spacerItem1{};
-    QSpacerItem *m_spacerItem2{};
     QToolButton *m_playToolBtn{};
     QToolButton *m_playNextToolBtn{};
     QToolButton *m_downloadToolBtn{};
