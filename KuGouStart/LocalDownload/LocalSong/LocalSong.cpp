@@ -645,7 +645,6 @@ void LocalSong::onItemDeleteSong(const int &idx) {
         val->m_information.index = ++index; //更换下标
         val->setIndexText(index + 1); //设置indexLab
     }
-    update();
     updateCurPlayIndex();
     // 向服务器发送删除请求
     QJsonObject delReq;
