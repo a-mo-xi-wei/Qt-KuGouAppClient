@@ -89,7 +89,7 @@ void Server::initDateBase() {
             "\"media_path\" text NOT NULL,"
             "\"add_time\" text NOT NULL,"
             "\"play_count\" integer NOT NULL DEFAULT 0,"
-            "PRIMARY KEY (\"index\"));";
+            "PRIMARY KEY (\"song\", \"singer\", \"duration\"));";//用歌曲和歌手和时长唯一标识
         m_SqliteDataProvider.execSql(sql,"create_local_song_table",false);
     }
 
@@ -230,6 +230,7 @@ bool Server::onApiLocalSongList(const QPointer<JQHttpServer::Session> &session) 
         session->replyBytes(SResult::failure(SResultCode::ServerInnerError), "application/json");
         return false;
     }
+    return false;
 }
 
 bool Server::onApiSearchSong(const QPointer<JQHttpServer::Session> &session) {
@@ -312,5 +313,19 @@ bool Server::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
 }
 
 bool Server::onApiDelSong(const QPointer<JQHttpServer::Session> &session) {
+    try {
+        QJsonDocument doc = QJsonDocument::fromJson(session->requestBody());
+        int index = doc.object()["index"].toInt();
+
+        QString sql = QString("DELETE FROM local_song_table WHERE \"\" = %1").arg(index);
+        m_SqliteDataProvider.execSql(sql, "delete_song", true);
+
+        session->replyBytes(SResult::success(), "application/json");
+        return true;
+    }
+    catch (const std::exception& e) {
+        session->replyBytes(SResult::failure(SResultCode::ServerInnerError),"application/json");
+        return false;
+    }
     return false;
 }
