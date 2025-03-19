@@ -138,6 +138,33 @@ bool Server::OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServer::Se
     return isProcessed ? isProcessed : NetworkFrameManager::OnProcessHttpAccepted(obj,session);
 }
 
+void Server::reorderIndex() {
+    const QString sql =
+       R"(
+        WITH sorted AS (
+            SELECT rowid, ROW_NUMBER() OVER (ORDER BY add_time ASC) - 1 AS new_index
+            FROM local_song_table
+        )
+        UPDATE local_song_table
+        SET "index" = sorted.new_index
+        FROM sorted
+        WHERE local_song_table.rowid = sorted.rowid;
+        )";
+
+    m_SqliteDataProvider.execSql(sql, "reindex_songs", false);
+}
+
+QString Server::safeString(const QString &input) {
+    // 创建输入字符串的副本
+    QString escaped = input;
+
+    // 使用QString参数进行替换
+    escaped.replace(QStringLiteral("'"), QStringLiteral("''"));
+
+    // 包裹结果在单引号中
+    return QString("'%1'").arg(escaped);
+}
+
 bool Server::onApiTest(const QPointer<JQHttpServer::Session> &session) {
     // 解析请求数据（假设是 JSON）
     //QJsonDocument requestDoc = QJsonDocument::fromJson(session->requestBody());
@@ -321,9 +348,10 @@ bool Server::onApiDelSong(const QPointer<JQHttpServer::Session> &session) {
             .arg(doc["song"].toString().replace("'", "''"))
             .arg(doc["singer"].toString().replace("'", "''"))
             .arg(doc["duration"].toString());
-        m_SqliteDataProvider.execSql(sql, "delete_song", true);
+        m_SqliteDataProvider.execSql(sql, "delete_song", false);
 
         session->replyBytes(SResult::success(), "application/json");
+        reorderIndex();
         return true;
     }
     catch (const std::exception& e) {
