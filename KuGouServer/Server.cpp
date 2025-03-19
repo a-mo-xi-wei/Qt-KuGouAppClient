@@ -315,9 +315,12 @@ bool Server::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
 bool Server::onApiDelSong(const QPointer<JQHttpServer::Session> &session) {
     try {
         QJsonDocument doc = QJsonDocument::fromJson(session->requestBody());
-        int index = doc.object()["index"].toInt();
-
-        QString sql = QString("DELETE FROM local_song_table WHERE \"\" = %1").arg(index);
+        QString sql = QString(
+            "DELETE FROM local_song_table "
+            "WHERE song = '%1' AND singer = '%2' AND duration = '%3'")
+            .arg(doc["song"].toString().replace("'", "''"))
+            .arg(doc["singer"].toString().replace("'", "''"))
+            .arg(doc["duration"].toString());
         m_SqliteDataProvider.execSql(sql, "delete_song", true);
 
         session->replyBytes(SResult::success(), "application/json");
@@ -327,5 +330,4 @@ bool Server::onApiDelSong(const QPointer<JQHttpServer::Session> &session) {
         session->replyBytes(SResult::failure(SResultCode::ServerInnerError),"application/json");
         return false;
     }
-    return false;
 }
