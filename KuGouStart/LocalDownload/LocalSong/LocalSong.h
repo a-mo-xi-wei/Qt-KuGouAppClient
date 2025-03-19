@@ -16,15 +16,21 @@ class QMediaPlayer;
 class QScrollBar;
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class LocalSong; }
+
+namespace Ui {
+    class LocalSong;
+}
+
 QT_END_NAMESPACE
 
 class LocalSong : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit LocalSong(QWidget *parent = nullptr);
+
     ~LocalSong() override;
+
 private:
     void initUi();
 
@@ -39,6 +45,9 @@ private:
     void updateCurPlayIndex();
 
     void initMusicItem(MusicItemWidget *item);
+
+    void fetchAndSyncServerSongList();
+
 private slots:
     //ui相关
     void on_local_all_play_toolButton_clicked();
@@ -68,6 +77,7 @@ public slots:
     void onPlayCountSort(const bool &down);
 
     void onRandomSort();
+
 public slots:
     //Item menu相关
     void onItemNextPlay();
@@ -101,7 +111,7 @@ public slots:
     void onItemUpLoad();
 
 signals:
-    void playMusic(const int& index);
+    void playMusic(const int &index);
 
     void startPlay();
 

@@ -12,6 +12,7 @@
 #include "logger.hpp"
 
 #include <QFileDialog>
+#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <qjsonvalue.h>
@@ -21,6 +22,7 @@
 #include <QRegularExpression>
 #include <QScreen>
 #include <QStandardPaths>
+#include <QTimer>
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 //匹配是否有乱码
@@ -44,7 +46,6 @@ LocalSong::LocalSong(QWidget *parent)
         }
     }
     getMetaData();
-    initUi();
     //选中相关
     const auto menu = new MyMenu(MyMenu::MenuKind::SortOption, this);
     m_sortOptMenu = menu->getMenu<SortOptionMenu>();
@@ -70,8 +71,11 @@ LocalSong::LocalSong(QWidget *parent)
 
     //获取父类指针
     this->m_parent = this->window();
-
     this->m_vScrollBar = ui->scrollArea->verticalScrollBar();
+
+    initUi();
+    // 延迟调用 fetchAndSyncServerSongList，确保对象构造完成
+    QTimer::singleShot(0, this, &LocalSong::fetchAndSyncServerSongList);
 }
 
 LocalSong::~LocalSong() {
@@ -107,8 +111,8 @@ void LocalSong::initUi() {
         searchButton->installEventFilter(this);
     }
 
-    //先直接往里面嵌入两首歌
-    /*this->m_mediaPath = QStringLiteral("qrc:/Res/audio/zi-jing-hua.mp3");
+    /*//先直接往里面嵌入两首歌
+    this->m_mediaPath = QStringLiteral("qrc:/Res/audio/zi-jing-hua.mp3");
     this->m_player->setSource(QUrl(this->m_mediaPath));
     this->m_player->play(); // 触发状态改变信号，获取元数据信息
     // 使用 QMetaObject::Connection 跟踪连接
@@ -127,6 +131,10 @@ void LocalSong::initUi() {
         },
         Qt::QueuedConnection // 确保异步执行
     );*/
+
+    //向服务器发送请求歌曲列表  //一定不能放在此处 !!! 原因： 此处还是处于构造函数的范围！！！尚未构造完成！！！
+    //fetchAndSyncServerSongList();
+
 }
 
 void LocalSong::getMetaData() {
@@ -169,7 +177,6 @@ void LocalSong::getMetaData() {
             tempInformation.addTime = QDateTime::currentDateTime();
             tempInformation.playCount = 0;
             //判重（通过元数据信息）
-            //TODO : 先要从数据库读出数据，放入vector
             const auto it = std::find(this->m_locationMusicVector.begin(),
                                 this->m_locationMusicVector.end(), tempInformation);
             if (it == this->m_locationMusicVector.end()) {
@@ -191,10 +198,12 @@ void LocalSong::getMetaData() {
                     {"duration", tempInformation.duration},
                     {"mediaPath", tempInformation.mediaPath},
                     {"addTime", tempInformation.addTime.toString("yyyy-MM-dd hh:mm:ss")},
+                    {"playCount", tempInformation.playCount}
                 };
                 QJsonDocument doc(postJson);
                 QString jsonString = doc.toJson(QJsonDocument::Compact); // 紧凑格式无换行
-                QString reply = m_Libhttp.UrlRequestPost(QStringLiteral("http://127.0.0.1:8080/api/addSong"),jsonString);
+                //向服务器发送post请求 添加歌曲信息
+                m_Libhttp.UrlRequestPost(QStringLiteral("http://127.0.0.1:8080/api/addSong"),jsonString);
             }
             else {
                 STREAM_INFO()<<title.toStdString()<<" 已存在，请勿重复插入";
@@ -302,8 +311,8 @@ void LocalSong::MySort(std::function<bool(const MusicItemWidget *, const MusicIt
     std::sort(this->m_MusicItemVector.begin(), this->m_MusicItemVector.end(), std::move(comparator));
     // 重新添加
     this->m_locationMusicVector.clear();
-    int index = -1;
     const auto lay = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout());
+    int index = -1;
     for (const auto &val: this->m_MusicItemVector) {
         val->m_information.index = ++index; //更换下标
         val->setIndexText(index + 1); //设置indexLab
@@ -336,9 +345,72 @@ void LocalSong::initMusicItem(MusicItemWidget *item) {
     item->setInterval(1);
     //int index = tempInformation.index;// 捕获当前的 index
     connect(item, &MusicItemWidget::play, this, [item, this] {
+        //qDebug()<<"播放歌曲下标："<<item->m_information.index<<"===================";
         emit playMusic(item->m_information.index);
     });
     connect(item, &MusicItemWidget::deleteSong, this, &LocalSong::onItemDeleteSong);
+}
+
+void LocalSong::fetchAndSyncServerSongList() {
+    const QString reply = m_Libhttp.UrlRequestGet("http://127.0.0.1:8080/api/localSongList", "");
+    const QJsonDocument doc = QJsonDocument::fromJson(reply.toUtf8());
+
+    if (!doc.isObject()) return;
+
+    QJsonArray songs = doc.object()["data"].toArray();
+
+    for (const auto& songVal : songs) {
+        QJsonObject song = songVal.toObject();
+        QString mediaPath = song["media_path"].toString();
+
+        // 检查本地文件是否存在
+        if (!QFile::exists(mediaPath)) {
+            // 向服务器发送删除请求
+            QJsonObject delReq;
+            delReq["song"] = song["song"].toString();
+            delReq["singer"] = song["singer"].toString();
+            delReq["duration"] = song["duration"].toString();
+            m_Libhttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong",QJsonDocument(delReq).toJson(QJsonDocument::Compact));
+            continue;
+        }
+
+        // 创建歌曲信息对象
+        SongInfor info;
+        info.index = song["index"].toInt(); // 保存服务器索引
+        info.mediaPath = mediaPath;
+
+        // 解析Base64封面
+        QByteArray imgData = QByteArray::fromBase64(song["cover"].toString().toLatin1());
+
+        info.cover.loadFromData(imgData);
+        info.songName = song["song"].toString();
+        info.singer = song["singer"].toString();
+        info.duration = song["duration"].toString();
+        info.addTime = QDateTime::fromString(song["add_time"].toString(), "yyyy-MM-dd hh:mm:ss");
+        info.playCount = song["play_count"].toInt();
+
+        m_locationMusicVector.emplace_back(info);
+
+        // 添加到本地UI列表
+        emit addSongInfo(info);
+
+        auto item = new MusicItemWidget(info, this);
+        initMusicItem(item);
+        m_MusicItemVector.emplace_back(item);
+
+        // 插入到布局
+        const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout());
+        if (!layout)return;
+        layout->insertWidget(layout->count() - 2, item);
+        emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size()));
+
+    }
+
+    for (int i = 0; i < m_locationMusicVector.size(); ++i) {
+        m_locationMusicVector[i].index = i;
+        m_MusicItemVector[i]->m_information.index = i;
+        m_MusicItemVector[i]->setIndexText(i + 1);
+    }
 }
 
 void LocalSong::on_local_all_play_toolButton_clicked() {
@@ -550,6 +622,10 @@ void LocalSong::onItemViewSongInfo() {
 void LocalSong::onItemDeleteSong(const int &idx) {
     qDebug()<<"收到删除信号，删除第 "<<idx<<" 项";
     PRINT_INFO("收到删除信号，删除第 %d 项",idx);
+    auto song = this->m_locationMusicVector[idx].songName;
+    auto singer = this->m_locationMusicVector[idx].singer;
+    auto duration = this->m_locationMusicVector[idx].duration;
+
     this->m_lastLocationMusicVector = this->m_locationMusicVector;
     const auto widget = this->m_MusicItemVector[idx];
     widget->deleteLater();
@@ -571,6 +647,13 @@ void LocalSong::onItemDeleteSong(const int &idx) {
     }
     update();
     updateCurPlayIndex();
+    // 向服务器发送删除请求
+    QJsonObject delReq;
+    delReq["song"] = song;
+    delReq["singer"] = singer;
+    delReq["duration"] = duration;
+    m_Libhttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong",QJsonDocument(delReq).toJson(QJsonDocument::Compact));
+
 }
 
 void LocalSong::onItemOpenInFile() {
