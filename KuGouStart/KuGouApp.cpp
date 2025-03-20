@@ -574,13 +574,15 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
 
         // 缩小动画
         auto *shrink = new QPropertyAnimation(ui->title_portrait_label, "size");
-        shrink->setDuration(200);
+        shrink->setDuration(300);
+        shrink->setEasingCurve(QEasingCurve::InOutQuart);
         shrink->setStartValue(originalSize);
         shrink->setEndValue(originalSize * 0.7);
 
         // 放大动画
         auto *expand = new QPropertyAnimation(ui->title_portrait_label, "size");
-        expand->setDuration(200);
+        expand->setDuration(300);
+        expand->setEasingCurve(QEasingCurve::InOutQuart);
         expand->setStartValue(originalSize * 0.7);
         expand->setEndValue(originalSize);
 

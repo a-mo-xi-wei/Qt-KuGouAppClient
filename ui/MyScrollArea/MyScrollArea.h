@@ -55,6 +55,6 @@ private:
     //专门处理回到最顶部按钮
     QTimer*     m_scrollBarTimer{};  // 定时器
     //设置回到最顶部的特效
-    QEasingCurve m_curve = QEasingCurve::OutBounce;
+    QEasingCurve m_curve = QEasingCurve::OutQuad;
 };
 #endif //MYSCROLLAREA_H

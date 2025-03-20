@@ -81,7 +81,7 @@ void AniCheckBox::checkStateChanged(const int& state)
 {
     if (state == Qt::Unchecked)
     {
-        startAnimation("check_prog", getCheckProg(), 0, 800, QEasingCurve::OutBounce);
+        startAnimation("check_prog", getCheckProg(), 0, 800, QEasingCurve::OutQuad);
     }
     else if (state == Qt::PartiallyChecked)
     {
