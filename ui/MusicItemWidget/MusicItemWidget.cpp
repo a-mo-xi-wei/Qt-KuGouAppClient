@@ -43,7 +43,7 @@ MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     this->m_duration        = m_information.duration;
     this->m_cover           = m_information.cover;
     this->m_singer          = m_information.singer;
-    //qDebug()<<"m_index: "<<m_index<<" name: "<<m_name<<" duration: "<<m_duration<<
+    //qDebug()<<"m_index: "<<m_index<<" name: "<<m_name<<" duration: "<<m_duration;
     //    " cover: "<<m_cover<<"m_singer: "<<m_singer;
     //PRINT_INFO("index: %d , name: %s , duration: %s , singer: %s ",
     //    m_index, m_name.toStdString(), m_duration.toStdString(), m_singer.toStdString());
@@ -109,7 +109,7 @@ void MusicItemWidget::setInformation(const SongInfor &info) {
     this->m_duration = info.duration;
     this->m_cover = info.cover;
     this->m_singer = info.singer;
-    this->m_indexLab->setText(QString("%1").arg(this->m_index, 2, 10, QChar('0')));
+    this->m_indexLab->setText(QString("%1").arg(this->m_index+1, 2, 10, QChar('0')));
     this->m_coverLab->setPixmap(roundedPix(this->m_cover, this->m_coverLab->size(), PIX_RADIUS));
     /*this->m_nameLab->setText(this->m_name);
     this->m_singerLab->setText(this->m_singer);*/
