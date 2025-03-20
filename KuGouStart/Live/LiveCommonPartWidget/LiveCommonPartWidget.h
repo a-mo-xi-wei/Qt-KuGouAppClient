@@ -32,8 +32,6 @@ public:
 private:
     void initUi(const int& lines);
 
-    QList<QString> parseJsonFile(const QString &filePath);
-
     void initLineOne();
 
     void initLineTwo();

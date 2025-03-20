@@ -91,8 +91,29 @@ void LiveCommonPartWidget::initUi(const int& lines) {
     //初始化block左下角文字vec
     // 异步解析 JSON 文件
     QString jsonPath = GET_CURRENT_DIR + QStringLiteral("/../text.json");
-    const auto future = Async::runAsync(QThreadPool::globalInstance(), &LiveCommonPartWidget::parseJsonFile,
-        this,jsonPath);
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), [jsonPath] {
+        QList<QString> texts;
+        QFile file(jsonPath);
+        if (!file.open(QIODevice::ReadOnly)) {
+            qWarning() << "Failed to open JSON file:" << jsonPath;
+            STREAM_WARN() << "Failed to open JSON file:" << jsonPath.toStdString();
+            return texts;
+        }
+        QJsonParseError parseError;
+        const QJsonDocument doc = QJsonDocument::fromJson(file.readAll(), &parseError);
+        if (parseError.error != QJsonParseError::NoError) {
+            qWarning() << "JSON parse error:" << parseError.errorString();
+            STREAM_WARN() << "JSON parse error:" << parseError.errorString().toStdString();
+            return texts;
+        }
+        QJsonArray arr = doc.array();
+        for (const auto &item : arr) {
+            QString text = item.toObject().value("text").toString();
+            texts.append(text);
+        }
+        file.close();
+        return texts;
+    });
     // 结果处理回调
     Async::onResultReady(future, this, [=](const QList<QString> &texts) {
         if (texts.isEmpty()) {
@@ -114,30 +135,6 @@ void LiveCommonPartWidget::initUi(const int& lines) {
         this->initLineOne();
         if (lines == 2)initLineTwo();
     });
-}
-
-QList<QString> LiveCommonPartWidget::parseJsonFile(const QString &filePath) {
-    QList<QString> texts;
-    QFile file(filePath);
-    if (!file.open(QIODevice::ReadOnly)) {
-        qWarning() << "Failed to open JSON file:" << filePath;
-        STREAM_WARN() << "Failed to open JSON file:" << filePath.toStdString();
-        return texts;
-    }
-    QJsonParseError parseError;
-    const QJsonDocument doc = QJsonDocument::fromJson(file.readAll(), &parseError);
-    if (parseError.error != QJsonParseError::NoError) {
-        qWarning() << "JSON parse error:" << parseError.errorString();
-        STREAM_WARN() << "JSON parse error:" << parseError.errorString().toStdString();
-        return texts;
-    }
-    QJsonArray arr = doc.array();
-    for (const auto &item : arr) {
-        QString text = item.toObject().value("text").toString();
-        texts.append(text);
-    }
-    file.close();
-    return texts;
 }
 
 void LiveCommonPartWidget::initLineOne() {

@@ -5,6 +5,8 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_ListenRankWidget.h" resolved
 
 #include "ListenRankWidget.h"
+#include "logger.hpp"
+#include "async.h"
 
 #include <QHBoxLayout>
 #include <QFile>
@@ -47,119 +49,183 @@ void ListenRankWidget::initUi() {
 }
 
 void ListenRankWidget::initRankFree() {
-    //解析json文件
-    {
+    // 异步解析 JSON 文件
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), []() {
+        QList<QJsonObject> data;
         QFile file(GET_CURRENT_DIR + QStringLiteral("/../jsonFiles/rank-free.json"));
         if (!file.open(QIODevice::ReadOnly)) {
             qWarning() << "Could not open file for reading rank-free.json";
-            return;
+            STREAM_WARN() << "Could not open file for reading rank-free.json";
+            return data;
         }
         const auto obj = QJsonDocument::fromJson(file.readAll());
         auto arr = obj.array();
+        for (const auto &item : arr) {
+            data.append(item.toObject());
+        }
+        file.close();
+        return data;
+    });
+
+    // 异步结果处理
+    Async::onResultReady(future, this, [this](const QList<QJsonObject>& data) {
+        if (data.isEmpty()) {
+            qWarning() << "rank-free.json is empty or failed to parse";
+            STREAM_WARN() << "rank-free.json is empty or failed to parse";
+            return;
+        }
         const QString pathArr[] = {
             ":/ListenBook/Res/listenbook/first.svg",
             ":/ListenBook/Res/listenbook/second.svg",
             ":/ListenBook/Res/listenbook/third.svg"
         };
-        for (int i = 0 ; i < 5 ; ++i) {
-            QString desc = arr[i].toObject().value("desc").toString();
+        for (int i = 0; i < 5; ++i) {
+            QString desc = data[i].value("desc").toString();
             this->rank_free->getRankListWidget(i)->setDescText(desc);
             this->rank_free->getRankListWidget(i)->setCoverImg(
-                QString(":/ListCover/Res/listcover/music-list-cover%1.jpg").arg(20+i));
+                QString(":/ListCover/Res/listcover/music-list-cover%1.jpg").arg(20 + i));
             if (i < 3)
                 this->rank_free->getRankListWidget(i)->setRankMedal(pathArr[i]);
             else
-                this->rank_free->getRankListWidget(i)->setRankNumber(QString("%1").arg(i+1));
+                this->rank_free->getRankListWidget(i)->setRankNumber(QString("%1").arg(i + 1));
         }
-        file.close();
-    }
+    });
 }
 
 void ListenRankWidget::initRankSkyrocket() {
-    //解析json文件
-    {
+    // 异步解析 JSON 文件
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), []() {
+        QList<QJsonObject> data;
         QFile file(GET_CURRENT_DIR + QStringLiteral("/../jsonFiles/rank-skyrocket.json"));
         if (!file.open(QIODevice::ReadOnly)) {
             qWarning() << "Could not open file for reading rank-skyrocket.json";
-            return;
+            STREAM_WARN() << "Could not open file for reading rank-skyrocket.json";
+            return data;
         }
         const auto obj = QJsonDocument::fromJson(file.readAll());
-        auto arr = obj.array();
+        const auto arr = obj.array();
+        for (const auto &item : arr) {
+            data.append(item.toObject());
+        }
+        file.close();
+        return data;
+    });
+
+    // 异步结果处理
+    Async::onResultReady(future, this, [this](const QList<QJsonObject>& data) {
+        if (data.isEmpty()) {
+            qWarning() << "rank-skyrocket.json is empty or failed to parse";
+            STREAM_WARN() << "rank-skyrocket.json is empty or failed to parse";
+            return;
+        }
         const QString pathArr[] = {
             ":/ListenBook/Res/listenbook/first.svg",
             ":/ListenBook/Res/listenbook/second.svg",
             ":/ListenBook/Res/listenbook/third.svg"
         };
-        for (int i = 0 ; i < 5 ; ++i) {
-            QString desc = arr[i].toObject().value("desc").toString();
+        for (int i = 0; i < 5; ++i) {
+            QString desc = data[i].value("desc").toString();
             this->rank_skyrocket->getRankListWidget(i)->setDescText(desc);
             this->rank_skyrocket->getRankListWidget(i)->setCoverImg(
-                QString(":/ListCover/Res/listcover/music-list-cover%1.jpg").arg(30+i));
+                QString(":/ListCover/Res/listcover/music-list-cover%1.jpg").arg(30 + i));
             if (i < 3)
                 this->rank_skyrocket->getRankListWidget(i)->setRankMedal(pathArr[i]);
             else
-                this->rank_skyrocket->getRankListWidget(i)->setRankNumber(QString("%1").arg(i+1));
+                this->rank_skyrocket->getRankListWidget(i)->setRankNumber(QString("%1").arg(i + 1));
         }
-        file.close();
-    }
+    });
 }
 
 void ListenRankWidget::initRankSell() {
-    //解析json文件
-    {
+    // 异步解析 JSON 文件
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), []() {
+        QList<QJsonObject> data;
         QFile file(GET_CURRENT_DIR + QStringLiteral("/../jsonFiles/rank-sell.json"));
         if (!file.open(QIODevice::ReadOnly)) {
             qWarning() << "Could not open file for reading rank-sell.json";
-            return;
+            STREAM_WARN() << "Could not open file for reading rank-sell.json";
+            return data;
         }
         const auto obj = QJsonDocument::fromJson(file.readAll());
-        auto arr = obj.array();
+        const auto arr = obj.array();
+        for (const auto &item : arr) {
+            data.append(item.toObject());
+        }
+        file.close();
+        return data;
+    });
+
+    // 异步结果处理
+    Async::onResultReady(future, this, [this](const QList<QJsonObject>& data) {
+        if (data.isEmpty()) {
+            qWarning() << "rank-sell.json is empty or failed to parse";
+            STREAM_WARN() << "rank-sell.json is empty or failed to parse";
+            return;
+        }
         const QString pathArr[] = {
             ":/ListenBook/Res/listenbook/first.svg",
             ":/ListenBook/Res/listenbook/second.svg",
             ":/ListenBook/Res/listenbook/third.svg"
         };
-        for (int i = 0 ; i < 5 ; ++i) {
-            QString desc = arr[i].toObject().value("desc").toString();
+        for (int i = 0; i < 5; ++i) {
+            QString desc = data[i].value("desc").toString();
             this->rank_sell->getRankListWidget(i)->setDescText(desc);
             this->rank_sell->getRankListWidget(i)->setCoverImg(
-                QString(":/ListCover/Res/listcover/music-list-cover%1.jpg").arg(40+i));
+                QString(":/ListCover/Res/listcover/music-list-cover%1.jpg").arg(40 + i));
             if (i < 3)
                 this->rank_sell->getRankListWidget(i)->setRankMedal(pathArr[i]);
             else
-                this->rank_sell->getRankListWidget(i)->setRankNumber(QString("%1").arg(i+1));
+                this->rank_sell->getRankListWidget(i)->setRankNumber(QString("%1").arg(i + 1));
         }
-        file.close();
-    }
+    });
 }
 
 void ListenRankWidget::initRankNew() {
-    //解析json文件
-    {
-        QFile file(GET_CURRENT_DIR + QStringLiteral("/../jsonFiles/rank-sell.json"));
+    // 异步解析 JSON 文件
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), []() {
+        QList<QJsonObject> data;
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/../jsonFiles/rank-sell.json")); // 注意：可能需要修改为 rank-new.json
         if (!file.open(QIODevice::ReadOnly)) {
             qWarning() << "Could not open file for reading rank-sell.json";
-            return;
+            STREAM_WARN() << "Could not open file for reading rank-sell.json";
+            return data;
         }
         const auto obj = QJsonDocument::fromJson(file.readAll());
-        auto arr = obj.array();
+        const auto arr = obj.array();
+        for (const auto &item : arr) {
+            data.append(item.toObject());
+        }
+        file.close();
+        return data;
+    });
+
+    // 异步结果处理
+    Async::onResultReady(future, this, [this](const QList<QJsonObject>& data) {
+        if (data.isEmpty()) {
+            qWarning() << "rank-sell.json (initRankNew) is empty or failed to parse";
+            STREAM_WARN() << "rank-sell.json (initRankNew) is empty or failed to parse";
+            return;
+        }
+        if (data.size() < 10) { // 确保有足够的数据项
+            qWarning() << "Insufficient data items in rank-sell.json for initRankNew";
+            return;
+        }
         const QString pathArr[] = {
             ":/ListenBook/Res/listenbook/first.svg",
             ":/ListenBook/Res/listenbook/second.svg",
             ":/ListenBook/Res/listenbook/third.svg"
         };
-        for (int i = 0 ; i < 5 ; ++i) {
-            QString desc = arr[i+5].toObject().value("desc").toString();
+        for (int i = 0; i < 5; ++i) {
+            QString desc = data[i + 5].value("desc").toString();
             this->rank_new->getRankListWidget(i)->setDescText(desc);
             this->rank_new->getRankListWidget(i)->setCoverImg(
-                QString(":/ListCover/Res/listcover/music-list-cover%1.jpg").arg(50+i));
+                QString(":/ListCover/Res/listcover/music-list-cover%1.jpg").arg(50 + i));
             if (i < 3)
                 this->rank_new->getRankListWidget(i)->setRankMedal(pathArr[i]);
             else
-                this->rank_new->getRankListWidget(i)->setRankNumber(QString("%1").arg(i+1));
+                this->rank_new->getRankListWidget(i)->setRankNumber(QString("%1").arg(i + 1));
         }
-        file.close();
-    }
+    });
 }
 
 void ListenRankWidget::resizeEvent(QResizeEvent *event) {

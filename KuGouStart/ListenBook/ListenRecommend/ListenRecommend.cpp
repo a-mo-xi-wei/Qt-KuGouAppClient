@@ -7,6 +7,8 @@
 #include "ListenRecommend.h"
 #include "ui_ListenRecommend.h"
 #include "MyMenu.h"
+#include "logger.hpp"
+#include "async.h"
 
 #include <QFile>
 #include <QJsonArray>
@@ -189,66 +191,104 @@ void ListenRecommend::initTableWidgets() {
 }
 
 void ListenRecommend::initDailyRecommendGalleryWidget() {
-    //解析json文件
-    {
-        QFile file(GET_CURRENT_DIR + QStringLiteral("/jsonFiles/dailyRecommend.json"));
+    QString jsonPath = GET_CURRENT_DIR + QStringLiteral("/jsonFiles/dailyRecommend.json");
+    // 异步解析 JSON文件
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), [jsonPath] {
+        QList<QPair<QString, QString>> result;
+        QFile file(jsonPath);
         if (!file.open(QIODevice::ReadOnly)) {
             qWarning() << "Could not open file for reading dailyRecommend.json";
-            return;
+            STREAM_WARN() << "Failed to open JSON file:" << jsonPath.toStdString();
+            return result;
         }
-        const auto obj = QJsonDocument::fromJson(file.readAll());
-        auto arr = obj.array();
-        for (const auto &item : arr) {
-            QString title = item.toObject().value("title").toString();
-            QString playCount = item.toObject().value("play_count").toString();
-            this->m_galleryVector[0].emplace_back(title,playCount);
+
+        QJsonParseError parseError;
+        const auto doc = QJsonDocument::fromJson(file.readAll(), &parseError);
+        if (parseError.error != QJsonParseError::NoError) {
+            qWarning() << "JSON parse error:" << parseError.errorString();
+            STREAM_WARN() << "JSON parse error:" << parseError.errorString().toStdString();
+            return result;
+        }
+
+        const auto arr = doc.array();
+        for (const auto& item : arr) {
+            const auto obj = item.toObject();
+            result.append(qMakePair(
+                obj.value("title").toString(),
+                obj.value("play_count").toString()
+            ));
         }
         file.close();
-    }
-    const QString subTitle = "哈,哈,哈,没有提示文本哦,官网爬不到,我是搬砖的小行家,哒哒哒,哒哒哒。。。";
-    for (int i = 0 ; i < 10 ; ++i)
-    {
-        const auto it = new GalleryPhotoWidget(ui->daily_recommend_widget->getGalleryWidget());
-        it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(10 + idx[0]));
-        it->setTitleText(this->m_galleryVector[0][idx[0]].first);
-        it->setPopularText(this->m_galleryVector[0][idx[0]].second);
-        it->setDescribeText(subTitle);
-        ui->daily_recommend_widget->getGalleryWidget()->addData(it);
-        idx[0] = ++idx[0] % static_cast<int>(this->m_galleryVector[0].size());
-    }
+        return result;
+    });
+    // 异步结果处理
+    Async::onResultReady(future, this, [this](const QList<QPair<QString, QString>>& data) {
+        if (data.isEmpty()) {
+            qWarning() << "Daily recommend data is empty or failed to parse";
+            STREAM_WARN() << "Daily recommend data is empty or failed to parse";
+            return;
+        }
+        // 将 QList 转换为 QVector
+        this->m_galleryVector[0] = std::vector(data.cbegin(), data.cend());
+
+        const QString subTitle = "哈,哈,哈,没有提示文本哦,官网爬不到,我是搬砖的小行家,哒哒哒,哒哒哒。。。";
+        for (int i = 0 ; i < 10 ; ++i)
+        {
+            const auto it = new GalleryPhotoWidget(ui->daily_recommend_widget->getGalleryWidget());
+            it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(10 + idx[0]));
+            it->setTitleText(this->m_galleryVector[0][idx[0]].first);
+            it->setPopularText(this->m_galleryVector[0][idx[0]].second);
+            it->setDescribeText(subTitle);
+            ui->daily_recommend_widget->getGalleryWidget()->addData(it);
+            idx[0] = ++idx[0] % static_cast<int>(this->m_galleryVector[0].size());
+        }
+    });
 
 }
 
 void ListenRecommend::initOtherGalleryWidget(const QString &jsonFileName, const ListenTableWidget *gallery) {
     const auto cnt = gallery->getCnt();
-    //解析json文件
-    {
+    // 异步解析 JSON 文件
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), [jsonFileName, cnt]() {
+        QList<QPair<QString, QString>> result;
         QFile file(GET_CURRENT_DIR + QString("/jsonFiles/%1.json").arg(jsonFileName));
         if (!file.open(QIODevice::ReadOnly)) {
             qWarning() << QString("Could not open file for reading %1.json").arg(jsonFileName);
-            return;
+            STREAM_WARN() << QString("Could not open file for reading %1.json").arg(jsonFileName).toStdString();
+            return result;
         }
-        const auto obj = QJsonDocument::fromJson(file.readAll());
-        auto arr = obj.array();
+        const auto doc = QJsonDocument::fromJson(file.readAll());
+        auto arr = doc.array();
         for (const auto &item : arr) {
             QString title = item.toObject().value("desc").toString();
             QString playCount = item.toObject().value("people").toString();
-            this->m_galleryVector[cnt].emplace_back(title,playCount);
+            result.append(qMakePair(title, playCount));
         }
         file.close();
-    }
-    const QString subTitle = "哈,哈,哈,没有提示文本哦,官网爬不到,我是搬砖的小行家,哒哒哒,哒哒哒。。。";
-    for (int i = 0 ; i < 10 ; ++i)
-    {
-        const auto it = new GalleryPhotoWidget(gallery->getGalleryWidget());
-        it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(10 + cnt*40 + idx[cnt]));
-        it->setTitleText(this->m_galleryVector[cnt][idx[cnt]].first);
-        it->setPopularText(this->m_galleryVector[cnt][idx[cnt]].second);
-        it->setDescribeText(subTitle);
-        gallery->getGalleryWidget()->addData(it);
-        idx[cnt] = ++idx[cnt] % static_cast<int>(this->m_galleryVector[cnt].size());
-    }
+        return result;
+    });
 
+    // 异步结果处理
+    Async::onResultReady(future, this, [this, cnt, gallery](const QList<QPair<QString, QString>>& data) {
+        if (data.isEmpty()) {
+            qWarning() << QString("%1.json is empty or failed to parse").arg(gallery->objectName());
+            STREAM_WARN() << QString("%1.json is empty or failed to parse").arg(gallery->objectName()).toStdString();
+            return;
+        }
+        // 将 QList 转换为 QVector
+        this->m_galleryVector[cnt] = std::vector(data.cbegin(), data.cend());
+
+        const QString subTitle = "哈,哈,哈,没有提示文本哦,官网爬不到,我是搬砖的小行家,哒哒哒,哒哒哒。。。";
+        for (int i = 0; i < 10; ++i) {
+            const auto it = new GalleryPhotoWidget(gallery->getGalleryWidget());
+            it->setCoverPix(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(10 + cnt * 40 + idx[cnt]));
+            it->setTitleText(this->m_galleryVector[cnt][idx[cnt]].first);
+            it->setPopularText(this->m_galleryVector[cnt][idx[cnt]].second);
+            it->setDescribeText(subTitle);
+            gallery->getGalleryWidget()->addData(it);
+            idx[cnt] = ++idx[cnt] % static_cast<int>(this->m_galleryVector[cnt].size());
+        }
+    });
 }
 
 void ListenRecommend::on_all_classify_toolButton_clicked() {
