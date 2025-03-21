@@ -13,8 +13,6 @@
 #include <QButtonGroup>
 #include <QRandomGenerator>
 
-#include <mutex>
-
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
@@ -45,6 +43,10 @@ Search::Search(QWidget *parent) :
     initStackWidget();
     initUi();
     this->m_currentBtn = ui->recommend_pushButton;
+
+    //动画结束，恢复可交互
+    connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
+    enableButton(true);
 }
 
 Search::~Search() {
@@ -91,7 +93,9 @@ void Search::initUi() {
     }
     initCoverVector();
     initDescVector();
-    ui->recommend_pushButton->clicked();
+
+    ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
+    ui->stackedWidget->setSpeed(650);
 }
 
 void Search::initStackWidget() {
@@ -157,6 +161,14 @@ void Search::refresh() {
     std::shuffle(this->m_descVector.begin(), this->m_descVector.end(), std::default_random_engine(seed));
 }
 
+void Search::enableButton(const bool &flag) const {
+    //qDebug()<<"可交互性："<<flag;
+    ui->recommend_pushButton->setEnabled(flag);
+    ui->rank_pushButton->setEnabled(flag);
+    ui->special_pushButton->setEnabled(flag);
+    ui->channel_pushButton->setEnabled(flag);
+}
+
 void Search::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     //qDebug()<<"Search::resizeEvent";
@@ -189,14 +201,19 @@ void Search::resizeEvent(QResizeEvent *event) {
         //}
     }
     if (this->m_currentBtn)this->m_currentBtn->clicked();
+    enableButton(true);
+
 }
 
 void Search::showEvent(QShowEvent *event) {
     QWidget::showEvent(event);
     if (this->m_currentBtn)this->m_currentBtn->clicked();
+    enableButton(true);
+
 }
 
 void Search::on_recommend_pushButton_clicked() {
+    enableButton(false);
     ui->index_label1->show();
     ui->index_label2->hide();
     ui->index_label3->hide();
@@ -216,7 +233,7 @@ void Search::on_recommend_pushButton_clicked() {
             btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
             btn->setIconSize(QSize(IMAGE_WIDTH, IMAGE_WIDTH));
             btn->setIcon(this->m_coverVector[i]);
-            QFont font("微软雅黑",10);
+            QFont font(btn->font().family(),10);
             QFontMetrics fm(font);
             auto text = this->m_descVector[i];
             auto elidedText = fm.elidedText(text,Qt::ElideRight,IMAGE_WIDTH);
@@ -229,12 +246,14 @@ void Search::on_recommend_pushButton_clicked() {
         }
     };
     std::call_once(SearchFlag::flag1,handle);
-    ui->stackedWidget->setCurrentWidget(this->m_recommendWidget.get());
+    //ui->stackedWidget->setCurrentWidget(this->m_recommendWidget.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_recommendWidget.get()));
     ui->stackedWidget->setFixedHeight(this->m_recommendWidget->height());
     this->m_currentBtn = ui->recommend_pushButton;
 }
 
 void Search::on_rank_pushButton_clicked() {
+    enableButton(false);
     ui->index_label1->hide();
     ui->index_label2->show();
     ui->index_label3->hide();
@@ -254,7 +273,7 @@ void Search::on_rank_pushButton_clicked() {
             btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
             btn->setIconSize(QSize(IMAGE_WIDTH, IMAGE_WIDTH));
             btn->setIcon(this->m_coverVector[i]);
-            QFont font("微软雅黑",10);
+            QFont font(btn->font().family(),10);
             QFontMetrics fm(font);
             auto text = this->m_descVector[i];
             auto elidedText = fm.elidedText(text,Qt::ElideRight,IMAGE_WIDTH);
@@ -267,12 +286,14 @@ void Search::on_rank_pushButton_clicked() {
         }
     };
     std::call_once(SearchFlag::flag2,handle);
-    ui->stackedWidget->setCurrentWidget(this->m_rankWidget.get());
+    //ui->stackedWidget->setCurrentWidget(this->m_rankWidget.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_rankWidget.get()));
     ui->stackedWidget->setFixedHeight(this->m_rankWidget->height());
     this->m_currentBtn = ui->rank_pushButton;
 }
 
 void Search::on_special_pushButton_clicked() {
+    enableButton(false);
     ui->index_label1->hide();
     ui->index_label2->hide();
     ui->index_label3->show();
@@ -292,7 +313,7 @@ void Search::on_special_pushButton_clicked() {
             btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
             btn->setIconSize(QSize(IMAGE_WIDTH, IMAGE_WIDTH));
             btn->setIcon(this->m_coverVector[i]);
-            QFont font("微软雅黑",10);
+            QFont font(btn->font().family(),10);
             QFontMetrics fm(font);
             auto text = this->m_descVector[i];
             auto elidedText = fm.elidedText(text,Qt::ElideRight,IMAGE_WIDTH);
@@ -305,12 +326,14 @@ void Search::on_special_pushButton_clicked() {
         }
     };
     std::call_once(SearchFlag::flag3,handle);
-    ui->stackedWidget->setCurrentWidget(this->m_specialWidget.get());
+    //ui->stackedWidget->setCurrentWidget(this->m_specialWidget.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_specialWidget.get()));
     ui->stackedWidget->setFixedHeight(this->m_specialWidget->height());
     this->m_currentBtn = ui->special_pushButton;
 }
 
 void Search::on_channel_pushButton_clicked() {
+    enableButton(false);
     ui->index_label1->hide();
     ui->index_label2->hide();
     ui->index_label3->hide();
@@ -343,7 +366,8 @@ void Search::on_channel_pushButton_clicked() {
         }
     };
     std::call_once(SearchFlag::flag4,handle);
-    ui->stackedWidget->setCurrentWidget(this->m_channelWidget.get());
+    //ui->stackedWidget->setCurrentWidget(this->m_channelWidget.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_channelWidget.get()));
     ui->stackedWidget->setFixedHeight(this->m_channelWidget->height());
     this->m_currentBtn = ui->channel_pushButton;
     //qDebug()<<"this->height() : "<<this->height()<<

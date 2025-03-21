@@ -42,6 +42,8 @@ private:
 
     void refresh();
 
+    void enableButton(const bool& flag) const;
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
