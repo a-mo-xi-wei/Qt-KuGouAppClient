@@ -124,6 +124,13 @@ void VideoWidget::initUi() {
     }
     {
         this->m_vScrollBar = ui->scrollArea->verticalScrollBar();
+
+        auto connectButton = [this](const QPushButton* button, QWidget* targetWidget) {
+            connect(button, &QPushButton::clicked, this, [this, targetWidget] {
+                ui->scrollArea->smoothScrollTo(targetWidget->mapToParent(QPoint(0, 0)).y());
+            });
+        };
+        /*
         //处理信号
         connect(ui->recommend_pushButton,&QPushButton::clicked,this,[this] {
             this->m_vScrollBar->setValue(this->m_recommendWidget->mapToParent(QPoint(0, 0)).y());
@@ -164,6 +171,21 @@ void VideoWidget::initUi() {
         connect(ui->American_pushButton,&QPushButton::clicked,this,[this] {
             this->m_vScrollBar->setValue(this->m_americanWidget->mapToParent(QPoint(0, 0)).y());
         });
+        */
+        connectButton(ui->recommend_pushButton, this->m_recommendWidget.get());
+        connectButton(ui->video_rank_pushButton, this->m_videoRankWidget.get());
+        connectButton(ui->MV_pushButton, this->m_MVWidget.get());
+        connectButton(ui->site_pushButton, this->m_siteWidget.get());
+        connectButton(ui->cover_pushButton, this->m_coverWidget.get());
+        connectButton(ui->dance_pushButton, this->m_danceWidget.get());
+        connectButton(ui->children_pushButton, this->m_childrenWidget.get());
+        connectButton(ui->live_pushButton, this->m_liveWidget.get());
+        connectButton(ui->first_concert_pushButton, this->m_firstConcertWidget.get());
+        connectButton(ui->chinese_language_pushButton, this->m_chineseLanguageWidget.get());
+        connectButton(ui->South_Korea_pushButton, this->m_southKoreaWidget.get());
+        connectButton(ui->Japan_pushButton, this->m_japanWidget.get());
+        connectButton(ui->American_pushButton, this->m_americanWidget.get());
+
         //wheelVaue信号
         connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &VideoWidget::handleWheelValue);
         connect(this->m_vScrollBar,&QScrollBar::valueChanged,this, &VideoWidget::handleWheelValue);

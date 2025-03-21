@@ -110,6 +110,13 @@ void VideoChannelWidget::initUi() {
     }
     {
         this->m_vScrollBar = ui->scrollArea->verticalScrollBar();
+        // 使用 lambda 统一处理按钮和 widget 的连接
+        auto connectButton = [this](const QPushButton* button, QWidget* targetWidget) {
+            connect(button, &QPushButton::clicked, this, [this, targetWidget] {
+                ui->scrollArea->smoothScrollTo(targetWidget->mapToParent(QPoint(0, 0)).y());
+            });
+        };
+        /*
         //处理信号
         connect(ui->popular_pushButton,&QPushButton::clicked,this,[this] {
             this->m_vScrollBar->setValue(this->m_popularWidget->mapToParent(QPoint(0, 0)).y());
@@ -144,6 +151,20 @@ void VideoChannelWidget::initUi() {
         connect(ui->singer_pushButton,&QPushButton::clicked,this,[this] {
             this->m_vScrollBar->setValue(this->m_singerWidget->mapToParent(QPoint(0, 0)).y());
         });
+        */
+        // 按钮和对应的 widget
+        connectButton(ui->popular_pushButton, this->m_popularWidget.get());
+        connectButton(ui->children_pushButton, this->m_childrenWidget.get());
+        connectButton(ui->theme_pushButton, this->m_themeWidget.get());
+        connectButton(ui->film_pushButton, this->m_filmWidget.get());
+        connectButton(ui->variety_pushButton, this->m_varietyWidget.get());
+        connectButton(ui->ACGN_pushButton, this->m_ACGNWidget.get());
+        connectButton(ui->scene_pushButton, this->m_sceneWidget.get());
+        connectButton(ui->language_pushButton, this->m_languageWidget.get());
+        connectButton(ui->dance_pushButton, this->m_danceWidget.get());
+        connectButton(ui->site_pushButton, this->m_siteWidget.get());
+        connectButton(ui->singer_pushButton, this->m_singerWidget.get());
+
         //wheelVaue信号
         connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &VideoChannelWidget::handleWheelValue);
         connect(this->m_vScrollBar,&QScrollBar::valueChanged,this, &VideoChannelWidget::handleWheelValue);

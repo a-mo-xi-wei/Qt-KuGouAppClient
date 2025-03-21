@@ -74,15 +74,48 @@ void Live::initButtonGroup() const {
 }
 
 void Live::initUi() {
+    //初始化各窗口
+    initPopularWidget();
+    initAttentionWidget();
+    initRecommendWidget();
+    initMusicWidget();
+    initNewStarWidget();
+    initAppearanceWidget();
+    initDanceWidget();
+    initGameWidget();
 
     this->m_vScrollBar = ui->scrollArea->verticalScrollBar();
+
+    auto connectButton1 = [this](const QPushButton* button, QWidget* targetWidget) {
+        connect(button, &QPushButton::clicked, this, [this, targetWidget] {
+            ui->scrollArea->smoothScrollTo(targetWidget->mapToParent(QPoint(0, 0)).y());
+        });
+    };
+    auto connectButton2 = [this](const QPushButton* button, QWidget* targetWidget) {
+        // 添加空指针检查
+        if (!targetWidget) {
+            qWarning() << "targetWidget is null for button" << button->objectName();
+            return;
+        }
+
+        connect(button, &QPushButton::clicked, this, [this, targetWidget] {
+            ui->scrollArea->smoothScrollTo(targetWidget->mapTo(ui->scrollArea->widget(),QPoint(0, 0)).y());
+        });
+    };
+
+
     //处理信号
+    /*
     connect(ui->popular_pushButton, &QPushButton::clicked, this, [this] {
         this->m_vScrollBar->setValue(ui->popular_widget->mapToParent(QPoint(0, 0)).y());
     });
     connect(ui->attention_pushButton, &QPushButton::clicked, this, [this] {
         this->m_vScrollBar->setValue(ui->attention_widget->mapToParent(QPoint(0, 0)).y());
     });
+    */
+    connectButton1(ui->popular_pushButton,ui->popular_widget);
+    connectButton1(ui->attention_pushButton,ui->attention_widget);
+    /*
     connect(ui->recommend_pushButton, &QPushButton::clicked, this, [this] {
         this->m_vScrollBar->setValue(this->m_recommendWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y());
     });
@@ -101,17 +134,17 @@ void Live::initUi() {
     connect(ui->barrage_game_pushButton, &QPushButton::clicked, this, [this] {
         this->m_vScrollBar->setValue(this->m_gameWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y());
     });
+    */
+
+    connectButton2(ui->recommend_pushButton, this->m_recommendWidget.get());
+    connectButton2(ui->music_pushButton, this->m_musicWidget.get());
+    connectButton2(ui->new_star_pushButton, this->m_newStarWidget.get());
+    connectButton2(ui->appearance_pushButton, this->m_appearanceWidget.get());
+    connectButton2(ui->dance_pushButton, this->m_danceWidget.get());
+    connectButton2(ui->barrage_game_pushButton, this->m_gameWidget.get());
+
     connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &Live::handleWheelValue);
     connect(this->m_vScrollBar, &QScrollBar::valueChanged,this, &Live::handleWheelValue);
-
-    initPopularWidget();
-    initAttentionWidget();
-    initRecommendWidget();
-    initMusicWidget();
-    initNewStarWidget();
-    initAppearanceWidget();
-    initDanceWidget();
-    initGameWidget();
 
     //加入布局
     auto lay = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout());

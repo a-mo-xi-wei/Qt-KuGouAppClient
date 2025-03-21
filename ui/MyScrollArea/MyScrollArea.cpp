@@ -34,6 +34,24 @@ void MyScrollArea::setEasingCurve(const QEasingCurve &curve) {
     this->m_curve = curve;
 }
 
+void MyScrollArea::smoothScrollTo(const int &targetValue) {
+    // 标记动画开始
+    this->setAnimating(true); //开始禁用滚轮
+    // 创建属性动画对象
+    auto *animation = new QPropertyAnimation(this->verticalScrollBar(), "value");
+    animation->setDuration(300); // 动画时长 300ms
+    animation->setEasingCurve(QEasingCurve::InOutQuad); // 平滑的缓动曲线
+    animation->setStartValue(this->verticalScrollBar()->value()); // 从当前值开始
+    animation->setEndValue(targetValue); // 滚动到目标值
+
+    connect(animation, &QPropertyAnimation::finished, this, [=] {
+        this->setAnimating(false); //动画结束启用滚轮
+    });
+
+    // 自动清理内存（动画完成后自动删除对象）
+    animation->start(QPropertyAnimation::DeleteWhenStopped);
+}
+
 void MyScrollArea::wheelEvent(QWheelEvent *event) {
     if (this->verticalScrollBar()) {
         //qDebug()<<"value : "<<this->verticalScrollBar()->value();

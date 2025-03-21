@@ -28,6 +28,8 @@ public:
 
     void setEasingCurve(const QEasingCurve &curve);
 
+    void smoothScrollTo(const int& targetValue); // 平滑滚动
+
 protected:
     void wheelEvent(QWheelEvent *event) override;
 
