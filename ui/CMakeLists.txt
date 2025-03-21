@@ -57,3 +57,6 @@ add_subdirectory(MyMenu)
 
 #复选框模块
 add_subdirectory(MyCheckBox)
+
+#对话框模块
+add_subdirectory(MyDialog)
