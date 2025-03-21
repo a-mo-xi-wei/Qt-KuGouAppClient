@@ -19,8 +19,10 @@
  *
  *  Inspired by https://qt.shoutwiki.com/wiki/Extending_QStackedWidget_for_sliding_page_animations_in_Qt
  */
+
 #ifndef SLIDINGSTACKEDWIDGET_H
 #define SLIDINGSTACKEDWIDGET_H
+
 #include <QStackedWidget>
 #include <QEasingCurve>
 #include <QParallelAnimationGroup>
@@ -32,54 +34,63 @@
 #endif
 
 class SLIDINGSTACKEDWIDGET_EXPORT SlidingStackedWidget : public QStackedWidget {
+    Q_OBJECT
 
-       Q_OBJECT
 public:
-       //! Animation direction
-       enum t_direction {
-               LEFT2RIGHT,
-               RIGHT2LEFT,
-               TOP2BOTTOM,
-               BOTTOM2TOP,
-               AUTOMATIC
-       };
-       SlidingStackedWidget(QWidget *parent);
+    //! Animation direction
+    enum t_direction {
+        LEFT2RIGHT,
+        RIGHT2LEFT,
+        TOP2BOTTOM,
+        BOTTOM2TOP,
+        AUTOMATIC
+    };
+
+    explicit SlidingStackedWidget(QWidget *parent);
 
 public slots:
-       //! Set animation speed
-       void setSpeed(int speed);
-       //! Set easing curve
-       void setAnimation(enum QEasingCurve::Type animationtype);
-       //! Change positioning mode
-       void setVerticalMode(bool vertical = true);
-       //! Enables page wrap for \c slideInNext and \c slideInPrev
-       void setWrap(bool wrap);
-       //! Slide to next page
-       bool slideInNext();
-       //! Slide to previous page
-       bool slideInPrev();
-       //! Slide to page x
-       void slideInIdx(int idx, enum t_direction direction=AUTOMATIC);
-        //! Slide to page with widget
-       void slideInWgt(QWidget * widget, enum t_direction direction=AUTOMATIC);
+    //! Set animation speed
+    void setSpeed(int speed);
+
+    //! Set easing curve
+    void setAnimation(enum QEasingCurve::Type animationtype);
+
+    //! Change positioning mode
+    void setVerticalMode(bool vertical = true);
+
+    //! Enables page wrap for \c slideInNext and \c slideInPrev
+    void setWrap(bool wrap);
+
+    //! Slide to next page
+    bool slideInNext();
+
+    //! Slide to previous page
+    bool slideInPrev();
+
+    //! Slide to page x
+    void slideInIdx(int idx, enum t_direction direction = AUTOMATIC);
+
+    //! Slide to page with widget
+    void slideInWidget(const QWidget *newWidget, enum t_direction direction = AUTOMATIC);
+
 signals:
-       //! Animation is finished
-       void animationFinished(void);
+    //! Animation is finished
+    void animationFinished();
 
 protected slots:
-       void animationDoneSlot(void);
+    void animationDoneSlot();
 
 protected:
-       QWidget *m_mainwindow;
-       int m_speed;
-       enum QEasingCurve::Type m_animationtype;
-       bool m_vertical;
-       int m_now;
-       int m_next;
-       bool m_wrap;
-       QPoint m_pnow;
-       bool m_active;
-       QList<QWidget*> blockedPageList;
-       QParallelAnimationGroup *animgroup;
+    QWidget *m_mainwindow{};
+    int m_speed = 300;
+    enum QEasingCurve::Type m_animationtype = QEasingCurve::OutQuart;
+    bool m_vertical = false;
+    int m_now = 0;
+    int m_next = 0;
+    bool m_wrap = false;
+    QPoint m_pnow = QPoint(0, 0);
+    bool m_active = false;
+    QList<QWidget *> blockedPageList{};
+    QParallelAnimationGroup *animgroup{};
 };
 #endif // SLIDINGSTACKEDWIDGET_H
