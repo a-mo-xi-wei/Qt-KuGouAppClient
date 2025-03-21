@@ -60,6 +60,8 @@ private:
 
     void getMenuPosition(const QPoint &pos);
 
+    void enableButton(const bool& flag) const;
+
 private slots:
     void on_all_pushButton_clicked();
 

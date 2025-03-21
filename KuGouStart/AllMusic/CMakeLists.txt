@@ -55,6 +55,6 @@ endif()
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Widgets MySearchLineEdit
-                        MyStackedWidget AllWidget AllLove AllSongList
+                        MySlidingStackedWidget AllWidget AllLove AllSongList
                         AllRecent AllLocal AllPaid AllCloudDisk MyMenu)
 

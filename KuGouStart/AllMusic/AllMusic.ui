@@ -115,7 +115,7 @@
               <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="text">
-              <string>1</string>
+              <string>0</string>
              </property>
             </widget>
            </item>
@@ -559,7 +559,7 @@
               <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="text">
-              <string>1</string>
+              <string>0</string>
              </property>
             </widget>
            </item>
@@ -1070,7 +1070,7 @@
     </widget>
    </item>
    <item>
-    <widget class="MyStackedWidget" name="stackedWidget">
+    <widget class="SlidingStackedWidget" name="stackedWidget">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
        <horstretch>0</horstretch>
@@ -1088,9 +1088,9 @@
    <header>MySearchLineEdit.h</header>
   </customwidget>
   <customwidget>
-   <class>MyStackedWidget</class>
+   <class>SlidingStackedWidget</class>
    <extends>QStackedWidget</extends>
-   <header>MyStackedWidget.h</header>
+   <header>slidingstackedwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

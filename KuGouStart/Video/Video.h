@@ -42,6 +42,8 @@ private:
 
     void initMVWidget();
 
+    void enableButton(const bool &flag) const;
+
 private slots:
     void on_video_channel_pushButton_clicked();
 

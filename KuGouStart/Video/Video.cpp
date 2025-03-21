@@ -31,6 +31,10 @@ Video::Video(QWidget *parent) :
     }
     initStackedWidget();
     initUi();
+
+    //动画结束，恢复可交互
+    connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
+    enableButton(true);
 }
 
 Video::~Video() {
@@ -43,6 +47,9 @@ void Video::initUi()const {
     ui->index_label3->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
     ui->index_label2->hide();
     ui->index_label3->hide();
+
+    ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
+    ui->stackedWidget->setSpeed(650);
 }
 
 void Video::initStackedWidget() {
@@ -69,12 +76,20 @@ void Video::initMVWidget() {
     ui->stackedWidget->addWidget(this->m_MVWidget.get());
 }
 
+void Video::enableButton(const bool &flag) const {
+    ui->video_channel_pushButton->setEnabled(flag);
+    ui->MV_pushButton->setEnabled(flag);
+    ui->video_pushButton->setEnabled(flag);
+}
+
 void Video::initVideoWidget() {
     this->m_videoWidget = std::make_unique<VideoWidget>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_videoWidget.get());
 }
 void Video::on_video_channel_pushButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_videoChannelWidget.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_videoChannelWidget.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_videoChannelWidget.get()));
     // 输出测试日志并立即刷新
     STREAM_INFO() << "切换 videoChannelWidget 界面";
     ui->index_label1->show();
@@ -83,7 +98,9 @@ void Video::on_video_channel_pushButton_clicked() {
 }
 
 void Video::on_MV_pushButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_MVWidget.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_MVWidget.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_MVWidget.get()));
     STREAM_INFO() << "切换 MVWidget 界面";
     ui->index_label1->hide();
     ui->index_label2->show();
@@ -91,7 +108,9 @@ void Video::on_MV_pushButton_clicked() {
 }
 
 void Video::on_video_pushButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_videoWidget.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_videoWidget.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_videoWidget.get()));
     STREAM_INFO() << "切换 videoWidget 界面";
     ui->index_label1->hide();
     ui->index_label2->hide();

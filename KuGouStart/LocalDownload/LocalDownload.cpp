@@ -39,6 +39,10 @@ LocalDownload::LocalDownload(QWidget *parent)
     connect(this->m_localSong.get(), &LocalSong::playMusic, this, [this](const int& index){emit playMusic(index);});
     connect(this->m_localSong.get(), &LocalSong::startPlay, this, [this]{emit startPlay();});
     connect(this->m_localSong.get(), &LocalSong::updateCountLabel, this, &LocalDownload::local_music_label_changed);
+
+    //动画结束，恢复可交互
+    connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
+    enableButton(true);
 }
 
 LocalDownload::~LocalDownload() {
@@ -82,6 +86,9 @@ void LocalDownload::initUi() {
     initStackedWidget();
     //默认点击本地音乐
     ui->local_music_pushButton->clicked();
+
+    ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
+    ui->stackedWidget->setSpeed(650);
 }
 
 void LocalDownload::initLocalSong() {
@@ -105,12 +112,21 @@ void LocalDownload::initDownloading() {
     ui->stackedWidget->addWidget(this->m_downloading.get());
 }
 
+void LocalDownload::enableButton(const bool &flag) const {
+    ui->local_music_pushButton->setEnabled(flag);
+    ui->downloaded_music_pushButton->setEnabled(flag);
+    ui->downloaded_video_pushButton->setEnabled(flag);
+    ui->downloading_pushButton->setEnabled(flag);
+}
+
 void LocalDownload::on_local_music_pushButton_clicked() {
     //切换堆栈界面
     if (ui->stackedWidget->currentWidget() == this->m_localSong.get())return;
     if (!ui->download_history_toolButton->isHidden())ui->download_history_toolButton->hide();
     STREAM_INFO()<<"切换本地歌曲界面";
-    ui->stackedWidget->setCurrentWidget(this->m_localSong.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_localSong.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_localSong.get()));
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
@@ -126,7 +142,9 @@ void LocalDownload::on_downloaded_music_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_downloadedSong.get())return;
     ui->download_history_toolButton->show();
     STREAM_INFO()<<"切换下载歌曲界面";
-    ui->stackedWidget->setCurrentWidget(this->m_downloadedSong.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_downloadedSong.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_downloadedSong.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
     ui->idx3_lab->hide();
@@ -142,7 +160,9 @@ void LocalDownload::on_downloaded_video_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_downloadedVideo.get())return;
     if (!ui->download_history_toolButton->isHidden())ui->download_history_toolButton->hide();
     STREAM_INFO()<<"切换下载视频界面";
-    ui->stackedWidget->setCurrentWidget(this->m_downloadedVideo.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_downloadedVideo.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_downloadedVideo.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->show();
@@ -158,7 +178,9 @@ void LocalDownload::on_downloading_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_downloading.get())return;
     if (!ui->download_history_toolButton->isHidden())ui->download_history_toolButton->hide();
     STREAM_INFO()<<"切换正在下载界面";
-    ui->stackedWidget->setCurrentWidget(this->m_downloading.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_downloading.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_downloading.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();

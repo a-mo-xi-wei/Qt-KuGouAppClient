@@ -50,6 +50,8 @@ private:
 
     void initMVChannel();
 
+    void enableButton(const bool& flag) const;
+
 private slots:
     void on_single_song_pushButton_clicked();
 

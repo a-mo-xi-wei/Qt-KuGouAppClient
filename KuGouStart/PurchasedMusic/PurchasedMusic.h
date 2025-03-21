@@ -44,6 +44,8 @@ private:
 
     void initPurchasedVideos();
 
+    void enableButton(const bool& flag) const;
+
 private slots:
     void on_paid_single_pushButton_clicked();
 

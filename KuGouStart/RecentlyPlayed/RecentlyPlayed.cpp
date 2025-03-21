@@ -31,6 +31,10 @@ RecentlyPlayed::RecentlyPlayed(QWidget *parent)
         }
     }
     initUi();
+
+    //动画结束，恢复可交互
+    connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
+    enableButton(true);
 }
 
 RecentlyPlayed::~RecentlyPlayed() {
@@ -41,6 +45,9 @@ void RecentlyPlayed::initUi() {
     initStackedWidget();
     initIndexLab();
     ui->single_song_pushButton->clicked();
+
+    ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
+    ui->stackedWidget->setSpeed(650);
 }
 
 void RecentlyPlayed::initIndexLab() {
@@ -103,10 +110,19 @@ void RecentlyPlayed::initMVChannel() {
     ui->stackedWidget->addWidget(this->m_mvChannel.get());
 }
 
+void RecentlyPlayed::enableButton(const bool &flag) const {
+    ui->single_song_pushButton->setEnabled(flag);
+    ui->song_list_pushButton->setEnabled(flag);
+    ui->video_pushButton->setEnabled(flag);
+    ui->song_channel_pushButton->setEnabled(flag);
+    ui->MV_channel_pushButton->setEnabled(flag);
+}
+
 void RecentlyPlayed::on_single_song_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_singleSong.get())return;
     ui->single_song_pushButton->setChecked(true);
     STREAM_INFO()<<"切换单曲界面";
+    enableButton(false);
     ui->stackedWidget->setCurrentWidget(this->m_singleSong.get());
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
@@ -126,7 +142,9 @@ void RecentlyPlayed::on_song_list_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_songList.get())return;
     ui->song_list_pushButton->setChecked(true);
     STREAM_INFO()<<"切换歌单界面";
-    ui->stackedWidget->setCurrentWidget(this->m_songList.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_songList.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_songList.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
     ui->idx3_lab->hide();
@@ -145,7 +163,9 @@ void RecentlyPlayed::on_video_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_videoWidget.get())return;
     ui->video_pushButton->setChecked(true);
     STREAM_INFO()<<"切换视频界面";
-    ui->stackedWidget->setCurrentWidget(this->m_videoWidget.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_videoWidget.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_videoWidget.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->show();
@@ -164,7 +184,9 @@ void RecentlyPlayed::on_song_channel_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_songChannel.get())return;
     ui->song_channel_pushButton->setChecked(true);
     STREAM_INFO()<<"切换音乐频道界面";
-    ui->stackedWidget->setCurrentWidget(this->m_songChannel.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_songChannel.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_songChannel.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
@@ -183,7 +205,9 @@ void RecentlyPlayed::on_MV_channel_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_mvChannel.get())return;
     ui->MV_channel_pushButton->setChecked(true);
     STREAM_INFO()<<"切换MV频道界面";
-    ui->stackedWidget->setCurrentWidget(this->m_mvChannel.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_mvChannel.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_mvChannel.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();

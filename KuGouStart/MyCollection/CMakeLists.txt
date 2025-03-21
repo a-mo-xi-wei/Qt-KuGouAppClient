@@ -52,8 +52,6 @@ endif()
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets
-                        CollectSingleSong CollectSongListWidget
-                        CollectSpecialAlbum CollectVideo
-                        CollectSingerWidget CollectDeviceWidget
-                        MyStackedWidget)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets CollectSingleSong CollectSongListWidget
+                        CollectSpecialAlbum CollectVideo CollectSingerWidget CollectDeviceWidget
+                        MySlidingStackedWidget)

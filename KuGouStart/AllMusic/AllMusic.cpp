@@ -32,6 +32,10 @@ AllMusic::AllMusic(QWidget *parent) :
         }
     }
     initUi();
+
+    //动画结束，恢复可交互
+    connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
+    enableButton(true);
 }
 
 AllMusic::~AllMusic() {
@@ -67,6 +71,9 @@ void AllMusic::initUi() {
     //初始化menu
     const auto menu = new MyMenu(MyMenu::MenuKind::SortOption, this);
     this->m_sortOptMenu = menu->getMenu<SortOptionMenu>();
+
+    ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
+    ui->stackedWidget->setSpeed(650);
 }
 
 void AllMusic::initIndexLab() {
@@ -178,11 +185,23 @@ void AllMusic::getMenuPosition(const QPoint &pos)  {
     }
 }
 
+void AllMusic::enableButton(const bool &flag) const {
+    ui->all_pushButton->setEnabled(flag);
+    ui->love_pushButton->setEnabled(flag);
+    ui->song_list_pushButton->setEnabled(flag);
+    ui->recent_pushButton->setEnabled(flag);
+    ui->local_pushButton->setEnabled(flag);
+    ui->paid_pushButton->setEnabled(flag);
+    ui->cloud_disk_pushButton->setEnabled(flag);
+}
+
 void AllMusic::on_all_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allWidget.get())return;
     ui->all_pushButton->setChecked(true);
     STREAM_INFO()<<"切换全部界面";
-    ui->stackedWidget->setCurrentWidget(this->m_allWidget.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_allWidget.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_allWidget.get()));
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
@@ -203,7 +222,9 @@ void AllMusic::on_love_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allLove.get())return;
     ui->love_pushButton->setChecked(true);
     STREAM_INFO()<<"切换喜欢界面";
-    ui->stackedWidget->setCurrentWidget(this->m_allLove.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_allLove.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_allLove.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
     ui->idx3_lab->hide();
@@ -224,7 +245,9 @@ void AllMusic::on_song_list_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allSongList.get())return;
     ui->song_list_pushButton->setChecked(true);
     STREAM_INFO()<<"切换歌单界面";
-    ui->stackedWidget->setCurrentWidget(this->m_allSongList.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_allSongList.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_allSongList.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->show();
@@ -245,7 +268,9 @@ void AllMusic::on_recent_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allRecent.get())return;
     ui->recent_pushButton->setChecked(true);
     STREAM_INFO()<<"切换最近界面";
-    ui->stackedWidget->setCurrentWidget(this->m_allRecent.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_allRecent.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_allRecent.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
@@ -266,7 +291,9 @@ void AllMusic::on_local_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allLocal.get())return;
     ui->local_pushButton->setChecked(true);
     STREAM_INFO()<<"切换本地界面";
-    ui->stackedWidget->setCurrentWidget(this->m_allLocal.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_allLocal.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_allLocal.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
@@ -287,7 +314,9 @@ void AllMusic::on_paid_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allPaid.get())return;
     ui->paid_pushButton->setChecked(true);
     STREAM_INFO()<<"切换已购界面";
-    ui->stackedWidget->setCurrentWidget(this->m_allPaid.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_allPaid.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_allPaid.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
@@ -308,7 +337,9 @@ void AllMusic::on_cloud_disk_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_allCloudDisk.get())return;
     ui->cloud_disk_pushButton->setChecked(true);
     STREAM_INFO()<<"切换云盘界面";
-    ui->stackedWidget->setCurrentWidget(this->m_allCloudDisk.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_allCloudDisk.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_allCloudDisk.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();

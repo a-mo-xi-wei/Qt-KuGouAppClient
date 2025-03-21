@@ -52,6 +52,8 @@ private:
 
     void initDownloading();
 
+    void enableButton(const bool& flag) const;
+
 private slots:
     //ui相关
     void on_local_music_pushButton_clicked();

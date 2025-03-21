@@ -9,6 +9,7 @@
 #include "logger.hpp"
 
 #include <QButtonGroup>
+#include <QEasingCurve>
 #include <QFile>
 #include <QMouseEvent>
 
@@ -31,6 +32,10 @@ PurchasedMusic::PurchasedMusic(QWidget *parent) :
         }
     }
     initUi();
+
+    //动画结束，恢复可交互
+    connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
+    enableButton(true);
 }
 
 PurchasedMusic::~PurchasedMusic() {
@@ -41,6 +46,9 @@ void PurchasedMusic::initUi() {
     initIndexLab();
     initStackedWidget();
     ui->paid_single_pushButton->clicked();
+
+    ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
+    ui->stackedWidget->setSpeed(650);
 }
 
 void PurchasedMusic::initIndexLab() {
@@ -83,6 +91,12 @@ void PurchasedMusic::initPurchasedVideos() {
     ui->stackedWidget->addWidget(this->m_purchasedVideos.get());
 }
 
+void PurchasedMusic::enableButton(const bool &flag) const {
+    ui->paid_single_pushButton->setEnabled(flag);
+    ui->purchased_albums_pushButton->setEnabled(flag);
+    ui->purchased_video_pushButton->setEnabled(flag);
+}
+
 void PurchasedMusic::on_paid_single_pushButton_clicked() {
     // 判断当前显示的页面是否是 m_paidSingle 页面，如果是则直接返回
     if (ui->stackedWidget->currentWidget() == this->m_paidSingle.get()) {
@@ -91,7 +105,9 @@ void PurchasedMusic::on_paid_single_pushButton_clicked() {
     }
     ui->paid_single_pushButton->setChecked(true);
     STREAM_INFO()<<"切换付费单曲界面";
-    ui->stackedWidget->setCurrentWidget(this->m_paidSingle.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_paidSingle.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_paidSingle.get()));
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
@@ -106,7 +122,9 @@ void PurchasedMusic::on_purchased_albums_pushButton_clicked() {
     }
     ui->purchased_albums_pushButton->setChecked(true);
     STREAM_INFO()<<"切换已购专辑界面";
-    ui->stackedWidget->setCurrentWidget(this->m_purchasedAlbums.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_purchasedAlbums.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_purchasedAlbums.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
     ui->idx3_lab->hide();
@@ -121,7 +139,9 @@ void PurchasedMusic::on_purchased_video_pushButton_clicked() {
     }
     ui->purchased_video_pushButton->setChecked(true);
     STREAM_INFO()<<"切换已购视频界面";
-    ui->stackedWidget->setCurrentWidget(this->m_purchasedVideos.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_purchasedVideos.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_purchasedVideos.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->show();

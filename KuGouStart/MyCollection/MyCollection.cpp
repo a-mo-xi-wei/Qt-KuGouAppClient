@@ -30,6 +30,10 @@ MyCollection::MyCollection(QWidget *parent) :
         }
     }
     initUi();
+
+    //动画结束，恢复可交互
+    connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
+    enableButton(true);
 }
 
 MyCollection::~MyCollection() {
@@ -57,6 +61,9 @@ void MyCollection::initUi() {
     initStackedWidget();
     initIndexLab();
     ui->singleSong_pushButton->clicked();
+
+    ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
+    ui->stackedWidget->setSpeed(650);
 }
 
 void MyCollection::initIndexLab() {
@@ -111,6 +118,15 @@ void MyCollection::initSinger() {
 void MyCollection::initDevice() {
     this->m_deviceWidget = std::make_unique<DeviceWidget>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_deviceWidget.get());
+}
+
+void MyCollection::enableButton(const bool &flag) const {
+    ui->singleSong_pushButton->setEnabled(flag);
+    ui->songList_pushButton->setEnabled(flag);
+    ui->specialAlbum_pushButton->setEnabled(flag);
+    ui->collectVideo_pushButton->setEnabled(flag);
+    ui->singer_pushButton->setEnabled(flag);
+    ui->device_pushButton->setEnabled(flag);
 }
 
 bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
@@ -408,7 +424,9 @@ void MyCollection::on_singleSong_pushButton_clicked() {
     }
     ui->singleSong_pushButton->setChecked(true);
     STREAM_INFO()<<"切换单曲界面";
-    ui->stackedWidget->setCurrentWidget(this->m_singleSong.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_singleSong.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_singleSong.get()));
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
@@ -427,7 +445,9 @@ void MyCollection::on_songList_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_songList.get())return;
     ui->songList_pushButton->setChecked(true);
     STREAM_INFO()<<"切换歌单界面";
-    ui->stackedWidget->setCurrentWidget(this->m_songList.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_songList.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_songList.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
     ui->idx3_lab->hide();
@@ -446,7 +466,9 @@ void MyCollection::on_specialAlbum_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_specialAlbum.get())return;
     ui->specialAlbum_pushButton->setChecked(true);
     STREAM_INFO()<<"切换专辑界面";
-    ui->stackedWidget->setCurrentWidget(this->m_specialAlbum.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_specialAlbum.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_specialAlbum.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->show();
@@ -465,7 +487,9 @@ void MyCollection::on_collectVideo_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_collectVideo.get())return;
     ui->collectVideo_pushButton->setChecked(true);
     STREAM_INFO()<<"切换视频界面";
-    ui->stackedWidget->setCurrentWidget(this->m_collectVideo.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_collectVideo.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_collectVideo.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
@@ -484,7 +508,9 @@ void MyCollection::on_singer_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_singerWidget.get())return;
     ui->singer_pushButton->setChecked(true);
     STREAM_INFO()<<"切换歌手界面";
-    ui->stackedWidget->setCurrentWidget(this->m_singerWidget.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_singerWidget.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_singerWidget.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
@@ -503,7 +529,9 @@ void MyCollection::on_device_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_deviceWidget.get())return;
     ui->device_pushButton->setChecked(true);
     STREAM_INFO()<<"切换设备界面";
-    ui->stackedWidget->setCurrentWidget(this->m_deviceWidget.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_deviceWidget.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_deviceWidget.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
