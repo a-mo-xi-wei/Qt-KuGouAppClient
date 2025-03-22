@@ -94,21 +94,22 @@ void KuGouApp::initUi() {
 }
 
 void KuGouApp::initStackedWidget() {
-    initRecommendForYou();
-    initMusicRepository();
-    initChannel();
-    initVideo();
-    initLive();
-    initSongList();
-    initDailyRecommend();
-    initMyCollection();
-    initLocalDownload();
-    initMusicCloudDisk();
-    initPurchasedMusic();
-    initRecentlyPlayed();
-    initAllMusic();
-    initListenBook();
-    initSearch();
+    // 使用模板函数统一初始化所有组件
+    initComponent(m_recommendForYou);
+    initComponent(m_musicRepository);
+    initComponent(m_channel);
+    initComponent(m_video);
+    initComponent(m_live);
+    initComponent(m_songList);
+    initComponent(m_dailyRecommend);
+    initComponent(m_collection);
+    initComponent(m_localDownload);
+    initComponent(m_musicCloudDisk);
+    initComponent(m_purchasedMusic);
+    initComponent(m_recentlyPlayed);
+    initComponent(m_allMusic);
+    initComponent(m_listenBook);
+    initComponent(m_search);
 
     //localDownload
     connect(this->m_localDownload.get(), &LocalDownload::playMusic, this, &KuGouApp::onPlayMusic);
@@ -122,81 +123,6 @@ void KuGouApp::initStackedWidget() {
     //专门处理重排
     connect(this->m_localDownload.get(),&LocalDownload::syncSongInfo,this,&KuGouApp::onSyncSongInfoVector);
 
-}
-
-void KuGouApp::initRecommendForYou() {
-    this->m_recommendForYou = std::make_unique<RecommendForYou>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_recommendForYou.get());
-}
-
-void KuGouApp::initMusicRepository() {
-    this->m_musicRepository = std::make_unique<MusicRepository>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_musicRepository.get());
-}
-
-void KuGouApp::initChannel() {
-    this->m_channel = std::make_unique<Channel>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_channel.get());
-}
-
-void KuGouApp::initVideo() {
-    this->m_video = std::make_unique<Video>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_video.get());
-}
-
-void KuGouApp::initLive() {
-    this->m_live = std::make_unique<Live>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_live.get());
-}
-
-void KuGouApp::initSongList() {
-    this->m_songList = std::make_unique<SongList>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_songList.get());
-}
-
-void KuGouApp::initDailyRecommend() {
-    this->m_dailyRecommend = std::make_unique<DailyRecommend>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_dailyRecommend.get());
-}
-
-void KuGouApp::initMyCollection() {
-    this->m_collection = std::make_unique<MyCollection>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_collection.get());
-}
-
-void KuGouApp::initLocalDownload() {
-    this->m_localDownload = std::make_unique<LocalDownload>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_localDownload.get());
-}
-
-void KuGouApp::initMusicCloudDisk() {
-    this->m_musicCloudDisk = std::make_unique<MusicCloudDisk>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_musicCloudDisk.get());
-}
-
-void KuGouApp::initPurchasedMusic() {
-    this->m_purchasedMusic = std::make_unique<PurchasedMusic>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_purchasedMusic.get());
-}
-
-void KuGouApp::initRecentlyPlayed() {
-    this->m_recentlyPlayed = std::make_unique<RecentlyPlayed>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_recentlyPlayed.get());
-}
-
-void KuGouApp::initAllMusic() {
-    this->m_allMusic = std::make_unique<AllMusic>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_allMusic.get());
-}
-
-void KuGouApp::initListenBook() {
-    this->m_listenBook = std::make_unique<ListenBook>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_listenBook.get());
-}
-
-void KuGouApp::initSearch() {
-    this->m_search = std::make_unique<Search>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_search.get());
 }
 
 void KuGouApp::initTitleWidget() {

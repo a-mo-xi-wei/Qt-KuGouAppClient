@@ -22,6 +22,8 @@
 #include"Search.h"
 
 //#include"MyMenu.h"//直接使用title的Menu
+#include <ui_KuGouApp.h>
+
 #include"TitleWidget.h"
 
 class QMediaPlayer;
@@ -51,35 +53,11 @@ private:
 
     void initStackedWidget();
 
-    void initRecommendForYou();
-
-    void initMusicRepository();
-
-    void initChannel();
-
-    void initVideo();
-
-    void initLive();
-
-    void initSongList();
-
-    void initDailyRecommend();
-
-    void initMyCollection();
-
-    void initLocalDownload();
-
-    void initMusicCloudDisk();
-
-    void initPurchasedMusic();
-
-    void initRecentlyPlayed();
-
-    void initAllMusic();
-
-    void initListenBook();
-
-    void initSearch();
+    template<typename T>
+    void initComponent(std::unique_ptr<T>& component) {
+        component = std::make_unique<T>(ui->stackedWidget);
+        ui->stackedWidget->addWidget(component.get());
+    }
 
     void initTitleWidget();
 
