@@ -19,7 +19,7 @@ set(SOURCE_FILES
     ${SOURCE_H}
 )
 
-add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
+add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE MATERIALDIALOG_LIBRARY)
 
