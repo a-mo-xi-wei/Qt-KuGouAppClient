@@ -33,9 +33,13 @@ signals:
 
     void noVolume(const bool& flag);
 
+    void showAboutDialog(const bool& flag);
+
 private:
     //是否静音
-    bool m_flag = false;
+    bool m_volumeFlag = false;
+    //是否显示关于窗口
+    bool m_aboutFlag = false;
 };
 
 

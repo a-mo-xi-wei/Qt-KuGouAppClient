@@ -1,6 +1,7 @@
 #include "MainWindow.h"
 #include "WaterDrop.h"
 #include "MyTrayIcon.h"
+#include "logger.hpp"
 
 #include <QMouseEvent>
 #include <QPainter>
@@ -12,12 +13,14 @@ constexpr int RADIUS = 12;
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
     , m_trayIcon(new MyTrayIcon(this))
+    , m_aboutDialog(std::make_unique<AboutDialog>(this))
 {
     //接收来自 trayIcon 的信号
     connect(m_trayIcon, &MyTrayIcon::noVolume, this, [this](const bool& flag) {
         //qDebug()<<"MainWindow 托盘图标点击: "<<(flag?"静音":"开启声音");
         emit fromTray_noVolume(flag);
     });
+    connect(m_trayIcon, &MyTrayIcon::showAboutDialog, this, &MainWindow::onShowAboutDialog);
 }
 
 void MainWindow::paintEvent(QPaintEvent *event) {
@@ -175,4 +178,10 @@ int MainWindow::getMouseRegion(const int& x, const int& y) const {
     // 最后计算 表示区域的 数值 (x=1, y=1) 计算 = 1*10+1 =11
     // x=2,y=3 = 3*10+2 = 32 在图的 3,2 区域
     return region_y * 10 + region_x;
+}
+
+void MainWindow::onShowAboutDialog(const bool flag) const {
+    STREAM_INFO()<<"系统托盘图标点击: "<<(flag?"显示关于对话框":"隐藏关于对话框");
+    if (flag)this->m_aboutDialog->onShowDialog();
+    else this->m_aboutDialog->onHideDialog();
 }

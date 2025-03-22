@@ -35,6 +35,8 @@ signals:
 
     void noVolume(const bool &flag);
 
+    void showAboutDialog(const bool &flag);
+
 private slots:
     void onIconActivated(QSystemTrayIcon::ActivationReason reason); // 处理事件函数
 
@@ -52,9 +54,11 @@ private:
     QIcon   m_emptyIcon{};
     QIcon   m_trayIcon{};
     // 检测托盘与鼠标位置定时器
-    QTimer*    m_checkTimer;
+    QTimer* m_checkTimer;
     // 闪烁定时器
-    QTimer*    m_flashTimer{};
+    QTimer* m_flashTimer{};
+    //关于 对话框 显示与否
+    bool    m_aboutDialogShow = false;
 };
 
 

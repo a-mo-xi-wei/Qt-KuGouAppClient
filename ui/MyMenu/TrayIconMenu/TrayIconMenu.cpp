@@ -63,9 +63,9 @@ void TrayIconMenu::initMenu() {
         a_openCloseToolBtn->setText(QStringLiteral("  打开/关闭声音"));
         a_openCloseAction->setDefaultWidget(a_openCloseToolBtn);
         connect(a_openCloseToolBtn, &QToolButton::clicked, this, [this,a_openCloseToolBtn] {
-            this->m_flag = !this->m_flag;
-            emit noVolume(this->m_flag);
-            if (this->m_flag) {
+            this->m_volumeFlag = !this->m_volumeFlag;
+            emit noVolume(this->m_volumeFlag);
+            if (this->m_volumeFlag) {
                 a_openCloseToolBtn->setIcon(QIcon(QStringLiteral(":/Res/playbar/volume-off-blue.svg")));
                 a_openCloseToolBtn->initIcon(QIcon(QStringLiteral(":/Res/playbar/volume-off-gray.svg")),
                                              QIcon(QStringLiteral(":/Res/playbar/volume-off-blue.svg")));
@@ -85,6 +85,34 @@ void TrayIconMenu::initMenu() {
             QCoreApplication::sendEvent(a_openCloseToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_openCloseToolBtn->setAttribute(Qt::WA_UnderMouse, true);
+        });
+    }
+    //关于我的酷狗按钮
+    auto a_aboutKuGouAction = new QWidgetAction(this);
+    {
+        auto a_aboutKuGouToolBtn = new MenuBtn(this);
+        a_aboutKuGouToolBtn->setFixedSize(130, 28);
+        a_aboutKuGouToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/about-black.svg")));
+        a_aboutKuGouToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/about-black.svg")),
+                                QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/about-blue.svg")));
+        a_aboutKuGouToolBtn->setText(QStringLiteral("  关于我的酷狗"));
+        a_aboutKuGouAction->setDefaultWidget(a_aboutKuGouToolBtn);
+        connect(a_aboutKuGouToolBtn, &QToolButton::clicked, this, [this,a_aboutKuGouToolBtn] {
+            this->m_aboutFlag = !this->m_aboutFlag;
+            emit showAboutDialog(this->m_aboutFlag);
+            a_aboutKuGouToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/about-blue.svg")));
+            a_aboutKuGouToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/about-black.svg")),
+                                QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/about-blue.svg")));
+        });
+        connect(a_aboutKuGouAction, &QWidgetAction::hovered, this, [a_aboutKuGouToolBtn,this] {
+            //qDebug()<<"进入a_aboutKuGouToolBtn";
+            checkHover();
+            this->m_currentHover.emplace_back(a_aboutKuGouToolBtn);
+            this->m_lastHover = this->m_currentHover;
+            QEvent enterEvent(QEvent::Enter); // 创建进入事件
+            QCoreApplication::sendEvent(a_aboutKuGouToolBtn, &enterEvent); // 发送事件
+            // 模拟按钮进入 hover 状态
+            a_aboutKuGouToolBtn->setAttribute(Qt::WA_UnderMouse, true);
         });
     }
     //退出按钮
@@ -114,6 +142,7 @@ void TrayIconMenu::initMenu() {
 
     this->addAction(a_openWindowAction);
     this->addAction(a_openCloseAction);
+    this->addAction(a_aboutKuGouAction);
     this->addAction(a_exitPlayAction);
     //qDebug() << "Exiting initTrayIconMenu";
     this->hide();

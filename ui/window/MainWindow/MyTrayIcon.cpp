@@ -64,6 +64,10 @@ void MyTrayIcon::handleSysTrayMenu() {
         emit noVolume(flag);
     });
 
+    connect(m_trayMenu,&TrayIconMenu::showAboutDialog,this,[this](const bool& flag) {
+        emit showAboutDialog(flag);
+    });
+
     connect(m_trayMenu, &TrayIconMenu::exit, this, [this] { this->m_pParent->close(); });
 }
 
@@ -139,8 +143,8 @@ void MyTrayIcon::onIconActivated(QSystemTrayIcon::ActivationReason reason) {
 }
 
 void MyTrayIcon::checkTrayIconHover() {
-    QRect trayGeometry = this->geometry(); // 需要平台特定方法获取实际区域
-    QPoint mousePos = QCursor::pos();
+    const QRect trayGeometry = this->geometry(); // 需要平台特定方法获取实际区域
+    const QPoint mousePos = QCursor::pos();
     if (trayGeometry.contains(mousePos)) {
         // 鼠标在托盘图标上，停止闪烁
         stopFlashingTrayIcon();
@@ -148,7 +152,6 @@ void MyTrayIcon::checkTrayIconHover() {
 }
 
 void MyTrayIcon::onFlashingTrayIcon() {
-
     if (m_showIcon)
     {
         this->setIcon(QIcon(m_emptyIcon));

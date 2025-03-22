@@ -3,6 +3,8 @@
 
 #include<QWidget>
 
+#include "AboutDialog.h"
+
 #if defined(MAINWINDOW_LIBRARY)
 #define MAINWINDOW_EXPORT Q_DECL_EXPORT
 #else
@@ -76,6 +78,9 @@ private:
 signals:
     void fromTray_noVolume(const bool& flag);
 
+public slots:
+    void onShowAboutDialog(bool flag = true)const;
+
 public:
     MyTrayIcon* m_trayIcon{};//桌面图标
     bool isPress = false;
@@ -83,6 +88,8 @@ public:
     QPoint mousePs;
     int mouse_press_region = kMousePositionMid;
     QPoint point_offset;
+    //关于我的酷狗dialog
+    std::unique_ptr<AboutDialog> m_aboutDialog{};
 };
 
 
