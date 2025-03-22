@@ -20,6 +20,19 @@ const GLOptionMenu * GLOptionMenu::getMenu() const {
 void GLOptionMenu::initMenu() {
     this->setMouseTracking(true);
     this->setFixedSize(60,90);
+
+    auto connectAction = [this](const QWidgetAction *widgetAction , QToolButton* btn) {
+        connect(widgetAction, &QWidgetAction::hovered, this, [btn,this] {
+             checkHover();
+             this->m_currentHover.emplace_back(btn);
+             this->m_lastHover = this->m_currentHover;
+             QEvent enterEvent(QEvent::Enter); // 创建进入事件
+             QCoreApplication::sendEvent(btn, &enterEvent); // 发送事件
+             // 模拟按钮进入 hover 状态
+             btn->setAttribute(Qt::WA_UnderMouse, true);
+        });
+    };
+
     auto a_foundAction = new QWidgetAction(this);
     auto a_foundBtn = new QToolButton(this);
     a_foundBtn->setToolButtonStyle(Qt::ToolButtonTextOnly);
@@ -33,7 +46,7 @@ void GLOptionMenu::initMenu() {
             emit getModel(a_foundBtn->text());
             this->hide();
     });
-    connect(a_foundAction,&QWidgetAction::hovered,this,[this,a_foundBtn] {
+    /*connect(a_foundAction,&QWidgetAction::hovered,this,[this,a_foundBtn] {
         checkHover();
         this->m_currentHover.emplace_back(a_foundBtn);
         this->m_lastHover = this->m_currentHover;
@@ -41,7 +54,8 @@ void GLOptionMenu::initMenu() {
         QCoreApplication::sendEvent(a_foundBtn, &enterEvent); // 发送事件
         // 模拟按钮进入 hover 状态
         a_foundBtn->setAttribute(Qt::WA_UnderMouse, true);
-    });
+    });*/
+    connectAction(a_foundAction,a_foundBtn);
 
     auto a_minorityAction = new QWidgetAction(this);
     auto a_minorityBtn = new QToolButton(this);
@@ -56,7 +70,7 @@ void GLOptionMenu::initMenu() {
             emit getModel(a_minorityBtn->text());
             this->hide();
     });
-    connect(a_minorityAction,&QWidgetAction::hovered,this,[this,a_minorityBtn] {
+    /*connect(a_minorityAction,&QWidgetAction::hovered,this,[this,a_minorityBtn] {
         checkHover();
         this->m_currentHover.emplace_back(a_minorityBtn);
         this->m_lastHover = this->m_currentHover;
@@ -64,7 +78,8 @@ void GLOptionMenu::initMenu() {
         QCoreApplication::sendEvent(a_minorityBtn, &enterEvent); // 发送事件
         // 模拟按钮进入 hover 状态
         a_minorityBtn->setAttribute(Qt::WA_UnderMouse, true);
-    });
+    });*/
+    connectAction(a_minorityAction,a_minorityBtn);
 
     auto a_30sAction = new QWidgetAction(this);
     auto a_30sBtn = new QToolButton(this);
@@ -79,7 +94,7 @@ void GLOptionMenu::initMenu() {
         emit getModel(a_30sBtn->text());
         this->hide();
     });
-    connect(a_30sAction,&QWidgetAction::hovered,this,[this,a_30sBtn] {
+    /*connect(a_30sAction,&QWidgetAction::hovered,this,[this,a_30sBtn] {
         checkHover();
         this->m_currentHover.emplace_back(a_30sBtn);
         this->m_lastHover = this->m_currentHover;
@@ -87,8 +102,8 @@ void GLOptionMenu::initMenu() {
         QCoreApplication::sendEvent(a_30sBtn, &enterEvent); // 发送事件
         // 模拟按钮进入 hover 状态
         a_30sBtn->setAttribute(Qt::WA_UnderMouse, true);
-    });
-
+    });*/
+    connectAction(a_30sAction,a_30sBtn);
 
     this->addAction(a_foundAction);
     this->addAction(a_minorityAction);

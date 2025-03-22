@@ -10,6 +10,8 @@
 #include "MenuBtn.hpp"
 #include <QMenu>
 
+class QWidgetAction;
+
 #if defined(BASEMENU_LIBRARY)
 #define BASEMENU_EXPORT Q_DECL_EXPORT
 #else
@@ -44,6 +46,8 @@ protected:
     void showEvent(QShowEvent *event) override;
 
     void leaveEvent(QEvent *event) override;
+
+    void connectAction(const QWidgetAction *widgetAction , MenuBtn* btn);
 
 protected:
     //为了解决QWidgetAction没有与hovered相反的离开事件设置下面两个变量

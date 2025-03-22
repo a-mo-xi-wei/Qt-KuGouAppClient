@@ -14,6 +14,15 @@ SortOptionMenu::SortOptionMenu(QWidget *parent)
 
 void SortOptionMenu::initMenu() {
     this->setFixedSize(140, 280);
+    auto connectAction = [this](QWidgetAction* actionWidget,MenuBtn* btn) {
+        connect(actionWidget, &QWidgetAction::hovered, this, [btn,this] {
+            checkHover();
+            this->m_currentHover.emplace_back(btn);
+            this->m_lastHover = this->m_currentHover;
+            // 模拟hover
+            btn->setAttribute(Qt::WA_UnderMouse, true);
+        });
+    };
     //默认排序
     const auto a_sortByDefaultAction = new QWidgetAction(this); {
         auto a_sortByDefaultToolBtn = new MenuBtn(this);
@@ -33,13 +42,14 @@ void SortOptionMenu::initMenu() {
             this->m_lastSelect = this->m_curSelect;
             this->m_sortBtn = a_sortByDefaultToolBtn;
         });
-        connect(a_sortByDefaultAction, &QWidgetAction::hovered, this, [a_sortByDefaultToolBtn,this] {
+        /*connect(a_sortByDefaultAction, &QWidgetAction::hovered, this, [a_sortByDefaultToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_sortByDefaultToolBtn);
             this->m_lastHover = this->m_currentHover;
             // 模拟hover
             a_sortByDefaultToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_sortByDefaultAction,a_sortByDefaultToolBtn);
     }
     //添加时间
     const auto a_sortByAddTimeAction = new QWidgetAction(this); {
@@ -72,13 +82,14 @@ void SortOptionMenu::initMenu() {
             }
             this->m_sortBtn = a_sortByAddTimeToolBtn;
         });
-        connect(a_sortByAddTimeAction, &QWidgetAction::hovered, this, [a_sortByAddTimeToolBtn,this] {
+        /*connect(a_sortByAddTimeAction, &QWidgetAction::hovered, this, [a_sortByAddTimeToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_sortByAddTimeToolBtn);
             this->m_lastHover = this->m_currentHover;
             // 模拟hover
             a_sortByAddTimeToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_sortByAddTimeAction,a_sortByAddTimeToolBtn);
     }
     //歌曲名
     const auto a_sortBySongNameAction = new QWidgetAction(this); {
@@ -111,13 +122,14 @@ void SortOptionMenu::initMenu() {
             }
             this->m_sortBtn = a_sortBySongNameToolBtn;
         });
-        connect(a_sortBySongNameAction, &QWidgetAction::hovered, this, [a_sortBySongNameToolBtn,this] {
+        /*connect(a_sortBySongNameAction, &QWidgetAction::hovered, this, [a_sortBySongNameToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_sortBySongNameToolBtn);
             this->m_lastHover = this->m_currentHover;
             // 模拟hover
             a_sortBySongNameToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_sortBySongNameAction,a_sortBySongNameToolBtn);
     }
     //歌手
     const auto a_sortBySingerAction = new QWidgetAction(this); {
@@ -148,13 +160,14 @@ void SortOptionMenu::initMenu() {
             }
             this->m_sortBtn = a_sortBySingerToolBtn;
         });
-        connect(a_sortBySingerAction, &QWidgetAction::hovered, this, [a_sortBySingerToolBtn,this] {
+        /*connect(a_sortBySingerAction, &QWidgetAction::hovered, this, [a_sortBySingerToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_sortBySingerToolBtn);
             this->m_lastHover = this->m_currentHover;
             // 模拟hover
             a_sortBySingerToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_sortBySingerAction,a_sortBySingerToolBtn);
     }
     //时长
     const auto a_sortByDurationAction = new QWidgetAction(this); {
@@ -185,13 +198,14 @@ void SortOptionMenu::initMenu() {
             }
             this->m_sortBtn = a_sortByDurationToolBtn;
         });
-        connect(a_sortByDurationAction, &QWidgetAction::hovered, this, [a_sortByDurationToolBtn,this] {
+        /*connect(a_sortByDurationAction, &QWidgetAction::hovered, this, [a_sortByDurationToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_sortByDurationToolBtn);
             this->m_lastHover = this->m_currentHover;
             // 模拟hover
             a_sortByDurationToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_sortByDurationAction,a_sortByDurationToolBtn);
     }
     //播放次数
     const auto a_sortByPlayCountAction = new QWidgetAction(this); {
@@ -222,13 +236,14 @@ void SortOptionMenu::initMenu() {
             }
             this->m_sortBtn = a_sortByPlayCountToolBtn;
         });
-        connect(a_sortByPlayCountAction, &QWidgetAction::hovered, this, [a_sortByPlayCountToolBtn,this] {
+        /*connect(a_sortByPlayCountAction, &QWidgetAction::hovered, this, [a_sortByPlayCountToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_sortByPlayCountToolBtn);
             this->m_lastHover = this->m_currentHover;
             // 模拟hover
             a_sortByPlayCountToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_sortByPlayCountAction,a_sortByPlayCountToolBtn);
     }
     //随机排序
     const auto a_sortByRandomAction = new QWidgetAction(this); {
@@ -246,13 +261,14 @@ void SortOptionMenu::initMenu() {
             checkSelection();
             this->m_lastSelect = this->m_curSelect;
         });
-        connect(a_sortByRandomAction, &QWidgetAction::hovered, this, [a_sortByRandomToolBtn,this] {
+        /*connect(a_sortByRandomAction, &QWidgetAction::hovered, this, [a_sortByRandomToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_sortByRandomToolBtn);
             this->m_lastHover = this->m_currentHover;
             // 模拟hover
             a_sortByRandomToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_sortByRandomAction,a_sortByRandomToolBtn);
     }
     //添加Action
     this->addAction(a_sortByDefaultAction);

@@ -16,17 +16,6 @@ TitleOptionMenu::TitleOptionMenu(QWidget *parent)
 
 void TitleOptionMenu::initMenu() {
     this->setFixedSize(380, 600);
-    auto connectAction = [this](QWidgetAction *widgetAction , MenuBtn* btn) {
-        connect(widgetAction, &QWidgetAction::hovered, this, [btn,this] {
-           checkHover();
-           this->m_currentHover.emplace_back(btn);
-           this->m_lastHover = this->m_currentHover;
-           QEvent enterEvent(QEvent::Enter); // 创建进入事件
-           QCoreApplication::sendEvent(btn, &enterEvent); // 发送事件
-           // 模拟按钮进入 hover 状态
-           btn->setAttribute(Qt::WA_UnderMouse, true);
-       });
-    };
     //顶部按钮
     //auto a_topListWidgetAction = new QWidgetAction(this);
     auto a_topListWidgetAction = new QWidgetAction(this); {

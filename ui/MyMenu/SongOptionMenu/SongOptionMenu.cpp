@@ -29,7 +29,7 @@ void SongOptionMenu::initMenu() {
             emit play();
             this->hide();
         });
-        connect(a_playAction, &QWidgetAction::hovered, this, [a_playToolBtn,this] {
+        /*connect(a_playAction, &QWidgetAction::hovered, this, [a_playToolBtn,this] {
             //qDebug()<<"进入a_playToolBtn";
             checkHover();
             this->m_currentHover.emplace_back(a_playToolBtn);
@@ -38,7 +38,8 @@ void SongOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_playToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_playToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_playAction,a_playToolBtn);
     }
     //下一首播放按钮
     auto a_nextPlayAction = new QWidgetAction(this); {
@@ -53,7 +54,7 @@ void SongOptionMenu::initMenu() {
             emit nextPlay();
             this->hide();
         });
-        connect(a_nextPlayAction, &QWidgetAction::hovered, this, [a_nextPlayToolBtn,this] {
+        /*connect(a_nextPlayAction, &QWidgetAction::hovered, this, [a_nextPlayToolBtn,this] {
             //qDebug()<<"进入a_nextPlayToolBtn";
             checkHover();
             this->m_currentHover.emplace_back(a_nextPlayToolBtn);
@@ -62,7 +63,8 @@ void SongOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_nextPlayToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_nextPlayToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_nextPlayAction,a_nextPlayToolBtn);
     }
     //添加到(子目录)
     auto a_addToAction = new QWidgetAction(this); {
@@ -101,6 +103,7 @@ void SongOptionMenu::initMenu() {
             a_addToToolBtn->setAttribute(Qt::WA_UnderMouse, true);
             a_addToRightBtn->setAttribute(Qt::WA_UnderMouse, true);
         });
+
         //子菜单项
         //播放队列
         auto a_playQueueAction = new QWidgetAction(this); {
@@ -115,7 +118,7 @@ void SongOptionMenu::initMenu() {
                 emit addToPlayQueue();
                 this->hide();
             });
-            connect(a_playQueueAction, &QWidgetAction::hovered, this, [a_playQueueToolBtn,this] {
+            /*connect(a_playQueueAction, &QWidgetAction::hovered, this, [a_playQueueToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_playQueueToolBtn);
                 this->m_lastHover = this->m_currentHover;
@@ -123,7 +126,8 @@ void SongOptionMenu::initMenu() {
                 QCoreApplication::sendEvent(a_playQueueToolBtn, &enterEvent); // 发送事件
                 // 模拟按钮进入 hover 状态
                 a_playQueueToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-            });
+            });*/
+            connectAction(a_playQueueAction,a_playQueueToolBtn);
         }
         //子菜单项
         //新建歌单
@@ -139,7 +143,7 @@ void SongOptionMenu::initMenu() {
                 emit addToNewSongList();
                 this->hide();
             });
-            connect(a_newPlayListAction, &QWidgetAction::hovered, this, [a_newPlayListToolBtn,this] {
+            /*connect(a_newPlayListAction, &QWidgetAction::hovered, this, [a_newPlayListToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_newPlayListToolBtn);
                 this->m_lastHover = this->m_currentHover;
@@ -147,7 +151,8 @@ void SongOptionMenu::initMenu() {
                 QCoreApplication::sendEvent(a_newPlayListToolBtn, &enterEvent); // 发送事件
                 // 模拟按钮进入 hover 状态
                 a_newPlayListToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-            });
+            });*/
+            connectAction(a_newPlayListAction,a_newPlayListToolBtn);
         }
         //子菜单项
         //我喜欢
@@ -163,7 +168,7 @@ void SongOptionMenu::initMenu() {
                 emit addToLove();
                 this->hide();
             });
-            connect(a_likeAction, &QWidgetAction::hovered, this, [a_likeToolBtn,this] {
+            /*connect(a_likeAction, &QWidgetAction::hovered, this, [a_likeToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_likeToolBtn);
                 this->m_lastHover = this->m_currentHover;
@@ -171,7 +176,8 @@ void SongOptionMenu::initMenu() {
                 QCoreApplication::sendEvent(a_likeToolBtn, &enterEvent); // 发送事件
                 // 模拟按钮进入 hover 状态
                 a_likeToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-            });
+            });*/
+            connectAction(a_likeAction,a_likeToolBtn);
         }
         //子菜单项
         //默认收藏
@@ -187,7 +193,7 @@ void SongOptionMenu::initMenu() {
                 emit addToCollect();
                 this->hide();
             });
-            connect(a_defaultCollectAction, &QWidgetAction::hovered, this, [a_defaultCollectToolBtn,this] {
+            /*connect(a_defaultCollectAction, &QWidgetAction::hovered, this, [a_defaultCollectToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_defaultCollectToolBtn);
                 this->m_lastHover = this->m_currentHover;
@@ -195,7 +201,8 @@ void SongOptionMenu::initMenu() {
                 QCoreApplication::sendEvent(a_defaultCollectToolBtn, &enterEvent); // 发送事件
                 // 模拟按钮进入 hover 状态
                 a_defaultCollectToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-            });
+            });*/
+            connectAction(a_defaultCollectAction,a_defaultCollectToolBtn);
         }
         //子菜单项
         //默认列表
@@ -211,7 +218,7 @@ void SongOptionMenu::initMenu() {
                 emit addToPlayList();
                 this->hide();
             });
-            connect(a_defaultListAction, &QWidgetAction::hovered, this, [a_defaultListToolBtn,this] {
+            /*connect(a_defaultListAction, &QWidgetAction::hovered, this, [a_defaultListToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_defaultListToolBtn);
                 this->m_lastHover = this->m_currentHover;
@@ -219,7 +226,8 @@ void SongOptionMenu::initMenu() {
                 QCoreApplication::sendEvent(a_defaultListToolBtn, &enterEvent); // 发送事件
                 // 模拟按钮进入 hover 状态
                 a_defaultListToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-            });
+            });*/
+            connectAction(a_defaultListAction,a_defaultListToolBtn);
         }
         //子目录添加子项
         auto a_addToMenu = new BaseMenu(this);
@@ -248,7 +256,7 @@ void SongOptionMenu::initMenu() {
             emit download();
             this->hide();
         });
-        connect(a_downloadAction, &QWidgetAction::hovered, this, [a_downloadToolBtn,this] {
+        /*connect(a_downloadAction, &QWidgetAction::hovered, this, [a_downloadToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_downloadToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -256,7 +264,8 @@ void SongOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_downloadToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_downloadToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_downloadAction,a_downloadToolBtn);
     }
     //分享按钮
     auto a_shareAction = new QWidgetAction(this); {
@@ -271,7 +280,7 @@ void SongOptionMenu::initMenu() {
             emit share();
             this->hide();
         });
-        connect(a_shareAction, &QWidgetAction::hovered, this, [a_shareToolBtn,this] {
+        /*connect(a_shareAction, &QWidgetAction::hovered, this, [a_shareToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_shareToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -279,7 +288,8 @@ void SongOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_shareToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_shareToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_shareAction,a_shareToolBtn);
     }
     //查看评论按钮
     auto a_commentAction = new QWidgetAction(this); {
@@ -294,7 +304,7 @@ void SongOptionMenu::initMenu() {
             emit comment();
             this->hide();
         });
-        connect(a_commentAction, &QWidgetAction::hovered, this, [a_commentToolBtn,this] {
+        /*connect(a_commentAction, &QWidgetAction::hovered, this, [a_commentToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_commentToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -302,7 +312,8 @@ void SongOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_commentToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_commentToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_commentAction,a_commentToolBtn);
     }
     //相似歌曲按钮
     auto a_sameSongAction = new QWidgetAction(this); {
@@ -317,7 +328,7 @@ void SongOptionMenu::initMenu() {
             emit sameSong();
             this->hide();
         });
-        connect(a_sameSongAction, &QWidgetAction::hovered, this, [a_sameSongToolBtn,this] {
+        /*connect(a_sameSongAction, &QWidgetAction::hovered, this, [a_sameSongToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_sameSongToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -325,7 +336,8 @@ void SongOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_sameSongToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_sameSongToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_sameSongAction,a_sameSongToolBtn);
     }
     //查看歌曲信息按钮
     auto a_songInfoAction = new QWidgetAction(this); {
@@ -340,7 +352,7 @@ void SongOptionMenu::initMenu() {
             emit songInfo();
             this->hide();
         });
-        connect(a_songInfoAction, &QWidgetAction::hovered, this, [a_songInfoSongToolBtn,this] {
+        /*connect(a_songInfoAction, &QWidgetAction::hovered, this, [a_songInfoSongToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_songInfoSongToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -348,7 +360,8 @@ void SongOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_songInfoSongToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_songInfoSongToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_songInfoAction,a_songInfoSongToolBtn);
     }
     //从列表中删除按钮
     auto a_deleteAction = new QWidgetAction(this); {
@@ -364,7 +377,7 @@ void SongOptionMenu::initMenu() {
             emit deleteSong(this->m_curIndex);
             this->hide();
         });
-        connect(a_deleteAction, &QWidgetAction::hovered, this, [a_deleteSongToolBtn,this] {
+        /*connect(a_deleteAction, &QWidgetAction::hovered, this, [a_deleteSongToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_deleteSongToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -372,7 +385,8 @@ void SongOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_deleteSongToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_deleteSongToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_deleteAction,a_deleteSongToolBtn);
     }
     //打开文件所在目录按钮
     auto a_openFileAction = new QWidgetAction(this); {
@@ -387,7 +401,7 @@ void SongOptionMenu::initMenu() {
             emit openInFile();
             this->hide();
         });
-        connect(a_openFileAction, &QWidgetAction::hovered, this, [a_openFileSongToolBtn,this] {
+        /*connect(a_openFileAction, &QWidgetAction::hovered, this, [a_openFileSongToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_openFileSongToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -395,7 +409,8 @@ void SongOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_openFileSongToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_openFileSongToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_openFileAction,a_openFileSongToolBtn);
     }
     //搜索按钮(子目录)
     auto a_searchAction = new QWidgetAction(this); {
@@ -473,7 +488,7 @@ void SongOptionMenu::initMenu() {
             emit upload();
             this->hide();
         });
-        connect(a_uploadAction, &QWidgetAction::hovered, this, [a_uploadSongToolBtn,this] {
+        /*connect(a_uploadAction, &QWidgetAction::hovered, this, [a_uploadSongToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_uploadSongToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -481,7 +496,8 @@ void SongOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_uploadSongToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_uploadSongToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_uploadAction,a_uploadSongToolBtn);
     }
 
     this->addAction(a_playAction);
