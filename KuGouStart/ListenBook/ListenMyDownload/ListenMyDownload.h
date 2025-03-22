@@ -45,6 +45,8 @@ private:
 
     void initDownloadingWidget();
 
+    void enableButton(const bool& flag) const;
+
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 

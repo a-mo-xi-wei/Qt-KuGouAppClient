@@ -33,6 +33,9 @@ ListenMyDownload::ListenMyDownload(QWidget *parent)
         }
     }
     initUi();
+
+    connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
+    enableButton(true);
 }
 
 ListenMyDownload::~ListenMyDownload() {
@@ -74,6 +77,11 @@ void ListenMyDownload::initDownloadedWidget() {
 void ListenMyDownload::initDownloadingWidget() {
     this->m_downloading = std::make_unique<DownloadingWidget>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_downloading.get());
+}
+
+void ListenMyDownload::enableButton(const bool &flag) const {
+    ui->downloaded_pushButton->setEnabled(flag);
+    ui->downloading_pushButton->setEnabled(flag);
 }
 
 bool ListenMyDownload::eventFilter(QObject *watched, QEvent *event) {
@@ -180,8 +188,9 @@ void ListenMyDownload::mousePressEvent(QMouseEvent *event) {
 
 void ListenMyDownload::on_downloaded_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_downloaded.get())return;
+    enableButton(false);
     ui->downloaded_pushButton->setChecked(true);
-    ui->stackedWidget->setCurrentWidget(this->m_downloaded.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_downloaded.get()));
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
     ui->downloaded_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;"));
@@ -190,8 +199,9 @@ void ListenMyDownload::on_downloaded_pushButton_clicked() {
 
 void ListenMyDownload::on_downloading_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_downloading.get())return;
+    enableButton(false);
     ui->downloading_pushButton->setChecked(true);
-    ui->stackedWidget->setCurrentWidget(this->m_downloading.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_downloading.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
     ui->downloaded_number_label->setStyleSheet("");

@@ -55,4 +55,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/DownloadedWidget
         ${CMAKE_CURRENT_SOURCE_DIR}/DownloadingWidget)
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyStackedWidget)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySlidingStackedWidget MySpdlog)

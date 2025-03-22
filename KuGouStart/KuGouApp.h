@@ -72,6 +72,9 @@ private:
     void update_cover_singer_song_HLayout();
 
     void updateSize();
+
+    void enableButton(const bool& flag);
+
 private:
     void addOrderIndex();
 

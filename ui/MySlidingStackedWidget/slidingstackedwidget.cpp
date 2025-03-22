@@ -178,5 +178,5 @@ void SlidingStackedWidget::animationDoneSlot() {
     widget(m_now)->move(m_pnow);
     m_active = false;
     emit animationFinished();
-    qDebug() << "发送动画结束信号";
+    //qDebug() << "发送动画结束信号";
 }

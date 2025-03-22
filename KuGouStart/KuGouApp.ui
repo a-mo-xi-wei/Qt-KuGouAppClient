@@ -1572,7 +1572,7 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="MyStackedWidget" name="stackedWidget">
+          <widget class="SlidingStackedWidget" name="stackedWidget">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -2227,9 +2227,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>MyStackedWidget</class>
+   <class>SlidingStackedWidget</class>
    <extends>QStackedWidget</extends>
-   <header>MyStackedWidget.h</header>
+   <header>slidingstackedwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -29,6 +29,11 @@ ListenBook::ListenBook(QWidget *parent)
         return;
     }
     initUi();
+
+    //动画结束，恢复可交互
+    connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
+    enableButton(true);
+    ui->stackedWidget->setVerticalMode(true);
 }
 
 ListenBook::~ListenBook() {
@@ -138,23 +143,35 @@ void ListenBook::initListenRecentlyPlay() {
     ui->stackedWidget->addWidget(this->m_listenRecentlyPlay.get());
 }
 
+void ListenBook::enableButton(const bool &flag) const {
+    ui->listen_recommend_toolButton->setEnabled(flag);
+    ui->listen_my_download_toolButton->setEnabled(flag);
+    ui->recently_play_toolButton->setEnabled(flag);
+}
+
 void ListenBook::on_listen_recommend_toolButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_listenRecommend.get())
         return;
     STREAM_INFO()<<"切换推荐界面";
-    ui->stackedWidget->setCurrentWidget(this->m_listenRecommend.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_listenRecommend.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_listenRecommend.get()));
 }
 
 void ListenBook::on_listen_my_download_toolButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_listenMyDownload.get())
         return;
     STREAM_INFO()<<"切换下载界面";
-    ui->stackedWidget->setCurrentWidget(this->m_listenMyDownload.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_listenMyDownload.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_listenMyDownload.get()));
 }
 
 void ListenBook::on_recently_play_toolButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_listenRecentlyPlay.get())
         return;
     STREAM_INFO()<<"切换最近界面";
-    ui->stackedWidget->setCurrentWidget(this->m_listenRecentlyPlay.get());
+    enableButton(false);
+    //ui->stackedWidget->setCurrentWidget(this->m_listenRecentlyPlay.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_listenRecentlyPlay.get()));
 }

@@ -67,6 +67,6 @@ target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia
                         RecommendForYou MusicRepository Channel Live
                         SongList DailyRecommend MyCollection LocalDownload
                         MusicCloudDisk PurchasedMusic RecentlyPlayed AllMusic
-                        ListenBook Search MyStackedWidget StartVideo
+                        ListenBook Search MySlidingStackedWidget StartVideo
                         BasicWidget MyScrollArea MySearchLineEdit UpToolButton
                         RippleButton VolumeToolBtn SliderWidget MainWindow MyHttpClient)

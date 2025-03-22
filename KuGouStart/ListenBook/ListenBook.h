@@ -46,6 +46,8 @@ private:
 
     void initListenRecentlyPlay();
 
+    void enableButton(const bool& flag) const;
+
 private slots:
     void on_listen_recommend_toolButton_clicked();
 

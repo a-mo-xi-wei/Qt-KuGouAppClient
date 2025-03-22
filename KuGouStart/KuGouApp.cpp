@@ -56,6 +56,11 @@ KuGouApp::KuGouApp(MainWindow *parent)
 
     initUi();
 
+    //动画结束，恢复可交互
+    connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
+    enableButton(true);
+    ui->stackedWidget->setVerticalMode(true);
+
     //默认为你推荐
     ui->recommend_you_toolButton->clicked();
 }
@@ -255,20 +260,21 @@ void KuGouApp::initPlayWidget() {
 void KuGouApp::initMenu() {
     //发现音乐
     this->m_menuBtnGroup->setParent(ui->center_menu_widget);
-    ui->recommend_you_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/recommend.svg")));
-    ui->music_repository_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/music-library.svg")));
-    ui->song_list_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/song-list.svg")));
-    ui->channel_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/my-channel.svg")));
-    ui->video_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/video.svg")));
-    ui->live_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/live.svg")));
-    ui->daily_recommend_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/daily.svg")));
+
+    ui->recommend_you_toolButton    ->setIcon(QIcon(QStringLiteral(":/Res/window/recommend.svg")));
+    ui->music_repository_toolButton ->setIcon(QIcon(QStringLiteral(":/Res/window/music-library.svg")));
+    ui->song_list_toolButton        ->setIcon(QIcon(QStringLiteral(":/Res/window/song-list.svg")));
+    ui->channel_toolButton          ->setIcon(QIcon(QStringLiteral(":/Res/window/my-channel.svg")));
+    ui->video_toolButton            ->setIcon(QIcon(QStringLiteral(":/Res/window/video.svg")));
+    ui->live_toolButton             ->setIcon(QIcon(QStringLiteral(":/Res/window/live.svg")));
+    ui->daily_recommend_toolButton  ->setIcon(QIcon(QStringLiteral(":/Res/window/daily.svg")));
     //我的音乐
-    ui->my_collection_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/collect.svg")));
-    ui->local_download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/download.svg")));
-    ui->music_cloud_disk_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/cloud.svg")));
-    ui->purchased_music_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/bought.svg")));
-    ui->recently_played_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/history.svg")));
-    ui->all_music_toolButton->setIcon(QIcon(QStringLiteral(":/Res/titlebar/menu-black.svg")));
+    ui->my_collection_toolButton    ->setIcon(QIcon(QStringLiteral(":/Res/window/collect.svg")));
+    ui->local_download_toolButton   ->setIcon(QIcon(QStringLiteral(":/Res/window/download.svg")));
+    ui->music_cloud_disk_toolButton ->setIcon(QIcon(QStringLiteral(":/Res/window/cloud.svg")));
+    ui->purchased_music_toolButton  ->setIcon(QIcon(QStringLiteral(":/Res/window/bought.svg")));
+    ui->recently_played_toolButton  ->setIcon(QIcon(QStringLiteral(":/Res/window/history.svg")));
+    ui->all_music_toolButton        ->setIcon(QIcon(QStringLiteral(":/Res/titlebar/menu-black.svg")));
     //互斥
     m_menuBtnGroup->addButton(ui->recommend_you_toolButton);
     m_menuBtnGroup->addButton(ui->music_repository_toolButton);
@@ -344,6 +350,22 @@ void KuGouApp::updateSize() {
     QApplication::sendEvent(this, &resizeEvent);
 
     //this->resize(this->size().width()+1,this->size().height()+1);
+}
+
+void KuGouApp::enableButton(const bool &flag) {
+    ui->recommend_you_toolButton    ->setEnabled(flag);
+    ui->music_repository_toolButton ->setEnabled(flag);
+    ui->song_list_toolButton        ->setEnabled(flag);
+    ui->channel_toolButton          ->setEnabled(flag);
+    ui->video_toolButton            ->setEnabled(flag);
+    ui->live_toolButton             ->setEnabled(flag);
+    ui->daily_recommend_toolButton  ->setEnabled(flag);
+    ui->my_collection_toolButton    ->setEnabled(flag);
+    ui->local_download_toolButton   ->setEnabled(flag);
+    ui->music_cloud_disk_toolButton ->setEnabled(flag);
+    ui->purchased_music_toolButton  ->setEnabled(flag);
+    ui->recently_played_toolButton  ->setEnabled(flag);
+    ui->all_music_toolButton        ->setEnabled(flag);
 }
 
 void KuGouApp::addOrderIndex() {
@@ -665,6 +687,8 @@ void KuGouApp::on_title_music_pushButton_clicked() {
 }
 
 void KuGouApp::on_title_live_pushButton_clicked() {
+    if (ui->stackedWidget->currentWidget() == this->m_live.get())
+        return;
     ui->title_index_label1->hide();
     ui->title_index_label2->show();
     ui->title_index_label3->hide();
@@ -672,14 +696,15 @@ void KuGouApp::on_title_live_pushButton_clicked() {
     //隐藏menu
     ui->menu_scrollArea->hide();
     //显示窗口
-    ui->stackedWidget->setCurrentWidget(this->m_live.get());
-
-    updateSize();
     qDebug()<<"直播";
     STREAM_INFO()<<"切换直播界面";
+    ui->stackedWidget->setCurrentWidget(this->m_live.get());
+    updateSize();
 }
 
 void KuGouApp::on_title_listen_book_pushButton_clicked() {
+    if (ui->stackedWidget->currentWidget() == this->m_listenBook.get())
+        return;
     ui->title_index_label1->hide();
     ui->title_index_label2->hide();
     ui->title_index_label3->show();
@@ -687,12 +712,15 @@ void KuGouApp::on_title_listen_book_pushButton_clicked() {
     //隐藏menu
     ui->menu_scrollArea->hide();
     //显示窗口
+    qDebug()<<"听书";
+    STREAM_INFO()<<"切换听书界面";
     ui->stackedWidget->setCurrentWidget(this->m_listenBook.get());
-
     updateSize();
 }
 
 void KuGouApp::on_title_search_pushButton_clicked() {
+    if (ui->stackedWidget->currentWidget() == this->m_search.get())
+        return;
     ui->title_index_label1->hide();
     ui->title_index_label2->hide();
     ui->title_index_label3->hide();
@@ -700,11 +728,10 @@ void KuGouApp::on_title_search_pushButton_clicked() {
     //隐藏menu
     ui->menu_scrollArea->hide();
     //显示窗口
-    ui->stackedWidget->setCurrentWidget(this->m_search.get());
-
-    updateSize();
     qDebug()<<"探索";
     STREAM_INFO()<<"切换探索界面";
+    ui->stackedWidget->setCurrentWidget(this->m_search.get());
+    updateSize();
 }
 
 void KuGouApp::on_min_toolButton_clicked() {
@@ -785,47 +812,51 @@ void KuGouApp::on_close_toolButton_clicked() {
 }
 
 void KuGouApp::on_recommend_you_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_recommendForYou.get());
-
-    updateSize();
-
-    //设置上次指向
-    this->m_lastBtn = ui->recommend_you_toolButton;
+    if (ui->stackedWidget->currentWidget() == this->m_recommendForYou.get())
+        return;
     qDebug()<<"为你推荐";
     STREAM_INFO()<<"切换为你推荐界面";
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_recommendForYou.get()));
+    updateSize();
+    //设置上次指向
+    this->m_lastBtn = ui->recommend_you_toolButton;
 }
 
 void KuGouApp::on_music_repository_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_musicRepository.get());
-
-    updateSize();
-
-    //设置上次指向
-    this->m_lastBtn = ui->music_repository_toolButton;
+    if (ui->stackedWidget->currentWidget() == this->m_musicRepository.get())
+        return;
     qDebug()<<"点击乐库";
     STREAM_INFO()<<"切换乐库界面";
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_musicRepository.get()));
+    updateSize();
+    //设置上次指向
+    this->m_lastBtn = ui->music_repository_toolButton;
 }
 
 void KuGouApp::on_channel_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_channel.get());
-
-    updateSize();
-
-    //设置上次指向
-    this->m_lastBtn = ui->channel_toolButton;
+    if (ui->stackedWidget->currentWidget() == this->m_channel.get())
+        return;
     qDebug()<<"点击频道";
     STREAM_INFO()<<"切换频道界面";
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_channel.get()));
+    updateSize();
+    //设置上次指向
+    this->m_lastBtn = ui->channel_toolButton;
 }
 
 void KuGouApp::on_video_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_video.get());
-
-    updateSize();
-
-    //设置上次指向
-    this->m_lastBtn = ui->video_toolButton;
+    if (ui->stackedWidget->currentWidget() == this->m_video.get())
+        return;
     qDebug()<<"点击视频";
     STREAM_INFO()<<"切换视频界面";
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_video.get()));
+    updateSize();
+    //设置上次指向
+    this->m_lastBtn = ui->video_toolButton;
 }
 
 void KuGouApp::on_live_toolButton_clicked() {
@@ -835,91 +866,101 @@ void KuGouApp::on_live_toolButton_clicked() {
 }
 
 void KuGouApp::on_song_list_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_songList.get());
-
-    updateSize();
-
-    //设置上次指向
-    this->m_lastBtn = ui->song_list_toolButton;
+    if (ui->stackedWidget->currentWidget() == this->m_songList.get())
+        return;
     qDebug()<<"点击歌单";
     STREAM_INFO()<<"切换歌单界面";
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_songList.get()));
+    updateSize();
+    //设置上次指向
+    this->m_lastBtn = ui->song_list_toolButton;
 }
 
 void KuGouApp::on_daily_recommend_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_dailyRecommend.get());
-
-    updateSize();
-
-    //设置上次指向
-    this->m_lastBtn = ui->daily_recommend_toolButton;
+    if (ui->stackedWidget->currentWidget() == this->m_dailyRecommend.get())
+        return;
     qDebug()<<"点击每日推荐";
     STREAM_INFO()<<"切换每日推荐界面";
+    //enableButton(false);
+    //ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_dailyRecommend.get()));
+    ui->stackedWidget->setCurrentWidget(this->m_dailyRecommend.get());
+    updateSize();
+    //设置上次指向
+    this->m_lastBtn = ui->daily_recommend_toolButton;
 }
 
 void KuGouApp::on_local_download_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_localDownload.get());
-
-    updateSize();
-
-    //设置上次指向
-    this->m_lastBtn = ui->local_download_toolButton;
+    if (ui->stackedWidget->currentWidget() == this->m_localDownload.get())
+        return;
     qDebug()<<"点击本地与下载";
     STREAM_INFO()<<"切换本地与下载界面";
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_localDownload.get()));
+    updateSize();
+    //设置上次指向
+    this->m_lastBtn = ui->local_download_toolButton;
 }
 
 void KuGouApp::on_my_collection_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_collection.get());
-
-    updateSize();
-
-    //设置上次指向
-    this->m_lastBtn = ui->my_collection_toolButton;
+    if (ui->stackedWidget->currentWidget() == this->m_collection.get())
+        return;
     qDebug()<<"点击我的收藏";
     STREAM_INFO()<<"切换我的收藏界面";
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_collection.get()));
+    updateSize();
+    //设置上次指向
+    this->m_lastBtn = ui->my_collection_toolButton;
 }
 
 void KuGouApp::on_music_cloud_disk_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_musicCloudDisk.get());
-
-    updateSize();
-
-    //设置上次指向
-    this->m_lastBtn = ui->music_cloud_disk_toolButton;
+    if (ui->stackedWidget->currentWidget() == this->m_musicCloudDisk.get())
+        return;
     qDebug()<<"点击音乐云盘";
     STREAM_INFO()<<"切换音乐云盘界面";
+    //enableButton(false);
+    //ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_musicCloudDisk.get()));
+    ui->stackedWidget->setCurrentWidget(this->m_musicCloudDisk.get());
+    updateSize();
+    //设置上次指向
+    this->m_lastBtn = ui->music_cloud_disk_toolButton;
 }
 
 void KuGouApp::on_purchased_music_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_purchasedMusic.get());
-
-    updateSize();
-
-    //设置上次指向
-    this->m_lastBtn = ui->purchased_music_toolButton;
+    if (ui->stackedWidget->currentWidget() == this->m_purchasedMusic.get())
+        return;
     qDebug()<<"点击已购音乐";
     STREAM_INFO()<<"切换音乐云盘界面";
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_purchasedMusic.get()));
+    updateSize();
+    //设置上次指向
+    this->m_lastBtn = ui->purchased_music_toolButton;
 }
 
 void KuGouApp::on_recently_played_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_recentlyPlayed.get());
-
-    updateSize();
-
-    //设置上次指向
-    this->m_lastBtn = ui->recently_played_toolButton;
+    if (ui->stackedWidget->currentWidget() == this->m_recentlyPlayed.get())
+        return;
     qDebug()<<"点击最近播放";
     STREAM_INFO()<<"切换最近播放界面";
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_recentlyPlayed.get()));
+    updateSize();
+    //设置上次指向
+    this->m_lastBtn = ui->recently_played_toolButton;
 }
 
 void KuGouApp::on_all_music_toolButton_clicked() {
-    ui->stackedWidget->setCurrentWidget(this->m_allMusic.get());
-
-    updateSize();
-
-    //设置上次指向
-    this->m_lastBtn = ui->all_music_toolButton;
+    if (ui->stackedWidget->currentWidget() == this->m_allMusic.get())
+        return;
     qDebug()<<"点击默认列表";
     STREAM_INFO()<<"切换默认列表界面";
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_allMusic.get()));
+    updateSize();
+    //设置上次指向
+    this->m_lastBtn = ui->all_music_toolButton;
 }
 
 void KuGouApp::on_play_or_pause_toolButton_clicked() {
