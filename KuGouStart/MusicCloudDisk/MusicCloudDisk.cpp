@@ -30,6 +30,9 @@ MusicCloudDisk::MusicCloudDisk(QWidget *parent)
         }
     }
     initUi();
+
+    connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
+    enableButton(true);
 }
 
 MusicCloudDisk::~MusicCloudDisk() {
@@ -83,13 +86,19 @@ void MusicCloudDisk::initUploadingSong() {
     ui->stackedWidget->addWidget(this->m_uploadingSong.get());
 }
 
+void MusicCloudDisk::enableButton(const bool &flag) const {
+    ui->uploaded_song_pushButton->setEnabled(flag);
+    ui->uploading_song_pushButton->setEnabled(flag);
+}
+
 void MusicCloudDisk::on_uploaded_song_pushButton_clicked() {
     if (ui->stackedWidget->currentWidget() == this->m_uploadedSong.get()) {
         return;  // 页面已是目标页面，无需切换
     }
     ui->uploaded_song_pushButton->setChecked(true);
     STREAM_INFO()<<"切换已上传歌曲界面";
-    ui->stackedWidget->setCurrentWidget(this->m_uploadedSong.get());
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_uploadedSong.get()));
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
     ui->uploaded_song_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:14px;font-weight:bold;"));
@@ -102,7 +111,8 @@ void MusicCloudDisk::on_uploading_song_pushButton_clicked() {
     }
     ui->uploading_song_pushButton->setChecked(true);
     STREAM_INFO()<<"切换正在上传界面";
-    ui->stackedWidget->setCurrentWidget(this->m_uploadingSong.get());
+    enableButton(false);
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_uploadingSong.get()));
     ui->idx1_lab->hide();
     ui->idx2_lab->show();
     ui->uploaded_song_number_label->setStyleSheet("");

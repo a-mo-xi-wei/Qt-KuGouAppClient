@@ -41,6 +41,8 @@ private:
 
     void initUploadingSong();
 
+    void enableButton(const bool& flag) const;
+
 private slots:
     void on_uploaded_song_pushButton_clicked();
 
