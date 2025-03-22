@@ -16,6 +16,17 @@ TitleOptionMenu::TitleOptionMenu(QWidget *parent)
 
 void TitleOptionMenu::initMenu() {
     this->setFixedSize(380, 600);
+    auto connectAction = [this](QWidgetAction *widgetAction , MenuBtn* btn) {
+        connect(widgetAction, &QWidgetAction::hovered, this, [btn,this] {
+           checkHover();
+           this->m_currentHover.emplace_back(btn);
+           this->m_lastHover = this->m_currentHover;
+           QEvent enterEvent(QEvent::Enter); // 创建进入事件
+           QCoreApplication::sendEvent(btn, &enterEvent); // 发送事件
+           // 模拟按钮进入 hover 状态
+           btn->setAttribute(Qt::WA_UnderMouse, true);
+       });
+    };
     //顶部按钮
     //auto a_topListWidgetAction = new QWidgetAction(this);
     auto a_topListWidgetAction = new QWidgetAction(this); {
@@ -32,6 +43,7 @@ void TitleOptionMenu::initMenu() {
             a_dynamicWallPaperBtn->setIconSize(QSize(35, 35));
             connect(a_dynamicWallPaperBtn, &QToolButton::clicked, this, [this] {
                 emit wallpaper();
+                this->hide();
             });
             //auto a_dynamicWallPaperAction = new QWidgetAction(this);
             //a_dynamicWallPaperAction->setDefaultWidget(a_dynamicWallPaperBtn);
@@ -58,6 +70,7 @@ void TitleOptionMenu::initMenu() {
             a_phonePlayBtn->setIconSize(QSize(35, 35));
             connect(a_phonePlayBtn, &QToolButton::clicked, this, [this] {
                 emit phonePlay();
+                this->hide();
             });
             //auto a_phonePlayAction = new QWidgetAction(this);
             //a_phonePlayAction->setDefaultWidget(a_phonePlayBtn);
@@ -84,6 +97,7 @@ void TitleOptionMenu::initMenu() {
             a_uploadToDeviceBtn->setIconSize(QSize(35, 35));
             connect(a_uploadToDeviceBtn, &QToolButton::clicked, this, [this] {
                 emit uploadToDevice();
+                this->hide();
             });
             //auto a_uploadToDeviceAction = new QWidgetAction(this);
             //a_uploadToDeviceAction->setDefaultWidget(a_uploadToDeviceBtn);
@@ -110,6 +124,7 @@ void TitleOptionMenu::initMenu() {
             a_earnCoinBtn->setIconSize(QSize(35, 35));
             connect(a_earnCoinBtn, &QToolButton::clicked, this, [this] {
                 emit earnCoin();
+                this->hide();
             });
             //auto a_earnCoinAction = new QWidgetAction(this);
             //a_earnCoinAction->setDefaultWidget(a_earnCoinBtn);
@@ -151,8 +166,9 @@ void TitleOptionMenu::initMenu() {
         a_controlAction->setDefaultWidget(a_controlToolBtn);
         connect(a_controlToolBtn, &QToolButton::clicked, this, [this] {
             emit controller();
+            this->hide();
         });
-        connect(a_controlAction, &QWidgetAction::hovered, this, [a_controlToolBtn,this] {
+        /*connect(a_controlAction, &QWidgetAction::hovered, this, [a_controlToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_controlToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -160,7 +176,8 @@ void TitleOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_controlToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_controlToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_controlAction,a_controlToolBtn);
     }
     //均衡器按钮
     auto a_balanceAction = new QWidgetAction(this); {
@@ -174,8 +191,9 @@ void TitleOptionMenu::initMenu() {
         a_balanceAction->setDefaultWidget(a_balanceToolBtn);
         connect(a_balanceToolBtn, &QToolButton::clicked, this, [this] {
             emit balance();
+            this->hide();
         });
-        connect(a_balanceAction, &QWidgetAction::hovered, this, [a_balanceToolBtn,this] {
+        /*connect(a_balanceAction, &QWidgetAction::hovered, this, [a_balanceToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_balanceToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -183,7 +201,8 @@ void TitleOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_balanceToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_balanceToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_balanceAction,a_balanceToolBtn);
     }
     //AI帮你唱按钮
     auto a_aiHelpAction = new QWidgetAction(this); {
@@ -197,8 +216,9 @@ void TitleOptionMenu::initMenu() {
         a_aiHelpAction->setDefaultWidget(a_aiHelpToolBtn);
         connect(a_aiHelpToolBtn, &QToolButton::clicked, this, [this] {
             emit aiHelpYou();
+            this->hide();
         });
-        connect(a_aiHelpAction, &QWidgetAction::hovered, this, [a_aiHelpToolBtn,this] {
+        /*connect(a_aiHelpAction, &QWidgetAction::hovered, this, [a_aiHelpToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_aiHelpToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -206,7 +226,8 @@ void TitleOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_aiHelpToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_aiHelpToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_aiHelpAction,a_aiHelpToolBtn);
     }
     //音效插件按钮
     auto a_pluginAction = new QWidgetAction(this); {
@@ -220,8 +241,9 @@ void TitleOptionMenu::initMenu() {
         a_pluginAction->setDefaultWidget(a_pluginToolBtn);
         connect(a_pluginToolBtn, &QToolButton::clicked, this, [this] {
             emit soundPlugin();
+            this->hide();
         });
-        connect(a_pluginAction, &QWidgetAction::hovered, this, [a_pluginToolBtn,this] {
+        /*connect(a_pluginAction, &QWidgetAction::hovered, this, [a_pluginToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_pluginToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -229,7 +251,8 @@ void TitleOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_pluginToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_pluginToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_pluginAction,a_pluginToolBtn);
     }
     //定时设置按钮
     auto a_timeSettingAction = new QWidgetAction(this); {
@@ -243,8 +266,9 @@ void TitleOptionMenu::initMenu() {
         a_timeSettingAction->setDefaultWidget(a_timeSettingToolBtn);
         connect(a_timeSettingToolBtn, &QToolButton::clicked, this, [this] {
             emit timeSetting();
+            this->hide();
         });
-        connect(a_timeSettingAction, &QWidgetAction::hovered, this, [a_timeSettingToolBtn,this] {
+        /*connect(a_timeSettingAction, &QWidgetAction::hovered, this, [a_timeSettingToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_timeSettingToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -252,7 +276,8 @@ void TitleOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_timeSettingToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_timeSettingToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_timeSettingAction,a_timeSettingToolBtn);
     }
     //应用工具按钮
     auto a_appToolAction = new QWidgetAction(this); {
@@ -266,8 +291,9 @@ void TitleOptionMenu::initMenu() {
         a_appToolAction->setDefaultWidget(a_appToolToolBtn);
         connect(a_appToolToolBtn, &QToolButton::clicked, this, [this] {
             emit appTool();
+            this->hide();
         });
-        connect(a_appToolAction, &QWidgetAction::hovered, this, [a_appToolToolBtn,this] {
+        /*connect(a_appToolAction, &QWidgetAction::hovered, this, [a_appToolToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_appToolToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -275,7 +301,8 @@ void TitleOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_appToolToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_appToolToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_appToolAction,a_appToolToolBtn);
     }
     //恢复窗口按钮
     auto a_restoreWindowAction = new QWidgetAction(this); {
@@ -289,8 +316,9 @@ void TitleOptionMenu::initMenu() {
         a_restoreWindowAction->setDefaultWidget(a_restoreWindowBtn);
         connect(a_restoreWindowBtn, &QToolButton::clicked, this, [this] {
             emit restoreWindow();
+            this->hide();
         });
-        connect(a_restoreWindowAction, &QWidgetAction::hovered, this, [a_restoreWindowBtn,this] {
+        /*connect(a_restoreWindowAction, &QWidgetAction::hovered, this, [a_restoreWindowBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_restoreWindowBtn);
             this->m_lastHover = this->m_currentHover;
@@ -298,7 +326,8 @@ void TitleOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_restoreWindowBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_restoreWindowBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_restoreWindowAction,a_restoreWindowBtn);
     }
     //检查更新按钮
     auto a_checkUpdateAction = new QWidgetAction(this); {
@@ -312,8 +341,9 @@ void TitleOptionMenu::initMenu() {
         a_checkUpdateAction->setDefaultWidget(a_checkUpdateToolBtn);
         connect(a_checkUpdateToolBtn, &QToolButton::clicked, this, [this] {
             emit checkUpdate();
+            this->hide();
         });
-        connect(a_checkUpdateAction, &QWidgetAction::hovered, this, [a_checkUpdateToolBtn,this] {
+        /*connect(a_checkUpdateAction, &QWidgetAction::hovered, this, [a_checkUpdateToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_checkUpdateToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -321,7 +351,8 @@ void TitleOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_checkUpdateToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_checkUpdateToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_checkUpdateAction,a_checkUpdateToolBtn);
     }
     //帮助与意见反馈按钮（子目录）
     auto a_helpFacebackAction = new QWidgetAction(this);
@@ -376,8 +407,9 @@ void TitleOptionMenu::initMenu() {
             a_useHelpAction->setDefaultWidget(a_useHelpToolBtn);
             connect(a_useHelpToolBtn, &QToolButton::clicked, this, [this] {
                 emit useHelp();
+                this->hide();
             });
-            connect(a_useHelpAction, &QWidgetAction::hovered, this, [a_useHelpToolBtn,this] {
+            /*connect(a_useHelpAction, &QWidgetAction::hovered, this, [a_useHelpToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_useHelpToolBtn);
                 this->m_lastHover = this->m_currentHover;
@@ -385,7 +417,8 @@ void TitleOptionMenu::initMenu() {
                 QCoreApplication::sendEvent(a_useHelpToolBtn, &enterEvent); // 发送事件
                 // 模拟按钮进入 hover 状态
                 a_useHelpToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-            });
+            });*/
+            connectAction(a_useHelpAction,a_useHelpToolBtn);
         }
         //子菜单项
         //意见反馈
@@ -399,8 +432,9 @@ void TitleOptionMenu::initMenu() {
             a_feedbackAction->setDefaultWidget(a_feedbackToolBtn);
             connect(a_feedbackToolBtn, &QToolButton::clicked, this, [this] {
                 emit feedback();
+                this->hide();
             });
-            connect(a_feedbackAction, &QWidgetAction::hovered, this, [a_feedbackToolBtn,this] {
+            /*connect(a_feedbackAction, &QWidgetAction::hovered, this, [a_feedbackToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_feedbackToolBtn);
                 this->m_lastHover = this->m_currentHover;
@@ -408,7 +442,8 @@ void TitleOptionMenu::initMenu() {
                 QCoreApplication::sendEvent(a_feedbackToolBtn, &enterEvent); // 发送事件
                 // 模拟按钮进入 hover 状态
                 a_feedbackToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-            });
+            });*/
+            connectAction(a_feedbackAction,a_feedbackToolBtn);
         }
         //子菜单项
         //用户反馈社区
@@ -422,8 +457,9 @@ void TitleOptionMenu::initMenu() {
             a_communityAction->setDefaultWidget(a_communityToolBtn);
             connect(a_communityToolBtn, &QToolButton::clicked, this, [this] {
                 emit community();
+                this->hide();
             });
-            connect(a_communityAction, &QWidgetAction::hovered, this, [a_communityToolBtn,this] {
+            /*connect(a_communityAction, &QWidgetAction::hovered, this, [a_communityToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_communityToolBtn);
                 this->m_lastHover = this->m_currentHover;
@@ -431,7 +467,8 @@ void TitleOptionMenu::initMenu() {
                 QCoreApplication::sendEvent(a_communityToolBtn, &enterEvent); // 发送事件
                 // 模拟按钮进入 hover 状态
                 a_communityToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-            });
+            });*/
+            connectAction(a_communityAction,a_communityToolBtn);
         }
         //子菜单项
         //更新信息
@@ -445,8 +482,9 @@ void TitleOptionMenu::initMenu() {
             a_updateInfoAction->setDefaultWidget(a_updateInfoToolBtn);
             connect(a_updateInfoToolBtn, &QToolButton::clicked, this, [this] {
                 emit updateInfo();
+                this->hide();
             });
-            connect(a_updateInfoAction, &QWidgetAction::hovered, this, [a_updateInfoToolBtn,this] {
+            /*connect(a_updateInfoAction, &QWidgetAction::hovered, this, [a_updateInfoToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_updateInfoToolBtn);
                 this->m_lastHover = this->m_currentHover;
@@ -454,7 +492,8 @@ void TitleOptionMenu::initMenu() {
                 QCoreApplication::sendEvent(a_updateInfoToolBtn, &enterEvent); // 发送事件
                 // 模拟按钮进入 hover 状态
                 a_updateInfoToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-            });
+            });*/
+            connectAction(a_updateInfoAction,a_updateInfoToolBtn);
         }
         //子菜单项
         //关于应用
@@ -468,8 +507,9 @@ void TitleOptionMenu::initMenu() {
             a_aboutAction->setDefaultWidget(a_aboutToolBtn);
             connect(a_aboutToolBtn, &QToolButton::clicked, this, [this] {
                 emit about();
+                this->hide();
             });
-            connect(a_aboutAction, &QWidgetAction::hovered, this, [a_aboutToolBtn,this] {
+            /*connect(a_aboutAction, &QWidgetAction::hovered, this, [a_aboutToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_aboutToolBtn);
                 this->m_lastHover = this->m_currentHover;
@@ -477,7 +517,8 @@ void TitleOptionMenu::initMenu() {
                 QCoreApplication::sendEvent(a_aboutToolBtn, &enterEvent); // 发送事件
                 // 模拟按钮进入 hover 状态
                 a_aboutToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-            });
+            });*/
+            connectAction(a_aboutAction,a_aboutToolBtn);
         }
         //子目录添加子项
         auto a_helpFacebackMenu = new BaseMenu(this);
@@ -504,8 +545,9 @@ void TitleOptionMenu::initMenu() {
         a_settingsAction->setDefaultWidget(a_settingsToolBtn);
         connect(a_settingsToolBtn, &QToolButton::clicked, this, [this] {
             emit settings();
+            this->hide();
         });
-        connect(a_settingsAction, &QWidgetAction::hovered, this, [a_settingsToolBtn,this] {
+        /*connect(a_settingsAction, &QWidgetAction::hovered, this, [a_settingsToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_settingsToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -513,7 +555,8 @@ void TitleOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_settingsToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_settingsToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_settingsAction,a_settingsToolBtn);
     }
     //退出登录按钮
     auto a_logOutAction = new QWidgetAction(this); {
@@ -527,8 +570,9 @@ void TitleOptionMenu::initMenu() {
         a_logOutAction->setDefaultWidget(a_logOutToolBtn);
         connect(a_logOutToolBtn, &QToolButton::clicked, this, [this] {
             emit logOut();
+            this->hide();
         });
-        connect(a_logOutAction, &QWidgetAction::hovered, this, [a_logOutToolBtn,this] {
+        /*connect(a_logOutAction, &QWidgetAction::hovered, this, [a_logOutToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_logOutToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -536,7 +580,8 @@ void TitleOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_logOutToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_logOutToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_logOutAction,a_logOutToolBtn);
     }
     //退出酷狗音乐按钮
     auto a_exitAction = new QWidgetAction(this); {
@@ -550,8 +595,9 @@ void TitleOptionMenu::initMenu() {
         a_exitAction->setDefaultWidget(a_exitToolBtn);
         connect(a_exitToolBtn, &QToolButton::clicked, this, [this] {
             emit exit();
+            this->hide();
         });
-        connect(a_exitAction, &QWidgetAction::hovered, this, [a_exitToolBtn,this] {
+        /*connect(a_exitAction, &QWidgetAction::hovered, this, [a_exitToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_exitToolBtn);
             this->m_lastHover = this->m_currentHover;
@@ -559,7 +605,8 @@ void TitleOptionMenu::initMenu() {
             QCoreApplication::sendEvent(a_exitToolBtn, &enterEvent); // 发送事件
             // 模拟按钮进入 hover 状态
             a_exitToolBtn->setAttribute(Qt::WA_UnderMouse, true);
-        });
+        });*/
+        connectAction(a_exitAction,a_exitToolBtn);
     }
 
     //菜单添加按钮

@@ -18,6 +18,8 @@ TitleWidget::TitleWidget(QWidget *parent)
     this->setStyleSheet("QWidget#TitleWidget{margin:5px;}");
     auto menu = new MyMenu(MyMenu::MenuKind::TitleOption,this);
     m_titleOptMenu = menu->getMenu<TitleOptionMenu>();
+    connect(m_titleOptMenu,&TitleOptionMenu::about,this,[this]{emit showAboutDialog();});
+    connect(m_titleOptMenu,&TitleOptionMenu::exit,this,[this]{emit exit();});
 }
 
 void TitleWidget::showMenu(const QPoint &pos) {

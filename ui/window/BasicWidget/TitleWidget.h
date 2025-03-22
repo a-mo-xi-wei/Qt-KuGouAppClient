@@ -26,6 +26,10 @@ private:
 signals:
     void doubleClicked(); // 自定义的双击信号
 
+    void showAboutDialog();
+
+    void exit();
+
 private:
     //标题菜单相关
     TitleOptionMenu *m_titleOptMenu{};

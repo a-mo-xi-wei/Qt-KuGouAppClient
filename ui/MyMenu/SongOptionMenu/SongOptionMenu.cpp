@@ -9,9 +9,8 @@
 #include <QHBoxLayout>
 #include <QWidgetAction>
 
-SongOptionMenu::SongOptionMenu(QWidget* parent)
-    :BaseMenu(parent)
-{
+SongOptionMenu::SongOptionMenu(QWidget *parent)
+    : BaseMenu(parent) {
 }
 
 void SongOptionMenu::initMenu() {
@@ -28,6 +27,7 @@ void SongOptionMenu::initMenu() {
         a_playAction->setDefaultWidget(a_playToolBtn);
         connect(a_playToolBtn, &QToolButton::clicked, this, [this] {
             emit play();
+            this->hide();
         });
         connect(a_playAction, &QWidgetAction::hovered, this, [a_playToolBtn,this] {
             //qDebug()<<"进入a_playToolBtn";
@@ -51,6 +51,7 @@ void SongOptionMenu::initMenu() {
         a_nextPlayAction->setDefaultWidget(a_nextPlayToolBtn);
         connect(a_nextPlayToolBtn, &QToolButton::clicked, this, [this] {
             emit nextPlay();
+            this->hide();
         });
         connect(a_nextPlayAction, &QWidgetAction::hovered, this, [a_nextPlayToolBtn,this] {
             //qDebug()<<"进入a_nextPlayToolBtn";
@@ -112,6 +113,7 @@ void SongOptionMenu::initMenu() {
             a_playQueueAction->setDefaultWidget(a_playQueueToolBtn);
             connect(a_playQueueToolBtn, &QToolButton::clicked, this, [this] {
                 emit addToPlayQueue();
+                this->hide();
             });
             connect(a_playQueueAction, &QWidgetAction::hovered, this, [a_playQueueToolBtn,this] {
                 checkHover();
@@ -135,6 +137,7 @@ void SongOptionMenu::initMenu() {
             a_newPlayListAction->setDefaultWidget(a_newPlayListToolBtn);
             connect(a_newPlayListToolBtn, &QToolButton::clicked, this, [this] {
                 emit addToNewSongList();
+                this->hide();
             });
             connect(a_newPlayListAction, &QWidgetAction::hovered, this, [a_newPlayListToolBtn,this] {
                 checkHover();
@@ -158,6 +161,7 @@ void SongOptionMenu::initMenu() {
             a_likeAction->setDefaultWidget(a_likeToolBtn);
             connect(a_likeToolBtn, &QToolButton::clicked, this, [this] {
                 emit addToLove();
+                this->hide();
             });
             connect(a_likeAction, &QWidgetAction::hovered, this, [a_likeToolBtn,this] {
                 checkHover();
@@ -181,6 +185,7 @@ void SongOptionMenu::initMenu() {
             a_defaultCollectAction->setDefaultWidget(a_defaultCollectToolBtn);
             connect(a_defaultCollectToolBtn, &QToolButton::clicked, this, [this] {
                 emit addToCollect();
+                this->hide();
             });
             connect(a_defaultCollectAction, &QWidgetAction::hovered, this, [a_defaultCollectToolBtn,this] {
                 checkHover();
@@ -204,6 +209,7 @@ void SongOptionMenu::initMenu() {
             a_defaultListAction->setDefaultWidget(a_defaultListToolBtn);
             connect(a_defaultListToolBtn, &QToolButton::clicked, this, [this] {
                 emit addToPlayList();
+                this->hide();
             });
             connect(a_defaultListAction, &QWidgetAction::hovered, this, [a_defaultListToolBtn,this] {
                 checkHover();
@@ -240,6 +246,7 @@ void SongOptionMenu::initMenu() {
         a_downloadAction->setDefaultWidget(a_downloadToolBtn);
         connect(a_downloadToolBtn, &QToolButton::clicked, this, [this] {
             emit download();
+            this->hide();
         });
         connect(a_downloadAction, &QWidgetAction::hovered, this, [a_downloadToolBtn,this] {
             checkHover();
@@ -262,6 +269,7 @@ void SongOptionMenu::initMenu() {
         a_shareAction->setDefaultWidget(a_shareToolBtn);
         connect(a_shareToolBtn, &QToolButton::clicked, this, [this] {
             emit share();
+            this->hide();
         });
         connect(a_shareAction, &QWidgetAction::hovered, this, [a_shareToolBtn,this] {
             checkHover();
@@ -284,6 +292,7 @@ void SongOptionMenu::initMenu() {
         a_commentAction->setDefaultWidget(a_commentToolBtn);
         connect(a_commentToolBtn, &QToolButton::clicked, this, [this] {
             emit comment();
+            this->hide();
         });
         connect(a_commentAction, &QWidgetAction::hovered, this, [a_commentToolBtn,this] {
             checkHover();
@@ -306,6 +315,7 @@ void SongOptionMenu::initMenu() {
         a_sameSongAction->setDefaultWidget(a_sameSongToolBtn);
         connect(a_sameSongToolBtn, &QToolButton::clicked, this, [this] {
             emit sameSong();
+            this->hide();
         });
         connect(a_sameSongAction, &QWidgetAction::hovered, this, [a_sameSongToolBtn,this] {
             checkHover();
@@ -328,6 +338,7 @@ void SongOptionMenu::initMenu() {
         a_songInfoAction->setDefaultWidget(a_songInfoSongToolBtn);
         connect(a_songInfoSongToolBtn, &QToolButton::clicked, this, [this] {
             emit songInfo();
+            this->hide();
         });
         connect(a_songInfoAction, &QWidgetAction::hovered, this, [a_songInfoSongToolBtn,this] {
             checkHover();
@@ -351,6 +362,7 @@ void SongOptionMenu::initMenu() {
         connect(a_deleteSongToolBtn, &QToolButton::clicked, this, [this] {
             //qDebug()<<"发送删除信号，删除第 "<<this->m_curIndex<<" 项";
             emit deleteSong(this->m_curIndex);
+            this->hide();
         });
         connect(a_deleteAction, &QWidgetAction::hovered, this, [a_deleteSongToolBtn,this] {
             checkHover();
@@ -373,6 +385,7 @@ void SongOptionMenu::initMenu() {
         a_openFileAction->setDefaultWidget(a_openFileSongToolBtn);
         connect(a_openFileSongToolBtn, &QToolButton::clicked, this, [this] {
             emit openInFile();
+            this->hide();
         });
         connect(a_openFileAction, &QWidgetAction::hovered, this, [a_openFileSongToolBtn,this] {
             checkHover();
@@ -429,6 +442,7 @@ void SongOptionMenu::initMenu() {
             a_searchTitleAction->setDefaultWidget(a_searchTitleBtn);
             connect(a_searchTitleBtn, &QToolButton::clicked, this, [this] {
                 emit search();
+                this->hide();
             });
             connect(a_searchTitleAction, &QWidgetAction::hovered, this, [a_searchTitleBtn,this] {
                 checkHover();
@@ -457,6 +471,7 @@ void SongOptionMenu::initMenu() {
         a_uploadAction->setDefaultWidget(a_uploadSongToolBtn);
         connect(a_uploadSongToolBtn, &QToolButton::clicked, this, [this] {
             emit upload();
+            this->hide();
         });
         connect(a_uploadAction, &QWidgetAction::hovered, this, [a_uploadSongToolBtn,this] {
             checkHover();
@@ -488,6 +503,6 @@ void SongOptionMenu::initMenu() {
     this->hide();
 }
 
-const SongOptionMenu* SongOptionMenu::getMenu() const {
+const SongOptionMenu *SongOptionMenu::getMenu() const {
     return this;
 }
