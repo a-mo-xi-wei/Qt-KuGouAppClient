@@ -12,7 +12,7 @@ AboutDialog::AboutDialog(QWidget *parent)
     : QWidget(parent)
     , m_dialog(new QtMaterialDialog)
 {
-    m_dialog->setParent(this);
+    m_dialog->setParent(parent);
     auto dialogLayout = new QVBoxLayout;
     m_dialog->setWindowLayout(dialogLayout);
 
