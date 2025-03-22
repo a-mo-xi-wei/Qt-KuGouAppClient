@@ -10,7 +10,6 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 add_subdirectory(window)
 
 #自定义堆栈窗口模块
-add_subdirectory(MyStackedWidget)
 add_subdirectory(MySlidingStackedWidget)
 
 #自定义流式布局
