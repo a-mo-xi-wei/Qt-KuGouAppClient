@@ -31,6 +31,7 @@ void GLOptionMenu::initMenu() {
     a_foundAction->setDefaultWidget(a_foundBtn);
     connect(a_foundBtn, &QToolButton::clicked, this, [this,a_foundBtn] {
             emit getModel(a_foundBtn->text());
+            this->hide();
     });
     connect(a_foundAction,&QWidgetAction::hovered,this,[this,a_foundBtn] {
         checkHover();
@@ -53,6 +54,7 @@ void GLOptionMenu::initMenu() {
     a_minorityAction->setDefaultWidget(a_minorityBtn);
     connect(a_minorityBtn, &QToolButton::clicked, this, [this,a_minorityBtn] {
             emit getModel(a_minorityBtn->text());
+            this->hide();
     });
     connect(a_minorityAction,&QWidgetAction::hovered,this,[this,a_minorityBtn] {
         checkHover();
@@ -75,6 +77,7 @@ void GLOptionMenu::initMenu() {
     a_30sAction->setDefaultWidget(a_30sBtn);
     connect(a_30sBtn, &QToolButton::clicked, this, [this,a_30sBtn] {
         emit getModel(a_30sBtn->text());
+        this->hide();
     });
     connect(a_30sAction,&QWidgetAction::hovered,this,[this,a_30sBtn] {
         checkHover();
