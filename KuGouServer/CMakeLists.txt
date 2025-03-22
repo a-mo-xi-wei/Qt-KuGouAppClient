@@ -14,7 +14,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED Core Sql SerialBus WebSockets)
+find_package(Qt6 REQUIRED Core Sql WebSockets)
 
 file(GLOB KUGOU_SERVER_NET_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/NetWork/*.cpp)
 file(GLOB KUGOU_SERVER_NET_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/NetWork/*.h)
@@ -37,5 +37,5 @@ add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
         PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/NetWork)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Sql Qt6::SerialBus
-        Qt6::WebSockets SJwt MyQsLog JQHttpServer MyDBPoll)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Sql Qt6::WebSockets
+        SJwt MyQsLog JQHttpServer MyDBPoll)
