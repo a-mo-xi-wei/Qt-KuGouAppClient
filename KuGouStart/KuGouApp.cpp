@@ -56,76 +56,6 @@ KuGouApp::KuGouApp(MainWindow *parent)
 
     initUi();
 
-    this->m_player->setAudioOutput(this->m_audioOutput.get());
-    this->m_audioOutput->setVolume(0.2);
-    connect(ui->volume_toolButton, &VolumeToolBtn::volumeChange, this, [this](const int value) {
-        const float volume = static_cast<float>(value) / 100; // 将值转换为0.0到1.0之间
-        this->m_audioOutput->setVolume(volume); // 设置音量
-    });
-    connect(this,&MainWindow::fromTray_noVolume,this,[this](const bool& flag) {
-        STREAM_INFO()<<"KuGouApp 托盘图标点击: "<<(flag?"静音":"开启声音");
-        if ((flag && ui->volume_toolButton->getVolumeValue()) || (!flag && !ui->volume_toolButton->getVolumeValue())) {
-            // 立即触发 Enter
-            QCoreApplication::sendEvent(ui->volume_toolButton, new QEvent(QEvent::Enter));
-            ui->volume_toolButton->clicked();
-            //qDebug()<<"当前音量："<<ui->volume_toolButton->getVolumeValue();
-        }
-    });
-
-    // 设置快捷键
-    new QShortcut(QKeySequence("Space"), this, SLOT(onKeyPause())); // 空格键暂停/播放
-    new QShortcut(QKeySequence("Right"), this, SLOT(onKeyRight())); // 右箭头快进
-    new QShortcut(QKeySequence("Left"), this, SLOT(onKeyLeft())); // 左箭头快退
-
-    connect(this->m_player.get(), &QMediaPlayer::positionChanged, this, [this](int position) {
-        if (ui->progressSlider->isSliderDown())return;
-        //qDebug()<<"position "<<position;
-        ui->progressSlider->setValue(position);
-        ui->position_label->setText(QTime::fromMSecsSinceStartOfDay(position).toString("mm:ss"));
-    });
-    connect(this->m_player.get(), &QMediaPlayer::durationChanged, this, &KuGouApp::updateSliderRange);
-    connect(this->m_player.get(), &QMediaPlayer::metaDataChanged, this, [this] {
-        //qDebug() << "metaDataChanged";
-        update_cover_singer_song_HLayout();
-    });
-    connect(this->m_player.get(), &QMediaPlayer::playbackStateChanged, this, [this](QMediaPlayer::PlaybackState state) {
-        if (state == QMediaPlayer::PlayingState)this->m_isPlaying = true;
-        else this->m_isPlaying = false;
-        if (this->m_isPlaying) {
-            ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
-        } else {
-            ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
-        }
-    });
-    mediaStatusConnection = connect(this->m_player.get(), &QMediaPlayer::mediaStatusChanged, this,
-                                    [=](const QMediaPlayer::MediaStatus &status) {
-                                        if (status == QMediaPlayer::EndOfMedia) {
-                                            if (this->m_isOrderPlay) {
-                                                qDebug()<<"结束，开始播放下一首";
-                                                STREAM_INFO() << "结束，开始播放下一首";
-                                                addOrderIndex();
-                                            }
-                                        }
-                                    });
-
-    connect(ui->progressSlider, &QSlider::sliderReleased, this, &KuGouApp::updateProcess);
-    connect(ui->progressSlider, &QSlider::sliderMoved, this, &KuGouApp::updateProcess);
-
-    connect(this->m_localDownload.get(), &LocalDownload::playMusic, this, &KuGouApp::onPlayMusic);
-    connect(this->m_localDownload.get(), &LocalDownload::startPlay, this, &KuGouApp::onStartPlay);
-    connect(this->m_localDownload.get(), &LocalDownload::addSongInfo, this, &KuGouApp::onAddSongInfo);
-    connect(this->m_localDownload.get(), &LocalDownload::subSongInfo, this, &KuGouApp::onSubSongInfo);
-
-    connect(this, &KuGouApp::setPlayIndex, this->m_localDownload.get(), &LocalDownload::setPlayIndex);
-    connect(this, &KuGouApp::maxScreen, this->m_localDownload.get(), &LocalDownload::onMaxScreenHandle);
-
-    //专门处理重排
-    connect(this->m_localDownload.get(),&LocalDownload::syncSongInfo,this,&KuGouApp::onSyncSongInfoVector);
-
-    //专门处理标题menu
-    connect(ui->menu_toolButton,&QToolButton::clicked,this,&KuGouApp::on_menu_toolButton_clicked);
-    ui->progressSlider->installEventFilter(this);
-
     //默认为你推荐
     ui->recommend_you_toolButton->clicked();
 }
@@ -179,6 +109,19 @@ void KuGouApp::initStackedWidget() {
     initAllMusic();
     initListenBook();
     initSearch();
+
+    //localDownload
+    connect(this->m_localDownload.get(), &LocalDownload::playMusic, this, &KuGouApp::onPlayMusic);
+    connect(this->m_localDownload.get(), &LocalDownload::startPlay, this, &KuGouApp::onStartPlay);
+    connect(this->m_localDownload.get(), &LocalDownload::addSongInfo, this, &KuGouApp::onAddSongInfo);
+    connect(this->m_localDownload.get(), &LocalDownload::subSongInfo, this, &KuGouApp::onSubSongInfo);
+
+    connect(this, &KuGouApp::setPlayIndex, this->m_localDownload.get(), &LocalDownload::setPlayIndex);
+    connect(this, &KuGouApp::maxScreen, this->m_localDownload.get(), &LocalDownload::onMaxScreenHandle);
+
+    //专门处理重排
+    connect(this->m_localDownload.get(),&LocalDownload::syncSongInfo,this,&KuGouApp::onSyncSongInfoVector);
+
 }
 
 void KuGouApp::initRecommendForYou() {
@@ -300,6 +243,16 @@ void KuGouApp::initTitleWidget() {
     ui->max_toolButton->setMyIcon(QIcon(QStringLiteral(":/Res/titlebar/maximize-black.svg")));
     ui->close_toolButton->setMyIcon(QIcon(QStringLiteral(":/Res/titlebar/close-black.svg")));
 
+    //专门处理标题menu
+    connect(ui->menu_toolButton,&QToolButton::clicked,this,&KuGouApp::on_menu_toolButton_clicked);
+    ui->progressSlider->installEventFilter(this);
+
+    connect(ui->title_widget, &TitleWidget::showAboutDialog, this, [this] {
+        MainWindow::onShowAboutDialog(true);
+    });
+
+    connect(ui->title_widget, &TitleWidget::exit, this, &KuGouApp::on_close_toolButton_clicked);
+
     connect(ui->title_widget, &TitleWidget::doubleClicked, this, [this] { ui->max_toolButton->click(); });
 }
 
@@ -316,6 +269,60 @@ void KuGouApp::initPlayWidget() {
     ui->ci_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/song-words.svg")));
     ui->list_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play-list.svg")));
 
+    // 设置快捷键
+    new QShortcut(QKeySequence("Space"), this, SLOT(onKeyPause())); // 空格键暂停/播放
+    new QShortcut(QKeySequence("Right"), this, SLOT(onKeyRight())); // 右箭头快进
+    new QShortcut(QKeySequence("Left"), this, SLOT(onKeyLeft())); // 左箭头快退
+
+    this->m_player->setAudioOutput(this->m_audioOutput.get());
+    this->m_audioOutput->setVolume(0.2);
+    connect(ui->volume_toolButton, &VolumeToolBtn::volumeChange, this, [this](const int value) {
+        const float volume = static_cast<float>(value) / 100; // 将值转换为0.0到1.0之间
+        this->m_audioOutput->setVolume(volume); // 设置音量
+    });
+    connect(this,&MainWindow::fromTray_noVolume,this,[this](const bool& flag) {
+        STREAM_INFO()<<"KuGouApp 托盘图标点击: "<<(flag?"静音":"开启声音");
+        if ((flag && ui->volume_toolButton->getVolumeValue()) || (!flag && !ui->volume_toolButton->getVolumeValue())) {
+            // 立即触发 Enter
+            QCoreApplication::sendEvent(ui->volume_toolButton, new QEvent(QEvent::Enter));
+            ui->volume_toolButton->clicked();
+            //qDebug()<<"当前音量："<<ui->volume_toolButton->getVolumeValue();
+        }
+    });
+
+    connect(this->m_player.get(), &QMediaPlayer::positionChanged, this, [this](int position) {
+        if (ui->progressSlider->isSliderDown())return;
+        //qDebug()<<"position "<<position;
+        ui->progressSlider->setValue(position);
+        ui->position_label->setText(QTime::fromMSecsSinceStartOfDay(position).toString("mm:ss"));
+    });
+    connect(this->m_player.get(), &QMediaPlayer::durationChanged, this, &KuGouApp::updateSliderRange);
+    connect(this->m_player.get(), &QMediaPlayer::metaDataChanged, this, [this] {
+        //qDebug() << "metaDataChanged";
+        update_cover_singer_song_HLayout();
+    });
+    connect(this->m_player.get(), &QMediaPlayer::playbackStateChanged, this, [this](QMediaPlayer::PlaybackState state) {
+        if (state == QMediaPlayer::PlayingState)this->m_isPlaying = true;
+        else this->m_isPlaying = false;
+        if (this->m_isPlaying) {
+            ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
+        } else {
+            ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
+        }
+    });
+    mediaStatusConnection = connect(this->m_player.get(), &QMediaPlayer::mediaStatusChanged, this,
+                                    [=](const QMediaPlayer::MediaStatus &status) {
+                                        if (status == QMediaPlayer::EndOfMedia) {
+                                            if (this->m_isOrderPlay) {
+                                                qDebug()<<"结束，开始播放下一首";
+                                                STREAM_INFO() << "结束，开始播放下一首";
+                                                addOrderIndex();
+                                            }
+                                        }
+                                    });
+
+    connect(ui->progressSlider, &QSlider::sliderReleased, this, &KuGouApp::updateProcess);
+    connect(ui->progressSlider, &QSlider::sliderMoved, this, &KuGouApp::updateProcess);
     connect(ui->play_widget, &PlayWidget::doubleClicked, this, [this] { ui->max_toolButton->clicked(); });
 }
 
