@@ -7,17 +7,11 @@
 
 #include <QWidget>
 
-#if defined(ALLSONGLIST_LIBRARY)
-#define ALLSONGLIST_EXPORT Q_DECL_EXPORT
-#else
-#define ALLSONGLIST_EXPORT Q_DECL_IMPORT
-#endif
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class AllSongList; }
 QT_END_NAMESPACE
 
-class ALLSONGLIST_EXPORT AllSongList : public QWidget {
+class AllSongList : public QWidget {
 Q_OBJECT
 
 public:

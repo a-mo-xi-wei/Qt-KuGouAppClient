@@ -11,19 +11,13 @@
 
 #include <QWidget>
 
-#if defined(VIDEO_LIBRARY)
-#define VIDEO_EXPORT Q_DECL_EXPORT
-#else
-#define VIDEO_EXPORT Q_DECL_IMPORT
-#endif
-
 class QButtonGroup;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Video; }
 QT_END_NAMESPACE
 
-class VIDEO_EXPORT Video : public QWidget {
+class Video : public QWidget {
 Q_OBJECT
 
 public:

@@ -7,17 +7,11 @@
 
 #include <QWidget>
 
-#if defined(COLLECTSPECIALALBUM_LIBRARY)
-#define COLLECTSPECIALALBUM_EXPORT Q_DECL_EXPORT
-#else
-#define COLLECTSPECIALALBUM_EXPORT Q_DECL_IMPORT
-#endif
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class SpecialAlbum; }
 QT_END_NAMESPACE
 
-class COLLECTSPECIALALBUM_EXPORT SpecialAlbum : public QWidget {
+class SpecialAlbum : public QWidget {
 Q_OBJECT
 
 public:

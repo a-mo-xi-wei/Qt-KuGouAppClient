@@ -7,12 +7,6 @@
 
 #include <QWidget>
 
-#if defined(RECENTLYSONGCHANNEL_LIBRARY)
-#define RECENTLYSONGCHANNEL_EXPORT Q_DECL_EXPORT
-#else
-#define RECENTLYSONGCHANNEL_EXPORT Q_DECL_IMPORT
-#endif
-
 QT_BEGIN_NAMESPACE
 
 namespace Ui {
@@ -21,7 +15,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class RECENTLYSONGCHANNEL_EXPORT RecentlySongChannel : public QWidget {
+class RecentlySongChannel : public QWidget {
     Q_OBJECT
 
 public:

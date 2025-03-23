@@ -7,17 +7,11 @@
 
 #include <QWidget>
 
-#if defined(ALLPAID_LIBRARY)
-#define ALLPAID_EXPORT Q_DECL_EXPORT
-#else
-#define ALLPAID_EXPORT Q_DECL_IMPORT
-#endif
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class AllPaid; }
 QT_END_NAMESPACE
 
-class ALLPAID_EXPORT AllPaid : public QWidget {
+class AllPaid : public QWidget {
 Q_OBJECT
 
 public:

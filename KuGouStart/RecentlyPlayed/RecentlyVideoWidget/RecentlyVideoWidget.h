@@ -7,17 +7,11 @@
 
 #include <QWidget>
 
-#if defined(RECENTLYVIDEOWIDGET_LIBRARY)
-#define RECENTLYVIDEOWIDGET_EXPORT Q_DECL_EXPORT
-#else
-#define RECENTLYVIDEOWIDGET_EXPORT Q_DECL_IMPORT
-#endif
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class RecentlyVideoWidget; }
 QT_END_NAMESPACE
 
-class RECENTLYVIDEOWIDGET_EXPORT RecentlyVideoWidget : public QWidget {
+class RecentlyVideoWidget : public QWidget {
 Q_OBJECT
 
 public:

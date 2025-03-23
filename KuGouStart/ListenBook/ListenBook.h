@@ -11,12 +11,6 @@
 
 #include <QWidget>
 
-#if defined(LISTENBOOK_LIBRARY)
-#define LISTENBOOK_EXPORT Q_DECL_EXPORT
-#else
-#define LISTENBOOK_EXPORT Q_DECL_IMPORT
-#endif
-
 class QButtonGroup;
 
 QT_BEGIN_NAMESPACE
@@ -27,7 +21,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class LISTENBOOK_EXPORT ListenBook : public QWidget {
+class ListenBook : public QWidget {
     Q_OBJECT
 
 public:

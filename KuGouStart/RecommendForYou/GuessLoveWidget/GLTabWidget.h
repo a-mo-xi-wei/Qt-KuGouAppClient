@@ -4,18 +4,12 @@
 #include "GLOptionMenu/GLOptionMenu.h"
 #include <QWidget>
 
-#if defined(GLTABWIDGET_LIBRARY)
-#define GLTABWIDGET_EXPORT Q_DECL_EXPORT
-#else
-#define GLTABWIDGET_EXPORT Q_DECL_IMPORT
-#endif
-
 class IconBesideTextToolButton;
 class QLabel;
 class QToolButton;
 class QPaintEvent;
 
-class GLTABWIDGET_EXPORT GLTabWidget : public QWidget {
+class GLTabWidget : public QWidget {
     Q_OBJECT
 
 public:

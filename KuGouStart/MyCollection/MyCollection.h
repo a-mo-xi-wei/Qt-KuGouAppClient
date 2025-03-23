@@ -12,19 +12,13 @@
 #include"SingerWidget.h"
 #include"DeviceWidget.h"
 
-#if defined(MYCOLLECTION_LIBRARY)
-#define MYCOLLECTION_EXPORT Q_DECL_EXPORT
-#else
-#define MYCOLLECTION_EXPORT Q_DECL_IMPORT
-#endif
-
 class QButtonGroup;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MyCollection; }
 QT_END_NAMESPACE
 
-class MYCOLLECTION_EXPORT MyCollection : public QWidget {
+class MyCollection : public QWidget {
 Q_OBJECT
 
 public:

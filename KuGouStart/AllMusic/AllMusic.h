@@ -18,18 +18,11 @@
 
 class QButtonGroup;
 
-// 添加导出宏定义
-#if defined(ALLMUSIC_LIBRARY)
-#define ALLMUSIC_EXPORT Q_DECL_EXPORT
-#else
-#define ALLMUSIC_EXPORT Q_DECL_IMPORT
-#endif
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class AllMusic; }
 QT_END_NAMESPACE
 
-class ALLMUSIC_EXPORT AllMusic : public QWidget {
+class AllMusic : public QWidget {
 Q_OBJECT
 
 public:

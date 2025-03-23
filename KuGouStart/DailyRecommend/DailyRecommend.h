@@ -8,19 +8,13 @@
 #include "MusicItemWidget.h"
 #include <QWidget>
 
-#if defined(DAILYRECOMMEND_LIBRARY)
-#define DAILYRECOMMEND_EXPORT Q_DECL_EXPORT
-#else
-#define DAILYRECOMMEND_EXPORT Q_DECL_IMPORT
-#endif
-
 class QLabel;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class DailyRecommend; }
 QT_END_NAMESPACE
 
-class DAILYRECOMMEND_EXPORT DailyRecommend : public QWidget {
+class DailyRecommend : public QWidget {
 Q_OBJECT
 
 public:

@@ -9,12 +9,6 @@
 
 #include <QWidget>
 
-#if defined(PURCHASEDPAIDSINGLE_LIBRARY)
-#define PURCHASEDPAIDSINGLE_EXPORT Q_DECL_EXPORT
-#else
-#define PURCHASEDPAIDSINGLE_EXPORT Q_DECL_IMPORT
-#endif
-
 QT_BEGIN_NAMESPACE
 
 namespace Ui {
@@ -23,7 +17,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class PURCHASEDPAIDSINGLE_EXPORT PaidSingle : public QWidget {
+class PaidSingle : public QWidget {
     Q_OBJECT
 
 public:

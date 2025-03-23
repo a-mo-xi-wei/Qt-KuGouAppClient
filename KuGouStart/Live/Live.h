@@ -9,12 +9,6 @@
 #include "LiveMusicPartWidget/LiveMusicPartWidget.h"
 #include "LiveBigLeftWidget/LiveBigLeftWidget.h"
 
-#if defined(LIVE_LIBRARY)
-#define LIVE_EXPORT Q_DECL_EXPORT
-#else
-#define LIVE_EXPORT Q_DECL_IMPORT
-#endif
-
 class QScrollBar;
 class QButtonGroup;
 
@@ -26,7 +20,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class LIVE_EXPORT Live : public QWidget {
+class Live : public QWidget {
     Q_OBJECT
 
 public:

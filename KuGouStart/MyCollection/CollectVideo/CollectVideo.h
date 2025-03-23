@@ -7,17 +7,11 @@
 
 #include <QWidget>
 
-#if defined(COLLECTVIDEO_LIBRARY)
-#define COLLECTVIDEO_EXPORT Q_DECL_EXPORT
-#else
-#define COLLECTVIDEO_EXPORT Q_DECL_IMPORT
-#endif
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class CollectVideo; }
 QT_END_NAMESPACE
 
-class COLLECTVIDEO_EXPORT CollectVideo : public QWidget {
+class CollectVideo : public QWidget {
 Q_OBJECT
 
 public:
