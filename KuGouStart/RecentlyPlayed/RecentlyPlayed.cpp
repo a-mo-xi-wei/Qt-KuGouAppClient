@@ -47,7 +47,7 @@ void RecentlyPlayed::initUi() {
     ui->single_song_pushButton->clicked();
 
     ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
-    ui->stackedWidget->setSpeed(650);
+    ui->stackedWidget->setSpeed(400);
 }
 
 void RecentlyPlayed::initIndexLab() {

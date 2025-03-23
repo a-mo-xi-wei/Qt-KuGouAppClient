@@ -63,7 +63,7 @@ void MyCollection::initUi() {
     ui->singleSong_pushButton->clicked();
 
     ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
-    ui->stackedWidget->setSpeed(650);
+    ui->stackedWidget->setSpeed(400);
 }
 
 void MyCollection::initIndexLab() {

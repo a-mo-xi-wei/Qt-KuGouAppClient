@@ -73,7 +73,7 @@ void AllMusic::initUi() {
     this->m_sortOptMenu = menu->getMenu<SortOptionMenu>();
 
     ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
-    ui->stackedWidget->setSpeed(650);
+    ui->stackedWidget->setSpeed(400);
 }
 
 void AllMusic::initIndexLab() {

@@ -95,7 +95,7 @@ void Search::initUi() {
     initDescVector();
 
     ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
-    ui->stackedWidget->setSpeed(650);
+    ui->stackedWidget->setSpeed(400);
 }
 
 void Search::initStackWidget() {

@@ -49,7 +49,7 @@ void Video::initUi()const {
     ui->index_label3->hide();
 
     ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
-    ui->stackedWidget->setSpeed(650);
+    ui->stackedWidget->setSpeed(400);
 }
 
 void Video::initStackedWidget() {

@@ -48,7 +48,7 @@ void PurchasedMusic::initUi() {
     ui->paid_single_pushButton->clicked();
 
     ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
-    ui->stackedWidget->setSpeed(650);
+    ui->stackedWidget->setSpeed(400);
 }
 
 void PurchasedMusic::initIndexLab() {
