@@ -59,3 +59,9 @@ add_subdirectory(MyCheckBox)
 
 #对话框模块
 add_subdirectory(MyDialog)
+
+#Material模块
+add_subdirectory(QtMaterialWidget)
+
+#遮罩刷新模块
+add_subdirectory(RefreshMask)
