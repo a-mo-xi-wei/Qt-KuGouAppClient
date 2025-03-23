@@ -11,8 +11,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
-file(GLOB SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
-file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+file(GLOB_RECURSE SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+file(GLOB_RECURSE SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 
 set(SOURCE_FILE
     ${SOURCE_CPP}
@@ -39,6 +39,9 @@ else()
 endif()
 
 # 指定库的包含目录
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(${PROJECT_NAME} PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/MyTrayIcon
+        ${CMAKE_CURRENT_SOURCE_DIR}/WaterDrop)
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyMenu AboutDialog)

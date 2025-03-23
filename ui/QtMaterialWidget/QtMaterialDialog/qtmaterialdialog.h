@@ -1,7 +1,7 @@
 #ifndef QTMATERIALDIALOG_H
 #define QTMATERIALDIALOG_H
 
-#include "qtmaterialoverlaywidget.h"
+#include "../MaterialCommon/qtmaterialoverlaywidget.h"
 
 #if defined(MATERIALDIALOG_LIBRARY)
 #define MATERIALDIALOG_EXPORT Q_DECL_EXPORT

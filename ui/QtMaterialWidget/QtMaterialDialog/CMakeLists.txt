@@ -17,6 +17,11 @@ file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 set(SOURCE_FILES
     ${SOURCE_CPP}
     ${SOURCE_H}
+    ../MaterialCommon/qtmaterialoverlaywidget.h
+    ../MaterialCommon/qtmaterialoverlaywidget.cpp
+    ../MaterialCommon/qtmaterialstatetransition.h
+    ../MaterialCommon/qtmaterialstatetransition.cpp
+    ../MaterialCommon/qtmaterialstatetransitionevent.h
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
