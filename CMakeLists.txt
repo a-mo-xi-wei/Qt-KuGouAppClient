@@ -7,6 +7,26 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
+if (PROJECT_BINARY_DIR STREQUAL PROJECT_SOURCE_DIR)
+    message(WARNING "In-source build detected! Please build out-of-source!")
+endif()
+
+if (NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+if (NOT MSVC)
+    set(CCACHE_PROGRAM "${CMAKE_SOURCE_DIR}/tools/ccache.exe")
+
+    if (EXISTS ${CCACHE_PROGRAM})
+        message(STATUS "Found ccache: ${CCACHE_PROGRAM}")
+        set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
+        set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK "${CCACHE_PROGRAM}")
+    else()
+        message(WARNING "ccache not found in tools directory!")
+    endif()
+endif()
+
 #ui目录
 add_subdirectory(ui)
 
