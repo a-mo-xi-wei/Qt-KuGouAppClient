@@ -5,13 +5,13 @@
 #ifndef ALLMUSIC_H
 #define ALLMUSIC_H
 
-#include "AllWidget.h"
-#include "AllLove.h"
-#include "AllSongList.h"
-#include "AllRecent.h"
-#include "AllLocal.h"
-#include "AllPaid.h"
-#include "AllCloudDisk.h"
+#include "AllWidget/AllWidget.h"
+#include "AllLove/AllLove.h"
+#include "AllSongList/AllSongList.h"
+#include "AllRecent/AllRecent.h"
+#include "AllLocal/AllLocal.h"
+#include "AllPaid/AllPaid.h"
+#include "AllCloudDisk/AllCloudDisk.h"
 #include "SortOptionMenu.h"
 
 #include <QWidget>

@@ -6,7 +6,7 @@
 #define LISTENRECOMMEND_H
 
 #include "ListenOptionMenu/ListenOptionMenu.h"
-#include "ListenTableWidget.h"
+#include "ListenTableWidget/ListenTableWidget.h"
 
 #include <QWidget>
 

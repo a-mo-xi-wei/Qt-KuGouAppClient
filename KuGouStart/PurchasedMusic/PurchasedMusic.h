@@ -5,9 +5,9 @@
 #ifndef PURCHASEDMUSIC_H
 #define PURCHASEDMUSIC_H
 
-#include"PaidSingle.h"
-#include"PurchasedAlbums.h"
-#include"PurchasedVideos.h"
+#include "PaidSingle/PaidSingle.h"
+#include "PurchasedAlbums/PurchasedAlbums.h"
+#include "PurchasedVideos/PurchasedVideos.h"
 
 #include <QWidget>
 

@@ -5,9 +5,9 @@
 #ifndef LISTENBOOK_H
 #define LISTENBOOK_H
 
-#include "ListenRecommend.h"
-#include "ListenMyDownload.h"
-#include "ListenRecentlyPlay.h"
+#include "ListenRecommend/ListenRecommend.h"
+#include "ListenMyDownload/ListenMyDownload.h"
+#include "ListenRecentlyPlay/ListenRecentlyPlay.h"
 
 #include <QWidget>
 
