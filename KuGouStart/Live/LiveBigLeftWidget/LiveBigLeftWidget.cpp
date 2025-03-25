@@ -125,40 +125,40 @@ void LiveBigLeftWidget::initBlockWidget() {
     ui->left_widget->setLeftBottomText(this->m_leftBottomTextVec[5]);
     ui->left_widget->setTipStyleSheet(QStringLiteral("font-size: 12px;border-radius:10px;background-color:black;color:white;height: 30px;"));
     ui->left_widget->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
 
     ui->widget_1->setAspectRatio(0.78);
     ui->widget_1->setLeftBottomText(this->m_leftBottomTextVec[10]);
     ui->widget_1->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
     ui->widget_2->setAspectRatio(0.78);
     ui->widget_2->setLeftBottomText(this->m_leftBottomTextVec[15]);
     ui->widget_2->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
     ui->widget_3->setAspectRatio(0.78);
     ui->widget_3->setLeftBottomText(this->m_leftBottomTextVec[20]);
     ui->widget_3->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
     ui->widget_4->setAspectRatio(0.78);
     ui->widget_4->setLeftBottomText(this->m_leftBottomTextVec[25]);
     ui->widget_4->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
     ui->widget_5->setAspectRatio(0.78);
     ui->widget_5->setLeftBottomText(this->m_leftBottomTextVec[30]);
     ui->widget_5->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
     ui->widget_6->setAspectRatio(0.78);
     ui->widget_6->setLeftBottomText(this->m_leftBottomTextVec[35]);
     ui->widget_6->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
     ui->widget_7->setAspectRatio(0.78);
     ui->widget_7->setLeftBottomText(this->m_leftBottomTextVec[40]);
     ui->widget_7->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
     ui->widget_8->setAspectRatio(0.78);
     ui->widget_8->setLeftBottomText(this->m_leftBottomTextVec[45]);
     ui->widget_8->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
 
 }
 
