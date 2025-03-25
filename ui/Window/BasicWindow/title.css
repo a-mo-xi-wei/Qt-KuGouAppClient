@@ -1,0 +1,85 @@
+/*--------------------title_widget------------------------------*/
+QToolButton#title_return_toolButton{
+    background-color: rgba(255,255,255,0);
+    border-image: url(":/Res/titlebar/return-black.svg");
+}
+QToolButton#title_return_toolButton:hover {
+    border-image: url(":/Res/titlebar/return-blue.svg");
+}
+QToolButton#title_refresh_toolButton{
+    background-color: rgba(255,255,255,0);
+    border-image: url(":/Res/titlebar/refresh-black.svg");
+}
+QToolButton#title_refresh_toolButton:hover {
+    border-image: url(":/Res/titlebar/refresh-blue.svg");
+}
+
+QWidget#title_widget QLabel{
+    background-color: rgba(255,255,255,0);
+}
+QWidget#title_widget QPushButton{
+    background-color:rgba(255,255,255,0);
+    color:rgba(0,0,0,50%);
+}
+QWidget#title_widget QPushButton:hover {
+    color: #3366FF;
+    font-size: 20px;
+}
+QWidget#title_widget QPushButton:checked {
+    color: #3366FF;
+    font-size: 25px;
+}
+QLineEdit#search_lineEdit {
+    border-radius: 15px;
+    background-color: #d1d5f6;
+    font-size: 15px;
+    font-weight: bold;
+    selection-color: #00cb9f;            /* 设置选中文本的颜色 */
+    selection-background-color: #75498c;  /* 设置选中文本的背景颜色 */
+}
+QLineEdit#search_lineEdit:hover {
+    background-color: #CCCCFF;
+}
+QToolButton#listen_toolButton {
+    background-color:rgba(255,255,255,0);
+    border-image: url(":/Res/titlebar/listen-music-black.svg");
+    border-radius: 10px;
+}
+QToolButton#listen_toolButton:hover {
+    border-image: url(":/Res/titlebar/listen-music-blue.svg");
+}
+
+QToolButton#theme_toolButton {
+    background-color: rgba(255,255,255,0);
+    border-image: url(":/Res/titlebar/theme-black.svg");
+}
+QToolButton#theme_toolButton:hover {
+    border-image: url(":/Res/titlebar/theme-blue.svg");
+}
+
+QToolButton#message_toolButton {
+    background-color: rgba(255,255,255,0);
+    border-image: url(":/Res/titlebar/message-black.svg");
+}
+QToolButton#message_toolButton:hover {
+    border-image: url(":/Res/titlebar/message-blue.svg");
+}
+
+QToolButton#menu_toolButton {
+    background-color: rgba(255,255,255,0);
+    border-image: url(":/Res/titlebar/menu-black.svg");
+}
+QToolButton#menu_toolButton:hover {
+    border-image: url(":/Res/titlebar/menu-blue.svg");
+}
+
+QToolButton#min_toolButton,
+QToolButton#max_toolButton,
+QToolButton#close_toolButton {
+    background-color: rgba(255,255,255,0);
+    border-radius: 6px;
+    border: none;
+    height: 30px;
+    width: 30px;
+    icon-size: 12px 12px;
+}

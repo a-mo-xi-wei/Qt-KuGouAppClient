@@ -54,9 +54,10 @@ private:
     void initStackedWidget();
 
     template<typename T>
-    void initComponent(std::unique_ptr<T>& component) {
+    void initComponent(std::unique_ptr<T>& component, const int& index) {
         component = std::make_unique<T>(ui->stackedWidget);
-        ui->stackedWidget->addWidget(component.get());
+        // 插入到指定下标位置
+        ui->stackedWidget->insertWidget(index, component.get());
     }
 
     void initTitleWidget();
@@ -98,26 +99,6 @@ protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private slots:
-    //title
-    void on_title_return_toolButton_clicked();
-
-    void on_title_refresh_toolButton_clicked();
-
-    void on_title_music_pushButton_clicked();
-
-    void on_title_live_pushButton_clicked();
-
-    void on_title_listen_book_pushButton_clicked();
-
-    void on_title_search_pushButton_clicked();
-
-    void on_menu_toolButton_clicked();
-
-    void on_min_toolButton_clicked();
-
-    void on_max_toolButton_clicked();
-
-    void on_close_toolButton_clicked();
     //menu
     void on_recommend_you_toolButton_clicked();
 
@@ -164,7 +145,7 @@ private slots:
 
     void on_next_toolButton_clicked();
 
-public slots:
+private slots:
     void setPlayMusic(int &index);
 
     void updateProcess();
@@ -185,6 +166,12 @@ public slots:
 
     void onKeyRight();
 
+    void onTitleCurrentStackChange(const int& index,const bool& slide);
+
+    void onLeftMenuShow(const bool& flag) const;
+
+    void onTitleMaxScreen();
+
 signals:
     void setPlayIndex(const int& index);
 
@@ -197,7 +184,6 @@ private:
     Ui::KuGouApp *ui;
     std::unique_ptr<QMediaPlayer>       m_player{};
     std::unique_ptr<QAudioOutput>       m_audioOutput{};
-    QToolButton*                        m_lastBtn{};//上一次点击的按钮
     std::unique_ptr<QButtonGroup>       m_menuBtnGroup{};
     std::unique_ptr<QSizeGrip>          m_sizeGrip{};
     std::unique_ptr<QPropertyAnimation> m_animation{};  //专门用于窗口的缩放动画
@@ -217,9 +203,6 @@ private:
     std::unique_ptr<AllMusic>           m_allMusic{};
     std::unique_ptr<ListenBook>         m_listenBook{};
     std::unique_ptr<Search>             m_search{};
-    //标题菜单相关
-    TitleWidget*                m_title{};
-    QPixmap                     m_originalCover;
     //窗口缩放相关
     bool                        m_isTransForming = false; //专门用于在窗口缩放动画播放时，禁用拖动事件
     bool                        m_isSingleCircle = false;

@@ -13,10 +13,12 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 file(GLOB SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+file(GLOB SOURCE_UI ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)
 
 set(SOURCE_FILE
     ${SOURCE_CPP}
     ${SOURCE_H}
+    ${SOURCE_UI}
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
@@ -24,4 +26,4 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyMenu)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyMenu MySearchLineEdit RippleButton)
