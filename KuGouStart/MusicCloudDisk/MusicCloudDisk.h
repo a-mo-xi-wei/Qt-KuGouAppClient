@@ -5,8 +5,8 @@
 #ifndef MUSICCLOUDDISK_H
 #define MUSICCLOUDDISK_H
 
-#include"UploadedSong.h"
-#include"UploadingSong.h"
+#include"UploadedSong/UploadedSong.h"
+#include"UploadingSong/UploadingSong.h"
 
 #include <QWidget>
 

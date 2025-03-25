@@ -145,7 +145,7 @@ void LiveCommonPartWidget::initLineOne() {
     for (int i = 0; i < 6; ++i) {
         const auto w = new LiveBlockWidget(ui->line_widget_1);
         w->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
         w->setLeftBottomText(this->m_leftBottomTextVec[i]);
         lay1->addWidget(w);
         w->show();
@@ -164,7 +164,7 @@ void LiveCommonPartWidget::initLineTwo() {
     for (int i = 6; i < 12; ++i) {
         const auto w = new LiveBlockWidget(ui->line_widget_2);
         w->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
         w->setLeftBottomText(this->m_leftBottomTextVec[i + 20]);
         lay2->addWidget(w);
         w->show();

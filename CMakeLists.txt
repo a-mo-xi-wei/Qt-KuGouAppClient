@@ -14,7 +14,7 @@ endif()
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
-
+#[[
 if (NOT MSVC)
     set(CCACHE_PROGRAM "${CMAKE_SOURCE_DIR}/tools/ccache.exe")
 
@@ -26,6 +26,7 @@ if (NOT MSVC)
         message(WARNING "ccache not found in tools directory!")
     endif()
 endif()
+]]
 
 #ui目录
 add_subdirectory(ui)

@@ -126,48 +126,48 @@ QList<QString> LiveMusicPartWidget::parseJsonFile(const QString &filePath) {
 
 void LiveMusicPartWidget::initBlockWidget() {
     ui->cover_label_1->setStyleSheet(QString("border-image: url(':/BlockCover/Res/blockcover/music-block-cover%1.jpg')").
-        arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/blockcover")))));
+        arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/blockcover")))));
     ui->left_block_widget_1->setLeftBottomText(this->m_leftBottomTextVec[10]);
     ui->left_block_widget_1->setTipLabText(QString::number(QRandomGenerator::global()->bounded(5000)));
     ui->left_block_widget_1->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
     ui->right_block_widget_1->setLeftBottomText(this->m_leftBottomTextVec[11]);
     ui->right_block_widget_1->setTipLabText(QString::number(QRandomGenerator::global()->bounded(5000)));
     ui->right_block_widget_1->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
 
     ui->cover_label_2->setStyleSheet(QString("border-image: url(':/BlockCover/Res/blockcover/music-block-cover%1.jpg')").
-        arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/blockcover")))));
+        arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/blockcover")))));
     ui->left_block_widget_2->setLeftBottomText(this->m_leftBottomTextVec[20]);
     ui->left_block_widget_2->setTipLabText(QString::number(QRandomGenerator::global()->bounded(5000)));
     ui->left_block_widget_2->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
     ui->right_block_widget_2->setLeftBottomText(this->m_leftBottomTextVec[21]);
     ui->right_block_widget_2->setTipLabText(QString::number(QRandomGenerator::global()->bounded(5000)));
     ui->right_block_widget_2->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
 
     ui->cover_label_3->setStyleSheet(QString("border-image: url(':/BlockCover/Res/blockcover/music-block-cover%1.jpg')").
-        arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/blockcover")))));
+        arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/blockcover")))));
     ui->left_block_widget_3->setLeftBottomText(this->m_leftBottomTextVec[30]);
     ui->left_block_widget_3->setTipLabText(QString::number(QRandomGenerator::global()->bounded(5000)));
     ui->left_block_widget_3->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
     ui->right_block_widget_3->setLeftBottomText(this->m_leftBottomTextVec[31]);
     ui->right_block_widget_3->setTipLabText(QString::number(QRandomGenerator::global()->bounded(5000)));
     ui->right_block_widget_3->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
 
     ui->cover_label_4->setStyleSheet(QString("border-image: url(':/BlockCover/Res/blockcover/music-block-cover%1.jpg')").
-        arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/blockcover")))));
+        arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/blockcover")))));
     ui->left_block_widget_4->setLeftBottomText(this->m_leftBottomTextVec[40]);
     ui->left_block_widget_4->setTipLabText(QString::number(QRandomGenerator::global()->bounded(5000)));
     ui->left_block_widget_4->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
     ui->right_block_widget_4->setLeftBottomText(this->m_leftBottomTextVec[41]);
     ui->right_block_widget_4->setTipLabText(QString::number(QRandomGenerator::global()->bounded(5000)));
     ui->right_block_widget_4->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../ResAndQrc/Res/standcover")))));
 
 }
 

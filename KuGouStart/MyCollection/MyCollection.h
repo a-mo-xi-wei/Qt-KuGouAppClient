@@ -5,12 +5,12 @@
 #ifndef MYCOLLECTION_H
 #define MYCOLLECTION_H
 
-#include"SingleSong.h"
-#include"SongListWidget.h"
-#include"SpecialAlbum.h"
-#include"CollectVideo.h"
-#include"SingerWidget.h"
-#include"DeviceWidget.h"
+#include"SingleSong/SingleSong.h"
+#include"SongListWidget/SongListWidget.h"
+#include"SpecialAlbum/SpecialAlbum.h"
+#include"CollectVideo/CollectVideo.h"
+#include"SingerWidget/SingerWidget.h"
+#include"DeviceWidget/DeviceWidget.h"
 
 class QButtonGroup;
 

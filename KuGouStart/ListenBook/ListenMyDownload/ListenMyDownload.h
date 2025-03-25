@@ -5,8 +5,8 @@
 #ifndef LISTENMYDOWNLOAD_H
 #define LISTENMYDOWNLOAD_H
 
-#include "DownloadedWidget.h"
-#include "DownloadingWidget.h"
+#include "DownloadedWidget/DownloadedWidget.h"
+#include "DownloadingWidget/DownloadingWidget.h"
 
 #include <QWidget>
 

@@ -5,11 +5,11 @@
 #ifndef RECENTLYPLAYED_H
 #define RECENTLYPLAYED_H
 
-#include"RecentlySingleSong.h"
-#include"RecentlySongList.h"
-#include"RecentlyVideoWidget.h"
-#include"RecentlySongChannel.h"
-#include"RecentlyMVChannel.h"
+#include"RecentlySingleSong/RecentlySingleSong.h"
+#include"RecentlySongList/RecentlySongList.h"
+#include"RecentlyVideoWidget/RecentlyVideoWidget.h"
+#include"RecentlySongChannel/RecentlySongChannel.h"
+#include"RecentlyMVChannel/RecentlyMVChannel.h"
 
 #include <QWidget>
 
