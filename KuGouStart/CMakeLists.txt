@@ -13,19 +13,17 @@ set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia)
 
-#file(GLOB_RECURSE SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
-#file(GLOB_RECURSE SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
-#file(GLOB_RECURSE SOURCE_UI ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)
+#file(GLOB SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+#file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 file(GLOB QRC_FILE ${CMAKE_CURRENT_SOURCE_DIR}/Res&Qrc/*.qrc)
 
 set(SOURCE_FILE
     KuGouApp.h
     KuGouApp.cpp
     KuGouApp.ui
-    KuGouApp.ui
     main.cpp
     ${QRC_FILE}
-        Res&Qrc/Res/titleIcon.rc
+    Res&Qrc/Res/titleIcon.rc
 )
 
 ####       发现音乐       ####

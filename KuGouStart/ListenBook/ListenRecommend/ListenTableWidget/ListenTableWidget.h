@@ -5,7 +5,7 @@
 #ifndef LISTENTABLEWIDGET_H
 #define LISTENTABLEWIDGET_H
 
-#include  "GalleryWidget.h"
+#include "GalleryWidget.h"
 
 QT_BEGIN_NAMESPACE
 

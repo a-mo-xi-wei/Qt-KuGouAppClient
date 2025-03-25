@@ -7,23 +7,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Core)
 
-file(GLOB SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/spdlog/*.cpp)
-file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/spdlog/*.h)
-file(GLOB SOURCE_CFG_H ${CMAKE_CURRENT_SOURCE_DIR}/spdlog/cfg/*.h)
-file(GLOB SOURCE_FMT_H ${CMAKE_CURRENT_SOURCE_DIR}/spdlog/fmt/*.h)
-file(GLOB SOURCE_DETAILS_H ${CMAKE_CURRENT_SOURCE_DIR}/spdlog/details/*.h)
-file(GLOB SOURCE_SINKS_H ${CMAKE_CURRENT_SOURCE_DIR}/spdlog/sinks/*.h)
+file(GLOB_RECURSE SRC_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+file(GLOB_RECURSE SRC_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 
 set(SOURCE_FILE
-        include/logger.hpp
-        include/mylog.h
-        include/mylog.cpp
-        ${SOURCE_CPP}
-        ${SOURCE_H}
-        ${SOURCE_CFG_H}
-        ${SOURCE_FMT_H}
-        ${SOURCE_DETAILS_H}
-        ${SOURCE_SINKS_H}
+    include/logger.hpp
+    ${SRC_CPP}
+    ${SRC_H}
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})

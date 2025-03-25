@@ -15,6 +15,9 @@ add_subdirectory(MySlidingStackedWidget)
 #自定义流式布局
 add_subdirectory(MyFlowLayout)
 
+#遮罩模块
+add_subdirectory(SMaskWidget)
+
 #自定义块窗口
 add_subdirectory(MyBlockWidget)
 
@@ -23,9 +26,6 @@ add_subdirectory(MusicItemWidget)
 
 #音乐表单模块
 add_subdirectory(MusicTableWidget)
-
-#遮罩模块
-add_subdirectory(SMaskWidget)
 
 #涟漪模块
 add_subdirectory(RippleButton)
