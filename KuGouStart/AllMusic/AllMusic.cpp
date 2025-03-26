@@ -105,8 +105,8 @@ void AllMusic::initStackedWidget() {
     initAllWidget();
     initAllLove();
     initAllSongList();
-    initAllLocal();
     initAllRecent();
+    initAllLocal();
     initAllPaid();
     initAllCloudDisk();
     this->m_buttonGroup->addButton(ui->all_pushButton);

@@ -123,7 +123,8 @@ void RecentlyPlayed::on_single_song_pushButton_clicked() {
     ui->single_song_pushButton->setChecked(true);
     STREAM_INFO()<<"切换单曲界面";
     enableButton(false);
-    ui->stackedWidget->setCurrentWidget(this->m_singleSong.get());
+    //ui->stackedWidget->setCurrentWidget(this->m_singleSong.get());
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_singleSong.get()));
     ui->idx1_lab->show();
     ui->idx2_lab->hide();
     ui->idx3_lab->hide();
