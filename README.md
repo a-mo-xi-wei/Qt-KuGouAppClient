@@ -62,14 +62,24 @@ Based on Qt Widget + UiTools module + Custom control + QSS + QsLog + Custom **Sp
 
 ### 🔌 核心架构
 ```mermaid
-graph TD
-    A[CMake模块化构建] --> B[UI逻辑层]
-    A --> C[音频引擎层]
-    A --> D[数据管理层]
-    B --> E[自定义控件库]
-    C --> F[QAudioOutput]
-    C --> G[QMediaPlayer]
-    D --> H[SQLite数据库]
+flowchart
+  CMakeModule["CMake模块化构建"]
+  UILogic["UI逻辑层"]
+  CoreCode["核心代码层"]
+  ThirdParty["第三方管理层"]
+  CustomWidgets["自定义控件库"]
+  KuGouClient["KuGouClient"]
+  KuGouServer["KuGouServer"]
+  PoolAsyncNetwork["池化 异步 网络"]
+
+  CMakeModule -->|"数据/控制流"| UILogic
+  CMakeModule -->|"数据/控制流"| CoreCode
+  CMakeModule -->|"数据/控制流"| ThirdParty
+  
+  UILogic -->|"交互"| CustomWidgets
+  CoreCode -->|"业务逻辑"| KuGouClient
+  CoreCode -->|"业务逻辑"| KuGouServer
+  ThirdParty -->|"使用"| PoolAsyncNetwork
 ```
 ## 🛠️ 技术全景图
 ### 1.为你推荐界面
