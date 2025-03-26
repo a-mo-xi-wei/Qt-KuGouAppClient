@@ -156,7 +156,7 @@ private:
     QScrollBar *m_vScrollBar{};
 
     //发送网络请求
-    CLibhttp m_Libhttp;
+    CLibhttp m_libHttp;
 };
 
 

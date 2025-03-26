@@ -5,9 +5,6 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_LocalSong.h" resolved
 
 #include "LocalSong.h"
-
-#include <QBuffer>
-
 #include "ui_LocalSong.h"
 #include "logger.hpp"
 
@@ -23,6 +20,8 @@
 #include <QScreen>
 #include <QStandardPaths>
 #include <QTimer>
+#include <QBuffer>
+
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 //匹配是否有乱码
@@ -181,6 +180,22 @@ void LocalSong::getMetaData() {
                                 this->m_locationMusicVector.end(), tempInformation);
             if (it == this->m_locationMusicVector.end()) {
                 this->m_locationMusicVector.emplace_back(tempInformation);
+                //向parent发送添加MediaPath的信号
+                emit addSongInfo(tempInformation);
+                //加载相关信息
+                auto item = new MusicItemWidget(tempInformation, this);
+                //初始化item
+                initMusicItem(item);
+                //插入Item
+                this->m_MusicItemVector.emplace_back(item);
+                const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout());
+                if (!layout)return;
+                layout->insertWidget(layout->count() - 2, item);
+                //ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
+                emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size()));
+
+                //加载下一首歌
+                loadNextSong();
                 // 将QPixmap转换为QImage并保存为PNG格式的字节流
                 QByteArray imageData;
                 QBuffer buffer(&imageData);
@@ -203,7 +218,7 @@ void LocalSong::getMetaData() {
                 QJsonDocument doc(postJson);
                 QString jsonString = doc.toJson(QJsonDocument::Compact); // 紧凑格式无换行
                 //向服务器发送post请求 添加歌曲信息
-                m_Libhttp.UrlRequestPost(QStringLiteral("http://127.0.0.1:8080/api/addSong"),jsonString);
+                m_libHttp.UrlRequestPost(QStringLiteral("http://127.0.0.1:8080/api/addSong"),jsonString);
             }
             else {
                 STREAM_INFO()<<title.toStdString()<<" 已存在，请勿重复插入";
@@ -212,22 +227,6 @@ void LocalSong::getMetaData() {
                 loadNextSong();
                 return;
             }
-            //向parent发送添加MediaPath的信号
-            emit addSongInfo(tempInformation);
-            //加载相关信息
-            auto item = new MusicItemWidget(tempInformation, this);
-            //初始化item
-            initMusicItem(item);
-            //插入Item
-            this->m_MusicItemVector.emplace_back(item);
-            const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout());
-            if (!layout)return;
-            layout->insertWidget(layout->count() - 2, item);
-            //ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
-            emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size()));
-
-            //加载下一首歌
-            loadNextSong();
         }
     });
 
@@ -352,7 +351,7 @@ void LocalSong::initMusicItem(MusicItemWidget *item) {
 }
 
 void LocalSong::fetchAndSyncServerSongList() {
-    const QString reply = m_Libhttp.UrlRequestGet("http://127.0.0.1:8080/api/localSongList", "");
+    const QString reply = m_libHttp.UrlRequestGet("http://127.0.0.1:8080/api/localSongList", "");
     const QJsonDocument doc = QJsonDocument::fromJson(reply.toUtf8());
 
     if (!doc.isObject()) return;
@@ -370,7 +369,7 @@ void LocalSong::fetchAndSyncServerSongList() {
             delReq["song"] = song["song"].toString();
             delReq["singer"] = song["singer"].toString();
             delReq["duration"] = song["duration"].toString();
-            m_Libhttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong",QJsonDocument(delReq).toJson(QJsonDocument::Compact));
+            m_libHttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong",QJsonDocument(delReq).toJson(QJsonDocument::Compact));
             continue;
         }
 
@@ -651,7 +650,7 @@ void LocalSong::onItemDeleteSong(const int &idx) {
     delReq["song"] = song;
     delReq["singer"] = singer;
     delReq["duration"] = duration;
-    m_Libhttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong",QJsonDocument(delReq).toJson(QJsonDocument::Compact));
+    m_libHttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong",QJsonDocument(delReq).toJson(QJsonDocument::Compact));
 
 }
 
