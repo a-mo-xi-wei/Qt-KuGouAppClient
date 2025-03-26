@@ -2,6 +2,7 @@
 #include "ui_KuGouApp.h"
 #include "logger.hpp"
 #include "RippleButton.h"
+#include "RefreshMask.h"
 
 #include <QMediaMetaData>
 #include <QMediaPlayer>
@@ -43,6 +44,7 @@ KuGouApp::KuGouApp(MainWindow *parent)
     , m_menuBtnGroup(std::make_unique<QButtonGroup>(this))
     , m_sizeGrip(std::make_unique<QSizeGrip>(this))
     , m_animation(std::make_unique<QPropertyAnimation>(this, "geometry"))
+    , m_refreshMask(std::make_unique<RefreshMask>())
 {
     ui->setupUi(this);
 
@@ -61,7 +63,9 @@ KuGouApp::KuGouApp(MainWindow *parent)
     connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
     enableButton(true);
     ui->stackedWidget->setVerticalMode(true);
-
+    //隐藏刷新遮罩
+    m_refreshMask->hide();
+    this->m_refreshMask->setParent(ui->stackedWidget);
     //默认为你推荐
     ui->recommend_you_toolButton->clicked();
 }
@@ -127,11 +131,20 @@ void KuGouApp::initStackedWidget() {
 }
 
 void KuGouApp::initTitleWidget() {
+    //响应左侧菜栏的显示与否
     connect(ui->title_widget,&TitleWidget::leftMenuShow,this,&KuGouApp::onLeftMenuShow);
+    //响应堆栈窗口切换
     connect(ui->title_widget,&TitleWidget::currentStackChange,this,&KuGouApp::onTitleCurrentStackChange);
+    //响应最大化窗口
     connect(ui->title_widget,&TitleWidget::maxScreen,this,&KuGouApp::onTitleMaxScreen);
+    //响应关于对话框的显示
     connect(ui->title_widget, &TitleWidget::showAboutDialog, this, [this] {
         MainWindow::onShowAboutDialog(true);
+    });
+    //响应刷新窗口的显示与否
+    connect(ui->title_widget, &TitleWidget::refresh, this, [this] {
+        this->m_refreshMask->showLoading();
+        this->m_refreshMask->raise();
     });
 }
 
@@ -409,7 +422,8 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
     ui->song_info_widget->setFixedWidth(this->width()/8+20);
     //更新文字数量
     if(!this->m_player->source().isEmpty() && !this->m_songInfoVector.isEmpty())update_cover_singer_song_HLayout();
-
+    //刷新遮罩大小同步
+    this->m_refreshMask->setGeometry(ui->stackedWidget->geometry());
 }
 
 bool KuGouApp::event(QEvent *event) {
@@ -468,6 +482,11 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
         }
     }
     return MainWindow::eventFilter(watched, event);
+}
+
+void KuGouApp::showEvent(QShowEvent *event) {
+    MainWindow::showEvent(event);
+    this->m_refreshMask->setGeometry(ui->stackedWidget->geometry());
 }
 
 void KuGouApp::on_recommend_you_toolButton_clicked() {

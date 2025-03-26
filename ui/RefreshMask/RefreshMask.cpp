@@ -24,20 +24,20 @@ void RefreshMask::initUi() {
                 "stop:0 rgba(196, 243, 255, 50%),"
                 "stop:1 rgba(255, 214, 255, 50%)"
         ");"
-        "border-radius: 8px;"
+        "border-radius: 12px;"
         "border: none;"
     );
 
     // 添加磨砂效果（仅作用于遮罩层）
-    QGraphicsBlurEffect *blur = new QGraphicsBlurEffect;
+    auto *blur = new QGraphicsBlurEffect;
     blur->setBlurRadius(15); // 模糊半径
     maskWidget->setGraphicsEffect(blur);
     maskWidget->hide();
 
     // 添加阴影效果
-    QGraphicsDropShadowEffect *shadow = new QGraphicsDropShadowEffect;
+    auto *shadow = new QGraphicsDropShadowEffect;
     shadow->setBlurRadius(20);
-    shadow->setColor(QColor(0, 0, 0, 160));
+    shadow->setColor(QColor(0, 0, 0, 50));
     shadow->setOffset(0, 0);
     maskWidget->setGraphicsEffect(shadow);
 
@@ -52,13 +52,16 @@ void RefreshMask::initUi() {
     layout->setAlignment(progress, Qt::AlignCenter);
 }
 
-void RefreshMask::onShowLoading() {
+void RefreshMask::showLoading() {
+    this->raise();          // 确保位于父部件最上层
+    this->show();           // 显示 RefreshMask 自身
     maskWidget->show();
     progress->show(); // 开始旋转动画
-    QTimer::singleShot(1500, this, &RefreshMask::onHideLoading); // 模拟2秒加载
+    QTimer::singleShot(1500, this, &RefreshMask::hideLoading); // 模拟加载
 }
 
-void RefreshMask::onHideLoading() {
+void RefreshMask::hideLoading() {
+    this->hide();
     maskWidget->hide();
     progress->hide();
 }

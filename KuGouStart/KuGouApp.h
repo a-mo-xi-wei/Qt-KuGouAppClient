@@ -20,17 +20,14 @@
 //标题栏
 #include"ListenBook.h"
 #include"Search.h"
-
-//#include"MyMenu.h"//直接使用title的Menu
 #include <ui_KuGouApp.h>
-
-#include"TitleWidget.h"
 
 class QMediaPlayer;
 class QAudioOutput;
 class QButtonGroup;
 class QSizeGrip;
 class QPropertyAnimation;
+class RefreshMask;
 
 QT_BEGIN_NAMESPACE
 
@@ -97,6 +94,8 @@ protected:
     bool event(QEvent *event) override;
 
     bool eventFilter(QObject *watched, QEvent *event) override;
+
+    void showEvent(QShowEvent *event) override;
 
 private slots:
     //menu
@@ -203,6 +202,8 @@ private:
     std::unique_ptr<AllMusic>           m_allMusic{};
     std::unique_ptr<ListenBook>         m_listenBook{};
     std::unique_ptr<Search>             m_search{};
+    //刷新遮罩
+    std::unique_ptr<RefreshMask>        m_refreshMask{};
     //窗口缩放相关
     bool                        m_isTransForming = false; //专门用于在窗口缩放动画播放时，禁用拖动事件
     bool                        m_isSingleCircle = false;

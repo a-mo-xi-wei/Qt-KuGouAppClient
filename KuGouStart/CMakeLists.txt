@@ -65,4 +65,4 @@ add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia MainWindow BasicWidget
         AllMusic Channel DailyRecommend ListenBook Live LocalDownload MusicCloudDisk
         MusicRepository MyCollection PurchasedMusic RecentlyPlayed RecommendForYou
-        Search SongList StartVideo VolumeToolBtn)
+        Search SongList StartVideo VolumeToolBtn RefreshMask)

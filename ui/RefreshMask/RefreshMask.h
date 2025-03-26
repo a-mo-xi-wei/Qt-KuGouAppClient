@@ -19,13 +19,12 @@ class REFRESHMASK_EXPORT RefreshMask : public QWidget {
 public:
     explicit RefreshMask(QWidget *parent = nullptr);
 
+    void showLoading();
+
+    void hideLoading();
+
 private:
     void initUi();
-
-private slots:
-    void onShowLoading();
-
-    void onHideLoading();
 
 protected:
     void resizeEvent(QResizeEvent *event) override;

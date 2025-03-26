@@ -124,6 +124,8 @@ signals:
 
     void maxScreen();
 
+    void refresh();
+
 private:
     Ui::TitleWidget *ui;
     StackType m_lastType = StackType::RecommendForYou;//上一次点击

@@ -203,6 +203,7 @@ void TitleWidget::on_title_return_toolButton_clicked() {
 }
 
 void TitleWidget::on_title_refresh_toolButton_clicked() {
+    emit refresh();
     qDebug() << "刷新界面";
     STREAM_INFO() << "刷新界面";
 }
