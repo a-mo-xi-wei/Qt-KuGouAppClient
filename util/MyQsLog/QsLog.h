@@ -47,7 +47,8 @@ public:
     static Logger& instance();
     static void destroyInstance();
     static Level levelFromLogMessage(const QString& logMessage, bool* conversionSucceeded = 0);
-
+    // 工具函数
+    static const char* get_shortname(std::string_view path);
     ~Logger();
 
     //! Adds a log message destination. Don't add null destinations.
@@ -99,7 +100,7 @@ private:
 };
 
 } // end namespace
-
+#define __FILENAME__ (QsLogging::Logger::get_shortname(__FILE__))
 //! Logging macros: define QS_LOG_LINE_NUMBERS to get the file and line number
 //! in the log output.
 #ifndef QS_LOG_LINE_NUMBERS
@@ -124,22 +125,22 @@ private:
 #else
 #define QLOG_TRACE() \
     if (QsLogging::Logger::instance().loggingLevel() > QsLogging::TraceLevel) {} \
-    else  QsLogging::Logger::Helper(QsLogging::TraceLevel).stream() << __FILE__ << '@' << __LINE__
+    else  QsLogging::Logger::Helper(QsLogging::TraceLevel).stream() << __FILENAME__ << '@' << __LINE__
 #define QLOG_DEBUG() \
     if (QsLogging::Logger::instance().loggingLevel() > QsLogging::DebugLevel) {} \
-    else QsLogging::Logger::Helper(QsLogging::DebugLevel).stream() << __FILE__ << '@' << __LINE__
+    else QsLogging::Logger::Helper(QsLogging::DebugLevel).stream() << __FILENAME__ << '@' << __LINE__
 #define QLOG_INFO()  \
     if (QsLogging::Logger::instance().loggingLevel() > QsLogging::InfoLevel) {} \
-    else QsLogging::Logger::Helper(QsLogging::InfoLevel).stream() << __FILE__ << '@' << __LINE__
+    else QsLogging::Logger::Helper(QsLogging::InfoLevel).stream() << __FILENAME__ << '@' << __LINE__
 #define QLOG_WARN()  \
     if (QsLogging::Logger::instance().loggingLevel() > QsLogging::WarnLevel) {} \
-    else QsLogging::Logger::Helper(QsLogging::WarnLevel).stream() << __FILE__ << '@' << __LINE__
+    else QsLogging::Logger::Helper(QsLogging::WarnLevel).stream() << __FILENAME__ << '@' << __LINE__
 #define QLOG_ERROR() \
     if (QsLogging::Logger::instance().loggingLevel() > QsLogging::ErrorLevel) {} \
-    else QsLogging::Logger::Helper(QsLogging::ErrorLevel).stream() << __FILE__ << '@' << __LINE__
+    else QsLogging::Logger::Helper(QsLogging::ErrorLevel).stream() << __FILENAME__ << '@' << __LINE__
 #define QLOG_FATAL() \
     if (QsLogging::Logger::instance().loggingLevel() > QsLogging::FatalLevel) {} \
-    else QsLogging::Logger::Helper(QsLogging::FatalLevel).stream() << __FILE__ << '@' << __LINE__
+    else QsLogging::Logger::Helper(QsLogging::FatalLevel).stream() << __FILENAME__ << '@' << __LINE__
 #endif
 
 #ifdef QS_LOG_DISABLE

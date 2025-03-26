@@ -176,6 +176,11 @@ Level Logger::levelFromLogMessage(const QString& logMessage, bool* conversionSuc
     return OffLevel;
 }
 
+const char * Logger::get_shortname(std::string_view path) {
+    const size_t pos = path.find_last_of("/\\");
+    return (pos == std::string_view::npos) ? path.data() : path.data() + pos + 1;
+}
+
 Logger::~Logger()
 {
 #ifdef QS_LOG_SEPARATE_THREAD
