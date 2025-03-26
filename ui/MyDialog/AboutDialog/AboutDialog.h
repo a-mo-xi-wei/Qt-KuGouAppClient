@@ -19,6 +19,11 @@ public:
 private:
     void initDialog(QVBoxLayout* lay);
 
+    void initFont();
+
+protected:
+    void paintEvent(QPaintEvent *event) override;
+
 public slots:
     void onShowDialog();
 
@@ -26,6 +31,8 @@ public slots:
 
 private:
     QtMaterialDialog *const m_dialog;
+    QWidget* m_topWidget{};
+    QFont m_font;
 };
 
 
