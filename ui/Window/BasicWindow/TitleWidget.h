@@ -42,7 +42,7 @@ public:
 
     void showMenu(const QPoint &pos);
 
-    RippleButton* max_toolButton();
+    RippleButton* max_toolButton() const;
 
     ~TitleWidget() override;
 

@@ -45,7 +45,7 @@ TitleWidget::~TitleWidget() {
 
 void TitleWidget::initUi() {
     this->setStyleSheet("QWidget#TitleWidget{margin:5px;}");
-    auto menu = new MyMenu(MyMenu::MenuKind::TitleOption,this);
+    const auto menu = new MyMenu(MyMenu::MenuKind::TitleOption,this);
     m_titleOptMenu = menu->getMenu<TitleOptionMenu>();
     connect(m_titleOptMenu,&TitleOptionMenu::about,this,[this]{emit showAboutDialog();});
     connect(m_titleOptMenu,&TitleOptionMenu::exit,this,&TitleWidget::on_close_toolButton_clicked);
@@ -106,7 +106,7 @@ void TitleWidget::showMenu(const QPoint &pos) {
     //qDebug()<<"显示菜单成功";
 }
 
-RippleButton * TitleWidget::max_toolButton() {
+RippleButton * TitleWidget::max_toolButton() const {
     return ui->max_toolButton;
 }
 void TitleWidget::mouseDoubleClickEvent(QMouseEvent *event) {
@@ -319,7 +319,7 @@ void TitleWidget::on_close_toolButton_clicked() {
 }
 
 void TitleWidget::onLeftMenu_recommend_clicked() {
-    if (m_lastType == MusicCloudDisk) emit currentStackChange(StackType::RecommendForYou);
+    if (m_lastType == MusicCloudDisk || m_lastType == DailyRecommend) emit currentStackChange(StackType::RecommendForYou);
     else emit currentStackChange(StackType::RecommendForYou,true);
     this->m_lastType = RecommendForYou;
     qDebug()<<"为你推荐";
@@ -327,7 +327,7 @@ void TitleWidget::onLeftMenu_recommend_clicked() {
 }
 
 void TitleWidget::onLeftMenu_musicRepository_clicked() {
-    if (m_lastType == MusicCloudDisk) emit currentStackChange(StackType::MusicRepository);
+    if (m_lastType == MusicCloudDisk || m_lastType == DailyRecommend) emit currentStackChange(StackType::MusicRepository);
     else emit currentStackChange(StackType::MusicRepository,true);
     this->m_lastType = MusicRepository;
     qDebug()<<"点击乐库";
@@ -335,7 +335,7 @@ void TitleWidget::onLeftMenu_musicRepository_clicked() {
 }
 
 void TitleWidget::onLeftMenu_channel_clicked() {
-    if (m_lastType == MusicCloudDisk) emit currentStackChange(StackType::Channel);
+    if (m_lastType == MusicCloudDisk || m_lastType == DailyRecommend) emit currentStackChange(StackType::Channel);
     else emit currentStackChange(StackType::Channel,true);
     this->m_lastType = Channel;
     qDebug()<<"点击频道";
@@ -343,7 +343,7 @@ void TitleWidget::onLeftMenu_channel_clicked() {
 }
 
 void TitleWidget::onLeftMenu_video_clicked() {
-    if (m_lastType == MusicCloudDisk) emit currentStackChange(StackType::Video);
+    if (m_lastType == MusicCloudDisk || m_lastType == DailyRecommend) emit currentStackChange(StackType::Video);
     else emit currentStackChange(StackType::Video,true);
     this->m_lastType = Video;
     qDebug()<<"点击视频";
@@ -357,7 +357,7 @@ void TitleWidget::onLeftMenu_live_clicked() {
 }
 
 void TitleWidget::onLeftMenu_songList_clicked() {
-    if (m_lastType == MusicCloudDisk) emit currentStackChange(StackType::SongList);
+    if (m_lastType == MusicCloudDisk || m_lastType == DailyRecommend) emit currentStackChange(StackType::SongList);
     else emit currentStackChange(StackType::SongList,true);
     this->m_lastType = SongList;
     qDebug()<<"点击歌单";
@@ -365,7 +365,7 @@ void TitleWidget::onLeftMenu_songList_clicked() {
 }
 
 void TitleWidget::onLeftMenu_dailyRecommend_clicked() {
-    if (m_lastType == MusicCloudDisk) emit currentStackChange(StackType::DailyRecommend);
+    if (m_lastType == MusicCloudDisk || m_lastType == DailyRecommend) emit currentStackChange(StackType::DailyRecommend);
     else emit currentStackChange(StackType::DailyRecommend,false);
     this->m_lastType = DailyRecommend;
     qDebug()<<"点击每日推荐";
@@ -373,7 +373,7 @@ void TitleWidget::onLeftMenu_dailyRecommend_clicked() {
 }
 
 void TitleWidget::onLeftMenu_collection_clicked() {
-    if (m_lastType == MusicCloudDisk) emit currentStackChange(StackType::Collection);
+    if (m_lastType == MusicCloudDisk || m_lastType == DailyRecommend) emit currentStackChange(StackType::Collection);
     else emit currentStackChange(StackType::Collection,true);
     this->m_lastType = Collection;
     qDebug()<<"点击我的收藏";
@@ -381,7 +381,7 @@ void TitleWidget::onLeftMenu_collection_clicked() {
 }
 
 void TitleWidget::onLeftMenu_localDownload_clicked() {
-    if (m_lastType == MusicCloudDisk) emit currentStackChange(StackType::LocalDownload);
+    if (m_lastType == MusicCloudDisk || m_lastType == DailyRecommend) emit currentStackChange(StackType::LocalDownload);
     else emit currentStackChange(StackType::LocalDownload,true);
     this->m_lastType = LocalDownload;
     qDebug()<<"点击本地与下载";
@@ -396,7 +396,7 @@ void TitleWidget::onLeftMenu_musicCloudDisk_clicked() {
 }
 
 void TitleWidget::onLeftMenu_purchasedMusic_clicked() {
-    if (m_lastType == MusicCloudDisk) emit currentStackChange(StackType::PurchasedMusic);
+    if (m_lastType == MusicCloudDisk || m_lastType == DailyRecommend) emit currentStackChange(StackType::PurchasedMusic);
     else emit currentStackChange(StackType::PurchasedMusic,true);
     this->m_lastType = PurchasedMusic;
     qDebug()<<"点击已购音乐";
@@ -404,7 +404,7 @@ void TitleWidget::onLeftMenu_purchasedMusic_clicked() {
 }
 
 void TitleWidget::onLeftMenu_recentlyPlayed_clicked() {
-    if (m_lastType == MusicCloudDisk) emit currentStackChange(StackType::RecentlyPlayed);
+    if (m_lastType == MusicCloudDisk || m_lastType == DailyRecommend) emit currentStackChange(StackType::RecentlyPlayed);
     else emit currentStackChange(StackType::RecentlyPlayed,true);
     this->m_lastType = RecentlyPlayed;
     qDebug()<<"点击最近播放";
@@ -412,7 +412,7 @@ void TitleWidget::onLeftMenu_recentlyPlayed_clicked() {
 }
 
 void TitleWidget::onLeftMenu_allMusic_clicked() {
-    if (m_lastType == MusicCloudDisk) emit currentStackChange(StackType::AllMusic);
+    if (m_lastType == MusicCloudDisk || m_lastType == DailyRecommend) emit currentStackChange(StackType::AllMusic);
     else emit currentStackChange(StackType::AllMusic,true);
     this->m_lastType = AllMusic;
     qDebug()<<"点击全部音乐";
