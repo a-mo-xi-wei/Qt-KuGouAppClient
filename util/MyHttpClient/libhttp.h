@@ -29,7 +29,6 @@ public:
 
 signals:
     void httpProgress(qint64 bytesSent,qint64 bytesTotal);
-    void signalshowlog(QString logstr);
 
 public slots:
     void Progress(qint64 bytesSent,qint64 bytesTotal);

@@ -25,7 +25,7 @@ QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, int tim
         return "";
     }
 
-    emit signalshowlog("CLibhttp::UrlRequestGet: " + url);
+    QLOG_INFO() << ("CLibhttp::UrlRequestGet: " + url);
 
     QUrl aurl(url);
     if (!data.isEmpty()) {
@@ -62,15 +62,14 @@ QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, int tim
         timeout_timer.stop();
 
         if(reply->error() != QNetworkReply::NoError) {
-            QLOG_ERROR() << "http error:" << reply->errorString();
-            emit signalshowlog("CLibhttp::UrlRequestGet:http error:" + reply->errorString());
+            QLOG_ERROR() << "CLibhttp::UrlRequestGet:http error:" + reply->errorString();
         }
         else {
             int nStatusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 
             //QLOG_INFO()<<"status code:"<<nStatusCode;
             //QLOG_INFO()<<"UrlRequestPost:"<<(QDateTime::currentSecsSinceEpoch()-currenttime);
-            emit signalshowlog(QString::asprintf("CLibhttp::UrlRequestGet:status code:%d",nStatusCode));
+            QLOG_INFO() << (QString::asprintf("CLibhttp::UrlRequestGet:status code:%d",nStatusCode));
 
             /*QTextCodec *codec = QTextCodec::codecForName("utf8");
 
@@ -89,10 +88,10 @@ QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, int tim
         reply->abort();
         reply->deleteLater();
         //QLOG_WARN()<<"timeout";
-        emit signalshowlog("CLibhttp::UrlRequestGet:timeout");
+        QLOG_WARN() << ("CLibhttp::UrlRequestGet:timeout");
     }
 
-    //emit signalshowlog("CLibhttp::UrlRequestGet:finished.");
+    //QLOG_INFO("CLibhttp::UrlRequestGet:finished.");
 
     reply->deleteLater();
     return replyData;
@@ -108,8 +107,6 @@ QString CLibhttp::UrlRequestPost(const QString& url,const QString &data,int time
 {
     if(url == "" || data == "" || timeout <= 0)
         return "";
-
-    emit signalshowlog("CLibhttp::UrlRequestPost:"+url);
 
     QTimer timeout_timer;
     QNetworkAccessManager qnam;
@@ -136,8 +133,7 @@ QString CLibhttp::UrlRequestPost(const QString& url,const QString &data,int time
         timeout_timer.stop();
 
         if(reply->error() != QNetworkReply::NoError) {
-            QLOG_ERROR() << "http error:" << reply->errorString();
-            emit signalshowlog("CLibhttp::UrlRequestPost:http error:"+reply->errorString());
+            QLOG_ERROR() << ("CLibhttp::UrlRequestPost:http error:"+reply->errorString());
         }
         else {
             QVariant variant = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
@@ -145,7 +141,7 @@ QString CLibhttp::UrlRequestPost(const QString& url,const QString &data,int time
 
             //QLOG_INFO()<<"status code:"<<nStatusCode;
             //QLOG_INFO()<<"UrlRequestPost:"<<(QDateTime::currentSecsSinceEpoch()-currenttime);
-            emit signalshowlog(QString::asprintf("CLibhttp::UrlRequestPost:status code:%d",nStatusCode));
+            QLOG_INFO() << (QString::asprintf("CLibhttp::UrlRequestPost:status code:%d",nStatusCode));
 
             /*QTextCodec *codec = QTextCodec::codecForName("utf8");
 
@@ -167,10 +163,10 @@ QString CLibhttp::UrlRequestPost(const QString& url,const QString &data,int time
         reply->abort();
         reply->deleteLater();
         //QLOG_WARN()<<"timeout";
-        emit signalshowlog("CLibhttp::UrlRequestPost:timeout");
+        QLOG_WARN() << "CLibhttp::UrlRequestPost:timeout";
     }
 
-    //emit signalshowlog("CLibhttp::UrlRequestPost:finished.");
+    //QLOG_INFO("CLibhttp::UrlRequestPost:finished.");
 
     return "";
 }

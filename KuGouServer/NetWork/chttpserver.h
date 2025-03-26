@@ -54,10 +54,6 @@ public:
         return tmpPort;
     }
 
-signals:
-    // 日志消息
-    void signalshowlog(QString msg);
-
 private:
     // 处理http请求
     static void onHttpAccepted(const QPointer<JQHttpServer::Session> &session,QObject *mainObj);

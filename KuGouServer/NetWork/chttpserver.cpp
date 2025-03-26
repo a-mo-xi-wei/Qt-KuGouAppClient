@@ -231,7 +231,7 @@ void chttpserver::printLog(QsLogging::Level type,QString msg)
         break;
     }
 
-    emit signalshowlog(getCurrentDate()+
+    QLOG_INFO()<<getCurrentDate()+
                   tr("<b>HTTPSER[%1]-</b>").arg(m_isEnableSSL ?
 #ifndef QT_NO_SSL
                                                     m_htmlSslServerManage.getListenPort()
@@ -239,7 +239,7 @@ void chttpserver::printLog(QsLogging::Level type,QString msg)
                                                   -1
 #endif
                                                   : m_htmlServerManage.getListenPort())+
-                  msg);
+                  msg;
 }
 
 /**
