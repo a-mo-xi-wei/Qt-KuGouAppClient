@@ -29,6 +29,9 @@ private:
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
+signals:
+    void loadingFinished();
+
 private:
     QWidget *maskWidget{};
     QtMaterialCircularProgress *progress{};

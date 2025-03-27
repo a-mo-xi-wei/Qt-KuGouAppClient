@@ -64,6 +64,7 @@ void RefreshMask::hideLoading() {
     this->hide();
     maskWidget->hide();
     progress->hide();
+    emit loadingFinished();
 }
 
 void RefreshMask::resizeEvent(QResizeEvent *event) {
