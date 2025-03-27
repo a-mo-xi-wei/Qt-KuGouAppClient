@@ -10,7 +10,9 @@
 #include <QFontDatabase>
 #include <QVBoxLayout>
 #include <QDesktopServices>
+#include <QLabel>
 #include <QPainter>
+#include <QPainterPath>
 #include <QRandomGenerator>
 #include <QStyleOption>
 #include <QUrl>
@@ -24,14 +26,15 @@ AboutDialog::AboutDialog(QWidget *parent)
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     this->setContentsMargins(0, 0, 0, 0);
 
-    m_dialog->setParent(parent);
     auto dialogLayout = new QVBoxLayout;
     dialogLayout->setContentsMargins(0, 0, 0, 0);
 
+    m_dialog->setParent(parent);
     m_dialog->setWindowLayout(dialogLayout);
     m_dialog->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     auto dialogWidget = new QWidget;
+    dialogWidget->setAttribute(Qt::WA_TranslucentBackground);
     dialogWidget->setMinimumHeight(400);
 
     dialogLayout->addWidget(dialogWidget);
@@ -45,14 +48,31 @@ AboutDialog::AboutDialog(QWidget *parent)
 
 void AboutDialog::initDialog(QVBoxLayout *lay) {
     //最上面先来个widget,填充背景图片
-    this->m_topWidget->setFixedHeight(100);
+    this->m_topWidget->setFixedHeight(90);
     this->m_topWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    this->m_topWidget->setStyleSheet(QString("border-image: url(:/RectCover/Res/rectcover/music-rect-cover%1.jpg)").
-        arg(QString::number(QRandomGenerator::global()->bounded(1,20))));
+    this->m_topWidget->setObjectName("topWidget");
+    this->m_topWidget->setStyleSheet(QString("QWidget#topWidget{background-color: transparent;border-image: url(:/RectCover/Res/rectcover/music-rect-cover%1.jpg);}").
+        arg(QRandomGenerator::global()->bounded(1,20)));
+    auto topWidgetLayout = new QHBoxLayout(this->m_topWidget);
+    topWidgetLayout->addStretch();
+    auto lab1 = new QLabel(this->m_topWidget);
+    lab1->setFixedSize(50,50);
+    lab1->setStyleSheet("border-image:url(':/Res/window/windowIcon.png')");
+    auto lab2 = new QLabel(this->m_topWidget);
+    lab2->setFixedHeight(80);
+    lab2->setText("我的酷狗");
+    lab2->setStyleSheet("background-color: transparent;color: #269dff;border: none;");
+    this->m_font.setPointSize(28);
+    this->m_font.setBold(true);
+    lab2->setFont(this->m_font);
+    topWidgetLayout->addWidget(lab1);
+    topWidgetLayout->addWidget(lab2);
+    topWidgetLayout->addStretch();
 
     lay->addWidget(this->m_topWidget);
     lay->addStretch();
 
+    //底部两个按钮
     auto goToGiteeButton = new RippleButton(m_dialog);
     goToGiteeButton->setCursor(Qt::PointingHandCursor);
     goToGiteeButton->setText("前往Gitee");
@@ -60,7 +80,8 @@ void AboutDialog::initDialog(QVBoxLayout *lay) {
     goToGiteeButton->setStyleSheet("background: transparent; border: none;");
     goToGiteeButton->setRadius(10);
     goToGiteeButton->setSpeed(5);
-    this->m_font.setPointSize(10);
+    this->m_font.setPointSize(13);
+    this->m_font.setBold(false);
     goToGiteeButton->setFont(this->m_font);
     auto closeButton = new RippleButton(m_dialog);
     closeButton->setCursor(Qt::PointingHandCursor);
@@ -90,7 +111,7 @@ void AboutDialog::initDialog(QVBoxLayout *lay) {
 }
 
 void AboutDialog::initFont() {
-    int fontId = QFontDatabase::addApplicationFont(":/Res/font/JetBrainsMonoNerdFont-Bold.ttf");
+    int fontId = QFontDatabase::addApplicationFont(":/Res/font/dialog.ttf");
     if (fontId == -1) {
         qWarning() << "字体加载失败。。。";
         STREAM_WARN() << "字体加载失败。。。";
@@ -100,17 +121,9 @@ void AboutDialog::initFont() {
     this->m_font.setFamily(fontFamily);
 }
 
-void AboutDialog::paintEvent(QPaintEvent *event) {
-    QWidget::paintEvent(event);
-    QStyleOption opt;
-    opt.initFrom(this);
-    QPainter p(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
-}
-
 void AboutDialog::onShowDialog() {
-    this->m_topWidget->setStyleSheet(QString("border-image: url(:/RectCover/Res/rectcover/music-rect-cover%1.jpg)").
-        arg(QString::number(QRandomGenerator::global()->bounded(1,100))));
+    this->m_topWidget->setStyleSheet(QString("QWidget#topWidget{background-color: transparent;border-image: url(:/RectCover/Res/rectcover/music-rect-cover%1.jpg);}").
+        arg(QRandomGenerator::global()->bounded(1,20)));
     m_dialog->showDialog();
 }
 

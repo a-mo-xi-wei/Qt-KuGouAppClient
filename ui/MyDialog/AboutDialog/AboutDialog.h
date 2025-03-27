@@ -21,9 +21,6 @@ private:
 
     void initFont();
 
-protected:
-    void paintEvent(QPaintEvent *event) override;
-
 public slots:
     void onShowDialog();
 
