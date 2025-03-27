@@ -34,7 +34,7 @@ void QtMaterialSnackbarPrivate::init()
 
     q->setAttribute(Qt::WA_TransparentForMouseEvents);
 
-    QFont font("Roboto", 10, QFont::Medium);
+    QFont font("Microsoft YaHei Ui", 12, QFont::Medium);
     font.setCapitalization(QFont::AllUppercase);
     q->setFont(font);
 
