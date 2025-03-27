@@ -10,6 +10,9 @@ set(SOURCE_FILES
     ${SOURCE_H}
     ../MaterialCommon/qtmaterialstyle.h
     ../MaterialCommon/qtmaterialstyle.cpp
+    ../MaterialCommon/qtmaterialtheme.h
+    ../MaterialCommon/qtmaterialtheme_p.h
+    ../MaterialCommon/qtmaterialtheme.cpp
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
