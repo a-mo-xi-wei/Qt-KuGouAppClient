@@ -3,6 +3,7 @@
 #include "logger.hpp"
 #include "RippleButton.h"
 #include "RefreshMask.h"
+#include "qtmaterialsnackbar.h"
 
 #include <QMediaMetaData>
 #include <QMediaPlayer>
@@ -45,6 +46,7 @@ KuGouApp::KuGouApp(MainWindow *parent)
     , m_sizeGrip(std::make_unique<QSizeGrip>(this))
     , m_animation(std::make_unique<QPropertyAnimation>(this, "geometry"))
     , m_refreshMask(std::make_unique<RefreshMask>())
+    , m_snackbar(std::make_unique<QtMaterialSnackbar>())
 {
     ui->setupUi(this);
 
@@ -63,9 +65,6 @@ KuGouApp::KuGouApp(MainWindow *parent)
     connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
     enableButton(true);
     ui->stackedWidget->setVerticalMode(true);
-    //隐藏刷新遮罩
-    m_refreshMask->hide();
-    this->m_refreshMask->setParent(ui->stackedWidget);
     //默认为你推荐
     ui->recommend_you_toolButton->clicked();
 }
@@ -90,6 +89,18 @@ void KuGouApp::initUi() {
     //设置窗口属性
     this->setAttribute(Qt::WA_TranslucentBackground,true);
     this->setAttribute(Qt::WA_Hover, true);
+
+    //隐藏刷新遮罩
+    m_refreshMask->hide();
+    this->m_refreshMask->setParent(ui->stackedWidget);
+    connect(this->m_refreshMask.get(),&RefreshMask::loadingFinished,[this] {
+        m_snackbar->addMessage("刷新完成");
+    });
+    //短暂显示的消息提示
+    m_snackbar->setParent(ui->stackedWidget);
+    m_snackbar->setAutoHideDuration(1500);
+    m_snackbar->setBackgroundColor(QColor(132, 202, 192, 200));
+    m_snackbar->setStyleSheet("border-radius: 10px;");
 
     initTitleWidget();
     initStackedWidget();

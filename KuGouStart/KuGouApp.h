@@ -28,6 +28,7 @@ class QButtonGroup;
 class QSizeGrip;
 class QPropertyAnimation;
 class RefreshMask;
+class QtMaterialSnackbar;
 
 QT_BEGIN_NAMESPACE
 
@@ -204,6 +205,7 @@ private:
     std::unique_ptr<Search>             m_search{};
     //刷新遮罩
     std::unique_ptr<RefreshMask>        m_refreshMask{};
+    std::unique_ptr<QtMaterialSnackbar> m_snackbar{};
     //窗口缩放相关
     bool                        m_isTransForming = false; //专门用于在窗口缩放动画播放时，禁用拖动事件
     bool                        m_isSingleCircle = false;
