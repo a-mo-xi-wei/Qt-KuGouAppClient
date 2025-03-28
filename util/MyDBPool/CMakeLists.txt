@@ -33,4 +33,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/../MyCommon)
 
 target_link_libraries(${PROJECT_NAME} Qt6::Sql Qt6::Network Qt6::Gui
-                        Qt6::Widgets MyQsLog)
+                        Qt6::Widgets MyQsLog z)

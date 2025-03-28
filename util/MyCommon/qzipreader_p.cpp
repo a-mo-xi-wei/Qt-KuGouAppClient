@@ -8,7 +8,7 @@
 #include <qdebug.h>
 #include <qdir.h>
 #include <memory>
-#include <zlib.h>
+#include "zlib.h"
 
 // Zip standard version for archives handled by this API
 // (actually, the only basic support of this version is implemented but it is enough for now)
