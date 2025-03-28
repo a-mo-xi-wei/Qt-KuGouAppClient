@@ -17,6 +17,7 @@ namespace mylog {
         static logger instance;
         return instance;
     }
+#endif
 
     bool logger::init(std::string_view log_file_path) {
         namespace fs = std::filesystem;
@@ -101,5 +102,4 @@ namespace mylog {
         return (pos == std::string_view::npos) ? path.data() : path.data() + pos + 1;
     }
 
-#endif
 } // namespace mylog
