@@ -21,6 +21,16 @@
 ### 本人开发工具用的是CLion，非常简便明了，编译的话，生成器使用Ninja，工具链请使用 **_MinGW_** , *MSVC* 虽然能编译通过，但是播放音乐有个BUG，不知道怎么回事。构建类型选择Release（建议）的话，不管构建还是运行都会快很多。
 ![配置如图](image-show/settings01.png)
 
+Ubuntu 下如果报错：
+```
+/home/weiwang/Desktop/KuGou/tools/ccache/ccache: error while loading shared libraries: libhiredis.so.0.14: cannot open shared object file: No such file or directory
+```
+请执行以下命令：
+```
+sudo apt install ccache
+rm YourProjectPath/KuGou/tools/ccache/ccache
+cp /usr/bin/ccache YourProjectPath/KuGou/tools/ccache
+```
 | [Ubuntu/macOS][lin-link] | [Windows][win-link] | [License][license-link] |
 | :----------------------: | :-----------------: | :---------------------: |
 |       ![lin-badge]       |    ![win-badge]     |    ![license-badge]     |
