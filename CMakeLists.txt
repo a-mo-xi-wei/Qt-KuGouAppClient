@@ -18,16 +18,59 @@ if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-if (NOT MSVC)
-    set(CCACHE_PROGRAM "${CMAKE_SOURCE_DIR}/tools/ccache.exe")
+# 使用ccache
+# 统一跨平台ccache配置
+if (NOT MSVC)  # 同时适用于GCC/Clang环境
+    # 检测操作系统类型
+    if (WIN32)
+        set(CCACHE_EXECUTABLE_NAME "ccache.exe")
+    elseif (UNIX)
+        set(CCACHE_EXECUTABLE_NAME "ccache")
+    endif()
+
+    # 优先使用项目自带ccache
+    set(CCACHE_PROGRAM "${CMAKE_SOURCE_DIR}/tools/ccache/${CCACHE_EXECUTABLE_NAME}")
 
     if (EXISTS ${CCACHE_PROGRAM})
-        message(STATUS "Found ccache: ${CCACHE_PROGRAM}")
+        message(STATUS "Using project ccache: ${CCACHE_PROGRAM}")
+        # 设置执行权限（仅Linux需要）
+        if (UNIX)
+            execute_process(COMMAND chmod +x ${CCACHE_PROGRAM})
+        endif()
+    else()
+        # 回退到系统路径查找
+        find_program(CCACHE_PROGRAM ${CCACHE_EXECUTABLE_NAME})
+        if (CCACHE_PROGRAM)
+            message(STATUS "Using system ccache: ${CCACHE_PROGRAM}")
+        else()
+            message(WARNING "ccache not found! Recommended locations:\n"
+                    "  - Windows: ${CMAKE_SOURCE_DIR}/tools/ccache/ccache.exe\n"
+                    "  - Linux: ${CMAKE_SOURCE_DIR}/tools/ccache/ccache")
+        endif()
+    endif()
+
+    # 配置编译器包装
+    if (CCACHE_PROGRAM)
         set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
         set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK "${CCACHE_PROGRAM}")
-    else()
-        message(WARNING "ccache not found in tools directory!")
     endif()
+endif()
+
+# 定义库文件路径
+set(ZLIB_IMPORT_LIB ${CMAKE_SOURCE_DIR}/tools/libs/zlib.lib)
+set(ZLIB_DLL ${CMAKE_SOURCE_DIR}/tools/libs/zlib.dll)
+
+# 验证文件存在性
+if (NOT EXISTS ${ZLIB_IMPORT_LIB})
+    message(FATAL_ERROR "zlib.lib not found at ${ZLIB_IMPORT_LIB}")
+else()
+    message(STATUS "found zlib.lib at ${ZLIB_IMPORT_LIB}")
+endif()
+
+if (NOT EXISTS ${ZLIB_DLL})
+    message(FATAL_ERROR "zlib.dll not found at ${ZLIB_DLL}")
+else()
+    message(STATUS "found zlib.lib at ${ZLIB_DLL}")
 endif()
 
 #ui目录
@@ -41,3 +84,25 @@ add_subdirectory(KuGouStart)
 
 #服务器模块
 add_subdirectory(KuGouServer)
+
+#[[
+        静态库本身不依赖DLL，但如果有其他可执行文件（如KuGouServer）依赖这个静态库，静态库（.lib）在编译时直接嵌入代码。
+        并且静态库内部使用了zlib的动态链接，那么可执行文件运行时还是需要zlib.dll !!!
+]]
+# 仅为需要zlib的目标配置（无需全局include）
+if(TARGET MyDBPool)
+    message(FATAL_ERROR "zlib.lib not found at ${ZLIB_IMPORT_LIB}")
+    # 链接导入库
+    target_link_libraries(MyDBPool PRIVATE ${ZLIB_IMPORT_LIB})
+endif()
+
+# 处理KuGouServer的依赖
+foreach(exe_target KuGouServer)  # KuGouStart 不需要不用加
+    if(TARGET ${exe_target})
+        add_custom_command(TARGET ${exe_target} POST_BUILD
+                COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                ${ZLIB_DLL}
+                $<TARGET_FILE_DIR:${exe_target}>
+        )
+    endif()
+endforeach()
