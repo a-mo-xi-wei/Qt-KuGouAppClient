@@ -132,9 +132,9 @@ static int deflate (Bytef *dest, ulong *destLen, const Bytef *source, ulong sour
     stream.avail_out = (uInt)*destLen;
     if ((uLong)stream.avail_out != *destLen) return Z_BUF_ERROR;
 
-    stream.zalloc = static_cast<z_alloc_func>(nullptr);
-    stream.zfree = static_cast<z_free_func>(nullptr);
-    stream.opaque = static_cast<z_voidpf>(nullptr);
+    stream.zalloc = static_cast<alloc_func>(nullptr);
+    stream.zfree = static_cast<free_func>(nullptr);
+    stream.opaque = static_cast<voidpf>(nullptr);
 
     err = deflateInit2(&stream, Z_DEFAULT_COMPRESSION, Z_DEFLATED, -MAX_WBITS, 8, Z_DEFAULT_STRATEGY);
     if (err != Z_OK) return err;

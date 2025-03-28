@@ -9,7 +9,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Sql Network Gui Widgets ZlibPrivate)
+find_package(Qt6 REQUIRED COMPONENTS Sql Network Gui Widgets)
 
 file(GLOB SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
@@ -33,4 +33,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/../MyCommon)
 
 target_link_libraries(${PROJECT_NAME} Qt6::Sql Qt6::Network Qt6::Gui
-                        Qt6::Widgets Qt6::ZlibPrivate MyQsLog)
+                        Qt6::Widgets MyQsLog)
