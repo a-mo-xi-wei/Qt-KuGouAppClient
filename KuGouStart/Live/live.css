@@ -36,6 +36,7 @@ QWidget#attention_widget QPushButton:checked{
 QToolButton#all_toolButton{
     font-size: 11px;
     color: #9f9f9f;
+    background-color: rgba(255,255,255,0);
 }
 QToolButton#all_toolButton:hover{
     color: #3AA1FF;

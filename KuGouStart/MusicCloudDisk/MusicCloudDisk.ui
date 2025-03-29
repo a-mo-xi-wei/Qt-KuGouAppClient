@@ -204,6 +204,9 @@
              <property name="checked">
               <bool>true</bool>
              </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item>
@@ -298,6 +301,9 @@
               <string>正在上传</string>
              </property>
              <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="flat">
               <bool>true</bool>
              </property>
             </widget>

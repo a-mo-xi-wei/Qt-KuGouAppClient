@@ -9,6 +9,7 @@
 
 PlayWidget::PlayWidget(QWidget *parent)
     : QWidget(parent) {
+    this->setAttribute(Qt::WA_StyledBackground, true);
     this->setObjectName("PlayWidget");
     this->setStyleSheet("QWidget#PlayWidget{margin:5px;}");
 }

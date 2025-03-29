@@ -348,7 +348,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>-390</y>
         <width>910</width>
         <height>743</height>
        </rect>
@@ -699,6 +699,9 @@
                <property name="checked">
                 <bool>true</bool>
                </property>
+               <property name="flat">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
              <item>
@@ -715,6 +718,9 @@
                 <string>我看过的</string>
                </property>
                <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <property name="flat">
                 <bool>true</bool>
                </property>
               </widget>
@@ -735,6 +741,9 @@
                <property name="checkable">
                 <bool>true</bool>
                </property>
+               <property name="flat">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
              <item>
@@ -751,6 +760,9 @@
                 <string>我管理的</string>
                </property>
                <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <property name="flat">
                 <bool>true</bool>
                </property>
               </widget>

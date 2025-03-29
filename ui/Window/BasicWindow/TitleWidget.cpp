@@ -27,6 +27,7 @@ TitleWidget::TitleWidget(QWidget *parent)
 {
     ui->setupUi(this);
     initUi();
+    this->setAttribute(Qt::WA_StyledBackground, true);
     {
         //设置样式
         QFile file(GET_CURRENT_DIR + QStringLiteral("/title.css"));

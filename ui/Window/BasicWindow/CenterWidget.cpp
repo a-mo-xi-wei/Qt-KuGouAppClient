@@ -7,6 +7,7 @@
 
 CenterWidget::CenterWidget(QWidget *parent)
     : QWidget(parent) {
+    this->setAttribute(Qt::WA_StyledBackground, true);
     this->setObjectName("CenterWidget");
     this->setStyleSheet("QWidget#CenterWidget{margin:5px;}");
 }

@@ -226,6 +226,9 @@
             <property name="checked">
              <bool>true</bool>
             </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
           <item>
@@ -237,6 +240,9 @@
              <string>欧美</string>
             </property>
             <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="flat">
              <bool>true</bool>
             </property>
            </widget>
@@ -252,6 +258,9 @@
             <property name="checkable">
              <bool>true</bool>
             </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
           <item>
@@ -263,6 +272,9 @@
              <string>日本</string>
             </property>
             <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="flat">
              <bool>true</bool>
             </property>
            </widget>
@@ -287,6 +299,9 @@
             </property>
             <property name="text">
              <string>更多 &gt;</string>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -581,6 +596,9 @@
                   <property name="text">
                    <string>更多 &gt;</string>
                   </property>
+                  <property name="flat">
+                   <bool>true</bool>
+                  </property>
                  </widget>
                 </item>
                </layout>
@@ -727,6 +745,9 @@
                   </property>
                   <property name="text">
                    <string>更多 &gt;</string>
+                  </property>
+                  <property name="flat">
+                   <bool>true</bool>
                   </property>
                  </widget>
                 </item>

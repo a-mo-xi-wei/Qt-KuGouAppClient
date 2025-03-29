@@ -17,3 +17,6 @@ QWidget#classify_widget > QPushButton:checked{
 QStackedWidget QToolButton:hover{
     color: #26A1FF;
 }
+QToolButton{
+    background-color: transparent;
+}
