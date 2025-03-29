@@ -40,6 +40,7 @@ set(SOURCE_FILE_WATER
 )
 #定义派生类动态库（继承基类）
 add_library(ZoomButtonLibrary SHARED ${SOURCE_FILE_WATER})
+target_compile_definitions(ZoomButtonLibrary PRIVATE ZOOMBUTTON_LIBRARY)
 
 # 同样为派生类动态库设置路径
 if(WIN32)

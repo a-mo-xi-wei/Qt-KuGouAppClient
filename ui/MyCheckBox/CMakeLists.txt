@@ -40,6 +40,7 @@ set(SOURCE_FILE_CHECK1
     CheckBox1.cpp
 )
 add_library(CheckBox1 SHARED ${SOURCE_FILE_CHECK1})
+target_compile_definitions(CheckBox1 PRIVATE CHECKBOX1_LIBRARY)
 
 if(WIN32)
     # Windows: DLL → bin/, 导入库 → lib/

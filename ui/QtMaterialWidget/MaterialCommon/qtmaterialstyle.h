@@ -4,12 +4,18 @@
 #include <QCommonStyle>
 #include "qtmaterialstyle_p.h"
 
+#if defined(MATERIALCOMMON_LIBRARY)
+#define MATERIALCOMMON_EXPORT Q_DECL_EXPORT
+#else
+#define MATERIALCOMMON_EXPORT Q_DECL_IMPORT
+#endif
+
 #define MATERIAL_DISABLE_THEME_COLORS \
     if (d->useThemeColors == true) { d->useThemeColors = false; }
 
 class QtMaterialTheme;
 
-class QtMaterialStyle : public QCommonStyle
+class MATERIALCOMMON_EXPORT QtMaterialStyle : public QCommonStyle
 {
     Q_OBJECT
 

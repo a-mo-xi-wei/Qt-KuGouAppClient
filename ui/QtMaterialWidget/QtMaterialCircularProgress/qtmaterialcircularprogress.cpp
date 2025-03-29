@@ -5,7 +5,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include "qtmaterialcircularprogress_internal.h"
-#include "../MaterialCommon/qtmaterialstyle.h"
+#include "qtmaterialstyle.h"
 
 /*!
  *  \class QtMaterialCircularProgressPrivate

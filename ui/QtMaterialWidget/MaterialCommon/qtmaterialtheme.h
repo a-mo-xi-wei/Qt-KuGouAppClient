@@ -6,6 +6,12 @@
 #include <QColor>
 #include <QIcon>
 
+#if defined(MATERIALCOMMON_LIBRARY)
+#define MATERIALCOMMON_EXPORT Q_DECL_EXPORT
+#else
+#define MATERIALCOMMON_EXPORT Q_DECL_IMPORT
+#endif
+
 namespace Material
 {
     enum ButtonPreset {
@@ -318,7 +324,7 @@ namespace Material
 
 class QtMaterialThemePrivate;
 
-class QtMaterialTheme : public QObject
+class MATERIALCOMMON_EXPORT QtMaterialTheme : public QObject
 {
     Q_OBJECT
 

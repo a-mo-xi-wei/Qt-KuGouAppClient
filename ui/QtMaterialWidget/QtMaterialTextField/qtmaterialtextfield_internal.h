@@ -2,7 +2,7 @@
 #define QTMATERIALTEXTFIELD_INTERNAL_H
 
 #include <QStateMachine>
-#include <QtWidgets/QWidget>
+#include <QWidget>
 #include "qtmaterialtextfield.h"
 
 class QPropertyAnimation;

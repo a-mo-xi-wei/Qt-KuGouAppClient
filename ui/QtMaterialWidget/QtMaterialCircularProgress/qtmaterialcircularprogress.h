@@ -2,7 +2,7 @@
 #define QTMATERIALCIRCULARPROGRESS_H
 
 #include <QProgressBar>
-#include "../MaterialCommon/qtmaterialtheme.h"
+#include "qtmaterialtheme.h"
 
 #if defined(MATERIALCIRCULARPROGRESS_LIBRARY)
 #define MATERIALCIRCULARPROGRESS_EXPORT Q_DECL_EXPORT

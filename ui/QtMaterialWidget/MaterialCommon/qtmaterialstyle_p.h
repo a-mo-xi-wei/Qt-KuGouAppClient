@@ -6,7 +6,13 @@
 class QtMaterialStyle;
 class QtMaterialTheme;
 
-class QtMaterialStylePrivate
+#if defined(MATERIALCOMMON_LIBRARY)
+#define MATERIALCOMMON_EXPORT Q_DECL_EXPORT
+#else
+#define MATERIALCOMMON_EXPORT Q_DECL_IMPORT
+#endif
+
+class MATERIALCOMMON_EXPORT QtMaterialStylePrivate
 {
     Q_DISABLE_COPY(QtMaterialStylePrivate)
     Q_DECLARE_PUBLIC(QtMaterialStyle)

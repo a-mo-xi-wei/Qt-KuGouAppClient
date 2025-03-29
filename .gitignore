@@ -6,5 +6,7 @@ cmake-build*
 /build
 CMakeLists.txt.user
 #忽略VS构建产生的CMakePresets
+.vs
+out
 CMakePresets.json
 CMakeUserPresets.json

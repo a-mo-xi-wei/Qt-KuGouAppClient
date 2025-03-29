@@ -6,9 +6,15 @@
  *  非常实用，有兴趣的可以star
  */
 
+#if defined(CHECKBOX1_LIBRARY)
+#define CHECKBOX1_EXPORT Q_DECL_EXPORT
+#else
+#define CHECKBOX1_EXPORT Q_DECL_IMPORT
+#endif
+
 #include "AniCheckBox.h"
 
-class CheckBox1 : public AniCheckBox
+class CHECKBOX1_EXPORT CheckBox1 : public AniCheckBox
 {
 public:
 

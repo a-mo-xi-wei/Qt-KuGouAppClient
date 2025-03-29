@@ -1,7 +1,7 @@
 #ifndef QTMATERIALSNACKBAR_H
 #define QTMATERIALSNACKBAR_H
 
-#include "../MaterialCommon/qtmaterialoverlaywidget.h"
+#include "qtmaterialoverlaywidget.h"
 
 #if defined(MATERIALSNACKBAR_LIBRARY)
 #define MATERIALSNACKBAR_EXPORT Q_DECL_EXPORT

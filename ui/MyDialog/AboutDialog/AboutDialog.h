@@ -7,10 +7,16 @@
 
 #include <QWidget>
 
+#if defined(ABOUTDIALOG_LIBRARY)
+#define ABOUTDIALOG_EXPORT Q_DECL_EXPORT
+#else
+#define ABOUTDIALOG_EXPORT Q_DECL_IMPORT
+#endif
+
 class QVBoxLayout;
 class QtMaterialDialog;
 
-class AboutDialog : public QWidget {
+class ABOUTDIALOG_EXPORT AboutDialog : public QWidget {
 Q_OBJECT
 
 public:

@@ -5,9 +5,15 @@
 #ifndef WATERZOOMBUTTON_H
 #define WATERZOOMBUTTON_H
 
+#if defined(ZOOMBUTTON_LIBRARY)
+#define ZOOMBUTTON_EXPORT Q_DECL_EXPORT
+#else
+#define ZOOMBUTTON_EXPORT Q_DECL_IMPORT
+#endif
+
 #include "InteractiveButtonBase.h"
 
-class WaterZoomButton : public InteractiveButtonBase {
+class ZOOMBUTTON_EXPORT WaterZoomButton : public InteractiveButtonBase {
     Q_OBJECT
 
 public:
