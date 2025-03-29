@@ -38,4 +38,13 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
         PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/NetWork)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Sql Qt6::WebSockets
-        SJwt MyQsLog JQHttpServer MyDBPoll)
+        SJwt MyQsLog JQHttpServer MyDBPool)
+
+# 动态库需处理 DLL 复制（仅 Windows）
+if(WIN32)
+    add_custom_command(TARGET KuGou-Server POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy
+            ${ZLIB_DLL}
+            $<TARGET_FILE_DIR:KuGou-Server>
+    )
+endif()

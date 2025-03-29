@@ -58,7 +58,6 @@ if (NOT MSVC)  # 同时适用于GCC/Clang环境
     endif()
 endif()
 
-#[[
 # 定义库文件路径
 set(ZLIB_IMPORT_LIB ${CMAKE_SOURCE_DIR}/tools/zlib/libs/zlib.lib)
 set(ZLIB_DLL ${CMAKE_SOURCE_DIR}/tools/zlib/libs/zlib.dll)
@@ -75,7 +74,7 @@ if (NOT EXISTS ${ZLIB_DLL})
 else()
     message(STATUS "found zlib.lib at ${ZLIB_DLL}")
 endif()
-]]
+
 #ui目录
 add_subdirectory(ui)
 
@@ -87,27 +86,3 @@ add_subdirectory(KuGouStart)
 
 #服务器模块
 add_subdirectory(KuGouServer)
-
-#[[
-        静态库本身不依赖DLL，但如果有其他可执行文件（如KuGouServer）依赖这个静态库，静态库（.lib）在编译时直接嵌入代码。
-        并且静态库内部使用了zlib的动态链接，那么可执行文件运行时还是需要zlib.dll !!!
-]]
-#[[
-if(TARGET MyDBPool)
-    message(STATUS "***************** zlib.lib found at ${ZLIB_IMPORT_LIB}")
-    target_include_directories(MyDBPool PRIVATE ${CMAKE_SOURCE_DIR}/tools/zlib/include)
-    # 链接导入库
-    target_link_libraries(MyDBPool PRIVATE ${ZLIB_IMPORT_LIB})
-endif()
-
-# 处理KuGouServer的依赖
-if(TARGET KuGouServer)
-    target_include_directories(KuGouServer PRIVATE ${CMAKE_SOURCE_DIR}/tools/zlib/include)
-    target_link_libraries(KuGouServer PRIVATE ${ZLIB_IMPORT_LIB})
-    add_custom_command(TARGET KuGouServer POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            ${ZLIB_DLL}
-            $<TARGET_FILE_DIR:KuGouServer>
-    )
-endif()
-]]
