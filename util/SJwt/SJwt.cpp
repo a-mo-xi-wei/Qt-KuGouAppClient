@@ -1,5 +1,5 @@
 ﻿#include "SJwt.h"
-#include <QCryptoGraphichash>
+#include <QCryptographicHash>
 using namespace SJwt;
 
 SJwt::SJwtObject::SJwtObject(SAlgorithm alg, const QJsonObject& playload, QAnyStringView secret)
