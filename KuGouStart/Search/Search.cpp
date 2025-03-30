@@ -6,7 +6,7 @@
 
 #include "Search.h"
 #include "ui_Search.h"
-#include "MyFlowLayout.h"
+#include "ElaFlowLayout.h"
 #include "logger.hpp"
 
 #include <QFile>
@@ -105,16 +105,20 @@ void Search::initStackWidget() {
     this->m_specialWidget   = std::make_unique<QWidget>(ui->stackedWidget);
     this->m_channelWidget   = std::make_unique<QWidget>(ui->stackedWidget);
     //设置布局
-    auto lay1 = new MyFlowLayout(this->m_recommendWidget.get(),10, -1, 2);
+    auto lay1 = new ElaFlowLayout(this->m_recommendWidget.get(),10, 5, 5);
+    lay1->setIsAnimation(true);
     this->m_recommendWidget->setLayout(lay1);
     this->m_recommendWidget->setFixedHeight(1200);
-    auto lay2 = new MyFlowLayout(this->m_rankWidget.get(),10, -1, -1);
+    auto lay2 = new ElaFlowLayout(this->m_rankWidget.get(),10, 5, 5);
+    lay2->setIsAnimation(true);
     this->m_rankWidget->setLayout(lay2);
     this->m_rankWidget->setFixedHeight(600);
-    auto lay3 = new MyFlowLayout(this->m_specialWidget.get(),10, -1, -1);
+    auto lay3 = new ElaFlowLayout(this->m_specialWidget.get(),10, 5, 5);
+    lay3->setIsAnimation(true);
     this->m_specialWidget->setLayout(lay3);
     this->m_specialWidget->setFixedHeight(800);
-    auto lay4 = new MyFlowLayout(this->m_channelWidget.get(),10, -1, -1);
+    auto lay4 = new ElaFlowLayout(this->m_channelWidget.get(),10, 5, 5);
+    lay4->setIsAnimation(true);
     this->m_channelWidget->setLayout(lay4);
     this->m_channelWidget->setFixedHeight(200);
     this->m_channelWidget->setObjectName("channelWidget");
@@ -220,7 +224,7 @@ void Search::on_recommend_pushButton_clicked() {
     ui->index_label4->hide();
     auto handle = [this] {
         refresh();
-        auto lay = static_cast<MyFlowLayout*>(this->m_recommendWidget->layout());
+        auto lay = static_cast<ElaFlowLayout*>(this->m_recommendWidget->layout());
         if(!lay) {
             qDebug()<<" m_recommendWidget 布局错误";
             STREAM_ERROR()<<" m_recommendWidget 布局错误";
@@ -260,7 +264,7 @@ void Search::on_rank_pushButton_clicked() {
     ui->index_label4->hide();
     auto handle = [this] {
         refresh();
-        auto lay = static_cast<MyFlowLayout*>(this->m_rankWidget->layout());
+        auto lay = static_cast<ElaFlowLayout*>(this->m_rankWidget->layout());
         if(!lay) {
             qDebug()<<" m_rankWidget 布局错误";
             STREAM_ERROR()<<" m_rankWidget 布局错误";
@@ -300,7 +304,7 @@ void Search::on_special_pushButton_clicked() {
     ui->index_label4->hide();
     auto handle = [this] {
         refresh();
-        auto lay = static_cast<MyFlowLayout*>(this->m_specialWidget->layout());
+        auto lay = static_cast<ElaFlowLayout*>(this->m_specialWidget->layout());
         if(!lay) {
             qDebug()<<" m_specialWidget 布局错误";
             STREAM_ERROR()<<" m_specialWidget 布局错误";
@@ -340,7 +344,7 @@ void Search::on_channel_pushButton_clicked() {
     ui->index_label4->show();
     auto handle = [this] {
         refresh();
-        auto lay = static_cast<MyFlowLayout*>(this->m_channelWidget->layout());
+        auto lay = static_cast<ElaFlowLayout*>(this->m_channelWidget->layout());
         if(!lay) {
             qDebug()<<" m_channelWidget 布局错误";
             STREAM_ERROR()<<" m_channelWidget 布局错误";
