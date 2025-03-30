@@ -154,6 +154,7 @@ void KuGouApp::initTitleWidget() {
     });
     //响应刷新窗口的显示与否
     connect(ui->title_widget, &TitleWidget::refresh, this, [this] {
+        updateSize();
         this->m_refreshMask->showLoading();
         this->m_refreshMask->raise();
     });
@@ -434,7 +435,10 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
     //更新文字数量
     if(!this->m_player->source().isEmpty() && !this->m_songInfoVector.isEmpty())update_cover_singer_song_HLayout();
     //刷新遮罩大小同步
-    this->m_refreshMask->setGeometry(ui->stackedWidget->geometry());
+    auto rect = ui->stackedWidget->geometry();
+    rect.setLeft(5);
+    rect.setRight(this->width()-5);
+    this->m_refreshMask->setGeometry(rect);
 }
 
 bool KuGouApp::event(QEvent *event) {
@@ -497,7 +501,11 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
 
 void KuGouApp::showEvent(QShowEvent *event) {
     MainWindow::showEvent(event);
-    this->m_refreshMask->setGeometry(ui->stackedWidget->geometry());
+    updateSize();
+    auto rect = ui->stackedWidget->geometry();
+    rect.setLeft(5);
+    rect.setRight(this->width()-5);
+    this->m_refreshMask->setGeometry(rect);
 }
 
 void KuGouApp::on_recommend_you_toolButton_clicked() {
