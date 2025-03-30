@@ -63,5 +63,8 @@ add_subdirectory(MyDialog)
 #Material模块
 add_subdirectory(QtMaterialWidget)
 
+#ElaWidget模块
+add_subdirectory(ElaWidget)
+
 #遮罩刷新模块
 add_subdirectory(RefreshMask)
