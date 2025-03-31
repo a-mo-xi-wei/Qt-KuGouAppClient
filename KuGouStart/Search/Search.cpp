@@ -7,6 +7,7 @@
 #include "Search.h"
 #include "ui_Search.h"
 #include "ElaFlowLayout.h"
+#include "MyFlowLayout.h"
 #include "logger.hpp"
 
 #include <QFile>
@@ -40,9 +41,9 @@ Search::Search(QWidget *parent) :
         STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
-    initStackWidget();
     initUi();
-    this->m_currentBtn = ui->recommend_pushButton;
+    initStackWidget();
+    this->m_currentBtn = nullptr;
 
     //动画结束，恢复可交互
     connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
@@ -105,23 +106,19 @@ void Search::initStackWidget() {
     this->m_specialWidget   = std::make_unique<QWidget>(ui->stackedWidget);
     this->m_channelWidget   = std::make_unique<QWidget>(ui->stackedWidget);
     //设置布局
-    auto lay1 = new ElaFlowLayout(this->m_recommendWidget.get(),5, 6, 6);
-    lay1->setContentsMargins(10,5,5,5);
-    lay1->setIsAnimation(true);
+    //设置布局
+    auto lay1 = new MyFlowLayout(this->m_recommendWidget.get(),10, -1, 2);
     this->m_recommendWidget->setLayout(lay1);
-    this->m_recommendWidget->setFixedHeight(1200);
-    auto lay2 = new ElaFlowLayout(this->m_rankWidget.get(),5, 6, 6);
-    lay2->setContentsMargins(10,5,5,5);
+    this->m_recommendWidget->setFixedHeight(1000);
+    auto lay2 = new ElaFlowLayout(this->m_rankWidget.get(),5, 8, 6);
     lay2->setIsAnimation(true);
     this->m_rankWidget->setLayout(lay2);
-    this->m_rankWidget->setFixedHeight(600);
-    auto lay3 = new ElaFlowLayout(this->m_specialWidget.get(),5, 6, 6);
-    lay3->setContentsMargins(10,5,5,5);
+    this->m_rankWidget->setFixedHeight(500);
+    auto lay3 = new ElaFlowLayout(this->m_specialWidget.get(),5, 8, 6);
     lay3->setIsAnimation(true);
     this->m_specialWidget->setLayout(lay3);
-    this->m_specialWidget->setFixedHeight(800);
-    auto lay4 = new ElaFlowLayout(this->m_channelWidget.get(),5, 6, 6);
-    lay4->setContentsMargins(10,5,5,5);
+    this->m_specialWidget->setFixedHeight(700);
+    auto lay4 = new ElaFlowLayout(this->m_channelWidget.get(),5, 8, 6);
     lay4->setIsAnimation(true);
     this->m_channelWidget->setLayout(lay4);
     this->m_channelWidget->setFixedHeight(200);
@@ -131,6 +128,9 @@ void Search::initStackWidget() {
     ui->stackedWidget->addWidget(this->m_rankWidget.get());
     ui->stackedWidget->addWidget(this->m_specialWidget.get());
     ui->stackedWidget->addWidget(this->m_channelWidget.get());
+    ui->stackedWidget->setCurrentWidget(this->m_rankWidget.get());
+    ui->recommend_pushButton->clicked();
+    on_recommend_pushButton_clicked();
 }
 
 void Search::initCoverVector() {
@@ -220,14 +220,15 @@ void Search::showEvent(QShowEvent *event) {
 }
 
 void Search::on_recommend_pushButton_clicked() {
-    enableButton(false);
+    if (ui->stackedWidget->currentWidget() == this->m_recommendWidget.get())return;
+
     ui->index_label1->show();
     ui->index_label2->hide();
     ui->index_label3->hide();
     ui->index_label4->hide();
     auto handle = [this] {
         refresh();
-        auto lay = static_cast<ElaFlowLayout*>(this->m_recommendWidget->layout());
+        auto lay = static_cast<MyFlowLayout*>(this->m_recommendWidget->layout());
         if(!lay) {
             qDebug()<<" m_recommendWidget 布局错误";
             STREAM_ERROR()<<" m_recommendWidget 布局错误";
@@ -260,6 +261,7 @@ void Search::on_recommend_pushButton_clicked() {
 }
 
 void Search::on_rank_pushButton_clicked() {
+    if (ui->stackedWidget->currentWidget() == this->m_rankWidget.get())return;
     enableButton(false);
     ui->index_label1->hide();
     ui->index_label2->show();
@@ -300,6 +302,7 @@ void Search::on_rank_pushButton_clicked() {
 }
 
 void Search::on_special_pushButton_clicked() {
+    if (ui->stackedWidget->currentWidget() == this->m_specialWidget.get())return;
     enableButton(false);
     ui->index_label1->hide();
     ui->index_label2->hide();
@@ -340,6 +343,7 @@ void Search::on_special_pushButton_clicked() {
 }
 
 void Search::on_channel_pushButton_clicked() {
+    if (ui->stackedWidget->currentWidget() == this->m_channelWidget.get())return;
     enableButton(false);
     ui->index_label1->hide();
     ui->index_label2->hide();
