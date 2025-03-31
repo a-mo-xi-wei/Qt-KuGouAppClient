@@ -105,19 +105,23 @@ void Search::initStackWidget() {
     this->m_specialWidget   = std::make_unique<QWidget>(ui->stackedWidget);
     this->m_channelWidget   = std::make_unique<QWidget>(ui->stackedWidget);
     //设置布局
-    auto lay1 = new ElaFlowLayout(this->m_recommendWidget.get(),10, 5, 5);
+    auto lay1 = new ElaFlowLayout(this->m_recommendWidget.get(),5, 6, 6);
+    lay1->setContentsMargins(10,5,5,5);
     lay1->setIsAnimation(true);
     this->m_recommendWidget->setLayout(lay1);
     this->m_recommendWidget->setFixedHeight(1200);
-    auto lay2 = new ElaFlowLayout(this->m_rankWidget.get(),10, 5, 5);
+    auto lay2 = new ElaFlowLayout(this->m_rankWidget.get(),5, 6, 6);
+    lay2->setContentsMargins(10,5,5,5);
     lay2->setIsAnimation(true);
     this->m_rankWidget->setLayout(lay2);
     this->m_rankWidget->setFixedHeight(600);
-    auto lay3 = new ElaFlowLayout(this->m_specialWidget.get(),10, 5, 5);
+    auto lay3 = new ElaFlowLayout(this->m_specialWidget.get(),5, 6, 6);
+    lay3->setContentsMargins(10,5,5,5);
     lay3->setIsAnimation(true);
     this->m_specialWidget->setLayout(lay3);
     this->m_specialWidget->setFixedHeight(800);
-    auto lay4 = new ElaFlowLayout(this->m_channelWidget.get(),10, 5, 5);
+    auto lay4 = new ElaFlowLayout(this->m_channelWidget.get(),5, 6, 6);
+    lay4->setContentsMargins(10,5,5,5);
     lay4->setIsAnimation(true);
     this->m_channelWidget->setLayout(lay4);
     this->m_channelWidget->setFixedHeight(200);
@@ -213,7 +217,6 @@ void Search::showEvent(QShowEvent *event) {
     QWidget::showEvent(event);
     if (this->m_currentBtn)this->m_currentBtn->clicked();
     enableButton(true);
-
 }
 
 void Search::on_recommend_pushButton_clicked() {

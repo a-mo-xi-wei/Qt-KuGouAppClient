@@ -1,12 +1,10 @@
 #include "ElaFlowLayout.h"
-
-#include <QPropertyAnimation>
-#include <QWidget>
-
 #include "ElaFlowLayoutPrivate.h"
 
+#include <QWidget>
+
 ElaFlowLayout::ElaFlowLayout(QWidget* parent, int margin, int hSpacing, int vSpacing)
-    : QLayout(parent), d_ptr(new ElaFlowLayoutPrivate(this))
+    : QLayout(parent), d_ptr(new ElaFlowLayoutPrivate())
 {
     Q_D(ElaFlowLayout);
     d->q_ptr = this;
@@ -17,7 +15,7 @@ ElaFlowLayout::ElaFlowLayout(QWidget* parent, int margin, int hSpacing, int vSpa
 }
 
 ElaFlowLayout::ElaFlowLayout(int margin, int hSpacing, int vSpacing)
-    : d_ptr(new ElaFlowLayoutPrivate(this))
+    : d_ptr(new ElaFlowLayoutPrivate())
 {
     Q_D(ElaFlowLayout);
     d->q_ptr = this;

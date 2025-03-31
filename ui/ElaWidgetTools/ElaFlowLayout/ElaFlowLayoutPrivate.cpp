@@ -4,8 +4,9 @@
 #include <QPropertyAnimation>
 #include <QWidget>
 
-ElaFlowLayoutPrivate::ElaFlowLayoutPrivate(ElaFlowLayout* q)
-    : q_ptr(q) {  // 初始化q_ptr指向公有类实例
+ElaFlowLayoutPrivate::ElaFlowLayoutPrivate(QObject* parent)
+    : QObject{parent}
+{
 }
 
 ElaFlowLayoutPrivate::~ElaFlowLayoutPrivate()
