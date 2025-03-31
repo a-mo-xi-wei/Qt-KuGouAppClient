@@ -647,7 +647,7 @@ void KuGouApp::onKeyRight() {
 
 void KuGouApp::onTitleCurrentStackChange(const int &index,const bool& slide) {
     if (ui->stackedWidget->currentIndex() == index)return;
-    if (slide) ui->stackedWidget->slideInIdx(index);
+    if (slide) enableButton(false),ui->stackedWidget->slideInIdx(index);
     else ui->stackedWidget->setCurrentIndex(index);
     updateSize();
 }
