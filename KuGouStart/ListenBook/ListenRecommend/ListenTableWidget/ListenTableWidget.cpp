@@ -36,6 +36,10 @@ int ListenTableWidget::getCnt() const {
     return this->m_cnt;
 }
 
+QString ListenTableWidget::getTitle()const {
+    return ui->title_label->text();
+}
+
 void ListenTableWidget::initUi() {
     ui->toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/refresh-gray.svg")));
     ui->toolButton->setStyleSheet(R"(

@@ -57,6 +57,12 @@ private slots:
 
     void on_japan_pushButton_clicked();
 
+    void on_more_pushButton1_clicked();
+
+    void on_more_pushButton2_clicked();
+
+    void on_more_pushButton3_clicked();
+
 private:
     Ui::MusicRepository *ui;
     QWidget *m_topWindow{};

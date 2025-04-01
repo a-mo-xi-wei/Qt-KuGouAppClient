@@ -8,6 +8,7 @@
 #include "ui_LiveMusicPartWidget.h"
 #include "Async.h"
 #include "logger.hpp"
+#include "ElaMessageBar.h"
 
 #include <QDir>
 #include <QFile>
@@ -16,6 +17,7 @@
 #include <QJsonObject>
 #include <random>
 #include <QRandomGenerator>
+
 
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -53,6 +55,9 @@ void LiveMusicPartWidget::initUi() {
 
     const auto rightLabImgPath = ":/Live/Res/live/right.svg";
     ui->right_label->setStyleSheet(QString("border-image:url('%1');").arg(rightLabImgPath));
+
+    ui->left_label->installEventFilter(this);
+    ui->right_label->installEventFilter(this);
 
     // 异步解析 JSON 文件
     QString jsonPath = GET_CURRENT_DIR + QStringLiteral("/../text.json");
@@ -197,4 +202,19 @@ void LiveMusicPartWidget::resizeEvent(QResizeEvent *event) {
     else {
         ui->widget_4->hide();
     }
+}
+bool LiveMusicPartWidget::eventFilter(QObject *watched, QEvent *event) {
+    if (watched == ui->left_label) {
+        if (event->type() == QEvent::MouseButtonPress) {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                        QString("暂无更多 %1").arg(ui->title_label->text()),2000,this->window());
+        }
+    }
+    if (watched == ui->right_label) {
+        if (event->type() == QEvent::MouseButtonPress) {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                        QString("暂无更多 %1").arg(ui->title_label->text()),2000,this->window());
+        }
+    }
+    return QWidget::eventFilter(watched, event);
 }

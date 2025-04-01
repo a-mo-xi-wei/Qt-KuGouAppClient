@@ -7,6 +7,7 @@
 #include "MVWidget.h"
 #include "ui_MVWidget.h"
 #include "logger.hpp"
+#include "ElaMessageBar.h"
 
 #include <QFile>
 #include <QMouseEvent>
@@ -408,4 +409,28 @@ void MVWidget::on_koreaAndJapan_pushButton_clicked() {
         }
     }
     ui->new_song_grid_widget->setUpdatesEnabled(true);
+}
+
+void MVWidget::on_more_pushButton1_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                QString("%1 功能暂未开放，敬请期待！").arg(ui->more_pushButton1->text().left(ui->more_pushButton1->text().size() - 2)),2000,this->window());
+}
+
+void MVWidget::on_more_pushButton2_clicked()  {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                QString("%1 功能暂未开放，敬请期待！").arg(ui->more_pushButton2->text().left(ui->more_pushButton2->text().size() - 2)),2000,this->window());
+}
+void MVWidget::on_more_pushButton3_clicked()  {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                QString("%1 功能暂未开放，敬请期待！").arg(ui->more_pushButton3->text().left(ui->more_pushButton3->text().size() - 2)),2000,this->window());
+}
+
+void MVWidget::on_more_pushButton4_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                QString("%1 功能暂未开放，敬请期待！").arg(ui->more_pushButton4->text().left(ui->more_pushButton4->text().size() - 2)),2000,this->window());
+}
+
+void MVWidget::on_more_pushButton5_clicked()  {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                QString("%1 功能暂未开放，敬请期待！").arg(ui->more_pushButton5->text().left(ui->more_pushButton5->text().size() - 2)),2000,this->window());
 }

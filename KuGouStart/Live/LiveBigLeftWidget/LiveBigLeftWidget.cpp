@@ -8,6 +8,7 @@
 #include "ui_LiveBigLeftWidget.h"
 #include "Async.h"
 #include "logger.hpp"
+#include "ElaMessageBar.h"
 
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -65,6 +66,8 @@ void LiveBigLeftWidget::initUi() {
     const auto rightLabImgPath = ":/Live/Res/live/right.svg";
     ui->right_label->setStyleSheet(QString("border-image:url('%1');").arg(rightLabImgPath));
 
+    ui->left_label->installEventFilter(this);
+    ui->right_label->installEventFilter(this);
     // 异步解析 JSON 文件
     QString jsonPath = GET_CURRENT_DIR + QStringLiteral("/../text.json");
     const auto future = Async::runAsync(QThreadPool::globalInstance(), &LiveBigLeftWidget::parseJsonFile,
@@ -189,4 +192,20 @@ void LiveBigLeftWidget::resizeEvent(QResizeEvent *event) {
         ui->widget_4->hide();
         ui->widget_8->hide();
     }
+}
+
+bool LiveBigLeftWidget::eventFilter(QObject *watched, QEvent *event) {
+    if (watched == ui->left_label) {
+        if (event->type() == QEvent::MouseButtonPress) {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                        QString("暂无更多 %1").arg(ui->title_label->text()),2000,this->window());
+        }
+    }
+    if (watched == ui->right_label) {
+        if (event->type() == QEvent::MouseButtonPress) {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                        QString("暂无更多 %1").arg(ui->title_label->text()),2000,this->window());
+        }
+    }
+    return QWidget::eventFilter(watched, event);
 }

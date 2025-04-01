@@ -54,6 +54,8 @@ private:
 private slots:
     void handleWheelValue(const int& value);
 
+    void on_all_toolButton_clicked();
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 

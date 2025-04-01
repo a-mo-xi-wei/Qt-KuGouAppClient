@@ -9,6 +9,7 @@
 #include "LiveBlockWidget/LiveBlockWidget.h"
 #include "Async.h"
 #include "logger.hpp"
+#include "ElaMessageBar.h"
 
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -16,6 +17,7 @@
 #include <QRandomGenerator>
 #include <random>
 #include <QDir>
+
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
@@ -87,6 +89,9 @@ void LiveCommonPartWidget::initUi(const int& lines) {
     ui->right_label->setStyleSheet(QString("border-image:url('%1');").arg(rightLabImgPath));
     //qDebug()<<"ui->left_label样式："<<ui->left_label->styleSheet()
     //<<"ui->right_label样式："<<ui->right_label->styleSheet();
+
+    ui->left_label->installEventFilter(this);
+    ui->right_label->installEventFilter(this);
 
     //初始化block左下角文字vec
     // 异步解析 JSON 文件
@@ -194,4 +199,20 @@ void LiveCommonPartWidget::resizeEvent(QResizeEvent *event) {
             this->m_blockArr[11]->show();
         }
     }
+}
+
+bool LiveCommonPartWidget::eventFilter(QObject *watched, QEvent *event) {
+    if (watched == ui->left_label) {
+        if (event->type() == QEvent::MouseButtonPress) {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                        QString("暂无更多 %1").arg(ui->title_label->text()),2000,this->window());
+        }
+    }
+    if (watched == ui->right_label) {
+        if (event->type() == QEvent::MouseButtonPress) {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                        QString("暂无更多 %1").arg(ui->title_label->text()),2000,this->window());
+        }
+    }
+    return QWidget::eventFilter(watched, event);
 }

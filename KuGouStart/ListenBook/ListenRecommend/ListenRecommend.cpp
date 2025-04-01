@@ -9,6 +9,7 @@
 #include "MyMenu.h"
 #include "logger.hpp"
 #include "Async.h"
+#include "ElaMessageBar.h"
 
 #include <QFile>
 #include <QJsonArray>
@@ -340,7 +341,7 @@ void ListenRecommend::onToolButtonClicked() {
 }
 
 void ListenRecommend::onRefreshTimeout() {
-//qDebug()<<"刷新一下";
+    //qDebug()<<"刷新一下";
     const auto cnt = refreshObj->getCnt();
     //qDebug()<<"当前刷新第："<<cnt<<" 个tableWidget";
     for (const auto& it : refreshObj->getGalleryWidget()->getWidgets())
@@ -350,7 +351,9 @@ void ListenRecommend::onRefreshTimeout() {
         it->setPopularText(this->m_galleryVector[cnt][idx[cnt]].second);
         it->update();
         idx[cnt] = ++idx[cnt] % static_cast<int>(this->m_galleryVector[cnt].size());
-
     }
+    ElaMessageBar::success(ElaMessageBarType::BottomRight,"Success",
+            refreshObj->getTitle() + " 换一批成功",2000,this->window());
+
 }
 

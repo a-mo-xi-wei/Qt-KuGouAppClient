@@ -1,5 +1,6 @@
 #include "TableWidget.h"
 #include "logger.hpp"
+#include "ElaMessageBar.h"
 
 #include <QLabel>
 #include <QToolButton>
@@ -29,6 +30,7 @@ TableWidget::TableWidget(const QString &title, KIND kind, QWidget *parent)
     this->m_adjust_ToolBtn = new QToolButton(this);
     this->m_refresh_ToolBtn = new QToolButton(this);
     this->m_more_Lab = new QLabel(QStringLiteral("更多 >"), this);
+    this->m_more_Lab->installEventFilter(this);
 
     initDescVector();
     initSongInfo();
@@ -100,6 +102,16 @@ void TableWidget::mouseReleaseEvent(QMouseEvent *event) {
 
 void TableWidget::mouseDoubleClickEvent(QMouseEvent *event) {
     event->ignore();
+}
+
+bool TableWidget::eventFilter(QObject *watched, QEvent *event) {
+    if (watched == this->m_more_Lab) {
+        if (event->type() == QEvent::MouseButtonPress) {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                        QString("%1 功能暂未开放，敬请期待！").arg(this->m_more_Lab->text().left(this->m_more_Lab->text().size() - 2)),2000,this->window());
+        }
+    }
+    return QWidget::eventFilter(watched, event);
 }
 
 void TableWidget::initUi() {
@@ -509,7 +521,7 @@ void TableWidget::onRefreshTimeout() {
                 this->m_gridLayout->itemAtPosition(i, j)->widget()->show();
             }
         }
-        this->m_gridContainer->setUpdatesEnabled(true);
+        this->m_gridContainer->setUpdatesEnabled(true);//统一显示
         this->m_gridContainer->show(); // 显示容器
     } else {
         shuffleListCover();
@@ -535,6 +547,9 @@ void TableWidget::onRefreshTimeout() {
         this->m_gridContainer->setUpdatesEnabled(true);
         this->m_gridContainer->show(); // 显示容器
     }
+    ElaMessageBar::success(ElaMessageBarType::BottomRight,"Success",
+                QString("%1 刷新成功").arg(this->m_titleLab->text()),2000,this->window());
+
 }
 
 QPixmap roundedPixmap(QPixmap &src, QSize size, int radius) {
@@ -748,8 +763,8 @@ void ItemListWidget::updateSinger() const {
 }
 
 void ItemListWidget::onHide() {
-    qDebug() << "隐藏/显示";
-    STREAM_INFO() << "隐藏/显示";
+    //qDebug() << "隐藏/显示";
+    //STREAM_INFO() << "隐藏/显示";
     this->setHidden(!this->isHidden());
     update();
 }

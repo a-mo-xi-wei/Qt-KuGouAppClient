@@ -26,4 +26,5 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/PopularWidgets
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyScrollArea MyBlockWidget MyAsyncThread)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyScrollArea
+        MyBlockWidget MyAsyncThread ElaWidgetTools)

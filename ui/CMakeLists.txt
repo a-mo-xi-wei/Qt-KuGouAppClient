@@ -31,9 +31,6 @@ add_subdirectory(MyBlockWidget)
 #音乐单项模块
 add_subdirectory(MusicItemWidget)
 
-#音乐表单模块
-add_subdirectory(MusicTableWidget)
-
 #涟漪模块
 add_subdirectory(RippleButton)
 

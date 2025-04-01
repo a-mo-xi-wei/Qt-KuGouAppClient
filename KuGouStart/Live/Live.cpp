@@ -8,6 +8,7 @@
 #include "ui_Live.h"
 #include "MyScrollArea.h"
 #include "logger.hpp"
+#include "ElaMessageBar.h"
 
 #include <QButtonGroup>
 #include <QDir>
@@ -357,6 +358,11 @@ void Live::handleWheelValue(const int &value) {
     else if (value >= this->m_gameWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y()) {
         ui->barrage_game_pushButton->setChecked(true);
     }
+}
+
+void Live::on_all_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                QString("%1 功能暂未开放，敬请期待！").arg(ui->all_toolButton->text().left(ui->all_toolButton->text().size() - 2)),2000,this->window());
 }
 
 void Live::resizeEvent(QResizeEvent *event) {

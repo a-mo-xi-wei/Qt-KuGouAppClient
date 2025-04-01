@@ -20,7 +20,8 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/AdvertiseBoardWidget
         ${CMAKE_CURRENT_SOURCE_DIR}/GuessLoveWidget
+        ${CMAKE_CURRENT_SOURCE_DIR}/TableWidget
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets UpToolButton MusicTableWidget MyScrollArea MyMenu
-        IconBesideTextToolButton)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets UpToolButton MyScrollArea MyMenu
+        IconBesideTextToolButton ElaWidgetTools SMaskWidget)

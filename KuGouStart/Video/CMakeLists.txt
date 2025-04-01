@@ -25,4 +25,4 @@ target_include_directories(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySlidingStackedWidget MyFlowLayout
-        ButtonBaseLibrary MyBlockWidget MyScrollArea IconBesideTextToolButton)
+        ButtonBaseLibrary MyBlockWidget MyScrollArea IconBesideTextToolButton ElaWidgetTools)

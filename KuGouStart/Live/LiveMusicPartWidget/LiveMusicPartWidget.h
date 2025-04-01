@@ -38,6 +38,8 @@ private:
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
 private:
     Ui::LiveMusicPartWidget *ui;
     QList<QString> m_leftBottomTextVec;

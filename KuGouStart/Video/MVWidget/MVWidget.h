@@ -59,6 +59,16 @@ private slots:
 
     void on_koreaAndJapan_pushButton_clicked();
 
+    void on_more_pushButton1_clicked();
+
+    void on_more_pushButton2_clicked();
+
+    void on_more_pushButton3_clicked();
+
+    void on_more_pushButton4_clicked();
+
+    void on_more_pushButton5_clicked();
+
 private:
     Ui::MVWidget *ui;
     std::unique_ptr<QButtonGroup> m_buttonGroup{};

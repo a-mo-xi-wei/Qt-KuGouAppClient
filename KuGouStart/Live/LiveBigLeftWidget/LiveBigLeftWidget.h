@@ -40,6 +40,8 @@ private:
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
 private:
     Ui::LiveBigLeftWidget *ui;
     QList<QString> m_leftBottomTextVec;

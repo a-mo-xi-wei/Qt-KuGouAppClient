@@ -1,26 +1,14 @@
 #ifndef TABLEWIDGET_H_
 #define TABLEWIDGET_H_
 
-#include<QHBoxLayout>
 #include<QGridLayout>
 
 #include"SMaskWidget.h"
 
-#if defined(TABLEWIDGET_LIBRARY)
-#define TABLEWIDGET_EXPORT Q_DECL_EXPORT
-#else
-#define TABLEWIDGET_EXPORT Q_DECL_IMPORT
-#endif
-
 class QLabel;
 class QToolButton;
-class QPaintEvent;
-class QEnterEvent;
-class QEvent;
-class QLine;
-class QTimer;
 
-class TABLEWIDGET_EXPORT TableWidget : public QWidget {
+class TableWidget : public QWidget {
     Q_OBJECT
 
 public:
@@ -45,6 +33,8 @@ protected:
     void mouseReleaseEvent(QMouseEvent *event) override;
 
     void mouseDoubleClickEvent(QMouseEvent *event) override;
+
+    bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
     void initUi();
