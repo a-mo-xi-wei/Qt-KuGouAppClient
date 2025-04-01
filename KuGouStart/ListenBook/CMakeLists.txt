@@ -30,4 +30,4 @@ target_include_directories(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySlidingStackedWidget MyMenu MyBlockWidget
-        ZoomButtonLibrary IconBesideTextToolButton MyAsyncThread MyScrollArea ElaWidgetTools)
+        InteractiveButton IconBesideTextToolButton MyAsyncThread MyScrollArea ElaWidgetTools)

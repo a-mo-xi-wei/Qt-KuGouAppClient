@@ -7,14 +7,15 @@
  *  非常实用，感兴趣的可以star
  */
 
-#include <QPushButton>
-#if defined(BUTTONBASE_LIBRARY)
-#define BUTTONBASE_EXPORT Q_DECL_EXPORT
+#if defined(INTERACTIVEBUTTON_LIBRARY)
+#define INTERACTIVEBUTTON_EXPORT Q_DECL_EXPORT
 #else
-#define BUTTONBASE_EXPORT Q_DECL_IMPORT
+#define INTERACTIVEBUTTON_EXPORT Q_DECL_IMPORT
 #endif
 
-class BUTTONBASE_EXPORT InteractiveButtonBase : public QPushButton
+#include <QPushButton>
+
+class INTERACTIVEBUTTON_EXPORT InteractiveButtonBase : public QPushButton
 {
     Q_OBJECT
     Q_PROPERTY(bool self_enabled READ getSelfEnabled WRITE setSelfEnabled)                      // 是否启用自定义的按钮（true）
