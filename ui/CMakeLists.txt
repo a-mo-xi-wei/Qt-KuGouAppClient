@@ -7,6 +7,13 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 add_subdirectory(Window)
 
 #自定义堆栈窗口模块
@@ -64,7 +71,7 @@ add_subdirectory(MyDialog)
 add_subdirectory(QtMaterialWidget)
 
 #ElaWidget模块
-add_subdirectory(ElaWidget)
+add_subdirectory(ElaWidgetTools)
 
 #遮罩刷新模块
 add_subdirectory(RefreshMask)
