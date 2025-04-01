@@ -7,6 +7,8 @@
 #include "LocalSong.h"
 #include "ui_LocalSong.h"
 #include "logger.hpp"
+#include "ElaMessageBar.h"
+#include "Async.h"
 
 #include <QFileDialog>
 #include <QJsonArray>
@@ -191,6 +193,11 @@ void LocalSong::getMetaData() {
                 const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout());
                 if (!layout)return;
                 layout->insertWidget(layout->count() - 2, item);
+                qDebug()<<"成功添加歌曲 ："<<item->m_information.mediaPath;
+                STREAM_INFO()<<"成功添加歌曲 ："<<item->m_information.mediaPath.toStdString();
+                ElaMessageBar::success(ElaMessageBarType::BottomRight,"Success",
+                    "Successfully added song",2000,this->m_parent);
+
                 //ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
                 emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size()));
 
@@ -424,8 +431,6 @@ void LocalSong::on_local_add_toolButton_clicked() {
     //QString fileName = QUrl::fromLocalFile(path).fileName();
     //qDebug() << "插入："<<paths.size()<<"条数据";
     for (auto &path: paths) {
-        qDebug()<<"添加歌曲 ："<<path;
-        STREAM_INFO()<<"添加歌曲 ："<<path.toStdString();
         this->m_songQueue.enqueue(path);
     }
     this->loadNextSong();
@@ -621,16 +626,18 @@ void LocalSong::onItemViewSongInfo() {
 void LocalSong::onItemDeleteSong(const int &idx) {
     qDebug()<<"收到删除信号，删除第 "<<idx<<" 项";
     PRINT_INFO("收到删除信号，删除第 %d 项",idx);
+    //三个属性组成唯一键值
     auto song = this->m_locationMusicVector[idx].songName;
     auto singer = this->m_locationMusicVector[idx].singer;
     auto duration = this->m_locationMusicVector[idx].duration;
 
     this->m_lastLocationMusicVector = this->m_locationMusicVector;
-    const auto widget = this->m_MusicItemVector[idx];
+    auto widget = this->m_MusicItemVector[idx];
     widget->deleteLater();
     emit subSongInfo(m_locationMusicVector[idx]); //向KuGou发送删除idx信号
     this->m_locationMusicVector.erase(m_locationMusicVector.cbegin() + idx);
     this->m_MusicItemVector.erase(m_MusicItemVector.cbegin() + idx);
+
     //ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
     emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size()));
 
@@ -650,8 +657,20 @@ void LocalSong::onItemDeleteSong(const int &idx) {
     delReq["song"] = song;
     delReq["singer"] = singer;
     delReq["duration"] = duration;
-    m_libHttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong",QJsonDocument(delReq).toJson(QJsonDocument::Compact));
 
+    /*Async::runAsync(QThreadPool::globalInstance(),&CLibhttp::UrlRequestGet,
+       m_libHttp, QString("http://127.0.0.1:8080/api/delSong"),QJsonDocument(delReq).toJson(QJsonDocument::Compact),1000);
+*/
+    Async::runAsync(QThreadPool::globalInstance(),
+    [this,delReq] {
+        return m_libHttp.UrlRequestGet(
+            QString("http://127.0.0.1:8080/api/delSong"),
+            QJsonDocument(delReq).toJson(QJsonDocument::Compact),
+            1000
+        );
+    });
+    //m_libHttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong",QJsonDocument(delReq).toJson(QJsonDocument::Compact),1000);
+    qDebug()<<"处理删除请求完成";
 }
 
 void LocalSong::onItemOpenInFile() {

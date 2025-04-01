@@ -249,14 +249,18 @@ void runAsyncImpl(QFutureInterface<ResultType> futureInterface,
     runAsyncMemberDispatch(futureInterface, std::forward<Function>(function),
                            std::forward<Args>(args)...);
 }
-
+/*
 template <class T>
 std::decay_t<T>
 decayCopy(T&& v)
 {
     return std::forward<T>(v);
 }
-
+*/
+template<typename T>
+auto decayCopy(T&& arg) -> std::decay_t<T> {
+    return std::forward<T>(arg); // 避免不必要的拷贝
+}
 
 template <typename ResultType, typename Function, typename... Args>
 class AsyncJob : public QRunnable

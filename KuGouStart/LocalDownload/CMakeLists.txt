@@ -25,5 +25,5 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/DownloadedVideo
         ${CMAKE_CURRENT_SOURCE_DIR}/Downloading)
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia MyHttpClient
-        MusicItemWidget MySearchLineEdit UpToolButton MyScrollArea MySlidingStackedWidget)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia MyHttpClient ElaWidgetTools
+        MusicItemWidget MySearchLineEdit UpToolButton MyScrollArea MySlidingStackedWidget MyAsyncThread)
