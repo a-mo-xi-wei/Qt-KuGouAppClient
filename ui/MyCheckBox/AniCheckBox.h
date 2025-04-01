@@ -8,15 +8,15 @@
 #include <QCheckBox>
 #include <QEasingCurve>
 
-#if defined(ANICHECKBOX_LIBRARY)
-#define ANICHECKBOX_EXPORT Q_DECL_EXPORT
+#if defined(MYCHECKBOX_LIBRARY)
+#define MYCHECKBOX_EXPORT Q_DECL_EXPORT
 #else
-#define ANICHECKBOX_EXPORT Q_DECL_IMPORT
+#define MYCHECKBOX_EXPORT Q_DECL_IMPORT
 #endif
 
 class QPropertyAnimation;
 
-class ANICHECKBOX_EXPORT AniCheckBox : public QCheckBox {
+class MYCHECKBOX_EXPORT AniCheckBox : public QCheckBox {
     Q_OBJECT
     Q_PROPERTY(double hover_prog READ getHoverProg WRITE setHoverProg)
     Q_PROPERTY(double part_prog READ getPartProg WRITE setPartProg)

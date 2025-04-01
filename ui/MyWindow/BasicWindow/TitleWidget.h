@@ -7,6 +7,12 @@
 
 #include "TitleOptionMenu/TitleOptionMenu.h"
 
+#if defined(MYWINDOW_LIBRARY)
+#define MYWINDOW_EXPORT Q_DECL_EXPORT
+#else
+#define MYWINDOW_EXPORT Q_DECL_IMPORT
+#endif
+
 class RippleButton;
 
 QT_BEGIN_NAMESPACE
@@ -17,7 +23,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class TitleWidget : public QWidget {
+class MYWINDOW_EXPORT TitleWidget : public QWidget {
     Q_OBJECT
 
 public:

@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 3.10)
 
 project(MyButton VERSION 1.0 LANGUAGES CXX)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Core)
-
 file(GLOB ICONBESIDETEXTTOOLBUTTON_H ${CMAKE_CURRENT_SOURCE_DIR}/IconBesideTextToolButton/*.h)
 file(GLOB ICONBESIDETEXTTOOLBUTTON_CPP ${CMAKE_CURRENT_SOURCE_DIR}/IconBesideTextToolButton/*.cpp)
 

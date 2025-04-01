@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 3.10)
 
 project(ElaWidgetTools VERSION 1.0 LANGUAGES CXX)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Core)
-
 file(GLOB COMMON_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaCommon/*.h)
 file(GLOB COMMON_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaCommon/*.cpp)
 

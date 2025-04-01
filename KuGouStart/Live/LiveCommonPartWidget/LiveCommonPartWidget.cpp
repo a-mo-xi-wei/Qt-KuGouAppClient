@@ -150,7 +150,7 @@ void LiveCommonPartWidget::initLineOne() {
     for (int i = 0; i < 6; ++i) {
         const auto w = new LiveBlockWidget(ui->line_widget_1);
         w->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res_Qrc/Res/standcover")))));
         w->setLeftBottomText(this->m_leftBottomTextVec[i]);
         lay1->addWidget(w);
         w->show();
@@ -169,7 +169,7 @@ void LiveCommonPartWidget::initLineTwo() {
     for (int i = 6; i < 12; ++i) {
         const auto w = new LiveBlockWidget(ui->line_widget_2);
         w->setCoverPix(QString(":/StandCover/Res/standcover/music-stand-cover%1.jpg").
-            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res&Qrc/Res/standcover")))));
+            arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../../Res_Qrc/Res/standcover")))));
         w->setLeftBottomText(this->m_leftBottomTextVec[i + 20]);
         lay2->addWidget(w);
         w->show();
@@ -205,13 +205,13 @@ bool LiveCommonPartWidget::eventFilter(QObject *watched, QEvent *event) {
     if (watched == ui->left_label) {
         if (event->type() == QEvent::MouseButtonPress) {
             ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                        QString("暂无更多 %1").arg(ui->title_label->text()),2000,this->window());
+                        QString("暂无更多 %1").arg(ui->title_label->text()),1000,this->window());
         }
     }
     if (watched == ui->right_label) {
         if (event->type() == QEvent::MouseButtonPress) {
             ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                        QString("暂无更多 %1").arg(ui->title_label->text()),2000,this->window());
+                        QString("暂无更多 %1").arg(ui->title_label->text()),1000,this->window());
         }
     }
     return QWidget::eventFilter(watched, event);

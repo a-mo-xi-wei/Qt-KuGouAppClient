@@ -187,13 +187,13 @@ void Live::initPopularWidget() {
 
     //后面估计要加图片
     ui->toolButton_1->setBackgroundImg(QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").
-    arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../Res&Qrc/Res/rectcover")))));
+    arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../Res_Qrc/Res/rectcover")))));
 
     ui->toolButton_2->setBackgroundImg(QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").
-    arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../Res&Qrc/Res/rectcover")))));
+    arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../Res_Qrc/Res/rectcover")))));
 
     ui->toolButton_3->setBackgroundImg(QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").
-    arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../Res&Qrc/Res/rectcover")))));
+    arg(QString::number(QRandomGenerator::global()->bounded(1,getFileCount(GET_CURRENT_DIR + "/../Res_Qrc/Res/rectcover")))));
 
 
     //放置label
@@ -362,7 +362,7 @@ void Live::handleWheelValue(const int &value) {
 
 void Live::on_all_toolButton_clicked() {
     ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                QString("%1 功能暂未开放，敬请期待！").arg(ui->all_toolButton->text().left(ui->all_toolButton->text().size() - 2)),2000,this->window());
+                QString("%1 功能暂未开放，敬请期待！").arg(ui->all_toolButton->text().left(ui->all_toolButton->text().size() - 2)),1000,this->window());
 }
 
 void Live::resizeEvent(QResizeEvent *event) {

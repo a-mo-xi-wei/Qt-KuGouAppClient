@@ -11,7 +11,13 @@
 #include <QSystemTrayIcon>
 #include <QMenu>
 
-class MyTrayIcon final : public QSystemTrayIcon {
+#if defined(MYWINDOW_LIBRARY)
+#define MYWINDOW_EXPORT Q_DECL_EXPORT
+#else
+#define MYWINDOW_EXPORT Q_DECL_IMPORT
+#endif
+
+class MYWINDOW_EXPORT MyTrayIcon final : public QSystemTrayIcon {
     Q_OBJECT
 
 public:

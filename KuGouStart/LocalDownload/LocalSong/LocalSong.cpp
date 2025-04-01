@@ -196,7 +196,7 @@ void LocalSong::getMetaData() {
                 qDebug()<<"成功添加歌曲 ："<<item->m_information.mediaPath;
                 STREAM_INFO()<<"成功添加歌曲 ："<<item->m_information.mediaPath.toStdString();
                 ElaMessageBar::success(ElaMessageBarType::BottomRight,"Success",
-                    QString("成功添加音乐 : %1").arg(item->m_information.songName),2000,this->m_parent);
+                    QString("成功添加音乐 : %1").arg(item->m_information.songName),1000,this->m_parent);
 
                 //ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
                 emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size()));
@@ -302,7 +302,7 @@ void LocalSong::MySort(std::function<bool(const MusicItemWidget *, const MusicIt
     this->m_lastLocationMusicVector = this->m_locationMusicVector;
     if (this->m_lastLocationMusicVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warring",
-            QString("暂无音乐"),2000,this->m_parent);
+            QString("暂无音乐"),1000,this->m_parent);
         return;
     }
     //初始UI
@@ -560,7 +560,7 @@ void LocalSong::onRandomSort() {
     this->m_lastLocationMusicVector = this->m_locationMusicVector;
     if (this->m_lastLocationMusicVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warring",
-            QString("暂无音乐"),2000,this->m_parent);
+            QString("暂无音乐"),1000,this->m_parent);
         return;
     }
     //初始UI
@@ -680,7 +680,7 @@ void LocalSong::onItemDeleteSong(const int &idx) {
     //m_libHttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong",QJsonDocument(delReq).toJson(QJsonDocument::Compact),1000);
     //qDebug()<<"处理删除请求完成";
     ElaMessageBar::success(ElaMessageBarType::BottomRight,"Success",
-        QString("成功删除音乐 : %1").arg(song),2000,this->m_parent);
+        QString("成功删除音乐 : %1").arg(song),1000,this->m_parent);
 }
 
 void LocalSong::onItemOpenInFile() {

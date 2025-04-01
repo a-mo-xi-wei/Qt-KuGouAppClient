@@ -2,19 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 project(Ui VERSION 1.0 LANGUAGES CXX)
 
-# 全局默认设定：可执行文件和 DLL 到 bin/, 静态库和导入库（.dll.a）到 lib/
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTORCC ON)
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-add_subdirectory(Window)
+add_subdirectory(MyWindow)
 
 #自定义堆栈窗口模块
 add_subdirectory(MySlidingStackedWidget)
@@ -22,8 +10,8 @@ add_subdirectory(MySlidingStackedWidget)
 #自定义流式布局
 add_subdirectory(MyFlowLayout)
 
-#遮罩模块
-add_subdirectory(SMaskWidget)
+#我的遮罩模块
+add_subdirectory(MyMaskWidget)
 
 #自定义块窗口
 add_subdirectory(MyBlockWidget)
@@ -57,6 +45,3 @@ add_subdirectory(QtMaterialWidget)
 
 #ElaWidget模块
 add_subdirectory(ElaWidgetTools)
-
-#遮罩刷新模块
-add_subdirectory(RefreshMask)

@@ -4,7 +4,13 @@
 #include <QWidget>
 class QVariantAnimation;
 
-class WaterDrop : public QWidget {
+#if defined(MYWINDOW_LIBRARY)
+#define MYWINDOW_EXPORT Q_DECL_EXPORT
+#else
+#define MYWINDOW_EXPORT Q_DECL_IMPORT
+#endif
+
+class MYWINDOW_EXPORT WaterDrop : public QWidget {
     Q_OBJECT
 
 public:

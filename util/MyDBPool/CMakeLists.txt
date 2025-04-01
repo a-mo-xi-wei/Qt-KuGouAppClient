@@ -2,15 +2,6 @@ cmake_minimum_required(VERSION 3.10)
 
 project(MyDBPool VERSION 1.0)
 
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTORCC ON)
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-find_package(Qt6 REQUIRED COMPONENTS Sql Network Gui Widgets)
-
 file(GLOB SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 
@@ -37,8 +28,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
 message(STATUS "+++++++++++++++++catch zlib.lib at ${ZLIB_IMPORT_LIB}")
 message(STATUS "+++++++++++++++++catch zlib.dll at ${ZLIB_DLL}")
 
-target_link_libraries(${PROJECT_NAME} Qt6::Sql Qt6::Network Qt6::Gui
-                        Qt6::Widgets MyQsLog ${ZLIB_IMPORT_LIB})
+target_link_libraries(${PROJECT_NAME} Qt6::Sql Qt6::Network Qt6::Widgets MyQsLog ${ZLIB_IMPORT_LIB})
 
 #[[
         静态库本身不依赖DLL，但如果有其他可执行文件（如KuGouServer）依赖这个静态库，静态库（.lib）在编译时直接嵌入代码。

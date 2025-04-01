@@ -26,5 +26,5 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/RecentlyVideoWidget
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySlidingStackedWidget CheckBox1 MyMenu
-        MyBlockWidget MySearchLineEdit AniCheckBox)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySlidingStackedWidget MyMenu
+        MyBlockWidget MySearchLineEdit MyCheckBox)

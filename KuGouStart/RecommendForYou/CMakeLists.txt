@@ -24,4 +24,4 @@ target_include_directories(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyScrollArea MyMenu
-        MyButton ElaWidgetTools SMaskWidget)
+        MyButton ElaWidgetTools MyMaskWidget)

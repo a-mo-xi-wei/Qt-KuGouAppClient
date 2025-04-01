@@ -2,20 +2,9 @@ cmake_minimum_required(VERSION 3.10)
 
 project(KuGouAppStart VERSION 1.0 LANGUAGES CXX)
 
-# 全局默认设定：可执行文件和 DLL 到 bin/, 静态库和导入库（.dll.a）到 lib/
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTORCC ON)
-
-find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia)
-
 #file(GLOB SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 #file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
-file(GLOB QRC_FILE ${CMAKE_CURRENT_SOURCE_DIR}/Res&Qrc/*.qrc)
+file(GLOB QRC_FILE ${CMAKE_CURRENT_SOURCE_DIR}/Res_Qrc/*.qrc)
 
 set(SOURCE_FILE
     KuGouApp.h
@@ -23,7 +12,7 @@ set(SOURCE_FILE
     KuGouApp.ui
     main.cpp
     ${QRC_FILE}
-    Res&Qrc/Res/titleIcon.rc
+    Res_Qrc/Res/titleIcon.rc
 )
 
 ####       发现音乐       ####
@@ -62,7 +51,7 @@ add_subdirectory(Search)
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia MainWindow BasicWidget
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia MyWindow
         AllMusic Channel DailyRecommend ListenBook Live LocalDownload MusicCloudDisk
         MusicRepository MyCollection PurchasedMusic RecentlyPlayed RecommendForYou
-        Search SongList StartVideo RefreshMask MaterialSnackbar)
+        Search SongList StartVideo MyMaskWidget MaterialSnackbar)

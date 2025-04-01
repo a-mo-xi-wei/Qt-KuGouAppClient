@@ -7,13 +7,13 @@
 
 #include "qtmaterialcircularprogress.h"
 
-#if defined(REFRESHMASK_LIBRARY)
-#define REFRESHMASK_EXPORT Q_DECL_EXPORT
+#if defined(MYMASKWIDGET_LIBRARY)
+#define MYMASKWIDGET_EXPORT Q_DECL_EXPORT
 #else
-#define REFRESHMASK_EXPORT Q_DECL_IMPORT
+#define MYMASKWIDGET_EXPORT Q_DECL_IMPORT
 #endif
 
-class REFRESHMASK_EXPORT RefreshMask : public QWidget {
+class MYMASKWIDGET_EXPORT RefreshMask : public QWidget {
     Q_OBJECT
 
 public:

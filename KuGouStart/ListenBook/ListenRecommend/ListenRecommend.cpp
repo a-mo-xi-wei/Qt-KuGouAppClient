@@ -353,7 +353,7 @@ void ListenRecommend::onRefreshTimeout() {
         idx[cnt] = ++idx[cnt] % static_cast<int>(this->m_galleryVector[cnt].size());
     }
     ElaMessageBar::success(ElaMessageBarType::BottomRight,"Success",
-            refreshObj->getTitle() + " 换一批成功",2000,this->window());
+            refreshObj->getTitle() + " 换一批成功",1000,this->window());
 
 }
 
