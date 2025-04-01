@@ -6,7 +6,7 @@
 #include "Def.h"
 
 class ElaMessageBarPrivate;
-class ElaMessageBar : public QWidget
+class ELA_EXPORT ElaMessageBar : public QWidget
 {
     Q_OBJECT
     Q_Q_CREATE(ElaMessageBar)
@@ -18,8 +18,8 @@ public:
     static void error(ElaMessageBarType::PositionPolicy policy, QString title, QString text, int displayMsec, QWidget* parent = nullptr);
 
 protected:
-    virtual void paintEvent(QPaintEvent* event) override;
-    virtual bool eventFilter(QObject* watched, QEvent* event) override;
+    void paintEvent(QPaintEvent* event) override;
+    bool eventFilter(QObject* watched, QEvent* event) override;
 
 private:
     friend class ElaMessageBarManager;

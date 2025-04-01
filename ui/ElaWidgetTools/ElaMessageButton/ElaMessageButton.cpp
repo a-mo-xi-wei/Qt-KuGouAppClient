@@ -2,6 +2,7 @@
 #include "ElaMessageButtonPrivate.h"
 #include "ElaMessageBar.h"
 #include "ElaTheme.h"
+#include "logger.hpp"
 
 #include <QMouseEvent>
 #include <QPainter>
@@ -25,9 +26,16 @@ ElaMessageButton::ElaMessageButton(QWidget* parent)
     d->_pBorderRadius = 3;
     setMouseTracking(true);
     setFixedSize(80, 38);
-    QFontDatabase::addApplicationFont( GET_CURRENT_DIR + "/ElaAwesome.ttf");
+    int fontId = QFontDatabase::addApplicationFont( ":/Res/font/ElaAwesome.ttf");
+    if (fontId == -1) {
+        qWarning() << "字体加载失败。。。";
+        STREAM_WARN() << "字体加载失败。。。";
+        return;
+    }
+    auto fontFamily = QFontDatabase::applicationFontFamilies(fontId).at(0);
     QFont font = this->font();
     font.setPixelSize(15);
+    font.setFamily(fontFamily);
     setFont(font);
     setText("Message");
     setObjectName("ElaMessageButton");
@@ -45,7 +53,6 @@ ElaMessageButton::ElaMessageButton(QWidget* parent)
         {
         case ElaMessageBarType::Success:
         {
-            qDebug()<<"点击成功";
             ElaMessageBar::success(d->_pPositionPolicy,d->_pBarTitle,d->_pBarText,d->_pDisplayMsec,d->_pMessageTargetWidget);
             break;
         }

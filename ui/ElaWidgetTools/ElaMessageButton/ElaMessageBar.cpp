@@ -76,7 +76,7 @@ ElaMessageBar::~ElaMessageBar()
 
 void ElaMessageBar::success(ElaMessageBarType::PositionPolicy policy, QString title, QString text, int displayMsec, QWidget* parent)
 {
-     qDebug() << QApplication::topLevelWidgets();
+     //qDebug() << QApplication::topLevelWidgets();
     if (!parent)
     {
         /*
