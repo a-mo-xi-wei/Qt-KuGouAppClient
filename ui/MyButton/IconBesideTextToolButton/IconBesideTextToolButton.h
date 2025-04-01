@@ -3,13 +3,13 @@
 
 #include <QToolButton>
 
-#if defined(ICONBESIDETEXTTOOLBUTTON_LIBRARY)
-#define ICONBESIDETEXTTOOLBUTTON_EXPORT Q_DECL_EXPORT
+#if defined(MYBUTTON_LIBRARY)
+#define MYBUTTON_EXPORT Q_DECL_EXPORT
 #else
-#define ICONBESIDETEXTTOOLBUTTON_EXPORT Q_DECL_IMPORT
+#define MYBUTTON_EXPORT Q_DECL_IMPORT
 #endif
 
-class ICONBESIDETEXTTOOLBUTTON_EXPORT IconBesideTextToolButton : public QToolButton {
+class MYBUTTON_EXPORT IconBesideTextToolButton : public QToolButton {
     Q_OBJECT
 
 public:

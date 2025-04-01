@@ -2,18 +2,18 @@
 // Created by WeiWang on 24-10-16.
 //
 
-#ifndef UPWIDGET_H
-#define UPWIDGET_H
+#ifndef UPTOOLBUTTON_H
+#define UPTOOLBUTTON_H
 
 #include <QToolButton>
 
-#if defined(UPWIDGET_LIBRARY)
-#define UPWIDGET_EXPORT Q_DECL_EXPORT
+#if defined(MYBUTTON_LIBRARY)
+#define MYBUTTON_EXPORT Q_DECL_EXPORT
 #else
-#define UPWIDGET_EXPORT Q_DECL_IMPORT
+#define MYBUTTON_EXPORT Q_DECL_IMPORT
 #endif
 
-class UPWIDGET_EXPORT UpToolButton : public QToolButton {
+class MYBUTTON_EXPORT UpToolButton : public QToolButton {
     Q_OBJECT
 
 public:
@@ -28,4 +28,4 @@ protected:
 };
 
 
-#endif //UPWIDGET_H
+#endif //UPTOOLBUTTON_H

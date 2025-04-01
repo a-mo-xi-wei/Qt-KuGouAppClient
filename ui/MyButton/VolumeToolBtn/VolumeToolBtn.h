@@ -3,10 +3,10 @@
 
 #include"SliderWidget.h"
 
-#if defined(VOLUMETOOLBTN_LIBRARY)
-#define VOLUMETOOLBTN_EXPORT Q_DECL_EXPORT
+#if defined(MYBUTTON_LIBRARY)
+#define MYBUTTON_EXPORT Q_DECL_EXPORT
 #else
-#define VOLUMETOOLBTN_EXPORT Q_DECL_IMPORT
+#define MYBUTTON_EXPORT Q_DECL_IMPORT
 #endif
 
 #include <QToolButton>
@@ -15,7 +15,7 @@
 class QTimer;
 class QVBoxLayout;
 
-class VOLUMETOOLBTN_EXPORT VolumeToolBtn : public QToolButton {
+class MYBUTTON_EXPORT VolumeToolBtn : public QToolButton {
     Q_OBJECT
 
 public:

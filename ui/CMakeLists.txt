@@ -31,26 +31,14 @@ add_subdirectory(MyBlockWidget)
 #音乐单项模块
 add_subdirectory(MusicItemWidget)
 
-#涟漪模块
-add_subdirectory(RippleButton)
-
-#交互模块
-add_subdirectory(InteractiveButtonBase)
-
-#音量调节模块
-add_subdirectory(VolumeToolBtn)
+#我的按钮模块
+add_subdirectory(MyButton)
 
 #滑动条模块
 add_subdirectory(SliderWidget)
 
 #搜索框模块
 add_subdirectory(MySearchLineEdit)
-
-#回到顶部模块
-add_subdirectory(UpToolButton)
-
-#文字在前图标在后的按钮模块
-add_subdirectory(IconBesideTextToolButton)
 
 #滚动区域模块
 add_subdirectory(MyScrollArea)

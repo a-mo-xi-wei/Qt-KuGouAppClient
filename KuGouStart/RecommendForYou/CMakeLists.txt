@@ -23,5 +23,5 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/TableWidget
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets UpToolButton MyScrollArea MyMenu
-        IconBesideTextToolButton ElaWidgetTools SMaskWidget)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MyScrollArea MyMenu
+        MyButton ElaWidgetTools SMaskWidget)

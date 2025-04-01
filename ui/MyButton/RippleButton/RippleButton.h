@@ -6,17 +6,17 @@
 #include<QToolButton>
 #include<QGraphicsDropShadowEffect>
 
-#if defined(RIPPLEBUTTON_LIBRARY)
-#define RIPPLEBUTTON_EXPORT Q_DECL_EXPORT
+#if defined(MYBUTTON_LIBRARY)
+#define MYBUTTON_EXPORT Q_DECL_EXPORT
 #else
-#define RIPPLEBUTTON_EXPORT Q_DECL_IMPORT
+#define MYBUTTON_EXPORT Q_DECL_IMPORT
 #endif
 
 class QPointF;
 class QTimer;
 class QIcon;
 
-class RIPPLEBUTTON_EXPORT RippleButton : public QToolButton {
+class MYBUTTON_EXPORT RippleButton : public QToolButton {
 public:
     explicit RippleButton(QWidget *parent = Q_NULLPTR); // 构造函数
 

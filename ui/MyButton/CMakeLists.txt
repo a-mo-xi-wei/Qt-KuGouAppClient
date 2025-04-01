@@ -1,0 +1,49 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(MyButton VERSION 1.0 LANGUAGES CXX)
+
+find_package(Qt6 REQUIRED COMPONENTS Widgets Core)
+
+file(GLOB ICONBESIDETEXTTOOLBUTTON_H ${CMAKE_CURRENT_SOURCE_DIR}/IconBesideTextToolButton/*.h)
+file(GLOB ICONBESIDETEXTTOOLBUTTON_CPP ${CMAKE_CURRENT_SOURCE_DIR}/IconBesideTextToolButton/*.cpp)
+
+file(GLOB INTERACTIVEBUTTON_H ${CMAKE_CURRENT_SOURCE_DIR}/InteractiveButtonBase/*.h)
+file(GLOB INTERACTIVEBUTTON_CPP ${CMAKE_CURRENT_SOURCE_DIR}/InteractiveButtonBase/*.cpp)
+
+file(GLOB RIPPLEBUTTON_H ${CMAKE_CURRENT_SOURCE_DIR}/RippleButton/*.h)
+file(GLOB RIPPLEBUTTON_CPP ${CMAKE_CURRENT_SOURCE_DIR}/RippleButton/*.cpp)
+
+file(GLOB UPTOOLBUTTON_H ${CMAKE_CURRENT_SOURCE_DIR}/UpToolButton/*.h)
+file(GLOB UPTOOLBUTTON_CPP ${CMAKE_CURRENT_SOURCE_DIR}/UpToolButton/*.cpp)
+
+file(GLOB VOLUMETOOLBTN_H ${CMAKE_CURRENT_SOURCE_DIR}/VolumeToolBtn/*.h)
+file(GLOB VOLUMETOOLBTN_CPP ${CMAKE_CURRENT_SOURCE_DIR}/VolumeToolBtn/*.cpp)
+
+set(SOURCE_FILE
+        ${ICONBESIDETEXTTOOLBUTTON_H}
+        ${ICONBESIDETEXTTOOLBUTTON_CPP}
+        ${INTERACTIVEBUTTON_H}
+        ${INTERACTIVEBUTTON_CPP}
+        ${RIPPLEBUTTON_H}
+        ${RIPPLEBUTTON_CPP}
+        ${UPTOOLBUTTON_H}
+        ${UPTOOLBUTTON_CPP}
+        ${VOLUMETOOLBTN_H}
+        ${VOLUMETOOLBTN_CPP}
+)
+
+add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
+
+target_compile_definitions(${PROJECT_NAME} PRIVATE MYBUTTON_LIBRARY)
+
+# 指定库的包含目录
+target_include_directories(${PROJECT_NAME} PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/IconBesideTextToolButton
+        ${CMAKE_CURRENT_SOURCE_DIR}/InteractiveButtonBase
+        ${CMAKE_CURRENT_SOURCE_DIR}/RippleButton
+        ${CMAKE_CURRENT_SOURCE_DIR}/UpToolButton
+        ${CMAKE_CURRENT_SOURCE_DIR}/VolumeToolBtn
+)
+
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core MySpdlog SliderWidget)
