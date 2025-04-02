@@ -11,6 +11,18 @@ file(GLOB FLOWLAYOUT_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaFlowLayout/*.cpp)
 file(GLOB MESSAGEBUTTON_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaMessageButton/*.h)
 file(GLOB MESSAGEBUTTON_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaMessageButton/*.cpp)
 
+file(GLOB ELATEXT_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaText/*.h)
+file(GLOB ELATEXT_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaText/*.cpp)
+
+file(GLOB ELATOOLTIP_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaToolTip/*.h)
+file(GLOB ELATOOLTIP_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaToolTip/*.cpp)
+
+file(GLOB ELAEXITDIALOG_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaExitDialog/*.h)
+file(GLOB ELAEXITDIALOG_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaExitDialog/*.cpp)
+
+file(GLOB ELAPUSHBUTTON_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaPushButton/*.h)
+file(GLOB ELAPUSHBUTTON_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaPushButton/*.cpp)
+
 set(SOURCE_FILE
         ${COMMON_H}
         ${COMMON_CPP}
@@ -18,6 +30,14 @@ set(SOURCE_FILE
         ${FLOWLAYOUT_CPP}
         ${MESSAGEBUTTON_H}
         ${MESSAGEBUTTON_CPP}
+        ${ELATEXT_H}
+        ${ELATEXT_CPP}
+        ${ELATOOLTIP_H}
+        ${ELATOOLTIP_CPP}
+        ${ELAEXITDIALOG_H}
+        ${ELAEXITDIALOG_CPP}
+        ${ELAPUSHBUTTON_H}
+        ${ELAPUSHBUTTON_CPP}
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
@@ -30,6 +50,10 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaCommon
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaFlowLayout
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaMessageButton
+        ${CMAKE_CURRENT_SOURCE_DIR}/ElaText
+        ${CMAKE_CURRENT_SOURCE_DIR}/ElaToolTip
+        ${CMAKE_CURRENT_SOURCE_DIR}/ElaExitDialog
+        ${CMAKE_CURRENT_SOURCE_DIR}/ElaPushButton
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core MySpdlog)

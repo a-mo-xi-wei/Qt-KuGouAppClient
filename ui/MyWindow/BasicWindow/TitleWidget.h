@@ -6,6 +6,7 @@
 #define TITLEWIDGET_H
 
 #include "TitleOptionMenu/TitleOptionMenu.h"
+#include "ElaExitDialog.h"
 
 #if defined(MYWINDOW_LIBRARY)
 #define MYWINDOW_EXPORT Q_DECL_EXPORT
@@ -44,6 +45,7 @@ public:
         RecentlyPlayed = 13,
         AllMusic = 14,
     };
+
     explicit TitleWidget(QWidget *parent = nullptr);
 
     void showMenu(const QPoint &pos);
@@ -135,7 +137,7 @@ signals:
 private:
     Ui::TitleWidget *ui;
     StackType m_lastType = StackType::RecommendForYou;//上一次点击
-
+    std::unique_ptr<ElaExitDialog> m_closeDialog{};
     //标题菜单相关
     QPixmap                     m_originalCover;
     TitleOptionMenu *m_titleOptMenu{};

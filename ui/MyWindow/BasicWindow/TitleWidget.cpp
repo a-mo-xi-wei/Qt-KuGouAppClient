@@ -23,7 +23,8 @@
 
 TitleWidget::TitleWidget(QWidget *parent)
     : QWidget(parent)
-, ui(new Ui::TitleWidget)
+    , ui(new Ui::TitleWidget)
+    , m_closeDialog(std::make_unique<ElaExitDialog>(this->window()))
 {
     ui->setupUi(this);
     initUi();
@@ -93,6 +94,14 @@ void TitleWidget::initUi() {
     ui->min_toolButton->setMyIcon(QIcon(QStringLiteral(":/Res/titlebar/minimize-black.svg")));
     ui->max_toolButton->setMyIcon(QIcon(QStringLiteral(":/Res/titlebar/maximize-black.svg")));
     ui->close_toolButton->setMyIcon(QIcon(QStringLiteral(":/Res/titlebar/close-black.svg")));
+
+    m_closeDialog->setParent(this->window());
+    m_closeDialog->hide();
+    connect(m_closeDialog.get(), &ElaExitDialog::rightButtonClicked, this, []{qApp->quit();});
+    connect(m_closeDialog.get(), &ElaExitDialog::middleButtonClicked, this, [=]() {
+        m_closeDialog->close();
+        on_min_toolButton_clicked();
+    });
 
     //专门处理标题menu
     connect(ui->menu_toolButton,&QToolButton::clicked,this,&TitleWidget::on_menu_toolButton_clicked);
@@ -316,8 +325,8 @@ void TitleWidget::on_max_toolButton_clicked(){
 }
 
 void TitleWidget::on_close_toolButton_clicked() {
-    STREAM_INFO()<<"退出应用程序";
-    QApplication::quit(); // 退出应用程序
+    STREAM_INFO()<<"显示closeDialog";
+    m_closeDialog->show();
 }
 
 void TitleWidget::onLeftMenu_recommend_clicked() {
