@@ -26,6 +26,12 @@
 #   error("Please add concurrent in pro file")
 #endif
 
+#if defined(JQHTTPSERVER_LIBRARY)
+#define JQHTTPSERVER_EXPORT Q_DECL_EXPORT
+#else
+#define JQHTTPSERVER_EXPORT Q_DECL_IMPORT
+#endif
+
 // C++ lib import
 #include <functional>
 
@@ -54,7 +60,7 @@ class QSslConfiguration;
 namespace JQHttpServer
 {
 
-class Session: public QObject
+class JQHTTPSERVER_EXPORT Session: public QObject
 {
     Q_OBJECT
     Q_DISABLE_COPY( Session )
@@ -152,7 +158,7 @@ private:
     QSharedPointer<QIODevice> replyIoDevice_;
 };
 
-class AbstractManage: public QObject
+class JQHTTPSERVER_EXPORT AbstractManage: public QObject
 {
     Q_OBJECT
     Q_DISABLE_COPY( AbstractManage )
@@ -213,7 +219,7 @@ protected:
     QObject *m_mainObj;
 };
 
-class TcpServerManage: public AbstractManage
+class JQHTTPSERVER_EXPORT TcpServerManage: public AbstractManage
 {
     Q_OBJECT
     Q_DISABLE_COPY( TcpServerManage )
@@ -243,7 +249,7 @@ private:
 #ifndef QT_NO_SSL
 class SslServerHelper;
 
-class SslServerManage: public AbstractManage
+class JQHTTPSERVER_EXPORT SslServerManage: public AbstractManage
 {
     Q_OBJECT
     Q_DISABLE_COPY( SslServerManage )
@@ -291,7 +297,7 @@ enum ServiceConfigEnum
     ServiceSslPeerVerifyMode,
 };
 
-class Service: public QObject
+class JQHTTPSERVER_EXPORT Service: public QObject
 {
     Q_OBJECT
     Q_DISABLE_COPY( Service )
