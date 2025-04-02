@@ -16,6 +16,7 @@
 #include <QPoint>
 #include <QMouseEvent>
 #include <QButtonGroup>
+#include <QFontDatabase>
 #include <QSizeGrip>
 #include <QPropertyAnimation>
 #include <QShortcut>
@@ -75,7 +76,48 @@ KuGouApp::~KuGouApp() {
     delete ui;
 }
 
+void KuGouApp::initFontRes() {
+    auto fontId = QFontDatabase::addApplicationFont(":/Res/font/dialog.ttf");
+    if (fontId == -1) {
+        qWarning() << "字体加载失败。。。";
+        STREAM_WARN() << "字体加载失败。。。";
+        return;
+    }
+    auto families = QFontDatabase::applicationFontFamilies(fontId);
+    qDebug() << "Loaded font families:" << families; // 输出实际字体名称
+
+    fontId = QFontDatabase::addApplicationFont( ":/Res/font/ElaAwesome.ttf");
+    if (fontId == -1) {
+        qWarning() << "字体加载失败。。。";
+        STREAM_WARN() << "字体加载失败。。。";
+        return;
+    }
+    families = QFontDatabase::applicationFontFamilies(fontId);
+    qDebug() << "Loaded font families:" << families; // 输出实际字体名称
+
+    fontId = QFontDatabase::addApplicationFont(":/Res/font/qing-ning-you-yuan.ttf");
+    if (fontId == -1) {
+        qWarning() << "字体加载失败。。。";
+        STREAM_WARN() << "字体加载失败。。。";
+        return;
+    }
+    families = QFontDatabase::applicationFontFamilies(fontId);
+    qDebug() << "Loaded font families:" << families; // 输出实际字体名称
+
+    fontId = QFontDatabase::addApplicationFont(":/Res/font/JetBrainsMonoNerdFont-Bold.ttf");
+    if (fontId == -1) {
+        qWarning() << "字体加载失败。。。";
+        STREAM_WARN() << "字体加载失败。。。";
+        return;
+    }
+    families = QFontDatabase::applicationFontFamilies(fontId);
+    qDebug() << "Loaded font families:" << families; // 输出实际字体名称
+}
+
 void KuGouApp::initUi() {
+    //初始化字体资源
+    initFontRes();
+
     this->setWindowIcon(QIcon(QStringLiteral(":/Res/window/windowIcon.png")));
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     //移动窗口到合适的地方

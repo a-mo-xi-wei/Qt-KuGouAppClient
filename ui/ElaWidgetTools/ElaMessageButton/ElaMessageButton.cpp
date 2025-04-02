@@ -7,7 +7,6 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
-#include <QFontDatabase>
 
 Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, int, BorderRadius)
 Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, QString, BarTitle);
@@ -26,16 +25,8 @@ ElaMessageButton::ElaMessageButton(QWidget* parent)
     d->_pBorderRadius = 3;
     setMouseTracking(true);
     setFixedSize(80, 38);
-    int fontId = QFontDatabase::addApplicationFont( ":/Res/font/ElaAwesome.ttf");
-    if (fontId == -1) {
-        qWarning() << "字体加载失败。。。";
-        STREAM_WARN() << "字体加载失败。。。";
-        return;
-    }
-    auto fontFamily = QFontDatabase::applicationFontFamilies(fontId).at(0);
-    QFont font = this->font();
+    QFont font("ElaAwesome");
     font.setPixelSize(15);
-    font.setFamily(fontFamily);
     setFont(font);
     setText("Message");
     setObjectName("ElaMessageButton");

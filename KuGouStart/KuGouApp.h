@@ -47,6 +47,8 @@ public:
     ~KuGouApp() override;
 
 private:
+    void initFontRes();
+
     void initUi();
 
     void initStackedWidget();

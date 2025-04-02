@@ -10,7 +10,6 @@
 
 #include <QFile>
 #include <QRandomGenerator>
-#include <QFontDatabase>
 #include <QLabel>
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
@@ -84,14 +83,8 @@ void VideoChannelBlock::initUi() {
 }
 
 void VideoChannelBlock::initCoverTextFont() {
-    int fontId = QFontDatabase::addApplicationFont(":/Res/font/qing-ning-you-yuan.ttf");
-    if (fontId == -1) {
-        qWarning() << "字体加载失败。。。";
-        STREAM_WARN() << "字体加载失败。。。";
-        return;
-    }
-    auto fontFamily = QFontDatabase::applicationFontFamilies(fontId).at(0);
-    this->m_coverTextFont.setFamily(fontFamily);
+    this->m_coverTextFont = QFont("YouYuan");
+    //this->m_coverTextFont.setFamily(fontFamily);
     this->m_coverTextFont.setPixelSize(16);
 }
 

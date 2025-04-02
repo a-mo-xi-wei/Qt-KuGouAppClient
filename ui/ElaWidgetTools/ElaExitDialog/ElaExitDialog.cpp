@@ -43,7 +43,10 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     d->_leftButton->setMinimumSize(0, 0);
     d->_leftButton->setMaximumSize(QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
     d->_leftButton->setFixedHeight(38);
-    d->_leftButton->setBorderRadius(6);
+    d->_leftButton->setBorderRadius(6);//JetBrainsMono NF
+    auto font = d->_leftButton->font();
+    font.setFamily("JetBrainsMono NF");
+    d->_leftButton->setFont(font);
     d->_middleButton = new ElaPushButton("minimum", this);
     connect(d->_middleButton, &ElaPushButton::clicked, this, [=]() {
         Q_EMIT middleButtonClicked();
@@ -53,6 +56,7 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     d->_middleButton->setMaximumSize(QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
     d->_middleButton->setFixedHeight(38);
     d->_middleButton->setBorderRadius(6);
+    d->_middleButton->setFont(font);
     d->_rightButton = new ElaPushButton("exit", this);
     connect(d->_rightButton, &ElaPushButton::clicked, this, [=]() {
         Q_EMIT rightButtonClicked();
@@ -71,6 +75,7 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     d->_rightButton->setMaximumSize(QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
     d->_rightButton->setFixedHeight(38);
     d->_rightButton->setBorderRadius(6);
+    d->_rightButton->setFont(font);
 
     d->_centralWidget = new QWidget(this);
     QVBoxLayout* centralVLayout = new QVBoxLayout(d->_centralWidget);
@@ -78,7 +83,10 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     ElaText* title = new ElaText("退出", this);
     title->setTextStyle(ElaTextType::Title);
     ElaText* subTitle = new ElaText("确定要退出程序吗", this);
-    subTitle->setTextStyle(ElaTextType::Body);
+    subTitle->setTextStyle(ElaTextType::BodyStrong);
+    font = QFont("AaSongLiuKaiTi");//需要通过KuGouApp::initFontRes()打印得知真实字体名
+    font.setPixelSize(15);
+    subTitle->setFont(font);
     centralVLayout->addWidget(title);
     centralVLayout->addSpacing(2);
     centralVLayout->addWidget(subTitle);
@@ -229,6 +237,7 @@ void ElaExitDialog::paintEvent(QPaintEvent* event)
 
     painter.restore();
 }
+
 void ElaExitDialog::keyPressEvent(QKeyEvent* event)
 {
     event->accept();
