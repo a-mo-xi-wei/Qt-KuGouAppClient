@@ -8,13 +8,13 @@
 #include "../BaseMenu.h"
 #include "../MenuBtn.hpp"
 
-#if defined(SORTOPTIONMENU_LIBRARY)
-#define SORTOPTIONMENU_EXPORT Q_DECL_EXPORT
+#if defined(MYMENU_LIBRARY)
+#define MYMENU_EXPORT Q_DECL_EXPORT
 #else
-#define SORTOPTIONMENU_EXPORT Q_DECL_IMPORT
+#define MYMENU_EXPORT Q_DECL_IMPORT
 #endif
 
-class SORTOPTIONMENU_EXPORT SortOptionMenu : public BaseMenu {
+class MYMENU_EXPORT SortOptionMenu : public BaseMenu {
     Q_OBJECT
 
 public:

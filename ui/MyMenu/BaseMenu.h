@@ -12,13 +12,13 @@
 
 class QWidgetAction;
 
-#if defined(BASEMENU_LIBRARY)
-#define BASEMENU_EXPORT Q_DECL_EXPORT
+#if defined(MYMENU_LIBRARY)
+#define MYMENU_EXPORT Q_DECL_EXPORT
 #else
-#define BASEMENU_EXPORT Q_DECL_IMPORT
+#define MYMENU_EXPORT Q_DECL_IMPORT
 #endif
 
-class BASEMENU_EXPORT BaseMenu: public QMenu {
+class MYMENU_EXPORT BaseMenu: public QMenu {
     Q_OBJECT
 
 public:

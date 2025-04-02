@@ -7,15 +7,15 @@
 
 #include "../BaseMenu.h"
 
-#if defined(LISTENOPTIONMENU_LIBRARY)
-#define LISTENOPTIONMENU_EXPORT Q_DECL_EXPORT
+#if defined(MYMENU_LIBRARY)
+#define MYMENU_EXPORT Q_DECL_EXPORT
 #else
-#define LISTENOPTIONMENU_EXPORT Q_DECL_IMPORT
+#define MYMENU_EXPORT Q_DECL_IMPORT
 #endif
 
 class QFrame;
 
-class LISTENOPTIONMENU_EXPORT ListenOptionMenu : public BaseMenu {
+class MYMENU_EXPORT ListenOptionMenu : public BaseMenu {
     Q_OBJECT
 
 public:

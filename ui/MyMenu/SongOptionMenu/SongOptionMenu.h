@@ -7,13 +7,13 @@
 
 #include "../BaseMenu.h"
 
-#if defined(SONGOPTIONMENU_LIBRARY)
-#define SONGOPTIONMENU_EXPORT Q_DECL_EXPORT
+#if defined(MYMENU_LIBRARY)
+#define MYMENU_EXPORT Q_DECL_EXPORT
 #else
-#define SONGOPTIONMENU_EXPORT Q_DECL_IMPORT
+#define MYMENU_EXPORT Q_DECL_IMPORT
 #endif
 
-class SONGOPTIONMENU_EXPORT SongOptionMenu : public BaseMenu {
+class MYMENU_EXPORT SongOptionMenu : public BaseMenu {
     Q_OBJECT
 
 public:

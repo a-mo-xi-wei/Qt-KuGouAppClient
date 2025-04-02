@@ -7,13 +7,13 @@
 
 #include "../BaseMenu.h"
 
-#if defined(TRAYICONMENU_LIBRARY)
-#define TRAYICONMENU_EXPORT Q_DECL_EXPORT
+#if defined(MYMENU_LIBRARY)
+#define MYMENU_EXPORT Q_DECL_EXPORT
 #else
-#define TRAYICONMENU_EXPORT Q_DECL_IMPORT
+#define MYMENU_EXPORT Q_DECL_IMPORT
 #endif
 
-class TRAYICONMENU_EXPORT TrayIconMenu : public BaseMenu {
+class MYMENU_EXPORT TrayIconMenu : public BaseMenu {
     Q_OBJECT
 
 public:

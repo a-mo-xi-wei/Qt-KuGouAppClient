@@ -71,7 +71,7 @@ void AboutDialog::initDialog(QVBoxLayout *lay) {
 
     //中间的介绍文本
     QString descText = "\n  My KuGou Client Version : 1.0\n"
-        " 开发环境: Qt 6.6.2 , Windows x64 , CLion , MinGW , Ninja\n\n"
+        " 开发环境: Windows x64 , Qt 6.6.2 , CLion , MinGW , Ninja\n\n"
         " 本项目代码仅限研究和学习使用，资源版权归音乐平台所有\n"
         " 代码已开源, 并无商用, 任何版权问题概不负责 No Copyright\n\n"
         " 开发者邮箱: 1428206861@qq.com | ww1428206861@gmail.com\n\n"
