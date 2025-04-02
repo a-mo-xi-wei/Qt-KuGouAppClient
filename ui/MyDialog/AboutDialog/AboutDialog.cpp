@@ -6,7 +6,7 @@
 #include "qtmaterialdialog.h"
 #include "logger.hpp"
 #include "RippleButton.h"
-
+#include "ElaText.h"
 #include <QFontDatabase>
 #include <QVBoxLayout>
 #include <QDesktopServices>
@@ -14,7 +14,6 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QRandomGenerator>
-#include <QStyleOption>
 #include <QUrl>
 
 AboutDialog::AboutDialog(QWidget *parent)
@@ -22,7 +21,8 @@ AboutDialog::AboutDialog(QWidget *parent)
     , m_dialog(new QtMaterialDialog)
     , m_topWidget(new QWidget(this))
 {
-    initFont();
+    this->m_font = QFont("AaSongLiuKaiTi");
+
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     this->setContentsMargins(0, 0, 0, 0);
 
@@ -35,7 +35,7 @@ AboutDialog::AboutDialog(QWidget *parent)
 
     auto dialogWidget = new QWidget;
     dialogWidget->setAttribute(Qt::WA_TranslucentBackground);
-    dialogWidget->setMinimumHeight(400);
+    dialogWidget->setFixedSize(500,450);
 
     dialogLayout->addWidget(dialogWidget);
 
@@ -69,7 +69,24 @@ void AboutDialog::initDialog(QVBoxLayout *lay) {
     topWidgetLayout->addWidget(lab2);
     topWidgetLayout->addStretch();
 
+    //中间的介绍文本
+    QString descText = "\n  My KuGou Client Version : 1.0\n"
+        " 开发环境: Qt 6.6.2 , Windows x64 , CLion , MinGW , Ninja\n\n"
+        " 本项目代码仅限研究和学习使用，资源版权归音乐平台所有\n"
+        " 代码已开源, 并无商用, 任何版权问题概不负责 No Copyright\n\n"
+        " 开发者邮箱: 1428206861@qq.com | ww1428206861@gmail.com\n\n"
+        " 本项目是临时起意所做, 有许多功能有待完善, 在开发过程中本人\n 也成长了许多"
+        " 也突破了各种各样的项目难点, 同时也引入了各个\n 大神开源的组件, 节省了许多时间, 特此致谢\n\n"
+        " 🎁如果你喜欢该项目, 请点击左下角跳转至 Gitee项目网址, 点击\n 右上角的✨星星✨, 你的 Star 是我最大的动力\n\n";
+    ElaText* descTitle = new ElaText(descText, this);
+    descTitle->setTextStyle(ElaTextType::BodyStrong);
+    auto font = QFont("AaSongLiuKaiTi");//需要通过KuGouApp::initFontRes()打印得知真实字体名
+    font.setPixelSize(17);
+    font.setWeight(QFont::Bold);
+    descTitle->setFont(font);
+
     lay->addWidget(this->m_topWidget);
+    lay->addWidget(descTitle);
     lay->addStretch();
 
     //底部两个按钮
@@ -108,17 +125,6 @@ void AboutDialog::initDialog(QVBoxLayout *lay) {
     });
     connect(closeButton, &RippleButton::pressed, m_dialog, &QtMaterialDialog::hideDialog);
 
-}
-
-void AboutDialog::initFont() {
-    int fontId = QFontDatabase::addApplicationFont(":/Res/font/dialog.ttf");
-    if (fontId == -1) {
-        qWarning() << "字体加载失败。。。";
-        STREAM_WARN() << "字体加载失败。。。";
-        return;
-    }
-    auto fontFamily = QFontDatabase::applicationFontFamilies(fontId).at(0);
-    this->m_font.setFamily(fontFamily);
 }
 
 void AboutDialog::onShowDialog() {

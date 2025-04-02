@@ -25,8 +25,6 @@ public:
 private:
     void initDialog(QVBoxLayout* lay);
 
-    void initFont();
-
 public slots:
     void onShowDialog();
 

@@ -84,7 +84,7 @@ void KuGouApp::initFontRes() {
         return;
     }
     auto families = QFontDatabase::applicationFontFamilies(fontId);
-    qDebug() << "Loaded font families:" << families; // 输出实际字体名称
+    //qDebug() << "Loaded font families:" << families; // 输出实际字体名称
 
     fontId = QFontDatabase::addApplicationFont( ":/Res/font/ElaAwesome.ttf");
     if (fontId == -1) {
@@ -93,7 +93,7 @@ void KuGouApp::initFontRes() {
         return;
     }
     families = QFontDatabase::applicationFontFamilies(fontId);
-    qDebug() << "Loaded font families:" << families; // 输出实际字体名称
+    //qDebug() << "Loaded font families:" << families; // 输出实际字体名称
 
     fontId = QFontDatabase::addApplicationFont(":/Res/font/qing-ning-you-yuan.ttf");
     if (fontId == -1) {
@@ -102,7 +102,7 @@ void KuGouApp::initFontRes() {
         return;
     }
     families = QFontDatabase::applicationFontFamilies(fontId);
-    qDebug() << "Loaded font families:" << families; // 输出实际字体名称
+    //qDebug() << "Loaded font families:" << families; // 输出实际字体名称
 
     fontId = QFontDatabase::addApplicationFont(":/Res/font/JetBrainsMonoNerdFont-Bold.ttf");
     if (fontId == -1) {
@@ -111,7 +111,7 @@ void KuGouApp::initFontRes() {
         return;
     }
     families = QFontDatabase::applicationFontFamilies(fontId);
-    qDebug() << "Loaded font families:" << families; // 输出实际字体名称
+    //qDebug() << "Loaded font families:" << families; // 输出实际字体名称
 }
 
 void KuGouApp::initUi() {
