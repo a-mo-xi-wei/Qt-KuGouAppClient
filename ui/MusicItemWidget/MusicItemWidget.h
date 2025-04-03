@@ -178,12 +178,12 @@ public:
 
 private:
     //涟漪效果相关
-    int timeInterval = 10; // 定时器时间间隔，单位：ms
+    int timeInterval = 5; // 定时器时间间隔，单位：ms
     QTimer *timer{}; // 定时器对象
     QPointF mouse_point; // 记录鼠标进入和离开时的坐标
     int max_radius; // 最大半径
     int radius = 0; // 绘制半径
-    int radius_var = 2; // 半径每次改变的值（增大或减小）
+    int radius_var = 10; // 半径每次改变的值（增大或减小）
     QColor fill_color; // 填充颜色
     int frame_radius = 0; // 绘制路径的圆角半径
 };
