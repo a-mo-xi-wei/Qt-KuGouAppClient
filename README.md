@@ -95,6 +95,9 @@ flowchart
 ### 1.为你推荐界面
 ![输入图片说明](image-show/image01.png)
 ![输入图片说明](image-show/image01-1.png)
+![输入图片说明](image-show/image01-2.png)
+![输入图片说明](image-show/image01-3.png)
+![输入图片说明](image-show/image01-4.png)
 ![输入图片说明](image-show/image02.png)
 ![输入图片说明](image-show/image03.png)
 ![输入图片说明](image-show/image04.png)
