@@ -56,6 +56,20 @@ QLayoutItem *MyFlowLayout::itemAt(int index) const {
     return itemList.value(index);
 }
 
+QRect MyFlowLayout::itemGeometry(int index) const {
+    if(index >= 0 && index < count()) {
+        return itemAt(index)->geometry();
+    }
+    return {};
+}
+
+QWidget * MyFlowLayout::widgetAt(int index) const {
+    if(index >= 0 && index < count()) {
+        return itemAt(index)->widget();
+    }
+    return nullptr;
+}
+
 QLayoutItem *MyFlowLayout::takeAt(int index) {
     if (index >= 0 && index < itemList.size())
         return itemList.takeAt(index);

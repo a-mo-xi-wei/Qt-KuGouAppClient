@@ -36,6 +36,11 @@ public:
 
     QLayoutItem *itemAt(int index) const Q_DECL_OVERRIDE;
 
+    //新增两个函数
+    QRect itemGeometry(int index) const;
+
+    QWidget* widgetAt(int index) const;
+
     QSize minimumSize() const Q_DECL_OVERRIDE;
 
     void setGeometry(const QRect &rect) Q_DECL_OVERRIDE;
