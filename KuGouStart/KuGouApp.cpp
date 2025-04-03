@@ -136,7 +136,7 @@ void KuGouApp::initUi() {
     m_refreshMask->hide();
     this->m_refreshMask->setParent(ui->stackedWidget);
     connect(this->m_refreshMask.get(),&RefreshMask::loadingFinished,[this] {
-        m_snackbar->addMessage("刷新完成");
+        m_snackbar->addMessage("加载完成");
     });
     //短暂显示的消息提示
     m_snackbar->setParent(ui->stackedWidget);

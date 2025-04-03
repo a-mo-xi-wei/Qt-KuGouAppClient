@@ -11,7 +11,6 @@
 
 #include <QFile>
 #include <QButtonGroup>
-#include <QPropertyAnimation>
 #include <QScrollBar>
 #include <QTimer>
 #include <QWheelEvent>
