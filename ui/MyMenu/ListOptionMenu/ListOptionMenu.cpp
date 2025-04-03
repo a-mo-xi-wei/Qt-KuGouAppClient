@@ -7,6 +7,7 @@
 
 #include <QFile>
 #include <QLabel>
+#include <QMouseEvent>
 #include <QScrollArea>
 #include <QVBoxLayout>
 
@@ -143,6 +144,7 @@ void ListOptionMenu::initSceneWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 7 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -200,6 +202,7 @@ void ListOptionMenu::initThemeWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 7 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -255,6 +258,7 @@ void ListOptionMenu::initLanguageWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 7 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -322,6 +326,7 @@ void ListOptionMenu::initStyleWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 7 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -332,6 +337,7 @@ void ListOptionMenu::initStyleWidget(QWidget *widget) {
         label->setAlignment(Qt::AlignCenter);
         label->setCursor(Qt::PointingHandCursor);
         label->setText(labArr[2 * 7 + j]);
+        label->installEventFilter(this);
         gridLayout->addWidget(label, 2, j);
     }
 
@@ -388,6 +394,7 @@ void ListOptionMenu::initMoodWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 7 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -443,6 +450,7 @@ void ListOptionMenu::initPeriodWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 7 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -461,5 +469,16 @@ void ListOptionMenu::initPeriodWidget(QWidget *widget) {
 
 const ListOptionMenu * ListOptionMenu::getMenu() const {
     return this;
+}
+
+bool ListOptionMenu::eventFilter(QObject *watched, QEvent *event) {
+    if (event->type() == QEvent::MouseButtonRelease) {
+        auto* label = qobject_cast<QLabel*>(watched);
+        if (label && static_cast<QMouseEvent*>(event)->button() == Qt::LeftButton) {
+            emit clickedFuncName(label->text());
+            return true;
+        }
+    }
+    return BaseMenu::eventFilter(watched, event);
 }
 

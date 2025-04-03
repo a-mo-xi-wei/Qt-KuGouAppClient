@@ -38,6 +38,12 @@ private:
     //重写获取菜单
     const ListOptionMenu* getMenu()const override;
 
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
+signals:
+    void clickedFuncName(const QString& funcName);
+
 };
 
 

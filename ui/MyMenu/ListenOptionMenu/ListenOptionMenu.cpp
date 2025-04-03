@@ -7,6 +7,7 @@
 
 #include <QFile>
 #include <QLabel>
+#include <QMouseEvent>
 #include <QScrollArea>
 #include <QVBoxLayout>
 
@@ -203,6 +204,7 @@ void ListenOptionMenu::initAudioNovelWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -262,6 +264,7 @@ void ListenOptionMenu::initChildrenWorldWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -320,6 +323,7 @@ void ListenOptionMenu::initCommentBookWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -378,6 +382,7 @@ void ListenOptionMenu::initSleepHelpingWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -436,6 +441,7 @@ void ListenOptionMenu::initHumanityWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -494,6 +500,7 @@ void ListenOptionMenu::initSelfChargingWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -552,6 +559,7 @@ void ListenOptionMenu::initCrosstalkWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -611,6 +619,7 @@ void ListenOptionMenu::initSentimentalityWidget(QWidget *widget) {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -669,6 +678,7 @@ void ListenOptionMenu::initRadioDramaWidget(QWidget *widget)  {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -727,6 +737,7 @@ void ListenOptionMenu::initEntertainmentJokesWidget(QWidget *widget)   {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -785,6 +796,7 @@ void ListenOptionMenu::initACGNWidget(QWidget *widget)    {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -843,6 +855,7 @@ void ListenOptionMenu::initPodcastWidget(QWidget *widget)   {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -901,6 +914,7 @@ void ListenOptionMenu::initCantoneseWidget(QWidget *widget)    {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -957,6 +971,7 @@ void ListenOptionMenu::initForeignLanguageWidget(QWidget *widget)    {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -1015,6 +1030,7 @@ void ListenOptionMenu::initCreateCoverWidget(QWidget *widget)     {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -1071,6 +1087,7 @@ void ListenOptionMenu::initElectronicSoundWidget(QWidget *widget)     {
             label->setAlignment(Qt::AlignCenter);
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 5 + j]);
+            label->installEventFilter(this);
             gridLayout->addWidget(label, i, j);
         }
     }
@@ -1096,5 +1113,16 @@ void ListenOptionMenu::initSeparator(QFrame *frame) {
 
 const ListenOptionMenu * ListenOptionMenu::getMenu() const {
     return this;
+}
+
+bool ListenOptionMenu::eventFilter(QObject *watched, QEvent *event) {
+    if (event->type() == QEvent::MouseButtonRelease) {
+        auto* label = qobject_cast<QLabel*>(watched);
+        if (label && static_cast<QMouseEvent*>(event)->button() == Qt::LeftButton) {
+            emit clickedFuncName(label->text());
+            return true;
+        }
+    }
+    return BaseMenu::eventFilter(watched, event);
 }
 

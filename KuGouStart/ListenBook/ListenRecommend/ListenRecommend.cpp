@@ -41,6 +41,7 @@ ListenRecommend::ListenRecommend(QWidget *parent)
     initUi();
     auto menu = new MyMenu(MyMenu::MenuKind::ListenOption,this);
     m_menu = menu->getMenu<ListenOptionMenu>();
+    connect(m_menu, &ListenOptionMenu::clickedFuncName, this, &ListenRecommend::onMenuFuncClicked);
 
     connect(ui->daily_recommend_widget,&ListenTableWidget::toolBtnClicked,this,&ListenRecommend::onToolButtonClicked);
     connect(this->m_refreshTimer, &QTimer::timeout, this, &ListenRecommend::onRefreshTimeout);
@@ -68,6 +69,15 @@ void ListenRecommend::initUi() {
 
     //初始化其他画廊
     initTableWidgets();
+
+    //按钮连接槽
+    QList<QToolButton*> buttons = ui->classify_widget->findChildren<QToolButton*>();
+    for (const auto& button : buttons) {
+        connect(button, &QToolButton::clicked, this, [this, button] {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                        QString("%1 功能暂未开放，敬请期待！").arg(button->text()),1000,this->window());
+        });
+    }
 }
 
 void ListenRecommend::initTableWidgets() {
@@ -355,5 +365,10 @@ void ListenRecommend::onRefreshTimeout() {
     ElaMessageBar::success(ElaMessageBarType::BottomRight,"Success",
             refreshObj->getTitle() + " 换一批成功",1000,this->window());
 
+}
+
+void ListenRecommend::onMenuFuncClicked(const QString &funcName) {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                QString("%1 功能暂未开放，敬请期待！").arg(funcName),1000,this->window());
 }
 

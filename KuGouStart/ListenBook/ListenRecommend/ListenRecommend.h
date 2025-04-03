@@ -42,6 +42,8 @@ private slots:
 
     void onRefreshTimeout();
 
+    void onMenuFuncClicked(const QString &funcName);
+
 private:
     Ui::ListenRecommend *ui;
     //菜单相关

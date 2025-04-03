@@ -10,6 +10,7 @@
 #include "MyFlowLayout.h"
 #include "MyMenu.h"
 #include "logger.hpp"
+#include "ElaMessageBar.h"
 
 #include <QFile>
 #include <QJsonArray>
@@ -39,7 +40,7 @@ SongList::SongList(QWidget *parent)
 
     auto menu = new MyMenu(MyMenu::MenuKind::ListOption, this);
     m_menu = menu->getMenu<ListOptionMenu>();
-
+    connect(m_menu, &ListOptionMenu::clickedFuncName, this, &SongList::onMenuFuncClicked);
     connect(ui->all_toolButton, &QToolButton::clicked, this, &SongList::on_all_toolButton_clicked);
 }
 
@@ -73,6 +74,14 @@ void SongList::initUi() { {
         block->setShowTip();
         block->setDescText(this->m_descVector[i]);
         lay->addWidget(block);
+    }
+    //按钮连接槽
+    QList<QToolButton*> buttons = ui->widget->findChildren<QToolButton*>();
+    for (const auto& button : buttons) {
+        connect(button, &QToolButton::clicked, this, [this, button] {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                        QString("%1 功能暂未开放，敬请期待！").arg(button->text()),1000,this->window());
+        });
     }
 }
 
@@ -155,4 +164,9 @@ void SongList::on_all_toolButton_clicked() {
         ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg")));
         ui->all_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg")));
     }
+}
+
+void SongList::onMenuFuncClicked(const QString &funcName) {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                QString("%1 功能暂未开放，敬请期待！").arg(funcName),1000,this->window());
 }

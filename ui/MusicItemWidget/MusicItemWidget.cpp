@@ -198,7 +198,7 @@ void MusicItemWidget::getMenuPosition(const QPoint& pos) {
 }
 
 void MusicItemWidget::enterEvent(QEnterEvent *event) {
-    QFrame::enterEvent(event);
+    //QFrame::enterEvent(event);
     mouse_point = event->position(); // 记录鼠标进入坐标
     timer->disconnect(); // 断开可能的timer的所有连接
     connect(timer, &QTimer::timeout, this, [=]{ // 定时器触发，半径增大
@@ -213,7 +213,7 @@ void MusicItemWidget::enterEvent(QEnterEvent *event) {
 }
 
 void MusicItemWidget::leaveEvent(QEvent *event) {
-    QFrame::leaveEvent(event);
+    //QFrame::leaveEvent(event);
     if(!this->m_isPlaying) {
         mouse_point = mapFromGlobal(QCursor::pos());
         timer->disconnect();
@@ -317,7 +317,7 @@ void MusicItemWidget::onAddToLove() {
 void MusicItemWidget::onAddToCollect() {
 }
 
-void MusicItemWidget::onAddtoPlayList() {
+void MusicItemWidget::onAddToPlayList() {
 }
 
 void MusicItemWidget::onDownload() {

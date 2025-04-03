@@ -37,6 +37,8 @@ private:
 private slots:
     void on_all_toolButton_clicked();
 
+    void onMenuFuncClicked(const QString & funcName);
+
 private:
     Ui::SongList *ui;
 

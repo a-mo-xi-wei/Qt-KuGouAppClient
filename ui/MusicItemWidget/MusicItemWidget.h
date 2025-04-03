@@ -93,7 +93,7 @@ private slots:
 
     void onAddToCollect();
 
-    void onAddtoPlayList();
+    void onAddToPlayList();
 
     void onDownload();
 
