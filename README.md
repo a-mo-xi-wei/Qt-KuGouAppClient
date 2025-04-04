@@ -3,6 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Qt%20Music%20Client-v1.0.0-%23007ACC?logo=qt" />
   <img src="https://img.shields.io/badge/Qt-6.6.2-%2341CD52?logo=qt" />
+  <img src="https://gitee.com/a-mo-xi-wei/KuGouApp/badge/star.svg?theme=red" />
   <br>
   <span>🔥</span>
   <img src="https://img.shields.io/badge/CLion-2023.3-%23000000?logo=clion" />
