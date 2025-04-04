@@ -15,4 +15,4 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE ABOUTDIALOG_LIBRARY)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Network MaterialDialog
-        MySpdlog MyButton ElaWidgetTools)
+        MySpdlog MyButton ElaWidgetTools MyAsyncThread MyHttpClient)

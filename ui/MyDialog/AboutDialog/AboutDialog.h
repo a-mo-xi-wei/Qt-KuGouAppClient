@@ -6,6 +6,7 @@
 #define ABOUTDIALOG_H
 
 #include <QWidget>
+#include "libhttp.h"
 
 #if defined(ABOUTDIALOG_LIBRARY)
 #define ABOUTDIALOG_EXPORT Q_DECL_EXPORT
@@ -25,6 +26,8 @@ public:
 private:
     void initDialog(QVBoxLayout* lay);
 
+    int getGiteeProjectStar(const QString& url);
+
 public slots:
     void onShowDialog();
 
@@ -34,6 +37,9 @@ private:
     QtMaterialDialog *const m_dialog;
     QWidget* m_topWidget{};
     QFont m_font;
+
+    //发送网络请求
+    CLibhttp m_libHttp;
 };
 
 
