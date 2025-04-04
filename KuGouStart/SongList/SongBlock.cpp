@@ -136,3 +136,9 @@ void SongBlock::mouseReleaseEvent(QMouseEvent *event) {
 void SongBlock::mouseDoubleClickEvent(QMouseEvent *event) {
     event->ignore();
 }
+
+void SongBlock::showEvent(QShowEvent *event) {
+    QWidget::showEvent(event);
+    updateDescLab();
+    //qDebug()<<"当前大小: "<<this->size();
+}

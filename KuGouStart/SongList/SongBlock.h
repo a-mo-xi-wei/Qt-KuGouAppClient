@@ -37,6 +37,8 @@ protected:
 
     void mouseDoubleClickEvent(QMouseEvent *event) override;
 
+    void showEvent(QShowEvent *event) override;
+
 private:
     MyBlockWidget* m_cover{};
     QLabel* m_descLab{};

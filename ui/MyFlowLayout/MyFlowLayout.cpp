@@ -63,11 +63,80 @@ QRect MyFlowLayout::itemGeometry(int index) const {
     return {};
 }
 
+QVector<QRect> MyFlowLayout::itemGeometries() const {
+    QVector<QRect> rects;
+    for(int i=0; i<count(); ++i) {
+        if(QLayoutItem* item = itemAt(i)) {
+            rects.append(item->geometry());
+        }
+    }
+    return rects;
+}
+
+QVector<QRect> MyFlowLayout::calculateAllItemRects(const QSize& containerSize) const {
+    QVector<QRect> rects;
+    if (containerSize.width() <= 0) return rects;
+
+    int x = 0;
+    int y = 0;
+    int lineHeight = 0;
+    const int spacing = this->spacing();
+
+    for (int i = 0; i < count(); ++i) {
+        QLayoutItem* item = itemAt(i);
+        if (!item) continue;
+
+        QSize itemSize = item->sizeHint().expandedTo(item->minimumSize());
+        if (x + itemSize.width() > containerSize.width() && x > 0) { // 换行
+            y += lineHeight + spacing;
+            x = 0;
+            lineHeight = 0;
+        }
+
+        rects.append(QRect(x, y, itemSize.width(), itemSize.height()));
+
+        x += itemSize.width() + spacing;
+        lineHeight = qMax(lineHeight, itemSize.height());
+    }
+
+    return rects;
+}
+
 QWidget * MyFlowLayout::widgetAt(int index) const {
     if(index >= 0 && index < count()) {
         return itemAt(index)->widget();
     }
     return nullptr;
+}
+
+void MyFlowLayout::clear() {
+    while(QLayoutItem* item = takeAt(0)) {
+        delete item;
+    }
+}
+
+// MyFlowLayout.cpp
+void MyFlowLayout::insertWidget(int index, QWidget* widget) {
+    // 参数校验
+    if (index < 0 || index > itemList.size()) {
+        index = itemList.size();
+    }
+
+    // 创建布局项并插入到指定位置
+    QLayoutItem* item = new QWidgetItem(widget);
+    if (index >= itemList.size()) {
+        itemList.append(item);
+    } else {
+        itemList.insert(index, item);
+    }
+
+    // 通知布局需要重新计算
+    invalidate();
+
+    // 如果已经设置父控件，需要添加到父控件
+    if (QWidget* parent = parentWidget()) {
+        widget->setParent(parent);
+    }
 }
 
 QLayoutItem *MyFlowLayout::takeAt(int index) {

@@ -39,7 +39,16 @@ public:
     //新增两个函数
     QRect itemGeometry(int index) const;
 
+    QVector<QRect> itemGeometries() const;
+
+    // 添加此方法获取所有块的布局信息
+    QVector<QRect> calculateAllItemRects(const QSize& containerSize) const;
+
     QWidget* widgetAt(int index) const;
+
+    void clear();
+
+    void insertWidget(int index, QWidget* widget);
 
     QSize minimumSize() const Q_DECL_OVERRIDE;
 

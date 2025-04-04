@@ -45,7 +45,7 @@ private:
     QTimer *checkTimer = Q_NULLPTR; // 解决不触发leaveEvent的Bug
     int max_radius; // 最大半径
     int radius = 0; // 绘制半径
-    int radius_var = 1; // 半径每次改变的值（增大或减小）
+    int radius_var = 2; // 半径每次改变的值（增大或减小）
     QColor fill_color; // 填充颜色
     int frame_radius = 0; // 绘制路径的圆角半径
     QIcon m_ico; //按钮图标
