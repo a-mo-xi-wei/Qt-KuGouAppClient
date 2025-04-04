@@ -53,14 +53,16 @@ void RefreshMask::initUi() {
 }
 
 void RefreshMask::showLoading() {
+    //this->resize(this->parentWidget()->size());
     this->raise();          // 确保位于父部件最上层
     this->show();           // 显示 RefreshMask 自身
     maskWidget->show();
     progress->show(); // 开始旋转动画
-    QTimer::singleShot(1500, this, &RefreshMask::hideLoading); // 模拟加载
+    QTimer::singleShot(2000, this, &RefreshMask::hideLoading); // 模拟加载
 }
 
 void RefreshMask::hideLoading() {
+    if (this->isHidden())return;
     this->hide();
     maskWidget->hide();
     progress->hide();

@@ -137,6 +137,7 @@ void KuGouApp::initUi() {
     this->m_refreshMask->setParent(ui->stackedWidget);
     connect(this->m_refreshMask.get(),&RefreshMask::loadingFinished,[this] {
         m_snackbar->addMessage("加载完成");
+        m_snackbar->show();
     });
     //短暂显示的消息提示
     m_snackbar->setParent(ui->stackedWidget);
@@ -479,7 +480,7 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
     //刷新遮罩大小同步
     auto rect = ui->stackedWidget->geometry();
     rect.setLeft(5);
-    rect.setRight(this->width()-5);
+    rect.setRight(rect.width()-18);
     this->m_refreshMask->setGeometry(rect);
 }
 
@@ -546,7 +547,7 @@ void KuGouApp::showEvent(QShowEvent *event) {
     updateSize();
     auto rect = ui->stackedWidget->geometry();
     rect.setLeft(5);
-    rect.setRight(this->width()-5);
+    rect.setRight(rect.width()-18);
     this->m_refreshMask->setGeometry(rect);
 }
 
@@ -689,6 +690,8 @@ void KuGouApp::onKeyRight() {
 
 void KuGouApp::onTitleCurrentStackChange(const int &index,const bool& slide) {
     if (ui->stackedWidget->currentIndex() == index)return;
+    this->m_refreshMask->hide();
+    this->m_snackbar->hide();
     if (slide) enableButton(false),ui->stackedWidget->slideInIdx(index);
     else ui->stackedWidget->setCurrentIndex(index);
     updateSize();
