@@ -30,6 +30,8 @@ public:
 signals:
     void httpProgress(qint64 bytesSent,qint64 bytesTotal);
 
+    void httpTimeout();
+
 public slots:
     void Progress(qint64 bytesSent,qint64 bytesTotal);
     void Error(QNetworkReply::NetworkError reply);
