@@ -699,6 +699,44 @@ void KuGouApp::onTitleCurrentStackChange(const int &index,const bool& slide) {
     this->m_snackbar->hide();
     if (slide) enableButton(false),ui->stackedWidget->slideInIdx(index);
     else ui->stackedWidget->setCurrentIndex(index);
+    switch (index) {
+        case 3:
+            ui->recommend_you_toolButton->setChecked(true);
+            break;
+        case 4:
+            ui->music_repository_toolButton->setChecked(true);
+            break;
+        case 5:
+            ui->channel_toolButton->setChecked(true);
+            break;
+        case 6:
+            ui->video_toolButton->setChecked(true);
+            break;
+        case 7:
+            ui->song_list_toolButton->setChecked(true);
+            break;
+        case 8:
+            ui->daily_recommend_toolButton->setChecked(true);
+            break;
+        case 9:
+            ui->my_collection_toolButton->setChecked(true);
+            break;
+        case 10:
+            ui->local_download_toolButton->setChecked(true);
+            break;
+        case 11:
+            ui->music_cloud_disk_toolButton->setChecked(true);
+            break;
+        case 12:
+            ui->purchased_music_toolButton->setChecked(true);
+            break;
+        case 13:
+            ui->recently_played_toolButton->setChecked(true);
+            break;
+        case 14:
+            ui->all_music_toolButton->setChecked(true);
+            break;
+    }
     updateSize();
 }
 

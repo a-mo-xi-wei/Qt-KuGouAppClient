@@ -5,6 +5,8 @@
 #ifndef TITLEWIDGET_H
 #define TITLEWIDGET_H
 
+#include <QStack>
+
 #include "TitleOptionMenu/TitleOptionMenu.h"
 #include "ElaExitDialog.h"
 
@@ -136,12 +138,14 @@ signals:
 
 private:
     Ui::TitleWidget *ui;
-    StackType m_lastType = StackType::RecommendForYou;//上一次点击
-    std::unique_ptr<ElaExitDialog> m_closeDialog{};
+    QStack<StackType>               m_lastTypeStack;
+    StackType                       m_lastType;
+    StackType                       m_curType;
+    std::unique_ptr<ElaExitDialog>  m_closeDialog{};
     //标题菜单相关
-    QPixmap                     m_originalCover;
-    TitleOptionMenu *m_titleOptMenu{};
-    QPoint m_menuPosition;
+    QPixmap                         m_originalCover;
+    TitleOptionMenu*                m_titleOptMenu{};
+    QPoint                          m_menuPosition;
 };
 
 #endif //TITLEWIDGET_H
