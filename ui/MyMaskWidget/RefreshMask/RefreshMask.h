@@ -35,6 +35,7 @@ signals:
 private:
     QWidget *maskWidget{};
     QtMaterialCircularProgress *progress{};
+    QTimer* m_timer; // 管理定时器
 };
 
 

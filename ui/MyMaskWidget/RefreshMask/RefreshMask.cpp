@@ -10,8 +10,11 @@
 
 RefreshMask::RefreshMask(QWidget *parent)
     : QWidget(parent)
+    , m_timer(new QTimer(this))
 {
     initUi();
+    m_timer->setSingleShot(true); // 设置为单次触发
+    connect(m_timer, &QTimer::timeout, this, &RefreshMask::hideLoading);
 }
 
 void RefreshMask::initUi() {
@@ -58,11 +61,12 @@ void RefreshMask::showLoading() {
     this->show();           // 显示 RefreshMask 自身
     maskWidget->show();
     progress->show(); // 开始旋转动画
-    QTimer::singleShot(2000, this, &RefreshMask::hideLoading); // 模拟加载
+    m_timer->start(2000); // 启动定时器
 }
 
 void RefreshMask::hideLoading() {
     if (this->isHidden())return;
+    m_timer->stop(); // 停止定时器（避免重复触发）
     this->hide();
     maskWidget->hide();
     progress->hide();
