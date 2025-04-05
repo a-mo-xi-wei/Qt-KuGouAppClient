@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
         emit fromTray_noVolume(flag);
     });
     connect(m_trayIcon, &MyTrayIcon::showAboutDialog, this, &MainWindow::onShowAboutDialog);
+    this->m_aboutDialog->hide();
 }
 
 void MainWindow::paintEvent(QPaintEvent *event) {

@@ -14,32 +14,36 @@
 #define MYDIALOG_EXPORT Q_DECL_IMPORT
 #endif
 
+class ElaText;
 class QVBoxLayout;
 class QtMaterialDialog;
 
 class MYDIALOG_EXPORT AboutDialog : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit AboutDialog(QWidget *parent = nullptr);
 
 private:
-    void initDialog(QVBoxLayout* lay);
+    void initDialog(QVBoxLayout *lay);
 
-    int getGiteeProjectStar(const QString& url);
+    void getGiteeProjectStar(const QString &url);
 
-protected:
-    void paintEvent(QPaintEvent *event) override;
+    void initDescText(ElaText* text);
 
 public slots:
     void onShowDialog();
 
     void onHideDialog();
 
+signals:
+    void gotStars();
+
 private:
     QtMaterialDialog *const m_dialog;
-    QWidget* m_topWidget{};
+    QWidget *m_topWidget{};
     QFont m_font;
+    int m_stars = 90;
 
     //发送网络请求
     CLibhttp m_libHttp;
