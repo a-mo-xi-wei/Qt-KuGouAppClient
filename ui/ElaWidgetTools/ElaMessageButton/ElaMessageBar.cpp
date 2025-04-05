@@ -24,7 +24,9 @@ ElaMessageBar::ElaMessageBar(ElaMessageBarType::PositionPolicy policy, ElaMessag
     setFixedHeight(60);
     setMouseTracking(true);
     d->_pOpacity = 1;
-    setFont(QFont("微软雅黑"));
+    auto font = QFont("微软雅黑");
+    font.setWeight(QFont::Black);
+    setFont(font);
     parent->installEventFilter(this);
     d->_closeButton = new ElaIconButton(ElaIconType::Xmark, 17, d->_closeButtonWidth, 30, this);
     switch (d->_messageMode)
@@ -66,7 +68,7 @@ ElaMessageBar::ElaMessageBar(ElaMessageBarType::PositionPolicy policy, ElaMessag
     mainLayout->addStretch();
     mainLayout->addWidget(d->_closeButton);
     setObjectName("ElaMessageBar");
-    setStyleSheet("#ElaMessageBar{background-color:transparent;}");
+    setStyleSheet("#ElaMessageBar{background-color:transparent;font-weight: bold;}");
     d->_messageBarCreate(displayMsec);
 }
 
