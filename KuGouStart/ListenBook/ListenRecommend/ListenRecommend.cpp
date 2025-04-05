@@ -75,7 +75,7 @@ void ListenRecommend::initUi() {
     for (const auto& button : buttons) {
         connect(button, &QToolButton::clicked, this, [this, button] {
             ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                        QString("%1 功能暂未开放，敬请期待！").arg(button->text()),1000,this->window());
+                        QString("%1 功能未实现 敬请期待").arg(button->text()),1000,this->window());
         });
     }
 }
@@ -369,6 +369,6 @@ void ListenRecommend::onRefreshTimeout() {
 
 void ListenRecommend::onMenuFuncClicked(const QString &funcName) {
     ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                QString("%1 功能暂未开放，敬请期待！").arg(funcName),1000,this->window());
+                QString("%1 功能未实现 敬请期待").arg(funcName),1000,this->window());
 }
 

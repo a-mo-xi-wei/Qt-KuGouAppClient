@@ -83,8 +83,8 @@ void KuGouApp::initFontRes() {
         STREAM_WARN() << "字体加载失败。。。";
         return;
     }
-    auto families = QFontDatabase::applicationFontFamilies(fontId);
-    //qDebug() << "Loaded font families:" << families; // 输出实际字体名称
+    //auto families = QFontDatabase::applicationFontFamilies(fontId);
+    //qDebug() << "Loaded font families:" << families; // 输出实际字体名称  //AaSongLiuKaiTi
 
     fontId = QFontDatabase::addApplicationFont( ":/Res/font/ElaAwesome.ttf");
     if (fontId == -1) {
@@ -92,8 +92,8 @@ void KuGouApp::initFontRes() {
         STREAM_WARN() << "字体加载失败。。。";
         return;
     }
-    families = QFontDatabase::applicationFontFamilies(fontId);
-    //qDebug() << "Loaded font families:" << families; // 输出实际字体名称
+    //families = QFontDatabase::applicationFontFamilies(fontId);
+    //qDebug() << "Loaded font families:" << families; // 输出实际字体名称  //ElaAwesome
 
     fontId = QFontDatabase::addApplicationFont(":/Res/font/qing-ning-you-yuan.ttf");
     if (fontId == -1) {
@@ -101,8 +101,8 @@ void KuGouApp::initFontRes() {
         STREAM_WARN() << "字体加载失败。。。";
         return;
     }
-    families = QFontDatabase::applicationFontFamilies(fontId);
-    //qDebug() << "Loaded font families:" << families; // 输出实际字体名称
+    //families = QFontDatabase::applicationFontFamilies(fontId);
+    //qDebug() << "Loaded font families:" << families; // 输出实际字体名称  //YouYuan
 
     fontId = QFontDatabase::addApplicationFont(":/Res/font/JetBrainsMonoNerdFont-Bold.ttf");
     if (fontId == -1) {
@@ -110,8 +110,17 @@ void KuGouApp::initFontRes() {
         STREAM_WARN() << "字体加载失败。。。";
         return;
     }
-    families = QFontDatabase::applicationFontFamilies(fontId);
-    //qDebug() << "Loaded font families:" << families; // 输出实际字体名称
+    //families = QFontDatabase::applicationFontFamilies(fontId);
+    //qDebug() << "Loaded font families:" << families; // 输出实际字体名称  //JetBrainsMono NF
+
+    fontId = QFontDatabase::addApplicationFont(":/Res/font/chinese-simplify.ttf");
+    if (fontId == -1) {
+        qWarning() << "字体加载失败。。。";
+        STREAM_WARN() << "字体加载失败。。。";
+        return;
+    }
+    //auto families = QFontDatabase::applicationFontFamilies(fontId);
+    //qDebug() << "Loaded font families:" << families; // 输出实际字体名称    //dingliehuobanfont
 }
 
 void KuGouApp::initUi() {

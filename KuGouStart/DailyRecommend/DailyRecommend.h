@@ -33,6 +33,9 @@ private:
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
+private slots:
+    void on_history_recommend_toolButton_clicked();
+
 private:
     Ui::DailyRecommend *ui;
     QLabel* m_monthLab{};

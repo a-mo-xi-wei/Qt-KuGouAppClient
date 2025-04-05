@@ -24,8 +24,8 @@ ElaMessageBar::ElaMessageBar(ElaMessageBarType::PositionPolicy policy, ElaMessag
     setFixedHeight(60);
     setMouseTracking(true);
     d->_pOpacity = 1;
-    auto font = QFont("微软雅黑");
-    font.setWeight(QFont::Black);
+    auto font = QFont("Microsoft YaHei");
+    font.setWeight(QFont::Bold);
     setFont(font);
     parent->installEventFilter(this);
     d->_closeButton = new ElaIconButton(ElaIconType::Xmark, 17, d->_closeButtonWidth, 30, this);
@@ -214,6 +214,7 @@ void ElaMessageBar::paintEvent(QPaintEvent* event)
     QFont font = this->font();
     font.setWeight(QFont::Bold);
     font.setPixelSize(16);
+    font.setFamily("JetBrainsMono NF");
     painter.setFont(font);
     int titleTextWidth = painter.fontMetrics().horizontalAdvance(d->_title) + 1;
     if (titleTextWidth > 100)
@@ -224,7 +225,8 @@ void ElaMessageBar::paintEvent(QPaintEvent* event)
     painter.drawText(QRect(d->_leftPadding + d->_titleLeftSpacing, -1, titleTextWidth, height()), textFlags, d->_title);
     // 正文
     font.setWeight(QFont::Light);
-    font.setPixelSize(15);
+    font.setPixelSize(17);
+    font.setFamily("AaSongLiuKaiTi");
     painter.setFont(font);
     painter.drawText(QRect(d->_leftPadding + d->_titleLeftSpacing + titleTextWidth + d->_textLeftSpacing, 0, width() - (d->_leftPadding + d->_titleLeftSpacing + titleTextWidth + d->_textLeftSpacing + d->_closeButtonWidth + d->_closeButtonLeftRightMargin / 2), height()), textFlags, d->_text);
     int textHeight = painter.fontMetrics().boundingRect(QRect(d->_leftPadding + d->_titleLeftSpacing + titleTextWidth + d->_textLeftSpacing, 0, width() - (d->_leftPadding + d->_titleLeftSpacing + titleTextWidth + d->_textLeftSpacing + d->_closeButtonWidth + d->_closeButtonLeftRightMargin), height()), textFlags, d->_text).height();

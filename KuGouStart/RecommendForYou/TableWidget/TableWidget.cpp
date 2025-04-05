@@ -108,7 +108,7 @@ bool TableWidget::eventFilter(QObject *watched, QEvent *event) {
     if (watched == this->m_more_Lab) {
         if (event->type() == QEvent::MouseButtonPress) {
             ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                        QString("%1 功能暂未开放，敬请期待！").arg(this->m_more_Lab->text().left(this->m_more_Lab->text().size() - 2)),1000,this->window());
+                        QString("%1 功能未实现 敬请期待").arg(this->m_more_Lab->text().left(this->m_more_Lab->text().size() - 2)),1000,this->window());
         }
     }
     return QWidget::eventFilter(watched, event);

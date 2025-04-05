@@ -266,7 +266,7 @@ void ElaMessageBarPrivate::_messageBarCreate(int displayMsec)
     font.setWeight(QFont::Bold);
     q->setFont(font);
     int titleWidth = q->fontMetrics().horizontalAdvance(_title);
-    font.setPixelSize(14);
+    font.setPixelSize(16);
     font.setWeight(QFont::Medium);
     q->setFont(font);
     int textWidth = q->fontMetrics().horizontalAdvance(_text);

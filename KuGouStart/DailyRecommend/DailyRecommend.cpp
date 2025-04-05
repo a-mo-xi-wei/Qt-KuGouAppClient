@@ -8,10 +8,10 @@
 #include "ui_DailyRecommend.h"
 #include "IconBesideTextToolButton.h"
 #include "logger.hpp"
+#include "ElaMessageBar.h"
 
 #include <QFile>
 #include <QDateTime>
-
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
@@ -34,7 +34,6 @@ DailyRecommend::DailyRecommend(QWidget *parent)
     }
     //初始化日期标签
     initUi();
-
 }
 
 DailyRecommend::~DailyRecommend() {
@@ -136,4 +135,9 @@ void DailyRecommend::initMusicItem(MusicItemWidget *item) {
 void DailyRecommend::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     ui->scrollArea->setFixedHeight(this->height() - 250);
+}
+
+void DailyRecommend::on_history_recommend_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            QString("%1 功能未实现 敬请期待").arg(ui->history_recommend_toolButton->text().left(ui->history_recommend_toolButton->text().size() - 2)),1000,this->window());
 }

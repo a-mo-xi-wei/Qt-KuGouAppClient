@@ -362,7 +362,7 @@ void Live::handleWheelValue(const int &value) {
 
 void Live::on_all_toolButton_clicked() {
     ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                QString("%1 功能暂未开放，敬请期待！").arg(ui->all_toolButton->text().left(ui->all_toolButton->text().size() - 2)),1000,this->window());
+                QString("%1 功能未实现 敬请期待").arg(ui->all_toolButton->text().left(ui->all_toolButton->text().size() - 2)),1000,this->window());
 }
 
 void Live::resizeEvent(QResizeEvent *event) {
