@@ -8,16 +8,16 @@
 #include <QWidget>
 #include "libhttp.h"
 
-#if defined(ABOUTDIALOG_LIBRARY)
-#define ABOUTDIALOG_EXPORT Q_DECL_EXPORT
+#if defined(MYDIALOG_LIBRARY)
+#define MYDIALOG_EXPORT Q_DECL_EXPORT
 #else
-#define ABOUTDIALOG_EXPORT Q_DECL_IMPORT
+#define MYDIALOG_EXPORT Q_DECL_IMPORT
 #endif
 
 class QVBoxLayout;
 class QtMaterialDialog;
 
-class ABOUTDIALOG_EXPORT AboutDialog : public QWidget {
+class MYDIALOG_EXPORT AboutDialog : public QWidget {
 Q_OBJECT
 
 public:
@@ -27,6 +27,9 @@ private:
     void initDialog(QVBoxLayout* lay);
 
     int getGiteeProjectStar(const QString& url);
+
+protected:
+    void paintEvent(QPaintEvent *event) override;
 
 public slots:
     void onShowDialog();

@@ -18,6 +18,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QRandomGenerator>
+#include <QStyleOption>
 
 AboutDialog::AboutDialog(QWidget *parent)
     : QWidget(parent)
@@ -89,8 +90,10 @@ void AboutDialog::initDialog(QVBoxLayout *lay) {
             " 🎁如果你喜欢该项目, 请点击左下角跳转至 Gitee项目网址, 点击\n 右上角的✨星星✨, 你的 Star 是我最大的动力\n\n"
             " 目前该项目在Gitee上已获 %1 颗星, 撸起袖子加油干 !!! \n\n").arg(stars);
         ElaText* descTitle = new ElaText(descText, this);
+        descTitle->setTextInteractionFlags(Qt::TextSelectableByMouse);
         auto style = descTitle->styleSheet();
-        descTitle->setStyleSheet("background-color: qlineargradient(spread:pad,x1:0, y1:0,x2:0, y2:1,stop:0 rgba(105, 225, 255, 200), stop:1 rgba(255, 182, 193, 200));");
+        descTitle->setStyleSheet("background-color: qlineargradient(spread:pad,x1:0, y1:0,x2:0, y2:1,stop:0 rgba(105, 225, 255, 200), stop:1 rgba(255, 182, 193, 200));"
+                                    "selection-background-color: rgb(0, 120, 215);selection-color: rgb(255, 255, 255);");
         descTitle->setTextStyle(ElaTextType::BodyStrong);
         auto font = QFont("AaSongLiuKaiTi");//需要通过KuGouApp::initFontRes()打印得知真实字体名
         font.setPixelSize(17);
@@ -156,6 +159,13 @@ int AboutDialog::getGiteeProjectStar(const QString &url) {
     STREAM_INFO()<<"获取到当前 Star 数量 : "<<jsonObj["stargazers_count"].toInt();
     // 返回 Star 数量
     return jsonObj["stargazers_count"].toInt();
+}
+
+void AboutDialog::paintEvent(QPaintEvent *event) {
+    QStyleOption opt;
+    opt.initFrom(this);
+    QPainter p(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
 
 void AboutDialog::onShowDialog() {
