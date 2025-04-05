@@ -22,6 +22,8 @@ class LiveBlockWidget : public QWidget {
 public:
     explicit LiveBlockWidget(QWidget *parent = nullptr);
 
+    void setCoverHeightExpanding();
+
     ~LiveBlockWidget() override;
 
     void setCoverPix(const QString &pixmapPath) const;

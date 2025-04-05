@@ -18,6 +18,14 @@ LiveBlockWidget::LiveBlockWidget(QWidget *parent)
     initUi();
 }
 
+void LiveBlockWidget::setCoverHeightExpanding() {
+    this->setContentsMargins(0,0,0,0);
+    ui->cover_widget->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    ui->cover_widget->setMinimumHeight(0);  // 清除最小高度限制
+    ui->cover_widget->setMaximumHeight(QWIDGETSIZE_MAX);  // 清除最大高度限制
+    update();
+}
+
 LiveBlockWidget::~LiveBlockWidget() {
     delete ui;
 }

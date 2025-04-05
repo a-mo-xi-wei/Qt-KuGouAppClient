@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1102</width>
-    <height>554</height>
+    <width>1134</width>
+    <height>535</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>LiveBigLeftWidget</string>
@@ -159,13 +165,13 @@
         <property name="minimumSize">
          <size>
           <width>350</width>
-          <height>500</height>
+          <height>480</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>350</width>
-          <height>500</height>
+          <width>300</width>
+          <height>480</height>
          </size>
         </property>
        </widget>
@@ -180,7 +186,7 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <property name="spacing">
-          <number>6</number>
+          <number>10</number>
          </property>
          <property name="leftMargin">
           <number>0</number>
@@ -204,7 +210,7 @@
              <number>0</number>
             </property>
             <property name="topMargin">
-             <number>0</number>
+             <number>4</number>
             </property>
             <property name="rightMargin">
              <number>0</number>
@@ -222,13 +228,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -244,13 +250,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -266,13 +272,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -288,13 +294,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -319,7 +325,7 @@
              <number>0</number>
             </property>
             <property name="bottomMargin">
-             <number>0</number>
+             <number>4</number>
             </property>
             <item>
              <widget class="LiveBlockWidget" name="widget_5" native="true">
@@ -331,13 +337,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -353,13 +359,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -375,13 +381,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -397,13 +403,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>182</width>
+                <width>190</width>
                 <height>16777215</height>
                </size>
               </property>
