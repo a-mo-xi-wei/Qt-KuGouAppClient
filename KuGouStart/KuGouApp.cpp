@@ -480,7 +480,7 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
     //刷新遮罩大小同步
     auto rect = ui->stackedWidget->geometry();
     rect.setLeft(5);
-    rect.setRight(rect.width()-18);
+    rect.setRight(rect.width()-6);
     this->m_refreshMask->setGeometry(rect);
 }
 
@@ -545,10 +545,6 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
 void KuGouApp::showEvent(QShowEvent *event) {
     MainWindow::showEvent(event);
     updateSize();
-    auto rect = ui->stackedWidget->geometry();
-    rect.setLeft(5);
-    rect.setRight(rect.width()-18);
-    this->m_refreshMask->setGeometry(rect);
 }
 
 void KuGouApp::on_recommend_you_toolButton_clicked() {

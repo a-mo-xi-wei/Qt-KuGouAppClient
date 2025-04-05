@@ -18,6 +18,7 @@
 #include <QMouseEvent>
 #include <QPropertyAnimation>
 #include <QSequentialAnimationGroup>
+#include <QShortcut>
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
@@ -106,6 +107,9 @@ void TitleWidget::initUi() {
     //专门处理标题menu
     connect(ui->menu_toolButton,&QToolButton::clicked,this,&TitleWidget::on_menu_toolButton_clicked);
 
+    // 创建快捷键对象，绑定 F5 到 title_refresh_toolButton 的点击事件
+    const auto shortcut = new QShortcut(QKeySequence(Qt::Key_F5), this);
+    connect(shortcut, &QShortcut::activated, ui->title_refresh_toolButton, &QToolButton::click);
 }
 
 void TitleWidget::showMenu(const QPoint &pos) {
@@ -119,6 +123,7 @@ void TitleWidget::showMenu(const QPoint &pos) {
 RippleButton * TitleWidget::max_toolButton() const {
     return ui->max_toolButton;
 }
+
 void TitleWidget::mouseDoubleClickEvent(QMouseEvent *event) {
     QWidget::mouseDoubleClickEvent(event);
     if (event->button() == Qt::LeftButton) {
