@@ -28,4 +28,4 @@ target_include_directories(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySlidingStackedWidget
-        MyBlockWidget MyMenu MySearchLineEdit)
+        MyBlockWidget MyMenu MySearchLineEdit ElaWidgetTools)

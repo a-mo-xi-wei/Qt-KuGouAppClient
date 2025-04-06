@@ -9,6 +9,7 @@
 #include "IconBesideTextToolButton.h"
 #include "logger.hpp"
 #include "ElaMessageBar.h"
+#include "ElaToolTip.h"
 
 #include <QFile>
 #include <QDateTime>
@@ -53,8 +54,23 @@ void DailyRecommend::initUi() {
     //初始化播放按钮
     ui->play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")));
     ui->play_toolButton->setText(QStringLiteral("播放"));
-    //初始化vip按钮
-    ui->vip_toolButton->setToolTip(QStringLiteral("威哥出品，不存在VIP"));
+    // 使用 ElaToolTip 设置 vip_toolButton 的 tooltip
+    auto vip_toolButton_toolTip = new ElaToolTip(ui->vip_toolButton);
+    vip_toolButton_toolTip->setToolTip(QStringLiteral("威哥出品，不存在VIP"));
+
+    // 设置 collect_toolButton 的 tooltip
+    auto collect_toolButton_toolTip = new ElaToolTip(ui->collect_toolButton);
+    collect_toolButton_toolTip->setToolTip(QStringLiteral("收藏"));
+
+    // 设置 download_toolButton 的 tooltip
+    auto download_toolButton_toolTip = new ElaToolTip(ui->download_toolButton);
+    download_toolButton_toolTip->setToolTip(QStringLiteral("下载"));
+
+    // 设置 batch_toolButton 的 tooltip
+    auto batch_toolButton_toolTip = new ElaToolTip(ui->batch_toolButton);
+    batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作"));
+
+
     ui->vip_toolButton->setIconSize(QSize(18,18));
     ui->vip_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/yellow-diamond.svg")));
     ui->vip_toolButton->setText(QStringLiteral("+30"));

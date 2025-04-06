@@ -8,6 +8,7 @@
 #include "ui_SingleSong.h"
 #include "MyMenu.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QFile>
 #include <QScreen>
@@ -38,6 +39,33 @@ SingleSong::~SingleSong() {
 }
 
 void SingleSong::initUi() {
+    //设置toolTip
+    {
+        //collect_search_lineEdit
+        auto collect_search_lineEdit_toolTip = new ElaToolTip(ui->collect_search_lineEdit);
+        collect_search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
+
+        // 设置 collect_download_toolButton 的 tooltip
+        auto collect_download_toolButton_toolTip = new ElaToolTip(ui->collect_download_toolButton);
+        collect_download_toolButton_toolTip->setToolTip(QStringLiteral("下载"));
+
+        // 设置 collect_share_toolButton 的 tooltip
+        auto collect_share_toolButton_toolTip = new ElaToolTip(ui->collect_share_toolButton);
+        collect_share_toolButton_toolTip->setToolTip(QStringLiteral("分享"));
+
+        // 设置 collect_zhuanji_toolButton 的 tooltip
+        auto collect_zhuanji_toolButton_toolTip = new ElaToolTip(ui->collect_zhuanji_toolButton);
+        collect_zhuanji_toolButton_toolTip->setToolTip(QStringLiteral("专辑"));
+
+        // 设置 collect_sort_toolButton 的 tooltip
+        auto collect_sort_toolButton_toolTip = new ElaToolTip(ui->collect_sort_toolButton);
+        collect_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+
+        // 设置 collect_batch_toolButton 的 tooltip
+        auto collect_batch_toolButton_toolTip = new ElaToolTip(ui->collect_batch_toolButton);
+        collect_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作"));
+    }
+
     ui->collect_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")));
     ui->collect_download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/download-gray.svg")));
     ui->collect_download_toolButton->installEventFilter(this);

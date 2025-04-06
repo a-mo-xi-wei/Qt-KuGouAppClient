@@ -7,6 +7,7 @@
 #include "RecentlyChannelBlock.h"
 #include "ui_RecentlyChannelBlock.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QFile>
 #include <QMouseEvent>
@@ -40,6 +41,8 @@ void RecentlyChannelBlock::setCoverPix(const QString &pixmapPath) const {
 }
 
 void RecentlyChannelBlock::initUi() const {
+    auto singer_song_label_toolTip = new ElaToolTip(ui->singer_song_label);
+    singer_song_label_toolTip->setToolTip(ui->singer_song_label->text());
     //遮罩设置
     auto& mask = ui->cover_widget->getMask();
     mask.setDefaultFillCircleColor(Qt::white);

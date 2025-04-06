@@ -6,6 +6,7 @@
 
 #include "ChannelBlock.h"
 #include "ui_ChannelBlock.h"
+#include "ElaToolTip.h"
 
 #include <QFile>
 #include <QRandomGenerator>
@@ -57,20 +58,22 @@ void ChannelBlock::initUi()const {
 
 void ChannelBlock::setTitleText(const QString &title) {
     this->m_titleText = title;
+    auto title_label_toolTip = new ElaToolTip(ui->title_label);
+    title_label_toolTip->setToolTip(this->m_titleText);
     updateTitleText();
 }
-
 void ChannelBlock::updateTitleText()const {
     //设置字体测量工具
     auto font = ui->title_label->font();
     QFontMetrics fm(font);
-    ui->title_label->setToolTip(this->m_titleText);
     auto elidedText = fm.elidedText(this->m_titleText,Qt::ElideRight,this->width()-10);
     ui->title_label->setText(elidedText);
 }
 
 void ChannelBlock::setSingerSongText(const QString &singerSong) {
     this->m_singerSongText = singerSong;
+    auto singe_song_label_toolTip = new ElaToolTip(ui->singe_song_label);
+    singe_song_label_toolTip->setToolTip(this->m_singerSongText);
     updateSingerSongText();
 }
 
@@ -78,7 +81,6 @@ void ChannelBlock::updateSingerSongText()const {
     //设置字体测量工具
     auto font = ui->singe_song_label->font();
     QFontMetrics fm(font);
-    ui->singe_song_label->setToolTip(this->m_singerSongText);
     auto elidedText = fm.elidedText(this->m_singerSongText,Qt::ElideRight,this->width()-10);
     ui->singe_song_label->setText(elidedText);
 }

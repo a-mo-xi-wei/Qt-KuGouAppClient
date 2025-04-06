@@ -9,6 +9,7 @@
 #include "logger.hpp"
 #include "ElaMessageBar.h"
 #include "Async.h"
+#include "ElaToolTip.h"
 
 #include <QFileDialog>
 #include <QJsonArray>
@@ -84,6 +85,33 @@ LocalSong::~LocalSong() {
 }
 
 void LocalSong::initUi() {
+    //设置toolTip
+    {
+        //upload_toolButton
+        auto upload_toolButton_toolTip = new ElaToolTip(ui->upload_toolButton);
+        upload_toolButton_toolTip->setToolTip(QStringLiteral("上传未备份音乐到音乐云盘"));
+
+        // 设置 local_search_lineEdit 的 tooltip
+        auto local_search_lineEdit_toolTip = new ElaToolTip(ui->local_search_lineEdit);
+        local_search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
+
+        // 设置 local_share_toolButton 的 tooltip
+        auto local_share_toolButton_toolTip = new ElaToolTip(ui->local_share_toolButton);
+        local_share_toolButton_toolTip->setToolTip(QStringLiteral("分享"));
+
+        // 设置 local_zhuanji_toolButton 的 tooltip
+        auto local_zhuanji_toolButton_toolTip = new ElaToolTip(ui->local_zhuanji_toolButton);
+        local_zhuanji_toolButton_toolTip->setToolTip(QStringLiteral("专辑"));
+
+        // 设置 local_sort_toolButton 的 tooltip
+        auto local_sort_toolButton_toolTip = new ElaToolTip(ui->local_sort_toolButton);
+        local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+
+        // 设置 local_batch_toolButton 的 tooltip
+        auto local_batch_toolButton_toolTip = new ElaToolTip(ui->local_batch_toolButton);
+        local_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作"));
+    }
+
     const auto layout = ui->local_song_list_widget->layout();
     layout->setSpacing(2);
     layout->addItem(new QSpacerItem(1, 40, QSizePolicy::Fixed, QSizePolicy::Fixed));

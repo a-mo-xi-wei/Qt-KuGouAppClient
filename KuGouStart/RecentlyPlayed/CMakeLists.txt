@@ -27,4 +27,4 @@ target_include_directories(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySlidingStackedWidget MyMenu
-        MyBlockWidget MySearchLineEdit MyCheckBox)
+        MyBlockWidget MySearchLineEdit MyCheckBox ElaWidgetTools)

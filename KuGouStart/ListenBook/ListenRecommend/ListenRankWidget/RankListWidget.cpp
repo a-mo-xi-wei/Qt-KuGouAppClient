@@ -6,6 +6,7 @@
 
 #include "RankListWidget.h"
 #include "ui_RankListWidget.h"
+#include "ElaToolTip.h"
 
 RankListWidget::RankListWidget(QWidget *parent) :
     QWidget(parent), ui(new Ui::RankListWidget) {
@@ -25,6 +26,9 @@ void RankListWidget::setDescText(const QString &text) const {
     const QFontMetrics fm(font);
     const QString elidedText = fm.elidedText(text, Qt::ElideRight, this->width()-110);
     ui->desc_label->setText(elidedText);
+
+    auto desc_label_toolTip = new ElaToolTip(ui->desc_label);
+    desc_label_toolTip->setToolTip(text);
 }
 
 void RankListWidget::setInfoText(const QString &text) const {

@@ -1,6 +1,7 @@
 #include "TableWidget.h"
 #include "logger.hpp"
 #include "ElaMessageBar.h"
+#include "ElaToolTip.h"
 
 #include <QLabel>
 #include <QToolButton>
@@ -115,9 +116,14 @@ bool TableWidget::eventFilter(QObject *watched, QEvent *event) {
 }
 
 void TableWidget::initUi() {
-    this->m_play_ToolBtn->setToolTip(QStringLiteral("开始播放"));
-    this->m_adjust_ToolBtn->setToolTip(QStringLiteral("隐藏栏目"));
-    this->m_refresh_ToolBtn->setToolTip(QStringLiteral("刷新"));
+    auto play_toolBtn_toolTip = new ElaToolTip(this->m_play_ToolBtn);
+    play_toolBtn_toolTip->setToolTip(QStringLiteral("开始播放"));
+
+    auto adjust_toolBtn_toolTip = new ElaToolTip(this->m_adjust_ToolBtn);
+    adjust_toolBtn_toolTip->setToolTip(QStringLiteral("隐藏栏目"));
+
+    auto refresh_toolBtn_toolTip = new ElaToolTip(this->m_refresh_ToolBtn);
+    refresh_toolBtn_toolTip->setToolTip(QStringLiteral("刷新"));
 
     this->m_play_ToolBtn->setCursor(Qt::PointingHandCursor);
     this->m_adjust_ToolBtn->setCursor(Qt::PointingHandCursor);

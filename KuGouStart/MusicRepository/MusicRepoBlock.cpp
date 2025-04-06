@@ -7,6 +7,7 @@
 #include "MusicRepoBlock.h"
 #include "ui_MusicRepoBlock.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QFile>
 #include <QMouseEvent>
@@ -39,19 +40,23 @@ void MusicRepoBlock::setCoverPix(const QString &pixmapPath) {
 
 void MusicRepoBlock::setSongName(const QString &song) {
     this->m_songName = song;
+    auto song_label_toolTip = new ElaToolTip(ui->song_label);
+    song_label_toolTip->setToolTip(this->m_songName);
     updateSongText();
 }
 
 void MusicRepoBlock::setSinger(const QString &singer) {
     this->m_singer = singer;
+    auto singer_label_toolTip = new ElaToolTip(ui->singer_label);
+    singer_label_toolTip->setToolTip(this->m_singer);
     updateSingerText();
 }
+
 
 void MusicRepoBlock::updateSongText() {
     //设置字体测量工具
     auto font = ui->song_label->font();
     QFontMetrics fm(font);
-    ui->song_label->setToolTip(this->m_songName);
     //auto w = fm.horizontalAdvance(this->m_songName);
     //if(w >= ui->info_widget->width()-50) {
     auto elidedText = fm.elidedText(this->m_songName,Qt::ElideRight,ui->info_widget->width()-10);
@@ -62,7 +67,6 @@ void MusicRepoBlock::updateSingerText() {
     //设置字体测量工具
     auto font = ui->singer_label->font();
     QFontMetrics fm(font);
-    ui->singer_label->setToolTip(this->m_singer);
     auto elidedText = fm.elidedText(this->m_singer,Qt::ElideRight,ui->info_widget->width()-10);
     ui->singer_label->setText(elidedText);
 }

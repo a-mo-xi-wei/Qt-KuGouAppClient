@@ -7,6 +7,7 @@
 #include "MVBlockWidget.h"
 #include "ui_MVBlockWidget.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QFile>
 #include <QMouseEvent>
@@ -38,11 +39,15 @@ void MVBlockWidget::setCoverPix(const QString &pixmapPath) const {
 
 void MVBlockWidget::setTitle(const QString &title) {
     this->m_title = title;
+    auto title_label_toolTip = new ElaToolTip(ui->title_label);
+    title_label_toolTip->setToolTip(this->m_title);
     updateTitleText();
 }
 
 void MVBlockWidget::setDescription(const QString &description) {
     this->m_description = description;
+    auto desc_label_toolTip = new ElaToolTip(ui->desc_label);
+    desc_label_toolTip->setToolTip(this->m_description);
     updateDescText();
 }
 
@@ -67,7 +72,6 @@ void MVBlockWidget::updateTitleText() const {
     //设置字体测量工具
     auto font = ui->title_label->font();
     QFontMetrics fm(font);
-    ui->title_label->setToolTip(this->m_title);
     //auto w = fm.horizontalAdvance(this->m_songName);
     //if(w >= ui->info_widget->width()-50) {
     auto elidedText = fm.elidedText(this->m_title,Qt::ElideRight,this->width()-10);
@@ -78,7 +82,6 @@ void MVBlockWidget::updateDescText() const {
     //设置字体测量工具
     auto font = ui->desc_label->font();
     QFontMetrics fm(font);
-    ui->desc_label->setToolTip(this->m_description);
     auto elidedText = fm.elidedText(this->m_description,Qt::ElideRight,this->width()-10);
     ui->desc_label->setText(elidedText);
 }

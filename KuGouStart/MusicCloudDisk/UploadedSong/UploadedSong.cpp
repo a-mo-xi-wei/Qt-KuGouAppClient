@@ -8,6 +8,7 @@
 #include "ui_UploadedSong.h"
 #include "MyMenu.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QFile>
 #include <QScreen>
@@ -39,6 +40,24 @@ UploadedSong::~UploadedSong() {
 }
 
 void UploadedSong::initUi() {
+    //设置toolTip
+    {
+        // 设置 cloud_search_lineEdit 的 tooltip
+        auto cloud_search_lineEdit_toolTip = new ElaToolTip(ui->cloud_search_lineEdit);
+        cloud_search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
+
+        // 设置 cloud_share_toolButton 的 tooltip
+        auto cloud_share_toolButton_toolTip = new ElaToolTip(ui->cloud_share_toolButton);
+        cloud_share_toolButton_toolTip->setToolTip(QStringLiteral("分享"));
+
+        // 设置 cloud_sort_toolButton 的 tooltip
+        auto cloud_sort_toolButton_toolTip = new ElaToolTip(ui->cloud_sort_toolButton);
+        cloud_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+
+        // 设置 cloud_batch_toolButton 的 tooltip
+        auto cloud_batch_toolButton_toolTip = new ElaToolTip(ui->cloud_batch_toolButton);
+        cloud_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作"));
+    }
     ui->cloud_play_toolButton->setIcon(QIcon(QStringLiteral(":Res/tabIcon/play3-gray.svg")));
     ui->cloud_upload_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/upload-white.svg")));
     ui->cloud_download_toolButton->setIcon(QIcon(QStringLiteral(":Res/tabIcon/download-gray.svg")));

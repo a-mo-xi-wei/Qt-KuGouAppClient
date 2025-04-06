@@ -8,6 +8,7 @@
 #include "ui_AllMusic.h"
 #include "MyMenu.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QButtonGroup>
 #include <QFile>
@@ -43,6 +44,28 @@ AllMusic::~AllMusic() {
 }
 
 void AllMusic::initUi() {
+    //设置toolTip
+    {
+        // 设置 all_download_toolButton 的 tooltip
+        auto all_download_toolButton_toolTip = new ElaToolTip(ui->all_download_toolButton);
+        all_download_toolButton_toolTip->setToolTip(QStringLiteral("下载"));
+
+        // 设置 all_search_lineEdit 的 tooltip
+        auto all_search_lineEdit_toolTip = new ElaToolTip(ui->all_search_lineEdit);
+        all_search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
+
+        // 设置 all_share_toolButton 的 tooltip
+        auto all_share_toolButton_toolTip = new ElaToolTip(ui->all_share_toolButton);
+        all_share_toolButton_toolTip->setToolTip(QStringLiteral("分享"));
+
+        // 设置 all_sort_toolButton 的 tooltip
+        auto all_sort_toolButton_toolTip = new ElaToolTip(ui->all_sort_toolButton);
+        all_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+
+        // 设置 all_batch_toolButton 的 tooltip
+        auto all_batch_toolButton_toolTip = new ElaToolTip(ui->all_batch_toolButton);
+        all_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作"));
+    }
     initStackedWidget();
     initIndexLab();
     ui->all_pushButton->clicked();

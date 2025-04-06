@@ -361,6 +361,7 @@ void MVWidget::on_recommend_pushButton_clicked() {
     }
 
     ui->new_song_grid_widget->setUpdatesEnabled(true);
+    ui->new_song_grid_widget->update();
 }
 
 void MVWidget::on_chinese_pushButton_clicked() {
@@ -420,6 +421,7 @@ void MVWidget::on_more_pushButton2_clicked()  {
     ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
                 QString("%1 功能未实现 敬请期待").arg(ui->more_pushButton2->text().left(ui->more_pushButton2->text().size() - 2)),1000,this->window());
 }
+
 void MVWidget::on_more_pushButton3_clicked()  {
     ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
                 QString("%1 功能未实现 敬请期待").arg(ui->more_pushButton3->text().left(ui->more_pushButton3->text().size() - 2)),1000,this->window());

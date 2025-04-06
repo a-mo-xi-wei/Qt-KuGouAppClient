@@ -1,4 +1,5 @@
 #include "GalleryPhotoWidget.h"
+#include "ElaToolTip.h"
 
 #include <QFile>
 #include <QGraphicsDropShadowEffect>
@@ -46,6 +47,8 @@ void GalleryPhotoWidget::setCoverPix(const QString &pixmapPath) const {
 void GalleryPhotoWidget::setTitleText(const QString &title) {
     this->m_titleText = title;
     this->m_titleLab->setText(title);
+    auto titleLab_toolTip = new ElaToolTip(this->m_titleLab);
+    titleLab_toolTip->setToolTip(title);
     updateTitleText();
 }
 

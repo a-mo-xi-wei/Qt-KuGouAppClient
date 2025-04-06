@@ -7,13 +7,13 @@
 #include "MusicRepoVideo.h"
 #include "ui_MusicRepoVideo.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QFile>
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
 #include <QRandomGenerator>
-
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -42,6 +42,8 @@ void MusicRepoVideo::setCoverPix(const QString &pixmapPath) const {
 
 void MusicRepoVideo::setVideoName(const QString &name) {
     this->m_videoName = name;
+    auto video_name_label_tooTip = new ElaToolTip(ui->video_name_label);
+    video_name_label_tooTip->setToolTip(this->m_videoName);
     updateVideoNameText();
 }
 
@@ -63,6 +65,8 @@ void MusicRepoVideo::setIconPix(const QString &pix) const {
 
 void MusicRepoVideo::setAuthor(const QString &author) {
     this->m_videoAuthor = author;
+    auto video_author_label_tooTip = new ElaToolTip(ui->video_author_label);
+    video_author_label_tooTip->setToolTip(this->m_videoAuthor);
     updateVideoAuthorText();
 }
 
@@ -79,7 +83,6 @@ void MusicRepoVideo::updateVideoNameText() const {
     //设置字体测量工具
     auto font = ui->video_name_label->font();
     QFontMetrics fm(font);
-    ui->video_name_label->setToolTip(this->m_videoName);
     auto elidedText = fm.elidedText(this->m_videoName,Qt::ElideRight,ui->info_widget->width()-20);
     ui->video_name_label->setText(elidedText);
 }
@@ -88,7 +91,6 @@ void MusicRepoVideo::updateVideoAuthorText() const {
     //设置字体测量工具
     auto font = ui->video_author_label->font();
     QFontMetrics fm(font);
-    ui->video_author_label->setToolTip(this->m_videoAuthor);
     auto elidedText = fm.elidedText(this->m_videoAuthor,Qt::ElideRight,ui->info_widget->width()-20);
     ui->video_author_label->setText(elidedText);
 }

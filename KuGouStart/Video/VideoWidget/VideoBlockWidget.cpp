@@ -7,6 +7,7 @@
 #include "VideoBlockWidget.h"
 #include "ui_VideoBlockWidget.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QFile>
 #include <QPainter>
@@ -43,8 +44,11 @@ void VideoBlockWidget::setCoverPix(const QString &pixmapPath) const {
 
 void VideoBlockWidget::setVideoName(const QString &name) {
     this->m_videoName = name;
+    auto video_name_label_toolTip = new ElaToolTip(ui->video_name_label);
+    video_name_label_toolTip->setToolTip(this->m_videoName);
     updateVideoNameText();
 }
+
 
 void VideoBlockWidget::setIconPix(const QString &pix) const {
     auto src = QPixmap(pix);
@@ -64,6 +68,8 @@ void VideoBlockWidget::setIconPix(const QString &pix) const {
 
 void VideoBlockWidget::setAuthor(const QString &author) {
     this->m_videoAuthor = author;
+    auto video_author_label_toolTip = new ElaToolTip(ui->video_author_label);
+    video_author_label_toolTip->setToolTip(this->m_videoAuthor);
     updateVideoAuthorText();
 }
 
@@ -114,7 +120,6 @@ void VideoBlockWidget::updateVideoNameText() const {
     //设置字体测量工具
     auto font = ui->video_name_label->font();
     QFontMetrics fm(font);
-    ui->video_name_label->setToolTip(this->m_videoName);
     auto elidedText = fm.elidedText(this->m_videoName,Qt::ElideRight,ui->info_widget->width()-20);
     ui->video_name_label->setText(elidedText);
 }
@@ -123,7 +128,6 @@ void VideoBlockWidget::updateVideoAuthorText() const {
     //设置字体测量工具
     auto font = ui->video_author_label->font();
     QFontMetrics fm(font);
-    ui->video_author_label->setToolTip(this->m_videoAuthor);
     auto elidedText = fm.elidedText(this->m_videoAuthor,Qt::ElideRight,ui->info_widget->width()-20);
     ui->video_author_label->setText(elidedText);
 }

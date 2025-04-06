@@ -5,10 +5,10 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_LiveBlockWidget.h" resolved
 
 #include "LiveBlockWidget.h"
+#include "ui_LiveBlockWidget.h"
+#include "ElaToolTip.h"
 
 #include <QMouseEvent>
-
-#include "ui_LiveBlockWidget.h"
 
 LiveBlockWidget::LiveBlockWidget(QWidget *parent)
     : QWidget(parent)
@@ -36,9 +36,13 @@ void LiveBlockWidget::setCoverPix(const QString &pixmapPath) const {
 
 void LiveBlockWidget::setLeftBottomText(const QString &text) {
     ui->cover_widget->setPopularBtnText(text);
-    ui->cover_widget->setToolTip(text);
+
+    auto coverWidget_toolTip = new ElaToolTip(ui->cover_widget);
+    coverWidget_toolTip->setToolTip(text);
+
     update();
 }
+
 
 void LiveBlockWidget::setLeftPopularBtnFontSize(const int &size, const bool &isBold) const {
     ui->cover_widget->setLeftPopularBtnFontSize(size,isBold);

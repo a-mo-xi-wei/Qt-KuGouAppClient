@@ -8,6 +8,7 @@
 #include "ui_TitleWidget.h"
 #include "MyMenu.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QGuiApplication>
 #include <QPainter>
@@ -50,6 +51,61 @@ TitleWidget::~TitleWidget() {
 }
 
 void TitleWidget::initUi() {
+    //设置toolTip
+    {
+    //title_music_pushButton
+    auto title_music_pushButton_toolTip = new ElaToolTip(ui->title_music_pushButton);
+    title_music_pushButton_toolTip->setToolTip(QStringLiteral("音乐"));
+
+    //title_live_pushButton
+    auto title_live_pushButton_toolTip = new ElaToolTip(ui->title_live_pushButton);
+    title_live_pushButton_toolTip->setToolTip(QStringLiteral("直播"));
+
+    //title_listen_book_pushButton
+    auto title_listen_book_pushButton_toolTip = new ElaToolTip(ui->title_listen_book_pushButton);
+    title_listen_book_pushButton_toolTip->setToolTip(QStringLiteral("听书"));
+
+    //title_search_pushButton
+    auto title_search_pushButton_toolTip = new ElaToolTip(ui->title_search_pushButton);
+    title_search_pushButton_toolTip->setToolTip(QStringLiteral("探索"));
+
+    //listen_toolButton
+    auto listen_toolButton_toolTip = new ElaToolTip(ui->listen_toolButton);
+    listen_toolButton_toolTip->setToolTip(QStringLiteral("听歌识曲"));
+
+    //title_name_label
+    auto title_name_label_toolTip = new ElaToolTip(ui->title_name_label);
+    title_name_label_toolTip->setToolTip(QStringLiteral("昵称"));
+
+    //title_gender_label
+    auto title_gender_label_toolTip = new ElaToolTip(ui->title_gender_label);
+    title_gender_label_toolTip->setToolTip(QStringLiteral("性别"));
+
+    //theme_toolButton
+    auto theme_toolButton_toolTip = new ElaToolTip(ui->theme_toolButton);
+    theme_toolButton_toolTip->setToolTip(QStringLiteral("主题"));
+
+    //message_toolButton
+    auto message_toolButton_toolTip = new ElaToolTip(ui->message_toolButton);
+    message_toolButton_toolTip->setToolTip(QStringLiteral("消息"));
+
+    //menu_toolButton
+    auto menu_toolButton_toolTip = new ElaToolTip(ui->menu_toolButton);
+    menu_toolButton_toolTip->setToolTip(QStringLiteral("菜单"));
+
+    //min_toolButton
+    auto min_toolButton_toolTip = new ElaToolTip(ui->min_toolButton);
+    min_toolButton_toolTip->setToolTip(QStringLiteral("最小化"));
+
+    //max_toolButton
+    auto max_toolButton_toolTip = new ElaToolTip(ui->max_toolButton);
+    max_toolButton_toolTip->setToolTip(QStringLiteral("最大化"));
+
+    //close_toolButton
+    auto close_toolButton_toolTip = new ElaToolTip(ui->close_toolButton);
+    close_toolButton_toolTip->setToolTip(QStringLiteral("关闭"));
+}
+
     this->setStyleSheet("QWidget#TitleWidget{margin:5px;}");
     const auto menu = new MyMenu(MyMenu::MenuKind::TitleOption,this);
     m_titleOptMenu = menu->getMenu<TitleOptionMenu>();

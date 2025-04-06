@@ -1,5 +1,6 @@
 #include "MusicItemWidget.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QLabel>
 #include <QToolButton>
@@ -36,8 +37,7 @@ QPixmap roundedPix(const QPixmap &src, QSize size, int radius) {
 MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     :QFrame(parent)
     ,m_information(std::move(info))
-    ,timer(new QTimer(this))
-{
+    ,timer(new QTimer(this)) {
     this->m_index           = m_information.index;
     this->m_name            = m_information.songName;
     this->m_duration        = m_information.duration;
@@ -61,6 +61,23 @@ MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     this->m_downloadToolBtn->setObjectName(QStringLiteral("downloadToolBtn"));
     this->m_collectToolBtn->setObjectName(QStringLiteral("collectToolBtn"));
     this->m_moreToolBtn->setObjectName(QStringLiteral("moreToolBtn"));
+    // 设置tooltip
+    {
+        auto playToolBtn_toolTip = new ElaToolTip(this->m_playToolBtn);
+        playToolBtn_toolTip->setToolTip(QStringLiteral("播放"));
+
+        auto playNextToolBtn_toolTip = new ElaToolTip(this->m_playNextToolBtn);
+        playNextToolBtn_toolTip->setToolTip(QStringLiteral("下一首"));
+
+        auto downloadToolBtn_toolTip = new ElaToolTip(this->m_downloadToolBtn);
+        downloadToolBtn_toolTip->setToolTip(QStringLiteral("下载"));
+
+        auto collectToolBtn_toolTip = new ElaToolTip(this->m_collectToolBtn);
+        collectToolBtn_toolTip->setToolTip(QStringLiteral("收藏"));
+
+        auto moreToolBtn_toolTip = new ElaToolTip(this->m_moreToolBtn);
+        moreToolBtn_toolTip->setToolTip(QStringLiteral("更多"));
+    }
     //设置样式
     QFile file(GET_CURRENT_DIR + QStringLiteral("/item.css"));
     if (file.open(QIODevice::ReadOnly)) {
@@ -115,11 +132,17 @@ void MusicItemWidget::setInformation(const SongInfor &info) {
     this->m_singerLab->setText(this->m_singer);*/
     //qDebug() << "m_nameLab width:" << m_nameLab->width();
     QFontMetrics metrics(this->m_nameLab->font());
-    this->m_nameLab->setToolTip(this->m_name);
+
+    auto nameLab_toolTip = new ElaToolTip(this->m_nameLab);
+    nameLab_toolTip->setToolTip(this->m_name);
+
     QString elidedName = metrics.elidedText(this->m_name, Qt::ElideRight, this->m_nameLab->width());
     this->m_nameLab->setText(elidedName);
     //qDebug() << "m_singerLab width:" << m_singerLab->width();
-    this->m_singerLab->setToolTip(this->m_singer);
+
+    auto singerLab_toolTip = new ElaToolTip(this->m_singerLab);
+    singerLab_toolTip->setToolTip(this->m_singer);
+
     QString elidedSinger = metrics.elidedText(this->m_singer, Qt::ElideRight, this->m_singerLab->width());
     this->m_singerLab->setText(elidedSinger);
 

@@ -7,6 +7,7 @@
 #include "Downloading.h"
 #include "ui_Downloading.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QFile>
 
@@ -35,6 +36,11 @@ Downloading::~Downloading() {
 }
 
 void Downloading::initUi() {
+    //设置toolTip
+    // 设置 setting_toolButton 的 tooltip
+    auto setting_toolButton_toolTip = new ElaToolTip(ui->setting_toolButton);
+    setting_toolButton_toolTip->setToolTip(QStringLiteral("下载设置"));
+
     ui->start_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")));
     ui->stop_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/stop-gray.svg")));
     ui->clear_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/delete-black.svg")));

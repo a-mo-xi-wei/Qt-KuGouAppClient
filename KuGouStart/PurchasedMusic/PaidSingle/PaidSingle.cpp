@@ -8,6 +8,7 @@
 #include "ui_PaidSingle.h"
 #include "MyMenu.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QFile>
 #include <QScreen>
@@ -38,6 +39,28 @@ PaidSingle::~PaidSingle() {
 }
 
 void PaidSingle::initUi() {
+    //设置toolTip
+    {
+        // 设置 single_download_toolButton 的 tooltip
+        auto single_download_toolButton_toolTip = new ElaToolTip(ui->single_download_toolButton);
+        single_download_toolButton_toolTip->setToolTip(QStringLiteral("下载"));
+        
+        // 设置 paid_search_lineEdit 的 tooltip
+        auto paid_search_lineEdit_toolTip = new ElaToolTip(ui->paid_search_lineEdit);
+        paid_search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
+
+        // 设置 single_share_toolButton 的 tooltip
+        auto single_share_toolButton_toolTip = new ElaToolTip(ui->single_share_toolButton);
+        single_share_toolButton_toolTip->setToolTip(QStringLiteral("分享"));
+
+        // 设置 single_sort_toolButton 的 tooltip
+        auto single_sort_toolButton_toolTip = new ElaToolTip(ui->single_sort_toolButton);
+        single_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+
+        // 设置 single_batch_toolButton 的 tooltip
+        auto single_batch_toolButton_toolTip = new ElaToolTip(ui->single_batch_toolButton);
+        single_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作"));
+    }
     ui->single_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")));
     ui->single_download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/download-gray.svg")));
     ui->single_download_toolButton->installEventFilter(this);

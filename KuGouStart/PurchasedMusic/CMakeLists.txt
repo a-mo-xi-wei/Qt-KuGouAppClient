@@ -24,4 +24,5 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/PurchasedVideos
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySlidingStackedWidget MyMenu MySearchLineEdit)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySlidingStackedWidget MyMenu
+        MySearchLineEdit ElaWidgetTools)

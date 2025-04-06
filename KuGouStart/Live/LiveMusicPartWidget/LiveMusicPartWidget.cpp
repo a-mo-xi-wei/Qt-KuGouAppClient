@@ -9,6 +9,7 @@
 #include "Async.h"
 #include "logger.hpp"
 #include "ElaMessageBar.h"
+#include "ElaToolTip.h"
 
 #include <QDir>
 #include <QFile>
@@ -17,8 +18,6 @@
 #include <QJsonObject>
 #include <random>
 #include <QRandomGenerator>
-
-
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
@@ -49,6 +48,36 @@ void LiveMusicPartWidget::setTitleName(const QString &name) const {
 }
 
 void LiveMusicPartWidget::initUi() {
+    //设置toolTip
+    {
+        //title_label_1
+        auto title_label_1_toolTip = new ElaToolTip(ui->title_label_1);
+        title_label_1_toolTip->setToolTip(ui->title_label_1->text());
+
+        // 设置 desc_label_1 的 tooltip
+        auto desc_label_1_toolTip = new ElaToolTip(ui->desc_label_1);
+        desc_label_1_toolTip->setToolTip(ui->desc_label_1->text());
+
+        //title_label_2
+        auto title_label_2_toolTip = new ElaToolTip(ui->title_label_2);
+        title_label_2_toolTip->setToolTip(ui->title_label_2->text());
+
+        // 设置 desc_label_2 的 tooltip
+        auto desc_label_2_toolTip = new ElaToolTip(ui->desc_label_2);
+        desc_label_2_toolTip->setToolTip(ui->desc_label_2->text());
+
+        // 设置 desc_label_3 的 tooltip
+        auto desc_label_3_toolTip = new ElaToolTip(ui->desc_label_3);
+        desc_label_3_toolTip->setToolTip(ui->desc_label_3->text());
+
+        // title_label_4
+        auto title_label_4_toolTip = new ElaToolTip(ui->title_label_4);
+        title_label_4_toolTip->setToolTip(ui->title_label_4->text());
+
+        // 设置 desc_label_4 的 tooltip
+        auto desc_label_4_toolTip = new ElaToolTip(ui->desc_label_4);
+        desc_label_4_toolTip->setToolTip(ui->desc_label_4->text());
+    }
     //初始化右上角两个按钮图标
     const auto leftLabImgPath = ":/Live/Res/live/left.svg";
     ui->left_label->setStyleSheet(QString("border-image:url('%1');").arg(leftLabImgPath));
@@ -82,15 +111,6 @@ void LiveMusicPartWidget::initUi() {
         );
         initBlockWidget();
     });
-    ui->desc_label_1->setToolTip(QStringLiteral("TOP500热歌"));
-    ui->desc_label_2->setToolTip(QStringLiteral("TOP500热歌"));
-    ui->desc_label_3->setToolTip(QStringLiteral("TOP500热歌"));
-    ui->desc_label_4->setToolTip(QStringLiteral("TOP500热歌"));
-
-    ui->title_label_1->setToolTip(ui->title_label_1->text());
-    ui->title_label_2->setToolTip(ui->title_label_2->text());
-    ui->title_label_3->setToolTip(ui->title_label_3->text());
-    ui->title_label_4->setToolTip(ui->title_label_4->text());
 
     ui->desc_label_1->setTextInteractionFlags(Qt::TextSelectableByMouse);
     ui->desc_label_2->setTextInteractionFlags(Qt::TextSelectableByMouse);
@@ -203,6 +223,7 @@ void LiveMusicPartWidget::resizeEvent(QResizeEvent *event) {
         ui->widget_4->hide();
     }
 }
+
 bool LiveMusicPartWidget::eventFilter(QObject *watched, QEvent *event) {
     if (watched == ui->left_label) {
         if (event->type() == QEvent::MouseButtonPress) {

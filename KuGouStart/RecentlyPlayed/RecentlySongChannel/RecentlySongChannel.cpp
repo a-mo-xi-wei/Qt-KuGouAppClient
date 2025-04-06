@@ -8,6 +8,7 @@
 #include "ui_RecentlySongChannel.h"
 #include "RecentlyChannelBlock.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QFile>
 
@@ -37,6 +38,20 @@ RecentlySongChannel::~RecentlySongChannel() {
 }
 
 void RecentlySongChannel::initUi() {
+    //设置toolTip
+    {
+        // 设置 recently_search_lineEdit 的 tooltip
+        auto recently_search_lineEdit_toolTip = new ElaToolTip(ui->recently_search_lineEdit);
+        recently_search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
+
+        // 设置 recently_share_toolButton 的 tooltip
+        auto recently_share_toolButton_toolTip = new ElaToolTip(ui->recently_share_toolButton);
+        recently_share_toolButton_toolTip->setToolTip(QStringLiteral("分享"));
+
+        // 设置 recently_batch_toolButton 的 tooltip
+        auto recently_batch_toolButton_toolTip = new ElaToolTip(ui->recently_batch_toolButton);
+        recently_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作"));
+    }
     ui->recently_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")));
     //处理搜索栏
     {

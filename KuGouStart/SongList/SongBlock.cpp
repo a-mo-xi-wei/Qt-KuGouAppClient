@@ -62,8 +62,6 @@ void SongBlock::setCoverPix(const QString &pixmapPath) const {
 
 void SongBlock::setDescText(const QString &text) const {
     this->m_descLab->setText(text);
-    // 设置提示文本
-    this->m_descLab->setToolTip(this->m_descLab->text());
     //更新宽度
     updateDescLab();
 }

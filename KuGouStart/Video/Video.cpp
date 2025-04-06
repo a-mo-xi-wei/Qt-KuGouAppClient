@@ -7,6 +7,7 @@
 #include "Video.h"
 #include "ui_Video.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include<QButtonGroup>
 #include<QFile>
@@ -42,6 +43,18 @@ Video::~Video() {
 }
 
 void Video::initUi()const {
+    //设置toolTip
+    {
+        auto video_channel_toolTip = new ElaToolTip(ui->video_channel_pushButton);
+        video_channel_toolTip->setToolTip(QStringLiteral("视频频道"));
+
+        auto mv_toolTip = new ElaToolTip(ui->MV_pushButton);
+        mv_toolTip->setToolTip(QStringLiteral("MV"));
+
+        auto video_toolTip = new ElaToolTip(ui->video_pushButton);
+        video_toolTip->setToolTip(QStringLiteral("视频"));
+    }
+
     ui->index_label1->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
     ui->index_label2->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
     ui->index_label3->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
