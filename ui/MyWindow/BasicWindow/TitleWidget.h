@@ -63,6 +63,8 @@ private:
 
     static QPixmap getRoundedPixmap(const QPixmap &src, QSize size, int radius);
 
+    void setTitleIndex(const int& index) const;
+
 protected:
     void mouseDoubleClickEvent(QMouseEvent *event) override;
 
@@ -138,7 +140,8 @@ signals:
 
 private:
     Ui::TitleWidget *ui;
-    QStack<StackType>               m_lastTypeStack;
+    QStack<StackType>               m_backTypeStack;
+    QStack<StackType>               m_frontTypeStack;
     StackType                       m_lastType;
     StackType                       m_curType;
     std::unique_ptr<ElaExitDialog>  m_closeDialog{};
