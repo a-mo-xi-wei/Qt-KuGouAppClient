@@ -347,7 +347,7 @@ void TitleOptionMenu::initMenu() {
     auto a_helpFacebackAction = new QWidgetAction(this);
     {
         auto widget = new QWidget(this);
-        widget->setFixedWidth(360);
+        widget->setFixedWidth(350);
         auto layout = new QHBoxLayout(widget);
         layout->setContentsMargins(0, 0, 0, 0);
         layout->setSpacing(0);

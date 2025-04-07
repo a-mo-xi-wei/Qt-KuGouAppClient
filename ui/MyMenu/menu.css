@@ -8,6 +8,9 @@ QToolButton:hover{
     background-color: #e6edfe;
     color: #268cff;
 }
+QToolButton:checked{
+    color: #268cff;
+}
 QToolButton#wallPaperBtn,QToolButton#phonePlayBtn,QToolButton#uploadToDeviceBtn,QToolButton#earnCoinBtn {
     border-radius: 6px;
     background-color: rgba(255, 255, 255, 0);

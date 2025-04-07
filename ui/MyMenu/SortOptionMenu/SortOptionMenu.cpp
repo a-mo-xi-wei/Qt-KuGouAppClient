@@ -3,6 +3,9 @@
 //
 
 #include "SortOptionMenu.h"
+
+#include <QButtonGroup>
+
 #include "logger.hpp"
 
 #include <QWidgetAction>
@@ -23,9 +26,13 @@ void SortOptionMenu::initMenu() {
             btn->setAttribute(Qt::WA_UnderMouse, true);
         });
     };
+    auto buttonGroup = new QButtonGroup(this);
+    buttonGroup->setExclusive(true);
     //默认排序
     const auto a_sortByDefaultAction = new QWidgetAction(this); {
         auto a_sortByDefaultToolBtn = new MenuBtn(this);
+        buttonGroup->addButton(a_sortByDefaultToolBtn);
+        a_sortByDefaultToolBtn->setCheckable(true);
         a_sortByDefaultToolBtn->removeFilter();
         a_sortByDefaultToolBtn->setFixedSize(120, 35);
         a_sortByDefaultToolBtn->setIconSize(QSize(18, 18));
@@ -54,6 +61,8 @@ void SortOptionMenu::initMenu() {
     //添加时间
     const auto a_sortByAddTimeAction = new QWidgetAction(this); {
         auto a_sortByAddTimeToolBtn = new MenuBtn(this);
+        buttonGroup->addButton(a_sortByAddTimeToolBtn);
+        a_sortByAddTimeToolBtn->setCheckable(true);
         a_sortByAddTimeToolBtn->removeFilter();
         a_sortByAddTimeToolBtn->setFixedSize(120, 35);
         a_sortByAddTimeToolBtn->setIconSize(QSize(18, 18));
@@ -94,6 +103,8 @@ void SortOptionMenu::initMenu() {
     //歌曲名
     const auto a_sortBySongNameAction = new QWidgetAction(this); {
         auto a_sortBySongNameToolBtn = new MenuBtn(this);
+        buttonGroup->addButton(a_sortBySongNameToolBtn);
+        a_sortBySongNameToolBtn->setCheckable(true);
         a_sortBySongNameToolBtn->removeFilter();
         a_sortBySongNameToolBtn->setFixedSize(120, 35);
         a_sortBySongNameToolBtn->setIconSize(QSize(18, 18));
@@ -134,6 +145,8 @@ void SortOptionMenu::initMenu() {
     //歌手
     const auto a_sortBySingerAction = new QWidgetAction(this); {
         auto a_sortBySingerToolBtn = new MenuBtn(this);
+        buttonGroup->addButton(a_sortBySingerToolBtn);
+        a_sortBySingerToolBtn->setCheckable(true);
         a_sortBySingerToolBtn->removeFilter();
         a_sortBySingerToolBtn->setFixedSize(120, 35);
         a_sortBySingerToolBtn->setIconSize(QSize(18, 18));
@@ -172,6 +185,8 @@ void SortOptionMenu::initMenu() {
     //时长
     const auto a_sortByDurationAction = new QWidgetAction(this); {
         auto a_sortByDurationToolBtn = new MenuBtn(this);
+        buttonGroup->addButton(a_sortByDurationToolBtn);
+        a_sortByDurationToolBtn->setCheckable(true);
         a_sortByDurationToolBtn->removeFilter();
         a_sortByDurationToolBtn->setFixedSize(120, 35);
         a_sortByDurationToolBtn->setIconSize(QSize(18, 18));
@@ -210,6 +225,8 @@ void SortOptionMenu::initMenu() {
     //播放次数
     const auto a_sortByPlayCountAction = new QWidgetAction(this); {
         auto a_sortByPlayCountToolBtn = new MenuBtn(this);
+        buttonGroup->addButton(a_sortByPlayCountToolBtn);
+        a_sortByPlayCountToolBtn->setCheckable(true);
         a_sortByPlayCountToolBtn->removeFilter();
         a_sortByPlayCountToolBtn->setFixedSize(120, 35);
         a_sortByPlayCountToolBtn->setIconSize(QSize(18, 18));
@@ -248,6 +265,8 @@ void SortOptionMenu::initMenu() {
     //随机排序
     const auto a_sortByRandomAction = new QWidgetAction(this); {
         auto a_sortByRandomToolBtn = new MenuBtn(this);
+        buttonGroup->addButton(a_sortByRandomToolBtn);
+        a_sortByRandomToolBtn->setCheckable(true);
         a_sortByRandomToolBtn->setFixedSize(120, 35);
         a_sortByRandomToolBtn->removeFilter();
         a_sortByRandomToolBtn->setIconSize(QSize(18, 18));
