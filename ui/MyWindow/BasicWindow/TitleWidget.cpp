@@ -9,6 +9,7 @@
 #include "MyMenu.h"
 #include "logger.hpp"
 #include "ElaToolTip.h"
+#include "ElaMessageBar.h"
 
 #include <QGuiApplication>
 #include <QPainter>
@@ -708,6 +709,24 @@ void TitleWidget::on_title_search_pushButton_clicked() {
     this->m_curType = StackType::Search;
     qDebug()<<"探索";
     STREAM_INFO()<<"切换探索界面";
+}
+
+void TitleWidget::on_listen_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            QString("%1 功能未实现 敬请期待").arg(ui->listen_toolButton->text()),
+                            1000,this->window());
+}
+
+void TitleWidget::on_theme_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            QString("%1 功能未实现 敬请期待").arg(ui->theme_toolButton->text()),
+                            1000,this->window());
+}
+
+void TitleWidget::on_message_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            QString("%1 功能未实现 敬请期待").arg(ui->theme_toolButton->text()),
+                            1000,this->window());
 }
 
 void TitleWidget::on_menu_toolButton_clicked() {

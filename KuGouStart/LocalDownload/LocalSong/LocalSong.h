@@ -54,7 +54,15 @@ private slots:
 
     void on_local_add_toolButton_clicked();
 
+    void on_upload_toolButton_clicked();
+
+    void on_local_share_toolButton_clicked();
+
+    void on_local_zhuanji_toolButton_clicked();
+
     void on_local_sort_toolButton_clicked();
+
+    void on_local_batch_toolButton_clicked();
 
 public slots:
     //其他
@@ -149,11 +157,6 @@ private:
     SortOptionMenu *m_sortOptMenu{};
     bool m_isSorting = false;
     QPoint m_menuPosition;
-
-    //滚动条相关
-    QWidget *m_parent{};
-    //垂直滚动条
-    QScrollBar *m_vScrollBar{};
 
     //发送网络请求
     CLibhttp m_libHttp;

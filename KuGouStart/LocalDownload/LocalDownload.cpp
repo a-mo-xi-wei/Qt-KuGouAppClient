@@ -7,6 +7,7 @@
 #include "LocalDownload.h"
 #include "ui_LocalDownload.h"
 #include "logger.hpp"
+#include "ElaMessageBar.h"
 
 #include <QFile>
 #include <QButtonGroup>
@@ -189,6 +190,12 @@ void LocalDownload::on_downloading_pushButton_clicked() {
     ui->downloaded_music_number_label->setStyleSheet("");
     ui->downloaded_video_number_label->setStyleSheet("");
     ui->local_music_number_label->setStyleSheet("");
+}
+
+void LocalDownload::on_download_history_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            QString("%1 功能暂未实现 敬请期待").arg(ui->download_history_toolButton->text()),
+                            1000,this->window());
 }
 
 void LocalDownload::local_music_label_changed(const int &num) {

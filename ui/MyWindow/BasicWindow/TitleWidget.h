@@ -88,6 +88,12 @@ private slots:
 
     void on_title_search_pushButton_clicked();
 
+    void on_listen_toolButton_clicked();
+
+    void on_theme_toolButton_clicked();
+
+    void on_message_toolButton_clicked();
+
     void on_menu_toolButton_clicked();
 
     void on_min_toolButton_clicked();

@@ -62,19 +62,6 @@ LocalSong::LocalSong(QWidget *parent)
                 QToolButton{border-image:url(':/Res/titlebar/sort-gray.svg');}
                 QToolButton:hover{border-image:url(':/Res/titlebar/sort-blue.svg');})");
     });
-    //排序相关
-    connect(m_sortOptMenu, &SortOptionMenu::defaultSort, this, &LocalSong::onDefaultSort);
-    connect(m_sortOptMenu, &SortOptionMenu::addTimeSort, this, &LocalSong::onAddTimeSort);
-    connect(m_sortOptMenu, &SortOptionMenu::songNameSort, this, &LocalSong::onSongNameSort);
-    connect(m_sortOptMenu, &SortOptionMenu::singerSort, this, &LocalSong::onSingerSort);
-    connect(m_sortOptMenu, &SortOptionMenu::durationSort, this, &LocalSong::onDurationSort);
-    connect(m_sortOptMenu, &SortOptionMenu::playCountSort, this, &LocalSong::onPlayCountSort);
-    connect(m_sortOptMenu, &SortOptionMenu::randomSort, this, &LocalSong::onRandomSort);
-
-    //获取父类指针
-    this->m_parent = this->window();
-    this->m_vScrollBar = ui->scrollArea->verticalScrollBar();
-
     initUi();
     // 延迟调用 fetchAndSyncServerSongList，确保对象构造完成
     QTimer::singleShot(0, this, &LocalSong::fetchAndSyncServerSongList);
@@ -106,6 +93,48 @@ void LocalSong::initUi() {
         // 设置 local_sort_toolButton 的 tooltip
         auto local_sort_toolButton_toolTip = new ElaToolTip(ui->local_sort_toolButton);
         local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+        {
+            // 排序相关
+            connect(m_sortOptMenu, &SortOptionMenu::defaultSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
+                Q_UNUSED(down);
+                onDefaultSort();  // 调用原有的排序槽函数
+                local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::addTimeSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
+                onAddTimeSort(down);  // 调用原有的排序槽函数
+                if (down)
+                    local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：添加时间降序"));
+                else
+                    local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：添加时间升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::songNameSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
+                onSongNameSort(down);  // 调用原本的排序槽
+                local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌曲名称降序") : QStringLiteral("当前排序方式：歌曲名称升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::singerSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
+                onSingerSort(down);
+                local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌手降序") : QStringLiteral("当前排序方式：歌手升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::durationSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
+                onDurationSort(down);
+                local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：时长降序") : QStringLiteral("当前排序方式：时长升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::playCountSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
+                onPlayCountSort(down);
+                local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：播放次数降序") : QStringLiteral("当前排序方式：播放次数升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::randomSort, this, [this, local_sort_toolButton_toolTip] {
+                onRandomSort();
+                local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：随机"));
+            });
+
+        }
 
         // 设置 local_batch_toolButton 的 tooltip
         auto local_batch_toolButton_toolTip = new ElaToolTip(ui->local_batch_toolButton);
@@ -224,7 +253,7 @@ void LocalSong::getMetaData() {
                 qDebug()<<"成功添加歌曲 ："<<item->m_information.mediaPath;
                 STREAM_INFO()<<"成功添加歌曲 ："<<item->m_information.mediaPath.toStdString();
                 ElaMessageBar::success(ElaMessageBarType::BottomRight,"Success",
-                    QString("成功添加音乐 : %1").arg(item->m_information.songName),1000,this->m_parent);
+                    QString("成功添加音乐 : %1").arg(item->m_information.songName),1000,this->window());
 
                 //ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
                 emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size()));
@@ -330,7 +359,7 @@ void LocalSong::MySort(std::function<bool(const MusicItemWidget *, const MusicIt
     this->m_lastLocationMusicVector = this->m_locationMusicVector;
     if (this->m_lastLocationMusicVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warring",
-            QString("暂无音乐"),1000,this->m_parent);
+            QString("暂无音乐"),1000,this->window());
         return;
     }
     //初始UI
@@ -468,6 +497,27 @@ void LocalSong::on_local_add_toolButton_clicked() {
     this->loadNextSong();
 }
 
+void LocalSong::on_upload_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            QString("%1 功能暂未实现 敬请期待").arg(ui->upload_toolButton->text()),
+                            1000,this->window());
+}
+
+void LocalSong::on_local_share_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            "分享 功能暂未实现 敬请期待", 1000,this->window());
+}
+
+void LocalSong::on_local_zhuanji_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            "专辑 功能暂未实现 敬请期待", 1000,this->window());
+}
+
+void LocalSong::on_local_batch_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            "批量操作 功能暂未实现 敬请期待", 1000,this->window());
+}
+
 void LocalSong::on_local_sort_toolButton_clicked() {
     getMenuPosition(QCursor::pos());
     this->m_sortOptMenu->move(this->m_menuPosition);
@@ -513,7 +563,7 @@ void LocalSong::onMaxScreenHandle() {
 }
 
 void LocalSong::onDefaultSort() {
-    ui->local_sort_toolButton->setToolTip("当前排序方式：默认排序");
+    //ui->local_sort_toolButton->setToolTip("当前排序方式：默认排序");
     //排序规则
     auto defaultSortItem = [](const MusicItemWidget *item1, const MusicItemWidget *item2) {
         return item1->m_information.addTime < item2->m_information.addTime;
@@ -522,8 +572,8 @@ void LocalSong::onDefaultSort() {
 }
 
 void LocalSong::onAddTimeSort(const bool &down) {
-    if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：添加时间降序");
-    else ui->local_sort_toolButton->setToolTip("当前排序方式：添加时间升序");
+    //if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：添加时间降序");
+    //else ui->local_sort_toolButton->setToolTip("当前排序方式：添加时间升序");
 
     //排序规则
     auto addTimeSortItem = [down](const MusicItemWidget *item1, const MusicItemWidget *item2) {
@@ -536,8 +586,8 @@ void LocalSong::onAddTimeSort(const bool &down) {
 }
 
 void LocalSong::onSongNameSort(const bool &down) {
-    if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：歌曲名降序");
-    else ui->local_sort_toolButton->setToolTip("当前排序方式：歌曲名升序");
+    //if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：歌曲名降序");
+    //else ui->local_sort_toolButton->setToolTip("当前排序方式：歌曲名升序");
     //排序规则
     auto songNameSortItem = [down](const MusicItemWidget *item1, const MusicItemWidget *item2) {
         if (down) return item1->m_information.songName > item2->m_information.songName;
@@ -548,8 +598,8 @@ void LocalSong::onSongNameSort(const bool &down) {
 }
 
 void LocalSong::onSingerSort(const bool &down) {
-    if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：歌手降序");
-    else ui->local_sort_toolButton->setToolTip("当前排序方式：歌手升序");
+    //if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：歌手降序");
+    //else ui->local_sort_toolButton->setToolTip("当前排序方式：歌手升序");
     //排序规则
     auto singerSortItem = [down](const MusicItemWidget *item1, const MusicItemWidget *item2) {
         if (down) return item1->m_information.singer > item2->m_information.singer;
@@ -560,8 +610,8 @@ void LocalSong::onSingerSort(const bool &down) {
 }
 
 void LocalSong::onDurationSort(const bool &down) {
-    if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：时长降序");
-    else ui->local_sort_toolButton->setToolTip("当前排序方式：时长升序");
+    //if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：时长降序");
+    //else ui->local_sort_toolButton->setToolTip("当前排序方式：时长升序");
     //排序规则
     auto durationSortItem = [down](const MusicItemWidget *item1, const MusicItemWidget *item2) {
         if (down) return item1->m_information.duration > item2->m_information.duration;
@@ -572,8 +622,8 @@ void LocalSong::onDurationSort(const bool &down) {
 }
 
 void LocalSong::onPlayCountSort(const bool &down) {
-    if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：播放次数降序");
-    else ui->local_sort_toolButton->setToolTip("当前排序方式：播放次数升序");
+    //if (down)ui->local_sort_toolButton->setToolTip("当前排序方式：播放次数降序");
+    //else ui->local_sort_toolButton->setToolTip("当前排序方式：播放次数升序");
     //排序规则
     auto playCountSortItem = [down](const MusicItemWidget *item1, const MusicItemWidget *item2) {
         if (down) return item1->m_information.playCount > item2->m_information.playCount;
@@ -588,11 +638,11 @@ void LocalSong::onRandomSort() {
     this->m_lastLocationMusicVector = this->m_locationMusicVector;
     if (this->m_lastLocationMusicVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warring",
-            QString("暂无音乐"),1000,this->m_parent);
+            QString("暂无音乐"),1000,this->window());
         return;
     }
     //初始UI
-    ui->local_sort_toolButton->setToolTip("当前排序方式：随机排序");
+    //ui->local_sort_toolButton->setToolTip("当前排序方式：随机排序");
     ui->local_song_list_widget->setUpdatesEnabled(false);
     const auto layout = ui->local_song_list_widget->layout();
     QLayoutItem *item;
@@ -708,7 +758,7 @@ void LocalSong::onItemDeleteSong(const int &idx) {
     //m_libHttp.UrlRequestPost("http://127.0.0.1:8080/api/delSong",QJsonDocument(delReq).toJson(QJsonDocument::Compact),1000);
     //qDebug()<<"处理删除请求完成";
     ElaMessageBar::success(ElaMessageBarType::BottomRight,"Success",
-        QString("成功删除音乐 : %1").arg(song),1000,this->m_parent);
+        QString("成功删除音乐 : %1").arg(song),1000,this->window());
 }
 
 void LocalSong::onItemOpenInFile() {
@@ -722,7 +772,7 @@ void LocalSong::onItemUpLoad() {
 
 void LocalSong::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
-    ui->scrollArea->setFixedHeight(this->m_parent->height() - 340);
+    ui->scrollArea->setFixedHeight(this->window()->height() - 340);
 }
 
 bool LocalSong::eventFilter(QObject *watched, QEvent *event) {

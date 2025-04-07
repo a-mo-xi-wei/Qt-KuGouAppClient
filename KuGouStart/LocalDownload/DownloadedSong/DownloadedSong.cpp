@@ -9,6 +9,7 @@
 #include "MyMenu.h"
 #include "logger.hpp"
 #include "ElaToolTip.h"
+#include "ElaMessageBar.h"
 
 #include <QFile>
 #include <QScreen>
@@ -116,6 +117,11 @@ void DownloadedSong::on_local_sort_toolButton_clicked() {
     getMenuPosition(QCursor::pos());
     this->m_sortOptMenu->move(this->m_menuPosition);
     this->m_sortOptMenu->show();
+}
+
+void DownloadedSong::on_local_batch_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            "批量操作 功能暂未实现 敬请期待", 1000,this->window());
 }
 
 bool DownloadedSong::eventFilter(QObject *watched, QEvent *event) {
