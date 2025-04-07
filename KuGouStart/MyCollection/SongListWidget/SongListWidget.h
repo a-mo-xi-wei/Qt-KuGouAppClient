@@ -31,6 +31,11 @@ private:
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
+private slots:
+    void on_batch_toolButton_clicked();
+
+    void on_import_toolButton_clicked();
+
 private:
     Ui::SongListWidget *ui;
     QAction* m_searchAction{};

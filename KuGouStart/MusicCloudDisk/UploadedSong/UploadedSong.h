@@ -33,6 +33,16 @@ private:
 private slots:
     void on_cloud_sort_toolButton_clicked();
 
+    void on_cloud_upload_toolButton_clicked();
+
+    void on_cloud_download_toolButton_clicked();
+
+    void on_cloud_delete_toolButton_clicked();
+
+    void on_cloud_share_toolButton_clicked();
+
+    void on_cloud_batch_toolButton_clicked();
+
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 

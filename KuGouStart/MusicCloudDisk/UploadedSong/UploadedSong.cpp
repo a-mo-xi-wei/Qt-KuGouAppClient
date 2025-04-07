@@ -9,6 +9,7 @@
 #include "MyMenu.h"
 #include "logger.hpp"
 #include "ElaToolTip.h"
+#include "ElaMessageBar.h"
 
 #include <QFile>
 #include <QScreen>
@@ -120,6 +121,32 @@ void UploadedSong::on_cloud_sort_toolButton_clicked() {
     getMenuPosition(QCursor::pos());
     this->m_sortOptMenu->move(this->m_menuPosition);
     this->m_sortOptMenu->show();
+}
+
+void UploadedSong::on_cloud_upload_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            QString("%1 功能暂未实现 敬请期待").arg(ui->cloud_upload_toolButton->text()),
+                            1000,this->window());
+}
+
+void UploadedSong::on_cloud_download_toolButton_clicked() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Info",
+                            "暂无音乐", 1000,this->window());
+}
+
+void UploadedSong::on_cloud_delete_toolButton_clicked() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Info",
+                            "暂无音乐", 1000,this->window());
+}
+
+void UploadedSong::on_cloud_share_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            "分享 功能暂未实现 敬请期待", 1000,this->window());
+}
+
+void UploadedSong::on_cloud_batch_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            "批量操作 功能暂未实现 敬请期待", 1000,this->window());
 }
 
 bool UploadedSong::eventFilter(QObject *watched, QEvent *event) {

@@ -147,6 +147,16 @@ private slots:
 
     void on_next_toolButton_clicked();
 
+    void on_stander_pushButton_clicked();
+
+    void on_acoustics_pushButton_clicked();
+
+    void on_erji_toolButton_clicked();
+
+    void on_lyrics_toolButton_clicked();
+
+    void on_song_queue_toolButton_clicked();
+
 private slots:
     void setPlayMusic(int &index);
 

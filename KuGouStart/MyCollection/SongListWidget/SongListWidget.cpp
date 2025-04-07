@@ -7,6 +7,7 @@
 #include "SongListWidget.h"
 #include "ui_SongListWidget.h"
 #include "logger.hpp"
+#include "ElaMessageBar.h"
 
 #include <QFile>
 
@@ -94,4 +95,16 @@ bool SongListWidget::eventFilter(QObject *watched, QEvent *event) {
         }
     }
     return QObject::eventFilter(watched, event);
+}
+
+void SongListWidget::on_batch_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            QString("%1 功能暂未实现 敬请期待").arg(ui->batch_toolButton->text()),
+                            1000,this->window());
+}
+
+void SongListWidget::on_import_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            QString("%1 功能暂未实现 敬请期待").arg(ui->import_toolButton->text()),
+                            1000,this->window());
 }

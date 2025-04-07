@@ -33,6 +33,8 @@ private:
 private slots:
     void on_local_sort_toolButton_clicked();
 
+    void on_local_batch_toolButton_clicked();
+
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 

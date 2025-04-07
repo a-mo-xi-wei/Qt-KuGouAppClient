@@ -58,6 +58,8 @@ private slots:
 
     void on_downloading_pushButton_clicked();
 
+    void on_download_history_toolButton_clicked();
+
     //数量标签变化
     void local_music_label_changed(const int& num);
 

@@ -23,6 +23,13 @@ public:
 
     ~Downloading() override;
 
+private slots:
+    void on_stop_toolButton_clicked();
+
+    void on_clear_toolButton_clicked();
+
+    void on_setting_toolButton_clicked();
+
 private:
     void initUi();
 

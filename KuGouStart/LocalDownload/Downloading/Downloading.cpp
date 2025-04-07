@@ -8,6 +8,7 @@
 #include "ui_Downloading.h"
 #include "logger.hpp"
 #include "ElaToolTip.h"
+#include "ElaMessageBar.h"
 
 #include <QFile>
 
@@ -33,6 +34,23 @@ Downloading::Downloading(QWidget *parent)
 
 Downloading::~Downloading() {
     delete ui;
+}
+
+void Downloading::on_stop_toolButton_clicked() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Info",
+                            "暂无正在下载音乐",
+                            1000,this->window());
+}
+
+void Downloading::on_clear_toolButton_clicked() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Info",
+                            "暂无正在下载音乐",
+                            1000,this->window());
+}
+
+void Downloading::on_setting_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            "下载设置 功能暂未实现 敬请期待", 1000,this->window());
 }
 
 void Downloading::initUi() {
