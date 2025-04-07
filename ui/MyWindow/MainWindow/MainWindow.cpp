@@ -2,6 +2,7 @@
 #include "WaterDrop.h"
 #include "MyTrayIcon.h"
 #include "logger.hpp"
+#include "ElaToolTip.h"
 
 #include <QMouseEvent>
 #include <QPainter>
@@ -126,6 +127,11 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event) {
             mousePs = event->globalPosition().toPoint();
         }
     }
+}
+
+void MainWindow::setElaToolTip(QWidget *widget, const QString &tooltip) {
+    auto toolTip = new ElaToolTip(widget);
+    toolTip->setToolTip(tooltip);
 }
 
 void MainWindow::setMouseCursor(const int& x, const int& y) {

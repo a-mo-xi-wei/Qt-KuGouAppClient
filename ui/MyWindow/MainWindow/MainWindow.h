@@ -68,6 +68,8 @@ protected:
 
     void mouseMoveEvent(QMouseEvent *event) override;
 
+    static void setElaToolTip(QWidget* widget, const QString& tooltip);
+
 private:
     //根据鼠标的设置鼠标样式，用于拉伸
     void setMouseCursor(const int& x, const int& y);
