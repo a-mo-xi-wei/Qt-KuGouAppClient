@@ -4,6 +4,7 @@
 #include "RippleButton.h"
 #include "RefreshMask.h"
 #include "qtmaterialsnackbar.h"
+#include "ElaToolTip.h"
 
 #include <QMediaMetaData>
 #include <QMediaPlayer>
@@ -21,7 +22,6 @@
 #include <QPropertyAnimation>
 #include <QShortcut>
 #include <QTimer>
-
 
 QPixmap roundedPixmap(const QPixmap &src, QSize size, int radius) {
     QPixmap scaled = src.scaled(size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
@@ -230,6 +230,54 @@ void KuGouApp::initPlayWidget() {
     new QShortcut(QKeySequence("Right"), this, SLOT(onKeyRight())); // 右箭头快进
     new QShortcut(QKeySequence("Left"), this, SLOT(onKeyLeft())); // 左箭头快退
 
+    //设置tooltip
+    MainWindow::setElaToolTip(ui->love_toolButton, "我喜欢");
+    MainWindow::setElaToolTip(ui->download_toolButton, "下载");
+    MainWindow::setElaToolTip(ui->comment_toolButton, "评论");
+    MainWindow::setElaToolTip(ui->share_toolButton, "分享");
+    MainWindow::setElaToolTip(ui->more_toolButton, "更多");
+    MainWindow::setElaToolTip(ui->circle_toolButton, "循环播放");
+    MainWindow::setElaToolTip(ui->pre_toolButton, "上一首");
+    MainWindow::setElaToolTip(ui->play_or_pause_toolButton, "播放/暂停");
+    MainWindow::setElaToolTip(ui->next_toolButton, "下一首");
+    MainWindow::setElaToolTip(ui->volume_toolButton, "调节音量");
+    MainWindow::setElaToolTip(ui->stander_pushButton, "音质选择");
+    MainWindow::setElaToolTip(ui->acoustics_pushButton, "音效");
+    MainWindow::setElaToolTip(ui->erji_toolButton, "邀请好友一起听");
+    MainWindow::setElaToolTip(ui->ci_toolButton, "打开桌面歌词");
+    MainWindow::setElaToolTip(ui->list_toolButton, "播放队列");
+    //MainWindow::setElaToolTip(ui->song_name_text,"未知歌曲");
+    //MainWindow::setElaToolTip(ui->singer_text,"未知歌手");
+    auto song_name_text_toolTip = new ElaToolTip(ui->song_name_text);
+    song_name_text_toolTip->setToolTip("未知歌曲");
+    auto singer_text_toolTip = new ElaToolTip(ui->singer_text);
+    singer_text_toolTip->setToolTip("未知歌手");
+
+    auto font = QFont("AaSongLiuKaiTi");
+    font.setPixelSize(14);
+    font.setWeight(QFont::Medium);
+    ui->song_name_text->setFont(font);
+    ui->singer_text->setFont(font);
+
+    connect(this, &KuGouApp::curPlaySongNameChange, [this, song_name_text_toolTip](const QString& songName) {
+     song_name_text_toolTip->setToolTip(songName);
+     // 强制布局更新以确保获取最新宽度
+     ui->song_name_text->updateGeometry();
+     const QFontMetrics fm(ui->song_name_text->font());
+     QString elidedText = fm.elidedText(songName, Qt::ElideRight, ui->song_name_text->width());
+     ui->song_name_text->setText(elidedText);
+     song_name_text_toolTip->adjustSize(); // 调整ToolTip尺寸
+ });
+
+    connect(this, &KuGouApp::curPlaySingerChange, [this, singer_text_toolTip](const QString& singerName) {
+        singer_text_toolTip->setToolTip(singerName);
+        ui->singer_text->updateGeometry();
+        const QFontMetrics fm(ui->singer_text->font());
+        ui->singer_text->setText(fm.elidedText(singerName, Qt::ElideRight, ui->singer_text->width()));
+        singer_text_toolTip->adjustSize();
+    });
+
+
     this->m_player->setAudioOutput(this->m_audioOutput.get());
     this->m_audioOutput->setVolume(0.2);
     connect(ui->volume_toolButton, &VolumeToolBtn::volumeChange, this, [this](const int value) {
@@ -347,8 +395,6 @@ int KuGouApp::getCurrentIndex(int index) {
 }
 
 void KuGouApp::update_cover_singer_song_HLayout() {
-    const QFont font("楷体",10);
-    const QFontMetrics fm(font);
     QString song_name;
     QString singer;
     if (this->m_isOrderPlay) {
@@ -363,10 +409,11 @@ void KuGouApp::update_cover_singer_song_HLayout() {
         song_name= this->m_songInfoVector[this->m_songIndex].songName;
         singer= this->m_songInfoVector[this->m_songIndex].singer;
     }
-    ui->song_name_label->setToolTip(song_name);
-    ui->singer_label->setToolTip(singer);
-    ui->song_name_label->setText(fm.elidedText(song_name,Qt::ElideRight,ui->song_name_label->width()));
-    ui->singer_label->setText(fm.elidedText(singer,Qt::ElideRight,ui->singer_label->width()));
+    emit curPlaySongNameChange(song_name);
+    emit curPlaySingerChange(singer);
+    const QFontMetrics fm(ui->song_name_text->font());
+    ui->song_name_text->setText(fm.elidedText(song_name,Qt::ElideRight,ui->song_name_text->width()));
+    ui->singer_text->setText(fm.elidedText(singer,Qt::ElideRight,ui->singer_text->width()));
 }
 
 void KuGouApp::updateSize() {
@@ -736,6 +783,7 @@ void KuGouApp::onTitleCurrentStackChange(const int &index,const bool& slide) {
         case 14:
             ui->all_music_toolButton->setChecked(true);
             break;
+        default: break;
     }
     updateSize();
 }

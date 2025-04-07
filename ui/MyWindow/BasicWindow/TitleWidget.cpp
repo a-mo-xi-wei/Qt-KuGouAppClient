@@ -73,6 +73,10 @@ void TitleWidget::initUi() {
     auto listen_toolButton_toolTip = new ElaToolTip(ui->listen_toolButton);
     listen_toolButton_toolTip->setToolTip(QStringLiteral("听歌识曲"));
 
+    //title_portrait_label
+    auto title_portrait_label_toolTip = new ElaToolTip(ui->title_portrait_label);
+    title_portrait_label_toolTip->setToolTip(QStringLiteral("头像"));
+
     //title_name_label
     auto title_name_label_toolTip = new ElaToolTip(ui->title_name_label);
     title_name_label_toolTip->setToolTip(QStringLiteral("昵称"));

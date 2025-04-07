@@ -182,6 +182,10 @@ signals:
 
     void maxScreen();       //发出最大化信号给LocalDown，让正在播放的高亮条延伸
 
+    void curPlaySongNameChange(const QString& songName);
+
+    void curPlaySingerChange(const QString& singer);
+
 private:
     Ui::KuGouApp *ui;
     std::unique_ptr<QMediaPlayer>       m_player{};
