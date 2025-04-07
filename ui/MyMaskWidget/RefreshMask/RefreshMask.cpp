@@ -18,6 +18,7 @@ RefreshMask::RefreshMask(QWidget *parent)
 }
 
 void RefreshMask::initUi() {
+    this->setCursor(Qt::ForbiddenCursor);
     // 初始化遮罩层（与窗口同级）
     maskWidget = new QWidget(this);
     // 给遮罩层添加圆角阴影
