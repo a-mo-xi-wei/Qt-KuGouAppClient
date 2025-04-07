@@ -9,6 +9,7 @@
 #include "MyMenu.h"
 #include "logger.hpp"
 #include "ElaToolTip.h"
+#include "ElaMessageBar.h"
 
 #include <QButtonGroup>
 #include <QFile>
@@ -32,6 +33,11 @@ AllMusic::AllMusic(QWidget *parent) :
             return;
         }
     }
+
+    //初始化menu
+    const auto menu = new MyMenu(MyMenu::MenuKind::SortOption, this);
+    this->m_sortOptMenu = menu->getMenu<SortOptionMenu>();
+
     initUi();
 
     //动画结束，恢复可交互
@@ -61,6 +67,48 @@ void AllMusic::initUi() {
         // 设置 all_sort_toolButton 的 tooltip
         auto all_sort_toolButton_toolTip = new ElaToolTip(ui->all_sort_toolButton);
         all_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+        {
+            // 排序相关
+            connect(m_sortOptMenu, &SortOptionMenu::defaultSort, this, [this, all_sort_toolButton_toolTip](const bool& down) {
+                Q_UNUSED(down);
+                onDefaultSort();  // 调用原有的排序槽函数
+                all_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::addTimeSort, this, [this, all_sort_toolButton_toolTip](const bool& down) {
+                onAddTimeSort(down);  // 调用原有的排序槽函数
+                if (down)
+                    all_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：添加时间降序"));
+                else
+                    all_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：添加时间升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::songNameSort, this, [this, all_sort_toolButton_toolTip](const bool& down) {
+                onSongNameSort(down);  // 调用原本的排序槽
+                all_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌曲名称降序") : QStringLiteral("当前排序方式：歌曲名称升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::singerSort, this, [this, all_sort_toolButton_toolTip](const bool& down) {
+                onSingerSort(down);
+                all_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌手降序") : QStringLiteral("当前排序方式：歌手升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::durationSort, this, [this, all_sort_toolButton_toolTip](const bool& down) {
+                onDurationSort(down);
+                all_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：时长降序") : QStringLiteral("当前排序方式：时长升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::playCountSort, this, [this, all_sort_toolButton_toolTip](const bool& down) {
+                onPlayCountSort(down);
+                all_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：播放次数降序") : QStringLiteral("当前排序方式：播放次数升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::randomSort, this, [this, all_sort_toolButton_toolTip] {
+                onRandomSort();
+                all_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：随机"));
+            });
+
+        }
 
         // 设置 all_batch_toolButton 的 tooltip
         auto all_batch_toolButton_toolTip = new ElaToolTip(ui->all_batch_toolButton);
@@ -90,10 +138,6 @@ void AllMusic::initUi() {
     if (searchButton) {
         searchButton->installEventFilter(this);
     }
-
-    //初始化menu
-    const auto menu = new MyMenu(MyMenu::MenuKind::SortOption, this);
-    this->m_sortOptMenu = menu->getMenu<SortOptionMenu>();
 
     ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
     ui->stackedWidget->setSpeed(400);
@@ -379,10 +423,65 @@ void AllMusic::on_cloud_disk_pushButton_clicked() {
     ui->cloud_disk_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:16px;font-weight:bold;"));
 }
 
+void AllMusic::on_all_play_toolButton_clicked() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        "暂无音乐",1000,this->window());
+}
+
+void AllMusic::on_all_download_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+        "下载 功能暂未实现 敬请期待",1000,this->window());
+}
+
+void AllMusic::on_all_share_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+        "分享 功能暂未实现 敬请期待",1000,this->window());
+}
+
+void AllMusic::on_all_batch_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+        "批量操作 功能暂未实现 敬请期待",1000,this->window());
+}
+
 void AllMusic::on_all_sort_toolButton_clicked() {
     getMenuPosition(QCursor::pos());
     this->m_sortOptMenu->move(this->m_menuPosition);
     this->m_sortOptMenu->show();
+}
+
+void AllMusic::onDefaultSort() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        "暂无音乐",1000,this->window());
+}
+
+void AllMusic::onAddTimeSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        "暂无音乐",1000,this->window());
+}
+
+void AllMusic::onSongNameSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        "暂无音乐",1000,this->window());
+}
+
+void AllMusic::onSingerSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        "暂无音乐",1000,this->window());
+}
+
+void AllMusic::onDurationSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        "暂无音乐",1000,this->window());
+}
+
+void AllMusic::onPlayCountSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        "暂无音乐",1000,this->window());
+}
+
+void AllMusic::onRandomSort() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        "暂无音乐",1000,this->window());
 }
 
 bool AllMusic::eventFilter(QObject *watched, QEvent *event) {

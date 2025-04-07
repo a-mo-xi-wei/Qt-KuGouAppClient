@@ -43,6 +43,22 @@ private slots:
 
     void on_cloud_batch_toolButton_clicked();
 
+public slots:
+    //排序相关
+    void onDefaultSort();
+
+    void onAddTimeSort(const bool &down);
+
+    void onSongNameSort(const bool &down);
+
+    void onSingerSort(const bool &down);
+
+    void onDurationSort(const bool &down);
+
+    void onPlayCountSort(const bool &down);
+
+    void onRandomSort();
+
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 

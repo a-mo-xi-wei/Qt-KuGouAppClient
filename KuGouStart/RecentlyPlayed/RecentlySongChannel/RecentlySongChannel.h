@@ -29,6 +29,13 @@ private:
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
+private slots:
+    void on_recently_play_toolButton_clicked();
+
+    void on_recently_share_toolButton_clicked();
+
+    void on_recently_batch_toolButton_clicked();
+
 private:
     Ui::RecentlySongChannel *ui;
     QAction *m_searchAction; //专门为了设置图片

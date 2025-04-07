@@ -36,14 +36,20 @@ Downloading::~Downloading() {
     delete ui;
 }
 
+void Downloading::on_start_toolButton_clicked() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                            "暂无正在下载音乐",
+                            1000,this->window());
+}
+
 void Downloading::on_stop_toolButton_clicked() {
-    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Info",
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                             "暂无正在下载音乐",
                             1000,this->window());
 }
 
 void Downloading::on_clear_toolButton_clicked() {
-    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Info",
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                             "暂无正在下载音乐",
                             1000,this->window());
 }

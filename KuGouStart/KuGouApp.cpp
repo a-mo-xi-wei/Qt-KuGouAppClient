@@ -685,6 +685,11 @@ void KuGouApp::onPlayMusic(int index) {
 }
 
 void KuGouApp::onStartPlay() {
+    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                                QStringLiteral("暂无可播放音乐"),
+                                1000,this->window());
+    }
     if(this->m_isSingleCircle)ui->circle_toolButton->clicked();
     if(this->m_songInfoVector.isEmpty())return;
     this->m_isOrderPlay = true;
@@ -871,8 +876,8 @@ void KuGouApp::onSyncSongInfoVector(QVector<SongInfor> &vec) {
 void KuGouApp::on_play_or_pause_toolButton_clicked() {
     //如果未设置播放源就return
     if (this->m_player->source().isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                                QStringLiteral("暂无音乐播放"),
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                                QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
         return;
     }
@@ -887,49 +892,49 @@ void KuGouApp::on_play_or_pause_toolButton_clicked() {
 }
 
 void KuGouApp::on_love_toolButton_clicked() {
-    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                                QStringLiteral("暂无音乐播放"),
+    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()){
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                                QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
     }
 }
 
 void KuGouApp::on_download_toolButton_clicked() {
     if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                                QStringLiteral("暂无音乐播放"),
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                                QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
     }
 }
 
 void KuGouApp::on_comment_toolButton_clicked() {
     if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                                QStringLiteral("暂无音乐播放"),
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                                QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
     }
 }
 
 void KuGouApp::on_share_toolButton_clicked() {
     if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                                QStringLiteral("暂无音乐播放"),
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                                QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
     }
 }
 
 void KuGouApp::on_more_toolButton_clicked() {
     if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                                QStringLiteral("暂无音乐播放"),
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                                QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
     }
 }
 
 void KuGouApp::on_circle_toolButton_clicked() {
     if (this->m_player->source().isEmpty()|| this->m_songInfoVector.isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                                QStringLiteral("暂无音乐播放"),
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                                QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
         return;
     }
@@ -985,8 +990,8 @@ void KuGouApp::on_circle_toolButton_clicked() {
 
 void KuGouApp::on_pre_toolButton_clicked() {
     if (this->m_player->source().isEmpty()|| this->m_songInfoVector.isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                                QStringLiteral("暂无音乐播放"),
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                                QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
         return;
     }
@@ -996,8 +1001,8 @@ void KuGouApp::on_pre_toolButton_clicked() {
 
 void KuGouApp::on_next_toolButton_clicked() {
     if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                                QStringLiteral("暂无音乐播放"),
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                                QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
         return;
     }
@@ -1025,8 +1030,8 @@ void KuGouApp::on_acoustics_pushButton_clicked() {
 
 void KuGouApp::on_erji_toolButton_clicked() {
     if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                                QStringLiteral("暂无音乐播放"),
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                                QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
         return;
     }
@@ -1034,8 +1039,8 @@ void KuGouApp::on_erji_toolButton_clicked() {
 
 void KuGouApp::on_lyrics_toolButton_clicked() {
     if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                                QStringLiteral("暂无音乐播放"),
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                                QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
         return;
     }

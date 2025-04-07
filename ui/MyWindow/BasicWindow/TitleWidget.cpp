@@ -713,19 +713,19 @@ void TitleWidget::on_title_search_pushButton_clicked() {
 
 void TitleWidget::on_listen_toolButton_clicked() {
     ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                            QString("%1 功能未实现 敬请期待").arg(ui->listen_toolButton->text()),
+                            "听歌识曲 功能未实现 敬请期待",
                             1000,this->window());
 }
 
 void TitleWidget::on_theme_toolButton_clicked() {
     ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                            QString("%1 功能未实现 敬请期待").arg(ui->theme_toolButton->text()),
+                            "主题 功能未实现 敬请期待",
                             1000,this->window());
 }
 
 void TitleWidget::on_message_toolButton_clicked() {
     ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                            QString("%1 功能未实现 敬请期待").arg(ui->theme_toolButton->text()),
+                            "消息 功能未实现 敬请期待",
                             1000,this->window());
 }
 

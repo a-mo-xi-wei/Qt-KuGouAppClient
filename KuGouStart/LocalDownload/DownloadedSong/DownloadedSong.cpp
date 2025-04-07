@@ -33,6 +33,9 @@ DownloadedSong::DownloadedSong(QWidget *parent)
         }
 
     }
+    //初始化menu
+    const auto menu = new MyMenu(MyMenu::MenuKind::SortOption, this);
+    this->m_sortOptMenu = menu->getMenu<SortOptionMenu>();
     initUi();
 }
 
@@ -50,6 +53,48 @@ void DownloadedSong::initUi() {
         // 设置 local_sort_toolButton 的 tooltip
         auto local_sort_toolButton_toolTip = new ElaToolTip(ui->local_sort_toolButton);
         local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+        {
+            // 排序相关
+            connect(m_sortOptMenu, &SortOptionMenu::defaultSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
+                Q_UNUSED(down);
+                onDefaultSort();  // 调用原有的排序槽函数
+                local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::addTimeSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
+                onAddTimeSort(down);  // 调用原有的排序槽函数
+                if (down)
+                    local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：添加时间降序"));
+                else
+                    local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：添加时间升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::songNameSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
+                onSongNameSort(down);  // 调用原本的排序槽
+                local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌曲名称降序") : QStringLiteral("当前排序方式：歌曲名称升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::singerSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
+                onSingerSort(down);
+                local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌手降序") : QStringLiteral("当前排序方式：歌手升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::durationSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
+                onDurationSort(down);
+                local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：时长降序") : QStringLiteral("当前排序方式：时长升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::playCountSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
+                onPlayCountSort(down);
+                local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：播放次数降序") : QStringLiteral("当前排序方式：播放次数升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::randomSort, this, [this, local_sort_toolButton_toolTip] {
+                onRandomSort();
+                local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：随机"));
+            });
+
+        }
 
         // 设置 local_batch_toolButton 的 tooltip
         auto local_batch_toolButton_toolTip = new ElaToolTip(ui->local_batch_toolButton);
@@ -72,9 +117,6 @@ void DownloadedSong::initUi() {
     if (searchButton) {
         searchButton->installEventFilter(this);
     }
-    //初始化menu
-    const auto menu = new MyMenu(MyMenu::MenuKind::SortOption, this);
-    this->m_sortOptMenu = menu->getMenu<SortOptionMenu>();
 
 }
 
@@ -113,6 +155,11 @@ void DownloadedSong::getMenuPosition(const QPoint &pos) {
     //}
 }
 
+void DownloadedSong::on_local_play_toolButton_clicked() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
 void DownloadedSong::on_local_sort_toolButton_clicked() {
     getMenuPosition(QCursor::pos());
     this->m_sortOptMenu->move(this->m_menuPosition);
@@ -122,6 +169,41 @@ void DownloadedSong::on_local_sort_toolButton_clicked() {
 void DownloadedSong::on_local_batch_toolButton_clicked() {
     ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
                             "批量操作 功能暂未实现 敬请期待", 1000,this->window());
+}
+
+void DownloadedSong::onDefaultSort() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
+void DownloadedSong::onAddTimeSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
+void DownloadedSong::onSongNameSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
+void DownloadedSong::onSingerSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
+void DownloadedSong::onDurationSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
+void DownloadedSong::onPlayCountSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
+void DownloadedSong::onRandomSort() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
 }
 
 bool DownloadedSong::eventFilter(QObject *watched, QEvent *event) {

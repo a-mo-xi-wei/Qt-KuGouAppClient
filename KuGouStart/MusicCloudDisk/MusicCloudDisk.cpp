@@ -7,6 +7,7 @@
 #include "MusicCloudDisk.h"
 #include "ui_MusicCloudDisk.h"
 #include "logger.hpp"
+#include "ElaMessageBar.h"
 
 #include <QButtonGroup>
 #include <QFile>
@@ -117,6 +118,12 @@ void MusicCloudDisk::on_uploading_song_pushButton_clicked() {
     ui->idx2_lab->show();
     ui->uploaded_song_number_label->setStyleSheet("");
     ui->uploading_song_number_label->setStyleSheet(QStringLiteral("color:#26a1ff;font-size:14px;font-weight:bold;"));
+}
+
+void MusicCloudDisk::on_new_add_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            QString("%1 功能暂未实现 敬请期待").arg(ui->new_add_toolButton->text()),
+                            1000,this->window());
 }
 
 bool MusicCloudDisk::eventFilter(QObject *watched, QEvent *event) {

@@ -24,6 +24,8 @@ public:
     ~Downloading() override;
 
 private slots:
+    void on_start_toolButton_clicked();
+
     void on_stop_toolButton_clicked();
 
     void on_clear_toolButton_clicked();

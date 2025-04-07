@@ -26,6 +26,9 @@ public:
 private:
     void initUi();
 
+private slots:
+    void on_cloud_upload_toolButton_clicked();
+
 private:
     Ui::UploadingSong *ui;
 };

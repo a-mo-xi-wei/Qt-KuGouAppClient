@@ -167,6 +167,11 @@ void SingleSong::getMenuPosition(const QPoint &pos) {
     }
 }
 
+void SingleSong::on_collect_play_toolButton_clicked() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
 void SingleSong::on_collect_download_toolButton_clicked() {
     ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
                             "下载 功能暂未实现 敬请期待", 1000,this->window());
@@ -188,37 +193,37 @@ void SingleSong::on_collect_batch_toolButton_clicked() {
 }
 
 void SingleSong::onDefaultSort() {
-    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warring",
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
         QString("暂无音乐"),1000,this->window());
 }
 
 void SingleSong::onAddTimeSort(const bool &down) {
-    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warring",
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
         QString("暂无音乐"),1000,this->window());
 }
 
 void SingleSong::onSongNameSort(const bool &down) {
-    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warring",
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
         QString("暂无音乐"),1000,this->window());
 }
 
 void SingleSong::onSingerSort(const bool &down) {
-    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warring",
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
         QString("暂无音乐"),1000,this->window());
 }
 
 void SingleSong::onDurationSort(const bool &down) {
-    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warring",
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
         QString("暂无音乐"),1000,this->window());
 }
 
 void SingleSong::onPlayCountSort(const bool &down) {
-    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warring",
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
         QString("暂无音乐"),1000,this->window());
 }
 
 void SingleSong::onRandomSort() {
-    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warring",
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
         QString("暂无音乐"),1000,this->window());
 }
 

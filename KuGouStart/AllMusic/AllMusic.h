@@ -70,7 +70,32 @@ private slots:
 
     void on_cloud_disk_pushButton_clicked();
 
+private slots:
+    void on_all_play_toolButton_clicked();
+
+    void on_all_download_toolButton_clicked();
+
+    void on_all_share_toolButton_clicked();
+
     void on_all_sort_toolButton_clicked();
+
+    void on_all_batch_toolButton_clicked();
+
+public slots:
+    //排序相关
+    void onDefaultSort();
+
+    void onAddTimeSort(const bool &down);
+
+    void onSongNameSort(const bool &down);
+
+    void onSingerSort(const bool &down);
+
+    void onDurationSort(const bool &down);
+
+    void onPlayCountSort(const bool &down);
+
+    void onRandomSort();
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;

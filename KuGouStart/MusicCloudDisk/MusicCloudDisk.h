@@ -42,6 +42,8 @@ private slots:
 
     void on_uploading_song_pushButton_clicked();
 
+    void on_new_add_toolButton_clicked();
+
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 

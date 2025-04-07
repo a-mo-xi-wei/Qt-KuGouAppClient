@@ -9,6 +9,7 @@
 #include "RecentlyChannelBlock.h"
 #include "logger.hpp"
 #include "ElaToolTip.h"
+#include "ElaMessageBar.h"
 
 #include <QFile>
 
@@ -92,3 +93,19 @@ bool RecentlySongChannel::eventFilter(QObject *watched, QEvent *event) {
 
     return QObject::eventFilter(watched, event);
 }
+
+void RecentlySongChannel::on_recently_play_toolButton_clicked() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                            "暂无音乐", 1000,this->window());
+}
+
+void RecentlySongChannel::on_recently_share_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            "批量操作 功能暂未实现 敬请期待", 1000,this->window());
+}
+
+void RecentlySongChannel::on_recently_batch_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            "批量操作 功能暂未实现 敬请期待", 1000,this->window());
+}
+

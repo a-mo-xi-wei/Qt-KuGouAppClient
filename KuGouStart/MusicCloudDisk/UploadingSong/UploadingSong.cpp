@@ -7,6 +7,7 @@
 #include "UploadingSong.h"
 #include "ui_UploadingSong.h"
 #include "logger.hpp"
+#include "ElaMessageBar.h"
 
 #include <QFile>
 
@@ -39,4 +40,10 @@ void UploadingSong::initUi() {
     ui->cloud_start_toolButton->setIcon(QIcon(QStringLiteral(":Res/tabIcon/play3-gray.svg")));
     ui->cloud_pause_toolButton->setIcon(QIcon(QStringLiteral(":Res/tabIcon/stop-gray.svg")));
     ui->cloud_clear_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/delete-gray.svg")));
+}
+
+void UploadingSong::on_cloud_upload_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            QString("%1 功能暂未实现 敬请期待").arg(ui->cloud_upload_toolButton->text()),
+                            1000,this->window());
 }

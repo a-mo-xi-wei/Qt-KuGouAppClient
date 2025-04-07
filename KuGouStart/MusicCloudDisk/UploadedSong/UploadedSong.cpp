@@ -33,6 +33,9 @@ UploadedSong::UploadedSong(QWidget *parent)
         }
     }
 
+    //初始化menu
+    const auto menu = new MyMenu(MyMenu::MenuKind::SortOption, this);
+    this->m_sortOptMenu = menu->getMenu<SortOptionMenu>();
     initUi();
 }
 
@@ -54,7 +57,49 @@ void UploadedSong::initUi() {
         // 设置 cloud_sort_toolButton 的 tooltip
         auto cloud_sort_toolButton_toolTip = new ElaToolTip(ui->cloud_sort_toolButton);
         cloud_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+        {
+            // 排序相关
+            connect(m_sortOptMenu, &SortOptionMenu::defaultSort, this, [this, cloud_sort_toolButton_toolTip](const bool& down) {
+                Q_UNUSED(down);
+                onDefaultSort();  // 调用原有的排序槽函数
+                cloud_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+            });
 
+            connect(m_sortOptMenu, &SortOptionMenu::addTimeSort, this, [this, cloud_sort_toolButton_toolTip](const bool& down) {
+                onAddTimeSort(down);  // 调用原有的排序槽函数
+                if (down)
+                    cloud_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：添加时间降序"));
+                else
+                    cloud_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：添加时间升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::songNameSort, this, [this, cloud_sort_toolButton_toolTip](const bool& down) {
+                onSongNameSort(down);  // 调用原本的排序槽
+                cloud_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌曲名称降序") : QStringLiteral("当前排序方式：歌曲名称升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::singerSort, this, [this, cloud_sort_toolButton_toolTip](const bool& down) {
+                onSingerSort(down);
+                cloud_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌手降序") : QStringLiteral("当前排序方式：歌手升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::durationSort, this, [this, cloud_sort_toolButton_toolTip](const bool& down) {
+                onDurationSort(down);
+                cloud_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：时长降序") : QStringLiteral("当前排序方式：时长升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::playCountSort, this, [this, cloud_sort_toolButton_toolTip](const bool& down) {
+                onPlayCountSort(down);
+                cloud_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：播放次数降序") : QStringLiteral("当前排序方式：播放次数升序"));
+            });
+
+            connect(m_sortOptMenu, &SortOptionMenu::randomSort, this, [this, cloud_sort_toolButton_toolTip] {
+                onRandomSort();
+                cloud_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：随机"));
+            });
+
+        }
+        
         // 设置 cloud_batch_toolButton 的 tooltip
         auto cloud_batch_toolButton_toolTip = new ElaToolTip(ui->cloud_batch_toolButton);
         cloud_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作"));
@@ -81,10 +126,6 @@ void UploadedSong::initUi() {
     if (searchButton) {
         searchButton->installEventFilter(this);
     }
-
-    //初始化menu
-    const auto menu = new MyMenu(MyMenu::MenuKind::SortOption, this);
-    this->m_sortOptMenu = menu->getMenu<SortOptionMenu>();
 }
 
 void UploadedSong::getMenuPosition(const QPoint &pos) {
@@ -130,12 +171,12 @@ void UploadedSong::on_cloud_upload_toolButton_clicked() {
 }
 
 void UploadedSong::on_cloud_download_toolButton_clicked() {
-    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Info",
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                             "暂无音乐", 1000,this->window());
 }
 
 void UploadedSong::on_cloud_delete_toolButton_clicked() {
-    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Info",
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                             "暂无音乐", 1000,this->window());
 }
 
@@ -147,6 +188,41 @@ void UploadedSong::on_cloud_share_toolButton_clicked() {
 void UploadedSong::on_cloud_batch_toolButton_clicked() {
     ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
                             "批量操作 功能暂未实现 敬请期待", 1000,this->window());
+}
+
+void UploadedSong::onDefaultSort() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
+void UploadedSong::onAddTimeSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
+void UploadedSong::onSongNameSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
+void UploadedSong::onSingerSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
+void UploadedSong::onDurationSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
+void UploadedSong::onPlayCountSort(const bool &down) {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
+}
+
+void UploadedSong::onRandomSort() {
+    ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+        QString("暂无音乐"),1000,this->window());
 }
 
 bool UploadedSong::eventFilter(QObject *watched, QEvent *event) {

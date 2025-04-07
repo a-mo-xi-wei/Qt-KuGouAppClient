@@ -1154,7 +1154,7 @@
              <item>
               <widget class="ElaText" name="song_name_text">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -1163,12 +1163,6 @@
                 <size>
                  <width>69</width>
                  <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>69</width>
-                 <height>16777215</height>
                 </size>
                </property>
                <property name="text">
@@ -1185,7 +1179,7 @@
              <item>
               <widget class="ElaText" name="singer_text">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -1194,12 +1188,6 @@
                 <size>
                  <width>69</width>
                  <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>69</width>
-                 <height>16777215</height>
                 </size>
                </property>
                <property name="text">

@@ -31,6 +31,8 @@ private:
     void getMenuPosition(const QPoint &pos);
 
 private slots:
+    void on_collect_play_toolButton_clicked();
+
     void on_collect_download_toolButton_clicked();
 
     void on_collect_share_toolButton_clicked();

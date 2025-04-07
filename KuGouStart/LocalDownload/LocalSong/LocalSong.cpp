@@ -358,7 +358,7 @@ void LocalSong::MySort(std::function<bool(const MusicItemWidget *, const MusicIt
     //记录当前的（旧的）vector
     this->m_lastLocationMusicVector = this->m_locationMusicVector;
     if (this->m_lastLocationMusicVector.isEmpty()) {
-        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warring",
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
             QString("暂无音乐"),1000,this->window());
         return;
     }
@@ -637,7 +637,7 @@ void LocalSong::onRandomSort() {
     //记录当前的（旧的）vector
     this->m_lastLocationMusicVector = this->m_locationMusicVector;
     if (this->m_lastLocationMusicVector.isEmpty()) {
-        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warring",
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
             QString("暂无音乐"),1000,this->window());
         return;
     }
