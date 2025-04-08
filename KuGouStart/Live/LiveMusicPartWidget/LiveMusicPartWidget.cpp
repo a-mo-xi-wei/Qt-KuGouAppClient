@@ -213,6 +213,11 @@ int LiveMusicPartWidget::getFileCount(const QString &folderPath) {
     return fileCount;
 }
 
+void LiveMusicPartWidget::on_all_pushButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                QString("暂无更多 %1").arg(ui->title_label->text()),1000,this->window());
+}
+
 void LiveMusicPartWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     //qDebug()<<"this->width(): "<<this->width();

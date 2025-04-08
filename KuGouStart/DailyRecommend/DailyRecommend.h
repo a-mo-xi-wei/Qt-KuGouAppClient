@@ -36,6 +36,16 @@ protected:
 private slots:
     void on_history_recommend_toolButton_clicked();
 
+    void on_play_toolButton_clicked();
+
+    void on_vip_toolButton_clicked();
+
+    void on_collect_toolButton_clicked();
+
+    void on_download_toolButton_clicked();
+
+    void on_batch_toolButton_clicked();
+
 private:
     Ui::DailyRecommend *ui;
     QLabel* m_monthLab{};

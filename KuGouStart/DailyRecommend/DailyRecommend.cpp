@@ -157,3 +157,27 @@ void DailyRecommend::on_history_recommend_toolButton_clicked() {
     ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
                             QString("%1 功能未实现 敬请期待").arg(ui->history_recommend_toolButton->text().left(ui->history_recommend_toolButton->text().size() - 2)),1000,this->window());
 }
+
+void DailyRecommend::on_play_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            "本界面播放 功能未实现 敬请期待",1000,this->window());}
+
+void DailyRecommend::on_vip_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            "VIP 功能未实现 敬请期待",1000,this->window());
+}
+
+void DailyRecommend::on_collect_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            QString("收藏 功能未实现 敬请期待").arg(ui->history_recommend_toolButton->text().left(ui->history_recommend_toolButton->text().size() - 2)),1000,this->window());
+}
+
+void DailyRecommend::on_download_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            "下载 功能未实现 敬请期待",1000,this->window());
+}
+
+void DailyRecommend::on_batch_toolButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                            "批量操作 功能未实现 敬请期待",1000,this->window());
+}

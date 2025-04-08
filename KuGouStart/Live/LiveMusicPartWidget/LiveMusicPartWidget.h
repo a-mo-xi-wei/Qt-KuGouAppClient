@@ -35,6 +35,9 @@ private:
 
     int getFileCount(const QString &folderPath);
 
+private slots:
+    void on_all_pushButton_clicked();
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 

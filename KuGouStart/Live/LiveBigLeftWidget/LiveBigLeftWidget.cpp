@@ -191,6 +191,11 @@ int LiveBigLeftWidget::getFileCount(const QString &folderPath) {
     return fileCount;
 }
 
+void LiveBigLeftWidget::on_all_pushButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                QString("暂无更多 %1").arg(ui->title_label->text()),1000,this->window());
+}
+
 void LiveBigLeftWidget::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
     if (this->width() > 1200) {

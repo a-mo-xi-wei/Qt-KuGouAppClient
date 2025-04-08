@@ -80,6 +80,12 @@ int LiveCommonPartWidget::getFileCount(const QString &folderPath) {
 
     return fileCount;
 }
+
+void LiveCommonPartWidget::on_all_pushButton_clicked() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                QString("暂无更多 %1").arg(ui->title_label->text()),1000,this->window());
+}
+
 void LiveCommonPartWidget::initUi(const int& lines) {
     //初始化右上角两个按钮图标
     const auto leftLabImgPath = ":/Live/Res/live/left.svg";
