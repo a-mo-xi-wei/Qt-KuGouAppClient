@@ -14,6 +14,21 @@
    <string>RecentlySingleSong</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="QWidget" name="operation_widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_9">
@@ -21,13 +36,13 @@
        <number>10</number>
       </property>
       <property name="leftMargin">
-       <number>3</number>
+       <number>9</number>
       </property>
       <property name="topMargin">
-       <number>5</number>
+       <number>9</number>
       </property>
       <property name="bottomMargin">
-       <number>5</number>
+       <number>9</number>
       </property>
       <item>
        <widget class="QToolButton" name="recently_play_toolButton">

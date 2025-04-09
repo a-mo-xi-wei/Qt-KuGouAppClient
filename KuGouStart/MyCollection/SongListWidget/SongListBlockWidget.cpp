@@ -32,6 +32,9 @@ void SongListBlockWidget::setTitleText(const QString &title) const {
 }
 
 void SongListBlockWidget::initUi() const {
+    auto font = ui->title_label->font();
+    font.setWeight(QFont::DemiBold);
+    ui->title_label->setFont(font);
     //blockWidget设置
     ui->cover_widget->setExpandRespond(false);
     ui->cover_widget->setPopularDirection(1);

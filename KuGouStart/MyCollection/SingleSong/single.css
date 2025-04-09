@@ -10,6 +10,16 @@ QToolButton#collect_play_toolButton{
 QToolButton#collect_play_toolButton:hover{
     background-color:#2085d9;
 }
+QToolButton#test_toolButton{
+    color: white;
+    border: none;
+    border-radius: 17px;
+    padding-left: 13px;
+    background-color:#269dff;
+}
+QToolButton#test_toolButton:hover{
+    background-color:#2085d9;
+}
 QToolButton#collect_download_toolButton{
     border: none;
     border-radius: 17px;

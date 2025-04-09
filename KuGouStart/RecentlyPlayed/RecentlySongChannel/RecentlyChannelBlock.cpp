@@ -41,6 +41,9 @@ void RecentlyChannelBlock::setCoverPix(const QString &pixmapPath) const {
 }
 
 void RecentlyChannelBlock::initUi() const {
+    auto font = ui->title_label->font();
+    font.setWeight(QFont::DemiBold);
+    ui->title_label->setFont(font);
     auto singer_song_label_toolTip = new ElaToolTip(ui->singer_song_label);
     singer_song_label_toolTip->setToolTip(ui->singer_song_label->text());
     //遮罩设置

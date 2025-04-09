@@ -64,6 +64,7 @@ void MyCollection::initUi() {
 
     ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
     ui->stackedWidget->setSpeed(400);
+    ui->stackedWidget->setContentsMargins(0,0,0,0);
 }
 
 void MyCollection::initIndexLab() {
@@ -374,7 +375,6 @@ bool MyCollection::eventFilter(QObject *watched, QEvent *event) {
 }
 
 void MyCollection::mousePressEvent(QMouseEvent *event) {
-    QWidget::mousePressEvent(event);
     if (event->button() == Qt::LeftButton) {
         // 获取 singleSong_number_label 的矩形区域
         const auto labelRect1 = ui->singleSong_number_label     ->geometry();
@@ -414,6 +414,7 @@ void MyCollection::mousePressEvent(QMouseEvent *event) {
             ui->device_pushButton->clicked();
         }
     }
+    QWidget::mousePressEvent(event);
 }
 
 void MyCollection::on_singleSong_pushButton_clicked() {

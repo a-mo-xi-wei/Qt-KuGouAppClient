@@ -108,6 +108,7 @@ void PaidSingle::initUi() {
         single_batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作"));
     }
     ui->single_play_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/play3-white.svg")));
+    ui->single_play_toolButton->setCursor(Qt::PointingHandCursor);
     ui->single_download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/download-gray.svg")));
     ui->single_download_toolButton->installEventFilter(this);
     //使用 addAction 添加右侧图标

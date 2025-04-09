@@ -77,6 +77,10 @@ void PurchasedMusic::initStackedWidget() {
 
 void PurchasedMusic::initPaidSingle() {
     this->m_paidSingle = std::make_unique<PaidSingle>(ui->stackedWidget);
+    auto testWidget = new QWidget(this);
+    testWidget->hide();
+    ui->stackedWidget->addWidget(testWidget);
+    ui->stackedWidget->setCurrentWidget(testWidget);
     ui->stackedWidget->addWidget(this->m_paidSingle.get());
     ui->stackedWidget->setCurrentWidget(this->m_paidSingle.get());
 }
@@ -275,7 +279,6 @@ bool PurchasedMusic::eventFilter(QObject *watched, QEvent *event) {
 }
 
 void PurchasedMusic::mousePressEvent(QMouseEvent *event) {
-    QWidget::mousePressEvent(event);
     if (event->button() == Qt::LeftButton) {
         const auto labelRect1 = ui->paid_single_number_label        ->geometry();
         const auto labelRect2 = ui->purchased_albums_number_label   ->geometry();
@@ -295,4 +298,5 @@ void PurchasedMusic::mousePressEvent(QMouseEvent *event) {
             ui->purchased_video_pushButton->clicked();
         }
     }
+    QWidget::mousePressEvent(event);
 }
