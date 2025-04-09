@@ -8,12 +8,12 @@
 #include "ui_MusicRepoList.h"
 #include "logger.hpp"
 #include "ElaToolTip.h"
+#include "ElaMessageBar.h"
 
 #include <QFile>
 #include <QMouseEvent>
 #include <QPainter>
 #include <QStyleOption>
-
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -44,15 +44,13 @@ void MusicRepoList::setCoverPix(const QString &pixmapPath) const {
 }
 void MusicRepoList::setSongName(const QString &song) {
     this->m_songName = song;
-    auto song_label_toolTip = new ElaToolTip(ui->song_label);
-    song_label_toolTip->setToolTip(this->m_songName);
+    emit curPlaySongNameChange(song);
     updateSongText();
 }
 
 void MusicRepoList::setSinger(const QString &singer) {
     this->m_singer = singer;
-    auto singer_label_toolTip = new ElaToolTip(ui->singer_label);
-    singer_label_toolTip->setToolTip(this->m_singer);
+    emit curPlaySingerChange(singer);
     updateSingerText();
 }
 
@@ -73,6 +71,33 @@ void MusicRepoList::initUi() {
     connect(this,&MusicRepoList::enterList,ui->cover_widget,&MyBlockWidget::onShowMask);
     connect(this,&MusicRepoList::leaveList,ui->cover_widget,&MyBlockWidget::onHideMask);
 
+    auto song_label_toolTip = new ElaToolTip(ui->song_label);
+    song_label_toolTip->setToolTip(this->m_songName);
+    auto singer_label_toolTip = new ElaToolTip(ui->singer_label);
+    singer_label_toolTip->setToolTip(this->m_singer);
+
+    //响应tooltip变化
+    connect(this, &MusicRepoList::curPlaySongNameChange, [this, song_label_toolTip](const QString& songName) {
+        song_label_toolTip->setToolTip(songName);
+        // 强制布局更新以确保获取最新宽度
+        ui->song_label->updateGeometry();
+        const QFontMetrics fm(ui->song_label->font());
+        QString elidedText = fm.elidedText(songName, Qt::ElideRight, ui->song_label->width());
+        ui->song_label->setText(elidedText);
+        song_label_toolTip->adjustSize(); // 调整ToolTip尺寸
+    });
+
+    connect(this, &MusicRepoList::curPlaySingerChange, [this, singer_label_toolTip](const QString& singerName) {
+        singer_label_toolTip->setToolTip(singerName);
+        ui->singer_label->updateGeometry();
+        const QFontMetrics fm(ui->singer_label->font());
+        ui->singer_label->setText(fm.elidedText(singerName, Qt::ElideRight, ui->singer_label->width()));
+        singer_label_toolTip->adjustSize();
+    });
+
+    connect(ui->play_add_toolButton,&QToolButton::clicked,this,&MusicRepoList::onPlayAddToolBtn);
+    connect(ui->like_toolButton,&QToolButton::clicked,this,&MusicRepoList::onLikeToolBtn);
+    connect(ui->comment_toolButton,&QToolButton::clicked,this,&MusicRepoList::onCommentToolBtn);
 }
 
 void MusicRepoList::updateSongText() const {
@@ -96,6 +121,21 @@ void MusicRepoList::updateSingerText() const {
     auto elidedText = fm.elidedText(this->m_singer,Qt::ElideRight,ui->info_widget->width()-20);
     ui->singer_label->setText(elidedText);
 
+}
+
+void MusicRepoList::onPlayAddToolBtn() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                "下一首播放 功能未实现 敬请期待",1000,this->window());
+}
+
+void MusicRepoList::onLikeToolBtn() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                "收藏 功能未实现 敬请期待",1000,this->window());
+}
+
+void MusicRepoList::onCommentToolBtn() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                "评论 功能未实现 敬请期待",1000,this->window());
 }
 
 void MusicRepoList::enterEvent(QEnterEvent *event) {

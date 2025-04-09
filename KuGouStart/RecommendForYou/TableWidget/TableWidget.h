@@ -160,6 +160,13 @@ private:
 
     void updateSinger() const;
 
+private slots:
+    void onPlayAddToolBtn();
+
+    void onLikeToolBtn();
+
+    void onMoreToolBtn();
+
 protected:
     void paintEvent(QPaintEvent *ev) override;
 

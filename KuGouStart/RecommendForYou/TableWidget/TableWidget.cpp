@@ -697,6 +697,12 @@ void ItemListWidget::mouseDoubleClickEvent(QMouseEvent *event) {
 }
 
 void ItemListWidget::initUi() {
+    //设置toolTip
+    auto songName_toolTip = new ElaToolTip(this->m_songNameLab);
+    songName_toolTip->setToolTip(this->m_songName);
+    auto singer_toolTip = new ElaToolTip(this->m_singerLab);
+    singer_toolTip->setToolTip(this->m_singer);
+
     //设置鼠标指向
     this->m_coverLab->setCursor(Qt::PointingHandCursor);
     this->m_songNameLab->setCursor(Qt::PointingHandCursor);
@@ -743,13 +749,17 @@ void ItemListWidget::initUi() {
     this->m_play_add_ToolBtn->hide();
     this->m_like_ToolBtn->hide();
     this->m_more_ToolBtn->hide();
+
+    connect(m_play_add_ToolBtn,&QToolButton::clicked,this,&ItemListWidget::onPlayAddToolBtn);
+    connect(m_like_ToolBtn,&QToolButton::clicked,this,&ItemListWidget::onLikeToolBtn);
+    connect(m_more_ToolBtn,&QToolButton::clicked,this,&ItemListWidget::onMoreToolBtn);
 }
 
 void ItemListWidget::updateSongName() const {
     //设置字体测量工具
     auto font = this->m_songNameLab->font();
     QFontMetrics fm(font);
-    this->m_songNameLab->setToolTip(this->m_songName);
+    //this->m_songNameLab->setToolTip(this->m_songName);
     QString elidedText;
     elidedText = fm.elidedText(this->m_songName, Qt::ElideRight,
                                this->width() - this->m_optionWidget->width() - 60);
@@ -760,12 +770,27 @@ void ItemListWidget::updateSinger() const {
     //设置字体测量工具
     auto font = this->m_singerLab->font();
     QFontMetrics fm(font);
-    this->m_singerLab->setToolTip(this->m_singer);
+    //this->m_singerLab->setToolTip(this->m_singer);
     QString elidedText;
     elidedText = fm.elidedText(this->m_singer, Qt::ElideRight,
                                this->width() - this->m_optionWidget->width() - 60);
 
     this->m_singerLab->setText(elidedText);
+}
+
+void ItemListWidget::onPlayAddToolBtn() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                "下一首播放 功能未实现 敬请期待",1000,this->window());
+}
+
+void ItemListWidget::onLikeToolBtn() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                "收藏 功能未实现 敬请期待",1000,this->window());
+}
+
+void ItemListWidget::onMoreToolBtn() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
+                "更多 功能未实现 敬请期待",1000,this->window());
 }
 
 void ItemListWidget::onHide() {
@@ -820,7 +845,7 @@ void ItemBlockWidget::setDescribeText(QString desc) const {
     //设置字体测量工具
     QFontMetrics fm(font);
     //设置Tip
-    this->m_describeLab->setToolTip(desc);
+    //this->m_describeLab->setToolTip(desc);
     desc = fm.elidedText(desc, Qt::ElideRight, this->m_describeLab->width());
     this->m_describeLab->setText(desc);
 }
@@ -902,6 +927,10 @@ void ItemBlockWidget::mouseDoubleClickEvent(QMouseEvent *event) {
 }
 
 void ItemBlockWidget::initUi() {
+    //设置toolTip
+    auto describeLab_toolTip = new ElaToolTip(this->m_describeLab);
+    describeLab_toolTip->setToolTip(this->m_descText);
+
     this->setCursor(Qt::PointingHandCursor);
     this->m_describeLab->setObjectName(QStringLiteral("describeLab"));
     this->m_tipLab->setObjectName(QStringLiteral("tipLab"));

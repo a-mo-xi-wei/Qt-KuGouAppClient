@@ -41,6 +41,17 @@ signals:
 
     void leaveList();
 
+    void curPlaySongNameChange(const QString& songName);
+
+    void curPlaySingerChange(const QString& singer);
+
+private slots:
+    void onPlayAddToolBtn();
+
+    void onLikeToolBtn();
+
+    void onCommentToolBtn();
+
 protected:
     void enterEvent(QEnterEvent *event) override;
 
@@ -61,6 +72,5 @@ private:
     QString m_songName;
     QString m_singer;
 };
-
 
 #endif //MUSICREPOLIST_H
