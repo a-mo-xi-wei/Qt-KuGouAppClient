@@ -8,15 +8,26 @@
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class PurchasedVideos; }
+
+namespace Ui {
+    class PurchasedVideos;
+}
+
 QT_END_NAMESPACE
 
 class PurchasedVideos : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit PurchasedVideos(QWidget *parent = nullptr);
+
     ~PurchasedVideos() override;
+
+private slots:
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
 
 private:
     Ui::PurchasedVideos *ui;

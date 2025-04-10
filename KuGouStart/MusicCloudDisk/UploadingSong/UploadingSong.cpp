@@ -47,3 +47,7 @@ void UploadingSong::on_cloud_upload_toolButton_clicked() {
                             QString("%1 功能暂未实现 敬请期待").arg(ui->cloud_upload_toolButton->text()),
                             1000,this->window());
 }
+
+void UploadingSong::on_search_pushButton_clicked() {
+    emit find_more_music();
+}

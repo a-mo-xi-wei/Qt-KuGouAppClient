@@ -8,15 +8,26 @@
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class PurchasedAlbums; }
+
+namespace Ui {
+    class PurchasedAlbums;
+}
+
 QT_END_NAMESPACE
 
 class PurchasedAlbums : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit PurchasedAlbums(QWidget *parent = nullptr);
+
     ~PurchasedAlbums() override;
+
+private slots:
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
 
 private:
     Ui::PurchasedAlbums *ui;

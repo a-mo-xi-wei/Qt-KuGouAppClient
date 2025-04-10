@@ -8,15 +8,26 @@
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class RecentlyVideoWidget; }
+
+namespace Ui {
+    class RecentlyVideoWidget;
+}
+
 QT_END_NAMESPACE
 
 class RecentlyVideoWidget : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit RecentlyVideoWidget(QWidget *parent = nullptr);
+
     ~RecentlyVideoWidget() override;
+
+private slots:
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
 
 private:
     Ui::RecentlyVideoWidget *ui;

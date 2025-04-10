@@ -30,3 +30,7 @@ AllCloudDisk::AllCloudDisk(QWidget *parent) :
 AllCloudDisk::~AllCloudDisk() {
     delete ui;
 }
+
+void AllCloudDisk::on_search_pushButton_clicked() {
+    emit find_more_music();
+}

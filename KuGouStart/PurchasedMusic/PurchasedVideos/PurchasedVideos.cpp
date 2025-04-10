@@ -29,3 +29,7 @@ PurchasedVideos::PurchasedVideos(QWidget *parent) :
 PurchasedVideos::~PurchasedVideos() {
     delete ui;
 }
+
+void PurchasedVideos::on_search_pushButton_clicked() {
+    emit find_more_music();
+}

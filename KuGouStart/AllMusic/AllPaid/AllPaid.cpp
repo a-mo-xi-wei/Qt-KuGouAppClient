@@ -30,3 +30,7 @@ AllPaid::AllPaid(QWidget *parent) :
 AllPaid::~AllPaid() {
     delete ui;
 }
+
+void AllPaid::on_search_pushButton_clicked() {
+    emit find_more_music();
+}

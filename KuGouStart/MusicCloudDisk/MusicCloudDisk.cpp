@@ -78,12 +78,14 @@ void MusicCloudDisk::initStackedWidget() {
 
 void MusicCloudDisk::initUploadedSong() {
     this->m_uploadedSong = std::make_unique<UploadedSong>(ui->stackedWidget);
+    connect(this->m_uploadedSong.get(),&UploadedSong::find_more_music,[this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_uploadedSong.get());
     ui->stackedWidget->setCurrentWidget(this->m_uploadedSong.get());
 }
 
 void MusicCloudDisk::initUploadingSong() {
     this->m_uploadingSong = std::make_unique<UploadingSong>(ui->stackedWidget);
+    connect(this->m_uploadingSong.get(),&UploadingSong::find_more_music,[this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_uploadingSong.get());
 }
 

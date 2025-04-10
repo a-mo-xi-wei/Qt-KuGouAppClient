@@ -222,6 +222,10 @@ void RecentlySingleSong::onRandomSort() {
         "暂无音乐",1000,this->window());
 }
 
+void RecentlySingleSong::on_search_pushButton_clicked() {
+    emit find_more_music();
+}
+
 bool RecentlySingleSong::eventFilter(QObject *watched, QEvent *event) {
     if (watched == ui->recently_download_toolButton) {
         if (event->type() == QEvent::Enter) {

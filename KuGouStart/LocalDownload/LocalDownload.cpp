@@ -94,22 +94,26 @@ void LocalDownload::initUi() {
 
 void LocalDownload::initLocalSong() {
     this->m_localSong = std::make_unique<LocalSong>(ui->stackedWidget);
+    connect(this->m_localSong.get(), &LocalSong::find_more_music, [this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_localSong.get());
     ui->stackedWidget->setCurrentWidget(this->m_localSong.get());
 }
 
 void LocalDownload::initDownloadedSong() {
     this->m_downloadedSong = std::make_unique<DownloadedSong>(ui->stackedWidget);
+    connect(this->m_downloadedSong.get(), &DownloadedSong::find_more_music, [this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_downloadedSong.get());
 }
 
 void LocalDownload::initDownloadedVideo() {
     this->m_downloadedVideo = std::make_unique<DownloadedVideo>(ui->stackedWidget);
+    connect(this->m_downloadedVideo.get(), &DownloadedVideo::find_more_music, [this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_downloadedVideo.get());
 }
 
 void LocalDownload::initDownloading() {
     this->m_downloading = std::make_unique<Downloading>(ui->stackedWidget);
+    connect(this->m_downloading.get(), &Downloading::find_more_music, [this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_downloading.get());
 }
 

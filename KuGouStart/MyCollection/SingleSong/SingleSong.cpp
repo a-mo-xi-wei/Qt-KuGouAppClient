@@ -192,6 +192,10 @@ void SingleSong::on_collect_batch_toolButton_clicked() {
                             "批量操作 功能暂未实现 敬请期待", 1000,this->window());
 }
 
+void SingleSong::on_search_pushButton_clicked() {
+    emit find_more_music();
+}
+
 void SingleSong::onDefaultSort() {
     ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
         QString("暂无音乐"),1000,this->window());

@@ -86,27 +86,32 @@ void RecentlyPlayed::initStackedWidget() {
 
 void RecentlyPlayed::initSingleSong() {
     this->m_singleSong = std::make_unique<RecentlySingleSong>(ui->stackedWidget);
+    connect(this->m_singleSong.get(),&RecentlySingleSong::find_more_music,[this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_singleSong.get());
     ui->stackedWidget->setCurrentWidget(this->m_singleSong.get());
 }
 
 void RecentlyPlayed::initSongList() {
     this->m_songList = std::make_unique<RecentlySongList>(ui->stackedWidget);
+    connect(this->m_songList.get(),&RecentlySongList::find_more_music,[this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_songList.get());
 }
 
 void RecentlyPlayed::initVideoWidget() {
     this->m_videoWidget = std::make_unique<RecentlyVideoWidget>(ui->stackedWidget);
+    connect(this->m_videoWidget.get(),&RecentlyVideoWidget::find_more_music,[this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_videoWidget.get());
 }
 
 void RecentlyPlayed::initSongChannel() {
     this->m_songChannel = std::make_unique<RecentlySongChannel>(ui->stackedWidget);
+    connect(this->m_songChannel.get(),&RecentlySongChannel::find_more_channel,[this]{emit find_more_channel();});
     ui->stackedWidget->addWidget(this->m_songChannel.get());
 }
 
 void RecentlyPlayed::initMVChannel() {
     this->m_mvChannel = std::make_unique<RecentlyMVChannel>(ui->stackedWidget);
+    connect(this->m_mvChannel.get(),&RecentlyMVChannel::find_more_channel,[this]{emit find_more_channel();});
     ui->stackedWidget->addWidget(this->m_mvChannel.get());
 }
 

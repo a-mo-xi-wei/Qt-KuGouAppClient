@@ -8,15 +8,26 @@
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class AllPaid; }
+
+namespace Ui {
+    class AllPaid;
+}
+
 QT_END_NAMESPACE
 
 class AllPaid : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit AllPaid(QWidget *parent = nullptr);
+
     ~AllPaid() override;
+
+private slots:
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
 
 private:
     Ui::AllPaid *ui;

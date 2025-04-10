@@ -69,3 +69,13 @@ QLineEdit#local_search_lineEdit{
 QLineEdit#local_search_lineEdit:hover{
     background-color: #dadeff;
 }
+
+/**************content_widget*************/
+QLabel#prompt_label{
+    color: #afafaf;
+}
+QPushButton#search_pushButton{
+    border: 1px solid #1eb8ff;
+    border-radius: 17px;
+    color: #1eb8ff;
+}

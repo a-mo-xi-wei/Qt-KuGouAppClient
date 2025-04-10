@@ -43,6 +43,8 @@ private slots:
 
     void on_collect_batch_toolButton_clicked();
 
+    void on_search_pushButton_clicked();
+
 public slots:
     //排序相关
     void onDefaultSort();
@@ -61,6 +63,9 @@ public slots:
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
+
+signals:
+    void find_more_music();
 
 private:
     Ui::SingleSong *ui;

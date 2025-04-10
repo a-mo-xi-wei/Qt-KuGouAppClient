@@ -65,6 +65,9 @@ private slots:
 
     void on_device_pushButton_clicked();
 
+signals:
+    void find_more_music();
+
 private:
     Ui::MyCollection *ui;
     std::unique_ptr<QButtonGroup>   m_buttonGroup{};

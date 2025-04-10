@@ -206,6 +206,10 @@ void DownloadedSong::onRandomSort() {
         QString("暂无音乐"),1000,this->window());
 }
 
+void DownloadedSong::on_search_pushButton_clicked() {
+    emit find_more_music();
+}
+
 bool DownloadedSong::eventFilter(QObject *watched, QEvent *event) {
     const auto button = qobject_cast<QToolButton*>(watched);
     if (button && button->defaultAction() == this->m_searchAction) {

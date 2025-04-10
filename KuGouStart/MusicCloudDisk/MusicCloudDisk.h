@@ -44,6 +44,9 @@ private slots:
 
     void on_new_add_toolButton_clicked();
 
+signals:
+    void find_more_music();
+
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 

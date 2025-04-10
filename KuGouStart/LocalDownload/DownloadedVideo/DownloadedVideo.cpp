@@ -32,3 +32,7 @@ DownloadedVideo::DownloadedVideo(QWidget *parent)
 DownloadedVideo::~DownloadedVideo() {
     delete ui;
 }
+
+void DownloadedVideo::on_search_pushButton_clicked() {
+    emit find_more_music();
+}

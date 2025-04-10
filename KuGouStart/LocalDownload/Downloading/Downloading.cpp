@@ -59,6 +59,10 @@ void Downloading::on_setting_toolButton_clicked() {
                             "下载设置 功能暂未实现 敬请期待", 1000,this->window());
 }
 
+void Downloading::on_search_pushButton_clicked() {
+    emit find_more_music();
+}
+
 void Downloading::initUi() {
     //设置toolTip
     // 设置 setting_toolButton 的 tooltip

@@ -92,6 +92,7 @@ void MyCollection::initIndexLab() {
 
 void MyCollection::initSingleSong() {
     this->m_singleSong = std::make_unique<SingleSong>(ui->stackedWidget);
+    connect(this->m_singleSong.get(),&SingleSong::find_more_music,[this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_singleSong.get());
     ui->stackedWidget->setCurrentWidget(this->m_singleSong.get());
 }
@@ -103,21 +104,25 @@ void MyCollection::initSongList() {
 
 void MyCollection::initSpecialAlbum() {
     this->m_specialAlbum = std::make_unique<SpecialAlbum>(ui->stackedWidget);
+    connect(this->m_specialAlbum.get(),&SpecialAlbum::find_more_music,[this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_specialAlbum.get());
 }
 
 void MyCollection::initCollectVideo() {
     this->m_collectVideo = std::make_unique<CollectVideo>(ui->stackedWidget);
+    connect(this->m_collectVideo.get(),&CollectVideo::find_more_music,[this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_collectVideo.get());
 }
 
 void MyCollection::initSinger() {
     this->m_singerWidget = std::make_unique<SingerWidget>(ui->stackedWidget);
+    connect(this->m_singerWidget.get(),&SingerWidget::find_more_music,[this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_singerWidget.get());
 }
 
 void MyCollection::initDevice() {
     this->m_deviceWidget = std::make_unique<DeviceWidget>(ui->stackedWidget);
+    connect(this->m_deviceWidget.get(),&DeviceWidget::find_more_music,[this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_deviceWidget.get());
 }
 

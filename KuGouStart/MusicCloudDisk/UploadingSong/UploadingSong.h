@@ -29,6 +29,11 @@ private:
 private slots:
     void on_cloud_upload_toolButton_clicked();
 
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
+
 private:
     Ui::UploadingSong *ui;
 };

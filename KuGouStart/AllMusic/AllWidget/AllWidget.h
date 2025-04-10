@@ -8,9 +8,11 @@
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
+
 namespace Ui {
     class AllWidget;
 }
+
 QT_END_NAMESPACE
 
 class AllWidget : public QWidget {
@@ -20,6 +22,12 @@ public:
     explicit AllWidget(QWidget *parent = nullptr);
 
     ~AllWidget() override;
+
+private slots:
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
 
 private:
     void initUi();

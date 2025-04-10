@@ -53,6 +53,12 @@ public slots:
 
     void onRandomSort();
 
+private slots:
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
+
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 

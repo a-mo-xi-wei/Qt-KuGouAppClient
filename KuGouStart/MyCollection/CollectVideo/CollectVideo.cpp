@@ -32,3 +32,7 @@ CollectVideo::CollectVideo(QWidget *parent)
 CollectVideo::~CollectVideo() {
     delete ui;
 }
+
+void CollectVideo::on_search_pushButton_clicked() {
+    emit find_more_music();
+}

@@ -55,6 +55,11 @@ private:
 
     void enableButton(const bool& flag) const;
 
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
+    void mousePressEvent(QMouseEvent *event) override;
+
 private slots:
     void on_all_pushButton_clicked();
 
@@ -97,10 +102,8 @@ public slots:
 
     void onRandomSort();
 
-protected:
-    bool eventFilter(QObject *watched, QEvent *event) override;
-
-    void mousePressEvent(QMouseEvent *event) override;
+signals:
+    void find_more_music();
 
 private:
     Ui::AllMusic *ui;

@@ -188,37 +188,44 @@ void AllMusic::initStackedWidget() {
 
 void AllMusic::initAllWidget() {
     this->m_allWidget = std::make_unique<AllWidget>(ui->stackedWidget);
+    connect(this->m_allWidget.get(), &AllWidget::find_more_music, this, [this] {emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_allWidget.get());
     ui->stackedWidget->setCurrentWidget(this->m_allWidget.get());
 }
 
 void AllMusic::initAllLove() {
     this->m_allLove = std::make_unique<AllLove>(ui->stackedWidget);
+    connect(this->m_allLove.get(), &AllLove::find_more_music, this, [this] {emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_allLove.get());
 }
 
 void AllMusic::initAllSongList() {
     this->m_allSongList = std::make_unique<AllSongList>(ui->stackedWidget);
+    connect(this->m_allSongList.get(), &AllSongList::find_more_music, this, [this] {emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_allSongList.get());
 }
 
 void AllMusic::initAllRecent() {
     this->m_allRecent = std::make_unique<AllRecent>(ui->stackedWidget);
+    connect(this->m_allRecent.get(), &AllRecent::find_more_music, this, [this] {emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_allRecent.get());
 }
 
 void AllMusic::initAllLocal() {
     this->m_allLocal = std::make_unique<AllLocal>(ui->stackedWidget);
+    connect(this->m_allLocal.get(), &AllLocal::find_more_music, this, [this] {emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_allLocal.get());
 }
 
 void AllMusic::initAllPaid() {
     this->m_allPaid = std::make_unique<AllPaid>(ui->stackedWidget);
+    connect(this->m_allPaid.get(), &AllPaid::find_more_music, this, [this] {emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_allPaid.get());
 }
 
 void AllMusic::initAllCloudDisk() {
     this->m_allCloudDisk = std::make_unique<AllCloudDisk>(ui->stackedWidget);
+    connect(this->m_allCloudDisk.get(), &AllCloudDisk::find_more_music, this, [this] {emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_allCloudDisk.get());
 }
 
@@ -807,7 +814,7 @@ void AllMusic::mousePressEvent(QMouseEvent *event) {
             ui->all_pushButton->clicked();
         }
         if (labelRect2.contains(clickPos2)) {
-            ui->local_pushButton->clicked();
+            ui->love_pushButton->clicked();
         }
         if (labelRect3.contains(clickPos3)) {
             ui->song_list_pushButton->clicked();

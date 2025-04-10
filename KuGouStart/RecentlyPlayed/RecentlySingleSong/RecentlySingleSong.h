@@ -57,6 +57,12 @@ public slots:
 
     void onRandomSort();
 
+private slots:
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
+
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
@@ -66,6 +72,5 @@ private:
     //菜单相关
     SortOptionMenu *m_sortOptMenu{};
     QPoint m_menuPosition;
-
 };
 #endif //RECENTLYSINGLESONG_H

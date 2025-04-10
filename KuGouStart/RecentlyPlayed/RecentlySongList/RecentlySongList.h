@@ -8,15 +8,26 @@
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class RecentlySongList; }
+
+namespace Ui {
+    class RecentlySongList;
+}
+
 QT_END_NAMESPACE
 
 class RecentlySongList : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit RecentlySongList(QWidget *parent = nullptr);
+
     ~RecentlySongList() override;
+
+private slots:
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
 
 private:
     Ui::RecentlySongList *ui;

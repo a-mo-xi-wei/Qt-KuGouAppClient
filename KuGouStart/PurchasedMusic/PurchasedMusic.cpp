@@ -77,21 +77,20 @@ void PurchasedMusic::initStackedWidget() {
 
 void PurchasedMusic::initPaidSingle() {
     this->m_paidSingle = std::make_unique<PaidSingle>(ui->stackedWidget);
-    auto testWidget = new QWidget(this);
-    testWidget->hide();
-    ui->stackedWidget->addWidget(testWidget);
-    ui->stackedWidget->setCurrentWidget(testWidget);
+    connect(this->m_paidSingle.get(),&PaidSingle::find_more_music,[this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_paidSingle.get());
     ui->stackedWidget->setCurrentWidget(this->m_paidSingle.get());
 }
 
 void PurchasedMusic::initPurchasedAlbums() {
     this->m_purchasedAlbums = std::make_unique<PurchasedAlbums>(ui->stackedWidget);
+    connect(this->m_purchasedAlbums.get(),&PurchasedAlbums::find_more_music,[this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_purchasedAlbums.get());
 }
 
 void PurchasedMusic::initPurchasedVideos() {
     this->m_purchasedVideos = std::make_unique<PurchasedVideos>(ui->stackedWidget);
+    connect(this->m_purchasedVideos.get(),&PurchasedVideos::find_more_music,[this]{emit find_more_music();});
     ui->stackedWidget->addWidget(this->m_purchasedVideos.get());
 }
 

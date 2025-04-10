@@ -221,6 +221,10 @@ void PaidSingle::onRandomSort() {
         QString("暂无音乐"),1000,this->window());
 }
 
+void PaidSingle::on_search_pushButton_clicked() {
+    emit find_more_music();
+}
+
 bool PaidSingle::eventFilter(QObject *watched, QEvent *event) {
     if (watched == ui->single_download_toolButton) {
         if (event->type() == QEvent::Enter) {

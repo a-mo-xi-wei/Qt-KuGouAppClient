@@ -23,6 +23,9 @@ public:
 
     ~Downloading() override;
 
+private:
+    void initUi();
+
 private slots:
     void on_start_toolButton_clicked();
 
@@ -32,8 +35,11 @@ private slots:
 
     void on_setting_toolButton_clicked();
 
-private:
-    void initUi();
+private slots:
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
 
 private:
     Ui::Downloading *ui;

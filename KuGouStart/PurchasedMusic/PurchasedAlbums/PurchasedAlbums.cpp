@@ -29,3 +29,7 @@ PurchasedAlbums::PurchasedAlbums(QWidget *parent) :
 PurchasedAlbums::~PurchasedAlbums() {
     delete ui;
 }
+
+void PurchasedAlbums::on_search_pushButton_clicked() {
+    emit find_more_music();
+}

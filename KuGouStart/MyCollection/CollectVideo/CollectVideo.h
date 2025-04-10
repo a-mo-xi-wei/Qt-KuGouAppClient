@@ -8,15 +8,26 @@
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class CollectVideo; }
+
+namespace Ui {
+    class CollectVideo;
+}
+
 QT_END_NAMESPACE
 
 class CollectVideo : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit CollectVideo(QWidget *parent = nullptr);
+
     ~CollectVideo() override;
+
+private slots:
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
 
 private:
     Ui::CollectVideo *ui;

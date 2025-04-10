@@ -30,3 +30,7 @@ RecentlyVideoWidget::RecentlyVideoWidget(QWidget *parent) :
 RecentlyVideoWidget::~RecentlyVideoWidget() {
     delete ui;
 }
+
+void RecentlyVideoWidget::on_search_pushButton_clicked() {
+    emit find_more_music();
+}

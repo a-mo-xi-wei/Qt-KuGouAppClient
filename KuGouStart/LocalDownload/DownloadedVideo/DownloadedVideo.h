@@ -23,6 +23,13 @@ public:
     explicit DownloadedVideo(QWidget *parent = nullptr);
 
     ~DownloadedVideo() override;
+
+private slots:
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
+
 private:
     Ui::DownloadedVideo *ui;
 };

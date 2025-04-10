@@ -31,3 +31,7 @@ RecentlyMVChannel::RecentlyMVChannel(QWidget *parent) :
 RecentlyMVChannel::~RecentlyMVChannel() {
     delete ui;
 }
+
+void RecentlyMVChannel::on_search_pushButton_clicked() {
+    emit find_more_channel();
+}

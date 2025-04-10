@@ -72,6 +72,7 @@ LocalSong::~LocalSong() {
 }
 
 void LocalSong::initUi() {
+
     //设置toolTip
     {
         //upload_toolButton
@@ -250,6 +251,7 @@ void LocalSong::getMetaData() {
                 const auto layout = dynamic_cast<QVBoxLayout *>(ui->local_song_list_widget->layout());
                 if (!layout)return;
                 layout->insertWidget(layout->count() - 2, item);
+                ui->widget->hide();
                 qDebug()<<"成功添加歌曲 ："<<item->m_information.mediaPath;
                 STREAM_INFO()<<"成功添加歌曲 ："<<item->m_information.mediaPath.toStdString();
                 ElaMessageBar::success(ElaMessageBarType::BottomRight,"Success",
@@ -518,6 +520,10 @@ void LocalSong::on_local_batch_toolButton_clicked() {
                             "批量操作 功能暂未实现 敬请期待", 1000,this->window());
 }
 
+void LocalSong::on_search_pushButton_clicked() {
+    emit find_more_music();
+}
+
 void LocalSong::on_local_sort_toolButton_clicked() {
     getMenuPosition(QCursor::pos());
     this->m_sortOptMenu->move(this->m_menuPosition);
@@ -723,7 +729,7 @@ void LocalSong::onItemDeleteSong(const int &idx) {
     emit subSongInfo(m_locationMusicVector[idx]); //向KuGou发送删除idx信号
     this->m_locationMusicVector.erase(m_locationMusicVector.cbegin() + idx);
     this->m_MusicItemVector.erase(m_MusicItemVector.cbegin() + idx);
-
+    if (this->m_MusicItemVector.isEmpty())ui->widget->show();
     //ui->local_music_number_label->setText(QString::number(this->m_locationMusicVector.size()));
     emit updateCountLabel(static_cast<int>(this->m_locationMusicVector.size()));
 

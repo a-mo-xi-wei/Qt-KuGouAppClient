@@ -8,15 +8,26 @@
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class SingerWidget; }
+
+namespace Ui {
+    class SingerWidget;
+}
+
 QT_END_NAMESPACE
 
 class SingerWidget : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit SingerWidget(QWidget *parent = nullptr);
+
     ~SingerWidget() override;
+
+private slots:
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
 
 private:
     Ui::SingerWidget *ui;

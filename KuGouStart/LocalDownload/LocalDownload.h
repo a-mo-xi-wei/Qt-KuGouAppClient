@@ -75,6 +75,8 @@ signals:
     //同步(更新)Vec
     void syncSongInfo(QVector<SongInfor> &vec);
 
+    void find_more_music();
+
 private:
     Ui::LocalDownload *ui;
     std::unique_ptr<QButtonGroup>       m_buttonGroup{};

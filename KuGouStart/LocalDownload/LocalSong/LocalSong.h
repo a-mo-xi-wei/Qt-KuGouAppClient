@@ -64,6 +64,12 @@ private slots:
 
     void on_local_batch_toolButton_clicked();
 
+private slots:
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_music();
+
 public slots:
     //其他
     void setPlayIndex(const int &index);

@@ -30,3 +30,7 @@ AllSongList::AllSongList(QWidget *parent) :
 AllSongList::~AllSongList() {
     delete ui;
 }
+
+void AllSongList::on_search_pushButton_clicked() {
+    emit find_more_music();
+}

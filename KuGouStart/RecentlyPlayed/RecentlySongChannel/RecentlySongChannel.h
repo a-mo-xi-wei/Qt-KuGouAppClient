@@ -36,10 +36,14 @@ private slots:
 
     void on_recently_batch_toolButton_clicked();
 
+    void on_search_pushButton_clicked();
+
+signals:
+    void find_more_channel();
+
 private:
     Ui::RecentlySongChannel *ui;
     QAction *m_searchAction; //专门为了设置图片
-
 };
 
 

@@ -109,3 +109,7 @@ void RecentlySongChannel::on_recently_batch_toolButton_clicked() {
                             "批量操作 功能暂未实现 敬请期待", 1000,this->window());
 }
 
+void RecentlySongChannel::on_search_pushButton_clicked() {
+    emit find_more_channel();
+}
+

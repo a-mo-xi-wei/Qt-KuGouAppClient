@@ -180,6 +180,15 @@ void KuGouApp::initStackedWidget() {
     initComponent(m_recentlyPlayed,13);
     initComponent(m_allMusic,14);
 
+    //响应相关跳转
+    connect(this->m_collection.get(),&MyCollection::find_more_music,[this]{on_music_repository_toolButton_clicked();});
+    connect(this->m_localDownload.get(),&LocalDownload::find_more_music,[this]{on_music_repository_toolButton_clicked();});
+    connect(this->m_musicCloudDisk.get(),&MusicCloudDisk::find_more_music,[this]{on_music_repository_toolButton_clicked();});
+    connect(this->m_purchasedMusic.get(),&PurchasedMusic::find_more_music,[this]{on_music_repository_toolButton_clicked();});
+    connect(this->m_recentlyPlayed.get(),&RecentlyPlayed::find_more_music,[this]{on_music_repository_toolButton_clicked();});
+    connect(this->m_recentlyPlayed.get(),&RecentlyPlayed::find_more_channel,[this]{on_channel_toolButton_clicked();});
+    connect(this->m_allMusic.get(),&AllMusic::find_more_music,[this]{on_music_repository_toolButton_clicked();});
+
     //localDownload
     connect(this->m_localDownload.get(), &LocalDownload::playMusic, this, &KuGouApp::onPlayMusic);
     connect(this->m_localDownload.get(), &LocalDownload::startPlay, this, &KuGouApp::onStartPlay);

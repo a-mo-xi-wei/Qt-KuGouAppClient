@@ -57,6 +57,11 @@ private slots:
 
     void on_MV_channel_pushButton_clicked();
 
+signals:
+    void find_more_music();
+
+    void find_more_channel();
+
 protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 

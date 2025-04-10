@@ -32,3 +32,7 @@ DeviceWidget::DeviceWidget(QWidget *parent)
 DeviceWidget::~DeviceWidget() {
     delete ui;
 }
+
+void DeviceWidget::on_search_pushButton_clicked() {
+    emit find_more_music();
+}
