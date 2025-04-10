@@ -56,6 +56,8 @@ public:
 
     ~TitleWidget() override;
 
+    void setEnableChange(const bool& flag);
+
 private:
     void initUi();
 
@@ -155,6 +157,8 @@ private:
     QPixmap                         m_originalCover;
     TitleOptionMenu*                m_titleOptMenu{};
     QPoint                          m_menuPosition;
+    //能否切换
+    bool m_enableChange = true;
 };
 
 #endif //TITLEWIDGET_H

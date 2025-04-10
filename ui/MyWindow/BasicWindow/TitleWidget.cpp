@@ -51,6 +51,10 @@ TitleWidget::~TitleWidget() {
     delete ui;
 }
 
+void TitleWidget::setEnableChange(const bool &flag) {
+    this->m_enableChange = flag;
+}
+
 void TitleWidget::initUi() {
     //设置toolTip
     {
@@ -236,184 +240,183 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event) {
     if (event->type() == QEvent::MouseButtonPress) {
         QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
         if (mouseEvent->button() == Qt::BackButton) {
-            //qDebug() << "全局监听：鼠标返回键被按下";
-            on_title_return_toolButton_clicked();
-            return true; // 表示事件已处理，不再继续传播
+            if (this->m_enableChange) {
+                //qDebug() << "全局监听：鼠标返回键被按下";
+                on_title_return_toolButton_clicked();
+                return true; // 表示事件已处理，不再继续传播
+            }
         }
         if (mouseEvent->button() == Qt::ForwardButton) {
-            qDebug() << "全局监听：鼠标前进键被按下";
-            if (!m_frontTypeStack.isEmpty()) {
-                StackType nextType = m_frontTypeStack.pop();
-                m_backTypeStack.push(this->m_curType); // 当前状态存入返回栈
+            if (this->m_enableChange) {
+                //qDebug() << "全局监听：鼠标前进键被按下";
+                if (!m_frontTypeStack.isEmpty()) {
+                    StackType nextType = m_frontTypeStack.pop();
+                    m_backTypeStack.push(this->m_curType); // 当前状态存入返回栈
 
-                // 更新界面状态
-                if (nextType == TitleLive) {
-                    ui->title_live_pushButton->setChecked(true);
-                    emit currentStackChange(StackType::TitleLive);
-                    emit leftMenuShow(false);
-                    setTitleIndex(2);
-                    qDebug() << "[前进] 直播";
-                    STREAM_INFO() << "前进到直播界面";
-                }
-                else if (nextType == ListenBook) {
-                    ui->title_listen_book_pushButton->setChecked(true);
-                    emit currentStackChange(StackType::ListenBook);
-                    emit leftMenuShow(false);
-                    setTitleIndex(3);
-                    qDebug() << "[前进] 听书";
-                    STREAM_INFO() << "前进到听书界面";
-                }
-                else if (nextType == Search) {
-                    ui->title_search_pushButton->setChecked(true);
-                    emit currentStackChange(StackType::Search);
-                    emit leftMenuShow(false);
-                    setTitleIndex(4);
-                    qDebug() << "[前进] 探索";
-                    STREAM_INFO() << "前进到探索界面";
-                }
-                else {
-                    ui->title_music_pushButton->setChecked(true);
-                    setTitleIndex(1);
-                    emit leftMenuShow(true);
+                    // 更新界面状态
+                    if (nextType == TitleLive) {
+                        ui->title_live_pushButton->setChecked(true);
+                        emit currentStackChange(StackType::TitleLive);
+                        emit leftMenuShow(false);
+                        setTitleIndex(2);
+                        qDebug() << "[前进] 直播";
+                        STREAM_INFO() << "前进到直播界面";
+                    }
+                    else if (nextType == ListenBook) {
+                        ui->title_listen_book_pushButton->setChecked(true);
+                        emit currentStackChange(StackType::ListenBook);
+                        emit leftMenuShow(false);
+                        setTitleIndex(3);
+                        qDebug() << "[前进] 听书";
+                        STREAM_INFO() << "前进到听书界面";
+                    }
+                    else if (nextType == Search) {
+                        ui->title_search_pushButton->setChecked(true);
+                        emit currentStackChange(StackType::Search);
+                        emit leftMenuShow(false);
+                        setTitleIndex(4);
+                        qDebug() << "[前进] 探索";
+                        STREAM_INFO() << "前进到探索界面";
+                    }
+                    else {
+                        ui->title_music_pushButton->setChecked(true);
+                        setTitleIndex(1);
+                        emit leftMenuShow(true);
 
-                    // 统一状态更新
-                    this->m_lastType = nextType;
-                    this->m_curType = nextType;
+                        // 统一状态更新
+                        this->m_lastType = nextType;
+                        this->m_curType = nextType;
+                        bool condition = false;
+                        if (!m_backTypeStack.isEmpty()) {
+                            const StackType top = m_backTypeStack.top();
+                            condition = (top == MusicCloudDisk || top == DailyRecommend);
+                        }
 
-                    // 触发界面更新（与返回逻辑保持模式一致）
-                    switch (nextType) {
-                        case RecommendForYou: {
-                            if (m_backTypeStack.top() == MusicCloudDisk ||
-                                m_backTypeStack.top() == DailyRecommend) {
-                                emit currentStackChange(StackType::RecommendForYou);
+                        // 触发界面更新（与返回逻辑保持模式一致）
+                        switch (nextType) {
+                            case RecommendForYou: {
+                                if (condition) {
+                                    emit currentStackChange(StackType::RecommendForYou);
                                 } else {
                                     emit currentStackChange(StackType::RecommendForYou, true);
                                 }
-                            qDebug() << "[前进] 为你推荐";
-                            STREAM_INFO() << "前进到推荐界面";
-                            break;
-                        }
-                        case MusicRepository: {
-                            if (m_backTypeStack.top() == MusicCloudDisk ||
-                                m_backTypeStack.top() == DailyRecommend) {
-                                emit currentStackChange(StackType::MusicRepository);
+                                qDebug() << "[前进] 为你推荐";
+                                STREAM_INFO() << "前进到推荐界面";
+                                break;
+                            }
+                            case MusicRepository: {
+                                if (condition) {
+                                    emit currentStackChange(StackType::MusicRepository);
                                 } else {
                                     emit currentStackChange(StackType::MusicRepository, true);
                                 }
-                            qDebug() << "[前进] 乐库";
-                            STREAM_INFO() << "前进到乐库界面";
-                            break;
-                        }
-                        case Channel: {
-                            if (m_backTypeStack.top() == MusicCloudDisk ||
-                                m_backTypeStack.top() == DailyRecommend) {
-                                emit currentStackChange(StackType::Channel);
+                                qDebug() << "[前进] 乐库";
+                                STREAM_INFO() << "前进到乐库界面";
+                                break;
+                            }
+                            case Channel: {
+                                if (condition) {
+                                    emit currentStackChange(StackType::Channel);
                                 } else {
                                     emit currentStackChange(StackType::Channel, true);
                                 }
-                            qDebug() << "[前进] 频道";
-                            STREAM_INFO() << "前进到频道界面";
-                            break;
-                        }
-                        case Video: {
-                            if (m_backTypeStack.top() == MusicCloudDisk ||
-                                m_backTypeStack.top() == DailyRecommend) {
-                                emit currentStackChange(StackType::Video);
+                                qDebug() << "[前进] 频道";
+                                STREAM_INFO() << "前进到频道界面";
+                                break;
+                            }
+                            case Video: {
+                                if (condition) {
+                                    emit currentStackChange(StackType::Video);
                                 } else {
                                     emit currentStackChange(StackType::Video, true);
                                 }
-                            qDebug() << "[前进] 视频";
-                            STREAM_INFO() << "前进到视频界面";
-                            break;
-                        }
-                        case SongList: {
-                            if (m_backTypeStack.top() == MusicCloudDisk ||
-                                m_backTypeStack.top() == DailyRecommend) {
-                                emit currentStackChange(StackType::SongList);
+                                qDebug() << "[前进] 视频";
+                                STREAM_INFO() << "前进到视频界面";
+                                break;
+                            }
+                            case SongList: {
+                                if (condition) {
+                                    emit currentStackChange(StackType::SongList);
                                 } else {
                                     emit currentStackChange(StackType::SongList, true);
                                 }
-                            qDebug() << "[前进] 歌单";
-                            STREAM_INFO() << "前进到歌单界面";
-                            break;
-                        }
-                        case DailyRecommend: {
-                            emit currentStackChange(StackType::DailyRecommend, false);
-                            qDebug() << "[前进] 每日推荐";
-                            STREAM_INFO() << "前进到每日推荐";
-                            break;
-                        }
-                        case Collection: {
-                            if (m_backTypeStack.top() == MusicCloudDisk ||
-                                m_backTypeStack.top() == DailyRecommend) {
-                                emit currentStackChange(StackType::Collection);
+                                qDebug() << "[前进] 歌单";
+                                STREAM_INFO() << "前进到歌单界面";
+                                break;
+                            }
+                            case DailyRecommend: {
+                                emit currentStackChange(StackType::DailyRecommend, false);
+                                qDebug() << "[前进] 每日推荐";
+                                STREAM_INFO() << "前进到每日推荐";
+                                break;
+                            }
+                            case Collection: {
+                                if (condition) {
+                                    emit currentStackChange(StackType::Collection);
                                 } else {
                                     emit currentStackChange(StackType::Collection, true);
                                 }
-                            qDebug() << "[前进] 我的收藏";
-                            STREAM_INFO() << "前进到收藏界面";
-                            break;
-                        }
-                        case LocalDownload: {
-                            if (m_backTypeStack.top() == MusicCloudDisk ||
-                                m_backTypeStack.top() == DailyRecommend) {
-                                emit currentStackChange(StackType::LocalDownload);
+                                qDebug() << "[前进] 我的收藏";
+                                STREAM_INFO() << "前进到收藏界面";
+                                break;
+                            }
+                            case LocalDownload: {
+                                if (condition) {
+                                    emit currentStackChange(StackType::LocalDownload);
                                 } else {
                                     emit currentStackChange(StackType::LocalDownload, true);
                                 }
-                            qDebug() << "[前进] 本地下载";
-                            STREAM_INFO() << "前进到本地下载";
-                            break;
-                        }
-                        case MusicCloudDisk: {
-                            emit currentStackChange(StackType::MusicCloudDisk, false);
-                            qDebug() << "[前进] 音乐云盘";
-                            STREAM_INFO() << "前进到云盘界面";
-                            break;
-                        }
-                        case PurchasedMusic: {
-                            if (m_backTypeStack.top() == MusicCloudDisk ||
-                                m_backTypeStack.top() == DailyRecommend) {
-                                emit currentStackChange(StackType::PurchasedMusic);
+                                qDebug() << "[前进] 本地下载";
+                                STREAM_INFO() << "前进到本地下载";
+                                break;
+                            }
+                            case MusicCloudDisk: {
+                                emit currentStackChange(StackType::MusicCloudDisk, false);
+                                qDebug() << "[前进] 音乐云盘";
+                                STREAM_INFO() << "前进到云盘界面";
+                                break;
+                            }
+                            case PurchasedMusic: {
+                                if (condition) {
+                                    emit currentStackChange(StackType::PurchasedMusic);
                                 } else {
                                     emit currentStackChange(StackType::PurchasedMusic, true);
                                 }
-                            qDebug() << "[前进] 已购音乐";
-                            STREAM_INFO() << "前进到已购音乐";
-                            break;
-                        }
-                        case RecentlyPlayed: {
-                            if (m_backTypeStack.top() == MusicCloudDisk ||
-                                m_backTypeStack.top() == DailyRecommend) {
-                                emit currentStackChange(StackType::RecentlyPlayed);
+                                qDebug() << "[前进] 已购音乐";
+                                STREAM_INFO() << "前进到已购音乐";
+                                break;
+                            }
+                            case RecentlyPlayed: {
+                                if (condition) {
+                                    emit currentStackChange(StackType::RecentlyPlayed);
                                 } else {
                                     emit currentStackChange(StackType::RecentlyPlayed, true);
                                 }
-                            qDebug() << "[前进] 最近播放";
-                            STREAM_INFO() << "前进到最近播放";
-                            break;
-                        }
-                        case AllMusic: {
-                            if (m_backTypeStack.top() == MusicCloudDisk ||
-                                m_backTypeStack.top() == DailyRecommend) {
-                                emit currentStackChange(StackType::AllMusic);
+                                qDebug() << "[前进] 最近播放";
+                                STREAM_INFO() << "前进到最近播放";
+                                break;
+                            }
+                            case AllMusic: {
+                                if (condition) {
+                                    emit currentStackChange(StackType::AllMusic);
                                 } else {
                                     emit currentStackChange(StackType::AllMusic, true);
                                 }
-                            qDebug() << "[前进] 全部音乐";
-                            STREAM_INFO() << "前进到全部音乐";
-                            break;
-                        }
-                        default: {
-                            emit currentStackChange(StackType::RecommendForYou, true);
-                            qDebug() << "[前进] 默认跳转推荐";
-                            STREAM_INFO() << "前进到默认推荐";
+                                qDebug() << "[前进] 全部音乐";
+                                STREAM_INFO() << "前进到全部音乐";
+                                break;
+                            }
+                            default: {
+                                emit currentStackChange(StackType::RecommendForYou, true);
+                                qDebug() << "[前进] 默认跳转推荐";
+                                STREAM_INFO() << "前进到默认推荐";
+                            }
                         }
                     }
+                    this->m_curType = nextType; // 最终确认当前类型
                 }
-                this->m_curType = nextType; // 最终确认当前类型
+                return true;
             }
-            return true;
         }
     }
     if (watched == ui->title_portrait_label && event->type() == QEvent::Enter) {
@@ -458,7 +461,6 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event) {
 }
 
 void TitleWidget::on_title_return_toolButton_clicked() {
-    //qDebug() << "返回键被按下";
     STREAM_INFO() << "返回键被按下";
     if (!m_backTypeStack.isEmpty()) {
         this->m_lastType = m_backTypeStack.pop(); // 先弹出再赋值
@@ -633,7 +635,7 @@ void TitleWidget::on_title_music_pushButton_clicked() {
     setTitleIndex(1);
     //显示menu
     emit leftMenuShow(true);
-    switch (this->m_curType) {
+    switch (this->m_lastType) {
         case RecommendForYou:
             onLeftMenu_recommend_clicked();
             break;

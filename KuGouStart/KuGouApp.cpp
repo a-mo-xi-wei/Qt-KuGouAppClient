@@ -211,6 +211,8 @@ void KuGouApp::initTitleWidget() {
         this->m_refreshMask->showLoading();
         this->m_refreshMask->raise();
     });
+    //向titleWidget 发送
+
 }
 
 void KuGouApp::initPlayWidget() {
@@ -437,6 +439,7 @@ void KuGouApp::enableButton(const bool &flag) {
     ui->purchased_music_toolButton  ->setEnabled(flag);
     ui->recently_played_toolButton  ->setEnabled(flag);
     ui->all_music_toolButton        ->setEnabled(flag);
+    ui->title_widget->setEnableChange(flag);
 }
 
 void KuGouApp::addOrderIndex() {
