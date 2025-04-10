@@ -22,9 +22,6 @@ add_subdirectory(MusicItemWidget)
 #我的按钮模块
 add_subdirectory(MyButton)
 
-#滑动条模块
-add_subdirectory(SliderWidget)
-
 #搜索框模块
 add_subdirectory(MySearchLineEdit)
 

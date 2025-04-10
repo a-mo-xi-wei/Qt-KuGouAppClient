@@ -58,7 +58,10 @@ void SliderWidget::mouseMoveEvent(QMouseEvent *event) {
         // 根据百分比计算出滑动条的新值
         this->m_currentValue = this->m_minValue + static_cast<int>(percentage * (this->m_maxValue - this->m_minValue));
         // 设置滑动条的新值
+        //判断区间
         this->m_currentValue = this->m_currentValue >= 0 ? this->m_currentValue : 0;
+        this->m_currentValue = this->m_currentValue <= this->m_maxValue ? this->m_currentValue : this->m_maxValue;
+
         this->setValue(this->m_currentValue);
         emit noVolume(this->m_currentValue == 0);
         //qDebug()<<"m_currentValue : "<<this->m_currentValue;

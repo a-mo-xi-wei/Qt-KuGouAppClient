@@ -1,7 +1,7 @@
 #ifndef VOLUMETOOLBTN_H
 #define VOLUMETOOLBTN_H
 
-#include"SliderWidget.h"
+#include"./SliderWidget/SliderWidget.h"
 
 #if defined(MYBUTTON_LIBRARY)
 #define MYBUTTON_EXPORT Q_DECL_EXPORT

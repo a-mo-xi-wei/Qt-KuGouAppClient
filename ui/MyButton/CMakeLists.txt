@@ -14,8 +14,8 @@ file(GLOB RIPPLEBUTTON_CPP ${CMAKE_CURRENT_SOURCE_DIR}/RippleButton/*.cpp)
 file(GLOB UPTOOLBUTTON_H ${CMAKE_CURRENT_SOURCE_DIR}/UpToolButton/*.h)
 file(GLOB UPTOOLBUTTON_CPP ${CMAKE_CURRENT_SOURCE_DIR}/UpToolButton/*.cpp)
 
-file(GLOB VOLUMETOOLBTN_H ${CMAKE_CURRENT_SOURCE_DIR}/VolumeToolBtn/*.h)
-file(GLOB VOLUMETOOLBTN_CPP ${CMAKE_CURRENT_SOURCE_DIR}/VolumeToolBtn/*.cpp)
+file(GLOB_RECURSE VOLUMETOOLBTN_H ${CMAKE_CURRENT_SOURCE_DIR}/VolumeToolBtn/*.h)
+file(GLOB_RECURSE VOLUMETOOLBTN_CPP ${CMAKE_CURRENT_SOURCE_DIR}/VolumeToolBtn/*.cpp)
 
 set(SOURCE_FILE
         ${ICONBESIDETEXTTOOLBUTTON_H}
@@ -44,4 +44,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/VolumeToolBtn
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core MySpdlog SliderWidget)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core MySpdlog)
