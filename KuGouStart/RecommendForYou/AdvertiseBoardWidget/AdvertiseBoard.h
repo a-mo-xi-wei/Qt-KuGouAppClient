@@ -12,6 +12,7 @@ class MyLLabel : public QLabel {
 public:
     MyLLabel(QWidget *parent = nullptr) : QLabel(parent) {
         setMouseTracking(true);
+        setPixmap(QPixmap(QStringLiteral(":/Res/window/left.svg"))); // 悬停时的图片
     }
 
 signals:
@@ -40,6 +41,7 @@ class MyRLabel : public QLabel {
 public:
     MyRLabel(QWidget *parent = nullptr) : QLabel(parent) {
         setMouseTracking(true);
+        setPixmap(QPixmap(QStringLiteral(":/Res/window/right.svg"))); // 悬停时的图片
     }
 
 signals:
