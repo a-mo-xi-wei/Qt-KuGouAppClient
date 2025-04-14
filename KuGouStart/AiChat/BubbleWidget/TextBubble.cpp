@@ -16,10 +16,12 @@ TextBubble::TextBubble(const ChatRole role, const QString &text, QWidget *parent
     m_pTextEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_pTextEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_pTextEdit->installEventFilter(this);
+    m_pTextEdit->setStyleSheet("QTextEdit{background:transparent;border:none}");
 
     auto font = QFont("AaSongLiuKaiTi");
-    font.setPointSize(12);
-    this->setFont(font);
+    font.setPointSize(14);
+    font.setWeight(QFont::Medium);
+    m_pTextEdit->setFont(font);
     setPlainText(text);
     setWidget(m_pTextEdit);
 }

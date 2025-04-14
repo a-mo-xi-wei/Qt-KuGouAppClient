@@ -46,6 +46,15 @@ AiChat::AiChat(QWidget *parent)
         ui->chatView->appendChatItem(m_currentResponseItem);
         onStreamFinished();
     });
+
+    ui->send_btn->setRadius(15);
+    ui->send_btn->setFillColor(QColor(QStringLiteral("#FFD6F1")));
+    ui->send_btn->setSpeed(5);
+
+    auto font = QFont("AaSongLiuKaiTi");
+    font.setPointSize(14);
+    font.setWeight(QFont::Medium);
+    ui->question_textEdit->setFont(font);
 }
 
 AiChat::~AiChat()
@@ -82,8 +91,8 @@ void AiChat::on_send_btn_clicked() {
         qWarning() << "Empty question";
         return;
     }
-    ui->send_btn->setEnabled(false);
     ui->send_btn->setCursor(Qt::ForbiddenCursor);
+    ui->send_btn->setEnabled(false);
     //处理时间
     dealMessageTime();
     // 自己

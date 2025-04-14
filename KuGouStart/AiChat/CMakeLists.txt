@@ -22,4 +22,4 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/BubbleWidget
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Network MyButton)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Network MyButton ElaWidgetTools)

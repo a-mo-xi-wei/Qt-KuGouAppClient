@@ -39,14 +39,14 @@
     <widget class="QWidget" name="send_widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QTextEdit" name="question_textEdit">
+       <widget class="ElaPlainTextEdit" name="question_textEdit">
         <property name="cursor" stdset="0">
          <cursorShape>ArrowCursor</cursorShape>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="WaterZoomButton" name="send_btn">
+       <widget class="RippleButton" name="send_btn">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -86,9 +86,14 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>WaterZoomButton</class>
+   <class>ElaPlainTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>ElaPlainTextEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>RippleButton</class>
    <extends>QPushButton</extends>
-   <header>WaterZoomButton.h</header>
+   <header>RippleButton.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

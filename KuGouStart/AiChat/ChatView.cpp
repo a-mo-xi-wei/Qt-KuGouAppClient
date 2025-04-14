@@ -13,6 +13,7 @@ ChatView::ChatView(QWidget *parent)
     pMainLayout->setContentsMargins(0,0,0,0);
 
     m_pScrollArea = new QScrollArea();
+    m_pScrollArea->setFrameShape(QFrame::NoFrame);
     m_pScrollArea->setObjectName("chat_area");
     pMainLayout->addWidget(m_pScrollArea);
 
