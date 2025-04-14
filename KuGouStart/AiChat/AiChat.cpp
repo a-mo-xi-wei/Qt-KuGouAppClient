@@ -29,8 +29,6 @@ AiChat::AiChat(QWidget *parent)
         qDebug() << "样式表打开失败QAQ";
         return;
     }
-    auto font = QFont("AaSongLiuKaiTi");
-    font.setPointSize(12);
     // 连接信号
     connect(&m_deepSeek, &Chat::answered, this, &AiChat::getAnswer);
     connect(&m_deepSeek, &Chat::streamFinished, this, &AiChat::onStreamFinished);

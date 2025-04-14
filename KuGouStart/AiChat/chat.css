@@ -1,9 +1,11 @@
 #chat_bg{
-    background: #f0f0f0;
+    border: none;
+    background: transparent;
 }
 
 #chat_area{
     border: none;
+    background: transparent;
 }
 
 #chat_user_name{
@@ -12,84 +14,29 @@
     font-family: "Microsoft YaHei";
 }
 /*-------------------发送按钮----------------------*/
+#send_btn{
 
-#send_btn[state='normal']{
-    background: #f0f0f0;
-    color: #2cb46e;
-    font-size: 16px; /* 设置字体大小 */
-    font-family: "Microsoft YaHei"; /* 设置字体 */
-    border-radius: 20px; /* 设置圆角 */
-}
-
-#send_btn[state='hover']{
-    background: #d2d2d2;
-    color: #2cb46e;
-    font-size: 16px; /* 设置字体大小 */
-    font-family: "Microsoft YaHei"; /* 设置字体 */
-    border-radius: 20px; /* 设置圆角 */
-}
-
-#send_btn[state='press']{
-    background: #c6c6c6;
-    color: #2cb46e;
-    font-size: 16px; /* 设置字体大小 */
-    font-family: "Microsoft YaHei"; /* 设置字体 */
-    border-radius: 20px; /* 设置圆角 */
 }
 
 
-/*!*-------------------滚动区域滚动条----------------------*!*/
 /*QScrollBar:vertical {*/
-/*    border: 0px solid rgb(231,166,190);*/
-/*    border-radius:4px;*/
-/*    background-color: white;*/
-/*    width: 10px;*/
-/*    margin: 20px 0px 20px 0px;*/
+/*    background: transparent; !* 将轨道背景设置为透明 *!*/
+/*    width: 8px; !* 滚动条宽度，根据需要调整 *!*/
+/*    margin: 0px; !* 移除滚动条与滑块之间的间距 *!*/
 /*}*/
-/*QScrollBar:vertical:hover {*/
-/*    border: 1px solid rgb(231,166,190);*/
-/*    border-radius:4px;*/
-/*    width: 10px;*/
-/*    margin: 20px 0px 20px 0px;*/
-/*}*/
-/*!*--滑块---*!*/
+
 /*QScrollBar::handle:vertical {*/
-/*    background-color: rgb(237,188,206);*/
-/*    border-radius: 4px;*/
+/*    background: rgb(173,170,169); !* 滑块颜色 *!*/
+/*    min-height: 10px; !* 滑块最小高度，根据需要调整 *!*/
+/*    border-radius: 4px; !* 滑块边缘圆角，调整以形成椭圆形状 *!*/
 /*}*/
-/*QScrollBar::handle:vertical:hover {*/
-/*    background-color: rgb(248,129,161);*/
+
+/*QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {*/
+/*    height: 0px; !* 移除上下按钮 *!*/
+/*    border: none; !* 移除边框 *!*/
+/*    background: transparent; !* 背景透明 *!*/
 /*}*/
-/*!*---箭头---*!*/
-/*QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {*/
-/*    background: none; !* 确保没有箭头 *!*/
-/*}*/
-/*!*---空白区域---*!*/
+
 /*QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {*/
-/*    background: none; !* 防止长按时的背景色 *!*/
+/*    background: none; !* 页面滚动部分背景透明 *!*/
 /*}*/
-/*QScrollBar::sub-line:vertical, QScrollBar::add-line:vertical {*/
-/*    background: none;*/
-/*}*/
-
-QScrollBar:vertical {
-    background: transparent; /* 将轨道背景设置为透明 */
-    width: 8px; /* 滚动条宽度，根据需要调整 */
-    margin: 0px; /* 移除滚动条与滑块之间的间距 */
-}
-
-QScrollBar::handle:vertical {
-    background: rgb(173,170,169); /* 滑块颜色 */
-    min-height: 10px; /* 滑块最小高度，根据需要调整 */
-    border-radius: 4px; /* 滑块边缘圆角，调整以形成椭圆形状 */
-}
-
-QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
-    height: 0px; /* 移除上下按钮 */
-    border: none; /* 移除边框 */
-    background: transparent; /* 背景透明 */
-}
-
-QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
-    background: none; /* 页面滚动部分背景透明 */
-}

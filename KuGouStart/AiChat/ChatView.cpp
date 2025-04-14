@@ -22,7 +22,7 @@ ChatView::ChatView(QWidget *parent)
     auto pVLayout_1 = new QVBoxLayout();
     pVLayout_1->addStretch();
     w->setLayout(pVLayout_1);
-    m_pScrollArea->setWidget(w);    //应该时在QSCrollArea构造后执行 才对
+    m_pScrollArea->setWidget(w);    //应该时在QSCrollArea构造后执行才对
 
     m_pScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     auto pVScrollBar = m_pScrollArea->verticalScrollBar();

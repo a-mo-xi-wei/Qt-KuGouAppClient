@@ -36,8 +36,8 @@ private:
 
     void dealMessageTime();
 
-    private slots:
-        void on_send_btn_clicked();
+private slots:
+    void on_send_btn_clicked();
 
     void getAnswer(const QString &word);
 
