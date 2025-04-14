@@ -73,24 +73,43 @@ Based on Qt Widget + UiTools module + Custom control + QSS + QsLog + Custom **Sp
 
 ### 🔌 核心架构
 ```mermaid
-flowchart
-  CMakeModule["CMake模块化构建"]
-  UILogic["UI逻辑层"]
-  CoreCode["核心代码层"]
-  ThirdParty["第三方管理层"]
-  CustomWidgets["自定义控件库"]
-  KuGouClient["KuGouClient"]
-  KuGouServer["KuGouServer"]
-  PoolAsyncNetwork["池化 异步 网络"]
+flowchart TD
+%% 模块定义
+    subgraph 构建系统
+        CMakeModule["CMake模块化构建"]
+    end
 
-  CMakeModule -->|"数据/控制流"| UILogic
-  CMakeModule -->|"数据/控制流"| CoreCode
-  CMakeModule -->|"数据/控制流"| ThirdParty
-  
-  UILogic -->|"交互"| CustomWidgets
-  CoreCode -->|"业务逻辑"| KuGouClient
-  CoreCode -->|"业务逻辑"| KuGouServer
-  ThirdParty -->|"使用"| PoolAsyncNetwork
+    subgraph 表现层
+        UILogic["UI逻辑层"]
+        CustomWidgets["自定义控件库"]
+    end
+
+    subgraph 核心逻辑层
+        CoreCode["核心代码层"]
+        KuGouClient["KuGouClient"]
+        KuGouServer["KuGouServer"]
+    end
+
+    subgraph 第三方依赖层
+        ThirdParty["第三方管理层"]
+        PoolAsyncNetwork["池化 异步 网络"]
+    end
+
+%% 连接关系
+    CMakeModule -->|"数据/控制流"| UILogic
+    CMakeModule -->|"数据/控制流"| CoreCode
+    CMakeModule -->|"数据/控制流"| ThirdParty
+
+    UILogic -->|"调用/交互"| CustomWidgets
+    CoreCode -->|"业务逻辑调用"| KuGouClient
+    CoreCode -->|"业务逻辑调用"| KuGouServer
+
+    ThirdParty -->|"封装/使用"| PoolAsyncNetwork
+
+    CustomWidgets -- UI事件回传 --> UILogic
+    KuGouClient -- 网络请求 --> PoolAsyncNetwork
+    KuGouServer -- 网络请求 --> PoolAsyncNetwork
+
 ```
 ## 🛠️ 技术全景图
 ### 1.为你推荐界面
