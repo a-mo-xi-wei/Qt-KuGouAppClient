@@ -17,6 +17,7 @@ MyScrollArea::MyScrollArea(QWidget *parent)
 {
     this->m_parent = this->window();
     this->setMouseTracking(true);
+    this->setWidgetResizable(true);
     //回到最顶部信号
     connect(this->m_upBtn.get(), &QToolButton::clicked, this, &MyScrollArea::onUpBtnClicked);
     connect(this->m_scrollBarTimer, &QTimer::timeout, this, &MyScrollArea::onUpBtnShowOrNot);
