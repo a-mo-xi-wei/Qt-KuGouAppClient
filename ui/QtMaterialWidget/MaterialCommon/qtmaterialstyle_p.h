@@ -1,18 +1,16 @@
 #ifndef QTMATERIALSTYLE_P_H
 #define QTMATERIALSTYLE_P_H
 
-#include <QtGlobal>
-
 class QtMaterialStyle;
 class QtMaterialTheme;
 
-#if defined(MATERIALCOMMON_LIBRARY)
-#define MATERIALCOMMON_EXPORT Q_DECL_EXPORT
+#if defined(QTMATERIALWIDGET_LIBRARY)
+#define QTMATERIALWIDGET_EXPORT Q_DECL_EXPORT
 #else
-#define MATERIALCOMMON_EXPORT Q_DECL_IMPORT
+#define QTMATERIALWIDGET_EXPORT Q_DECL_IMPORT
 #endif
 
-class MATERIALCOMMON_EXPORT QtMaterialStylePrivate
+class QTMATERIALWIDGET_EXPORT QtMaterialStylePrivate
 {
     Q_DISABLE_COPY(QtMaterialStylePrivate)
     Q_DECLARE_PUBLIC(QtMaterialStyle)

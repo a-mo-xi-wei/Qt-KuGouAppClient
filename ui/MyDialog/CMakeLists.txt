@@ -20,5 +20,5 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/AboutDialog
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Network MaterialDialog
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Network QtMaterialWidget
         MySpdlog MyButton ElaWidgetTools MyAsyncThread MyHttpClient)

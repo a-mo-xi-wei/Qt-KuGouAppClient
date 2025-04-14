@@ -4,10 +4,10 @@
 #include <QCommonStyle>
 #include "qtmaterialstyle_p.h"
 
-#if defined(MATERIALCOMMON_LIBRARY)
-#define MATERIALCOMMON_EXPORT Q_DECL_EXPORT
+#if defined(QTMATERIALWIDGET_LIBRARY)
+#define QTMATERIALWIDGET_EXPORT Q_DECL_EXPORT
 #else
-#define MATERIALCOMMON_EXPORT Q_DECL_IMPORT
+#define QTMATERIALWIDGET_EXPORT Q_DECL_IMPORT
 #endif
 
 #define MATERIAL_DISABLE_THEME_COLORS \
@@ -15,7 +15,7 @@
 
 class QtMaterialTheme;
 
-class MATERIALCOMMON_EXPORT QtMaterialStyle : public QCommonStyle
+class QTMATERIALWIDGET_EXPORT QtMaterialStyle : public QCommonStyle
 {
     Q_OBJECT
 

@@ -56,4 +56,4 @@ add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia MyWindow
         AllMusic Channel DailyRecommend ListenBook Live AiChat LocalDownload MusicCloudDisk
         MusicRepository MyCollection PurchasedMusic RecentlyPlayed RecommendForYou
-        Search SongList StartVideo MyMaskWidget MaterialSnackbar)
+        Search SongList StartVideo MyMaskWidget QtMaterialWidget)

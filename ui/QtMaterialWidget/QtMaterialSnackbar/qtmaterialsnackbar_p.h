@@ -1,9 +1,6 @@
 #ifndef QTMATERIALSNACKBAR_P_H
 #define QTMATERIALSNACKBAR_P_H
 
-#include <QObject>
-#include <QColor>
-
 class QtMaterialSnackbar;
 class QtMaterialSnackbarStateMachine;
 

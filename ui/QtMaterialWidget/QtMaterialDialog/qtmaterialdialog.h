@@ -3,16 +3,16 @@
 
 #include "qtmaterialoverlaywidget.h"
 
-#if defined(MATERIALDIALOG_LIBRARY)
-#define MATERIALDIALOG_EXPORT Q_DECL_EXPORT
+#if defined(QTMATERIALWIDGET_LIBRARY)
+#define QTMATERIALWIDGET_EXPORT Q_DECL_EXPORT
 #else
-#define MATERIALDIALOG_EXPORT Q_DECL_IMPORT
+#define QTMATERIALWIDGET_EXPORT Q_DECL_IMPORT
 #endif
 
 class QLayout;
 class QtMaterialDialogPrivate;
 
-class MATERIALDIALOG_EXPORT QtMaterialDialog : public QtMaterialOverlayWidget
+class QTMATERIALWIDGET_EXPORT QtMaterialDialog : public QtMaterialOverlayWidget
 {
     Q_OBJECT
 

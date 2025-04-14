@@ -4,13 +4,13 @@
 #include <QAbstractTransition>
 #include "qtmaterialstatetransitionevent.h"
 
-#if defined(MATERIALCOMMON_LIBRARY)
-#define MATERIALCOMMON_EXPORT Q_DECL_EXPORT
+#if defined(QTMATERIALWIDGET_LIBRARY)
+#define QTMATERIALWIDGET_EXPORT Q_DECL_EXPORT
 #else
-#define MATERIALCOMMON_EXPORT Q_DECL_IMPORT
+#define QTMATERIALWIDGET_EXPORT Q_DECL_IMPORT
 #endif
 
-class MATERIALCOMMON_EXPORT QtMaterialStateTransition : public QAbstractTransition
+class QTMATERIALWIDGET_EXPORT QtMaterialStateTransition : public QAbstractTransition
 {
     Q_OBJECT
 

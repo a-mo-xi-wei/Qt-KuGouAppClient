@@ -2,14 +2,11 @@
 #define QTMATERIALTHEME_H
 
 #include <QObject>
-#include <QScopedPointer>
-#include <QColor>
-#include <QIcon>
 
-#if defined(MATERIALCOMMON_LIBRARY)
-#define MATERIALCOMMON_EXPORT Q_DECL_EXPORT
+#if defined(QTMATERIALWIDGET_LIBRARY)
+#define QTMATERIALWIDGET_EXPORT Q_DECL_EXPORT
 #else
-#define MATERIALCOMMON_EXPORT Q_DECL_IMPORT
+#define QTMATERIALWIDGET_EXPORT Q_DECL_IMPORT
 #endif
 
 namespace Material
@@ -324,7 +321,7 @@ namespace Material
 
 class QtMaterialThemePrivate;
 
-class MATERIALCOMMON_EXPORT QtMaterialTheme : public QObject
+class QTMATERIALWIDGET_EXPORT QtMaterialTheme : public QObject
 {
     Q_OBJECT
 

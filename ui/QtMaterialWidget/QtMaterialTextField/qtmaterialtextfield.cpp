@@ -1,10 +1,9 @@
 #include "qtmaterialtextfield.h"
 #include "qtmaterialtextfield_p.h"
-#include <QApplication>
-#include <QPainter>
 #include "qtmaterialtextfield_internal.h"
 #include "qtmaterialstyle.h"
-#include <QDebug>
+#include <QApplication>
+#include <QPainter>
 
 /*!
  *  \class QtMaterialTextFieldPrivate
