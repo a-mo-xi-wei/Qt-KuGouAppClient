@@ -17,7 +17,7 @@ class MYBUTTON_EXPORT WaterZoomButton : public InteractiveButtonBase {
     Q_OBJECT
 
 public:
-    explicit WaterZoomButton(const QString& text = "", QWidget *parent = nullptr);
+    explicit WaterZoomButton(QWidget *parent = nullptr, const QString& text = "");
 
     void setChoking(const int& c);
 

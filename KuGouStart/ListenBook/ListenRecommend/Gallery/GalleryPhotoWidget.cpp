@@ -17,7 +17,7 @@ int GalleryPhotoWidget::pixmap_height = 130;
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 GalleryPhotoWidget::GalleryPhotoWidget(QWidget *parent)
-    : WaterZoomButton("", parent)
+    : WaterZoomButton(parent,"")
     , m_coverWidget(new MyBlockWidget(this))
     , m_titleLab(new QLabel(this))
     , m_descLab(new QLabel(this))

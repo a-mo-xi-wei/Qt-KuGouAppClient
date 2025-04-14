@@ -6,7 +6,7 @@
 
 #include <QPainterPath>
 
-WaterZoomButton::WaterZoomButton(const QString& text, QWidget *parent) : InteractiveButtonBase(text, parent)
+WaterZoomButton::WaterZoomButton(QWidget *parent, const QString& text) : InteractiveButtonBase(text, parent)
 {
     choking = 10;
     radius_zoom = -1;
