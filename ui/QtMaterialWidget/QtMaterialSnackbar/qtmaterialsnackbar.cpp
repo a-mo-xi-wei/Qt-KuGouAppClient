@@ -1,11 +1,10 @@
 #include "qtmaterialsnackbar.h"
 #include "qtmaterialsnackbar_p.h"
-#include <QApplication>
-#include <QPainter>
 #include "qtmaterialsnackbar_internal.h"
 #include "qtmaterialstyle.h"
 #include "qtmaterialstatetransition.h"
-#include <QDebug>
+#include <QApplication>
+#include <QPainter>
 
 /*!
  *  \class QtMaterialSnackbarPrivate

@@ -1,6 +1,7 @@
 #include "qtmaterialtheme.h"
 #include "qtmaterialtheme_p.h"
 #include <QString>
+#include <QIcon>
 #include <QDebug>
 
 /*!material

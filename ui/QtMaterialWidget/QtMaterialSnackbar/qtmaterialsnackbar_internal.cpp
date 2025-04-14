@@ -1,7 +1,7 @@
 #include "qtmaterialsnackbar_internal.h"
-#include <QPropertyAnimation>
 #include "qtmaterialsnackbar.h"
 #include "qtmaterialstatetransition.h"
+#include <QPropertyAnimation>
 
 QtMaterialSnackbarStateMachine::QtMaterialSnackbarStateMachine(QtMaterialSnackbar *parent)
     : QStateMachine(parent),

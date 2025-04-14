@@ -2,17 +2,16 @@
 #define QTMATERIALTHEME_P_H
 
 #include <QHash>
-#include <QColor>
 
 class QtMaterialTheme;
 
-#if defined(MATERIALCOMMON_LIBRARY)
-#define MATERIALCOMMON_EXPORT Q_DECL_EXPORT
+#if defined(QTMATERIALWIDGET_LIBRARY)
+#define QTMATERIALWIDGET_EXPORT Q_DECL_EXPORT
 #else
-#define MATERIALCOMMON_EXPORT Q_DECL_IMPORT
+#define QTMATERIALWIDGET_EXPORT Q_DECL_IMPORT
 #endif
 
-class MATERIALCOMMON_EXPORT QtMaterialThemePrivate
+class QTMATERIALWIDGET_EXPORT QtMaterialThemePrivate
 {
     Q_DISABLE_COPY(QtMaterialThemePrivate)
     Q_DECLARE_PUBLIC(QtMaterialTheme)

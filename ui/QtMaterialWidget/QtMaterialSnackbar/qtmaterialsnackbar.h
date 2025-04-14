@@ -3,15 +3,15 @@
 
 #include "qtmaterialoverlaywidget.h"
 
-#if defined(MATERIALSNACKBAR_LIBRARY)
-#define MATERIALSNACKBAR_EXPORT Q_DECL_EXPORT
+#if defined(QTMATERIALWIDGET_LIBRARY)
+#define QTMATERIALWIDGET_EXPORT Q_DECL_EXPORT
 #else
-#define MATERIALSNACKBAR_EXPORT Q_DECL_IMPORT
+#define QTMATERIALWIDGET_EXPORT Q_DECL_IMPORT
 #endif
 
 class QtMaterialSnackbarPrivate;
 
-class MATERIALSNACKBAR_EXPORT QtMaterialSnackbar : public QtMaterialOverlayWidget
+class QTMATERIALWIDGET_EXPORT QtMaterialSnackbar : public QtMaterialOverlayWidget
 {
     Q_OBJECT
 

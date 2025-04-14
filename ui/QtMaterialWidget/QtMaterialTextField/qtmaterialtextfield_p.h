@@ -1,7 +1,6 @@
 #ifndef QTMATERIALTEXTFIELD_P_H
 #define QTMATERIALTEXTFIELD_P_H
 
-#include <QtGlobal>
 #include <QColor>
 
 class QtMaterialTextField;

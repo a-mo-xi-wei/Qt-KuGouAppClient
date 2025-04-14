@@ -4,15 +4,15 @@
 #include <QProgressBar>
 #include "qtmaterialtheme.h"
 
-#if defined(MATERIALCIRCULARPROGRESS_LIBRARY)
-#define MATERIALCIRCULARPROGRESS_EXPORT Q_DECL_EXPORT
+#if defined(QTMATERIALWIDGET_LIBRARY)
+#define QTMATERIALWIDGET_EXPORT Q_DECL_EXPORT
 #else
-#define MATERIALCIRCULARPROGRESS_EXPORT Q_DECL_IMPORT
+#define QTMATERIALWIDGET_EXPORT Q_DECL_IMPORT
 #endif
 
 class QtMaterialCircularProgressPrivate;
 
-class MATERIALCIRCULARPROGRESS_EXPORT QtMaterialCircularProgress : public QProgressBar {
+class QTMATERIALWIDGET_EXPORT QtMaterialCircularProgress : public QProgressBar {
     Q_OBJECT
 
     Q_PROPERTY(qreal lineWidth WRITE setLineWidth READ lineWidth)
