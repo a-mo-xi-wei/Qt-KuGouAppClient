@@ -38,14 +38,15 @@ public:
         MusicRepository = 4,
         Channel = 5,
         Video = 6,
-        SongList = 7,
-        DailyRecommend = 8,
-        Collection = 9,
-        LocalDownload = 10,
-        MusicCloudDisk = 11,
-        PurchasedMusic = 12,
-        RecentlyPlayed = 13,
-        AllMusic = 14,
+        AiChat = 7,
+        SongList = 8,
+        DailyRecommend = 9,
+        Collection = 10,
+        LocalDownload = 11,
+        MusicCloudDisk = 12,
+        PurchasedMusic = 13,
+        RecentlyPlayed = 14,
+        AllMusic = 15,
     };
 
     explicit TitleWidget(QWidget *parent = nullptr);
@@ -114,6 +115,8 @@ public slots:
     void onLeftMenu_video_clicked();
 
     void onLeftMenu_live_clicked();
+
+    void onLeftMenu_ai_chat_clicked();
 
     void onLeftMenu_songList_clicked();
 

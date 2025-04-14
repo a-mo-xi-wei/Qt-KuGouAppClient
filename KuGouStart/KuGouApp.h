@@ -8,6 +8,7 @@
 #include"Channel.h"
 #include"Video.h"
 #include"Live.h"
+#include"AiChat.h"
 #include"SongList.h"
 #include"DailyRecommend.h"
 //我的音乐
@@ -112,6 +113,8 @@ private slots:
 
     void on_live_toolButton_clicked();
 
+    void on_ai_chat_toolButton_clicked();
+
     void on_song_list_toolButton_clicked();
 
     void on_daily_recommend_toolButton_clicked();
@@ -209,6 +212,7 @@ private:
     std::unique_ptr<Channel>            m_channel{};
     std::unique_ptr<Video>              m_video{};
     std::unique_ptr<Live>               m_live{};
+    std::unique_ptr<AiChat>             m_aiChat{};
     std::unique_ptr<SongList>           m_songList{};
     std::unique_ptr<DailyRecommend>     m_dailyRecommend{};
     std::unique_ptr<MyCollection>       m_collection{};

@@ -334,6 +334,16 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event) {
                                 STREAM_INFO() << "前进到视频界面";
                                 break;
                             }
+                            case AiChat: {
+                                if (condition) {
+                                    emit currentStackChange(StackType::AiChat);
+                                } else {
+                                    emit currentStackChange(StackType::AiChat, true);
+                                }
+                                qDebug() << "[前进] Ai对话";
+                                STREAM_INFO() << "前进到Ai对话界面";
+                                break;
+                            }
                             case SongList: {
                                 if (condition) {
                                     emit currentStackChange(StackType::SongList);
@@ -534,6 +544,16 @@ void TitleWidget::on_title_return_toolButton_clicked() {
                     STREAM_INFO() << "切换视频界面";
                     break;
                 }
+                case AiChat: {
+                    if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
+                        emit currentStackChange(StackType::AiChat);
+                    } else {
+                        emit currentStackChange(StackType::AiChat, true);
+                    }
+                    qDebug() << "[回退] Ai对话";
+                    STREAM_INFO() << "切换Ai对话界面";
+                    break;
+                }
                 case SongList: {
                     if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
                         emit currentStackChange(StackType::SongList);
@@ -647,6 +667,8 @@ void TitleWidget::on_title_music_pushButton_clicked() {
             break;
         case Video:
             onLeftMenu_video_clicked();
+        case AiChat:
+            onLeftMenu_ai_chat_clicked();
             break;
         case SongList:
             onLeftMenu_songList_clicked();
@@ -804,6 +826,16 @@ void TitleWidget::onLeftMenu_live_clicked() {
     ui->title_live_pushButton->clicked();
     ui->title_live_pushButton->setChecked(true);
     STREAM_INFO()<<"切换直播界面";
+}
+
+void TitleWidget::onLeftMenu_ai_chat_clicked() {
+    this->m_lastType = this->m_curType;
+    this->m_backTypeStack.push(m_lastType);
+    if (m_backTypeStack.top() == MusicCloudDisk || m_backTypeStack.top() == DailyRecommend) emit currentStackChange(StackType::AiChat);
+    else emit currentStackChange(StackType::AiChat,true);
+    this->m_curType = AiChat;
+    qDebug()<<"点击Ai对话";
+    STREAM_INFO()<<"切换Ai对话界面";
 }
 
 void TitleWidget::onLeftMenu_songList_clicked() {

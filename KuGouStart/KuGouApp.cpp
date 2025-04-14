@@ -171,14 +171,15 @@ void KuGouApp::initStackedWidget() {
     initComponent(m_musicRepository,4);
     initComponent(m_channel,5);
     initComponent(m_video,6);
-    initComponent(m_songList,7);
-    initComponent(m_dailyRecommend,8);
-    initComponent(m_collection,9);
-    initComponent(m_localDownload,10);
-    initComponent(m_musicCloudDisk,11);
-    initComponent(m_purchasedMusic,12);
-    initComponent(m_recentlyPlayed,13);
-    initComponent(m_allMusic,14);
+    initComponent(m_aiChat,7);
+    initComponent(m_songList,8);
+    initComponent(m_dailyRecommend,9);
+    initComponent(m_collection,10);
+    initComponent(m_localDownload,11);
+    initComponent(m_musicCloudDisk,12);
+    initComponent(m_purchasedMusic,13);
+    initComponent(m_recentlyPlayed,14);
+    initComponent(m_allMusic,15);
 
     //响应相关跳转
     connect(this->m_collection.get(),&MyCollection::find_more_music,[this]{on_music_repository_toolButton_clicked();});
@@ -348,10 +349,11 @@ void KuGouApp::initMenu() {
 
     ui->recommend_you_toolButton    ->setIcon(QIcon(QStringLiteral(":/Res/window/recommend.svg")));
     ui->music_repository_toolButton ->setIcon(QIcon(QStringLiteral(":/Res/window/music-library.svg")));
-    ui->song_list_toolButton        ->setIcon(QIcon(QStringLiteral(":/Res/window/song-list.svg")));
     ui->channel_toolButton          ->setIcon(QIcon(QStringLiteral(":/Res/window/my-channel.svg")));
     ui->video_toolButton            ->setIcon(QIcon(QStringLiteral(":/Res/window/video.svg")));
     ui->live_toolButton             ->setIcon(QIcon(QStringLiteral(":/Res/window/live.svg")));
+    ui->ai_chat_toolButton          ->setIcon(QIcon(QStringLiteral(":/Res/window/ai-chat.svg")));
+    ui->song_list_toolButton        ->setIcon(QIcon(QStringLiteral(":/Res/window/song-list.svg")));
     ui->daily_recommend_toolButton  ->setIcon(QIcon(QStringLiteral(":/Res/window/daily.svg")));
     //我的音乐
     ui->my_collection_toolButton    ->setIcon(QIcon(QStringLiteral(":/Res/window/collect.svg")));
@@ -363,10 +365,11 @@ void KuGouApp::initMenu() {
     //互斥
     m_menuBtnGroup->addButton(ui->recommend_you_toolButton);
     m_menuBtnGroup->addButton(ui->music_repository_toolButton);
-    m_menuBtnGroup->addButton(ui->song_list_toolButton);
     m_menuBtnGroup->addButton(ui->channel_toolButton);
     m_menuBtnGroup->addButton(ui->video_toolButton);
     m_menuBtnGroup->addButton(ui->live_toolButton);
+    m_menuBtnGroup->addButton(ui->ai_chat_toolButton);
+    m_menuBtnGroup->addButton(ui->song_list_toolButton);
     m_menuBtnGroup->addButton(ui->daily_recommend_toolButton);
 
     m_menuBtnGroup->addButton(ui->my_collection_toolButton);
@@ -441,6 +444,7 @@ void KuGouApp::enableButton(const bool &flag) {
     ui->channel_toolButton          ->setEnabled(flag);
     ui->video_toolButton            ->setEnabled(flag);
     ui->live_toolButton             ->setEnabled(flag);
+    ui->ai_chat_toolButton          ->setEnabled(flag);
     ui->daily_recommend_toolButton  ->setEnabled(flag);
     ui->my_collection_toolButton    ->setEnabled(flag);
     ui->local_download_toolButton   ->setEnabled(flag);
@@ -636,6 +640,10 @@ void KuGouApp::on_live_toolButton_clicked() {
     ui->title_widget->onLeftMenu_live_clicked();
 }
 
+void KuGouApp::on_ai_chat_toolButton_clicked() {
+    ui->title_widget->onLeftMenu_ai_chat_clicked();
+}
+
 void KuGouApp::on_song_list_toolButton_clicked() {
     ui->title_widget->onLeftMenu_songList_clicked();
 }
@@ -778,27 +786,30 @@ void KuGouApp::onTitleCurrentStackChange(const int &index,const bool& slide) {
             ui->video_toolButton->setChecked(true);
             break;
         case 7:
-            ui->song_list_toolButton->setChecked(true);
+            ui->ai_chat_toolButton->setChecked(true);
             break;
         case 8:
-            ui->daily_recommend_toolButton->setChecked(true);
+            ui->song_list_toolButton->setChecked(true);
             break;
         case 9:
-            ui->my_collection_toolButton->setChecked(true);
+            ui->daily_recommend_toolButton->setChecked(true);
             break;
         case 10:
-            ui->local_download_toolButton->setChecked(true);
+            ui->my_collection_toolButton->setChecked(true);
             break;
         case 11:
-            ui->music_cloud_disk_toolButton->setChecked(true);
+            ui->local_download_toolButton->setChecked(true);
             break;
         case 12:
-            ui->purchased_music_toolButton->setChecked(true);
+            ui->music_cloud_disk_toolButton->setChecked(true);
             break;
         case 13:
-            ui->recently_played_toolButton->setChecked(true);
+            ui->purchased_music_toolButton->setChecked(true);
             break;
         case 14:
+            ui->recently_played_toolButton->setChecked(true);
+            break;
+        case 15:
             ui->all_music_toolButton->setChecked(true);
             break;
         default: break;

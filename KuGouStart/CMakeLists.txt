@@ -26,6 +26,8 @@ add_subdirectory(Channel)
 add_subdirectory(Video)
 #包含直播模块
 add_subdirectory(Live)
+#包含Ai对话模块
+add_subdirectory(AiChat)
 #包含歌单模块
 add_subdirectory(SongList)
 #包含每日推荐模块
@@ -52,6 +54,6 @@ add_subdirectory(Search)
 add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia MyWindow
-        AllMusic Channel DailyRecommend ListenBook Live LocalDownload MusicCloudDisk
+        AllMusic Channel DailyRecommend ListenBook Live AiChat LocalDownload MusicCloudDisk
         MusicRepository MyCollection PurchasedMusic RecentlyPlayed RecommendForYou
         Search SongList StartVideo MyMaskWidget MaterialSnackbar)
