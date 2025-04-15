@@ -32,6 +32,7 @@ sudo apt install ccache
 rm YourProjectPath/KuGou/tools/ccache/ccache
 cp /usr/bin/ccache YourProjectPath/KuGou/tools/ccache
 ```
+#### 同时，Ubuntu 下编译虽然能通过且能运行，但是对于鼠标事件的接受和样式渲染有问题，精力有限，不会去维护。。。
 
 ### Ai对话功能请参考：https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#qt6-%E6%8E%A5%E5%85%A5deepseek
 
@@ -43,7 +44,7 @@ cp /usr/bin/ccache YourProjectPath/KuGou/tools/ccache
 [win-link]: https://你的Windows构建状态链接
 [license-link]: https://你的License文件链接
 
-[lin-badge]: https://img.shields.io/badge/Ubuntu/macOS-Unknown-lightgrey?logo=linux
+[lin-badge]: https://img.shields.io/badge/Ubuntu/macOS-Passing-lightgrey?logo=linux
 [win-badge]: https://img.shields.io/badge/Windows-Passing-success?logo=windows
 [license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
 
