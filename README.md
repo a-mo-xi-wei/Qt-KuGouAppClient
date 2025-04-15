@@ -116,6 +116,9 @@ flowchart TD
     KuGouServer -- 网络请求 --> PoolAsyncNetwork
 
 ```
+
+![核心架构](image-show/architecture.png)]
+
 ## 🛠️ 技术全景图
 ### 1.为你推荐界面
 ![输入图片说明](image-show/image01.png)
