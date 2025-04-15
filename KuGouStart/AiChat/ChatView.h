@@ -16,6 +16,8 @@ public:
 
     void insertChatItem(QWidget *before, QWidget *item); //中间插
 
+    void removeLastItem();
+
     void removeAllItem() const;
 
     QVBoxLayout *getLayout() const;

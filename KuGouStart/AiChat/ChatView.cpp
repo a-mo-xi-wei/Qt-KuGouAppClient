@@ -1,4 +1,7 @@
 ﻿#include "ChatView.h"
+#include "logger.hpp"
+#include "MyScrollArea.h"
+
 #include <QScrollBar>
 #include <QEvent>
 #include <QTimer>
@@ -12,18 +15,17 @@ ChatView::ChatView(QWidget *parent)
     auto pMainLayout = new QVBoxLayout(this);
     pMainLayout->setContentsMargins(0,0,0,0);
 
-    m_pScrollArea = new QScrollArea();
+    m_pScrollArea = new MyScrollArea();
     m_pScrollArea->setFrameShape(QFrame::NoFrame);
-    m_pScrollArea->setObjectName("chat_area");
     pMainLayout->addWidget(m_pScrollArea);
+    pMainLayout->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Expanding,QSizePolicy::Fixed));
 
     auto w = new QWidget(this);
     w->setObjectName("chat_bg");
     w->setAutoFillBackground(true);
-    auto pVLayout_1 = new QVBoxLayout();
+    auto pVLayout_1 = new QVBoxLayout(w);
     pVLayout_1->addStretch();
-    w->setLayout(pVLayout_1);
-    m_pScrollArea->setWidget(w);    //应该时在QSCrollArea构造后执行才对
+    m_pScrollArea->setWidget(w);    //应该在QSCrollArea构造后执行才对
 
     m_pScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     auto pVScrollBar = m_pScrollArea->verticalScrollBar();
@@ -35,10 +37,11 @@ ChatView::ChatView(QWidget *parent)
 
 void ChatView::appendChatItem(QWidget *item)
 {
-   auto vl = getLayout();
-   //qDebug() << "vl->count() is " << vl->count();
-   vl->insertWidget(vl->count()-1, item);
-   isAppended = true;
+    const auto vl = getLayout();
+    //qDebug() << "vl->count() is " << vl->count();
+    if (vl)vl->insertWidget(vl->count()-1, item);
+    else STREAM_WARN()<< "ChatView::appendChatItem(): layout is nullptr";
+    isAppended = true;
 }
 
 void ChatView::prependChatItem(QWidget *item)
@@ -49,6 +52,29 @@ void ChatView::prependChatItem(QWidget *item)
 void ChatView::insertChatItem(QWidget *before, QWidget *item)
 {
 
+}
+
+void ChatView::removeLastItem() {
+    auto layout = getLayout();
+    if (!layout) {
+        qWarning() << "ChatView::removeLastItem(): layout is null.";
+        STREAM_WARN() << "ChatView::removeLastItem(): layout is null.";
+        return;
+    }
+    qDebug()<<"layout count : "<<layout->count();
+    // 布局包含拉伸项（count >=1），只有当count >1 时才有聊天项
+    if (layout->count() > 1) {
+        // 最后一个聊天项的索引是 count-2（因为最后一个是拉伸项）
+        const int lastItemIndex = layout->count() - 2;
+
+        if (QLayoutItem* item = layout->takeAt(lastItemIndex)) {
+            if (QWidget* widget = item->widget()) {
+                widget->deleteLater(); // 安全删除控件
+            }
+            delete item; // 删除布局项
+        }
+    }
+    update();
 }
 
 void ChatView::removeAllItem() const {
@@ -71,12 +97,14 @@ void ChatView::removeAllItem() const {
 QVBoxLayout *ChatView::getLayout() const {
     if (!m_pScrollArea || !m_pScrollArea->widget()) {
         qWarning() << "ChatView::getLayout(): m_pScrollArea or its widget is null.";
+        STREAM_WARN() << "ChatView::getLayout(): m_pScrollArea or its widget is null.";
         return nullptr;
     }
 
     auto layout = qobject_cast<QVBoxLayout *>(m_pScrollArea->widget()->layout());
     if (!layout) {
         qWarning() << "ChatView::getLayout(): Layout is not a QVBoxLayout.";
+        STREAM_WARN() << "ChatView::getLayout(): Layout is not a QVBoxLayout.";
     }
     return layout;
 }

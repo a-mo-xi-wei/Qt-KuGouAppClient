@@ -43,6 +43,9 @@ private slots:
 
     void onStreamFinished();
 
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
 private:
     Ui::AiChat *ui;
     Chat m_deepSeek;

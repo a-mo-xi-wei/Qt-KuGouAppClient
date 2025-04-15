@@ -38,7 +38,7 @@ void Chat::send(const QString& word)
     data["messages"] = messages;
     data["stream"] = true;
 
-    data["max_tokens"] = 512;
+    data["max_tokens"] = 5120;
     data["stop"] = QJsonArray({"null"});
     data["temperature"] = 0.7;
     data["top_p"] = 0.7;

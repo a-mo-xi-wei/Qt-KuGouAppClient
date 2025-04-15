@@ -33,12 +33,13 @@ AiChat::AiChat(QWidget *parent)
     connect(&m_deepSeek, &Chat::answered, this, &AiChat::getAnswer);
     connect(&m_deepSeek, &Chat::streamFinished, this, &AiChat::onStreamFinished);
     connect(&m_deepSeek, &Chat::errorOccurred, this, [this](const QString& err){
-        dealMessageTime();
+        //删除上一个回答气泡
+        ui->chatView->removeLastItem();
         // 创建回答气泡
         m_currentResponseItem = new ChatItemBase(ChatRole::Other);
         m_currentResponseItem->setUserName("DeepSeek");
         m_currentResponseItem->setUserIcon(getRoundedPixmap(
-            QPixmap(":/Res/window/deepseek.png").scaled(50,40), {50,40}, 20));
+        QPixmap(":/Res/window/deepseek.png").scaled(46,46), {46,46}, 23));
 
         m_currentResponseBubble = new TextBubble(ChatRole::Other, err);
 
@@ -55,6 +56,9 @@ AiChat::AiChat(QWidget *parent)
     font.setPointSize(14);
     font.setWeight(QFont::Medium);
     ui->question_textEdit->setFont(font);
+    ui->question_textEdit->setCursor(Qt::IBeamCursor);
+    ui->question_textEdit->setPlaceholderText("请输入问题");
+    ui->question_textEdit->installEventFilter(this);
 }
 
 AiChat::~AiChat()
@@ -134,4 +138,19 @@ void AiChat::onStreamFinished() {
     }
     ui->send_btn->setEnabled(true);
     ui->send_btn->setCursor(Qt::PointingHandCursor);
+}
+
+bool AiChat::eventFilter(QObject *watched, QEvent *event) {
+    if (watched == ui->question_textEdit && event->type() == QEvent::KeyPress) {
+        QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+        if (keyEvent->key() == Qt::Key_Return || keyEvent->key() == Qt::Key_Enter) {
+            if (keyEvent->modifiers() & Qt::ShiftModifier) {
+                ui->question_textEdit->insertPlainText("\n");
+            } else {
+                ui->send_btn->click(); // 直接点击按钮
+            }
+            return true;
+        }
+    }
+    return QWidget::eventFilter(watched, event);
 }
