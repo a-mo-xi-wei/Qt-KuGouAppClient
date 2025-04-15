@@ -28,6 +28,8 @@ public:
 
     void setMyIcon(const QIcon &ico); //设置按钮图标
 
+    void setEnabled(const bool &flag);
+
 protected:
     void enterEvent(QEnterEvent *event) override; // 重写鼠标进入事件
 

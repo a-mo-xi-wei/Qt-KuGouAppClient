@@ -46,9 +46,19 @@ void RippleButton::setMyIcon(const QIcon &ico) {
     this->setIcon(this->m_ico);
 }
 
+void RippleButton::setEnabled(const bool &flag) {
+    QToolButton::setEnabled(flag);
+    if (flag) {
+        setCursor(Qt::PointingHandCursor); // 启用时恢复为手形光标
+    } else {
+        setCursor(Qt::WaitCursor); // 禁用时强制为等待光标    //没有效果，不知道为什么。。。
+    }
+}
+
 void RippleButton::enterEvent(QEnterEvent* event)
 {
     QToolButton::enterEvent(event);
+    if (!this->isEnabled())return;
     mouse_point = event->position(); // 记录鼠标进入坐标
     timer->disconnect(); // 断开可能的timer的所有连接
     connect(timer, &QTimer::timeout, this, [=]{ // 定时器触发，半径增大
@@ -83,6 +93,7 @@ void RippleButton::enterEvent(QEnterEvent* event)
 
 void RippleButton::leaveEvent(QEvent* ev)
 {
+    if (!this->isEnabled())return;
     mouse_point = this->mapFromGlobal(QCursor::pos());
     timer->disconnect();
     connect(timer, &QTimer::timeout, this, [=]{ // 定时器触发半径减小
