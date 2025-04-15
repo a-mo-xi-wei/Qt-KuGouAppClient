@@ -72,14 +72,14 @@
        <widget class="QToolButton" name="clear_toolButton">
         <property name="minimumSize">
          <size>
-          <width>80</width>
-          <height>25</height>
+          <width>100</width>
+          <height>30</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>80</width>
-          <height>25</height>
+          <width>100</width>
+          <height>30</height>
          </size>
         </property>
         <property name="text">
@@ -106,6 +106,9 @@
    <item>
     <widget class="QWidget" name="send_widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="ElaPlainTextEdit" name="question_textEdit">
         <property name="cursor" stdset="0">

@@ -30,7 +30,7 @@ public:
     ~AiChat();
 
 private:
-    void initMovie();
+    void initUi();
 
     QPixmap getRoundedPixmap(const QPixmap &src, const QSize &size, const int &radius);
 

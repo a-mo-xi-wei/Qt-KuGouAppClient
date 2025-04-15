@@ -7,6 +7,12 @@
     color:rgb(153,153,153);
     font-size: 14px;
 }
+/*-------------------清理按钮----------------------*/
+#clear_toolButton{
+    border: none;
+    background-color: #eaeaea;
+    border-radius: 12px;
+}
 /*-------------------发送按钮----------------------*/
 
 #send_btn{
@@ -15,4 +21,38 @@
     font-weight: bold;
     border: none;
     border-radius: 15px; /* 设置圆角 */
+}
+
+/*-------------------滚动区域滚动条----------------------*/
+/* 只作用于 #chat_scroll_area 里的纵向滚动条 */
+#chat_scroll_area QScrollBar:vertical {
+    border: 0px solid rgb(231,166,190);
+    border-radius:4px;
+    /*background-color: rgb(231,166,190);*/
+    width: 10px;
+    margin: 20px 0px 20px 0px;
+}
+
+#chat_scroll_area QScrollBar:vertical:hover {
+    border: 1px solid rgb(231,166,190);
+    /*background-color: rgb(231,166,190);*/
+}
+
+/* 滑块 */
+#chat_scroll_area QScrollBar::handle:vertical {
+    background-color: rgb(237,188,206);
+    border-radius: 4px;
+}
+#chat_scroll_area QScrollBar::handle:vertical:hover {
+    background-color: rgb(248,129,161);
+}
+
+/* 箭头和空白区域 */
+#chat_scroll_area QScrollBar::up-arrow:vertical,
+#chat_scroll_area QScrollBar::down-arrow:vertical,
+#chat_scroll_area QScrollBar::add-page:vertical,
+#chat_scroll_area QScrollBar::sub-page:vertical,
+#chat_scroll_area QScrollBar::add-line:vertical,
+#chat_scroll_area QScrollBar::sub-line:vertical {
+    background: none;
 }

@@ -16,6 +16,7 @@ ChatView::ChatView(QWidget *parent)
     pMainLayout->setContentsMargins(0,0,0,0);
 
     m_pScrollArea = new MyScrollArea();
+    m_pScrollArea->setObjectName("chat_scroll_area");
     m_pScrollArea->setFrameShape(QFrame::NoFrame);
     pMainLayout->addWidget(m_pScrollArea);
     pMainLayout->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Expanding,QSizePolicy::Fixed));
@@ -27,7 +28,8 @@ ChatView::ChatView(QWidget *parent)
     pVLayout_1->addStretch();
     m_pScrollArea->setWidget(w);    //应该在QSCrollArea构造后执行才对
 
-    m_pScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    m_pScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    m_pScrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     auto pVScrollBar = m_pScrollArea->verticalScrollBar();
     connect(pVScrollBar, &QScrollBar::rangeChanged,this, &ChatView::onVScrollBarMoved);
 
@@ -77,21 +79,22 @@ void ChatView::removeLastItem() {
     update();
 }
 
-void ChatView::removeAllItem() const {
+void ChatView::removeAllItem() {
     auto layout = getLayout();
+    if (!layout) return;
 
-   int count = layout->count();
-
-    for (int i = 0; i < count - 1; ++i) {
-        QLayoutItem *item = layout->takeAt(0); // 始终从第一个控件开始删除
-        if (item) {
-            if (auto widget = item->widget()) {
-                delete widget;
+    // 反向遍历避免索引错位
+    if (layout->count() > 1) { // 保留最后的 stretch 项（count=1）
+        for (int i = layout->count() - 2; i >= 0; --i) {
+            QLayoutItem* item = layout->takeAt(i);
+            if (item && item->widget()) {
+                item->widget()->deleteLater();
             }
             delete item;
         }
     }
-
+    // 非widget项（如stretch/spacer）自动保留
+    update();
 }
 
 QVBoxLayout *ChatView::getLayout() const {

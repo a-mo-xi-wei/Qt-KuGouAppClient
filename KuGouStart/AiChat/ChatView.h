@@ -18,7 +18,7 @@ public:
 
     void removeLastItem();
 
-    void removeAllItem() const;
+    void removeAllItem();
 
     QVBoxLayout *getLayout() const;
 

@@ -29,6 +29,9 @@ AiChat::AiChat(QWidget *parent)
         qDebug() << "样式表打开失败QAQ";
         return;
     }
+
+    initUi();
+
     // 连接信号
     connect(&m_deepSeek, &Chat::answered, this, &AiChat::getAnswer);
     connect(&m_deepSeek, &Chat::streamFinished, this, &AiChat::onStreamFinished);
@@ -48,10 +51,21 @@ AiChat::AiChat(QWidget *parent)
         onStreamFinished();
     });
 
-    ui->send_btn->setRadius(15);
-    ui->send_btn->setFillColor(QColor(QStringLiteral("#FFD6F1")));
-    ui->send_btn->setSpeed(5);
+    connect(ui->clear_toolButton, &QToolButton::clicked, ui->chatView,&ChatView::removeAllItem);
+}
 
+AiChat::~AiChat()
+{
+    delete ui;
+}
+
+void AiChat::initUi() {
+    //clear_toolButton
+    ui->clear_toolButton->setCursor(Qt::PointingHandCursor);
+    ui->clear_toolButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    ui->clear_toolButton->setIcon(QIcon(":/Res/window/clear-black.svg"));
+    ui->clear_toolButton->setText("清除历史对话");
+    //question_textEdit
     auto font = QFont("AaSongLiuKaiTi");
     font.setPointSize(14);
     font.setWeight(QFont::Medium);
@@ -59,11 +73,10 @@ AiChat::AiChat(QWidget *parent)
     ui->question_textEdit->setCursor(Qt::IBeamCursor);
     ui->question_textEdit->setPlaceholderText("请输入问题");
     ui->question_textEdit->installEventFilter(this);
-}
-
-AiChat::~AiChat()
-{
-    delete ui;
+    // send_btn
+    ui->send_btn->setRadius(15);
+    ui->send_btn->setFillColor(QColor(QStringLiteral("#FFD6F1")));
+    ui->send_btn->setSpeed(5);
 }
 
 QPixmap AiChat::getRoundedPixmap(const QPixmap &src, const QSize &size, const int &radius) {
@@ -95,8 +108,8 @@ void AiChat::on_send_btn_clicked() {
         qWarning() << "Empty question";
         return;
     }
-    ui->send_btn->setCursor(Qt::ForbiddenCursor);
     ui->send_btn->setEnabled(false);
+    ui->send_btn->setCursor(Qt::ForbiddenCursor);
     //处理时间
     dealMessageTime();
     // 自己
