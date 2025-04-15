@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.10)
 project(KuGouApp VERSION 1.0 LANGUAGES CXX)
 
 # 全局默认设定：可执行文件和 DLL 到 bin/, 静态库和导入库（.dll.a）到 lib/
+#  Windows 上 .dll 通常不需要手动设置 LIBRARY_OUTPUT_DIRECTORY，
+# 因为 .dll 是 runtime 文件，也会遵循 RUNTIME_OUTPUT_DIRECTORY。
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin) # 设置可执行文件输出目录
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) # 设置静态库文件输出目录
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) # 设置动态库文件输出目录
@@ -14,7 +16,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets StateMachine Core Network Multimedia Core5Compat Sql)
+find_package(Qt6 REQUIRED COMPONENTS Widgets StateMachine Core Network Multimedia
+        Core5Compat Sql Concurrent Gui)
 
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 
