@@ -8,6 +8,7 @@
 #include "ui_AiChat.h"
 #include "TextBubble.h"
 #include "ChatItemBase.h"
+#include "ElaMessageBar.h"
 
 #include <QMouseEvent>
 #include <QFile>
@@ -51,7 +52,17 @@ AiChat::AiChat(QWidget *parent)
         onStreamFinished();
     });
 
-    connect(ui->clear_toolButton, &QToolButton::clicked, ui->chatView,&ChatView::removeAllItem);
+    connect(ui->clear_toolButton, &QToolButton::clicked, ui->chatView,[this] {
+        //通过ui->send_btn是否能点击来判断是否可以清理
+        if (ui->send_btn->isEnabled())
+            ui->chatView->removeAllItem();
+        else {
+            ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
+                                    "请等待当前问题回答完毕",
+                                    1000,this->window());
+        }
+
+    });
 }
 
 AiChat::~AiChat()
@@ -96,7 +107,7 @@ QPixmap AiChat::getRoundedPixmap(const QPixmap &src, const QSize &size, const in
 
 void AiChat::dealMessageTime() {
     auto itemTime = new ChatItemBase(ChatRole::Time);
-    auto messageTime = new TextBubble(ChatRole::Time, "", ui->chatView);
+    auto messageTime = new TextBubble(ChatRole::Time, "", itemTime);
     messageTime->resize(this->width(), 40);
     itemTime->setWidget(messageTime);
     ui->chatView->appendChatItem(itemTime);
@@ -109,7 +120,6 @@ void AiChat::on_send_btn_clicked() {
         return;
     }
     ui->send_btn->setEnabled(false);
-    ui->send_btn->setCursor(Qt::ForbiddenCursor);
     //处理时间
     dealMessageTime();
     // 自己
@@ -150,7 +160,6 @@ void AiChat::onStreamFinished() {
         m_currentResponseItem->startMovie(false);
     }
     ui->send_btn->setEnabled(true);
-    ui->send_btn->setCursor(Qt::PointingHandCursor);
 }
 
 bool AiChat::eventFilter(QObject *watched, QEvent *event) {

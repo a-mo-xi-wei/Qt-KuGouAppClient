@@ -19,7 +19,7 @@
   <property name="windowTitle">
    <string>AiChat</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="8,0,1">
+  <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
     <number>0</number>
    </property>
@@ -33,7 +33,14 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="ChatView" name="chatView" native="true"/>
+    <widget class="ChatView" name="chatView" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QWidget" name="widget" native="true">
@@ -57,7 +64,7 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="leftMargin">
-       <number>9</number>
+       <number>12</number>
       </property>
       <property name="topMargin">
        <number>0</number>
@@ -111,6 +118,12 @@
       </property>
       <item>
        <widget class="ElaPlainTextEdit" name="question_textEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="cursor" stdset="0">
          <cursorShape>IBeamCursor</cursorShape>
         </property>
@@ -119,7 +132,7 @@
       <item>
        <widget class="RippleButton" name="send_btn">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>

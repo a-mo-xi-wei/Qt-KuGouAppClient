@@ -4,6 +4,8 @@
 #include <QScrollArea>
 #include <QVBoxLayout>
 
+class QLabel;
+
 class ChatView : public QWidget {
     Q_OBJECT
 
@@ -22,6 +24,11 @@ public:
 
     QVBoxLayout *getLayout() const;
 
+private:
+    void startFadeOutAnimation();
+
+    void startFadeInAnimation();
+
 protected:
     bool eventFilter(QObject *o, QEvent *e) override;
 
@@ -35,6 +42,10 @@ private:
     QVBoxLayout *m_pVl;
     QScrollArea *m_pScrollArea;
     bool isAppended;
+    QLabel *m_logo;
+    QLabel *m_helloText;
+    QLabel *m_funcText;
+    QWidget *m_centerInitWidget{};
 };
 
 #endif // CHATVIEW_H

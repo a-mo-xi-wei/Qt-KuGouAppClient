@@ -4,29 +4,58 @@
 
 #include <QScrollBar>
 #include <QEvent>
+#include <QGraphicsOpacityEffect>
+#include <QLabel>
 #include <QTimer>
 #include <QStyleOption>
 #include <QPainter>
+#include <QPropertyAnimation>
 
 ChatView::ChatView(QWidget *parent)
-   : QWidget(parent)
-   , isAppended(false)
+    : QWidget(parent)
+    , isAppended(false)
+    , m_logo(new QLabel(this))
+    , m_helloText(new QLabel(this))
+    , m_funcText(new QLabel(this))
+    , m_centerInitWidget(new QWidget(this))
 {
+    {
+        this->m_logo->setFixedSize(60, 60);
+        this->m_logo->setPixmap(QPixmap(":/Res/window/deepseek.png").scaled(this->m_logo->size()));
+        this->m_helloText->setFixedHeight(70);
+        this->m_helloText->setText("我是DeepSeek, 很高兴见到你!");
+        this->m_helloText->setStyleSheet("color: black;font-wight: bold;font-size: 20px;");
+        auto hlay = new QHBoxLayout;
+        hlay->addWidget(this->m_logo);
+        hlay->addWidget(this->m_helloText);
+        this->m_funcText->setText("我可以帮你写代码、读文件、写作各种创意内容，请把你的任务交给我吧~");
+        this->m_funcText->setStyleSheet("color: #404040;font-size: 12px;");
+        auto vlay = new QVBoxLayout(this->m_centerInitWidget);
+        vlay->addLayout(hlay);
+        vlay->addWidget(this->m_funcText);
+        this->m_centerInitWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    }
+
     auto pMainLayout = new QVBoxLayout(this);
     pMainLayout->setContentsMargins(0,0,0,0);
 
     m_pScrollArea = new MyScrollArea();
+    m_pScrollArea->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_pScrollArea->setObjectName("chat_scroll_area");
     m_pScrollArea->setFrameShape(QFrame::NoFrame);
     pMainLayout->addWidget(m_pScrollArea);
-    pMainLayout->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Expanding,QSizePolicy::Fixed));
 
     auto w = new QWidget(this);
     w->setObjectName("chat_bg");
     w->setAutoFillBackground(true);
+    w->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     auto pVLayout_1 = new QVBoxLayout(w);
-    pVLayout_1->addStretch();
-    m_pScrollArea->setWidget(w);    //应该在QSCrollArea构造后执行才对
+    pVLayout_1->setContentsMargins(0, 0, 0, 0);
+    pVLayout_1->setSpacing(0);
+    pVLayout_1->addStretch(); // 顶部stretch
+    pVLayout_1->addWidget(m_centerInitWidget, 0, Qt::AlignCenter); // 居中显示
+    pVLayout_1->addStretch(); // 底部stretch
+    m_pScrollArea->setWidget(w);    //应该在QScrollArea构造后执行才对
 
     m_pScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     m_pScrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -35,13 +64,23 @@ ChatView::ChatView(QWidget *parent)
 
     m_pScrollArea->setWidgetResizable(true);
     m_pScrollArea->installEventFilter(this);
+
+    // 设置透明度效果
+    auto* opacityEffect = new QGraphicsOpacityEffect(m_centerInitWidget);
+    opacityEffect->setOpacity(1.0);
+    m_centerInitWidget->setGraphicsEffect(opacityEffect);
 }
 
 void ChatView::appendChatItem(QWidget *item)
 {
     const auto vl = getLayout();
     //qDebug() << "vl->count() is " << vl->count();
-    if (vl)vl->insertWidget(vl->count()-1, item);
+    if (vl) {
+        vl->insertWidget(vl->count()-1, item);
+        if (vl->count() == 2) {
+            startFadeOutAnimation();
+        }
+    }
     else STREAM_WARN()<< "ChatView::appendChatItem(): layout is nullptr";
     isAppended = true;
 }
@@ -70,6 +109,7 @@ void ChatView::removeLastItem() {
         const int lastItemIndex = layout->count() - 2;
 
         if (QLayoutItem* item = layout->takeAt(lastItemIndex)) {
+            //qDebug() << "Removing item at index:" << lastItemIndex << "type:" << (item->widget() ? item->widget()->metaObject()->className() : "null");
             if (QWidget* widget = item->widget()) {
                 widget->deleteLater(); // 安全删除控件
             }
@@ -82,18 +122,28 @@ void ChatView::removeLastItem() {
 void ChatView::removeAllItem() {
     auto layout = getLayout();
     if (!layout) return;
+    qDebug()<<"layout count : "<<layout->count();
 
-    // 反向遍历避免索引错位
-    if (layout->count() > 1) { // 保留最后的 stretch 项（count=1）
-        for (int i = layout->count() - 2; i >= 0; --i) {
-            QLayoutItem* item = layout->takeAt(i);
-            if (item && item->widget()) {
-                item->widget()->deleteLater();
-            }
-            delete item;
+    // 移除所有非初始化部件
+    QList<QLayoutItem*> itemsToRemove;
+    for (int i = 0; i < layout->count(); ++i) {
+        QLayoutItem* item = layout->itemAt(i);
+        if (item->widget() && item->widget() != m_centerInitWidget) {
+            itemsToRemove.append(item);
         }
     }
-    // 非widget项（如stretch/spacer）自动保留
+
+    for (QLayoutItem* item : itemsToRemove) {
+        layout->removeItem(item);
+        if (QWidget* widget = item->widget()) {
+            widget->deleteLater();
+        }
+        delete item;
+    }
+
+    if (layout->count() == 1) {
+        startFadeOutAnimation();
+    }
     update();
 }
 
@@ -110,6 +160,28 @@ QVBoxLayout *ChatView::getLayout() const {
         STREAM_WARN() << "ChatView::getLayout(): Layout is not a QVBoxLayout.";
     }
     return layout;
+}
+
+void ChatView::startFadeOutAnimation() {
+    auto* effect = qobject_cast<QGraphicsOpacityEffect*>(m_centerInitWidget->graphicsEffect());
+    QPropertyAnimation* anim = new QPropertyAnimation(effect, "opacity");
+    anim->setDuration(300);
+    anim->setStartValue(1.0);
+    anim->setEndValue(0.0);
+    anim->start(QAbstractAnimation::DeleteWhenStopped);
+    connect(anim, &QPropertyAnimation::finished, [this]() {
+        m_centerInitWidget->hide(); // 动画完成后隐藏
+    });
+}
+
+void ChatView::startFadeInAnimation() {
+    m_centerInitWidget->show(); // 先显示再动画
+    auto* effect = qobject_cast<QGraphicsOpacityEffect*>(m_centerInitWidget->graphicsEffect());
+    QPropertyAnimation* anim = new QPropertyAnimation(effect, "opacity");
+    anim->setDuration(300);
+    anim->setStartValue(0.0);
+    anim->setEndValue(1.0);
+    anim->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
 bool ChatView::eventFilter(QObject *o, QEvent *e)

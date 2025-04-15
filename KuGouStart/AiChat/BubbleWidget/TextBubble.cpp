@@ -6,8 +6,6 @@
 #include <QTextBlock>
 #include <QTextLayout>
 
-#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
-
 TextBubble::TextBubble(const ChatRole role, const QString &text, QWidget *parent)
     : BubbleFrame(role, parent)
 {
