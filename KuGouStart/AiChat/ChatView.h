@@ -25,6 +25,8 @@ public:
     QVBoxLayout *getLayout() const;
 
 private:
+    void updateCenterWidgetPosition();
+
     void startFadeOutAnimation();
 
     void startFadeInAnimation();
@@ -33,6 +35,8 @@ protected:
     bool eventFilter(QObject *o, QEvent *e) override;
 
     void paintEvent(QPaintEvent *event) override;
+
+    void resizeEvent(QResizeEvent *event) override;
 
 private slots:
     void onVScrollBarMoved(int min, int max);

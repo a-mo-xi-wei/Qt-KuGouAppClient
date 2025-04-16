@@ -20,7 +20,7 @@ ChatView::ChatView(QWidget *parent)
     , m_centerInitWidget(new QWidget(this))
 {
     {
-        this->m_logo->setFixedSize(60, 60);
+        this->m_logo->setFixedSize(50, 50);
         this->m_logo->setPixmap(QPixmap(":/Res/window/deepseek.png").scaled(this->m_logo->size()));
         this->m_helloText->setFixedHeight(70);
         this->m_helloText->setText("我是DeepSeek, 很高兴见到你!");
@@ -50,10 +50,6 @@ ChatView::ChatView(QWidget *parent)
     w->setAutoFillBackground(true);
     w->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     auto pVLayout_1 = new QVBoxLayout(w);
-    pVLayout_1->setContentsMargins(0, 0, 0, 0);
-    pVLayout_1->setSpacing(0);
-    pVLayout_1->addStretch(); // 顶部stretch
-    pVLayout_1->addWidget(m_centerInitWidget, 0, Qt::AlignCenter); // 居中显示
     pVLayout_1->addStretch(); // 底部stretch
     m_pScrollArea->setWidget(w);    //应该在QScrollArea构造后执行才对
 
@@ -65,6 +61,10 @@ ChatView::ChatView(QWidget *parent)
     m_pScrollArea->setWidgetResizable(true);
     m_pScrollArea->installEventFilter(this);
 
+    // 修改为绝对定位模式
+    m_centerInitWidget->setParent(m_pScrollArea->viewport()); // 设置父对象为视口
+    m_centerInitWidget->setAttribute(Qt::WA_TransparentForMouseEvents); // 穿透鼠标事件
+    m_centerInitWidget->raise(); // 确保在最上层
     // 设置透明度效果
     auto* opacityEffect = new QGraphicsOpacityEffect(m_centerInitWidget);
     opacityEffect->setOpacity(1.0);
@@ -123,7 +123,7 @@ void ChatView::removeAllItem() {
     auto layout = getLayout();
     if (!layout) return;
     qDebug()<<"layout count : "<<layout->count();
-
+    if (layout->count() == 1) return;//内部只有一个初始化控件，直接跳过
     // 移除所有非初始化部件
     QList<QLayoutItem*> itemsToRemove;
     for (int i = 0; i < layout->count(); ++i) {
@@ -142,7 +142,8 @@ void ChatView::removeAllItem() {
     }
 
     if (layout->count() == 1) {
-        startFadeOutAnimation();
+        updateCenterWidgetPosition(); // 强制更新位置
+        startFadeInAnimation();
     }
     update();
 }
@@ -162,25 +163,48 @@ QVBoxLayout *ChatView::getLayout() const {
     return layout;
 }
 
+void ChatView::updateCenterWidgetPosition() {
+    if(!m_centerInitWidget || !m_pScrollArea) return;
+
+    // 计算相对于视口的居中位置
+    const QSize containerSize = m_pScrollArea->viewport()->size();
+    const QSize widgetSize = m_centerInitWidget->size();
+
+    const int x = (containerSize.width() - widgetSize.width()) / 2;
+    const int y = (containerSize.height() - widgetSize.height()) / 2;
+
+    m_centerInitWidget->move(x, y);
+}
+
 void ChatView::startFadeOutAnimation() {
+    m_centerInitWidget->show(); // 确保可见
     auto* effect = qobject_cast<QGraphicsOpacityEffect*>(m_centerInitWidget->graphicsEffect());
+
     QPropertyAnimation* anim = new QPropertyAnimation(effect, "opacity");
     anim->setDuration(300);
     anim->setStartValue(1.0);
     anim->setEndValue(0.0);
-    anim->start(QAbstractAnimation::DeleteWhenStopped);
-    connect(anim, &QPropertyAnimation::finished, [this]() {
+    anim->setEasingCurve(QEasingCurve::OutQuad);
+
+    connect(anim, &QPropertyAnimation::finished, [this](){
         m_centerInitWidget->hide(); // 动画完成后隐藏
     });
+    anim->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
 void ChatView::startFadeInAnimation() {
-    m_centerInitWidget->show(); // 先显示再动画
+    updateCenterWidgetPosition(); // 先更新位置
+    m_centerInitWidget->show();
+
     auto* effect = qobject_cast<QGraphicsOpacityEffect*>(m_centerInitWidget->graphicsEffect());
+    effect->setOpacity(0.0); // 初始透明
+
     QPropertyAnimation* anim = new QPropertyAnimation(effect, "opacity");
     anim->setDuration(300);
     anim->setStartValue(0.0);
     anim->setEndValue(1.0);
+    anim->setEasingCurve(QEasingCurve::InQuad);
+
     anim->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
@@ -209,6 +233,10 @@ void ChatView::paintEvent(QPaintEvent *event)
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
 
+void ChatView::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+    updateCenterWidgetPosition();
+}
 
 void ChatView::onVScrollBarMoved(int min, int max)
 {
