@@ -28,7 +28,6 @@ ChatView::ChatView(QWidget *parent)
         auto hlay = new QHBoxLayout;
         hlay->setSpacing(20);
         hlay->setAlignment(Qt::AlignCenter);
-        hlay->addSpacing(10);
         hlay->addWidget(this->m_logo);
         hlay->addWidget(this->m_helloText);
         this->m_funcText->setText("我可以帮你写代码、读文件、写作各种创意内容，请把你的任务交给我吧~");
