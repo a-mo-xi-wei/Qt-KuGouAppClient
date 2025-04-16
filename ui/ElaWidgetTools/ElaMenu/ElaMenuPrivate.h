@@ -19,7 +19,7 @@ class ElaMenuPrivate : public QObject {
 public:
     explicit ElaMenuPrivate(QObject *parent = nullptr);
 
-    ~ElaMenuPrivate();
+    ~ElaMenuPrivate() override;
 
 private:
     QPixmap _animationPix;
