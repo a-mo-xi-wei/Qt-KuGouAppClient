@@ -1,6 +1,5 @@
-#chat_bg{
-    border: none;
-    background: transparent;
+#chatView *{
+    background-color: rgba(255,255,255,0);
 }
 
 #chat_user_name{
@@ -56,4 +55,12 @@
 #chat_scroll_area QScrollBar::add-line:vertical,
 #chat_scroll_area QScrollBar::sub-line:vertical {
     background: none;
+}
+/*-------------------send_widget----------------------*/
+
+#question_textEdit{
+    background-color: rgba(255,255,255,0);
+}
+#button_widget{
+    background-color: rgba(255,255,255,0);
 }

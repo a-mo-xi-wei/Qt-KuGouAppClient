@@ -8,7 +8,9 @@
 #include "Chat.h"
 #include <QWidget>
 #include <QTimer>
+#include <QElapsedTimer>
 
+class QtMaterialSnackbar;
 class QtMaterialFloatingActionButton;
 class QLabel;
 class TextBubble;
@@ -51,6 +53,8 @@ private:
     Ui::AiChat *const ui;
     Chat m_deepSeek;
     QtMaterialFloatingActionButton *const m_sendBtn;
+    std::unique_ptr<QtMaterialSnackbar> m_snackbar{};
+    QElapsedTimer m_snackbarTimer; // 用于记录最后一次显示时间
     /*--------------------*/
     TextBubble* m_currentResponseBubble = nullptr; // 新增：当前正在更新的回答气泡
     ChatItemBase* m_currentResponseItem = nullptr; // 对应的聊天项

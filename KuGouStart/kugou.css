@@ -1,5 +1,5 @@
 /*--------------------center_widget------------------------------*/
-QWidget#center_widget *{
+QWidget#center_widget > *{
     background-color: rgba(255,255,255,0);
 }
 
@@ -20,6 +20,9 @@ QScrollArea#menu_scrollArea QToolButton:hover{
 QScrollArea#menu_scrollArea QToolButton:checked{
     background-color:#268cff;
     font-size: 14px;
+}
+QScrollArea#menu_scrollArea *{
+    background-color: rgba(255,255,255,0);
 }
 /*--------------------play_widget------------------------------*/
 QWidget#play_widget {

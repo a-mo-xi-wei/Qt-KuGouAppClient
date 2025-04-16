@@ -9,7 +9,9 @@
 #include "TextBubble.h"
 #include "ChatItemBase.h"
 #include "ElaMessageBar.h"
-#include "QtMaterialButton/qtmaterialfab.h"
+#include "logger.hpp"
+#include "qtmaterialfab.h"
+#include "qtmaterialsnackbar.h"
 
 #include <QMouseEvent>
 #include <QFile>
@@ -23,8 +25,10 @@ AiChat::AiChat(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::AiChat)
     , m_sendBtn(new QtMaterialFloatingActionButton(QIcon(":/Res/window/send.svg")))
+    , m_snackbar(std::make_unique<QtMaterialSnackbar>())
 {
     ui->setupUi(this);
+    this->setObjectName("AiChat");
     QFile file(GET_CURRENT_DIR + "/chat.css");
     if (file.open(QIODevice::ReadOnly)) {
         this->setStyleSheet(file.readAll());
@@ -92,6 +96,12 @@ void AiChat::initUi() {
     this->m_sendBtn->setCorner(Qt::BottomRightCorner);
     this->m_sendBtn->setXOffset(15);
     this->m_sendBtn->setYOffset(15);
+    //m_snackbar
+    m_snackbar->setParent(this);
+    m_snackbar->setAutoHideDuration(1500);
+    m_snackbar->setBackgroundColor(QColor(132, 202, 192, 200));
+    m_snackbar->setStyleSheet("border-radius: 10px;");
+
     connect(this->m_sendBtn,&QPushButton::clicked,this,&AiChat::onSendBtnClicked);
 }
 
@@ -122,6 +132,16 @@ void AiChat::onSendBtnClicked() {
     const QString question = ui->question_textEdit->toPlainText().trimmed();
     if(question.isEmpty()) {
         qWarning() << "Empty question";
+        STREAM_WARN() << "Empty question";
+        // 检查是否在冷却时间内
+        if (m_snackbarTimer.isValid() && m_snackbarTimer.elapsed() < m_snackbar->autoHideDuration()) {
+            qDebug() << "Snackbar cooling down";
+            return; // 3秒内不再重复显示
+        }
+        // 重置计时器并显示
+        m_snackbarTimer.start();
+        m_snackbar->addInstantMessage("你干嘛，哎哟 ~");
+        m_snackbar->show();
         return;
     }
     this->m_sendBtn->setEnabled(false);
@@ -170,15 +190,20 @@ void AiChat::onStreamFinished() {
 }
 
 bool AiChat::eventFilter(QObject *watched, QEvent *event) {
-    if (watched == ui->question_textEdit && event->type() == QEvent::KeyPress) {
-        QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
-        if (keyEvent->key() == Qt::Key_Return || keyEvent->key() == Qt::Key_Enter) {
-            if (keyEvent->modifiers() & Qt::ShiftModifier) {
-                ui->question_textEdit->insertPlainText("\n");
-            } else {
-                this->m_sendBtn->click(); // 直接点击按钮
+    if (watched == ui->question_textEdit) {
+        if (event->type() == QEvent::KeyPress) {
+            QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+            if (keyEvent->key() == Qt::Key_Return || keyEvent->key() == Qt::Key_Enter) {
+                if (keyEvent->modifiers() & Qt::ShiftModifier) {
+                    ui->question_textEdit->insertPlainText("\n");
+                } else {
+                    this->m_sendBtn->click(); // 直接点击按钮
+                }
+                return true;
             }
-            return true;
+        }
+        if (event->type() == QEvent::FocusIn) {
+            m_snackbar->hide();
         }
     }
     return QWidget::eventFilter(watched, event);

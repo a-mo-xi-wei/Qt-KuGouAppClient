@@ -52,7 +52,7 @@ KuGouApp::KuGouApp(MainWindow *parent)
 {
     ui->setupUi(this);
 
-    QFile file(GET_CURRENT_DIR + QStringLiteral("/Res_Qrc/Res/styles/original.css"));
+    QFile file(GET_CURRENT_DIR + QStringLiteral("/kugou.css"));
     if (file.open(QIODevice::ReadOnly)) {
         this->setStyleSheet(file.readAll());
     } else {
