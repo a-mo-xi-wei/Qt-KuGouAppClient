@@ -24,13 +24,15 @@ ChatView::ChatView(QWidget *parent)
         this->m_logo->setPixmap(QPixmap(":/Res/window/deepseek.png").scaled(this->m_logo->size()));
         this->m_helloText->setFixedHeight(70);
         this->m_helloText->setText("我是DeepSeek, 很高兴见到你!");
-        this->m_helloText->setStyleSheet("color: black;font-wight: bold;font-size: 20px;");
+        this->m_helloText->setStyleSheet("color: black;font-size: 20px;");
         auto hlay = new QHBoxLayout;
+        hlay->setAlignment(Qt::AlignCenter);
         hlay->addWidget(this->m_logo);
         hlay->addWidget(this->m_helloText);
         this->m_funcText->setText("我可以帮你写代码、读文件、写作各种创意内容，请把你的任务交给我吧~");
         this->m_funcText->setStyleSheet("color: #404040;font-size: 12px;");
         auto vlay = new QVBoxLayout(this->m_centerInitWidget);
+        vlay->setAlignment(Qt::AlignCenter);
         vlay->addLayout(hlay);
         vlay->addWidget(this->m_funcText);
         this->m_centerInitWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);

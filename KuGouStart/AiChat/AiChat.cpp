@@ -85,9 +85,16 @@ void AiChat::initUi() {
     ui->question_textEdit->setPlaceholderText("请输入问题");
     ui->question_textEdit->installEventFilter(this);
     // send_btn
-    ui->send_btn->setRadius(15);
-    ui->send_btn->setFillColor(QColor(QStringLiteral("#FFD6F1")));
-    ui->send_btn->setSpeed(5);
+    //ui->send_btn->setRadius(15);
+    //ui->send_btn->setFillColor(QColor(QStringLiteral("#FFD6F1")));
+    //ui->send_btn->setSpeed(5);
+    ui->send_btn->setIcon(QIcon(":/Res/window/send.svg"));
+    ui->send_btn->setCursor(Qt::PointingHandCursor);
+    ui->send_btn->setRippleStyle(Material::PositionedRipple);
+    ui->send_btn->setCorner(Qt::BottomRightCorner);
+    ui->send_btn->setParent(ui->button_widget);
+    ui->send_btn->setXOffset(23);
+    ui->send_btn->setYOffset(23);
 }
 
 QPixmap AiChat::getRoundedPixmap(const QPixmap &src, const QSize &size, const int &radius) {
@@ -120,6 +127,7 @@ void AiChat::on_send_btn_clicked() {
         return;
     }
     ui->send_btn->setEnabled(false);
+    ui->send_btn->setCursor(Qt::WaitCursor);
     //处理时间
     dealMessageTime();
     // 自己
@@ -160,6 +168,7 @@ void AiChat::onStreamFinished() {
         m_currentResponseItem->startMovie(false);
     }
     ui->send_btn->setEnabled(true);
+    ui->send_btn->setCursor(Qt::PointingHandCursor);
 }
 
 bool AiChat::eventFilter(QObject *watched, QEvent *event) {

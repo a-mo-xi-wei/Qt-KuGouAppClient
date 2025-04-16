@@ -18,6 +18,9 @@ file(GLOB QTMATERIAL_SNACKBAR_CPP ${CMAKE_CURRENT_SOURCE_DIR}/QtMaterialSnackbar
 file(GLOB QTMATERIAL_TEXTFIELD_H ${CMAKE_CURRENT_SOURCE_DIR}/QtMaterialTextField/*.h)
 file(GLOB QTMATERIAL_TEXTFIELD_CPP ${CMAKE_CURRENT_SOURCE_DIR}/QtMaterialTextField/*.cpp)
 
+file(GLOB QTMATERIAL_BUTTON_H ${CMAKE_CURRENT_SOURCE_DIR}/QtMaterialButton/*.h)
+file(GLOB QTMATERIAL_BUTTON_CPP ${CMAKE_CURRENT_SOURCE_DIR}/QtMaterialButton/*.cpp)
+
 # 合并所有源文件
 set(SOURCE_FILE
         ${MATERIAL_COMMON_H}
@@ -30,6 +33,8 @@ set(SOURCE_FILE
         ${QTMATERIAL_SNACKBAR_CPP}
         ${QTMATERIAL_TEXTFIELD_H}
         ${QTMATERIAL_TEXTFIELD_CPP}
+        ${QTMATERIAL_BUTTON_H}
+        ${QTMATERIAL_BUTTON_CPP}
 )
 
 # 创建共享库
@@ -46,6 +51,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/QtMaterialCircularProgress
         ${CMAKE_CURRENT_SOURCE_DIR}/QtMaterialSnackbar
         ${CMAKE_CURRENT_SOURCE_DIR}/QtMaterialTextField
+        ${CMAKE_CURRENT_SOURCE_DIR}/QtMaterialButton
 )
 
 # 链接Qt库
