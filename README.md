@@ -140,6 +140,7 @@ flowchart TD
 ![输入图片说明](image-show/image10.png)
 ### 5.Ai对话界面(略卡😅)
 ![](image-show/image35.png)
+![](image-show/image36.png)
 ### 6.歌单界面
 ![输入图片说明](image-show/image11.png)
 ### 7.每日推荐界面
