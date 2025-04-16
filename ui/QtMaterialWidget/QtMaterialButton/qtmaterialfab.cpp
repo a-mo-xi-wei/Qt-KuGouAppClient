@@ -105,7 +105,7 @@ void QtMaterialFloatingActionButtonPrivate::setupProperties()
  *  \class QtMaterialButton
  */
 
-QtMaterialFloatingActionButton::QtMaterialFloatingActionButton( QWidget *parent, const QIcon &icon)
+QtMaterialFloatingActionButton::QtMaterialFloatingActionButton(const QIcon &icon, QWidget *parent)
     : QtMaterialRaisedButton(*new QtMaterialFloatingActionButtonPrivate(this), parent)
 {
     d_func()->init();

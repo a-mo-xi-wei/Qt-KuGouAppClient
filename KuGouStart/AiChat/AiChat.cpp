@@ -9,6 +9,7 @@
 #include "TextBubble.h"
 #include "ChatItemBase.h"
 #include "ElaMessageBar.h"
+#include "QtMaterialButton/qtmaterialfab.h"
 
 #include <QMouseEvent>
 #include <QFile>
@@ -21,6 +22,7 @@
 AiChat::AiChat(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::AiChat)
+    , m_sendBtn(new QtMaterialFloatingActionButton(QIcon(":/Res/window/send.svg")))
 {
     ui->setupUi(this);
     QFile file(GET_CURRENT_DIR + "/chat.css");
@@ -36,14 +38,14 @@ AiChat::AiChat(QWidget *parent)
     // 连接信号
     connect(&m_deepSeek, &Chat::answered, this, &AiChat::getAnswer);
     connect(&m_deepSeek, &Chat::streamFinished, this, &AiChat::onStreamFinished);
-    connect(&m_deepSeek, &Chat::errorOccurred, this, [this](const QString& err){
+    connect(&m_deepSeek, &Chat::errorOccurred, this, [this](const QString &err) {
         //删除上一个回答气泡
         ui->chatView->removeLastItem();
         // 创建回答气泡
         m_currentResponseItem = new ChatItemBase(ChatRole::Other);
         m_currentResponseItem->setUserName("DeepSeek");
         m_currentResponseItem->setUserIcon(getRoundedPixmap(
-        QPixmap(":/Res/window/deepseek.png").scaled(46,46), {46,46}, 23));
+            QPixmap(":/Res/window/deepseek.png").scaled(46, 46), {46, 46}, 23));
 
         m_currentResponseBubble = new TextBubble(ChatRole::Other, err);
 
@@ -52,16 +54,15 @@ AiChat::AiChat(QWidget *parent)
         onStreamFinished();
     });
 
-    connect(ui->clear_toolButton, &QToolButton::clicked, ui->chatView,[this] {
-        //通过ui->send_btn是否能点击来判断是否可以清理
-        if (ui->send_btn->isEnabled())
+    connect(ui->clear_toolButton, &QToolButton::clicked, ui->chatView, [this] {
+        //通过this->m_sendBtn是否能点击来判断是否可以清理
+        if (this->m_sendBtn->isEnabled())
             ui->chatView->removeAllItem();
         else {
-            ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
-                                    "请等待当前问题回答完毕",
-                                    1000,this->window());
+            ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning",
+                                   "请等待当前问题回答完毕",
+                                   1000, this->window());
         }
-
     });
 }
 
@@ -85,16 +86,13 @@ void AiChat::initUi() {
     ui->question_textEdit->setPlaceholderText("请输入问题");
     ui->question_textEdit->installEventFilter(this);
     // send_btn
-    //ui->send_btn->setRadius(15);
-    //ui->send_btn->setFillColor(QColor(QStringLiteral("#FFD6F1")));
-    //ui->send_btn->setSpeed(5);
-    ui->send_btn->setIcon(QIcon(":/Res/window/send.svg"));
-    ui->send_btn->setCursor(Qt::PointingHandCursor);
-    ui->send_btn->setRippleStyle(Material::PositionedRipple);
-    ui->send_btn->setCorner(Qt::BottomRightCorner);
-    ui->send_btn->setParent(ui->button_widget);
-    ui->send_btn->setXOffset(23);
-    ui->send_btn->setYOffset(23);
+    this->m_sendBtn->setParent(ui->button_widget);
+    this->m_sendBtn->setCursor(Qt::PointingHandCursor);
+    this->m_sendBtn->setRippleStyle(Material::PositionedRipple);
+    this->m_sendBtn->setCorner(Qt::BottomRightCorner);
+    this->m_sendBtn->setXOffset(15);
+    this->m_sendBtn->setYOffset(15);
+    connect(this->m_sendBtn,&QPushButton::clicked,this,&AiChat::onSendBtnClicked);
 }
 
 QPixmap AiChat::getRoundedPixmap(const QPixmap &src, const QSize &size, const int &radius) {
@@ -120,14 +118,14 @@ void AiChat::dealMessageTime() {
     ui->chatView->appendChatItem(itemTime);
 }
 
-void AiChat::on_send_btn_clicked() {
+void AiChat::onSendBtnClicked() {
     const QString question = ui->question_textEdit->toPlainText().trimmed();
     if(question.isEmpty()) {
         qWarning() << "Empty question";
         return;
     }
-    ui->send_btn->setEnabled(false);
-    ui->send_btn->setCursor(Qt::WaitCursor);
+    this->m_sendBtn->setEnabled(false);
+    this->m_sendBtn->setCursor(Qt::WaitCursor);
     //处理时间
     dealMessageTime();
     // 自己
@@ -167,8 +165,8 @@ void AiChat::onStreamFinished() {
         m_currentResponseBubble->finishStreaming(); // 结束流式
         m_currentResponseItem->startMovie(false);
     }
-    ui->send_btn->setEnabled(true);
-    ui->send_btn->setCursor(Qt::PointingHandCursor);
+    this->m_sendBtn->setEnabled(true);
+    this->m_sendBtn->setCursor(Qt::PointingHandCursor);
 }
 
 bool AiChat::eventFilter(QObject *watched, QEvent *event) {
@@ -178,7 +176,7 @@ bool AiChat::eventFilter(QObject *watched, QEvent *event) {
             if (keyEvent->modifiers() & Qt::ShiftModifier) {
                 ui->question_textEdit->insertPlainText("\n");
             } else {
-                ui->send_btn->click(); // 直接点击按钮
+                this->m_sendBtn->click(); // 直接点击按钮
             }
             return true;
         }

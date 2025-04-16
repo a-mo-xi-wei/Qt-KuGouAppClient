@@ -9,6 +9,7 @@
 #include <QWidget>
 #include <QTimer>
 
+class QtMaterialFloatingActionButton;
 class QLabel;
 class TextBubble;
 class ChatItemBase;
@@ -37,7 +38,7 @@ private:
     void dealMessageTime();
 
 private slots:
-    void on_send_btn_clicked();
+    void onSendBtnClicked();
 
     void getAnswer(const QString &word);
 
@@ -47,9 +48,9 @@ protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
-    Ui::AiChat *ui;
+    Ui::AiChat *const ui;
     Chat m_deepSeek;
-
+    QtMaterialFloatingActionButton *const m_sendBtn;
     /*--------------------*/
     TextBubble* m_currentResponseBubble = nullptr; // 新增：当前正在更新的回答气泡
     ChatItemBase* m_currentResponseItem = nullptr; // 对应的聊天项

@@ -16,7 +16,7 @@ class QTMATERIALWIDGET_EXPORT QtMaterialFloatingActionButton : public QtMaterial
     Q_OBJECT
 
 public:
-    explicit QtMaterialFloatingActionButton(QWidget *parent = nullptr, const QIcon &icon = {});
+    explicit QtMaterialFloatingActionButton(const QIcon &icon, QWidget *parent = nullptr);
     ~QtMaterialFloatingActionButton();
 
     QSize sizeHint() const Q_DECL_OVERRIDE;

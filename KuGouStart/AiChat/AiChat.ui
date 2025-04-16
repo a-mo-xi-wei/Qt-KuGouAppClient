@@ -157,50 +157,16 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>85</width>
-          <height>85</height>
+          <width>80</width>
+          <height>80</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>85</width>
-          <height>85</height>
+          <width>80</width>
+          <height>80</height>
          </size>
         </property>
-        <widget class="QtMaterialFloatingActionButton" name="send_btn">
-         <property name="geometry">
-          <rect>
-           <x>1</x>
-           <y>1</y>
-           <width>80</width>
-           <height>80</height>
-          </rect>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>80</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>80</width>
-           <height>80</height>
-          </size>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
        </widget>
       </item>
      </layout>
@@ -219,11 +185,6 @@
    <class>ElaPlainTextEdit</class>
    <extends>QTextEdit</extends>
    <header>ElaPlainTextEdit.h</header>
-  </customwidget>
-  <customwidget>
-   <class>QtMaterialFloatingActionButton</class>
-   <extends>QPushButton</extends>
-   <header>qtmaterialfab.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
