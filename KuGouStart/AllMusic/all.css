@@ -1,6 +1,3 @@
-QWidget *{
-    background-color: rgba(255,255,255,0);
-}
 /*--------------------guide_widget------------------------------*/
 QPushButton {
     color:black;
@@ -74,13 +71,11 @@ QToolButton#all_sort_toolButton:hover {
 
 QLineEdit#all_search_lineEdit{
     border-radius: 12px;
-    background-color: #e2e5ff;
+    background-color: #e0e2ee;
     padding-left: 5px;
     font-size: 14px;
     font-weight: bold;
-    selection-color: #00cb9f;            /* 设置选中文本的颜色 */
-    selection-background-color: #75498c;  /* 设置选中文本的背景颜色 */
 }
 QLineEdit#all_search_lineEdit:hover{
-    background-color: #dadeff;
+    background-color: #e1e4ff;
 }

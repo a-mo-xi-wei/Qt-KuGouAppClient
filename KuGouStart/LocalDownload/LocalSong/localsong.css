@@ -1,3 +1,23 @@
+#LocalSong{
+    background-color: transparent;
+}
+QWidget#widget{
+    background-color: transparent;
+}
+/* 设置QScrollArea本身透明 */
+QScrollArea#scrollArea {
+    background-color: transparent;
+}
+
+/* 单独设置视口（viewport）透明 */
+QScrollArea#scrollArea::viewport {
+    background-color: transparent;
+}
+
+/* 设置内容区域透明（scrollAreaWidgetContents） */
+QScrollArea#scrollArea > QWidget > QWidget#scrollAreaWidgetContents {
+    background-color: transparent;
+}
 /*--------------------operation_widget------------------------------*/
 QWidget#operation_widget > QToolButton {
     background-color: #e2e5ff;
@@ -59,15 +79,13 @@ QToolButton#local_sort_toolButton:hover {
 
 QLineEdit#local_search_lineEdit{
     border-radius: 12px;
-    background-color: #e2e5ff;
+    background-color: #e0e2ee;
     padding-left: 5px;
     font-size: 14px;
     font-weight: bold;
-    selection-color: #00cb9f;            /* 设置选中文本的颜色 */
-    selection-background-color: #75498c;  /* 设置选中文本的背景颜色 */
 }
 QLineEdit#local_search_lineEdit:hover{
-    background-color: #dadeff;
+    background-color: #e1e4ff;
 }
 
 /**************content_widget*************/

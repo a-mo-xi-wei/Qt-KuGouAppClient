@@ -47,7 +47,7 @@ void SingleSong::initUi() {
     //设置toolTip
     {
         //collect_search_lineEdit
-        auto collect_search_lineEdit_toolTip = new ElaToolTip(ui->collect_search_lineEdit);
+        auto collect_search_lineEdit_toolTip = new ElaToolTip(ui->search_lineEdit);
         collect_search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
 
         // 设置 collect_download_toolButton 的 tooltip
@@ -120,10 +120,10 @@ void SingleSong::initUi() {
     //使用 addAction 添加右侧图标
     this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
     this->m_searchAction->setIconVisibleInMenu(false); // 仅显示图标
-    ui->collect_search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition);
-    ui->collect_search_lineEdit->setWidth(150);
+    ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition);
+    ui->search_lineEdit->setWidth(150);
     QToolButton* searchButton = nullptr;
-    foreach (QToolButton* btn, ui->collect_search_lineEdit->findChildren<QToolButton*>()) {
+    foreach (QToolButton* btn, ui->search_lineEdit->findChildren<QToolButton*>()) {
         if (btn->defaultAction() == this->m_searchAction) {
             searchButton = btn;
             break;
