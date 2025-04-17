@@ -32,6 +32,8 @@ protected:
 
     void keyPressEvent(QKeyEvent *event) override;
 
+    void contextMenuEvent(QContextMenuEvent *event) override;
+
 private:
     QPropertyAnimation *m_animation;
     int m_startWidth;
