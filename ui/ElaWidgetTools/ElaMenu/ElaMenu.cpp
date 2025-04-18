@@ -13,6 +13,7 @@ ElaMenu::ElaMenu(QWidget* parent)
 {
     Q_D(ElaMenu);
     d->q_ptr = this;
+    setWindowOpacity(0.8);
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
     setObjectName("ElaMenu");

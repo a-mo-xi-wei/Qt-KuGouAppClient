@@ -181,8 +181,8 @@ void TitleWidget::initUi() {
 void TitleWidget::showMenu(const QPoint &pos) {
     setMenuPosition(pos);
     //qDebug()<<"当前Menu位置: "<<pos<<" 显示菜单";
-    this->m_titleOptMenu->move(this->m_menuPosition);
-    this->m_titleOptMenu->show();
+    this->m_titleOptMenu->popup(this->m_menuPosition);
+    //this->m_titleOptMenu->show();
     //qDebug()<<"显示菜单成功";
 }
 

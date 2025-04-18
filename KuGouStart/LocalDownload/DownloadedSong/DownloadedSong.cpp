@@ -162,8 +162,7 @@ void DownloadedSong::on_local_play_toolButton_clicked() {
 
 void DownloadedSong::on_local_sort_toolButton_clicked() {
     getMenuPosition(QCursor::pos());
-    this->m_sortOptMenu->move(this->m_menuPosition);
-    this->m_sortOptMenu->show();
+    this->m_sortOptMenu->popup(this->m_menuPosition);
 }
 
 void DownloadedSong::on_local_batch_toolButton_clicked() {

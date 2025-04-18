@@ -233,8 +233,8 @@ void SingleSong::onRandomSort() {
 
 void SingleSong::on_collect_sort_toolButton_clicked() {
     getMenuPosition(QCursor::pos());
-    this->m_sortOptMenu->move(this->m_menuPosition);
-    this->m_sortOptMenu->show();
+    //this->m_sortOptMenu->move();
+    this->m_sortOptMenu->popup(this->m_menuPosition);
 }
 
 bool SingleSong::eventFilter(QObject *watched, QEvent *event) {

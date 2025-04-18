@@ -526,8 +526,7 @@ void LocalSong::on_search_pushButton_clicked() {
 
 void LocalSong::on_local_sort_toolButton_clicked() {
     getMenuPosition(QCursor::pos());
-    this->m_sortOptMenu->move(this->m_menuPosition);
-    this->m_sortOptMenu->show();
+    this->m_sortOptMenu->popup(this->m_menuPosition);
 }
 
 void LocalSong::setPlayIndex(const int &index) {

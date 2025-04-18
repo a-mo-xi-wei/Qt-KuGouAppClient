@@ -288,8 +288,8 @@ void MusicItemWidget::mousePressEvent(QMouseEvent *event) {
     // 判断是否为右键点击
     if (event->button() == Qt::RightButton) {
         getMenuPosition(this->mapToGlobal(event->pos()));
-        this->m_songOptMenu->move(this->m_menuPosition);
-        this->m_songOptMenu->show();
+        this->m_songOptMenu->popup(this->m_menuPosition);
+        //this->m_songOptMenu->show();
         this->m_songOptMenu->setCurIndex(this->m_information.index);
     }
     else {
@@ -315,8 +315,8 @@ void MusicItemWidget::onCollectToolBtnClicked() {
 void MusicItemWidget::onMoreToolBtnClicked() {
     // 获取当前鼠标的全局位置
     getMenuPosition(QCursor::pos());
-    this->m_songOptMenu->move(this->m_menuPosition);
-    this->m_songOptMenu->show();
+    this->m_songOptMenu->popup(this->m_menuPosition);
+    //this->m_songOptMenu->show();
     this->m_songOptMenu->setCurIndex(this->m_information.index);
 
 }

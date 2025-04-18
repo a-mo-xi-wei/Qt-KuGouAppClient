@@ -137,8 +137,8 @@ void MyTrayIcon::onIconActivated(QSystemTrayIcon::ActivationReason reason) {
     else if (reason == QSystemTrayIcon::Context) {	// 右键触发
         //m_trayMenu->exec(QCursor::pos());
         getMenuPosition(QCursor::pos());
-        this->m_trayMenu->move(this->m_menuPosition);
-        this->m_trayMenu->show();
+        this->m_trayMenu->popup(this->m_menuPosition);
+        //this->m_trayMenu->show();
     }
 }
 

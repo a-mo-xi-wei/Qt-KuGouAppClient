@@ -167,8 +167,7 @@ void PaidSingle::on_single_play_toolButton_clicked() {
 
 void PaidSingle::on_single_sort_toolButton_clicked() {
     getMenuPosition(QCursor::pos());
-    this->m_sortOptMenu->move(this->m_menuPosition);
-    this->m_sortOptMenu->show();
+    this->m_sortOptMenu->popup(this->m_menuPosition);
 }
 
 void PaidSingle::on_single_download_toolButton_clicked() {
