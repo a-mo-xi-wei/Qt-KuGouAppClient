@@ -20,6 +20,8 @@ public:
 
     ~ElaMenu();
 
+    void setOpacity(qreal opacity);
+
     void setMenuItemHeight(int menuItemHeight);
 
     int getMenuItemHeight() const;

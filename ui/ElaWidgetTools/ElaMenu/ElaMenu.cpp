@@ -3,6 +3,7 @@
 #include "ElaMenuPrivate.h"
 
 #include <QApplication>
+#include <QGraphicsOpacityEffect>
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
@@ -13,7 +14,9 @@ ElaMenu::ElaMenu(QWidget* parent)
 {
     Q_D(ElaMenu);
     d->q_ptr = this;
-    setWindowOpacity(0.8);
+    auto opacityEffect = new QGraphicsOpacityEffect(this);
+    opacityEffect->setOpacity(0.95);
+    setGraphicsEffect(opacityEffect);
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
     setObjectName("ElaMenu");
@@ -31,6 +34,12 @@ ElaMenu::ElaMenu(const QString& title, QWidget* parent)
 
 ElaMenu::~ElaMenu()
 {
+}
+
+void ElaMenu::setOpacity(qreal opacity) {
+    auto opacityEffect = new QGraphicsOpacityEffect(this);
+    opacityEffect->setOpacity(opacity);
+    setGraphicsEffect(opacityEffect);
 }
 
 void ElaMenu::setMenuItemHeight(int menuItemHeight)
