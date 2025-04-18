@@ -1,6 +1,25 @@
-QWidget *{
+#RecommendForYou{
     background-color: rgba(255,255,255,0);
 }
+/* 设置QScrollArea本身透明 */
+QScrollArea#scrollArea {
+    background-color: transparent;
+}
+
+/* 单独设置视口（viewport）透明 */
+QScrollArea#scrollArea::viewport {
+    background-color: transparent;
+}
+
+/* 设置内容区域透明（scrollAreaWidgetContents） */
+QScrollArea#scrollArea > QWidget > QWidget#scrollAreaWidgetContents {
+    background-color: transparent;
+}
+
+#table_widget *{
+    background-color: transparent;
+}
+
 /*--------------------classify_widget------------------------------*/
 
 QWidget#classify_widget > QToolButton {
