@@ -222,7 +222,7 @@ void KuGouApp::initTitleWidget() {
         this->m_refreshMask->raise();
     });
     //向titleWidget 发送
-
+    connect(this,&MainWindow::exit,ui->title_widget,&TitleWidget::on_close_toolButton_clicked);
 }
 
 void KuGouApp::initPlayWidget() {

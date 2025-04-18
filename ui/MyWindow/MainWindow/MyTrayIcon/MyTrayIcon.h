@@ -43,6 +43,8 @@ signals:
 
     void showAboutDialog(const bool &flag);
 
+    void exit();
+
 private slots:
     void onIconActivated(QSystemTrayIcon::ActivationReason reason); // 处理事件函数
 
