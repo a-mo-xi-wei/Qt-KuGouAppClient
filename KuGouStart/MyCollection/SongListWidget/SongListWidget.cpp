@@ -8,8 +8,10 @@
 #include "ui_SongListWidget.h"
 #include "logger.hpp"
 #include "ElaMessageBar.h"
+#include "ElaToolTip.h"
 
 #include <QFile>
+
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
@@ -40,7 +42,10 @@ void SongListWidget::initUi() {
     ui->batch_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/batch-operation-gray.svg")));
     //搜索栏
     ui->search_lineEdit->setPlaceholderText(QStringLiteral("搜索"));
-    ui->search_lineEdit->setWidth(200);
+    ui->search_lineEdit->setMaxWidth(200);
+    auto font = QFont("AaSongLiuKaiTi");
+    font.setWeight(QFont::Bold);
+    ui->search_lineEdit->setFont(font);
     // 创建动作并设置图标
     this->m_searchAction = new QAction(QIcon(":/MenuIcon/Res/menuIcon/search-black.svg"), "搜索",ui->search_lineEdit);
 
@@ -49,6 +54,8 @@ void SongListWidget::initUi() {
     foreach (QToolButton* btn, ui->search_lineEdit->findChildren<QToolButton*>()) {
         if (btn->defaultAction() == this->m_searchAction) {
             searchButton = btn;
+            auto search_lineEdit_toolTip = new ElaToolTip(searchButton);
+            search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
             break;
         }
     }

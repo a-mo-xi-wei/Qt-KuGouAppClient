@@ -33,15 +33,15 @@ QToolButton#local_sort_toolButton:hover {
     border-image:url(":/Res/titlebar/sort-blue.svg");
 }
 /*--------------------QLineEdit------------------------------*/
-QLineEdit#local_search_lineEdit{
+QLineEdit#search_lineEdit{
     border-radius: 12px;
-    background-color: #e0e2ee;
+    background-color: #d1e8f6;
+    border:1px solid #6fafa7;
     padding-left: 5px;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 16px;
 }
-QLineEdit#local_search_lineEdit:hover{
-    background-color: #e1e4ff;
+QLineEdit#search_lineEdit:hover{
+    background-color: #bcddfa;
 }
 
 /**************content_widget*************/

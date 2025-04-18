@@ -8,6 +8,7 @@
 #include "ui_MVWidget.h"
 #include "logger.hpp"
 #include "ElaMessageBar.h"
+#include "ElaToolTip.h"
 
 #include <QFile>
 #include <QMouseEvent>
@@ -235,10 +236,15 @@ void MVWidget::initUi() {
     this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
     this->m_searchAction->setIconVisibleInMenu(false);
     ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition);
+    auto font = QFont("AaSongLiuKaiTi");
+    font.setWeight(QFont::Bold);
+    ui->search_lineEdit->setFont(font);
     QToolButton* searchButton = nullptr;
     foreach (QToolButton* btn, ui->search_lineEdit->findChildren<QToolButton*>()) {
         if (btn->defaultAction() == this->m_searchAction) {
             searchButton = btn;
+            auto search_lineEdit_toolTip = new ElaToolTip(searchButton);
+            search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
             break;
         }
     }

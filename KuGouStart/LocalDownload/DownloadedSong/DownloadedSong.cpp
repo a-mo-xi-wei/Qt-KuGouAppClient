@@ -46,9 +46,9 @@ DownloadedSong::~DownloadedSong() {
 void DownloadedSong::initUi() {
     //设置toolTip
     {
-        // 设置 local_search_lineEdit 的 tooltip
-        auto local_search_lineEdit_toolTip = new ElaToolTip(ui->local_search_lineEdit);
-        local_search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
+        // 设置 search_lineEdit 的 tooltip
+        //auto search_lineEdit_toolTip = new ElaToolTip(ui->search_lineEdit);
+        //search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
 
         // 设置 local_sort_toolButton 的 tooltip
         auto local_sort_toolButton_toolTip = new ElaToolTip(ui->local_sort_toolButton);
@@ -104,18 +104,25 @@ void DownloadedSong::initUi() {
     //使用 addAction 添加右侧图标
     this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
     this->m_searchAction->setIconVisibleInMenu(false); // 仅显示图标
-    ui->local_search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition);
-    ui->local_search_lineEdit->setWidth(150);
+    ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition);
+    ui->search_lineEdit->setMaxWidth(150);
+    auto font = QFont("AaSongLiuKaiTi");
+    font.setWeight(QFont::Bold);
+    ui->search_lineEdit->setFont(font);
     QToolButton* searchButton = nullptr;
-    foreach (QToolButton* btn, ui->local_search_lineEdit->findChildren<QToolButton*>()) {
+    foreach (QToolButton* btn, ui->search_lineEdit->findChildren<QToolButton*>()) {
         if (btn->defaultAction() == this->m_searchAction) {
             searchButton = btn;
+            auto search_lineEdit_toolTip = new ElaToolTip(searchButton);
+            search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
             break;
         }
     }
     // 安装事件过滤器
     if (searchButton) {
         searchButton->installEventFilter(this);
+        auto search_lineEdit_toolTip = new ElaToolTip(searchButton);
+        search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
     }
 
 }

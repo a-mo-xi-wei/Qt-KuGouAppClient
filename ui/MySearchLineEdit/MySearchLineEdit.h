@@ -21,7 +21,7 @@ class MYSEARCHLINEEDIT_EXPORT MySearchLineEdit : public QLineEdit {
 public:
     explicit MySearchLineEdit(QWidget *parent = nullptr);
 
-    void setWidth(const int &width);
+    void setMaxWidth(const int &width);
 
 protected:
     void focusInEvent(QFocusEvent *event) override;
@@ -36,8 +36,7 @@ protected:
 
 private:
     QPropertyAnimation *m_animation;
-    int m_startWidth;
-    int m_endWidth;
+    int m_originalWidth;
     int m_maxWidth;
 };
 

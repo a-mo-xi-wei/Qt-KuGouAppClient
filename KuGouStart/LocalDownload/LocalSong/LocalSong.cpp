@@ -80,8 +80,8 @@ void LocalSong::initUi() {
         upload_toolButton_toolTip->setToolTip(QStringLiteral("上传未备份音乐到音乐云盘"));
 
         // 设置 local_search_lineEdit 的 tooltip
-        auto local_search_lineEdit_toolTip = new ElaToolTip(ui->local_search_lineEdit);
-        local_search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
+        //auto local_search_lineEdit_toolTip = new ElaToolTip(ui->local_search_lineEdit);
+        //local_search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
 
         // 设置 local_share_toolButton 的 tooltip
         auto local_share_toolButton_toolTip = new ElaToolTip(ui->local_share_toolButton);
@@ -156,11 +156,16 @@ void LocalSong::initUi() {
     this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
     this->m_searchAction->setIconVisibleInMenu(false); // 仅显示图标
     ui->local_search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition);
-    ui->local_search_lineEdit->setWidth(150);
+    ui->local_search_lineEdit->setMaxWidth(150);
+    auto font = QFont("AaSongLiuKaiTi");
+    font.setWeight(QFont::Bold);
+    ui->local_search_lineEdit->setFont(font);
     QToolButton* searchButton = nullptr;
     foreach (QToolButton* btn, ui->local_search_lineEdit->findChildren<QToolButton*>()) {
         if (btn->defaultAction() == this->m_searchAction) {
             searchButton = btn;
+            auto search_lineEdit_toolTip = new ElaToolTip(searchButton);
+            search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
             break;
         }
     }

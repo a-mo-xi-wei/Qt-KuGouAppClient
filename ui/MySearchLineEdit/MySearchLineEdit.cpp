@@ -9,6 +9,9 @@
 #include <QClipboard>
 #include <QMouseEvent>
 #include <QPropertyAnimation>
+#include <mutex>
+
+std::once_flag flag;
 
 MySearchLineEdit::MySearchLineEdit(QWidget *parent)
     :QLineEdit(parent)
@@ -18,49 +21,55 @@ MySearchLineEdit::MySearchLineEdit(QWidget *parent)
     this->installEventFilter(this);
 }
 
-void MySearchLineEdit::setWidth(const int &width) {
+void MySearchLineEdit::setMaxWidth(const int &width) {
     this->m_maxWidth = width;
 }
 
 void MySearchLineEdit::focusInEvent(QFocusEvent *event) {
     QLineEdit::focusInEvent(event);
 
+    if (this->width() == this->m_maxWidth)return;
     //使用应用程序级的事件过滤器，在输入框获取焦点时，鼠标点击其他控件时，输入框会丢失焦点，导致输入框收起。
     QApplication::instance()->installEventFilter(this);
 
-    // 动画开始的大小（当前控件大小）
-    this->m_startWidth = this->width();
-    //qDebug()<<this->m_startWidth;
-    // 动画结束的大小，宽度变为 m_maxWidth
-    this->m_endWidth = this->m_maxWidth;
-    //qDebug()<<this->m_endWidth;
+    std::call_once(flag,[this]{this->m_originalWidth = this->width();});
+
     // 设置动画的起始和结束状态
     this->m_animation->setDuration(200);  // 动画时长 0.2 秒
-    this->m_animation->setStartValue(this->m_startWidth);  // 动画的起始值
-    this->m_animation->setEndValue(this->m_endWidth);      // 动画的结束值
+    this->m_animation->setStartValue(this->m_originalWidth);  // 动画的起始值
+    this->m_animation->setEndValue(this->m_maxWidth);      // 动画的结束值
     this->m_animation->start();
 }
 
 void MySearchLineEdit::focusOutEvent(QFocusEvent *event) {
+    // 检查焦点丢失原因是否为菜单弹出
+    if (event->reason() == Qt::PopupFocusReason) {
+        event->ignore();  // 忽略该事件，不触发父类处理
+        return;
+    }
     QLineEdit::focusOutEvent(event);
-
+    //qDebug()<<"焦点丢失";
     //使用应用程序级的事件过滤器，在输入框获取焦点时，鼠标点击其他控件时，输入框会丢失焦点，导致输入框收起。
     QApplication::instance()->installEventFilter(this);
 
-    // 动画结束的大小，宽度还原
-    this->m_endWidth = this->m_startWidth;
-    // 动画开始的大小（当前控件大小）
-    this->m_startWidth = this->width();
     // 设置动画的起始和结束状态
     this->m_animation->setDuration(200);  // 动画时长 0.2 秒
-    this->m_animation->setStartValue(this->m_startWidth);  // 动画的起始值
-    this->m_animation->setEndValue(this->m_endWidth);      // 动画的结束值
+    this->m_animation->setStartValue(this->m_maxWidth);  // 动画的起始值
+    this->m_animation->setEndValue(this->m_originalWidth);      // 动画的结束值
     this->m_animation->start();
 }
 
 bool MySearchLineEdit::eventFilter(QObject *watched, QEvent *event) {
     if (event->type() == QEvent::MouseButtonPress) {
         auto me = static_cast<QMouseEvent*>(event);
+
+        // 判断当前是否有活动的菜单弹出（如右键菜单）
+        QWidget *activePopup = QApplication::activePopupWidget();
+        if (activePopup && activePopup->inherits("QMenu")) {
+            // 如果有菜单弹出，直接返回，不处理点击外部区域的逻辑
+            return QLineEdit::eventFilter(watched, event);
+        }
+
         //qDebug()<<"鼠标按下 : "<<mapFromGlobal(me->globalPosition().toPoint());
         if (!rect().contains(mapFromGlobal(me->globalPosition().toPoint()))) {
             this->clearFocus();
@@ -147,5 +156,6 @@ void MySearchLineEdit::contextMenuEvent(QContextMenuEvent *event)
     action->setEnabled(!text().isEmpty() && !(selectedText() == text()));
     connect(action, &QAction::triggered, this, &MySearchLineEdit::selectAll);
     menu->popup(event->globalPos());
+    this->setFocus();
 }
 

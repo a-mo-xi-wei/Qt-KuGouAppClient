@@ -70,16 +70,18 @@ QToolButton#collect_sort_toolButton:hover {
     border-image:url(":/Res/titlebar/sort-blue.svg");
 }
 
-QLineEdit#search_lineEdit{
-    border-radius: 12px;
-    background-color: #e0e2ee;
-    padding-left: 5px;
-    font-size: 14px;
-    font-weight: bold;
+QLineEdit#search_lineEdit {
+     border-radius: 12px;
+     padding-left: 5px;
+     background-color: #d1e8f6;
+     border:1px solid #6fafa7;
+     font-size: 16px;
+ }
+
+QLineEdit#search_lineEdit:hover {
+    background-color: #bcddfa;
 }
-QLineEdit#search_lineEdit:hover{
-    background-color: #e1e4ff;
-}
+
 /**************content_widget*************/
 QLabel#prompt_label{
     color: #afafaf;

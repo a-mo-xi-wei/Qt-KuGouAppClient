@@ -135,6 +135,9 @@ void TitleWidget::initUi() {
     ui->search_lineEdit->addAction(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")),
                                    QLineEdit::LeadingPosition);
 
+    auto font = QFont("AaSongLiuKaiTi");
+    font.setWeight(QFont::Bold);
+    ui->search_lineEdit->setFont(font);
     //除非自定义QToolButton否则达不到 CSS 中 border-image 的效果
     //ui->listen_toolButton->setIcon(QIcon(":/Res/titlebar/listen-music-black.svg"));
 
