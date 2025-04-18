@@ -40,6 +40,13 @@ bool ElaToolTipPrivate::eventFilter(QObject* watched, QEvent* event)
         });
         break;
     }
+    case QEvent::HoverLeave:
+    {
+        QTimer::singleShot(_pHideDelayMsec, this, [=]() {
+            q->hide();
+        });
+        break;
+    }
     case QEvent::HoverMove:
     case QEvent::MouseMove:
     {

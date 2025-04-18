@@ -26,6 +26,8 @@ ElaToolTip::ElaToolTip(QWidget* parent)
     setAttribute(Qt::WA_TransparentForMouseEvents);
     setAttribute(Qt::WA_TranslucentBackground);
     setWindowFlags(Qt::Tool | Qt::FramelessWindowHint);
+    parent->setAttribute(Qt::WA_Hover, true);
+    this->setAttribute(Qt::WA_Hover, true);
 
     d->_toolTipText = new ElaText(this);
     d->_toolTipText->setWordWrap(false);
