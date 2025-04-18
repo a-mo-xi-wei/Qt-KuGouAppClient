@@ -1,7 +1,6 @@
 #ifndef GLTABWIDGET_H
 #define GLTABWIDGET_H
 
-#include "GLOptionMenu/GLOptionMenu.h"
 #include <QWidget>
 
 class IconBesideTextToolButton;
@@ -42,7 +41,6 @@ private:
     QLabel *m_songNameLab{};
     QLabel *m_singerLab{};
     IconBesideTextToolButton* m_modelBtn{};
-    GLOptionMenu* m_modelMenu{};
     QToolButton *m_playToolBtn{};
     QToolButton *m_nextToolBtn{};
     QToolButton *m_likeToolBtn{};

@@ -2,6 +2,7 @@
 #include "IconBesideTextToolButton.h"
 #include "MyMenu.h"
 #include "logger.hpp"
+#include "ElaMenu.h"
 
 #include <QFile>
 #include <QLabel>
@@ -23,9 +24,6 @@ GLTabWidget::GLTabWidget(QWidget *parent)
 {
     initUi();
     layoutUi();
-    auto menu = new MyMenu(MyMenu::MenuKind::GLOption,this);
-    m_modelMenu = menu->getMenu<GLOptionMenu>();
-    connect(m_modelMenu, &GLOptionMenu::getModel, this, &GLTabWidget::onGetModel);
 }
 
 void GLTabWidget::initUi() {
@@ -142,14 +140,32 @@ void GLTabWidget::layoutUi() {
 }
 
 void GLTabWidget::onModelBtnClicked() {
-    // 设置菜单的位置
     const QPoint globalPos = this->m_modelBtn->mapToGlobal(
-        QPoint(this->m_modelBtn->width() - m_modelMenu->width() + 9,
+        QPoint(this->m_modelBtn->width() - 45,
                this->m_modelBtn->height() - 5));
-    m_modelMenu->setFocusPolicy(Qt::NoFocus);
-    m_modelMenu->setAttribute(Qt::WA_TransparentForMouseEvents, false);
-    // 显示菜单
-    m_modelMenu->exec(globalPos);
+
+    ElaMenu* menu = new ElaMenu(this);
+    menu->setOpacity(0.85);
+    menu->setFixedWidth(60);
+    menu->setMenuItemHeight(22);
+    menu->setAttribute(Qt::WA_DeleteOnClose);
+
+    auto action1 = new QAction(menu);
+    action1->setText("发现");
+    connect(action1, &QAction::triggered,this,[this]{onGetModel("发现");});
+    auto action2 = new QAction(menu);
+    action2->setText("小众");
+    connect(action2, &QAction::triggered,this,[this]{onGetModel("小众");});
+    auto action3 = new QAction(menu);
+    action3->setText("30s");
+    connect(action3, &QAction::triggered,this,[this]{onGetModel("30s");});
+
+    menu->addAction(action1);
+    menu->addAction(action2);
+    menu->addAction(action3);
+
+    menu->popup(globalPos);
+
 }
 
 void GLTabWidget::onGetModel(const QString &model) {

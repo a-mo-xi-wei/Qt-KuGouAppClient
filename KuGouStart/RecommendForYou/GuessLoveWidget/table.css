@@ -51,3 +51,13 @@ QToolButton#modelBtn{
     background-color: rgba(0,0,0,30%);
     margin-left: 2px;
 }
+/*--------------------menu------------------------------*/
+QMenu::item {
+    text-align: center;
+    padding-left: 10px;
+    max-width: 40px;
+    border-radius: 5px;
+}
+QMenu::item:selected {
+    background-color: #F0F0F0;
+}
