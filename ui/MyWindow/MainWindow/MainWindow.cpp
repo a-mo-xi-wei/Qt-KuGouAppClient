@@ -22,6 +22,9 @@ MainWindow::MainWindow(QWidget *parent)
         emit fromTray_noVolume(flag);
     });
     connect(m_trayIcon, &MyTrayIcon::showAboutDialog, this, &MainWindow::onShowAboutDialog);
+
+    connect(m_trayIcon, &MyTrayIcon::exit, this, [this]{emit exit();});
+
     this->m_aboutDialog->hide();
 }
 
@@ -187,8 +190,11 @@ int MainWindow::getMouseRegion(const int& x, const int& y) const {
     return region_y * 10 + region_x;
 }
 
-void MainWindow::onShowAboutDialog(const bool flag) const {
+void MainWindow::onShowAboutDialog(const bool flag) {
     STREAM_INFO()<<"系统托盘图标点击: "<<(flag?"显示关于对话框":"隐藏关于对话框");
+    this->raise();
+    this->activateWindow();
+    this->showNormal();
     if (flag)this->m_aboutDialog->onShowDialog();
     else this->m_aboutDialog->onHideDialog();
 }

@@ -68,7 +68,7 @@ void MyTrayIcon::handleSysTrayMenu() {
         emit showAboutDialog(flag);
     });
 
-    connect(m_trayMenu, &TrayIconMenu::exit, this, [this] { this->m_pParent->close(); });
+    connect(m_trayMenu, &TrayIconMenu::exit, this, [this] { emit exit(); });
 }
 
 void MyTrayIcon::showMessage(const QString& title, const QString& content) {// 消息窗口标题 消息内容

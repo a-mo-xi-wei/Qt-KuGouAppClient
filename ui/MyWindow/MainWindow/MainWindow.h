@@ -80,8 +80,10 @@ private:
 signals:
     void fromTray_noVolume(const bool& flag);
 
+    void exit();
+
 public slots:
-    void onShowAboutDialog(bool flag = true)const;
+    void onShowAboutDialog(bool flag = true);
 
 public:
     MyTrayIcon* m_trayIcon{};//桌面图标

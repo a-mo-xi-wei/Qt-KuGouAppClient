@@ -103,9 +103,9 @@ private slots:
 
     void on_max_toolButton_clicked();
 
+public slots:
     void on_close_toolButton_clicked();
 
-public slots:
     void onLeftMenu_recommend_clicked();
 
     void onLeftMenu_musicRepository_clicked();
