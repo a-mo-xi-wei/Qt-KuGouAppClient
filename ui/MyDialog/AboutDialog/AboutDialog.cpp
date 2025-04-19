@@ -18,7 +18,6 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QRandomGenerator>
-#include <QStyleOption>
 
 AboutDialog::AboutDialog(QWidget *parent)
     : QWidget(parent)
@@ -32,7 +31,18 @@ AboutDialog::AboutDialog(QWidget *parent)
     this->setContentsMargins(0, 0, 0, 0);
 
     auto dialogWidget = new QWidget(this);
-    dialogWidget->setAttribute(Qt::WA_TranslucentBackground);
+    dialogWidget->setObjectName("dialogWidget");
+    dialogWidget->setStyleSheet(
+        "background-color: qlineargradient("
+        "spread:pad,"
+        "x1:0, y1:0, x2:0, y2:1," // 垂直渐变
+        "stop:0    rgba(105, 225, 255, 200),"   // 顶部颜色（匹配 m_topWidget 下边界）
+        "stop:0.1875 rgba(105, 225, 255, 200)," // 90/480=0.1875 处保持顶部颜色
+        "stop:0.1875 rgba(105, 225, 255, 200)," // descTitle 区域开始
+        "stop:0.9167 rgba(255, 182, 193, 200)," // 440/480=0.9167 处过渡到底部颜色
+        "stop:1    rgba(105, 225, 255, 200)"   // 底部颜色（匹配 bottomWidget）
+        ");"
+    );
     dialogWidget->setFixedSize(500,480);
 
     auto dialogLayout = new QVBoxLayout(this);
@@ -58,11 +68,12 @@ void AboutDialog::initDialog(QVBoxLayout *lay) {
     this->m_topWidget->setObjectName("topWidget");
     this->m_topWidget->setStyleSheet(QString("QWidget#topWidget{background-color: transparent;border-image: url(:/RectCover/Res/rectcover/music-rect-cover%1.jpg);}").
         arg(QRandomGenerator::global()->bounded(1,20)));
+    //两边弹簧，夹两个label
     auto topWidgetLayout = new QHBoxLayout(this->m_topWidget);
     topWidgetLayout->addStretch();
     auto lab1 = new QLabel(this->m_topWidget);
     lab1->setFixedSize(50,50);
-    lab1->setStyleSheet("border-image:url(':/Res/window/windowIcon.png')");
+    lab1->setStyleSheet("background-color: transparent;border-image:url(':/Res/window/windowIcon.png')");
     auto lab2 = new QLabel(this->m_topWidget);
     lab2->setFixedHeight(80);
     lab2->setText("我的酷狗");
@@ -73,9 +84,11 @@ void AboutDialog::initDialog(QVBoxLayout *lay) {
     topWidgetLayout->addWidget(lab1);
     topWidgetLayout->addWidget(lab2);
     topWidgetLayout->addStretch();
+    //填充内容
     QString url = "https://gitee.com/api/v5/repos/a-mo-xi-wei/KuGouApp";
     Async::runAsync(QThreadPool::globalInstance(), &AboutDialog::getGiteeProjectStar, this,url);
     ElaText* descTitle = new ElaText(m_dialog);
+    descTitle->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     initDescText(descTitle);
     connect(this, &AboutDialog::gotStars, this, [this, descTitle] {
         initDescText(descTitle);
@@ -90,44 +103,48 @@ void AboutDialog::initDialog(QVBoxLayout *lay) {
     descTitle->setFont(font);
 
     //底部两个按钮
-    auto goToGiteeButton = new RippleButton(m_dialog);
-    goToGiteeButton->setCursor(Qt::PointingHandCursor);
-    goToGiteeButton->setText("前往Gitee");
-    goToGiteeButton->setFillColor(QColor(QStringLiteral("#969696")));
-    goToGiteeButton->setStyleSheet("background: transparent; border: none;");
-    goToGiteeButton->setRadius(10);
-    goToGiteeButton->setSpeed(5);
-    this->m_font.setPointSize(13);
-    this->m_font.setBold(false);
-    goToGiteeButton->setFont(this->m_font);
-    auto closeButton = new RippleButton(m_dialog);
-    closeButton->setCursor(Qt::PointingHandCursor);
-    closeButton->setText("关闭");
-    closeButton->setFillColor(QColor(QStringLiteral("#FF0066")));
-    closeButton->setStyleSheet("background: transparent; border: none;");
-    closeButton->setRadius(10);
-    closeButton->setFont(this->m_font);
+    auto bottomWidget = new QWidget;
+    bottomWidget->setFixedHeight(40);
+    {
+        auto goToGiteeButton = new RippleButton;
+        auto closeButton = new RippleButton;
 
-    auto bottomWidget = new QWidget(this);
-    bottomWidget->setStyleSheet("background-color: qlineargradient(spread:pad,x1:0, y1:0,x2:0, y2:1,stop:0 rgba(255, 182, 193, 200), stop:1 rgba(105, 225, 255, 200));");
-    auto bottomHLay = new QHBoxLayout(bottomWidget);
-    bottomHLay->addSpacing(15);
-    bottomHLay->addWidget(goToGiteeButton);
-    bottomHLay->addStretch();
-    bottomHLay->addWidget(closeButton);
-    bottomHLay->addSpacing(15);
+        goToGiteeButton->setCursor(Qt::PointingHandCursor);
+        goToGiteeButton->setText("前往Gitee");
+        goToGiteeButton->setFillColor(QColor(QStringLiteral("#969696")));
+        goToGiteeButton->setStyleSheet("background: transparent; border: none;");
+        goToGiteeButton->setRadius(10);
+        goToGiteeButton->setSpeed(5);
+        this->m_font.setPointSize(13);
+        this->m_font.setBold(false);
+        goToGiteeButton->setFont(this->m_font);
 
+        closeButton->setCursor(Qt::PointingHandCursor);
+        closeButton->setText("关闭");
+        closeButton->setFillColor(QColor(QStringLiteral("#FF0066")));
+        closeButton->setStyleSheet("background: transparent; border: none;");
+        closeButton->setRadius(10);
+        closeButton->setFont(this->m_font);
+
+        bottomWidget->setStyleSheet("background-color: qlineargradient(spread:pad,x1:0, y1:0,x2:0, y2:1,stop:0 rgba(255, 182, 193, 200), stop:1 rgba(105, 225, 255, 200));");
+        auto bottomHLay = new QHBoxLayout(bottomWidget);
+        bottomHLay->addSpacing(15);
+        bottomHLay->addWidget(goToGiteeButton);
+        bottomHLay->addStretch();
+        bottomHLay->addWidget(closeButton);
+        bottomHLay->addSpacing(15);
+
+        connect(goToGiteeButton, &RippleButton::clicked, []() {
+            QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp"));
+        });
+        connect(closeButton, &RippleButton::pressed, m_dialog, &QtMaterialDialog::hideDialog);
+    }
     lay->addWidget(this->m_topWidget);
     lay->addWidget(descTitle);
-    lay->addStretch();
     lay->addWidget(bottomWidget);
-    lay->setAlignment(bottomHLay, Qt::AlignBottom);
+    //lay->setAlignment(bottomHLay, Qt::AlignBottom);
+    //lay->addLayout(bottomHLay);
 
-    closeButton->setMaximumWidth(150);
-    connect(goToGiteeButton, &RippleButton::clicked, []() {
-        QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp"));
-    });
-    connect(closeButton, &RippleButton::pressed, m_dialog, &QtMaterialDialog::hideDialog);
 }
 
 void AboutDialog::getGiteeProjectStar(const QString &url) {
