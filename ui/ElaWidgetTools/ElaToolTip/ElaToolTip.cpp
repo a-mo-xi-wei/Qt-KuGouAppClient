@@ -16,7 +16,7 @@ ElaToolTip::ElaToolTip(QWidget* parent)
     Q_D(ElaToolTip);
     d->q_ptr = this;
     d->_pBorderRadius = 5;
-    d->_pDisplayMsec = -1;
+    d->_pDisplayMsec = 2000;
     d->_pShowDelayMsec = 0;
     d->_pHideDelayMsec = 0;
     d->_pCustomWidget = nullptr;
