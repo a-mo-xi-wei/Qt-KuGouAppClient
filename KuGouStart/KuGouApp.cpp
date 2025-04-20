@@ -253,7 +253,7 @@ void KuGouApp::initPlayWidget() {
     MainWindow::setElaToolTip(ui->pre_toolButton, "上一首");
     MainWindow::setElaToolTip(ui->play_or_pause_toolButton, "播放/暂停");
     MainWindow::setElaToolTip(ui->next_toolButton, "下一首");
-    MainWindow::setElaToolTip(ui->volume_toolButton, "调节音量");
+    //MainWindow::setElaToolTip(ui->volume_toolButton, "调节音量");
     MainWindow::setElaToolTip(ui->stander_pushButton, "音质选择");
     MainWindow::setElaToolTip(ui->acoustics_pushButton, "音效");
     MainWindow::setElaToolTip(ui->erji_toolButton, "邀请好友一起听");

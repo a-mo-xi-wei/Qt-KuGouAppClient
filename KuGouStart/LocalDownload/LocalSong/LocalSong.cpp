@@ -322,7 +322,7 @@ void LocalSong::loadNextSong() {
     }
     else {
         if (this->m_isSorting)
-            this->m_sortOptMenu->btnClickAgain();
+            this->m_sortOptMenu->btnClickAgain();//新增歌曲，同时要符合当前排序
     }
 }
 
