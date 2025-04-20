@@ -22,6 +22,8 @@ public:
 
     void setOpacity(qreal opacity);
 
+    void setPreventHide(bool prevent);
+
     void setMenuItemHeight(int menuItemHeight);
 
     int getMenuItemHeight() const;
@@ -47,6 +49,8 @@ Q_SIGNALS:
 
 protected:
     void showEvent(QShowEvent *event) override;
+
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
     void paintEvent(QPaintEvent *event) override;
 };

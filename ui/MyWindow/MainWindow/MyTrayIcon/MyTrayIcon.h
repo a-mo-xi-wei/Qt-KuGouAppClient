@@ -5,9 +5,6 @@
 #ifndef MYTRAYICON_H
 #define MYTRAYICON_H
 
-#include "MyMenu.h"
-#include "TrayIconMenu/TrayIconMenu.h"
-
 #include <QSystemTrayIcon>
 #include <QMenu>
 
@@ -16,6 +13,8 @@
 #else
 #define MYWINDOW_EXPORT Q_DECL_IMPORT
 #endif
+
+class ElaMenu;
 
 class MYWINDOW_EXPORT MyTrayIcon final : public QSystemTrayIcon {
     Q_OBJECT
@@ -26,15 +25,13 @@ public:
 private:
     void initSysTray(); // 初始化托盘
 
-    void handleSysTrayMenu(); // 处理菜单信号
+    void initSysTrayMenu(); // 处理菜单信号
 
     void showMessage(const QString& title, const QString& content); // 显示消息框
 
     void flashingTrayIcon(const int& msec);
 
     void stopFlashingTrayIcon();
-
-    void getMenuPosition(const QPoint &pos);
 
 signals:
     void showTrayMessage(QString title = "Notice",QString content = "How about today ?"); // 触发显示系统托盘消息框
@@ -54,7 +51,7 @@ private slots:
 
 private:
     QWidget *m_pParent{}; // 父类，用于显示窗体
-    TrayIconMenu *m_trayMenu{}; // 菜单
+    ElaMenu *m_trayMenu{}; // 菜单
     //菜单位置
     QPoint m_menuPosition;
     // 托盘闪烁控制
@@ -66,7 +63,9 @@ private:
     // 闪烁定时器
     QTimer* m_flashTimer{};
     //关于 对话框 显示与否
-    bool    m_aboutDialogShow = false;
+    bool    m_flagDialogShow = false;
+    bool    m_flagVolume = false;
+
 };
 
 

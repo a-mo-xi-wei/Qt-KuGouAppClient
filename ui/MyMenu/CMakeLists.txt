@@ -23,8 +23,6 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/ListOptionMenu
         ${CMAKE_CURRENT_SOURCE_DIR}/SortOptionMenu
         ${CMAKE_CURRENT_SOURCE_DIR}/SongOptionMenu
-        ${CMAKE_CURRENT_SOURCE_DIR}/TitleOptionMenu
-        ${CMAKE_CURRENT_SOURCE_DIR}/GLOptionMenu
-        ${CMAKE_CURRENT_SOURCE_DIR}/TrayIconMenu)
+        ${CMAKE_CURRENT_SOURCE_DIR}/TitleOptionMenu)
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySpdlog)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySpdlog ElaWidgetTools)

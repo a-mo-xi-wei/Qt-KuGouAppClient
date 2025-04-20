@@ -42,6 +42,11 @@ void ElaMenu::setOpacity(qreal opacity) {
     setGraphicsEffect(opacityEffect);
 }
 
+void ElaMenu::setPreventHide(bool prevent) {
+    Q_D(ElaMenu);
+    d->m_preventHide = prevent;
+}
+
 void ElaMenu::setMenuItemHeight(int menuItemHeight)
 {
     Q_D(ElaMenu);
@@ -184,6 +189,17 @@ void ElaMenu::showEvent(QShowEvent* event)
     posAnimation->setEndValue(0);
     posAnimation->start(QAbstractAnimation::DeleteWhenStopped);
     QMenu::showEvent(event);
+}
+
+void ElaMenu::mouseReleaseEvent(QMouseEvent *event) {
+    Q_D(ElaMenu);
+    QAction *action = this->actionAt(event->pos());
+    if(action && d->m_preventHide) {
+        action->activate(QAction::Trigger);
+        d->m_preventHide = false; //重置回去
+        return;
+    }
+    QMenu::mouseReleaseEvent(event);
 }
 
 void ElaMenu::paintEvent(QPaintEvent* event)

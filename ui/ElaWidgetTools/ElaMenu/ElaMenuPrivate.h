@@ -26,6 +26,7 @@ private:
     bool _isCloseAnimation{false};
     QPoint _mousePressPoint;
     ElaMenuStyle *_menuStyle{nullptr};
+    bool m_preventHide = false;// 是否阻止隐藏
 };
 
 #endif // ELAMENUPRIVATE_H

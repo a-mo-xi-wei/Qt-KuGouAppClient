@@ -8,8 +8,6 @@
 #include "TitleOptionMenu/TitleOptionMenu.h"
 #include "ListOptionMenu/ListOptionMenu.h"
 #include "ListenOptionMenu/ListenOptionMenu.h"
-#include "GLOptionMenu/GLOptionMenu.h"
-#include "TrayIconMenu/TrayIconMenu.h"
 
 MyMenu::MyMenu(const MenuKind &kind, QWidget *parent)
     : QWidget(parent)
@@ -35,14 +33,6 @@ MyMenu::MyMenu(const MenuKind &kind, QWidget *parent)
         }
         case ListenOption: {
             this->m_menu = new ListenOptionMenu(this);
-            break;
-        }
-        case GLOption: {
-            this->m_menu = new GLOptionMenu(this);
-            break;
-        }
-        case TrayIcon: {
-            this->m_menu = new TrayIconMenu(this);
             break;
         }
         case None: break;

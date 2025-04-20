@@ -3,12 +3,13 @@
 //
 
 #include "MyTrayIcon.h"
+#include "ElaMenu.h"
 
+#include <QDesktopServices>
 #include <QGuiApplication>
 #include <QScreen>
 #include <QTimer>
-
-#pragma execution_character_set("utf-8")    // qt支持显示中文
+#include <QUrl>
 
 MyTrayIcon::MyTrayIcon(QWidget *parent)
     : QSystemTrayIcon(parent)
@@ -19,7 +20,7 @@ MyTrayIcon::MyTrayIcon(QWidget *parent)
 {
     initSysTray();		// 初始化托盘
 
-    handleSysTrayMenu();	// 处理菜单
+    initSysTrayMenu();	// 处理菜单
 
     this->show();		// 显示托盘
 
@@ -49,26 +50,46 @@ void MyTrayIcon::initSysTray() {
     connect(this, &MyTrayIcon::showTrayMessage, this, &MyTrayIcon::showMessage);
 }
 
-void MyTrayIcon::handleSysTrayMenu() {
-    auto menu = new MyMenu(MyMenu::MenuKind::TrayIcon,this->m_pParent);
+void MyTrayIcon::initSysTrayMenu() {
+    //auto menu = new MyMenu(MyMenu::MenuKind::TrayIcon,this->m_pParent);
 
-    this->m_trayMenu = menu->getMenu<TrayIconMenu>();
+    //this->m_trayMenu = menu->getMenu<TrayIconMenu>();
 
-    connect(m_trayMenu, &TrayIconMenu::openWindow, this, [this]{
+    this->m_trayMenu = new ElaMenu;
+    this->m_trayMenu->setOpacity(0.85);
+    this->m_trayMenu->setMenuItemHeight(27);
+    //this->m_trayMenu->setAttribute(Qt::WA_DeleteOnClose);
+    QAction* action = nullptr;
+
+    action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::ArrowsMaximize,tr("打开我的酷狗"));
+    connect(action, &QAction::triggered, this, [this]{
         m_pParent->activateWindow();
         m_pParent->showNormal();
     });
 
-    connect(m_trayMenu, &TrayIconMenu::noVolume,this,[this](const bool& flag) {
+    action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::Volume,tr("打开/关闭声音"));
+    connect(action, &QAction::triggered, this, [this]{
+        this->m_trayMenu->setPreventHide(true); // 阻止菜单关闭
         //qDebug()<<"MyTrayIcon 托盘图标点击: "<<(flag?"静音":"开启声音");
-        emit noVolume(flag);
+        this->m_flagVolume = !this->m_flagVolume;
+        emit noVolume(this->m_flagVolume);
     });
 
-    connect(m_trayMenu,&TrayIconMenu::showAboutDialog,this,[this](const bool& flag) {
-        emit showAboutDialog(flag);
+    action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::CircleInfo,tr("关于我的酷狗"));
+    connect(action,&QAction::triggered,this,[this] {
+        this->m_trayMenu->setPreventHide(true); // 阻止菜单关闭
+        //qDebug()<<"MyTrayIcon 托盘图标点击: "<<(flag?"关于我的酷狗":"关闭关于我的酷狗");
+        m_flagDialogShow = !m_flagDialogShow;
+        emit showAboutDialog(m_flagDialogShow);
     });
-
-    connect(m_trayMenu, &TrayIconMenu::exit, this, [this] { emit exit(); });
+    action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::LocationArrow,tr("前往我的酷狗"));
+    connect(action, &QAction::triggered, this, [this] {
+        QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp"));
+    });
+    action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::PowerOff,tr("退出我的酷狗"));
+    connect(action, &QAction::triggered, this, [this] { emit exit(); });
+    this->setContextMenu(m_trayMenu); // 可以选择设为托盘默认右键菜单
+    //this->m_trayMenu->popup(QCursor::pos());
 }
 
 void MyTrayIcon::showMessage(const QString& title, const QString& content) {// 消息窗口标题 消息内容
@@ -97,36 +118,6 @@ void MyTrayIcon::stopFlashingTrayIcon() {
         m_checkTimer->stop();
 }
 
-void MyTrayIcon::getMenuPosition(const QPoint &pos) {
-    this->m_menuPosition = pos;
-    // 获取屏幕的尺寸
-    const QScreen *screen = QGuiApplication::primaryScreen();
-    const QRect screenGeometry = screen->geometry();
-
-    // 计算菜单右侧的全局位置
-    //int menuLeftPos = pos.x() - m_menu->width();
-    const int menuRightPos = pos.x() + m_trayMenu->width();
-    const int menuBottomPos = pos.y() + m_trayMenu->height();
-    //int menuTopPos = pos.y() - m_menu->height();
-    // 若菜单左侧超出屏幕左侧 (不存在)
-    //if(menuLeftPos < 0) {
-    //    // 动态调整菜单位置，使其在屏幕内显示
-    //    m_menuPosition.setX(10);
-    //}
-    // 如果菜单右侧超出屏幕右侧
-    if (menuRightPos > screenGeometry.right()) {
-        // 动态调整菜单位置，使其在屏幕内显示
-        const int offset = menuRightPos - screenGeometry.right() + 5;
-        m_menuPosition.setX(pos.x() - offset);
-    }
-    // 如果菜单下侧超出屏幕下侧
-    if (menuBottomPos > screenGeometry.bottom()) {
-        // 动态调整菜单位置，使其在屏幕内显示
-        const int offset = menuBottomPos - screenGeometry.bottom() + 5;
-        m_menuPosition.setY(pos.y() - offset);
-    }
-}
-
 void MyTrayIcon::onIconActivated(QSystemTrayIcon::ActivationReason reason) {
     if (reason == QSystemTrayIcon::Trigger) {		// 点击触发
         m_pParent->activateWindow();
@@ -134,12 +125,10 @@ void MyTrayIcon::onIconActivated(QSystemTrayIcon::ActivationReason reason) {
         //emit showTrayMessage(); //测试成功
         //flashingTrayIcon(400); //测试成功
     }
-    else if (reason == QSystemTrayIcon::Context) {	// 右键触发
-        //m_trayMenu->exec(QCursor::pos());
-        getMenuPosition(QCursor::pos());
-        this->m_trayMenu->popup(this->m_menuPosition);
-        //this->m_trayMenu->show();
-    }
+    // else if (reason == QSystemTrayIcon::Context) {	// 右键触发
+    //     //m_trayMenu->exec(QCursor::pos());
+    //     activeSysTrayMenu();
+    // }
 }
 
 void MyTrayIcon::checkTrayIconHover() {

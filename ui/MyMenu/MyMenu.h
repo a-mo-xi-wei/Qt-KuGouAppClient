@@ -27,8 +27,6 @@ public:
         TitleOption,
         ListOption,
         ListenOption,
-        GLOption,
-        TrayIcon,
         None
     };
 
