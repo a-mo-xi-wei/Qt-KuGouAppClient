@@ -347,14 +347,16 @@ void TitleOptionMenu::initMenu() {
     auto a_helpFacebackAction = new QWidgetAction(this);
     {
         auto widget = new QWidget(this);
-        widget->setFixedWidth(350);
+        widget->setFixedWidth(360);
+        widget->setContentsMargins(0,0,0,0);
         auto layout = new QHBoxLayout(widget);
         layout->setContentsMargins(0, 0, 0, 0);
         layout->setSpacing(0);
         //前后两个按钮
         auto a_helpFacebackToolBtn = new MenuBtn(this);
         a_helpFacebackToolBtn->setObjectName("helpFacebackToolBtn");
-        a_helpFacebackToolBtn->setFixedSize(320, 37);
+        a_helpFacebackToolBtn->setStyleSheet("border-top-right-radius: 0px;border-bottom-right-radius: 0px;margin-right: 0;");
+        a_helpFacebackToolBtn->setFixedSize(325, 37);
         a_helpFacebackToolBtn->setIconSize(QSize(20, 20));
         a_helpFacebackToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/helpFaceback-black.svg")));
         a_helpFacebackToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/helpFaceback-black.svg")),
@@ -362,7 +364,8 @@ void TitleOptionMenu::initMenu() {
         a_helpFacebackToolBtn->setText(QStringLiteral("   帮助与意见反馈"));
         auto a_helpRightBtn = new MenuBtn(this);
         a_helpRightBtn->setObjectName("helpRightBtn");
-        a_helpRightBtn->setFixedSize(40, 37);
+        a_helpRightBtn->setStyleSheet("border-top-left-radius: 0px;border-bottom-left-radius: 0px;margin-left: 0;");
+        a_helpRightBtn->setFixedSize(35, 37);
         a_helpRightBtn->setToolButtonStyle(Qt::ToolButtonIconOnly);
         a_helpRightBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")));
         a_helpRightBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")),

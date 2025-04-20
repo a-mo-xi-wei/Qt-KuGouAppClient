@@ -5,7 +5,7 @@ QToolButton{
     padding-left: 10px;
 }
 QToolButton:hover{
-    background-color: #e6edfe;
+    background-color: rgb(229, 232, 232);
     color: #268cff;
 }
 QToolButton:checked{
@@ -18,7 +18,7 @@ QToolButton#wallPaperBtn,QToolButton#phonePlayBtn,QToolButton#uploadToDeviceBtn,
     padding: 5px;
 }
 QToolButton#wallPaperBtn:hover,QToolButton#phonePlayBtn:hover,QToolButton#uploadToDeviceBtn:hover,QToolButton#earnCoinBtn:hover{
-    background-color: #eff2f7;
+    background-color: rgb(229, 232, 232);
     color: #268cff;
 }
 
@@ -27,7 +27,7 @@ QWidget{
     background-color: rgba(255,255,255,0);
 }
 QWidget:hover{
-    background-color: #e6edfe;
+    background-color: rgb(229, 232, 232);
     color: #268cff;
 }
 QWidget#listWidget{
@@ -38,12 +38,12 @@ QWidget#listWidget:hover {
 }
 QMenu{
     border-radius: 9px;
-    background-color: #f6f9ff;
+    background-color: rgba(240, 250, 255, 0.96);
     margin: 4px;
     padding: 10px 5px 10px 5px;
 }
 QMenu::separator { /* 菜单子控件separator，定义菜单项之间的分隔线 */
     height: 1px;
-    background: #eeeeee;
+    background: #dedede;
     margin: 2px; /* 距离菜单边界2px */
 }

@@ -18,6 +18,7 @@ BaseMenu::BaseMenu(QWidget *parent)
 {
     //背景透明
     this->setAttribute(Qt::WA_TranslucentBackground, true);
+    this->setAttribute(Qt::WA_Hover, true);
     this->setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     this->setMouseTracking(true);
     {

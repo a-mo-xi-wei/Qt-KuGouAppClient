@@ -69,18 +69,22 @@ void SongOptionMenu::initMenu() {
     //添加到(子目录)
     auto a_addToAction = new QWidgetAction(this); {
         auto widget = new QWidget(this);
+        widget->setContentsMargins(0,0,0,0);
         auto layout = new QHBoxLayout(widget);
         layout->setContentsMargins(0, 0, 0, 0);
         layout->setSpacing(0);
         //前后两个按钮
         auto a_addToToolBtn = new MenuBtn(widget);
         a_addToToolBtn->setObjectName("addToToolBtn");
+        a_addToToolBtn->setStyleSheet("border-top-right-radius: 0px;border-bottom-right-radius: 0px;margin-right: 0;");
         a_addToToolBtn->setFixedSize(145, 35);
         a_addToToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-black.svg")));
         a_addToToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-black.svg")),
                                  QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-blue.svg")));
         a_addToToolBtn->setText(QStringLiteral("  添加到"));
         auto a_addToRightBtn = new MenuBtn(widget);
+        a_addToRightBtn->setObjectName("addToRightBtn");
+        a_addToRightBtn->setStyleSheet("border-top-left-radius: 0px;border-bottom-left-radius: 0px;margin-left: 0;");
         a_addToRightBtn->setFixedSize(35, 35);
         a_addToRightBtn->setToolButtonStyle(Qt::ToolButtonIconOnly);
         a_addToRightBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")));
@@ -415,18 +419,22 @@ void SongOptionMenu::initMenu() {
     //搜索按钮(子目录)
     auto a_searchAction = new QWidgetAction(this); {
         auto widget = new QWidget(this);
+        widget->setContentsMargins(0,0,0,0);
         auto layout = new QHBoxLayout(widget);
         layout->setContentsMargins(0, 0, 0, 0);
         layout->setSpacing(0);
         //前后两个按钮
         auto a_searchToolBtn = new MenuBtn(widget);
         a_searchToolBtn->setObjectName("searchToolBtn");
+        a_searchToolBtn->setStyleSheet("border-top-right-radius: 0px;border-bottom-right-radius: 0px;margin-right: 0;");
         a_searchToolBtn->setFixedSize(145, 35);
         a_searchToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
         a_searchToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")),
                                   QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-blue.svg")));
         a_searchToolBtn->setText(QStringLiteral("  搜索"));
         auto a_addToRightBtn = new MenuBtn(widget);
+        a_addToRightBtn->setObjectName("addToRightBtn");
+        a_addToRightBtn->setStyleSheet("border-top-left-radius: 0px;border-bottom-left-radius: 0px;margin-left: 0;");
         a_addToRightBtn->setFixedSize(35, 35);
         a_addToRightBtn->setToolButtonStyle(Qt::ToolButtonIconOnly);
         a_addToRightBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")));
