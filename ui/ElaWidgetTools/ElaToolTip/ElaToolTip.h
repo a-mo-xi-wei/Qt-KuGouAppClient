@@ -20,10 +20,12 @@ public:
     explicit ElaToolTip(QWidget* parent = nullptr);
     ~ElaToolTip() override;
 
+    void setToolTipShowAlways();
+
     void updatePos();
 
 protected:
-    virtual void paintEvent(QPaintEvent* event);
+    void paintEvent(QPaintEvent* event) override;
 };
 
 #endif // ELATOOLTIP_H

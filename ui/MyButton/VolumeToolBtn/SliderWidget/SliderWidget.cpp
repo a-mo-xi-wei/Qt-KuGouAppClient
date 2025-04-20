@@ -1,10 +1,15 @@
 #include "SliderWidget.h"
+#include "ElaToolTip.h"
 
 SliderWidget::SliderWidget(QWidget *parent,Qt::Orientation orientation)
     : QSlider(orientation, parent)
-    ,m_currentValue(20)
+    , m_currentValue(20)
 {
     this->setCursor(Qt::PointingHandCursor);
+    this->setMouseTracking(true); // 启用悬停追踪
+    this->setAttribute(Qt::WA_Hover);
+    this->m_sliderToolTip = new ElaToolTip(this);
+    this->m_sliderToolTip->setToolTipShowAlways();
 }
 
 const int SliderWidget::getValue() const {
@@ -46,25 +51,26 @@ void SliderWidget::mousePressEvent(QMouseEvent *event) {
 }
 
 void SliderWidget::mouseMoveEvent(QMouseEvent *event) {
-    //qDebug()<<"垂直";
-    if(this->m_isPressing) {
-        // 获取鼠标移动相对于滑动条的位置
-        const auto pos = event->position().y();
-        // 获取滑动条的可用长度
-        const auto sliderLength = this->height();
-        // 将鼠标位置转换为滑动条值
-        double percentage = static_cast<double>(pos) / sliderLength;
-        percentage = 1 - percentage;
-        // 根据百分比计算出滑动条的新值
-        this->m_currentValue = this->m_minValue + static_cast<int>(percentage * (this->m_maxValue - this->m_minValue));
-        // 设置滑动条的新值
-        //判断区间
-        this->m_currentValue = this->m_currentValue >= 0 ? this->m_currentValue : 0;
-        this->m_currentValue = this->m_currentValue <= this->m_maxValue ? this->m_currentValue : this->m_maxValue;
+    // 获取鼠标移动相对于滑动条的位置
+    const auto pos = event->position().y();
+    // 获取滑动条的可用长度
+    const auto sliderLength = this->height();
+    // 将鼠标位置转换为滑动条值
+    double percentage = static_cast<double>(pos) / sliderLength;
+    percentage = 1 - percentage;
+    // 根据百分比计算出滑动条的新值
+    this->m_currentValue = this->m_minValue + static_cast<int>(percentage * (this->m_maxValue - this->m_minValue));
+    // 设置滑动条的新值
+    //判断区间
+    this->m_currentValue = this->m_currentValue >= 0 ? this->m_currentValue : 0;
+    this->m_currentValue = this->m_currentValue <= this->m_maxValue ? this->m_currentValue : this->m_maxValue;
 
+    //qDebug()<<"---------------m_currentValue : "<<m_currentValue;
+
+    this->m_sliderToolTip->setToolTip(QString::number(m_currentValue) + "%");
+    if(this->m_isPressing) {
         this->setValue(this->m_currentValue);
         emit noVolume(this->m_currentValue == 0);
-        //qDebug()<<"m_currentValue : "<<this->m_currentValue;
     }
     QSlider::mouseMoveEvent(event);
 }

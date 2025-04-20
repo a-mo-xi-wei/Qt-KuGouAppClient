@@ -52,9 +52,11 @@ signals:
 
 private:
     bool m_isNoVolume = false;
-    std::unique_ptr<MyWidget> m_volumeWidget;
-    std::unique_ptr<QLabel> m_volumeLab;
-    std::unique_ptr<SliderWidget> m_volumeSlider;
+
+    std::unique_ptr<MyWidget>       m_volumeWidget;
+    std::unique_ptr<QLabel>         m_volumeLab;
+    std::unique_ptr<SliderWidget>   m_volumeSlider;
+
     QVBoxLayout *m_vBoxLayout{};
     QPoint m_volumePosition;
     QWidget *m_volumeParent{};

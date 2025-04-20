@@ -11,6 +11,8 @@
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
+class ElaToolTip;
+
 /*此处重写的QWidget的唯一目的就是作为中转传递信号。。。。*/
 class MyWidget : public QWidget {
     Q_OBJECT
@@ -102,6 +104,7 @@ private:
     int m_minValue;
     int m_maxValue;
     int m_currentValue;
+    ElaToolTip* m_sliderToolTip;
 
     MyWidget *m_parent;
 };

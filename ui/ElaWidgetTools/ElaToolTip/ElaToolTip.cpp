@@ -48,6 +48,11 @@ ElaToolTip::~ElaToolTip()
 {
 }
 
+void ElaToolTip::setToolTipShowAlways() {
+    Q_D(ElaToolTip);
+    d->_pDisplayMsec = -1;
+}
+
 void ElaToolTip::setToolTip(QString toolTip)
 {
     Q_D(ElaToolTip);

@@ -1,9 +1,10 @@
 #include "VolumeToolBtn.h"
+#include "ElaToolTip.h"
 
 #include <QCoreApplication>
-#include<QTimer>
-#include<QHBoxLayout>
-#include<QLabel>
+#include <QTimer>
+#include <QHBoxLayout>
+#include <QLabel>
 
 VolumeToolBtn::VolumeToolBtn(QWidget *parent)
     : QToolButton(parent)
@@ -54,7 +55,7 @@ void VolumeToolBtn::initVolumeWidget() {
     this->m_volumeSlider->setFixedSize(40,135);
     this->m_volumeSlider->setMaximum(100);
     this->m_volumeSlider->setValue(20);
-    this->m_volumeSlider->setToolTip(QStringLiteral("调节音量"));
+    //this->m_volumeSlider->setToolTip(QStringLiteral("调节音量"));
     this->m_volumeSlider->setContentsMargins(0,20,0,10);
     this->m_volumeLab->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
     this->m_volumeLab->setContentsMargins(0,0,0,0);

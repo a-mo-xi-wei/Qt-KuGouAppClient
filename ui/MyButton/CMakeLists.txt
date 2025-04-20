@@ -44,4 +44,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/VolumeToolBtn
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core MySpdlog)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core MySpdlog ElaWidgetTools)
