@@ -94,6 +94,7 @@ public:
     QPoint point_offset;
     //关于我的酷狗dialog
     std::unique_ptr<AboutDialog> m_aboutDialog{};
+    bool m_showDialog = false;
 };
 
 

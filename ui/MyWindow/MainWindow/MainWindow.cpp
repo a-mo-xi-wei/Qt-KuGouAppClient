@@ -26,6 +26,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_trayIcon, &MyTrayIcon::exit, this, [this]{emit exit();});
 
     this->m_aboutDialog->hide();
+    connect(m_aboutDialog.get(), &AboutDialog::showDialog, this, [this](const bool& flag) {
+        this->m_showDialog = flag;
+    });
 }
 
 void MainWindow::paintEvent(QPaintEvent *event) {
@@ -195,6 +198,12 @@ void MainWindow::onShowAboutDialog(const bool flag) {
     this->raise();
     this->activateWindow();
     this->showNormal();
-    if (flag)this->m_aboutDialog->onShowDialog();
-    else this->m_aboutDialog->onHideDialog();
+    if (!this->m_showDialog) {
+        this->m_aboutDialog->onShowDialog();
+        this->m_showDialog = true;
+    }
+    else {
+        this->m_aboutDialog->onHideDialog();
+        this->m_showDialog = false;
+    }
 }

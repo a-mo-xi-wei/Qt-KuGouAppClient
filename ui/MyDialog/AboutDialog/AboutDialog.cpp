@@ -137,7 +137,7 @@ void AboutDialog::initDialog(QVBoxLayout *lay) {
         connect(goToGiteeButton, &RippleButton::clicked, []() {
             QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp"));
         });
-        connect(closeButton, &RippleButton::pressed, m_dialog, &QtMaterialDialog::hideDialog);
+        connect(closeButton, &RippleButton::pressed, this, &AboutDialog::onHideDialog);
     }
     lay->addWidget(this->m_topWidget);
     lay->addWidget(descTitle);
@@ -187,8 +187,10 @@ void AboutDialog::onShowDialog() {
     this->m_topWidget->setStyleSheet(QString("QWidget#topWidget{background-color: transparent;border-image: url(:/RectCover/Res/rectcover/music-rect-cover%1.jpg);}").
         arg(QRandomGenerator::global()->bounded(1,20)));
     m_dialog->showDialog();
+    emit showDialog(true);
 }
 
 void AboutDialog::onHideDialog() {
     m_dialog->hideDialog();
+    emit showDialog(false);
 }

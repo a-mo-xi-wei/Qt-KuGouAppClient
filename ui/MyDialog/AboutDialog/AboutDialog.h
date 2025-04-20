@@ -39,6 +39,8 @@ public slots:
 signals:
     void gotStars();
 
+    void showDialog(const bool& flag);
+
 private:
     QtMaterialDialog *const m_dialog;
     QWidget *m_topWidget{};
