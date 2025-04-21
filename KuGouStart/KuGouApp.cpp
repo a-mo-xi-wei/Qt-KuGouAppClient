@@ -412,6 +412,13 @@ int KuGouApp::getCurrentIndex(int index) {
 void KuGouApp::update_cover_singer_song_HLayout() {
     QString song_name;
     QString singer;
+    ui->cover_label->setStyleSheet(R"(QLabel#cover_label{
+            border-radius:8px;
+            border-image: none;
+        }
+        QLabel#cover_label:hover{
+            border-image: none;
+    })");
     if (this->m_isOrderPlay) {
         ui->cover_label->setPixmap(roundedPixmap(this->m_songInfoVector[this->m_orderIndex].cover,
                                                  ui->cover_label->size(), 8));
