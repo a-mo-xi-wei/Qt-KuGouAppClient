@@ -255,7 +255,6 @@ Logger::Helper::~Helper()
     catch(std::exception&) {
         // you shouldn't throw exceptions from a sink
         Q_ASSERT(!"exception in logger helper destructor");
-        throw;
     }
 }
 
