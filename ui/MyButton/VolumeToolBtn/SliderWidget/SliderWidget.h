@@ -94,11 +94,14 @@ protected:
 public slots:
     void onNoVolume(bool flag);
 
+private slots:
+    void handleDelta(const int& delta);
+
 signals:
     void noVolume(bool flag);
 
 public:
-    bool m_isPressing;
+    bool m_isPressing = false;
 
 private:
     int m_minValue;
