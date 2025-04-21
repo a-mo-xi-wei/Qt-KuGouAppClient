@@ -1,5 +1,36 @@
 cmake_minimum_required(VERSION 3.10)
 
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
+    # 通用优化标志（-O2/O3）
+    add_compile_options(-O3)
+
+    # 针对特定编译器的优化
+    if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+        add_compile_options(-march=native)  # 启用本地 CPU 架构优化
+    elseif(MSVC)
+        add_compile_options(/O2 /fp:fast)   # MSVC 的优化选项
+    endif()
+
+    add_compile_options(-g0)                   # 禁用调试符号
+    set(CMAKE_EXE_LINKER_FLAGS_RELEASE "-s")   # 去除符号表（GCC/Clang）
+endif()
+
+# 编译器特定设置
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    add_compile_options(-flto)
+    add_link_options(-flto)
+elseif(MSVC)
+    add_compile_options(/GL)     # 全程序优化
+    add_link_options(/LTCG)      # 链接时代码生成
+    # 启用函数/数据段分离 + 垃圾回收
+    add_compile_options(-ffunction-sections -fdata-sections)
+    add_link_options(-Wl,--gc-sections)
+    add_link_options(/OPT:REF)   # 移除未使用的函数和数据
+endif()
+
+# 隐藏所有符号，仅显式导出的符号可见（减少动态库体积）
+add_compile_options(-fvisibility=hidden)
+
 project(KuGouApp VERSION 1.0 LANGUAGES CXX)
 
 # 全局默认设定：可执行文件和 DLL 到 bin/, 静态库和导入库（.dll.a）到 lib/

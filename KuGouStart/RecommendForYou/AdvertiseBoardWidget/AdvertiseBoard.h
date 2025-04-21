@@ -1,67 +1,30 @@
 #ifndef ADVERTISEBOARD_H
 #define ADVERTISEBOARD_H
 
-#include<QLabel>
+#include <QLabel>
+#include <QList>
 
-class QPixmap;
 class QTimer;
 
-class MyLLabel : public QLabel {
+class NavButton : public QLabel {
     Q_OBJECT
 
 public:
-    MyLLabel(QWidget *parent = nullptr) : QLabel(parent) {
-        setMouseTracking(true);
-        setPixmap(QPixmap(QStringLiteral(":/Res/window/left.svg"))); // 悬停时的图片
-    }
+    NavButton(const QString &normalImage, const QString &hoverImage, QWidget *parent = nullptr);
 
 signals:
     void clicked();
 
 protected:
-    void enterEvent(QEnterEvent *event) override {
-        setPixmap(QPixmap(QStringLiteral(":/Res/window/left-pink.svg"))); // 悬停时的图片
-        QLabel::enterEvent(event);
-    }
+    void enterEvent(QEnterEvent *event) override;
 
-    void leaveEvent(QEvent *event) override {
-        setPixmap(QPixmap(QStringLiteral(":/Res/window/left.svg"))); // 悬停时的图片
-        QLabel::leaveEvent(event);
-    }
+    void leaveEvent(QEvent *event) override;
 
-    void mousePressEvent(QMouseEvent *event) override {
-        emit clicked();
-        QLabel::mousePressEvent(event);
-    }
-};
+    void mousePressEvent(QMouseEvent *event) override;
 
-class MyRLabel : public QLabel {
-    Q_OBJECT
-
-public:
-    MyRLabel(QWidget *parent = nullptr) : QLabel(parent) {
-        setMouseTracking(true);
-        setPixmap(QPixmap(QStringLiteral(":/Res/window/right.svg"))); // 悬停时的图片
-    }
-
-signals:
-    void clicked();
-
-protected:
-    void enterEvent(QEnterEvent *event) override {
-        setPixmap(QPixmap(QStringLiteral(":/Res/window/right-pink.svg"))); // 悬停时的图片
-        QLabel::enterEvent(event);
-    }
-
-    void leaveEvent(QEvent *event) override {
-        setPixmap(QPixmap(QStringLiteral(":/Res/window/right.svg"))); // 悬停时的图片
-        QLabel::leaveEvent(event);
-    }
-
-    void mousePressEvent(QMouseEvent *event) override {
-        emit clicked();
-        QLabel::mousePressEvent(event);
-    }
+private:
+    QPixmap m_normal;
+    QPixmap m_hover;
 };
 
 class AdvertiseBoard : public QWidget {
@@ -70,12 +33,13 @@ class AdvertiseBoard : public QWidget {
 public:
     explicit AdvertiseBoard(QWidget *parent = nullptr);
 
-    ~AdvertiseBoard() override;
+    ~AdvertiseBoard() override = default;
 
-public:
     void addPoster(const QPixmap &posterPix);
 
-    void updateLabPosition();
+    void setAspectRatio(double ratio);
+
+    void setAutoPlayInterval(int ms);
 
 protected:
     void paintEvent(QPaintEvent *ev) override;
@@ -87,11 +51,21 @@ protected:
     void leaveEvent(QEvent *ev) override;
 
 private:
-    QList<QPixmap *> m_posters;
-    MyLLabel *m_leftLab{};
-    MyRLabel *m_rightLab{};
-    QTimer *m_timer{};
-};
+    void updateButtonPosition();
 
+    void calculateDotPositions(QList<QPoint> &centers, int &totalWidth);
+
+    QList<QPixmap> m_posters;
+    NavButton *m_leftBtn;
+    NavButton *m_rightBtn;
+    QTimer *m_timer;
+    int m_currentIndex = 0;
+    double m_aspectRatio = 2.0;
+
+    // 圆点样式常量
+    static constexpr int DOT_RADIUS = 4;
+    static constexpr int DOT_SPACING = 8;
+    static constexpr int ACTIVE_DOT_EXTRA = 2;
+};
 
 #endif // ADVERTISEBOARD_H
