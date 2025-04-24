@@ -117,7 +117,7 @@ flowchart TD
 
 ```
 
-![核心架构](image-show/architecture.png)]
+<!-- ![核心架构](image-show/architecture.png)] -->
 
 ## 🛠️ 技术全景图
 ### 1.为你推荐界面
