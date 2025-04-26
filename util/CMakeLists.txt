@@ -11,6 +11,9 @@ add_subdirectory(MySpdlog)
 #QsLog日志模块
 add_subdirectory(MyQsLog)
 
+#播放器核心模块
+add_subdirectory(MyMusicPlayer)
+
 #JWT模块
 add_subdirectory(SJwt)
 
