@@ -64,7 +64,7 @@ private:
 
     QString _curl_https = "https://api.siliconflow.cn/v1/chat/completions";
     QString _model = "deepseek-ai/DeepSeek-V3";
-    QString _api_key = "sk-nfryarnkivaypbbtbzttkpboxcsfxixxqquyasiuuvdclihi";//填入自己的硅基流动的API,参考 https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#%E4%BB%8B%E7%BB%8D
+    QString _api_key = "Your API Key";//填入自己的硅基流动的API,参考 https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#%E4%BB%8B%E7%BB%8D
     QString _read_text;
 
     QByteArray m_buffer; // 用于累积接收的数据
