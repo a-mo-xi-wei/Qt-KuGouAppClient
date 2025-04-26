@@ -3,7 +3,7 @@
 
 SliderWidget::SliderWidget(QWidget *parent,Qt::Orientation orientation)
     : QSlider(orientation, parent)
-    , m_currentValue(20)
+    , m_currentValue(30)
 {
     this->setCursor(Qt::PointingHandCursor);
     this->setMouseTracking(true); // 启用悬停追踪

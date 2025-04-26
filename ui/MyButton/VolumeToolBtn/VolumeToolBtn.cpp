@@ -54,7 +54,7 @@ void VolumeToolBtn::initVolumeWidget() {
     this->m_volumeSlider->setOrientation(Qt::Vertical);
     this->m_volumeSlider->setFixedSize(40,135);
     this->m_volumeSlider->setMaximum(100);
-    this->m_volumeSlider->setValue(20);
+    this->m_volumeSlider->setValue(30);
     //this->m_volumeSlider->setToolTip(QStringLiteral("调节音量"));
     this->m_volumeSlider->setContentsMargins(0,20,0,10);
     this->m_volumeLab->setAlignment(Qt::AlignHCenter | Qt::AlignTop);

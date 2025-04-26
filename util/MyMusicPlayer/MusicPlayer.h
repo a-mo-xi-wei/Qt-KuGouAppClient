@@ -24,6 +24,7 @@ extern "C"
 #define SDL_MAIN_HANDLED  // 阻止SDL自动重定义main
 #include "SDL2/SDL.h"
 }
+
 #include <windows.h>  // for Sleep
 #else
 //Linux...
@@ -61,8 +62,7 @@ typedef struct PacketQueue {
     SDL_mutex *mutex;
     SDL_cond *cond;
 
-    void clear()
-    {
+    void clear() {
         first_pkt = nullptr;
         last_pkt = nullptr;
         mutex = nullptr;
@@ -73,11 +73,12 @@ typedef struct PacketQueue {
 
 
 class PlayThread;
-typedef struct{
-    AVFormatContext* fct; //格式上下文
 
-    AVFrame *wanted_frame;//音频目标帧
-    AVCodecContext *acct;//音频解码上下文
+typedef struct {
+    AVFormatContext *fct; //格式上下文
+
+    AVFrame *wanted_frame; //音频目标帧
+    AVCodecContext *acct; //音频解码上下文
     AVStream *aStream;
     AVStream *vStream;
     PacketQueue audioq; //音频队列
@@ -85,7 +86,7 @@ typedef struct{
     double audio_clock; //储存毫秒时间
     uint8_t volume;
 
-    PlayThread* playThread;
+    PlayThread *playThread;
 
     void clear() //仅仅是清空本结构内容，不负责清空堆栈中的内存
     {
@@ -100,62 +101,64 @@ typedef struct{
         //volume = 20;  音量由外界负责设置，这里不能每次播放都重置
         playThread = nullptr;
     }
-
-}mediaState;
+} mediaState;
 
 
 //播放音乐使用的线程
-class PlayThread: public QThread
-{
+class PlayThread : public QThread {
     Q_OBJECT
+
 public:
-    PlayThread(QObject* parent = nullptr):QThread(parent) {bIsDeviceInit = false;}
+    PlayThread(QObject *parent = nullptr): QThread(parent) { bIsDeviceInit = false; }
 
 protected:
     void run() override;
 
 public:
-    void setAGStatus(AudioGenStatus status);	//设置音频获取方式的状态，结束播放时需要设置 AGS_FINISH 状态来退出播放线程中的循环
-    AudioGenStatus getAGStatus() const;				//获得音频产生方式状态
+    void setAGStatus(AudioGenStatus status); //设置音频获取方式的状态，结束播放时需要设置 AGS_FINISH 状态来退出播放线程中的循环
+    AudioGenStatus getAGStatus() const; //获得音频产生方式状态
 
     int getVolume() const;
+
     void setVolume(int value);
 
-    int getMsDuration() const;//获得毫秒为度量的总长度
+    int getMsDuration() const; //获得毫秒为度量的总长度
     int getCurrentTime() const; //获得当前毫秒时间
 
-    bool getIsDeviceInit() const;//实现互斥访问 isDeviceInit 的接口
+    bool getIsDeviceInit() const; //实现互斥访问 isDeviceInit 的接口
 
     void setMusicPath(QString path);
 
     void seekToPos(quint64 pos);
 
 signals:
-    void audioPlay();               //播放
-    void audioPause();              //暂停
+    void audioPlay(); //播放
+    void audioPause(); //暂停
     void audioFinish(bool isEndByForce);
-    void volumeChanged(uint8_t);    //音量发生改变
-    void durationChanged(qint64);   //总长发生改变（单位 微秒 10e-6）
+
+    void volumeChanged(uint8_t); //音量发生改变
+    void durationChanged(qint64); //总长发生改变（单位 微秒 10e-6）
     void errorOccur(int errorCode, QString errorMessage);
 
-    void albumFound(QString);       //发现信息
+    void albumFound(QString); //发现信息
     void artistFound(QString);
+
     void titleFound(QString);
+
     void pictureFound(QPixmap);
 
-
 public:
-    void playDevice();                  //启动播放设备
+    void playDevice(); //启动播放设备
 
-    void pauseDevice();                 //暂停播放设备
+    void pauseDevice(); //暂停播放设备
 
-    SDL_AudioStatus GetDeviceStatus();  //获得设备状态
+    SDL_AudioStatus GetDeviceStatus(); //获得设备状态
 
 private:
     //SDL 模块需要的回调函数，用于填充需要的音频数据
-    static void fillAudio(void *udata,Uint8 *stream,int len);
+    static void fillAudio(void *udata, Uint8 *stream, int len);
 
-    int audio_decode_frame(mediaState* MS, uint8_t* audio_buf);
+    int audio_decode_frame(mediaState *MS, uint8_t *audio_buf);
 
     bool initDeviceAndFfmpegContext();  //尝试初始化播放设备 和 ffmpeg 上下文
 
@@ -164,6 +167,7 @@ private:
     void clearContextAndCloseDevice();  //清空上下文并关闭设备
 
     void ResetToInitAll();              //重置以初始化所有状态
+
     void ReleaseAll();                  //释放所有可能分配的内存
 
 private:
@@ -194,9 +198,11 @@ private:
     int out_buffer_size;
 
 private:
-
     /*duration with now playing the media */
-    inline qint64 getDuration() const{ if(m_MS.fct)return m_MS.fct->duration;return 0;}
+    inline qint64 getDuration() const {
+        if (m_MS.fct)return m_MS.fct->duration;
+        return 0;
+    }
 
 
     mediaState m_MS;                    //保存音频相关的上下文状态
@@ -220,8 +226,7 @@ private:
 
 
 //音乐播放器
-class MusicPlayer :public QObject
-{
+class MusicPlayer : public QObject {
     Q_OBJECT
 
 public:
@@ -232,16 +237,21 @@ public:
         PausedState
     };
 
-    explicit MusicPlayer(QObject* parent = nullptr);
-    ~MusicPlayer() override ;
+    explicit MusicPlayer(QObject *parent = nullptr);
+
+    ~MusicPlayer() override;
 
     void setMedia(const QString &path);
+
     QString getMusicPath();
 
     //音乐文件信息
     QString getTitle();
+
     QString getArtist();
+
     QString getAlbum();
+
     QPixmap getPicture();
 
 signals:
@@ -263,34 +273,42 @@ signals:
     //      emit errorOccur(6,QString(tr("无法初始化播放设备模块 SDL - %s.")).arg(errorString));
     //      emit errorOccur(7,tr("播放设备模块 SDL 无法打开指定音频数据"));
 
-    void sig_playThreadFinished();	//播放线程完全停止退出
+    void sig_playThreadFinished(); //播放线程完全停止退出
 
-    void albumFound(QString);       //发现信息
+    void albumFound(QString); //发现信息
+
     void artistFound(QString);
+
     void titleFound(QString);
+
     void pictureFound(QPixmap);
 
 public slots:
     //播放控制
-    void reload();                   //stop() 并 play();
+    void reload(); //stop() 并 play();
     void play();
+
     void pause() const;
+
     void stop();
+
     void seek(quint64 pos) const;          //跳到时间点播放（单位 毫秒）
     void forwordSeek(quint64 step) const;  //往后跳（单位 毫秒）
     void backwardSeek(quint64 step) const; //往回跳（单位 毫秒）
 
-    void setVolume(int volume);  //音量大小范围 0-128
+    void setVolume(int volume); //音量大小范围 0-100
     int getVolume() const;
-    quint64 duration() const;  //获得当总时长（单位 毫秒）
-    quint64 position() const;  //获得当总位置（单位 毫秒）
 
-    void setNotifyInterval(int msec);   //设置通知间隔（歌曲位置进度）
+    quint64 duration() const; //获得当总时长（单位 毫秒）
+    quint64 position() const; //获得当总位置（单位 毫秒）
+
+    void setNotifyInterval(int msec); //设置通知间隔（歌曲位置进度）
     Status state() const;
 
 private slots:
     void sendPosChangedSignal();
-    void onErrorOccurs(int , const QString &);
+
+    void onErrorOccurs(int, const QString &);
 
 private:
     //歌曲文件信息
@@ -301,14 +319,14 @@ private:
 
 private:
     QString musicPath;
-    quint64 m_position;              //当前时间（单位 毫秒）
+    quint64 m_position; //当前时间（单位 毫秒）
 
     int m_volume;
 
     QTimer  m_positionUpdateTimer;    //通知歌曲进度发生改变的Timer
     int     m_interval;               //间隔，单位毫秒
 
-    PlayThread* playThread;
+    PlayThread *playThread;
 
     QMutex audioFinishedToThreadExitMutex;	//保证音频结束到线程结束之间，播放操作不能进行
     bool bIsLock;

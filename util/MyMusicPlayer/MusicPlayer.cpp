@@ -347,8 +347,9 @@ void PlayThread::setAGStatus(AudioGenStatus status)
 
 int PlayThread::getVolume() const
 {
-    return (int)m_MS.volume;
+    return m_MS.volume;
 }
+
 void PlayThread::setVolume(int value)
 {
     m_MS.volume = static_cast<uint8_t>(value);
@@ -362,7 +363,6 @@ int PlayThread::getMsDuration() const
     else
         return pFormatCtx->duration / 1000;
 }
-
 
 int  PlayThread::getCurrentTime() const
 {
@@ -378,7 +378,6 @@ void PlayThread::setMusicPath(QString path)
 {
     musicPath = path;
 }
-
 
 //获得音频产生方式状态
 AudioGenStatus PlayThread::getAGStatus() const {
@@ -408,25 +407,19 @@ bool PlayThread::initDeviceAndFfmpegContext()
     //char url[] ="Acreix - Visions.mp3";
     //A - Starbucks.wav
 
-    strcpy(url, "A - Starbucks.wav");
-    strcpy(url, "xiaoqingge.mp3");
-    strcpy(url, "A - Something's Going On.wav");
-    strcpy(url, "HOPE-T,接个吻，开一枪 - 锦里.mp3");
-
     strcpy(url, musicPath.toUtf8());            //播放路径
-
 
     avformat_network_init();
     m_MS.fct = pFormatCtx = avformat_alloc_context();
     //Open
     if(avformat_open_input(&pFormatCtx,url,nullptr,nullptr)!=0){
-        printf("Couldn't open input stream.\n");
+        qDebug() << "Couldn't open input stream.\n";
         emit errorOccur(1,tr("无法打开媒体输入流"));//"Couldn't open input stream."
         return false;
     }
     // Retrieve stream information
     if(avformat_find_stream_info(pFormatCtx,nullptr)<0){
-        printf("Couldn't find stream information.\n");
+        qDebug() << "Couldn't find stream information.\n";
         emit errorOccur(2,tr("媒体输入流中找不到任何可播放数据")); //"Couldn't find stream information."
         return false;
     }
@@ -463,7 +456,7 @@ bool PlayThread::initDeviceAndFfmpegContext()
         //读取音频的专辑图片
         // read the format headers
         if (pFormatCtx->iformat->read_header(pFormatCtx) < 0) {
-            printf("No header format");
+            qDebug() << "No header format";
             //return;
         }
 
@@ -540,7 +533,7 @@ bool PlayThread::initDeviceAndFfmpegContext()
     }
 
     if(audioStream==-1){
-        printf("Didn't find a audio stream.\n");
+        qDebug() << "Didn't find a audio stream.\n";
         emit errorOccur(3,tr("媒体输入流中找不到任何音频数据"));//"Didn't find an audio stream."
         return false;
     }
@@ -556,14 +549,14 @@ bool PlayThread::initDeviceAndFfmpegContext()
     // Find the decoder for the audio stream
     pCodec=avcodec_find_decoder(pCodecCtx->codec_id);
     if(pCodec==nullptr){
-        printf("Codec not found.\n");
+        qDebug() << "Codec not found.\n";
         emit errorOccur(4,"ffmpeg模块无法找到可用解码器"); //Codec not found
         return false;
     }
 
     // Open codec
     if(avcodec_open2(pCodecCtx, pCodec,nullptr)<0){
-        printf("Could not open codec.\n");
+        qDebug() << "Could not open codec.\n";
         emit errorOccur(5,"ffmpeg模块无法启用解码器"); //"Could not open codec."
         return false;
     }
@@ -585,7 +578,7 @@ bool PlayThread::initDeviceAndFfmpegContext()
     //Init
     if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER)) {
         const char* errorString = SDL_GetError();
-        printf( "Could not initialize SDL - %s\n", errorString);
+        qDebug() << "Could not initialize SDL - %s\n", errorString;
         emit errorOccur(6,QString(tr("无法初始化播放设备模块 SDL - %s.")).arg(errorString)); //QString("Could not initialize SDL - %s.").arg(errorString)
         return false;
     }
@@ -601,7 +594,7 @@ bool PlayThread::initDeviceAndFfmpegContext()
     wanted_spec.userdata =  &m_MS;
 
     if (SDL_OpenAudio(&wanted_spec, nullptr)<0){
-        printf("Can't open audio.\n");
+        qDebug() << "Can't open audio.\n";
         emit errorOccur(7,tr("播放设备模块 SDL 无法打开指定音频数据"));//"Can't open audio."
         return false;
     }
@@ -621,8 +614,6 @@ bool PlayThread::initDeviceAndFfmpegContext()
 
     return true;
 }
-
-
 
 void PlayThread::playDevice()
 {
@@ -835,7 +826,7 @@ void  PlayThread::fillAudio(void *udata,Uint8 *stream,int len){
 MusicPlayer::MusicPlayer(QObject* parent):QObject(parent),m_volume(20)
 {
     playThread = new PlayThread(this);
-
+    setNotifyInterval(500);
     connect(playThread, &PlayThread::audioPlay,[=](){emit audioPlay();});
     connect(playThread, &PlayThread::audioPause,[=](){emit audioPause();});
     connect(playThread, &PlayThread::audioFinish,[=](bool isEndByForce){
@@ -889,7 +880,8 @@ void MusicPlayer::setMedia(const QString &path)
 {
     musicPath = path;
     playThread->setMusicPath(path);
-
+    qDebug()<< "after set media , get album , artist , title , picture :"
+        << m_title << m_artist << m_album << m_picture;
     emit metaDataChanged();
 }
 
@@ -933,7 +925,6 @@ void MusicPlayer::reload()
     if(!m_positionUpdateTimer.isActive())
         m_positionUpdateTimer.start();
 }
-
 
 //播放控制
 void MusicPlayer::play()
@@ -1004,7 +995,7 @@ void MusicPlayer::backwardSeek(quint64 step) const {
     seek(step > m_position ? 0: m_position - step);
 }
 
- //音量大小范围 0-128
+ //音量大小范围 0-100
 void MusicPlayer::setVolume(int volume)
 {
     //if(volume > 128)
@@ -1051,7 +1042,6 @@ void MusicPlayer::onErrorOccurs(int code, const QString &msg)
 {
     emit errorOccur(code, msg);
 }
-
 
 MusicPlayer::Status MusicPlayer::state() const {
     SDL_AudioStatus deviceStatus = playThread->GetDeviceStatus();
