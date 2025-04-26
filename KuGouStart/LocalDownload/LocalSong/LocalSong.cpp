@@ -15,7 +15,6 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <qjsonvalue.h>
 #include <QMediaMetaData>
 #include <QMediaPlayer>
 #include <QRandomGenerator>
@@ -687,36 +686,58 @@ void LocalSong::onRandomSort() {
 }
 
 void LocalSong::onItemNextPlay() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Play next not implemented", 1000, window());
+    // TODO: Add song to play queue as next item
 }
 
 void LocalSong::onItemAddToPlayQueue() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to play queue not implemented", 1000, window());
+    // TODO: Append song to play queue
 }
 
 void LocalSong::onItemAddToNewSongList() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to new song list not implemented", 1000, window());
+    // TODO: Create new playlist and add song
 }
 
 void LocalSong::onItemAddToLove() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to loved songs not implemented", 1000, window());
+    // TODO: Mark song as favorite
 }
 
 void LocalSong::onItemAddToCollect() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to collection not implemented", 1000, window());
+    // TODO: Add song to user collection
 }
 
 void LocalSong::onItemAddToPlayList() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Add to playlist not implemented", 1000, window());
+    // TODO: Show playlist selection dialog
 }
 
 void LocalSong::onItemDownload() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Download not implemented", 1000, window());
+    // TODO: Download song if applicable
 }
 
 void LocalSong::onItemShare() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Share not implemented", 1000, window());
+    // TODO: Implement sharing
 }
 
 void LocalSong::onItemComment() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Comment not implemented", 1000, window());
+    // TODO: Show comment dialog
 }
 
 void LocalSong::onItemSameSong() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Find similar songs not implemented", 1000, window());
+    // TODO: Search for similar songs
 }
 
 void LocalSong::onItemViewSongInfo() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "View song info not implemented", 1000, window());
+    // TODO: Show song details dialog
 }
 
 void LocalSong::onItemDeleteSong(const int &idx) {
@@ -772,12 +793,18 @@ void LocalSong::onItemDeleteSong(const int &idx) {
 }
 
 void LocalSong::onItemOpenInFile() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Open in file explorer not implemented", 1000, window());
+    // TODO: Open file location in explorer
 }
 
 void LocalSong::onItemSearch() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Search not implemented", 1000, window());
+    // TODO: Implement search functionality
 }
 
 void LocalSong::onItemUpLoad() {
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "Upload not implemented", 1000, window());
+    // TODO: Implement upload
 }
 
 void LocalSong::resizeEvent(QResizeEvent *event) {
