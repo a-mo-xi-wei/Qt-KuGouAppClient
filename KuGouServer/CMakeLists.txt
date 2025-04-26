@@ -31,7 +31,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Sql Qt6::WebSockets
 # 动态库需处理 DLL 复制（仅 Windows）
 if(WIN32)
     add_custom_command(TARGET KuGou-Server POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
             ${ZLIB_DLL}
             $<TARGET_FILE_DIR:KuGou-Server>
     )

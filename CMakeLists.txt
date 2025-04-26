@@ -99,21 +99,63 @@ if (NOT MSVC)  # 同时适用于GCC/Clang环境
 endif()
 
 # 定义库文件路径
-set(ZLIB_IMPORT_LIB ${CMAKE_SOURCE_DIR}/tools/zlib/libs/zlib.lib)
-set(ZLIB_DLL ${CMAKE_SOURCE_DIR}/tools/zlib/libs/zlib.dll)
+if(WIN32)
+    # ZLib 库
+    set(ZLIB_IMPORT_LIB ${CMAKE_SOURCE_DIR}/tools/zlib/lib/libzlib.dll.a)
+    set(ZLIB_DLL ${CMAKE_SOURCE_DIR}/tools/zlib/bin/zlib.dll)
 
-# 验证文件存在性
-if (NOT EXISTS ${ZLIB_IMPORT_LIB})
-    message(FATAL_ERROR "zlib.lib not found at ${ZLIB_IMPORT_LIB}")
-else()
-    message(STATUS "found zlib.lib at ${ZLIB_IMPORT_LIB}")
-endif()
+    # 验证文件存在性
+    if (NOT EXISTS ${ZLIB_IMPORT_LIB})
+        message(FATAL_ERROR "libzlib.dll.a not found at ${ZLIB_IMPORT_LIB}")
+    else()
+        message(STATUS "found libzlib.dll.a at ${ZLIB_IMPORT_LIB}")
+    endif()
 
-if (NOT EXISTS ${ZLIB_DLL})
-    message(FATAL_ERROR "zlib.dll not found at ${ZLIB_DLL}")
-else()
-    message(STATUS "found zlib.lib at ${ZLIB_DLL}")
-endif()
+    if (NOT EXISTS ${ZLIB_DLL})
+        message(FATAL_ERROR "zlib.dll not found at ${ZLIB_DLL}")
+    else()
+        message(STATUS "found zlib.dll at ${ZLIB_DLL}")
+    endif()
+
+    # SDL2 库
+    set(SDL2_IMPORT_LIB ${CMAKE_SOURCE_DIR}/tools/SDL2/win64/lib/libSDL2.dll.a)
+    set(SDL2_DLL ${CMAKE_SOURCE_DIR}/tools/SDL2/win64/bin/SDL2.dll)
+
+    # 验证文件存在性
+    if (NOT EXISTS ${SDL2_IMPORT_LIB})
+        message(FATAL_ERROR "libSDL2.dll.a not found at ${SDL2_IMPORT_LIB}")
+    else()
+        message(STATUS "found libSDL2.dll.a at ${SDL2_IMPORT_LIB}")
+    endif()
+
+    if (NOT EXISTS ${SDL2_DLL})
+        message(FATAL_ERROR "SDL2.dll not found at ${SDL2_DLL}")
+    else()
+        message(STATUS "found SDL2.dll at ${SDL2_DLL}")
+    endif()
+
+    # ffmpeg-4.0.1-mingw-shared 库
+    set(FFMPEG_IMPORT_LIB_PATH ${CMAKE_SOURCE_DIR}/tools/ffmpeg/win64/lib)
+    set(FFMPEG_BIN_PATH ${CMAKE_SOURCE_DIR}/tools/ffmpeg/win64/bin)
+
+    # 验证目录存在性
+    if (NOT EXISTS ${FFMPEG_IMPORT_LIB_PATH})
+        message(FATAL_ERROR "FFmpeg library directory not found at ${FFMPEG_IMPORT_LIB_PATH}")
+    else()
+        message(STATUS "Found FFmpeg library directory at ${FFMPEG_IMPORT_LIB_PATH}")
+    endif()
+
+    if (NOT EXISTS ${FFMPEG_BIN_PATH})
+        message(FATAL_ERROR "FFmpeg binary directory not found at ${FFMPEG_BIN_PATH}")
+    else()
+        message(STATUS "Found FFmpeg binary directory at ${FFMPEG_BIN_PATH}")
+    endif()
+
+endif ()
+
+
+
+
 
 #ui目录
 add_subdirectory(ui)

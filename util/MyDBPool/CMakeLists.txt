@@ -25,7 +25,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/../../tools/zlib/include
 )
 
-#message(STATUS "+++++++++++++++++catch zlib.lib at ${ZLIB_IMPORT_LIB}")
+#message(STATUS "+++++++++++++++++catch libzlib.dll.a at ${ZLIB_IMPORT_LIB}")
 #message(STATUS "+++++++++++++++++catch zlib.dll at ${ZLIB_DLL}")
 
 target_link_libraries(${PROJECT_NAME} Qt6::Sql Qt6::Network Qt6::Widgets MyQsLog ${ZLIB_IMPORT_LIB})
