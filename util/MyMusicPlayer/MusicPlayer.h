@@ -103,7 +103,6 @@ typedef struct {
     }
 } mediaState;
 
-
 //播放音乐使用的线程
 class PlayThread : public QThread {
     Q_OBJECT
@@ -225,8 +224,14 @@ private:
 };
 
 
+#if defined(MYMUSICPLAYER_LIBRARY)
+#define MYMUSICPLAYER_EXPORT Q_DECL_EXPORT
+#else
+#define MYMUSICPLAYER_EXPORT Q_DECL_IMPORT
+#endif
+
 //音乐播放器
-class MusicPlayer : public QObject {
+class MYMUSICPLAYER_EXPORT MusicPlayer : public QObject {
     Q_OBJECT
 
 public:

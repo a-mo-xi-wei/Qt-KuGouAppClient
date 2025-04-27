@@ -7,9 +7,6 @@
 #include "ElaToolTip.h"
 #include "ElaMessageBar.h"
 
-#include <QMediaMetaData>
-#include <QMediaPlayer>
-#include <QAudioOutput>
 #include <QPainterPath>
 #include <QPainter>
 #include <QPixmap>
@@ -42,8 +39,7 @@ QPixmap roundedPixmap(const QPixmap &src, QSize size, int radius) {
 KuGouApp::KuGouApp(MainWindow *parent)
     : MainWindow(parent)
     , ui(new Ui::KuGouApp)
-    , m_player(std::make_unique<QMediaPlayer>(this))
-    , m_audioOutput(std::make_unique<QAudioOutput>(this))
+    , m_player(new MusicPlayer(this))
     , m_menuBtnGroup(std::make_unique<QButtonGroup>(this))
     , m_sizeGrip(std::make_unique<QSizeGrip>(this))
     , m_animation(std::make_unique<QPropertyAnimation>(this, "geometry"))
@@ -165,25 +161,24 @@ void KuGouApp::initUi() {
 void KuGouApp::initStackedWidget() {
     // 使用模板函数统一初始化所有组件
     {
-        //如果仅为测试学习使用，可以视情况注释某些界面，以免编译时间过长，如：
+        //如果仅为测试学习使用，可以视情况注释某些界面(会造成部分不可预料的效果，自己看着办吧 ^-^)，以免编译时间过长，如：
         /*
-         * //initComponent(m_live,0);
-         * //initComponent(m_listenBook,1);
-         * //initComponent(m_search,2);
+         * // initComponent(m_live,0);
+         * // initComponent(m_listenBook,1);
+         * // initComponent(m_search,2);
          * initComponent(m_recommendForYou,3);
          * initComponent(m_musicRepository,4);
-         * //initComponent(m_channel,5);
-         * //initComponent(m_video,6);
-         * //initComponent(m_aiChat,7);
-         * //initComponent(m_songList,8);
-         * //initComponent(m_dailyRecommend,9);
-         * //initComponent(m_collection,10);
-         * //initComponent(m_localDownload,11);
-         * //initComponent(m_musicCloudDisk,12);
-         * //initComponent(m_purchasedMusic,13);
-         * //initComponent(m_recentlyPlayed,14);
-         * //initComponent(m_allMusic,15);
-
+         * // initComponent(m_channel,5);
+         * // initComponent(m_video,6);
+         * // initComponent(m_aiChat,7);
+         * // initComponent(m_songList,8);
+         * // initComponent(m_dailyRecommend,9);
+         * // initComponent(m_collection,10);
+         * // initComponent(m_localDownload,11);
+         * // initComponent(m_musicCloudDisk,12);
+         * // initComponent(m_purchasedMusic,13);
+         * // initComponent(m_recentlyPlayed,14);
+         * // initComponent(m_allMusic,15);
          */
         initComponent(m_live,0);
         initComponent(m_listenBook,1);
@@ -312,12 +307,10 @@ void KuGouApp::initPlayWidget() {
         singer_text_toolTip->adjustSize();
     });
 
+    this->m_player->setVolume(30);
 
-    this->m_player->setAudioOutput(this->m_audioOutput.get());
-    this->m_audioOutput->setVolume(0.2);
     connect(ui->volume_toolButton, &VolumeToolBtn::volumeChange, this, [this](const int value) {
-        const float volume = static_cast<float>(value) / 100; // 将值转换为0.0到1.0之间
-        this->m_audioOutput->setVolume(volume); // 设置音量
+        this->m_player->setVolume(value); // 设置音量
     });
     connect(this,&MainWindow::fromTray_noVolume,this,[this](const bool& flag) {
         STREAM_INFO()<<"KuGouApp 托盘图标点击: "<<(flag?"静音":"开启声音");
@@ -329,36 +322,38 @@ void KuGouApp::initPlayWidget() {
         }
     });
 
-    connect(this->m_player.get(), &QMediaPlayer::positionChanged, this, [this](int position) {
+    connect(this->m_player, &MusicPlayer::positionChanged, this, [this](int position) {
         if (ui->progressSlider->isSliderDown())return;
-        //qDebug()<<"position "<<position;
+        //qDebug()<<"-------------------------position "<<position;
         ui->progressSlider->setValue(position);
         ui->position_label->setText(QTime::fromMSecsSinceStartOfDay(position).toString("mm:ss"));
     });
-    connect(this->m_player.get(), &QMediaPlayer::durationChanged, this, &KuGouApp::updateSliderRange);
-    connect(this->m_player.get(), &QMediaPlayer::metaDataChanged, this, [this] {
-        //qDebug() << "metaDataChanged";
+    connect(this->m_player, &MusicPlayer::durationChanged, this, &KuGouApp::updateSliderRange);
+    connect(this->m_player, &MusicPlayer::metaDataChanged, this, [this] {
         update_cover_singer_song_HLayout();
     });
-    connect(this->m_player.get(), &QMediaPlayer::playbackStateChanged, this, [this](QMediaPlayer::PlaybackState state) {
-        if (state == QMediaPlayer::PlayingState)this->m_isPlaying = true;
-        else this->m_isPlaying = false;
-        if (this->m_isPlaying) {
-            ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
-        } else {
-            ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
-        }
+    connect(this->m_player, &MusicPlayer::audioPlay, this, [this] {
+        //qDebug() << "+++++++++++++++++++++++++++++++audioPlay";
+        m_isPlaying = true;
+        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
     });
-    mediaStatusConnection = connect(this->m_player.get(), &QMediaPlayer::mediaStatusChanged, this,
-                                    [=](const QMediaPlayer::MediaStatus &status) {
-                                        if (status == QMediaPlayer::EndOfMedia) {
-                                            if (this->m_isOrderPlay) {
-                                                qDebug()<<"结束，开始播放下一首";
-                                                STREAM_INFO() << "结束，开始播放下一首";
-                                                addOrderIndex();
-                                            }
-                                        }
-                                    });
+    connect(this->m_player, &MusicPlayer::audioPause, this, [this] {
+        //qDebug() << "+++++++++++++++++++++++++++++++audioPause";
+        m_isPlaying = false;
+        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
+    });
+
+    mediaStatusConnection = connect(this->m_player, &MusicPlayer::audioFinish, this, [this](bool isEndByForce) {
+       if (!isEndByForce && m_isOrderPlay) {
+           qDebug() << "结束，开始播放下一首";
+           STREAM_INFO() << "结束，开始播放下一首";
+           addOrderIndex();
+       }
+   });
+    connect(this->m_player, &MusicPlayer::errorOccur, this, [this](const int& code, const QString &msg) {
+        ElaMessageBar::error(ElaMessageBarType::BottomRight, "Error", msg, 2000, this->window());
+    });
+
     ui->progressSlider->installEventFilter(this);
     connect(ui->progressSlider, &QSlider::sliderReleased, this, &KuGouApp::updateProcess);
     connect(ui->progressSlider, &QSlider::sliderMoved, this, &KuGouApp::updateProcess);
@@ -578,7 +573,7 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
     //song_info_widget适度延展
     ui->song_info_widget->setFixedWidth(this->width()/8+20);
     //更新文字数量
-    if(!this->m_player->source().isEmpty() && !this->m_songInfoVector.isEmpty())update_cover_singer_song_HLayout();
+    if(!this->m_player->getMusicPath().isEmpty() && !this->m_songInfoVector.isEmpty())update_cover_singer_song_HLayout();
     //刷新遮罩大小同步
     auto rect = ui->stackedWidget->geometry();
     rect.setLeft(5);
@@ -608,7 +603,7 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
         // 禁用进度条拖拽，当播放器没有加载资源时
         // 如果播放器没有加载资源，禁用进度条的鼠标事件
         if (event->type() == QEvent::MouseButtonPress || event->type() == QEvent::MouseButtonRelease || event->type() == QEvent::MouseMove) {
-            if (this->m_player->source().isEmpty()) {
+            if (this->m_player->getMusicPath().isEmpty()) {
                 return true; // 只拦截与鼠标有关的事件
             }
         }
@@ -617,7 +612,6 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
             auto mouseEvent = dynamic_cast<QMouseEvent *>(event);
             if (mouseEvent->button() == Qt::LeftButton) //判断左键
             {
-                //qDebug() << "触发点击";
                 qint64 value = QStyle::sliderValueFromPosition(ui->progressSlider->minimum(),
                                                                ui->progressSlider->maximum(), mouseEvent->pos().x(),
                                                                ui->progressSlider->width());
@@ -636,7 +630,8 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
                     //ani->start(QAbstractAnimation::DeleteWhenStopped);
                 }
 
-                this->m_player->setPosition(value);
+                qDebug() << "触发点击value : "<< value;
+                this->m_player->seek(value);
                 if (!this->m_isPlaying)ui->play_or_pause_toolButton->clicked();
             }
         }
@@ -706,23 +701,22 @@ void KuGouApp::on_all_music_toolButton_clicked() {
 }
 
 void KuGouApp::setPlayMusic(int &index) {
-    //qDebug()<<"设置第 "<<index<<" 首高亮";
+    //qDebug()<<"设置第 "<<index<<" 首高亮"<<" ,开始播放："<<this->m_songInfoVector[index].mediaPath;
     emit setPlayIndex(index);
     this->m_player->stop();
-    this->m_player->setSource(QUrl(this->m_songInfoVector[index].mediaPath));
+    this->m_player->setMedia(this->m_songInfoVector[index].mediaPath);
     this->m_player->play();
 }
 
 void KuGouApp::updateProcess() {
-    //qDebug()<<"sliderMoved / sliderReleased : "<<ui->progressSlider->value();
+    qDebug()<<"sliderMoved / sliderReleased : "<<ui->progressSlider->value();
     qint64 position = ui->progressSlider->value() * this->m_player->duration() / ui->progressSlider->maximum();
-    this->m_player->setPosition(position);
-    this->m_player->play();
+    this->m_player->seek(position);
 }
 
 void KuGouApp::updateSliderRange(const qint64 &duration) {
     ui->progressSlider->setMaximum(static_cast<int>(duration));
-    //qDebug()<<"改变总时长";
+    //qDebug()<<"改变总时长为："<<duration;
     ui->duration_label->setText(QTime::fromMSecsSinceStartOfDay(static_cast<int>(duration)).toString("mm:ss"));
 }
 
@@ -734,7 +728,7 @@ void KuGouApp::onPlayMusic(int index) {
 }
 
 void KuGouApp::onStartPlay() {
-    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty() || this->m_songInfoVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                                 QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
@@ -778,21 +772,20 @@ void KuGouApp::onSubSongInfo(const SongInfor &info) {
 }
 
 void KuGouApp::onKeyPause() {
-    if (this->m_player->playbackState() == QMediaPlayer::PlaybackState::PlayingState) {
+    if (this->m_player->state() == MusicPlayer::PlayingState) {
         this->m_player->pause();
     } else {
-        this->m_player->play();
+        if (!this->m_player->getMusicPath().isEmpty())
+            this->m_player->play();
     }
 }
 
 void KuGouApp::onKeyLeft() {
-    qint64 pos = this->m_player->position() - 5000;
-    this->m_player->setPosition(pos < 0 ? 0 : pos);
+    this->m_player->backwardSeek(5000);
 }
 
 void KuGouApp::onKeyRight() {
-    qint64 pos = this->m_player->position() + 5000;
-    this->m_player->setPosition(pos > this->m_player->duration() ? this->m_player->duration() : pos);
+    this->m_player->forwordSeek(5000);
 }
 
 void KuGouApp::onTitleCurrentStackChange(const int &index,const bool& slide) {
@@ -927,7 +920,7 @@ void KuGouApp::onSyncSongInfoVector(QVector<SongInfor> &vec) {
 
 void KuGouApp::on_play_or_pause_toolButton_clicked() {
     //如果未设置播放源就return
-    if (this->m_player->source().isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                                 QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
@@ -944,7 +937,7 @@ void KuGouApp::on_play_or_pause_toolButton_clicked() {
 }
 
 void KuGouApp::on_love_toolButton_clicked() {
-    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()){
+    if (this->m_player->getMusicPath().isEmpty() || this->m_songInfoVector.isEmpty()){
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                                 QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
@@ -952,7 +945,7 @@ void KuGouApp::on_love_toolButton_clicked() {
 }
 
 void KuGouApp::on_download_toolButton_clicked() {
-    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty() || this->m_songInfoVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                                 QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
@@ -960,7 +953,7 @@ void KuGouApp::on_download_toolButton_clicked() {
 }
 
 void KuGouApp::on_comment_toolButton_clicked() {
-    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty() || this->m_songInfoVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                                 QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
@@ -968,7 +961,7 @@ void KuGouApp::on_comment_toolButton_clicked() {
 }
 
 void KuGouApp::on_share_toolButton_clicked() {
-    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty() || this->m_songInfoVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                                 QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
@@ -976,7 +969,7 @@ void KuGouApp::on_share_toolButton_clicked() {
 }
 
 void KuGouApp::on_more_toolButton_clicked() {
-    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty() || this->m_songInfoVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                                 QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
@@ -984,7 +977,7 @@ void KuGouApp::on_more_toolButton_clicked() {
 }
 
 void KuGouApp::on_circle_toolButton_clicked() {
-    if (this->m_player->source().isEmpty()|| this->m_songInfoVector.isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty()|| this->m_songInfoVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                                 QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
@@ -1001,19 +994,15 @@ void KuGouApp::on_circle_toolButton_clicked() {
                                             QToolButton:hover{border-image:url(':/Res/playbar/single-list-loop-blue.svg');})");
         if (mediaStatusConnection) {
             disconnect(mediaStatusConnection);
-            mediaStatusConnection = connect(this->m_player.get(), &QMediaPlayer::mediaStatusChanged, this,
-                                            [=](QMediaPlayer::MediaStatus status) {
-                                                if (status == QMediaPlayer::EndOfMedia) {
-                                                    if(this->m_songInfoVector.isEmpty())return;
-                                                    //qDebug()<<"播放结束";
-                                                    // 当播放结束时，重新开始播放
-                                                    //qDebug()<<"循环播放 ："<<this->m_isSingleCircle;
-                                                    this->m_player->stop(); // 设置到文件的开头
-                                                    //this->m_player->play();
-                                                    setPlayMusic(this->m_songIndex);
-                                                }
-                                            });
-        } else {
+            mediaStatusConnection = connect(this->m_player, &MusicPlayer::audioFinish,
+                this, [this](bool isEndByForce) {
+                if (!isEndByForce && !this->m_songInfoVector.isEmpty()) {
+                   this->m_player->stop();
+                   setPlayMusic(this->m_songIndex);
+               }
+            });
+        }
+        else {
             qDebug() << "mediaStatusConnection is empty";
             STREAM_WARN() << "mediaStatusConnection is empty";
         }
@@ -1021,16 +1010,11 @@ void KuGouApp::on_circle_toolButton_clicked() {
         //qDebug()<<"播放一次";
         if (mediaStatusConnection) {
             disconnect(mediaStatusConnection);
-            mediaStatusConnection = connect(this->m_player.get(), &QMediaPlayer::mediaStatusChanged, this,
-                                            [=](QMediaPlayer::MediaStatus status) {
-                                                if (status == QMediaPlayer::EndOfMedia) {
-                                                    if(this->m_songInfoVector.isEmpty())return;
-                                                    if (this->m_isOrderPlay) {
-                                                        //qDebug()<<"结束，开始播放下一首";
-                                                        addOrderIndex();
-                                                    }
-                                                }
-                                            });
+            mediaStatusConnection = connect(this->m_player, &MusicPlayer::audioFinish, this, [this](bool isEndByForce) {
+               if (!isEndByForce && this->m_isOrderPlay && !this->m_songInfoVector.isEmpty()) {
+                   addOrderIndex();
+               }
+           });
         } else {
             qDebug() << "mediaStatusConnection is empty";
             STREAM_WARN() << "mediaStatusConnection is empty";
@@ -1041,7 +1025,7 @@ void KuGouApp::on_circle_toolButton_clicked() {
 }
 
 void KuGouApp::on_pre_toolButton_clicked() {
-    if (this->m_player->source().isEmpty()|| this->m_songInfoVector.isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty()|| this->m_songInfoVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                                 QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
@@ -1052,7 +1036,7 @@ void KuGouApp::on_pre_toolButton_clicked() {
 }
 
 void KuGouApp::on_next_toolButton_clicked() {
-    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty() || this->m_songInfoVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                                 QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
@@ -1063,7 +1047,7 @@ void KuGouApp::on_next_toolButton_clicked() {
 }
 
 void KuGouApp::on_stander_pushButton_clicked() {
-    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty() || this->m_songInfoVector.isEmpty()) {
         ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
                                 QStringLiteral("音质选择功能 暂未实现 敬请期待"),
                                 1000,this->window());
@@ -1072,7 +1056,7 @@ void KuGouApp::on_stander_pushButton_clicked() {
 }
 
 void KuGouApp::on_acoustics_pushButton_clicked() {
-    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty() || this->m_songInfoVector.isEmpty()) {
         ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
                                 QStringLiteral("音效功能 暂未实现 敬请期待"),
                                 1000,this->window());
@@ -1081,7 +1065,7 @@ void KuGouApp::on_acoustics_pushButton_clicked() {
 }
 
 void KuGouApp::on_erji_toolButton_clicked() {
-    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty() || this->m_songInfoVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                                 QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
@@ -1090,7 +1074,7 @@ void KuGouApp::on_erji_toolButton_clicked() {
 }
 
 void KuGouApp::on_lyrics_toolButton_clicked() {
-    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty() || this->m_songInfoVector.isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,"Warning",
                                 QStringLiteral("暂无可播放音乐"),
                                 1000,this->window());
@@ -1099,7 +1083,7 @@ void KuGouApp::on_lyrics_toolButton_clicked() {
 }
 
 void KuGouApp::on_song_queue_toolButton_clicked() {
-    if (this->m_player->source().isEmpty() || this->m_songInfoVector.isEmpty()) {
+    if (this->m_player->getMusicPath().isEmpty() || this->m_songInfoVector.isEmpty()) {
         ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
                                 QStringLiteral("播放队列功能 暂未实现 敬请期待"),
                                 1000,this->window());

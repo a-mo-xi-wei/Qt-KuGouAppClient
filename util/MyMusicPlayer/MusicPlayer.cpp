@@ -431,26 +431,35 @@ bool PlayThread::initDeviceAndFfmpegContext()
 //       printf("[Tag:%s , Value: %s]\n", tag->key, tag->value);
 //    }
 
-    tag = av_dict_get(pFormatCtx->metadata, "album", tag, AV_DICT_MATCH_CASE);
-    if(tag)
-    {
-        album = tag->value;
-        emit albumFound(album);
+    // 尝试获取 album
+    tag = av_dict_get(pFormatCtx->metadata, "album", nullptr, AV_DICT_MATCH_CASE);
+    if (tag) {
+        album = tag->value;  // 找到时赋值
+    } else {
+        album = "";  // 未找到时设为空字符串
     }
-    tag = av_dict_get(pFormatCtx->metadata, "title", tag, AV_DICT_MATCH_CASE);
-    if(tag)
-    {
-         title = tag->value;
-        emit titleFound(title);
-    }
+    emit albumFound(album);  // 无论是否找到，都发射信号
 
-    tag = av_dict_get(pFormatCtx->metadata, "artist", tag, AV_DICT_MATCH_CASE);
-    if(tag)
-    {
-         artist = tag->value;
-        emit artistFound(artist);
+    // 尝试获取 title
+    tag = av_dict_get(pFormatCtx->metadata, "title", nullptr, AV_DICT_MATCH_CASE);
+    if (tag) {
+        title = tag->value;  // 找到时赋值
+    } else {
+        title = "";  // 未找到时设为空字符串
     }
+    emit titleFound(title);  // 无论是否找到，都发射信号
 
+    // 尝试获取 artist
+    tag = av_dict_get(pFormatCtx->metadata, "artist", nullptr, AV_DICT_MATCH_CASE);
+    if (tag) {
+        artist = tag->value;  // 找到时赋值
+    } else {
+        artist = "";  // 未找到时设为空字符串
+    }
+    emit artistFound(artist);  // 无论是否找到，都发射信号
+
+    //读取专辑图片
+    picture = QPixmap();
     if (strcmp(pFormatCtx->iformat->name, "wav") == 0 || strcmp(pFormatCtx->iformat->name, "mp3") == 0)
     {
         //读取音频的专辑图片
@@ -460,22 +469,19 @@ bool PlayThread::initDeviceAndFfmpegContext()
             //return;
         }
 
-        //读取专辑图片
-        picture = QPixmap();
         for (unsigned int i = 0; i < pFormatCtx->nb_streams; i++) {
             if (pFormatCtx->streams[i]->disposition & AV_DISPOSITION_ATTACHED_PIC) {
                 AVPacket pkt = pFormatCtx->streams[i]->attached_pic;
                 //使用QImage读取完整图片数据（注意，图片数据是为解析的文件数据，需要用QImage::fromdata来解析读取）
                 QImage img = QImage::fromData((uchar*)pkt.data, pkt.size);
                 picture = QPixmap::fromImage(img);
-
-                emit pictureFound(picture);
-
                 break;
             }
-        }
+        }emit pictureFound(picture);  // 无论是否找到图片，都发射信号
+    } else {
+        // 非 WAV 或 MP3 格式，也发射信号，传递空 QPixmap
+        emit pictureFound(picture);
     }
-
 
     // Dump valid information onto standard error
     av_dump_format(pFormatCtx, 0, url, false);
@@ -826,7 +832,6 @@ void  PlayThread::fillAudio(void *udata,Uint8 *stream,int len){
 MusicPlayer::MusicPlayer(QObject* parent):QObject(parent),m_volume(20)
 {
     playThread = new PlayThread(this);
-    setNotifyInterval(500);
     connect(playThread, &PlayThread::audioPlay,[=](){emit audioPlay();});
     connect(playThread, &PlayThread::audioPause,[=](){emit audioPause();});
     connect(playThread, &PlayThread::audioFinish,[=](bool isEndByForce){
@@ -857,8 +862,8 @@ MusicPlayer::MusicPlayer(QObject* parent):QObject(parent),m_volume(20)
     connect(playThread, SIGNAL(errorOccur(int,QString)), this, SLOT(onErrorOccurs(int,QString)),
             Qt::BlockingQueuedConnection);
 
-
-    m_interval = 50;
+    //setNotifyInterval(500);
+    m_interval = 100;
     m_positionUpdateTimer.setInterval(m_interval);
     connect(&m_positionUpdateTimer,SIGNAL(timeout()),this, SLOT(sendPosChangedSignal() ));
 
@@ -880,8 +885,6 @@ void MusicPlayer::setMedia(const QString &path)
 {
     musicPath = path;
     playThread->setMusicPath(path);
-    qDebug()<< "after set media , get album , artist , title , picture :"
-        << m_title << m_artist << m_album << m_picture;
     emit metaDataChanged();
 }
 

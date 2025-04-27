@@ -1,30 +1,29 @@
 #ifndef KUGOUAPP_H
 #define KUGOUAPP_H
 
-#include"MainWindow.h"
+#include "MainWindow.h"
+#include "MusicPlayer.h"
 //发现音乐
-#include"RecommendForYou.h"
-#include"MusicRepository.h"
-#include"Channel.h"
-#include"Video.h"
-#include"Live.h"
-#include"AiChat.h"
-#include"SongList.h"
-#include"DailyRecommend.h"
+#include "RecommendForYou.h"
+#include "MusicRepository.h"
+#include "Channel.h"
+#include "Video.h"
+#include "Live.h"
+#include "AiChat.h"
+#include "SongList.h"
+#include "DailyRecommend.h"
 //我的音乐
-#include"MyCollection.h"
-#include"LocalDownload.h"
-#include"MusicCloudDisk.h"
-#include"PurchasedMusic.h"
-#include"RecentlyPlayed.h"
-#include"AllMusic.h"
+#include "MyCollection.h"
+#include "LocalDownload.h"
+#include "MusicCloudDisk.h"
+#include "PurchasedMusic.h"
+#include "RecentlyPlayed.h"
+#include "AllMusic.h"
 //标题栏
-#include"ListenBook.h"
-#include"Search.h"
+#include "ListenBook.h"
+#include "Search.h"
 #include <ui_KuGouApp.h>
 
-class QMediaPlayer;
-class QAudioOutput;
 class QButtonGroup;
 class QSizeGrip;
 class QPropertyAnimation;
@@ -201,8 +200,7 @@ signals:
 
 private:
     Ui::KuGouApp *ui;
-    std::unique_ptr<QMediaPlayer>       m_player{};
-    std::unique_ptr<QAudioOutput>       m_audioOutput{};
+    MusicPlayer*                        m_player{};
     std::unique_ptr<QButtonGroup>       m_menuBtnGroup{};
     std::unique_ptr<QSizeGrip>          m_sizeGrip{};
     std::unique_ptr<QPropertyAnimation> m_animation{};  //专门用于窗口的缩放动画
