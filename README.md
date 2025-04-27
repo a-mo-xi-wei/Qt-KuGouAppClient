@@ -34,7 +34,7 @@ cp /usr/bin/ccache YourProjectPath/KuGou/tools/ccache
 ```
 #### 同时，Ubuntu 下编译虽然能通过且能运行，但是对于鼠标事件的接受和样式渲染有问题，精力有限，不会去维护。。。
 
-### Ai对话功能请参考：https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#qt6-%E6%8E%A5%E5%85%A5deepseek
+### Ai对话功能需要预先获取API，有问题请参考：https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#qt6-%E6%8E%A5%E5%85%A5deepseek
 
 | [Ubuntu/macOS][lin-link] | [Windows][win-link] | [License][license-link] |
 | :----------------------: | :-----------------: | :---------------------: |
@@ -49,19 +49,18 @@ cp /usr/bin/ccache YourProjectPath/KuGou/tools/ccache
 [license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
 
 ### 📚项目介绍
-Based on Qt Widget + UiTools module + Custom control + QSS + QsLog + Custom **Spdlog** + JWT
+Based on Qt Widget + UiTools module + Custom control + QSS + QsLog + Custom **Spdlog** + **JWT** + **FFmpeg** + **SDL**
 
-使用**CMake**进行模块化管理，实现**模块解耦**（UI/播放器/网络分层），参照酷狗客户端，高仿并且优化界面，
+使用**CMake**进行模块化管理，确保核心组件（如用户界面、媒体播放器和网络层）的**高度解耦**，参照酷狗客户端，高仿并且优化界面，
 
-**QMediaPlayer**和**QAudioOutput**来实现音频播放，提供更好的音乐播放体验，
+应用程序现采用 **FFmpeg** 和 **SDL** 进行音频解码与播放来实现音频播放，从而提供更灵活、更强大的音乐播放体验。
 
-采用**SQLite**存储音乐元数据（标题/专辑/路径），使用Qt SQL模块实现播放记录管理
+集成 **QsLog** 和自定义 **Spdlog** 实现健壮的日志系统，使用 JWT 确保安全的用户认证。采用**SQLite**存储音乐元数据（标题/专辑/路径），使用Qt SQL模块实现播放记录管理
 
-通过**QNetworkAccessManager**实现在线音乐流媒体播放，采用 **QtConcurrent** + **QFutureWatcher** 实现非阻塞式线程任务调度
-，基于 **QThreadPool** 实现 动态弹性线程池，通过 QRunnable 封装任务单元，自动回收线程资源。
+通过 **QNetworkAccessManager** 实现在线音乐流媒体播放，结合 QtConcurrent 和 QFutureWatcher 实现非阻塞线程任务调度，基于 **QThreadPool** 构建动态弹性线程池，通过 QRunnable 封装任务单元，实现线程资源的自动回收。
 
 项目难点：播放列表、搜索功能、菜单功能，歌词显示、播放控制等**播放器核心功能**设计问题，自定义控件和事件响应，遮罩绘图，控件拉伸，**特效绘制**，
-复杂业务逻辑问题，登录注册、**Ai对话**、**数据库连接池**设计、**异步非阻塞式线程**设计、**日志系统**设计、**网络模块**设计、**开源组件库**的理解及使用问题等。
+复杂业务逻辑问题，登录注册、**Ai对话**、**数据库连接池**设计、**异步非阻塞式线程**设计、**日志系统**设计、**网络模块**设计、**开源库**（如 FFmpeg 和 SDL）的集成与优化，以提升媒体播放能力。
 
 ## 🎨 界面技术栈
 视觉魔法师：QSS样式引擎 + SVG矢量图标 + 动态渐变蒙版
