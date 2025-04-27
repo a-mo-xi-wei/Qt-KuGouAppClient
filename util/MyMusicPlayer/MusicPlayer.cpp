@@ -113,6 +113,9 @@ int packet_queue_get(PacketQueue *q, AVPacket *pkt, int block)
 
     SDL_LockMutex(q->mutex);
 
+    int tryTimes = 0;
+    const int maxTryTimes = 100000; // 设置合理阈值
+
     for (;;)
     {
         if (g_isQuit) //由外界通知退出
@@ -137,6 +140,13 @@ int packet_queue_get(PacketQueue *q, AVPacket *pkt, int block)
             break;
         } else
         {
+            tryTimes++;
+            if (tryTimes > maxTryTimes) // 超时退出
+            {
+                qDebug() << "Timeout waiting for audio data";
+                SDL_UnlockMutex(q->mutex);
+                return -1;
+            }
             SDL_CondWait(q->cond, q->mutex);
         }
     }
@@ -153,7 +163,6 @@ void packet_queue_flush(PacketQueue *q)
         pkt1 = pkt->next;
         if(pkt1->pkt.data != (uint8_t *)"FLUSH")
         {
-            ;
         }
         av_packet_unref(&pkt->pkt);
         av_freep(&pkt);
@@ -193,6 +202,7 @@ int PlayThread::audio_decode_frame(mediaState* MS, uint8_t* audio_buf)
     {
         if (packet_queue_get(&MS->audioq, &packet, 0) < 0)
         {
+            qDebug() << "Failed to get packet from queue";
             return -1;
         }
         audio_pkt_data =packet.data;
@@ -225,6 +235,8 @@ int PlayThread::audio_decode_frame(mediaState* MS, uint8_t* audio_buf)
                 {
                     qDebug() << "no data in list for 1e8 times access";
                     AGStatus = AGS_FINISH;
+                    //av_packet_unref(&packet);
+                    //return -1;
                 }
             }
 
@@ -383,7 +395,6 @@ void PlayThread::setMusicPath(QString path)
 AudioGenStatus PlayThread::getAGStatus() const {
     return AGStatus;
 }
-
 
 void  PlayThread::seekToPos(quint64 pos)
 {
@@ -728,7 +739,6 @@ void PlayThread::generateAudioDataLoop()
        av_frame_free(&pFrame);
 }
 
-
 void PlayThread::clearContextAndCloseDevice()
 {
     //释放所有可能分配的上下文内存
@@ -790,7 +800,6 @@ void PlayThread::ReleaseAll()
 
     bIsDeviceInit = false;
 }
-
 
 /* The audio function callback takes the following parameters:
  * stream: A pointer to the audio buffer to be filled
@@ -879,7 +888,6 @@ MusicPlayer::~MusicPlayer() {
     while (playThread->isRunning())
         millisecondSleep(5);
 }
-
 
 void MusicPlayer::setMedia(const QString &path)
 {

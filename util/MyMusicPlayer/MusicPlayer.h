@@ -233,7 +233,6 @@ private:
 //音乐播放器
 class MYMUSICPLAYER_EXPORT MusicPlayer : public QObject {
     Q_OBJECT
-
 public:
     enum Status
     {
