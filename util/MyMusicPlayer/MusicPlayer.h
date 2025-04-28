@@ -130,6 +130,17 @@ public:
 
     void seekToPos(quint64 pos);
 
+    // 新增方法
+    void requestForceQuit() {
+        QMutexLocker locker(&AGSStatusMutex);
+        m_forceQuit = true;
+    }
+
+    bool isForceQuitRequested() const {
+        QMutexLocker locker(&AGSStatusMutex);
+        return m_forceQuit;
+    }
+
 signals:
     void audioPlay(); //播放
     void audioPause(); //暂停
@@ -220,7 +231,9 @@ private:
     bool bIsDeviceInit;                 //设备是否已经初始化
     uint64_t millisecondToSeek;         //定位的 毫秒数）
 
-    QMutex AGSStatusMutex;				//保证	AGSStatus 状态 某些访问操作 的原子性
+    mutable QMutex AGSStatusMutex;				//保证	AGSStatus 状态 某些访问操作 的原子性
+
+    bool m_forceQuit = false; // 私有退出标志
 };
 
 

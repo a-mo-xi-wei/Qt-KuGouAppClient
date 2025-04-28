@@ -26,7 +26,7 @@ QMutex uniqueThreadMutex;		//保证线程 Run 内初始化队列 和 销毁队�
 /////////////////////////////////////////////////
 /* 包队列相关操作 */
 
-static bool g_isQuit=false; //清空了
+//static bool g_isQuit=false; //清空了
 
 // 包队列初始化
 void packet_queue_init(PacketQueue* q)
@@ -106,7 +106,7 @@ int packet_queue_put(PacketQueue *q, AVPacket *pkt) {
 }
 
 // 从队列中取出packet*
-int packet_queue_get(PacketQueue *q, AVPacket *pkt, int block)
+int packet_queue_get(PacketQueue *q, AVPacket *pkt, int block, bool *forceQuitFlag)
 {
     AVPacketList *pkt1;
     int ret;
@@ -118,7 +118,7 @@ int packet_queue_get(PacketQueue *q, AVPacket *pkt, int block)
 
     for (;;)
     {
-        if (g_isQuit) //由外界通知退出
+         if (forceQuitFlag && *forceQuitFlag) //由外界通知退出
         {
             SDL_UnlockMutex(q->mutex);  //解锁退出
             return -1;
@@ -161,9 +161,9 @@ void packet_queue_flush(PacketQueue *q)
     for(pkt = q->first_pkt; pkt != nullptr; pkt = pkt1)
     {
         pkt1 = pkt->next;
-        if(pkt1->pkt.data != (uint8_t *)"FLUSH")
-        {
-        }
+        //if(pkt1->pkt.data != (uint8_t *)"FLUSH")
+        //{
+        //}
         av_packet_unref(&pkt->pkt);
         av_freep(&pkt);
 
@@ -200,7 +200,7 @@ int PlayThread::audio_decode_frame(mediaState* MS, uint8_t* audio_buf)
 
     while (true)
     {
-        if (packet_queue_get(&MS->audioq, &packet, 0) < 0)
+        if (packet_queue_get(&MS->audioq, &packet, 0,&m_forceQuit) < 0)
         {
             qDebug() << "Failed to get packet from queue";
             return -1;
@@ -231,12 +231,10 @@ int PlayThread::audio_decode_frame(mediaState* MS, uint8_t* audio_buf)
             else
             {
                 tryTimes++;
-                if (tryTimes >= 100000000LL)
+                if (tryTimes >= 1e8)
                 {
                     qDebug() << "no data in list for 1e8 times access";
                     AGStatus = AGS_FINISH;
-                    //av_packet_unref(&packet);
-                    //return -1;
                 }
             }
 
@@ -665,7 +663,7 @@ void PlayThread::generateAudioDataLoop()
     AVPacket *ppacket = nullptr;  //分配用于转换的数据包(输入)
     AVFrame	*pFrame = nullptr;    //分配用于转换的数据包(解码输出)
 
-    while(!g_isQuit)
+    while(!m_forceQuit)
     {
         switch (AGStatus) {
         case AGS_PLAYING:
@@ -725,7 +723,7 @@ void PlayThread::generateAudioDataLoop()
             break;
 
         case AGS_FINISH:
-            g_isQuit = true;
+            m_forceQuit = true;
 
             break;
         default:
@@ -739,30 +737,28 @@ void PlayThread::generateAudioDataLoop()
        av_frame_free(&pFrame);
 }
 
-void PlayThread::clearContextAndCloseDevice()
-{
-    //释放所有可能分配的上下文内存
-    av_free(out_buffer);
+void PlayThread::clearContextAndCloseDevice() {
+    // 释放 FFmpeg 资源
+    if (pCodecCtx) {
+        avcodec_free_context(&pCodecCtx); // 正确释放编解码器上下文
+        pCodecCtx = nullptr;
+    }
 
-    pCodec = nullptr;
+    if (pFormatCtx) {
+        avformat_close_input(&pFormatCtx); // 自动释放格式上下文内存
+        pFormatCtx = nullptr;              // 显式置空防止野指针
+    }
 
-    if(pCodecCtx)
-        avcodec_close(pCodecCtx);
+    av_free(out_buffer);      // 释放音频缓冲区
+    out_buffer = nullptr;
 
-    if(pFormatCtx)
-        avformat_close_input(&pFormatCtx);
+    packet_queue_flush(&m_MS.audioq); // 清空音频包队列
 
-    packet_queue_flush(&m_MS.audioq);
-
-
-    //关闭 SDL 设备
+    // 释放 SDL 资源
 #if USE_SDL
-
-    SDL_CloseAudio();//Close SDL
-    SDL_Quit();
-
+    SDL_CloseAudio();                   // 关闭音频设备
+    SDL_QuitSubSystem(SDL_INIT_AUDIO);  // 仅关闭音频子系统
 #endif
-
 }
 
 //获得设备状态
@@ -774,8 +770,8 @@ SDL_AudioStatus PlayThread::GetDeviceStatus()
 //重置以初始化所有状态
 void PlayThread::ResetToInitAll()
 {
-    g_isQuit= false;                        //退出标志重置
-
+    //g_isQuit= false;                        //退出标志重置
+    m_forceQuit = false; // 初始化私有退出标志
 
     m_MS.clear();                       //重设音频相关的上下文状态
     packet_queue_init(&m_MS.audioq);    //初始化队列
@@ -965,6 +961,7 @@ void MusicPlayer::pause() const {
 void MusicPlayer::stop()
 {
     playThread->setAGStatus( AGS_FINISH );
+    playThread->requestForceQuit(); // 通过公有接口设置退出标志
 
     if(m_positionUpdateTimer.isActive())
     {
