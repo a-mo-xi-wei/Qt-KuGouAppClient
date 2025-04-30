@@ -232,7 +232,6 @@ private:
     bool                        m_isMaxScreen = false;
     QMetaObject::Connection     mediaStatusConnection;
 
-    bool                        m_isPlaying = false;
     QPoint                      m_pressPos;
     QString                     m_maxBtnStyle;
     QRect                       m_startGeometry; // 获取当前窗口的几何形状(正常状态)
