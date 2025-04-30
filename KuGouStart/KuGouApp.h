@@ -100,6 +100,8 @@ protected:
 
     void showEvent(QShowEvent *event) override;
 
+    void closeEvent(QCloseEvent *event) override;
+
 private slots:
     //menu
     void on_recommend_you_toolButton_clicked();

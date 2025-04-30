@@ -644,6 +644,10 @@ void KuGouApp::showEvent(QShowEvent *event) {
     updateSize();
 }
 
+void KuGouApp::closeEvent(QCloseEvent *event) {
+    MainWindow::closeEvent(event);
+}
+
 void KuGouApp::on_recommend_you_toolButton_clicked() {
     ui->title_widget->onLeftMenu_recommend_clicked();
 }
@@ -709,7 +713,7 @@ void KuGouApp::setPlayMusic(int &index) {
 }
 
 void KuGouApp::updateProcess() {
-    qDebug()<<"sliderMoved / sliderReleased : "<<ui->progressSlider->value();
+    //qDebug()<<"sliderMoved / sliderReleased : "<<ui->progressSlider->value();
     qint64 position = ui->progressSlider->value() * this->m_player->duration() / ui->progressSlider->maximum();
     this->m_player->seek(position);
 }
