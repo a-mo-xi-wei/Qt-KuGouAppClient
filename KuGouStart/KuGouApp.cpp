@@ -649,6 +649,10 @@ void KuGouApp::showEvent(QShowEvent *event) {
     updateSize();
 }
 
+void KuGouApp::closeEvent(QCloseEvent *event) {
+    MainWindow::closeEvent(event);
+}
+
 void KuGouApp::on_recommend_you_toolButton_clicked() {
     ui->title_widget->onLeftMenu_recommend_clicked();
 }

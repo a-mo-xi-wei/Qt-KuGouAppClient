@@ -7,6 +7,8 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
+#include <QTimeLine>
+#include <QGraphicsOpacityEffect>
 
 constexpr int SHADOW_WIDTH = 5;
 constexpr int RADIUS = 12;
@@ -132,6 +134,38 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event) {
             setGeometry(rect);
             mousePs = event->globalPosition().toPoint();
         }
+    }
+}
+
+void MainWindow::closeEvent(QCloseEvent *event) {
+    if (!isClosing) {
+        event->ignore();
+        auto effect = new QGraphicsOpacityEffect(this);
+        effect->setOpacity(1.0);
+        this->setGraphicsEffect(effect);
+        auto timeLine = new QTimeLine(500, this);
+
+        connect(timeLine, &QTimeLine::valueChanged, this, [=](const qreal& value) {
+            QLinearGradient gradient(0, height(), 0, 0);
+            gradient.setColorAt(0, QColor(255, 255, 255, 0));
+            gradient.setColorAt(value, QColor(255, 255, 255, 0));
+            gradient.setColorAt(1, QColor(255, 255, 255, 255));
+            effect->setOpacityMask(gradient);
+            effect->setOpacity(1 - value);
+        });
+
+        connect(timeLine, &QTimeLine::finished, this, [=]() {
+            timeLine->stop();  // 停止时间线
+            setGraphicsEffect(nullptr); // 立即移除效果
+            delete effect;    // 删除效果对象
+            isClosing = true;
+            close(); // 再次触发关闭
+        });
+
+        timeLine->start();
+    } else {
+        event->accept();
+        QWidget::closeEvent(event); // 确保基类处理关闭事件
     }
 }
 
