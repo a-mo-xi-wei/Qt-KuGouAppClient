@@ -44,9 +44,9 @@ void MainWindow::paintEvent(QPaintEvent *event) {
     //path.addRoundedRect(this->rect(), RADIUS, RADIUS);
     //painter.drawPath(path);
     //------------绘制阴影
-    QPainterPath path1;
-    path1.setFillRule(Qt::WindingFill);
-    path1.addRoundedRect(SHADOW_WIDTH,SHADOW_WIDTH, this->width() - SHADOW_WIDTH * 2, this->height() - SHADOW_WIDTH * 2,RADIUS,RADIUS);
+    //QPainterPath path1;
+    //path1.setFillRule(Qt::WindingFill);
+    //path1.addRoundedRect(SHADOW_WIDTH,SHADOW_WIDTH, this->width() - SHADOW_WIDTH * 2, this->height() - SHADOW_WIDTH * 2,RADIUS,RADIUS);
     QColor color(150, 150, 150, 55);
     for (int i = 0; i != SHADOW_WIDTH; ++i)
     {
@@ -147,17 +147,16 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 
         connect(timeLine, &QTimeLine::valueChanged, this, [=](const qreal& value) {
             QLinearGradient gradient(0, height(), 0, 0);
-            gradient.setColorAt(0, QColor(255, 255, 255, 0));
-            gradient.setColorAt(value, QColor(255, 255, 255, 0));
-            gradient.setColorAt(1, QColor(255, 255, 255, 255));
+            gradient.setColorAt(0, Qt::transparent);
+            gradient.setColorAt(value, Qt::transparent);
+            gradient.setColorAt(1, Qt::white);
             effect->setOpacityMask(gradient);
             effect->setOpacity(1 - value);
         });
 
-        connect(timeLine, &QTimeLine::finished, this, [=]() {
-            timeLine->stop();  // 停止时间线
+        connect(timeLine, &QTimeLine::finished, this, [=] {
             setGraphicsEffect(nullptr); // 立即移除效果
-            delete effect;    // 删除效果对象
+            effect->deleteLater(); // 安全释放(不加这一句程序不会退出，真的服了，有一种故意让程序崩溃而退出的感觉，因为正常退出程序的关闭特效不起作用，不知道为什么)
             isClosing = true;
             close(); // 再次触发关闭
         });
