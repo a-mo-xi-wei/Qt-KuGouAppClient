@@ -180,22 +180,22 @@ void KuGouApp::initStackedWidget() {
          * // initComponent(m_recentlyPlayed,14);
          * // initComponent(m_allMusic,15);
          */
-        //initComponent(m_live,0);
-        //initComponent(m_listenBook,1);
-        //initComponent(m_search,2);
-        //initComponent(m_recommendForYou,3);
-        //initComponent(m_musicRepository,4);
-        //initComponent(m_channel,5);
-        //initComponent(m_video,6);
-        //initComponent(m_aiChat,7);
-        //initComponent(m_songList,8);
-        //initComponent(m_dailyRecommend,9);
-        //initComponent(m_collection,10);
+        initComponent(m_live,0);
+        initComponent(m_listenBook,1);
+        initComponent(m_search,2);
+        initComponent(m_recommendForYou,3);
+        initComponent(m_musicRepository,4);
+        initComponent(m_channel,5);
+        initComponent(m_video,6);
+        initComponent(m_aiChat,7);
+        initComponent(m_songList,8);
+        initComponent(m_dailyRecommend,9);
+        initComponent(m_collection,10);
         initComponent(m_localDownload,11);
-        //initComponent(m_musicCloudDisk,12);
-        //initComponent(m_purchasedMusic,13);
-        //initComponent(m_recentlyPlayed,14);
-        //initComponent(m_allMusic,15);
+        initComponent(m_musicCloudDisk,12);
+        initComponent(m_purchasedMusic,13);
+        initComponent(m_recentlyPlayed,14);
+        initComponent(m_allMusic,15);
     }
 
     //响应相关跳转
