@@ -180,22 +180,22 @@ void KuGouApp::initStackedWidget() {
          * // initComponent(m_recentlyPlayed,14);
          * // initComponent(m_allMusic,15);
          */
-        initComponent(m_live,0);
-        initComponent(m_listenBook,1);
-        initComponent(m_search,2);
-        initComponent(m_recommendForYou,3);
-        initComponent(m_musicRepository,4);
-        initComponent(m_channel,5);
-        initComponent(m_video,6);
-        initComponent(m_aiChat,7);
-        initComponent(m_songList,8);
-        initComponent(m_dailyRecommend,9);
-        initComponent(m_collection,10);
+        //initComponent(m_live,0);
+        //initComponent(m_listenBook,1);
+        //initComponent(m_search,2);
+        //initComponent(m_recommendForYou,3);
+        //initComponent(m_musicRepository,4);
+        //initComponent(m_channel,5);
+        //initComponent(m_video,6);
+        //initComponent(m_aiChat,7);
+        //initComponent(m_songList,8);
+        //initComponent(m_dailyRecommend,9);
+        //initComponent(m_collection,10);
         initComponent(m_localDownload,11);
-        initComponent(m_musicCloudDisk,12);
-        initComponent(m_purchasedMusic,13);
-        initComponent(m_recentlyPlayed,14);
-        initComponent(m_allMusic,15);
+        //initComponent(m_musicCloudDisk,12);
+        //initComponent(m_purchasedMusic,13);
+        //initComponent(m_recentlyPlayed,14);
+        //initComponent(m_allMusic,15);
     }
 
     //响应相关跳转
@@ -249,7 +249,7 @@ void KuGouApp::initPlayWidget() {
     ui->share_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/share.svg")));
     ui->more_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/more.svg")));
     ui->pre_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/previous-song.svg")));
-    ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
+    ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
     ui->next_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/next-song.svg")));
     ui->erji_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/together.svg")));
     ui->lyrics_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/song-words.svg")));
@@ -334,17 +334,17 @@ void KuGouApp::initPlayWidget() {
     });
     connect(this->m_player, &MusicPlayer::audioPlay, this, [this] {
         //qDebug() << "+++++++++++++++++++++++++++++++audioPlay";
-        m_isPlaying = true;
-        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
+        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
     });
     connect(this->m_player, &MusicPlayer::audioPause, this, [this] {
         //qDebug() << "+++++++++++++++++++++++++++++++audioPause";
-        m_isPlaying = false;
-        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
+        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
     });
 
-    mediaStatusConnection = connect(this->m_player, &MusicPlayer::audioFinish, this, [this](bool isEndByForce) {
-       if (!isEndByForce && m_isOrderPlay) {
+    mediaStatusConnection = connect(this->m_player, &MusicPlayer::audioFinish, this, [this] {
+        qDebug()<<"播放结束。。。";
+        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
+        if (m_isOrderPlay) {
            qDebug() << "结束，开始播放下一首";
            STREAM_INFO() << "结束，开始播放下一首";
            addOrderIndex();
@@ -630,9 +630,11 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
                     //ani->start(QAbstractAnimation::DeleteWhenStopped);
                 }
 
-                qDebug() << "触发点击value : "<< value;
+                //qDebug() << "触发点击value : "<< value;
+                this->m_player->pause();
                 this->m_player->seek(value);
-                if (!this->m_isPlaying)ui->play_or_pause_toolButton->clicked();
+                this->m_player->play();
+
             }
         }
     }
@@ -715,7 +717,9 @@ void KuGouApp::setPlayMusic(int &index) {
 void KuGouApp::updateProcess() {
     //qDebug()<<"sliderMoved / sliderReleased : "<<ui->progressSlider->value();
     qint64 position = ui->progressSlider->value() * this->m_player->duration() / ui->progressSlider->maximum();
+    this->m_player->pause();
     this->m_player->seek(position);
+    this->m_player->play();
 }
 
 void KuGouApp::updateSliderRange(const qint64 &duration) {
@@ -930,12 +934,20 @@ void KuGouApp::on_play_or_pause_toolButton_clicked() {
                                 1000,this->window());
         return;
     }
-    this->m_isPlaying = !this->m_isPlaying;
-    if (this->m_isPlaying) {
+
+    if (this->m_player->state() == MusicPlayer::PausedState) {
         this->m_player->play();
-        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
-    } else {
+        //qDebug()<<"播放";
+        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
+    }
+    else if (this->m_player->state() == MusicPlayer::PlayingState) {
         this->m_player->pause();
+        //qDebug()<<"暂停";
+        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
+    }
+    else {
+        //qDebug()<<"当前状态：Stop";
+        this->m_player->play();
         ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
     }
 }
@@ -999,8 +1011,9 @@ void KuGouApp::on_circle_toolButton_clicked() {
         if (mediaStatusConnection) {
             disconnect(mediaStatusConnection);
             mediaStatusConnection = connect(this->m_player, &MusicPlayer::audioFinish,
-                this, [this](bool isEndByForce) {
-                if (!isEndByForce && !this->m_songInfoVector.isEmpty()) {
+                this, [this] {
+                ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
+                if (!this->m_songInfoVector.isEmpty()) {
                    this->m_player->stop();
                    setPlayMusic(this->m_songIndex);
                }
@@ -1014,8 +1027,9 @@ void KuGouApp::on_circle_toolButton_clicked() {
         //qDebug()<<"播放一次";
         if (mediaStatusConnection) {
             disconnect(mediaStatusConnection);
-            mediaStatusConnection = connect(this->m_player, &MusicPlayer::audioFinish, this, [this](bool isEndByForce) {
-               if (!isEndByForce && this->m_isOrderPlay && !this->m_songInfoVector.isEmpty()) {
+            mediaStatusConnection = connect(this->m_player, &MusicPlayer::audioFinish, this, [this] {
+                ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
+                if (this->m_isOrderPlay && !this->m_songInfoVector.isEmpty()) {
                    addOrderIndex();
                }
            });
