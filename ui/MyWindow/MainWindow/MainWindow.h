@@ -68,6 +68,8 @@ protected:
 
     void mouseMoveEvent(QMouseEvent *event) override;
 
+    void closeEvent(QCloseEvent *event) override;
+
     static void setElaToolTip(QWidget* widget, const QString& tooltip);
 
 private:
@@ -95,6 +97,7 @@ public:
     //关于我的酷狗dialog
     std::unique_ptr<AboutDialog> m_aboutDialog{};
     bool m_showDialog = false;
+    bool isClosing = false; // 标志位，控制是否正在关闭窗口
 };
 
 
