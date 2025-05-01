@@ -10,6 +10,8 @@
 #include "MenuBtn.hpp"
 #include <QMenu>
 
+class QTimeLine;
+class QGraphicsOpacityEffect;
 class QWidgetAction;
 
 #if defined(MYMENU_LIBRARY)
@@ -30,11 +32,13 @@ public:
 
     virtual const BaseMenu *getMenu() const;
 
+    virtual void setShadow(const int& width,const int& radius,const QColor& color){};
+
     void setCurIndex(const int &idx); //设置当前响应下标
 
-    QString getStyleSheet() const;
+    void setAniDuration(const int& duration);
 
-    virtual void setShadow(const int& width,const int& radius,const QColor& color){};
+    QString getStyleSheet() const;
 
 protected:
     void checkHover();
@@ -64,6 +68,9 @@ protected:
     int m_shadowWidth = 4;
     int m_shadowRadius = 12;
     QColor m_shadowColor = QColor(150,150,150,55);
+    //显示动画
+    QGraphicsOpacityEffect *m_opacityEffect{};
+    QTimeLine *m_timeLine{};
 };
 
 #endif //BASEMENU_H
