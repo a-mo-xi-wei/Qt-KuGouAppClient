@@ -51,6 +51,9 @@ private slots:
 
     void on_downloading_pushButton_clicked();
 
+signals:
+    void switch_to_listen_recommend();
+
 private:
     Ui::ListenMyDownload *ui;
     std::unique_ptr<QButtonGroup>   m_buttonGroup{};

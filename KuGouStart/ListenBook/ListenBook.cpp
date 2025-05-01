@@ -136,11 +136,21 @@ void ListenBook::initListenRecommend() {
 void ListenBook::initListenMyDownload() {
     this->m_listenMyDownload = std::make_unique<ListenMyDownload>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_listenMyDownload.get());
+
+    connect(this->m_listenMyDownload.get(), &ListenMyDownload::switch_to_listen_recommend, this,[this] {
+        ui->listen_recommend_toolButton->clicked();
+        ui->listen_recommend_toolButton->setChecked(true);
+    });
 }
 
 void ListenBook::initListenRecentlyPlay() {
     this->m_listenRecentlyPlay = std::make_unique<ListenRecentlyPlay>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_listenRecentlyPlay.get());
+
+    connect(this->m_listenRecentlyPlay.get(), &ListenRecentlyPlay::switch_to_listen_recommend, this,[this] {
+        ui->listen_recommend_toolButton->clicked();
+        ui->listen_recommend_toolButton->setChecked(true);
+    });
 }
 
 void ListenBook::enableButton(const bool &flag) const {

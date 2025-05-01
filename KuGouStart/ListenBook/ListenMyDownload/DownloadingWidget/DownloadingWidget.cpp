@@ -44,3 +44,7 @@ void DownloadingWidget::initUi() {
     ui->downloading_clear_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/delete-black.svg")));
 
 }
+
+void DownloadingWidget::on_search_pushButton_clicked() {
+    emit find_more_audio_book();
+}
