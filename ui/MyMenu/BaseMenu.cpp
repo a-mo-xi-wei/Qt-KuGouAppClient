@@ -10,6 +10,8 @@
 #include <QPainterPath>
 #include <QCoreApplication>
 #include <QWidgetAction>
+#include <QGraphicsOpacityEffect>
+#include <QTimeLine>
 
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
@@ -31,6 +33,23 @@ BaseMenu::BaseMenu(QWidget *parent)
             return;
         }
     }
+    m_opacityEffect = new QGraphicsOpacityEffect(this);
+    m_opacityEffect->setOpacity(0.0);
+    this->setGraphicsEffect(m_opacityEffect);
+
+    m_timeLine = new QTimeLine(300, this);
+    connect(m_timeLine, &QTimeLine::valueChanged, this, [=](const qreal &value) {
+        QLinearGradient gradient(0, 0, 0, height());
+        gradient.setColorAt(0, QColor(255, 255, 255, 255));
+        gradient.setColorAt(value, QColor(255, 255, 255, 255));
+        gradient.setColorAt(1, QColor(255, 255, 255, 0));
+        m_opacityEffect->setOpacityMask(gradient);
+        m_opacityEffect->setOpacity(value);
+    });
+    connect(m_timeLine, &QTimeLine::finished, this, [=]() {
+        m_opacityEffect->setOpacity(1); // 确保完全显示
+        m_opacityEffect->setOpacityMask(QBrush()); // 清除残留遮罩
+    });
 }
 
 const BaseMenu *BaseMenu::getMenu() const {
@@ -39,6 +58,10 @@ const BaseMenu *BaseMenu::getMenu() const {
 
 void BaseMenu::setCurIndex(const int &idx) {
     this->m_curIndex = idx;
+}
+
+void BaseMenu::setAniDuration(const int &duration) {
+    m_timeLine->setDuration(duration);
 }
 
 QString BaseMenu::getStyleSheet() const {
@@ -91,7 +114,11 @@ void BaseMenu::paintEvent(QPaintEvent *event) {
 
 void BaseMenu::showEvent(QShowEvent *event) {
     QMenu::showEvent(event);
-    //this->setFocus(); // 强制widget接收焦点
+    // 每次展示都重新开始动画
+    m_opacityEffect->setOpacity(0.0);
+    m_timeLine->stop();
+    m_timeLine->setCurrentTime(0); // 重置进度
+    m_timeLine->start();
 }
 
 void BaseMenu::leaveEvent(QEvent *event) {

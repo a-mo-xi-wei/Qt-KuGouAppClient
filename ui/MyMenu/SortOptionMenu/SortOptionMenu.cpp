@@ -13,6 +13,7 @@
 SortOptionMenu::SortOptionMenu(QWidget *parent)
     : BaseMenu(parent)
 {
+    this->setAniDuration(100);
 }
 
 void SortOptionMenu::initMenu() {
