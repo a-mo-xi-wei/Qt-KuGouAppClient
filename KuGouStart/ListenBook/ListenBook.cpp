@@ -55,8 +55,8 @@ void ListenBook::initUi() {
     }
     //设置文本
     ui->listen_recommend_toolButton->setText(QStringLiteral("   推荐"));
-    ui->listen_my_download_toolButton->setText(QStringLiteral("  下载"));
-    ui->recently_play_toolButton->setText(QStringLiteral("   最近"));
+    ui->listen_my_download_toolButton->setText(QStringLiteral("  我的下载"));
+    ui->recently_play_toolButton->setText(QStringLiteral("   最近播放"));
 
     //设置选中图标
     {
