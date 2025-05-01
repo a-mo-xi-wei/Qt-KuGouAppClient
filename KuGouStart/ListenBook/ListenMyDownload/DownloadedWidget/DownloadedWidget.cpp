@@ -32,3 +32,7 @@ DownloadedWidget::DownloadedWidget(QWidget *parent)
 DownloadedWidget::~DownloadedWidget() {
     delete ui;
 }
+
+void DownloadedWidget::on_search_pushButton_clicked() {
+    emit find_more_audio_book();
+}
