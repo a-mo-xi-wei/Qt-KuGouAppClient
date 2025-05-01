@@ -32,3 +32,7 @@ ListenRecentlyPlay::ListenRecentlyPlay(QWidget *parent)
 ListenRecentlyPlay::~ListenRecentlyPlay() {
     delete ui;
 }
+
+void ListenRecentlyPlay::on_search_pushButton_clicked() {
+    emit switch_to_listen_recommend();
+}

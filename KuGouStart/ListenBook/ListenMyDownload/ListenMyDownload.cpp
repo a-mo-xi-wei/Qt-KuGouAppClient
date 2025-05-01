@@ -72,11 +72,15 @@ void ListenMyDownload::initDownloadedWidget() {
     this->m_downloaded = std::make_unique<DownloadedWidget>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_downloaded.get());
     ui->stackedWidget->setCurrentWidget(this->m_downloaded.get());
+
+    connect(this->m_downloaded.get(),&DownloadedWidget::find_more_audio_book,[this]{emit switch_to_listen_recommend();});
 }
 
 void ListenMyDownload::initDownloadingWidget() {
     this->m_downloading = std::make_unique<DownloadingWidget>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_downloading.get());
+
+    connect(this->m_downloading.get(),&DownloadingWidget::find_more_audio_book,[this]{emit switch_to_listen_recommend();});
 }
 
 void ListenMyDownload::enableButton(const bool &flag) const {
