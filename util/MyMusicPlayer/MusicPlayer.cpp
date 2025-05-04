@@ -2,6 +2,7 @@
 
 #include <qdatetime.h>
 #include <QDebug>
+#include <QFileInfo>
 
 #define MAX_AUDIO_FRAME_SIZE 192000 // 1 second of 48khz 32bit audio
 
@@ -419,7 +420,8 @@ bool PlayThread::initDeviceAndFfmpegContext() {
     if (tag) {
         title = tag->value; // 找到时赋值
     } else {
-        title = ""; // 未找到时设为空字符串
+        title = parseArtistAndTitleFromFilename(this->musicPath).second; // 未找到时设为空字符串
+        if (title.isEmpty())title = "网络歌曲";
     }
     emit titleFound(title); // 无论是否找到，都发射信号
 
@@ -428,7 +430,8 @@ bool PlayThread::initDeviceAndFfmpegContext() {
     if (tag) {
         artist = tag->value; // 找到时赋值
     } else {
-        artist = ""; // 未找到时设为空字符串
+        artist = parseArtistAndTitleFromFilename(this->musicPath).first; // 未找到时设为空字符串
+        if (artist.isEmpty())artist = "网络歌手";
     }
     emit artistFound(artist); // 无论是否找到，都发射信号
 
@@ -723,6 +726,33 @@ void PlayThread::clearContextAndCloseDevice() {
 //获得设备状态
 SDL_AudioStatus PlayThread::GetDeviceStatus() {
     return SDL_GetAudioStatus();
+}
+
+//如果为空，则设置为文件名（剪切掉后缀），如果文件名中包含 - 或 _ 则以此分割，前半部分为歌手，后半部分为歌曲名
+QPair<QString, QString> PlayThread::parseArtistAndTitleFromFilename(const QString &filePath) {
+    QFileInfo fileInfo(filePath);
+    QString baseName = fileInfo.completeBaseName().trimmed(); // 去掉路径和扩展名
+
+    QString artist, title;
+
+    if (baseName.contains(" - ")) {
+        QStringList parts = baseName.split(" - ");
+        if (parts.size() >= 2) {
+            artist = parts[0].trimmed();
+            title = parts[1].trimmed();
+        }
+    }
+    else if (baseName.contains("_")) {
+        QStringList parts = baseName.split("_");
+        if (parts.size() >= 2) {
+            artist = parts[0].trimmed();
+            title = parts[1].trimmed();
+        }
+    } else {
+        title = baseName;
+    }
+
+    return {artist, title};
 }
 
 //重置以初始化所有状态

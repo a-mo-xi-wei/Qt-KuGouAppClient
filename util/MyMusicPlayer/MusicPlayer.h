@@ -164,6 +164,8 @@ public:
 
     SDL_AudioStatus GetDeviceStatus(); //获得设备状态
 
+    QPair<QString, QString> parseArtistAndTitleFromFilename(const QString &filePath);
+
 private:
     //SDL 模块需要的回调函数，用于填充需要的音频数据
     static void fillAudio(void *udata, Uint8 *stream, int len);
