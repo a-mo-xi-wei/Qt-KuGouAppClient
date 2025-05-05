@@ -37,7 +37,7 @@ private slots:
 
     void on_collect_share_toolButton_clicked();
 
-    void on_collect_zhuanji_toolButton_clicked();
+    void on_collect_album_toolButton_clicked();
 
     void on_collect_sort_toolButton_clicked();
 

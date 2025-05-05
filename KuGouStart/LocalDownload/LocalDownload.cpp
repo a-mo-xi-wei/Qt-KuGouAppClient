@@ -2,8 +2,6 @@
 // Created by WeiWang on 24-10-10.
 //
 
-// You may need to build the project (run Qt uic code generator) to get "ui_LocalDownload.h" resolved
-
 #include "LocalDownload.h"
 #include "ui_LocalDownload.h"
 #include "logger.hpp"
@@ -34,11 +32,7 @@ LocalDownload::LocalDownload(QWidget *parent)
 
     initUi();
     //中转信号
-    connect(this->m_localSong.get(), &LocalSong::addSongInfo, this, [this](const SongInfor& info){emit addSongInfo(info);});
-    connect(this->m_localSong.get(), &LocalSong::subSongInfo, this, [this](const SongInfor& info){emit subSongInfo(info);});
-    connect(this->m_localSong.get(), &LocalSong::syncSongInfo, this, [this](QVector<SongInfor> &vec){emit syncSongInfo(vec);});
-    connect(this->m_localSong.get(), &LocalSong::playMusic, this, [this](const int& index){emit playMusic(index);});
-    connect(this->m_localSong.get(), &LocalSong::startPlay, this, [this]{emit startPlay();});
+    connect(this->m_localSong.get(), &LocalSong::playMusic, this, [this](const QString& localPath){emit playMusic(localPath);});
     connect(this->m_localSong.get(), &LocalSong::updateCountLabel, this, &LocalDownload::local_music_label_changed);
 
     //动画结束，恢复可交互
@@ -50,8 +44,16 @@ LocalDownload::~LocalDownload() {
     delete ui;
 }
 
-void LocalDownload::setPlayIndex(const int &index) {
-    this->m_localSong->setPlayIndex(index);
+void LocalDownload::audioFinished() {
+    this->m_localSong->onAudioFinished();
+}
+
+void LocalDownload::playLocalSongNextSong() {
+    this->m_localSong->playNextSong();
+}
+
+void LocalDownload::playLocalSongPrevSong() {
+    this->m_localSong->playPrevSong();
 }
 
 void LocalDownload::onMaxScreenHandle() {

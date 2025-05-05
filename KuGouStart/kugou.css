@@ -59,13 +59,6 @@ QWidget#play_widget QPushButton:checked {
 QToolButton#volume_toolButton{
     background-color:rgba(255,255,255,0);
 }
-QLabel#cover_label{
-    border-radius:8px;
-    border-image:url(':/Res/playbar/default-cover-gray.svg');
-}
-QLabel#cover_label:hover{
-    border-image:url(':/Res/playbar/default-cover-blue.svg');
-}
 QLabel#song_name_label:hover{
     color: #006fff;
 }

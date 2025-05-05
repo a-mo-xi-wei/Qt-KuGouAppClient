@@ -125,8 +125,8 @@ void DailyRecommend::initTableWidget() {
         SongInfor tempInformation;
         tempInformation.index = i;
         tempInformation.cover = QPixmap(QString(":/Res/tablisticon/pix%1.png").arg(i%10+1));
-        tempInformation.songName = "未知歌曲";
-        tempInformation.singer = "未知歌手";
+        tempInformation.songName = "网络歌曲";
+        tempInformation.singer = "网络歌手";
         tempInformation.duration = "未知时长";
         tempInformation.mediaPath = "未知路径";
         tempInformation.addTime = QDateTime::currentDateTime();

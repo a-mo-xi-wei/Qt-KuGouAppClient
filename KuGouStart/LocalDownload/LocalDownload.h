@@ -28,9 +28,13 @@ public:
 
     ~LocalDownload() override;
 
-public slots:
-    void setPlayIndex(const int &index);
+    void audioFinished();
 
+    void playLocalSongNextSong();
+
+    void playLocalSongPrevSong();
+
+public slots:
     void onMaxScreenHandle();
 
 private:
@@ -64,16 +68,7 @@ private slots:
     void local_music_label_changed(const int& num);
 
 signals:
-    void playMusic(const int& index);
-
-    void startPlay();
-
-    void addSongInfo(const SongInfor &info);
-
-    void subSongInfo(const SongInfor &info);
-
-    //同步(更新)Vec
-    void syncSongInfo(QVector<SongInfor> &vec);
+    void playMusic(const QString &localPath);
 
     void find_more_music();
 

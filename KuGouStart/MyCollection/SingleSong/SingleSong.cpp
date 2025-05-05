@@ -58,9 +58,9 @@ void SingleSong::initUi() {
         auto collect_share_toolButton_toolTip = new ElaToolTip(ui->collect_share_toolButton);
         collect_share_toolButton_toolTip->setToolTip(QStringLiteral("分享"));
 
-        // 设置 collect_zhuanji_toolButton 的 tooltip
-        auto collect_zhuanji_toolButton_toolTip = new ElaToolTip(ui->collect_zhuanji_toolButton);
-        collect_zhuanji_toolButton_toolTip->setToolTip(QStringLiteral("专辑"));
+        // 设置 collect_album_toolButton 的 tooltip
+        auto collect_album_toolButton_toolTip = new ElaToolTip(ui->collect_album_toolButton);
+        collect_album_toolButton_toolTip->setToolTip(QStringLiteral("专辑"));
 
         // 设置 collect_sort_toolButton 的 tooltip
         auto collect_sort_toolButton_toolTip = new ElaToolTip(ui->collect_sort_toolButton);
@@ -187,7 +187,7 @@ void SingleSong::on_collect_share_toolButton_clicked() {
                             "分享 功能暂未实现 敬请期待", 1000,this->window());
 }
 
-void SingleSong::on_collect_zhuanji_toolButton_clicked() {
+void SingleSong::on_collect_album_toolButton_clicked() {
     ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
                             "专辑 功能暂未实现 敬请期待", 1000,this->window());
 }

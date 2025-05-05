@@ -68,22 +68,9 @@ private:
 
     void initCornerWidget();
 
-    int getCurrentIndex(int index);    //通过在旧的vector里面的下标，来找新的下标
-
-    void update_cover_singer_song_HLayout();
-
     void updateSize();
 
     void enableButton(const bool& flag);
-
-private:
-    void addOrderIndex();
-
-    void subOrderIndex();
-
-    void addSongIndex();
-
-    void subSongIndex();
 
 protected:
     void mousePressEvent(QMouseEvent *ev) override;
@@ -162,19 +149,9 @@ private slots:
     void on_song_queue_toolButton_clicked();
 
 private slots:
-    void setPlayMusic(int &index);
-
     void updateProcess();
 
     void updateSliderRange(const qint64& duration);
-
-    void onPlayMusic(int index);
-
-    void onStartPlay();
-
-    void onAddSongInfo(const SongInfor &info);
-
-    void onSubSongInfo(const SongInfor &info);
 
     void onKeyPause();
 
@@ -188,12 +165,10 @@ private slots:
 
     void onTitleMaxScreen();
 
-    //接收重排信号
-    void onSyncSongInfoVector(QVector<SongInfor>& vec);
+public slots:
+    void onPlayLocalMusic(const QString& localPath);
 
 signals:
-    void setPlayIndex(const int& index);
-
     void maxScreen();       //发出最大化信号给LocalDown，让正在播放的高亮条延伸
 
     void curPlaySongNameChange(const QString& songName);
@@ -237,11 +212,5 @@ private:
     QRect                       m_startGeometry; // 获取当前窗口的几何形状(正常状态)
     QRect                       m_endGeometry;
     QRect                       m_normalGeometry;//非最大化状态
-
-    bool                    m_isOrderPlay = false;//专门提供给开始播放按钮
-    int                     m_orderIndex = 0;
-    QVector<SongInfor>      m_songInfoVector;
-    QVector<SongInfor>      m_lastSongInfoVector;//保留上一次排序的结果
-    int                     m_songIndex = -1;//播放的歌曲的下标
 };
 #endif // KUGOUAPP_H
