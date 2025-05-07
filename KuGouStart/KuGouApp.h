@@ -2,7 +2,8 @@
 #define KUGOUAPP_H
 
 #include "MainWindow.h"
-#include "MusicPlayer.h"
+#include "VideoPlayer/VideoPlayer.h"
+
 //发现音乐
 #include "RecommendForYou.h"
 #include "MusicRepository.h"
@@ -24,6 +25,8 @@
 #include "Search.h"
 #include <ui_KuGouApp.h>
 
+#include <iostream>
+
 class QButtonGroup;
 class QSizeGrip;
 class QPropertyAnimation;
@@ -38,7 +41,7 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class KuGouApp : public MainWindow {
+class KuGouApp : public MainWindow , public VideoPlayer::EventHandle {
     Q_OBJECT
 
 public:
@@ -47,6 +50,8 @@ public:
     ~KuGouApp() override;
 
 private:
+    void initPlayer();
+
     void initFontRes();
 
     void initUi();
@@ -175,9 +180,29 @@ signals:
 
     void curPlaySingerChange(const QString& singer);
 
+protected:
+    void onOpenVideoFileFailed(const int &code) override {
+        std::cerr << "Open video file failed with code: " << code << std::endl;
+    }
+
+    void onOpenSdlFailed(const int &code) override {
+        std::cerr << "Open SDL failed with code: " << code << std::endl;
+    }
+
+    void onTotalTimeChanged(const int64_t &uSec) override {
+        std::cout << "Total time: " << uSec / 1000000 << " seconds" << std::endl;
+    }
+
+    void onPlayerStateChanged(const VideoPlayer::State &state, const bool &hasVideo, const bool &hasAudio) override {
+        std::cout << "Player state changed to: " << state << " (Has audio: " << hasAudio << ")" << std::endl;
+    }
+
+    void onDisplayVideo(VideoRawFramePtr videoFrame) override {
+        // 不播放视频，无需实现
+    }
 private:
     Ui::KuGouApp *ui;
-    MusicPlayer*                        m_player{};
+    VideoPlayer*                        m_player{};
     std::unique_ptr<QButtonGroup>       m_menuBtnGroup{};
     std::unique_ptr<QSizeGrip>          m_sizeGrip{};
     std::unique_ptr<QPropertyAnimation> m_animation{};  //专门用于窗口的缩放动画
