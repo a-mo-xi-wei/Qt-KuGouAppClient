@@ -12,7 +12,7 @@ add_subdirectory(MySpdlog)
 add_subdirectory(MyQsLog)
 
 #播放器核心模块
-add_subdirectory(MyMusicPlayer)
+add_subdirectory(MyPlayer)
 
 #JWT模块
 add_subdirectory(SJwt)

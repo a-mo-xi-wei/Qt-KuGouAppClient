@@ -1,20 +1,31 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(MyMusicPlayer VERSION 1.0 LANGUAGES CXX)
+project(MyPlayer VERSION 1.0 LANGUAGES CXX)
+
+set(USE_PCM_PLAYER 1)
+add_definitions(-DUSE_PCM_PLAYER -DENABLE_SDL)
+
+file(GLOB_RECURSE SOURCE_SRC_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+file(GLOB_RECURSE SOURCE_SRC_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 
 set(SOURCE_FILE
-        musicPlayer.cpp
-        musicPlayer.h
+        ${SOURCE_SRC_H}
+        ${SOURCE_SRC_CPP}
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
 
-target_compile_definitions(${PROJECT_NAME} PRIVATE MYMUSICPLAYER_LIBRARY)
+target_compile_definitions(${PROJECT_NAME} PRIVATE MYPLAYER_LIBRARY)
 
 # 指定库的包含目录
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
+target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/../../tools/ffmpeg/win64/include
         ${CMAKE_CURRENT_SOURCE_DIR}/../../tools/SDL2/win64/include
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/frame
+        ${CMAKE_CURRENT_SOURCE_DIR}/util
+        ${CMAKE_CURRENT_SOURCE_DIR}/PcmPlayer
+        ${CMAKE_CURRENT_SOURCE_DIR}/VideoPlayer
 )
 
 target_link_directories(${PROJECT_NAME} PRIVATE
