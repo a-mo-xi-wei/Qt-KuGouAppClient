@@ -39,7 +39,6 @@ QPixmap roundedPixmap(const QPixmap &src, QSize size, int radius) {
 KuGouApp::KuGouApp(MainWindow *parent)
     : MainWindow(parent)
     , ui(new Ui::KuGouApp)
-    , m_player(new MusicPlayer(this))
     , m_menuBtnGroup(std::make_unique<QButtonGroup>(this))
     , m_sizeGrip(std::make_unique<QSizeGrip>(this))
     , m_animation(std::make_unique<QPropertyAnimation>(this, "geometry"))
@@ -56,7 +55,7 @@ KuGouApp::KuGouApp(MainWindow *parent)
         STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
-
+    initPlayer();
     initUi();
 
     //动画结束，恢复可交互
@@ -71,6 +70,30 @@ KuGouApp::~KuGouApp() {
     // call before spdlog static variables destroy
     mylog::logger::get().shutdown();
     delete ui;
+}
+
+void KuGouApp::initPlayer() {
+    ///初始化播放器
+    VideoPlayer::initPlayer();
+    qRegisterMetaType<VideoPlayer::State>();
+    // 设置事件处理
+    this->m_player = new VideoPlayer(this);
+    m_player->setAbility(false, false, true, false);
+    //this->m_player->setEventHandle(this);
+    m_player->setVolume(0.3);  // 设置音量（0.0 ~ 1.0）
+    m_player->setMute(false);   // 取消静音
+    connect(m_player, &VideoPlayer::albumFound, this, [this](const QString &album) {
+        qDebug()<<"albumFound : "<<album;
+    });
+    connect(m_player, &VideoPlayer::artistFound, this, [this](const QString &artist) {
+        qDebug()<<"artistFound : "<<artist;
+    });
+    connect(m_player, &VideoPlayer::titleFound, this, [this](const QString &title) {
+        qDebug()<<"titleFound : "<<title;
+    });
+    connect(m_player, &VideoPlayer::pictureFound, this, [this](const QPixmap &picture) {
+        qDebug()<<"pictureFound : "<<picture;
+    });
 }
 
 void KuGouApp::initFontRes() {
@@ -302,10 +325,8 @@ void KuGouApp::initPlayWidget() {
         singer_text_toolTip->adjustSize();
     });
 
-    this->m_player->setVolume(30);
-
     connect(ui->volume_toolButton, &VolumeToolBtn::volumeChange, this, [this](const int value) {
-        this->m_player->setVolume(value); // 设置音量
+        this->m_player->setVolume(value / 100.0); // 设置音量
     });
     connect(this,&MainWindow::fromTray_noVolume,this,[this](const bool& flag) {
         STREAM_INFO()<<"KuGouApp 托盘图标点击: "<<(flag?"静音":"开启声音");
@@ -317,15 +338,15 @@ void KuGouApp::initPlayWidget() {
         }
     });
 
-    connect(this->m_player, &MusicPlayer::positionChanged, this, [this](int position) {
+    connect(this->m_player, &VideoPlayer::positionChanged, this, [this](int position) {
         if (ui->progressSlider->isSliderDown())return;
         //qDebug()<<"-------------------------position "<<position;
         ui->progressSlider->setValue(position);
         ui->position_label->setText(QTime::fromMSecsSinceStartOfDay(position).toString("mm:ss"));
     });
-    connect(this->m_player, &MusicPlayer::durationChanged, this, &KuGouApp::updateSliderRange);
+    connect(this->m_player, &VideoPlayer::durationChanged, this, &KuGouApp::updateSliderRange);
 
-    connect(this->m_player, &MusicPlayer::pictureFound, this, [this](const QPixmap& pix) {
+    connect(this->m_player, &VideoPlayer::pictureFound, this, [this](const QPixmap& pix) {
         if (pix.isNull()) {
             ui->cover_label->installEventFilter(this);
             ui->cover_label->setPixmap(roundedPixmap(QPixmap(":/Res/playbar/default-cover-gray.svg"), ui->cover_label->size(), 8));
@@ -335,30 +356,30 @@ void KuGouApp::initPlayWidget() {
             ui->cover_label->setPixmap(roundedPixmap(pix, ui->cover_label->size(), 8));
         }
     });
-    connect(this->m_player, &MusicPlayer::titleFound, this, [this](const QString& song) {
+    connect(this->m_player, &VideoPlayer::titleFound, this, [this](const QString& song) {
         qDebug()<<"歌曲："<<song;
         emit curPlaySongNameChange(song);
     });
-    connect(this->m_player, &MusicPlayer::artistFound, this, [this](const QString& singer) {
+    connect(this->m_player, &VideoPlayer::artistFound, this, [this](const QString& singer) {
         qDebug()<<"歌手："<<singer;
         emit curPlaySingerChange(singer);
     });
 
-    connect(this->m_player, &MusicPlayer::audioPlay, this, [this] {
+    connect(this->m_player, &VideoPlayer::audioPlay, this, [this] {
         //qDebug() << "+++++++++++++++++++++++++++++++audioPlay";
         ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
     });
-    connect(this->m_player, &MusicPlayer::audioPause, this, [this] {
+    connect(this->m_player, &VideoPlayer::audioPause, this, [this] {
         //qDebug() << "+++++++++++++++++++++++++++++++audioPause";
         ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
     });
 
-    mediaStatusConnection = connect(this->m_player, &MusicPlayer::audioFinish, this, [this] {
+    mediaStatusConnection = connect(this->m_player, &VideoPlayer::audioFinish, this, [this] {
         qDebug()<<this->m_player->getMusicPath()<<"播放结束。。。";
         ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
         this->m_localDownload->audioFinished();
    });
-    connect(this->m_player, &MusicPlayer::errorOccur, this, [this](const int& code, const QString &msg) {
+    connect(this->m_player, &VideoPlayer::errorOccur, this, [this](const QString &msg) {
         ElaMessageBar::error(ElaMessageBarType::BottomRight, "Error", msg, 2000, this->window());
     });
 
@@ -563,7 +584,7 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
                     //ani->start(QAbstractAnimation::DeleteWhenStopped);
                 }
 
-                //qDebug() << "触发点击value : "<< value;
+                qDebug() << "触发点击value : "<< value;
                 this->m_player->pause();
                 this->m_player->seek(value);
                 this->m_player->play();
@@ -648,7 +669,8 @@ void KuGouApp::on_all_music_toolButton_clicked() {
 
 void KuGouApp::updateProcess() {
     //qDebug()<<"sliderMoved / sliderReleased : "<<ui->progressSlider->value();
-    qint64 position = ui->progressSlider->value() * this->m_player->duration() / ui->progressSlider->maximum();
+    qint64 position = ui->progressSlider->value() * this->m_player->getTotalTime() / ui->progressSlider->maximum();
+    qDebug()<<"position : "<<position;
     this->m_player->pause();
     this->m_player->seek(position);
     this->m_player->play();
@@ -661,7 +683,7 @@ void KuGouApp::updateSliderRange(const qint64 &duration) {
 }
 
 void KuGouApp::onKeyPause() {
-    if (this->m_player->state() == MusicPlayer::PlayingState) {
+    if (this->m_player->state() == VideoPlayer::State::Playing) {
         this->m_player->pause();
     } else {
         if (!this->m_player->getMusicPath().isEmpty())
@@ -670,11 +692,13 @@ void KuGouApp::onKeyPause() {
 }
 
 void KuGouApp::onKeyLeft() {
-    this->m_player->backwardSeek(5000);
+    qDebug()<<"getCurrentTime() : "<<this->m_player->getCurrentTime();
+    this->m_player->seek(this->m_player->getCurrentTime() - 5);
 }
 
 void KuGouApp::onKeyRight() {
-    this->m_player->forwordSeek(5000);
+    qDebug()<<"getCurrentTime() : "<<this->m_player->getCurrentTime();
+    this->m_player->seek(this->m_player->getCurrentTime() + 5);
 }
 
 void KuGouApp::onTitleCurrentStackChange(const int &index,const bool& slide) {
@@ -795,8 +819,7 @@ void KuGouApp::onTitleMaxScreen() {
 void KuGouApp::onPlayLocalMusic(const QString &localPath) {
     qDebug()<<"播放："<<localPath;
     this->m_player->stop();
-    this->m_player->setMedia(localPath);
-    this->m_player->play();
+    this->m_player->startPlay(localPath.toStdString());
 }
 
 void KuGouApp::on_play_or_pause_toolButton_clicked() {
@@ -808,12 +831,12 @@ void KuGouApp::on_play_or_pause_toolButton_clicked() {
         return;
     }
 
-    if (this->m_player->state() == MusicPlayer::PausedState) {
+    if (this->m_player->state() == VideoPlayer::State::Pause) {
         this->m_player->play();
         //qDebug()<<"播放";
         ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
     }
-    else if (this->m_player->state() == MusicPlayer::PlayingState) {
+    else if (this->m_player->state() == VideoPlayer::State::Playing) {
         this->m_player->pause();
         //qDebug()<<"暂停";
         ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
@@ -882,12 +905,11 @@ void KuGouApp::on_circle_toolButton_clicked() {
                                             QToolButton:hover{border-image:url(':/Res/playbar/single-list-loop-blue.svg');})");
         if (mediaStatusConnection) {
             disconnect(mediaStatusConnection);
-            mediaStatusConnection = connect(this->m_player, &MusicPlayer::audioFinish,
+            mediaStatusConnection = connect(this->m_player, &VideoPlayer::audioFinish,
                 this, [this] {
                 ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
                 // 循环播放
-                this->m_player->stop();
-                this->m_player->play();
+                this->m_player->replay();
             });
         }
         else {
@@ -898,7 +920,7 @@ void KuGouApp::on_circle_toolButton_clicked() {
         //qDebug()<<"播放一次";
         if (mediaStatusConnection) {
             disconnect(mediaStatusConnection);
-            mediaStatusConnection = connect(this->m_player, &MusicPlayer::audioFinish, this, [this] {
+            mediaStatusConnection = connect(this->m_player, &VideoPlayer::audioFinish, this, [this] {
                 ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
                 this->m_localDownload->audioFinished();
            });
