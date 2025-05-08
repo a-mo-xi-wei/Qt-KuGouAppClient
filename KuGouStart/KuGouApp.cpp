@@ -563,6 +563,10 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
         }
         if (event->type() == QEvent::MouseButtonPress) //判断类型
         {
+            //如果当前播放器的状态为stop则 重新播放
+            if (this->m_player->state() == VideoPlayer::State::Stop) {
+                this->m_player->replay(true);
+            }
             auto mouseEvent = dynamic_cast<QMouseEvent *>(event);
             if (mouseEvent->button() == Qt::LeftButton) //判断左键
             {
