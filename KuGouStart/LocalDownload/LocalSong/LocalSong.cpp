@@ -71,16 +71,18 @@ LocalSong::~LocalSong() {
 }
 
 void LocalSong::playNextSong() {
+    qDebug()<<"播放下一首歌曲";
     this->m_curPlayIndex = (m_curPlayIndex + 1) % static_cast<int>(this->m_locationMusicVector.size());
-    auto item = this->m_musicItemVector[m_curPlayIndex];
+    const auto item = this->m_musicItemVector[m_curPlayIndex];
     emit playMusic(item->m_information.mediaPath);
     setPlayItemHighlight(item);
 }
 
 void LocalSong::playPrevSong() {
-    auto s = static_cast<int>(this->m_locationMusicVector.size());
+    qDebug()<<"播放上一首歌曲";
+    const auto s = static_cast<int>(this->m_locationMusicVector.size());
     this->m_curPlayIndex = (m_curPlayIndex + s - 1) % s;
-    auto item = this->m_musicItemVector[m_curPlayIndex];
+    const auto item = this->m_musicItemVector[m_curPlayIndex];
     emit playMusic(item->m_information.mediaPath);
     setPlayItemHighlight(item);
 }

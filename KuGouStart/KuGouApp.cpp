@@ -375,7 +375,7 @@ void KuGouApp::initPlayWidget() {
     });
 
     mediaStatusConnection = connect(this->m_player, &VideoPlayer::audioFinish, this, [this] {
-        qDebug()<<this->m_player->getMusicPath()<<"播放结束。。。";
+        qDebug()<<__LINE__<<" ***** "<<this->m_player->getMusicPath()<<"播放结束。。。";
         ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
         this->m_localDownload->audioFinished();
    });
@@ -898,8 +898,6 @@ void KuGouApp::on_circle_toolButton_clicked() {
     m_isSingleCircle = !m_isSingleCircle;
     if (m_isSingleCircle) {
         //qDebug()<<"单曲循环";
-        //this->m_player->setLoops(QMediaPlayer::Loops::Infinite);
-        ////怪不得，原来错在这里，我就说怎么循环播放进度条一直有问题，服了
         ui->circle_toolButton->setStyleSheet(
             R"(QToolButton{border-image:url(':/Res/playbar/single-list-loop-gray.svg');}
                                             QToolButton:hover{border-image:url(':/Res/playbar/single-list-loop-blue.svg');})");
@@ -907,6 +905,7 @@ void KuGouApp::on_circle_toolButton_clicked() {
             disconnect(mediaStatusConnection);
             mediaStatusConnection = connect(this->m_player, &VideoPlayer::audioFinish,
                 this, [this] {
+                    qDebug()<<__LINE__<<" ***** "<<this->m_player->getMusicPath()<<"播放结束。。。";
                 ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
                 // 循环播放
                 this->m_player->replay();
@@ -916,11 +915,13 @@ void KuGouApp::on_circle_toolButton_clicked() {
             qDebug() << "mediaStatusConnection is empty";
             STREAM_WARN() << "mediaStatusConnection is empty";
         }
-    } else {
+    }
+    else {
         //qDebug()<<"播放一次";
         if (mediaStatusConnection) {
             disconnect(mediaStatusConnection);
             mediaStatusConnection = connect(this->m_player, &VideoPlayer::audioFinish, this, [this] {
+                qDebug()<<__LINE__<<" ***** "<<this->m_player->getMusicPath()<<"播放结束。。。";
                 ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
                 this->m_localDownload->audioFinished();
            });

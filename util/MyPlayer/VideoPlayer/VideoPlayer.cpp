@@ -110,9 +110,9 @@ bool VideoPlayer::startPlay(const std::string &filePath)
 
 bool VideoPlayer::replay(bool isWait)
 {
-    qDebug() << "Replay called, stopping...";
+    //qDebug() << "Replay called, stopping...";
     stop(true); // 强制等待线程结束
-    qDebug() << "Stop completed, starting play...";
+    //qDebug() << "Stop completed, starting play...";
     if (m_state != VideoPlayer::Stop) {
         qDebug() << "Failed to stop player, current state:" << m_state;
         return false;
@@ -925,7 +925,7 @@ end:
 
     mIsReadThreadFinished = true;
 
-fprintf(stderr, "%s finished \n", __FUNCTION__);
+    fprintf(stderr, "%s finished \n", __FUNCTION__);
 }
 
 bool VideoPlayer::inputVideoQuene(const AVPacket &pkt)
@@ -1036,6 +1036,11 @@ void VideoPlayer::doPlayerStateChanged(const VideoPlayer::State &state, const bo
     if (state == VideoPlayer::Pause)
     {
         emit audioPause();
+    }
+    if (state == VideoPlayer::ReadError)
+    {
+        qDebug()<<"播放错误，重新播放------------------";
+        replay(true);
     }
 }
 
