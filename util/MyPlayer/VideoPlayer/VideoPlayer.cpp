@@ -190,6 +190,7 @@ bool VideoPlayer::stop(bool isWait)
 
 void VideoPlayer::seek(int64_t pos)
 {
+    if (pos >= getTotalTime())return;
     if(!seek_req)
     {
         seek_pos = pos;
@@ -221,12 +222,12 @@ void VideoPlayer::setVolume(float value)
 #endif
 }
 
-uint64_t VideoPlayer::getCurrentTime()
+int64_t VideoPlayer::getCurrentTime()
 {
     return getAudioClock();
 }
 
-uint64_t VideoPlayer::getAudioClock()
+int64_t VideoPlayer::getAudioClock()
 {
     // std::lock_guard<std::mutex> lck(m_mutex_audio_clk);
     return audio_clock;
@@ -858,7 +859,7 @@ end:
     m_cond_audio.notify_all();
     while((mVideoStream != nullptr && !mIsVideoThreadFinished) || (mAudioStream != nullptr && !mIsAudioThreadFinished))
     {
-fprintf(stderr, "%s:%d mIsVideoThreadFinished=%d mIsAudioThreadFinished=%d \n", __FILE__, __LINE__, mIsVideoThreadFinished, mIsAudioThreadFinished);
+//fprintf(stderr, "%s:%d mIsVideoThreadFinished=%d mIsAudioThreadFinished=%d \n", __FILE__, __LINE__, mIsVideoThreadFinished, mIsAudioThreadFinished);
         mSleep(10);
     } //确保视频线程结束后 再销毁队列
 #ifdef USE_PCM_PLAYER
@@ -1063,6 +1064,7 @@ void VideoPlayer::parseMetadata(AVFormatContext *pFormatCtx) {
     emit artistFound(m_musicArtist);
 
     // 提取专辑图片
+    m_musicPicture = {};
     for(unsigned i = 0; i < pFormatCtx->nb_streams; i++) {
         if(pFormatCtx->streams[i]->disposition & AV_DISPOSITION_ATTACHED_PIC) {
             AVPacket pkt = pFormatCtx->streams[i]->attached_pic;

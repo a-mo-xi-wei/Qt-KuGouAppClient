@@ -130,7 +130,7 @@ public:
     float getVolume(){return mVolume;}
 
     int64_t getTotalTime(); //单位微秒
-    uint64_t getCurrentTime(); //单位秒
+    int64_t getCurrentTime(); //单位秒
 
     ///用于判断是否打开超时或读取超时
     bool mIsOpenStream; //是否正在打开流（用于回调函数中判断是打开流还是读取流）
@@ -181,7 +181,7 @@ private:
     AVStream *mVideoStream = nullptr; //视频流
     AVStream *mAudioStream = nullptr; //音频流
     // std::mutex m_mutex_audio_clk;
-    uint64_t getAudioClock();
+    int64_t getAudioClock();
 
     ///视频相关
     AVFormatContext *pFormatCtx = nullptr;
