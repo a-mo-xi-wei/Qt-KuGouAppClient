@@ -841,9 +841,9 @@ void KuGouApp::on_play_or_pause_toolButton_clicked() {
         //qDebug()<<"暂停";
         ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
     }
-    else {
-        //qDebug()<<"当前状态：Stop";
-        this->m_player->play();
+    else if (this->m_player->state() == VideoPlayer::State::Stop){
+        qDebug()<<"当前状态：Stop,开始重新播放。。。";
+        this->m_player->replay(true);
         ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
     }
 }

@@ -99,6 +99,8 @@ bool VideoPlayer::startPlay(const std::string &filePath)
     //启动新的线程实现读取视频文件
     this->start();
 
+    doPlayerStateChanged(VideoPlayer::Playing, mVideoStream != nullptr, mAudioStream != nullptr);
+
     if (!m_positionUpdateTimer->isActive())
         m_positionUpdateTimer->start();
 
@@ -108,9 +110,15 @@ bool VideoPlayer::startPlay(const std::string &filePath)
 
 bool VideoPlayer::replay(bool isWait)
 {
-    stop(isWait);
-
+    qDebug() << "Replay called, stopping...";
+    stop(true); // 强制等待线程结束
+    qDebug() << "Stop completed, starting play...";
+    if (m_state != VideoPlayer::Stop) {
+        qDebug() << "Failed to stop player, current state:" << m_state;
+        return false;
+    }
     startPlay(m_file_path);
+    qDebug() << "StartPlay completed, state:" << m_state;
 
     return true;
 }
@@ -149,8 +157,6 @@ bool VideoPlayer::pause()
 
     mPauseStartTime = av_gettime();
 
-    m_state = VideoPlayer::Pause;
-
     doPlayerStateChanged(VideoPlayer::Pause, mVideoStream != nullptr, mAudioStream != nullptr);
 
     return true;
@@ -168,7 +174,6 @@ bool VideoPlayer::stop(bool isWait)
         emit positionChanged(0); //停止了timer ，自己发送0时间
     }
 
-    m_state = VideoPlayer::Stop;
     mIsQuit = true;
     mIsPause = false;
 
@@ -184,6 +189,7 @@ bool VideoPlayer::stop(bool isWait)
             mSleep(100);
         }
     }
+    doPlayerStateChanged(VideoPlayer::Stop, mVideoStream != nullptr, mAudioStream != nullptr);
 
     return true;
 }
@@ -799,7 +805,8 @@ fprintf(stderr, "%s mIsQuit=%d mIsPause=%d file_path=%s \n", __FUNCTION__, mIsQu
         else if(packet.stream_index == audioStream)
         {
             if (mIsAudioThreadFinished)
-            { ///SDL没有打开，则音频数据直接释放
+            {
+                ///SDL没有打开，则音频数据直接释放
                 av_packet_unref(&packet);
             }
             else

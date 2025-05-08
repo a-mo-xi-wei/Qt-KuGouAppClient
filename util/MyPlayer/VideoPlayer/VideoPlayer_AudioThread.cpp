@@ -8,7 +8,7 @@
 
 #include "PcmPlayer/PcmVolumeControl.h"
 
-#include <iostream>
+#include <qDebug>
 
 static void addADTStoPacket(uint8_t* packet, int packetLen, int channel, int sample_rate)
 {
@@ -320,4 +320,7 @@ void VideoPlayer::decodeAudioThread()
     mIsAudioThreadFinished = true;
     fprintf(stderr, "%s finished \n", __FUNCTION__);
     emit audioFinish();
+    stop(true);
+
+    //qDebug()<<"当前状态："<<state();
 }
