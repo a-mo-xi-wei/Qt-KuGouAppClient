@@ -83,18 +83,16 @@ bool VideoPlayer::initPlayer()
 bool VideoPlayer::startPlay(const std::string &filePath)
 {
     emit audioPlay();
-    if (m_state != VideoPlayer::Stop)
-    {
-        return false;
-    }
+    stop(true);
 
+    // 重置所有关键状态
     mIsQuit = false;
     mIsPause = false;
-
-    if (!filePath.empty())
-    {
-        m_file_path = filePath;
-    }
+    mIsReadThreadFinished = false;
+    mIsReadFinished = false;
+    mIsReadError = false;
+    seek_req = 0;
+    m_file_path = filePath;
 
     //启动新的线程实现读取视频文件
     this->start();
@@ -169,25 +167,23 @@ bool VideoPlayer::stop(bool isWait)
         return false;
     }
 
-    if (m_positionUpdateTimer->isActive()) {
-        m_positionUpdateTimer->stop();
-        emit positionChanged(0); //停止了timer ，自己发送0时间
-    }
-
     mIsQuit = true;
     mIsPause = false;
 
     ///唤醒等待中的线程
     m_cond_video.notify_all();
     m_cond_audio.notify_all();
+    m_cond_read_finished.notify_all();
+
+    // 清理队列
+    clearAudioQuene();
+    clearVideoQuene();
+
 
     if (isWait)
     {
-        while(!mIsReadThreadFinished)
-        {
-            fprintf(stderr, "mIsReadThreadFinished=%d \n", mIsReadThreadFinished);
-            mSleep(100);
-        }
+        std::unique_lock<std::mutex> lock(m_mutex_read_finished);
+        m_cond_read_finished.wait(lock, [this]{ return mIsReadThreadFinished; });
     }
     doPlayerStateChanged(VideoPlayer::Stop, mVideoStream != nullptr, mAudioStream != nullptr);
 
@@ -621,7 +617,7 @@ void VideoPlayer::run()
     doPlayerStateChanged(VideoPlayer::Playing, mVideoStream != nullptr, mAudioStream != nullptr);
 
     mVideoStartTime = av_gettime();
-fprintf(stderr, "%s mIsQuit=%d mIsPause=%d file_path=%s \n", __FUNCTION__, mIsQuit, mIsPause, file_path);
+    fprintf(stderr, "%s mIsQuit=%d mIsPause=%d file_path=%s \n", __FUNCTION__, mIsQuit, mIsPause, file_path);
 
     if (m_file_path.find("rtmp://") != std::string::npos
         || m_file_path.find("rtsp://") != std::string::npos) 
@@ -640,7 +636,7 @@ fprintf(stderr, "%s mIsQuit=%d mIsPause=%d file_path=%s \n", __FUNCTION__, mIsQu
     seek_flag_audio = 0;
     seek_flag_video = 0;
 
-    while (1)
+    while (true)
     {
         if (mIsQuit)
         {
@@ -756,6 +752,7 @@ fprintf(stderr, "%s mIsQuit=%d mIsPause=%d file_path=%s \n", __FUNCTION__, mIsQu
 // qDebug()<<__FUNCTION__<<video_clock<<audio_clock;
         if (av_read_frame(pFormatCtx, &packet) < 0)
         {
+            if (mIsQuit) break; // 立即退出
             mIsReadFinished = true;
             mIsReadError = true;
 
@@ -852,7 +849,10 @@ fprintf(stderr, "%s mIsQuit=%d mIsPause=%d file_path=%s \n", __FUNCTION__, mIsQu
     }
 
 end:
-
+    // 确保状态正确设置为Stop
+        if (m_state != VideoPlayer::Stop) {
+            doPlayerStateChanged(VideoPlayer::Stop, mVideoStream != nullptr, mAudioStream != nullptr);
+        }
     clearAudioQuene();
     clearVideoQuene();
 
@@ -909,8 +909,7 @@ end:
         pCodecCtx = nullptr;
     }
 
-    avformat_close_input(&pFormatCtx);
-    avformat_free_context(pFormatCtx);
+    if (pFormatCtx) { avformat_close_input(&pFormatCtx); avformat_free_context(pFormatCtx); }
 
     // SDL_Quit();
 
@@ -923,7 +922,11 @@ end:
         doPlayerStateChanged(VideoPlayer::Stop, mVideoStream != nullptr, mAudioStream != nullptr);
     }
 
-    mIsReadThreadFinished = true;
+    {
+        std::lock_guard<std::mutex> lock(m_mutex_read_finished);
+        mIsReadThreadFinished = true;
+        m_cond_read_finished.notify_all();
+    }
 
     fprintf(stderr, "%s finished \n", __FUNCTION__);
 }
@@ -1036,6 +1039,13 @@ void VideoPlayer::doPlayerStateChanged(const VideoPlayer::State &state, const bo
     if (state == VideoPlayer::Pause)
     {
         emit audioPause();
+    }
+    if (state == VideoPlayer::Stop)
+    {
+        if (m_positionUpdateTimer->isActive()) {
+            m_positionUpdateTimer->stop();
+            emit positionChanged(0); //停止了timer ，自己发送0时间
+        }
     }
     if (state == VideoPlayer::ReadError)
     {

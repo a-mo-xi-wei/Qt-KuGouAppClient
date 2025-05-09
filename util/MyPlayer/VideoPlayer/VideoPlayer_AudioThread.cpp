@@ -55,10 +55,9 @@ void VideoPlayer::decodeAudioThread()
 {
     fprintf(stderr, "%s start \n", __FUNCTION__);
     mIsAudioThreadFinished = false;
-    
-    int64_t pts_ms = 0; //时间戳(毫秒)
 
-    while (1)
+    int64_t pts_ms = 0; //时间戳(毫秒)
+    while (true)
     {
         if (mIsQuit)
         {
@@ -131,7 +130,7 @@ void VideoPlayer::decodeAudioThread()
         if (m_event_handle && m_enable_encoded_audio_callback)
         {
             // printf("%s:%d mAudioStream->codecpar->codec_id=%d %d\n", __FILE__, __LINE__, mAudioStream->codecpar->codec_id, AV_CODEC_ID_AAC);
-            if (mAudioStream->codecpar->codec_id == AV_CODEC_ID_AAC) 
+            if (mAudioStream->codecpar->codec_id == AV_CODEC_ID_AAC)
             {
                 //回调AAC数据
                 uint8_t adtsBuffer[7] = {0};
@@ -206,7 +205,7 @@ void VideoPlayer::decodeAudioThread()
         }
         else
         {
-            while(1)
+            while(true)
             {
                 int ret = avcodec_receive_frame(aCodecCtx, aFrame);
                 if (ret != 0)
@@ -310,6 +309,7 @@ void VideoPlayer::decodeAudioThread()
 
         av_packet_unref(packet);
     }
+
 #ifdef USE_PCM_PLAYER
     ///等待播放完成
     while (m_pcm_player->getPcmFrameSize() > 0)
@@ -317,6 +317,7 @@ void VideoPlayer::decodeAudioThread()
         mSleep(5);
     }
 #endif
+
     mIsAudioThreadFinished = true;
     fprintf(stderr, "%s finished \n", __FUNCTION__);
     emit audioFinish();

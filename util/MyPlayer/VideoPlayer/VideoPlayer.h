@@ -311,6 +311,9 @@ protected:
     QString     m_musicTitle;
     QString     m_musicArtist;
     QPixmap     m_musicPicture;
+
+    std::mutex m_mutex_read_finished;
+    std::condition_variable m_cond_read_finished;
 };
 
 
