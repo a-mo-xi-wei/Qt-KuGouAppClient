@@ -237,5 +237,9 @@ private:
     QRect                       m_startGeometry; // 获取当前窗口的几何形状(正常状态)
     QRect                       m_endGeometry;
     QRect                       m_normalGeometry;//非最大化状态
+
+    /********/
+    QString     m_musicTitle;
+    QString     m_musicArtist;
 };
 #endif // KUGOUAPP_H

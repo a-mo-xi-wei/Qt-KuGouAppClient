@@ -358,10 +358,12 @@ void KuGouApp::initPlayWidget() {
     });
     connect(this->m_player, &VideoPlayer::titleFound, this, [this](const QString& song) {
         qDebug()<<"歌曲："<<song;
+        m_musicTitle = song;
         emit curPlaySongNameChange(song);
     });
     connect(this->m_player, &VideoPlayer::artistFound, this, [this](const QString& singer) {
         qDebug()<<"歌手："<<singer;
+        m_musicArtist = singer;
         emit curPlaySingerChange(singer);
     });
 
@@ -525,8 +527,8 @@ void KuGouApp::resizeEvent(QResizeEvent *event) {
     //更新文字数量
     if(!this->m_player->getMusicPath().isEmpty()) {
         const QFontMetrics fm(ui->song_name_text->font());
-        ui->song_name_text->setText(fm.elidedText(this->m_player->getTitle(),Qt::ElideRight,ui->song_name_text->width()));
-        ui->singer_text->setText(fm.elidedText(this->m_player->getArtist(),Qt::ElideRight,ui->singer_text->width()));
+        ui->song_name_text->setText(fm.elidedText(m_musicTitle,Qt::ElideRight,ui->song_name_text->width()));
+        ui->singer_text->setText(fm.elidedText(m_musicArtist,Qt::ElideRight,ui->singer_text->width()));
     }
     //刷新遮罩大小同步
     auto rect = ui->stackedWidget->geometry();

@@ -108,9 +108,8 @@ bool VideoPlayer::startPlay(const std::string &filePath)
 
 bool VideoPlayer::replay(bool isWait)
 {
-    //qDebug() << "Replay called, stopping...";
     stop(true); // 强制等待线程结束
-    //qDebug() << "Stop completed, starting play...";
+    qDebug() << "Stop completed, starting play...";
     if (m_state != VideoPlayer::Stop) {
         qDebug() << "Failed to stop player, current state:" << m_state;
         return false;

@@ -282,10 +282,6 @@ private:
 
 public:
     // 新增元数据访问接口
-    QString getAlbum()      const { return m_musicAlbum; }
-    QString getTitle()      const { return m_musicTitle; }
-    QString getArtist()     const { return m_musicArtist; }
-    QPixmap getPicture()    const { return m_musicPicture; }
     QString getMusicPath()  const { return m_file_path.c_str(); }
 
     State state()           const { return m_state; }
