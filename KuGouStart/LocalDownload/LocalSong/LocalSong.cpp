@@ -533,6 +533,7 @@ void LocalSong::on_local_all_play_toolButton_clicked() {
     qDebug()<<"播放歌曲："<<m_musicItemVector.front()->m_information.mediaPath<<"===================";
     this->m_isOrderPlay = true;
     this->m_curPlayIndex = 0;
+    setPlayItemHighlight(this->m_musicItemVector.front());
     emit playMusic(m_musicItemVector.front()->m_information.mediaPath);
 }
 
@@ -580,6 +581,7 @@ void LocalSong::on_local_sort_toolButton_clicked() {
 }
 
 void LocalSong::onAudioFinished() {
+    qDebug()<<"上一首播放结束,当前m_isOrderPlay: "<<this->m_isOrderPlay;
     if (this->m_isOrderPlay) {
         qDebug()<<"当前为顺序播放，"<<this->m_curPlayItemWidget->m_information.mediaPath<<" 播放结束,开始播放下一首歌曲";
         playNextSong();

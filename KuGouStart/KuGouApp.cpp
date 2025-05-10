@@ -824,7 +824,6 @@ void KuGouApp::onTitleMaxScreen() {
 
 void KuGouApp::onPlayLocalMusic(const QString &localPath) {
     qDebug()<<"播放："<<localPath;
-    this->m_player->stop();
     this->m_player->startPlay(localPath.toStdString());
 }
 
@@ -911,10 +910,11 @@ void KuGouApp::on_circle_toolButton_clicked() {
             disconnect(mediaStatusConnection);
             mediaStatusConnection = connect(this->m_player, &VideoPlayer::audioFinish,
                 this, [this] {
-                    qDebug()<<__LINE__<<" ***** "<<this->m_player->getMusicPath()<<"播放结束。。。";
+                qDebug()<<__LINE__<<" ***** "<<this->m_player->getMusicPath()<<"播放结束。。。";
                 ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
                 // 循环播放
-                this->m_player->replay();
+                qDebug()<<__LINE__<< " 重新播放";
+                this->m_player->replay(true);
             });
         }
         else {
@@ -929,6 +929,7 @@ void KuGouApp::on_circle_toolButton_clicked() {
             mediaStatusConnection = connect(this->m_player, &VideoPlayer::audioFinish, this, [this] {
                 qDebug()<<__LINE__<<" ***** "<<this->m_player->getMusicPath()<<"播放结束。。。";
                 ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
+                qDebug()<<"正常结束";
                 this->m_localDownload->audioFinished();
            });
         } else {

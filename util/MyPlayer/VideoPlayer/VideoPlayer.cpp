@@ -10,7 +10,6 @@
 #include "PcmPlayer/PcmPlayer_SDL.h"
 #endif
 
-#include <qDebug>
 #include <QFileInfo>
 #include <libavutil/error.h>
 
@@ -49,8 +48,8 @@ VideoPlayer::VideoPlayer(QObject *parent):
     m_thread_audio->setThreadFunc(std::bind(&VideoPlayer::decodeAudioThread, this));
 
     //设置发送播放位置改变信号事件间隔
-    m_positionUpdateTimer->setInterval(300);
-    connect(m_positionUpdateTimer, &QTimer::timeout, this, [this]{ emit positionChanged(getCurrentTime());});
+    m_positionUpdateTimer.setInterval(300);
+    connect(&m_positionUpdateTimer, &QTimer::timeout, this, [this]{ emit positionChanged(getCurrentTime());});
 }
 
 VideoPlayer::~VideoPlayer()
@@ -83,7 +82,8 @@ bool VideoPlayer::initPlayer()
 bool VideoPlayer::startPlay(const std::string &filePath)
 {
     emit audioPlay();
-    stop(true);
+    stop(true); // 强制等待线程结束
+    qDebug() << "Stop completed, starting play...";
 
     // 重置所有关键状态
     mIsQuit = false;
@@ -93,14 +93,15 @@ bool VideoPlayer::startPlay(const std::string &filePath)
     mIsReadError = false;
     seek_req = 0;
     m_file_path = filePath;
+    mIsNaturalEnd = false; // 新增：每次开始播放时重置标志
 
     //启动新的线程实现读取视频文件
     this->start();
 
     doPlayerStateChanged(VideoPlayer::Playing, mVideoStream != nullptr, mAudioStream != nullptr);
 
-    if (!m_positionUpdateTimer->isActive())
-        m_positionUpdateTimer->start();
+    if (!m_positionUpdateTimer.isActive())
+        m_positionUpdateTimer.start();
 
     return true;
 
@@ -108,12 +109,6 @@ bool VideoPlayer::startPlay(const std::string &filePath)
 
 bool VideoPlayer::replay(bool isWait)
 {
-    stop(true); // 强制等待线程结束
-    qDebug() << "Stop completed, starting play...";
-    if (m_state != VideoPlayer::Stop) {
-        qDebug() << "Failed to stop player, current state:" << m_state;
-        return false;
-    }
     startPlay(m_file_path);
     qDebug() << "StartPlay completed, state:" << m_state;
 
@@ -124,6 +119,7 @@ bool VideoPlayer::play()
 {
     mIsNeedPause = false;
     mIsPause = false;
+    mIsNaturalEnd = false; // 新增：每次开始播放时重置标志
 
     if (m_state != VideoPlayer::Pause)
     {
@@ -135,8 +131,8 @@ bool VideoPlayer::play()
 
     doPlayerStateChanged(VideoPlayer::Playing, mVideoStream != nullptr, mAudioStream != nullptr);
 
-    if (!m_positionUpdateTimer->isActive())
-        m_positionUpdateTimer->start();
+    if (!m_positionUpdateTimer.isActive())
+        m_positionUpdateTimer.start();
 
     return true;
 }
@@ -753,7 +749,13 @@ void VideoPlayer::run()
         {
             if (mIsQuit) break; // 立即退出
             mIsReadFinished = true;
-            mIsReadError = true;
+            // 判断是否为自然结束
+            if (avio_feof(pFormatCtx->pb)) {
+                mIsNaturalEnd = true; // 文件自然结束
+                mIsReadError = false;
+            } else {
+                mIsReadError = true;  // 读取错误
+            }
 
             ///唤醒等待中的线程
             m_cond_video.notify_all();
@@ -848,10 +850,6 @@ void VideoPlayer::run()
     }
 
 end:
-    // 确保状态正确设置为Stop
-        if (m_state != VideoPlayer::Stop) {
-            doPlayerStateChanged(VideoPlayer::Stop, mVideoStream != nullptr, mAudioStream != nullptr);
-        }
     clearAudioQuene();
     clearVideoQuene();
 
@@ -1041,9 +1039,14 @@ void VideoPlayer::doPlayerStateChanged(const VideoPlayer::State &state, const bo
     }
     if (state == VideoPlayer::Stop)
     {
-        if (m_positionUpdateTimer->isActive()) {
-            m_positionUpdateTimer->stop();
+        if (m_positionUpdateTimer.isActive()) {
+            m_positionUpdateTimer.stop();
             emit positionChanged(0); //停止了timer ，自己发送0时间
+        }
+        // 自然结束时发送 audioFinish
+        if (mIsNaturalEnd) {
+            emit audioFinish();
+            mIsNaturalEnd = false; // 发送后重置标志
         }
     }
     if (state == VideoPlayer::ReadError)

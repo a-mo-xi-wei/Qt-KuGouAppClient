@@ -90,7 +90,7 @@ int PcmPlayer::inputPCMFrame(PCMFramePtr frame)
         auto now = std::chrono::system_clock::now();
         auto tick = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
 
-        if ((tick - m_last_try_open_device_time) > 3000)
+        if (tick - m_last_try_open_device_time > 50)
         {
             //音频设备未打开，则每隔3秒尝试打开一次
             printf("try to open audio device ... \n");

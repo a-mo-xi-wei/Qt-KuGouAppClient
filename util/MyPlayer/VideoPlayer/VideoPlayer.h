@@ -300,9 +300,9 @@ signals:
     void audioFinish();                     // Playback finished naturally
     void errorOccur(QString msg);           // Error occurred with code and message
 
-protected:
+private:
     // 新增元数据成员变量(仅仅播放歌曲)
-    QTimer*     m_positionUpdateTimer{};    //通知歌曲进度发生改变的Timer
+    QTimer     m_positionUpdateTimer{};    //通知歌曲进度发生改变的Timer
     QString     m_musicAlbum;
     QString     m_musicTitle;
     QString     m_musicArtist;
@@ -310,6 +310,8 @@ protected:
 
     std::mutex m_mutex_read_finished;
     std::condition_variable m_cond_read_finished;
+
+    bool mIsNaturalEnd = false; // 新增标志，表示是否自然结束
 };
 
 

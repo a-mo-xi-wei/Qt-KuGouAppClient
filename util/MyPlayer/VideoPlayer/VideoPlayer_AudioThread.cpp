@@ -210,9 +210,10 @@ void VideoPlayer::decodeAudioThread()
                 int ret = avcodec_receive_frame(aCodecCtx, aFrame);
                 if (ret != 0)
                 {
-        //            char buffer[1024] = {0};
-        //            av_strerror(ret, buffer, 1024);
-        //            fprintf(stderr, "avcodec_receive_frame = %d %s\n", ret, buffer);
+                    //qDebug()<<__LINE__<<" 退出循环";
+                    //char buffer[1024] = {0};
+                    //av_strerror(ret, buffer, 1024);
+                    //fprintf(stderr, "avcodec_receive_frame = %d %s\n", ret, buffer);
                     break;
                 }
 
@@ -320,7 +321,6 @@ void VideoPlayer::decodeAudioThread()
 
     mIsAudioThreadFinished = true;
     fprintf(stderr, "%s finished \n", __FUNCTION__);
-    emit audioFinish();
     stop(true);
 
     //qDebug()<<"当前状态："<<state();
