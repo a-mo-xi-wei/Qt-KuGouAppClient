@@ -154,6 +154,12 @@ bool VideoPlayer::pause()
 
     mPauseStartTime = av_gettime();
 
+#ifdef USE_PCM_PLAYER
+    // 暂停 SDL 音频设备并清空缓冲区
+    m_pcm_player->stopPlay();  // 停止音频设备（SDL_PauseAudioDevice）
+    m_pcm_player->clearFrame(); // 清空软件队列
+#endif
+
     doPlayerStateChanged(VideoPlayer::Pause, mVideoStream != nullptr, mAudioStream != nullptr);
 
     return true;
@@ -877,10 +883,12 @@ end:
 //fprintf(stderr, "%s:%d mIsVideoThreadFinished=%d mIsAudioThreadFinished=%d \n", __FILE__, __LINE__, mIsVideoThreadFinished, mIsAudioThreadFinished);
         mSleep(10);
     } //确保视频线程结束后 再销毁队列
+
 #ifdef USE_PCM_PLAYER
     m_pcm_player->stopPlay();
     m_pcm_player->clearFrame();
 #endif
+
     if (bsf_ctx)
     {
         av_bsf_free(&bsf_ctx);
@@ -1083,22 +1091,41 @@ QString VideoPlayer::tryDecode(const char *data) {
         return str.contains(QChar::ReplacementCharacter) || str.trimmed().isEmpty();
     };
 
+    // 优先尝试 UTF-8
     QString utf8 = QString::fromUtf8(data);
     if (!isGarbled(utf8)) return utf8;
 
-    QString local = QString::fromLocal8Bit(data); // 尝试系统默认编码（Windows 下常是 GBK）
-    if (!isGarbled(local)) return local;
-
+    // 尝试 Latin-1（常见于旧标签）
     QString latin1 = QString::fromLatin1(data);
     if (!isGarbled(latin1)) return latin1;
 
-    // 全部失败，返回空
+    // 尝试系统本地编码（如 Windows 的 GBK）
+    QString local = QString::fromLocal8Bit(data);
+    if (!isGarbled(local)) return local;
+
+    // 全部失败返回空
     return {};
 }
 
 void VideoPlayer::parseMetadata(AVFormatContext *pFormatCtx) {
     std::function<bool(const QString&)> isGarbled = [](const QString &str) {
-        return str.contains(QChar::ReplacementCharacter) || str.trimmed().isEmpty();
+        if (str.trimmed().isEmpty()) return true;
+
+        int replacementCount = 0;
+        int cjkCount = 0; // 统计中文字符数
+        for (const QChar &ch : str) {
+            if (ch == QChar::ReplacementCharacter) {
+                replacementCount++;
+            } else if (ch.unicode() >= 0x4E00 && ch.unicode() <= 0x9FFF) {
+                cjkCount++;
+            }
+        }
+
+        // 替换字符超过10%或中文字符为0但长度较长则视为乱码
+        if (replacementCount > str.length() * 0.1) return true;
+        if (cjkCount == 0 && str.length() > 3) return true;
+
+        return false;
     };
     // 提取专辑信息
     AVDictionaryEntry* tag = av_dict_get(pFormatCtx->metadata, "album", nullptr, 0);

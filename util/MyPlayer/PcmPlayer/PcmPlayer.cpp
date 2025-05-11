@@ -1,8 +1,6 @@
 ﻿#include "PcmPlayer.h"
 
-#include <stdio.h>
-#include <math.h>
-#include <algorithm>
+#include <cstdio>
 
 #include "PcmVolumeControl.h"
 
@@ -117,6 +115,8 @@ void PcmPlayer::clearFrame()
 {
     std::lock_guard<std::mutex> lck(m_mutex_audio);
     m_pcm_frame_list.clear();
+    m_last_frame_buffer_size = 0;  // 清空残留缓冲区
+    m_current_pts = 0;             // 重置时间戳
 }
 
 void PcmPlayer::playAudioBuffer(void *stream, int len)

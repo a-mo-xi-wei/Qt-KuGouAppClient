@@ -16,6 +16,8 @@ public:
     PcmPlayer_SDL();
     ~PcmPlayer_SDL();
 
+    bool stopPlay();
+
     std::list<AudioDevice> getAudiDeviceList(); //获取音频设备列表
 
 private:

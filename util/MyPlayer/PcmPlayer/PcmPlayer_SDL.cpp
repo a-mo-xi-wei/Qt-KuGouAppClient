@@ -20,6 +20,24 @@ PcmPlayer_SDL::~PcmPlayer_SDL()
     SDL_Quit();
 }
 
+bool PcmPlayer_SDL::stopPlay()
+{
+    m_is_stop = true;
+    m_cond_audio.notify_all();
+
+    // 暂停 SDL 音频设备并清空缓冲区
+    if (mAudioID > 0) {
+        SDL_LockAudioDevice(mAudioID);
+        SDL_PauseAudioDevice(mAudioID, 1);  // 暂停音频输出
+        SDL_ClearQueuedAudio(mAudioID);      // 清空硬件缓冲区
+        SDL_UnlockAudioDevice(mAudioID);
+    }
+
+    bool isSucceed = closeDevice();
+    m_device_opened = false;
+    return isSucceed;
+}
+
 std::list<AudioDevice> PcmPlayer_SDL::getAudiDeviceList()
 {
     std::list<AudioDevice> deviceList;
