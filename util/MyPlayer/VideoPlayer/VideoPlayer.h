@@ -276,6 +276,8 @@ private:
 
 /*-----------仅仅播放歌曲----------------*/
 private:
+    static QString tryDecode(const char *data);
+
     void parseMetadata(AVFormatContext* pFormatCtx);
 
     QPair<QString, QString> parseArtistAndTitleFromFilename(const QString &filePath);

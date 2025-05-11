@@ -116,6 +116,7 @@ void LocalSong::initUi() {
                 Q_UNUSED(down);
                 onDefaultSort();  // 调用原有的排序槽函数
                 local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
+                local_sort_toolButton_toolTip->adjustSize();
             });
 
             connect(m_sortOptMenu, &SortOptionMenu::addTimeSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
@@ -124,31 +125,43 @@ void LocalSong::initUi() {
                     local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：添加时间降序"));
                 else
                     local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：添加时间升序"));
+
+                local_sort_toolButton_toolTip->adjustSize();
             });
 
             connect(m_sortOptMenu, &SortOptionMenu::songNameSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
                 onSongNameSort(down);  // 调用原本的排序槽
                 local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌曲名称降序") : QStringLiteral("当前排序方式：歌曲名称升序"));
+
+                local_sort_toolButton_toolTip->adjustSize();
             });
 
             connect(m_sortOptMenu, &SortOptionMenu::singerSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
                 onSingerSort(down);
                 local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌手降序") : QStringLiteral("当前排序方式：歌手升序"));
+
+                local_sort_toolButton_toolTip->adjustSize();
             });
 
             connect(m_sortOptMenu, &SortOptionMenu::durationSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
                 onDurationSort(down);
                 local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：时长降序") : QStringLiteral("当前排序方式：时长升序"));
+
+                local_sort_toolButton_toolTip->adjustSize();
             });
 
             connect(m_sortOptMenu, &SortOptionMenu::playCountSort, this, [this, local_sort_toolButton_toolTip](const bool& down) {
                 onPlayCountSort(down);
                 local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：播放次数降序") : QStringLiteral("当前排序方式：播放次数升序"));
+
+                local_sort_toolButton_toolTip->adjustSize();
             });
 
             connect(m_sortOptMenu, &SortOptionMenu::randomSort, this, [this, local_sort_toolButton_toolTip] {
                 onRandomSort();
                 local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：随机"));
+
+                local_sort_toolButton_toolTip->adjustSize();
             });
 
         }
@@ -528,8 +541,8 @@ void LocalSong::on_local_all_play_toolButton_clicked() {
                                 1000,this->window());
         return;
     }
-    //TODO 此处需要取消循环播放
-
+    //此处需要取消循环播放
+    emit cancelLoopPlay();
     qDebug()<<"播放歌曲："<<m_musicItemVector.front()->m_information.mediaPath<<"===================";
     this->m_isOrderPlay = true;
     this->m_curPlayIndex = 0;

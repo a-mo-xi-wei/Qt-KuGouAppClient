@@ -53,6 +53,7 @@ static void addADTStoPacket(uint8_t* packet, int packetLen, int channel, int sam
 
 void VideoPlayer::decodeAudioThread()
 {
+    qDebug() << "decodeAudioThread starting for" << m_file_path.c_str();
     fprintf(stderr, "%s start \n", __FUNCTION__);
     mIsAudioThreadFinished = false;
 
@@ -82,6 +83,7 @@ void VideoPlayer::decodeAudioThread()
         {
             if (mIsReadFinished)
             {
+                //qDebug() << "Audio thread exiting: packet list empty and mIsReadFinished=true";
                 break;
             }
             continue;

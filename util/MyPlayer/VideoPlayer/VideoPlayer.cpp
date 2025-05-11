@@ -81,8 +81,10 @@ bool VideoPlayer::initPlayer()
 
 bool VideoPlayer::startPlay(const std::string &filePath)
 {
+    qDebug() << "startPlay: mIsQuit=" << mIsQuit << "mIsAudioThreadFinished=" << mIsAudioThreadFinished;
     emit audioPlay();
     stop(true); // 强制等待线程结束
+    qDebug()<<"--------------当前状态："<<m_state;
     qDebug() << "Stop completed, starting play...";
 
     // 重置所有关键状态
@@ -102,6 +104,7 @@ bool VideoPlayer::startPlay(const std::string &filePath)
 
     if (!m_positionUpdateTimer.isActive())
         m_positionUpdateTimer.start();
+    qDebug()<<"++++++++++++++++当前状态："<<m_state;
 
     return true;
 
@@ -117,6 +120,7 @@ bool VideoPlayer::replay(bool isWait)
 
 bool VideoPlayer::play()
 {
+    //qDebug()<<__LINE__<<" 播放********************";
     mIsNeedPause = false;
     mIsPause = false;
     mIsNaturalEnd = false; // 新增：每次开始播放时重置标志
@@ -366,6 +370,7 @@ void VideoPlayer::run()
     mIsOpenStream  = true;
 
     int ret = avformat_open_input(&pFormatCtx, file_path, nullptr, &opts);
+    qDebug() << "avformat_open_input for" << file_path << "returned" << ret;
     if (ret != 0)
     {
         fprintf(stderr, "can't open the file. ret=%d \n", ret);
@@ -377,11 +382,12 @@ void VideoPlayer::run()
 
     if (avformat_find_stream_info(pFormatCtx, nullptr) < 0)
     {
-        fprintf(stderr, "Could't find stream infomation.\n");
+        qDebug() << "avformat_find_stream_info failed for" << file_path;
         mIsReadError = true;
         doOpenVideoFileFailed();
         goto end;
     }
+    qDebug() << "Found" << pFormatCtx->nb_streams << "streams in" << file_path;
     parseMetadata(pFormatCtx);
 
     videoStream = -1;
@@ -443,23 +449,23 @@ void VideoPlayer::run()
                 int ret;
                 const AVBitStreamFilter *filter = nullptr;
 
-                if (mVideoStream->codecpar->codec_id == AV_CODEC_ID_H264) 
+                if (mVideoStream->codecpar->codec_id == AV_CODEC_ID_H264)
                 {
                     filter = av_bsf_get_by_name("h264_mp4toannexb");
-                } 
-                else if (mVideoStream->codecpar->codec_id == AV_CODEC_ID_HEVC) 
+                }
+                else if (mVideoStream->codecpar->codec_id == AV_CODEC_ID_HEVC)
                 {
                     filter = av_bsf_get_by_name("hevc_mp4toannexb");
                 }
 
-                if (!filter) 
+                if (!filter)
                 {
                     printf("Unkonw bitstream filter");
                     break;
                 }
 
                 ret = av_bsf_alloc(filter, &bsf_ctx);
-                if (ret < 0) 
+                if (ret < 0)
                 {
                     printf("alloc bsf error");
                     break;
@@ -615,7 +621,7 @@ void VideoPlayer::run()
     fprintf(stderr, "%s mIsQuit=%d mIsPause=%d file_path=%s \n", __FUNCTION__, mIsQuit, mIsPause, file_path);
 
     if (m_file_path.find("rtmp://") != std::string::npos
-        || m_file_path.find("rtsp://") != std::string::npos) 
+        || m_file_path.find("rtsp://") != std::string::npos)
     {
         m_is_live_mode = true;
     }
@@ -630,9 +636,10 @@ void VideoPlayer::run()
     seek_time = 0;
     seek_flag_audio = 0;
     seek_flag_video = 0;
-
+    qDebug() << "Entering read loop for" << file_path;
     while (true)
     {
+        //qDebug() << "Loop iteration, mIsQuit=" << mIsQuit << "mIsPause=" << mIsPause;
         if (mIsQuit)
         {
             //停止播放了
@@ -745,9 +752,10 @@ void VideoPlayer::run()
         mCallStartTime = av_gettime();
         mIsOpenStream  = false;
 // qDebug()<<__FUNCTION__<<video_clock<<audio_clock;
-        if (av_read_frame(pFormatCtx, &packet) < 0)
+        ret = av_read_frame(pFormatCtx, &packet);
+        if (ret < 0)
         {
-            if (mIsQuit) break; // 立即退出
+            //qDebug() << "av_read_frame failed for" << fileA_path;
             mIsReadFinished = true;
             // 判断是否为自然结束
             if (avio_feof(pFormatCtx->pb)) {
@@ -755,13 +763,14 @@ void VideoPlayer::run()
                 mIsReadError = false;
             } else {
                 mIsReadError = true;  // 读取错误
+                qDebug() << "Read error occurred";
             }
 
             ///唤醒等待中的线程
             m_cond_video.notify_all();
             m_cond_audio.notify_all();
 
-            // printf("%s av_read_frame failed %s mIsVideoThreadFinished=%d mIsAudioThreadFinished=%d mIsQuit=%d m_video_pkt_list.size()=%d m_audio_pkt_list.size()=%d \n", 
+            // printf("%s av_read_frame failed %s mIsVideoThreadFinished=%d mIsAudioThreadFinished=%d mIsQuit=%d m_video_pkt_list.size()=%d m_audio_pkt_list.size()=%d \n",
             // __FUNCTION__, file_path, mIsVideoThreadFinished, mIsAudioThreadFinished, mIsQuit, m_video_pkt_list.size(), m_audio_pkt_list.size());
 //            if (mIsQuit)
 //            {
@@ -774,6 +783,7 @@ void VideoPlayer::run()
         else
         {
             mIsReadFinished = false;
+            //qDebug() << "Read packet for stream" << packet.stream_index;
         }
 // qDebug("%s mIsQuit=%d mIsPause=%d packet.stream_index=%d \n", __FUNCTION__, mIsQuit, mIsPause, packet.stream_index);
 // fprintf(stderr, "%s mIsQuit=%d mIsPause=%d packet.stream_index=%d videoStream=%d audioStream=%d \n", __FUNCTION__, mIsQuit, mIsPause, packet.stream_index, videoStream, audioStream);
@@ -781,14 +791,14 @@ void VideoPlayer::run()
         {
             if (bsf_ctx)
             {
-                if (av_bsf_send_packet(bsf_ctx, &packet) < 0) 
+                if (av_bsf_send_packet(bsf_ctx, &packet) < 0)
                 {
                     // JLOGE("send_packet error");
                     av_packet_unref(&packet);
                     continue;
                 }
 
-                while (av_bsf_receive_packet(bsf_ctx, &packet) == 0) 
+                while (av_bsf_receive_packet(bsf_ctx, &packet) == 0)
                 {
                     inputVideoQuene(packet);
                     //这里我们将数据存入队列 因此不调用 av_free_packet 释放
@@ -855,6 +865,7 @@ end:
 
     if (m_state != VideoPlayer::Stop) //不是外部调用的stop 是正常播放结束
     {
+        qDebug()<<"不是外部调用的stop 是正常播放结束";
         stop(false);
     }
 
@@ -914,17 +925,18 @@ end:
     {
         doPlayerStateChanged(VideoPlayer::ReadError, mVideoStream != nullptr, mAudioStream != nullptr);
     }
-    else
-    {
-        doPlayerStateChanged(VideoPlayer::Stop, mVideoStream != nullptr, mAudioStream != nullptr);
-    }
-
+    // 设置线程结束标志并通知
     {
         std::lock_guard<std::mutex> lock(m_mutex_read_finished);
         mIsReadThreadFinished = true;
         m_cond_read_finished.notify_all();
     }
 
+    // 自然结束时发送 audioFinish
+    if (mIsNaturalEnd) {
+        emit audioFinish();
+        mIsNaturalEnd = false; // 发送后重置标志
+    }
     fprintf(stderr, "%s finished \n", __FUNCTION__);
 }
 
@@ -1043,11 +1055,6 @@ void VideoPlayer::doPlayerStateChanged(const VideoPlayer::State &state, const bo
             m_positionUpdateTimer.stop();
             emit positionChanged(0); //停止了timer ，自己发送0时间
         }
-        // 自然结束时发送 audioFinish
-        if (mIsNaturalEnd) {
-            emit audioFinish();
-            mIsNaturalEnd = false; // 发送后重置标志
-        }
     }
     if (state == VideoPlayer::ReadError)
     {
@@ -1071,28 +1078,60 @@ void VideoPlayer::doDisplayVideo(const uint8_t *yuv420Buffer, const int &width, 
     }
 }
 
+QString VideoPlayer::tryDecode(const char *data) {
+    auto isGarbled = [](const QString &str) {
+        return str.contains(QChar::ReplacementCharacter) || str.trimmed().isEmpty();
+    };
+
+    QString utf8 = QString::fromUtf8(data);
+    if (!isGarbled(utf8)) return utf8;
+
+    QString local = QString::fromLocal8Bit(data); // 尝试系统默认编码（Windows 下常是 GBK）
+    if (!isGarbled(local)) return local;
+
+    QString latin1 = QString::fromLatin1(data);
+    if (!isGarbled(latin1)) return latin1;
+
+    // 全部失败，返回空
+    return {};
+}
+
 void VideoPlayer::parseMetadata(AVFormatContext *pFormatCtx) {
+    std::function<bool(const QString&)> isGarbled = [](const QString &str) {
+        return str.contains(QChar::ReplacementCharacter) || str.trimmed().isEmpty();
+    };
     // 提取专辑信息
     AVDictionaryEntry* tag = av_dict_get(pFormatCtx->metadata, "album", nullptr, 0);
-    m_musicAlbum = tag ? QString::fromUtf8(tag->value) : "";
+    const QString albumValue = tag ? (isGarbled(tryDecode(tag->value)) ? "" : tryDecode(tag->value)) : "";
+    m_musicAlbum = albumValue;
     emit albumFound(m_musicAlbum);
 
     // 提取标题信息
     tag = av_dict_get(pFormatCtx->metadata, "title", nullptr, 0);
-    m_musicTitle = tag ? QString::fromUtf8(tag->value) : parseArtistAndTitleFromFilename(m_file_path.c_str()).second;
+    const QString titleValue = tag ? (isGarbled(tryDecode(tag->value)) ? "" : tryDecode(tag->value)) : "";
+    if (!titleValue.isEmpty()) {
+        m_musicTitle = titleValue;
+    } else {
+        m_musicTitle = parseArtistAndTitleFromFilename(m_file_path.c_str()).second;
+    }
     emit titleFound(m_musicTitle);
 
     // 提取艺术家信息
     tag = av_dict_get(pFormatCtx->metadata, "artist", nullptr, 0);
-    m_musicArtist = tag ? QString::fromUtf8(tag->value) : parseArtistAndTitleFromFilename(m_file_path.c_str()).first;
+    const QString artistValue = tag ? (isGarbled(tryDecode(tag->value)) ? "" : tryDecode(tag->value)) : "";
+    if (!artistValue.isEmpty()) {
+        m_musicArtist = artistValue;
+    } else {
+        m_musicArtist = parseArtistAndTitleFromFilename(m_file_path.c_str()).first;
+    }
     emit artistFound(m_musicArtist);
 
     // 提取专辑图片
-    m_musicPicture = {};
-    for(unsigned i = 0; i < pFormatCtx->nb_streams; i++) {
-        if(pFormatCtx->streams[i]->disposition & AV_DISPOSITION_ATTACHED_PIC) {
+    m_musicPicture = QPixmap(); // 初始化为空 QPixmap
+    for (unsigned i = 0; i < pFormatCtx->nb_streams; i++) {
+        if (pFormatCtx->streams[i]->disposition & AV_DISPOSITION_ATTACHED_PIC) {
             AVPacket pkt = pFormatCtx->streams[i]->attached_pic;
-            QImage img = QImage::fromData(pkt.data, pkt.size);
+            QImage img = QImage::fromData(reinterpret_cast<const uchar*>(pkt.data), pkt.size);
             m_musicPicture = QPixmap::fromImage(img);
             break;
         }

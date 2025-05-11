@@ -232,6 +232,9 @@ void KuGouApp::initStackedWidget() {
 
     //localDownload
     connect(this->m_localDownload.get(), &LocalDownload::playMusic, this, &KuGouApp::onPlayLocalMusic);
+    connect(this->m_localDownload.get(), &LocalDownload::cancelLoopPlay, this, [this] {
+        if (m_isSingleCircle)ui->circle_toolButton->clicked();
+    });
     connect(this, &KuGouApp::maxScreen, this->m_localDownload.get(), &LocalDownload::onMaxScreenHandle);
 
 }
@@ -573,7 +576,8 @@ bool KuGouApp::eventFilter(QObject *watched, QEvent *event) {
             if (mouseEvent->button() == Qt::LeftButton) //判断左键
             {
                 qint64 value = QStyle::sliderValueFromPosition(ui->progressSlider->minimum(),
-                                                               ui->progressSlider->maximum(), mouseEvent->pos().x(),
+                                                               ui->progressSlider->maximum(),
+                                                               mouseEvent->pos().x(),
                                                                ui->progressSlider->width());
                 {
                     //水平进度条动态地划到点击位置
@@ -824,7 +828,13 @@ void KuGouApp::onTitleMaxScreen() {
 
 void KuGouApp::onPlayLocalMusic(const QString &localPath) {
     qDebug()<<"播放："<<localPath;
-    this->m_player->startPlay(localPath.toStdString());
+    if (!QFile::exists(localPath)) {
+        qDebug() << "File does not exist:" << localPath;
+        return;
+    }
+    if (!m_player->startPlay(localPath.toStdString())) {
+        ElaMessageBar::error(ElaMessageBarType::BottomRight, "Error", "Failed to start playback", 2000, this->window());
+    }
 }
 
 void KuGouApp::on_play_or_pause_toolButton_clicked() {
@@ -914,7 +924,7 @@ void KuGouApp::on_circle_toolButton_clicked() {
                 ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
                 // 循环播放
                 qDebug()<<__LINE__<< " 重新播放";
-                this->m_player->replay(true);
+                this->m_player->replay(true);//换句话来说循环播放的优先级要高一点 ，那么再点击全部顺序播放后按道理应该取消循环播放
             });
         }
         else {

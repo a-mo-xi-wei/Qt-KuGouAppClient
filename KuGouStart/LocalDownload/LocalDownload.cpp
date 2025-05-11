@@ -34,6 +34,7 @@ LocalDownload::LocalDownload(QWidget *parent)
     //中转信号
     connect(this->m_localSong.get(), &LocalSong::playMusic, this, [this](const QString& localPath){emit playMusic(localPath);});
     connect(this->m_localSong.get(), &LocalSong::updateCountLabel, this, &LocalDownload::local_music_label_changed);
+    connect(this->m_localSong.get(), &LocalSong::cancelLoopPlay, this,[this]{emit cancelLoopPlay();});
 
     //动画结束，恢复可交互
     connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});

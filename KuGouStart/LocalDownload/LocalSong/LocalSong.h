@@ -134,6 +134,9 @@ signals:
     //更新数量标签
     void updateCountLabel(const int &count);
 
+    //取消循环播放
+    void cancelLoopPlay();
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 

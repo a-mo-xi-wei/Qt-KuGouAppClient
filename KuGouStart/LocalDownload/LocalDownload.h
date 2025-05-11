@@ -70,6 +70,8 @@ private slots:
 signals:
     void playMusic(const QString &localPath);
 
+    void cancelLoopPlay();
+
     void find_more_music();
 
 private:
