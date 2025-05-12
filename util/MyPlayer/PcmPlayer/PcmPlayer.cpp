@@ -34,7 +34,7 @@ bool PcmPlayer::startPlay()
 
 bool PcmPlayer::stopPlay()
 {
-    qDebug()<<__LINE__<<" "<<__FUNCTION__<<" 被调用";
+    //qDebug()<<__LINE__<<" "<<__FUNCTION__<<" 被调用";
     m_is_stop = true;
     m_is_pause = true;
     m_cond_audio.notify_all();

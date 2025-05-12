@@ -158,6 +158,7 @@ private:
     //固定颜色专用
     int m_curPlayIndex = -1;
     int m_setPlayIndex = -1;
+    bool m_deleteSelf = false;
 
     //菜单相关
     SortOptionMenu *m_sortOptMenu{};

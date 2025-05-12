@@ -72,6 +72,15 @@ LocalSong::~LocalSong() {
 
 void LocalSong::playNextSong() {
     qDebug()<<"播放下一首歌曲";
+    if (this->m_deleteSelf) {
+        //qDebug()<<"播放原来的下标: "<<this->m_curPlayIndex;
+        const auto item = this->m_musicItemVector[m_curPlayIndex];
+        //qDebug()<<"发送播放歌曲："<<item->m_information.mediaPath<<" 的信号";
+        emit playMusic(item->m_information.mediaPath);
+        setPlayItemHighlight(item);
+        this->m_deleteSelf = false;
+        return;
+    }
     this->m_curPlayIndex = (m_curPlayIndex + 1) % static_cast<int>(this->m_locationMusicVector.size());
     const auto item = this->m_musicItemVector[m_curPlayIndex];
     emit playMusic(item->m_information.mediaPath);
@@ -80,6 +89,15 @@ void LocalSong::playNextSong() {
 
 void LocalSong::playPrevSong() {
     qDebug()<<"播放上一首歌曲";
+    if (this->m_deleteSelf) {
+        //qDebug()<<"播放原来的下标: "<<this->m_curPlayIndex;
+        const auto item = this->m_musicItemVector[m_curPlayIndex];
+        //qDebug()<<"发送播放歌曲："<<item->m_information.mediaPath<<" 的信号";
+        emit playMusic(item->m_information.mediaPath);
+        setPlayItemHighlight(item);
+        this->m_deleteSelf = false;
+        return;
+    }
     const auto s = static_cast<int>(this->m_locationMusicVector.size());
     this->m_curPlayIndex = (m_curPlayIndex + s - 1) % s;
     const auto item = this->m_musicItemVector[m_curPlayIndex];
@@ -428,15 +446,27 @@ void LocalSong::MySort(std::function<bool(const MusicItemWidget *, const MusicIt
 
 void LocalSong::updateCurPlayIndex() {
     //记录m_curPlayIndex;
-    if (m_curPlayIndex == -1)return;
+    if (m_curPlayIndex <= -1)return;
     const auto temp = this->m_lastLocationMusicVector[this->m_curPlayIndex];
     //重新赋值m_curPlayIndex
     auto it = std::find(this->m_locationMusicVector.begin(), this->m_locationMusicVector.end(), temp);
+    m_deleteSelf = false;
     if (it == this->m_locationMusicVector.end()) {
-        //没找到，说明删除的是最后一个
-        --it;
+        //没找到，说明删除的是自己
+        qDebug()<<"删除的是自己";
+        if (this->m_curPlayIndex == this->m_locationMusicVector.size()) {
+            this->m_curPlayIndex = 0;
+        }
+        else {
+            qDebug()<<"下标保持不变："<<this->m_curPlayIndex;
+            m_deleteSelf = true;
+            this->m_curPlayItemWidget->deleteLater();
+            this->m_curPlayItemWidget = nullptr;
+        }
     }
-    this->m_curPlayIndex = static_cast<int>(it - this->m_locationMusicVector.begin());
+    else {
+        this->m_curPlayIndex = static_cast<int>(it - this->m_locationMusicVector.begin());
+    }
 }
 
 void LocalSong::initMusicItem(MusicItemWidget *item) {
@@ -520,7 +550,8 @@ void LocalSong::setPlayItemHighlight(MusicItemWidget *item) {
         // 没有歌曲在播放，设置当前歌曲为播放状态
         m_curPlayItemWidget = item;
         item->setPlayState(true);
-    } else {
+    }
+    else {
         // 有歌曲在播放
         if (item != m_curPlayItemWidget) {
             m_curPlayItemWidget->setPlayState(false);
@@ -596,7 +627,6 @@ void LocalSong::on_local_sort_toolButton_clicked() {
 void LocalSong::onAudioFinished() {
     qDebug()<<"上一首播放结束,当前m_isOrderPlay: "<<this->m_isOrderPlay;
     if (this->m_isOrderPlay) {
-        qDebug()<<"当前为顺序播放，"<<this->m_curPlayItemWidget->m_information.mediaPath<<" 播放结束,开始播放下一首歌曲";
         playNextSong();
     }
 }

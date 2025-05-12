@@ -151,7 +151,7 @@ bool VideoPlayer::play()
 
 bool VideoPlayer::pause()
 {
-    fprintf(stderr, "%s function called and mIsPause=%d \n", __FUNCTION__, mIsPause);
+    //fprintf(stderr, "%s function called and mIsPause=%d \n", __FUNCTION__, mIsPause);
 
     mIsPause = true;
 
@@ -877,7 +877,7 @@ end:
 
     if (m_state != VideoPlayer::Stop) //不是外部调用的stop 是正常播放结束
     {
-        qDebug()<<"不是外部调用的stop 是正常播放结束";
+        //qDebug()<<"不是外部调用的stop 是正常播放结束";
         stop(false);
     }
 

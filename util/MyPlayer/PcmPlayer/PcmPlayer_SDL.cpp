@@ -92,7 +92,7 @@ bool PcmPlayer_SDL::openDevice()
 
 bool PcmPlayer_SDL::closeDevice()
 {
-    fprintf(stderr, "%s function called and \n", __FUNCTION__);
+    //fprintf(stderr, "%s function called and \n", __FUNCTION__);
     if (mAudioID > 0)
     {
         SDL_LockAudioDevice(mAudioID);
