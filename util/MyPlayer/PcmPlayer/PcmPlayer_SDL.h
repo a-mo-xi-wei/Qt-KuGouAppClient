@@ -14,18 +14,20 @@ class PcmPlayer_SDL : public PcmPlayer
     Q_OBJECT
 public:
     PcmPlayer_SDL();
-    ~PcmPlayer_SDL();
+    ~PcmPlayer_SDL() override;
 
-    bool stopPlay();
+    std::list<AudioDevice> getAudiDeviceList() override; //获取音频设备列表
 
-    std::list<AudioDevice> getAudiDeviceList(); //获取音频设备列表
+    void pauseDevice(); // 新增暂停音频设备接口
+    void resumeDevice(); // 新增恢复音频设备接口
 
 private:
     ///本播放器中SDL仅用于播放音频，不用做别的用途
     ///SDL播放音频相关
     SDL_AudioDeviceID mAudioID = 0;
-    bool openDevice();
-    bool closeDevice();
+    bool openDevice() override;
+    bool closeDevice() override;
+
 
     void sdlAudioCallBack(Uint8 *stream, int len);
 

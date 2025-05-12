@@ -100,6 +100,10 @@ bool VideoPlayer::startPlay(const std::string &filePath)
     //启动新的线程实现读取视频文件
     this->start();
 
+#ifdef USE_PCM_PLAYER
+    m_pcm_player->setPause(false); // 设置暂停标志
+#endif
+
     doPlayerStateChanged(VideoPlayer::Playing, mVideoStream != nullptr, mAudioStream != nullptr);
 
     if (!m_positionUpdateTimer.isActive())
@@ -133,6 +137,10 @@ bool VideoPlayer::play()
     uint64_t pauseTime = av_gettime() - mPauseStartTime; //暂停了多长时间
     mVideoStartTime += pauseTime; //将暂停的时间加到开始播放的时间上，保证同步不受暂停的影响
 
+#ifdef USE_PCM_PLAYER
+    m_pcm_player->setPause(false); // 清除暂停标志
+#endif
+
     doPlayerStateChanged(VideoPlayer::Playing, mVideoStream != nullptr, mAudioStream != nullptr);
 
     if (!m_positionUpdateTimer.isActive())
@@ -143,7 +151,7 @@ bool VideoPlayer::play()
 
 bool VideoPlayer::pause()
 {
-    fprintf(stderr, "%s mIsPause=%d \n", __FUNCTION__, mIsPause);
+    fprintf(stderr, "%s function called and mIsPause=%d \n", __FUNCTION__, mIsPause);
 
     mIsPause = true;
 
@@ -155,9 +163,8 @@ bool VideoPlayer::pause()
     mPauseStartTime = av_gettime();
 
 #ifdef USE_PCM_PLAYER
-    // 暂停 SDL 音频设备并清空缓冲区
-    m_pcm_player->stopPlay();  // 停止音频设备（SDL_PauseAudioDevice）
-    m_pcm_player->clearFrame(); // 清空软件队列
+    m_pcm_player->setPause(true); // 设置暂停标志
+    //((PcmPlayer_SDL*)m_pcm_player)->pauseDevice(); // 暂停 SDL 音频设备
 #endif
 
     doPlayerStateChanged(VideoPlayer::Pause, mVideoStream != nullptr, mAudioStream != nullptr);
@@ -183,7 +190,6 @@ bool VideoPlayer::stop(bool isWait)
     // 清理队列
     clearAudioQuene();
     clearVideoQuene();
-
 
     if (isWait)
     {

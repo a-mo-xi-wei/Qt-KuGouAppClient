@@ -704,11 +704,17 @@ void KuGouApp::onKeyPause() {
 void KuGouApp::onKeyLeft() {
     //qDebug()<<"getCurrentTime() : "<<this->m_player->getCurrentTime();
     this->m_player->seek(this->m_player->getCurrentTime()*1000 - 5000000);
+    if (this->m_player->state() == VideoPlayer::State::Pause) {
+        this->m_player->play();
+    }
 }
 
 void KuGouApp::onKeyRight() {
     //qDebug()<<"getCurrentTime() : "<<this->m_player->getCurrentTime();
     this->m_player->seek(this->m_player->getCurrentTime()*1000 + 5000000);
+    if (this->m_player->state() == VideoPlayer::State::Pause) {
+        this->m_player->play();
+    }
 }
 
 void KuGouApp::onTitleCurrentStackChange(const int &index,const bool& slide) {

@@ -35,6 +35,7 @@ public:
 
     uint32_t getCurrentPts() const{return m_current_pts;}
 
+    void setPause(bool pause) { m_is_pause = pause; } // 新增设置暂停状态的接口
     void setSpeed(float speed){m_play_speed = speed;}    
     void setMute(const bool is_mute){m_is_mute = is_mute;}
     void setVolume(float value){m_volume = value;}
@@ -61,6 +62,7 @@ protected:
     int m_channel = 0;
     int m_cache_size = 81920; //缓存大小
     bool m_is_stop = false;
+    bool m_is_pause = false;
 
     ///音量相关变量
     bool  m_is_mute = false;

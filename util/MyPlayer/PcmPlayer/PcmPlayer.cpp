@@ -1,8 +1,7 @@
 ﻿#include "PcmPlayer.h"
-
-#include <cstdio>
-
 #include "PcmVolumeControl.h"
+
+#include <qDebug>
 
 PcmPlayer::PcmPlayer()
 {
@@ -28,15 +27,18 @@ bool PcmPlayer::startPlay()
     m_cache_size = 0.15 * m_sample_rate * m_channel; //计算150ms的缓存大小
 
     m_is_stop = false;
+    m_is_pause = false;
 
     return is_succeed;
 }
 
 bool PcmPlayer::stopPlay()
 {
+    qDebug()<<__LINE__<<" "<<__FUNCTION__<<" 被调用";
     m_is_stop = true;
+    m_is_pause = true;
     m_cond_audio.notify_all();
-    bool isSucceed = closeDevice();
+    const bool isSucceed = closeDevice();
     m_device_opened = false;
     return isSucceed;
 }
@@ -90,7 +92,7 @@ int PcmPlayer::inputPCMFrame(PCMFramePtr frame)
 
         if (tick - m_last_try_open_device_time > 50)
         {
-            //音频设备未打开，则每隔3秒尝试打开一次
+            //音频设备未打开，则每隔50ms尝试打开一次
             printf("try to open audio device ... \n");
             stopPlay();
             startPlay();
@@ -115,14 +117,19 @@ void PcmPlayer::clearFrame()
 {
     std::lock_guard<std::mutex> lck(m_mutex_audio);
     m_pcm_frame_list.clear();
-    m_last_frame_buffer_size = 0;  // 清空残留缓冲区
-    m_current_pts = 0;             // 重置时间戳
 }
 
 void PcmPlayer::playAudioBuffer(void *stream, int len)
 {
     //printf("%s:%d %d %d m_is_stop=%d\n", __FILE__, __LINE__, len, m_pcm_frame_list.size(), m_is_stop);
     //fprintf(stderr, "playAudioBuffer called with len=%d\n", len);
+
+    if (m_is_pause) // 检查暂停或停止状态
+    {
+        memset(stream, 0, len); // 输出静音
+        //qDebug()<<"暂停，return";
+        return;
+    }
 
     while (m_last_frame_buffer_size < len)
     {

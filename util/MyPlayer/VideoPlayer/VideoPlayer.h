@@ -72,7 +72,7 @@ public:
     {
     public:
         ///打开文件失败
-        virtual void onOpenVideoFileFailed(const int &code = 0) = 0;
+        virtual void onOpenVideoFileFailed(const int &code) = 0;
 
         ///打开sdl失败的时候回调此函数
         virtual void onOpenSdlFailed(const int &code) = 0;

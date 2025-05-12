@@ -2,6 +2,8 @@
 
 void PcmPlayer_SDL::sdlAudioCallBackFunc(void *userdata, Uint8 *stream, int len)
 {
+    //fprintf(stderr, "%s function called and \n", __FUNCTION__);
+
     PcmPlayer_SDL *player = (PcmPlayer_SDL*)userdata;
     player->playAudioBuffer(stream, len);
 }
@@ -18,24 +20,6 @@ PcmPlayer_SDL::PcmPlayer_SDL()
 PcmPlayer_SDL::~PcmPlayer_SDL()
 {
     SDL_Quit();
-}
-
-bool PcmPlayer_SDL::stopPlay()
-{
-    m_is_stop = true;
-    m_cond_audio.notify_all();
-
-    // 暂停 SDL 音频设备并清空缓冲区
-    if (mAudioID > 0) {
-        SDL_LockAudioDevice(mAudioID);
-        SDL_PauseAudioDevice(mAudioID, 1);  // 暂停音频输出
-        SDL_ClearQueuedAudio(mAudioID);      // 清空硬件缓冲区
-        SDL_UnlockAudioDevice(mAudioID);
-    }
-
-    bool isSucceed = closeDevice();
-    m_device_opened = false;
-    return isSucceed;
 }
 
 std::list<AudioDevice> PcmPlayer_SDL::getAudiDeviceList()
@@ -57,17 +41,10 @@ std::list<AudioDevice> PcmPlayer_SDL::getAudiDeviceList()
 
 bool PcmPlayer_SDL::openDevice()
 {
-    static bool is_inited = false;
-
-//    if (!is_inited)
+    ///SDL初始化需要放入子线程中，否则有些电脑会有问题。
+    if (SDL_Init(SDL_INIT_AUDIO))
     {
-        is_inited = true;
-
-        ///SDL初始化需要放入子线程中，否则有些电脑会有问题。
-        if (SDL_Init(SDL_INIT_AUDIO))
-        {
-            fprintf(stderr, "Could not initialize SDL - %s. \n", SDL_GetError());
-        }
+        fprintf(stderr, "Could not initialize SDL - %s. \n", SDL_GetError());
     }
 
     ///打开SDL，并设置播放的格式为:AUDIO_S16LSB 双声道，44100hz
@@ -110,28 +87,17 @@ bool PcmPlayer_SDL::openDevice()
         SDL_PauseAudioDevice(mAudioID, 0);
         SDL_UnlockAudioDevice(mAudioID);
     }
-//fprintf(stderr, "mAudioID=%d\n\n\n\n\n\n", mAudioID);
-    if (mAudioID <= 0)
-    {
-        fprintf(stderr, "Failed to open audio device\n");
-        return false;
-    }
-    else
-    {
-        //fprintf(stderr, "Audio device opened successfully: %d\n", mAudioID);
-        return true;
-    }
     return true;
 }
 
 bool PcmPlayer_SDL::closeDevice()
 {
+    fprintf(stderr, "%s function called and \n", __FUNCTION__);
     if (mAudioID > 0)
     {
         SDL_LockAudioDevice(mAudioID);
         SDL_PauseAudioDevice(mAudioID, 1);
         SDL_UnlockAudioDevice(mAudioID);
-
         SDL_CloseAudioDevice(mAudioID);
     }
 
@@ -140,4 +106,25 @@ bool PcmPlayer_SDL::closeDevice()
     mAudioID = 0;
 
     return true;
+}
+
+void PcmPlayer_SDL::pauseDevice()
+{
+    if (mAudioID > 0)
+    {
+        SDL_LockAudioDevice(mAudioID);
+        SDL_PauseAudioDevice(mAudioID, 1); // 暂停音频设备
+        SDL_UnlockAudioDevice(mAudioID);
+        SDL_ClearQueuedAudio(mAudioID); // 清空 SDL 音频队列
+    }
+}
+
+void PcmPlayer_SDL::resumeDevice()
+{
+    if (mAudioID > 0)
+    {
+        SDL_LockAudioDevice(mAudioID);
+        SDL_PauseAudioDevice(mAudioID, 0); // 恢复音频设备
+        SDL_UnlockAudioDevice(mAudioID);
+    }
 }
