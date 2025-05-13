@@ -1,12 +1,17 @@
+/*
+  AACFrame - AAC 音频帧管理类
+*/
+
 #ifndef AACFRAME_H
 #define AACFRAME_H
 
-#include <stdint.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-#include <memory>
+#include <cstdint>
 
+/** @def ADTS_HEADER_LENTH
+ *  @brief ADTS 头部长度
+ *
+ *  固定为 7 字节。
+ */
 #define ADTS_HEADER_LENTH 7
 
 /*
@@ -54,36 +59,116 @@ typedef struct
 } ADTS_HEADER;
 
 
+/** @def AACFramePtr
+ *  @brief AACFrame 的智能指针类型
+ *
+ *  定义为 AACFrame 类的 std::shared_ptr。
+ */
 #define AACFramePtr std::shared_ptr<AACFrame>
 
-class AACFrame
-{
+/** @class AACFrame
+ *  @brief 管理 AAC 音频帧的类
+ *
+ *  该类用于存储和管理 AAC 音频帧数据，包括 ADTS 头部、帧缓冲区和时间戳。
+ */
+class AACFrame {
 public:
+    /** @brief 构造函数
+     *
+     *  初始化 AACFrame 对象。
+     */
     AACFrame();
+
+    /** @brief 析构函数
+     *
+     *  销毁 AACFrame 对象，释放缓冲区资源。
+     */
     ~AACFrame();
 
+    /** @brief 设置 ADTS 头部
+     *
+     *  设置 AAC 帧的 ADTS 头部信息。
+     *
+     *  @param adts ADTS 头部结构
+     */
     void setAdtsHeader(const ADTS_HEADER &adts);
-    void setFrameBuffer(const uint8_t * const buffer, const unsigned int &size);
-    void setFrameBuffer(const uint8_t * const adtsBuffer, const unsigned int &adtsSize, const uint8_t * const buffer, const unsigned int &size);
 
-    uint8_t *buffer(){return mFrameBuffer;}
-    unsigned int size(){return  mFrameBufferSize;}
+    /** @brief 设置帧缓冲区
+     *
+     *  设置 AAC 音频帧的缓冲区数据。
+     *
+     *  @param buffer 缓冲区数据
+     *  @param size 缓冲区大小
+     */
+    void setFrameBuffer(const uint8_t *const buffer, const unsigned int &size);
 
-    void setPts(uint32_t pts){m_pts = pts;}
-    uint32_t pts(){return m_pts;}
+    /** @brief 设置帧缓冲区（包含 ADTS 头部）
+     *
+     *  设置 AAC 音频帧的 ADTS 头部和数据缓冲区。
+     *
+     *  @param adtsBuffer ADTS 头部缓冲区
+     *  @param adtsSize ADTS 头部大小
+     *  @param buffer 数据缓冲区
+     *  @param size 数据缓冲区大小
+     */
+    void setFrameBuffer(const uint8_t *const adtsBuffer, const unsigned int &adtsSize, const uint8_t *const buffer, const unsigned int &size);
 
-    void setTimeStamp(uint64_t t){m_timestamp_ms = t;}
-    uint64_t timeStamp(){return m_timestamp_ms;}
+    /** @brief 获取帧缓冲区
+     *
+     *  @return 帧缓冲区指针（包含 ADTS 头部）
+     */
+    uint8_t *buffer() { return mFrameBuffer; }
+
+    /** @brief 获取帧缓冲区大小
+     *
+     *  @return 帧缓冲区大小（包含 ADTS 头部）
+     */
+    unsigned int size() { return mFrameBufferSize; }
+
+    /** @brief 设置时间戳
+     *
+     *  @param pts 时间戳
+     */
+    void setPts(uint32_t pts) { m_pts = pts; }
+
+    /** @brief 获取时间戳
+     *
+     *  @return 帧的时间戳
+     */
+    uint32_t pts() { return m_pts; }
+
+    /** @brief 设置 UTC 时间戳
+     *
+     *  @param t UTC 时间戳（毫秒）
+     */
+    void setTimeStamp(uint64_t t) { m_timestamp_ms = t; }
+
+    /** @brief 获取 UTC 时间戳
+     *
+     *  @return UTC 时间戳（毫秒）
+     */
+    uint64_t timeStamp() { return m_timestamp_ms; }
 
 private:
+    /** @brief ADTS 头部信息
+     */
     ADTS_HEADER mAdtsHeader;
 
-    uint8_t *mFrameBuffer; //aac数据（包括adts头）
-    unsigned int mFrameBufferSize; //aac数据长度（包括adts头的大小）
+    /** @brief AAC 数据缓冲区（包含 ADTS 头部）
+     */
+    uint8_t *mFrameBuffer;
 
-    uint32_t m_pts = 0; //时间戳
-    uint64_t m_timestamp_ms = 0; //本地绝对时间(UTC时间戳-毫秒)
+    /** @brief AAC 数据缓冲区大小（包含 ADTS 头部）
+     */
+    unsigned int mFrameBufferSize;
 
+    /** @brief 时间戳
+     */
+    uint32_t m_pts = 0;
+
+    /** @brief UTC 时间戳（毫秒）
+     */
+    uint64_t m_timestamp_ms = 0;
 };
 
 #endif // AACFRAME_H
