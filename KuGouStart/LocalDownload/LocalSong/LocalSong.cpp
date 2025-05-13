@@ -539,6 +539,8 @@ void LocalSong::fetchAndSyncServerSongList() {
         m_musicItemVector[i]->m_information.index = i;
         m_musicItemVector[i]->setIndexText(i + 1);
     }
+    //隐藏初始界面
+    ui->widget->hide();
 }
 
 void LocalSong::setPlayItemHighlight(MusicItemWidget *item) {
