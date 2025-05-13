@@ -1,3 +1,11 @@
+/**
+ * @file ElaMessageBar.cpp
+ * @brief 实现 ElaMessageBar 类，提供消息通知栏功能
+ * @author [Your Name]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaMessageBar.h"
 #include "ElaIconButton.h"
 #include "ElaMessageBarPrivate.h"
@@ -10,6 +18,15 @@
 #include <QPropertyAnimation>
 #include <QResizeEvent>
 
+/**
+ * @brief 构造函数，初始化消息栏
+ * @param policy 位置策略
+ * @param messageMode 消息类型
+ * @param title 消息标题
+ * @param text 消息内容
+ * @param displayMsec 显示时长（毫秒）
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaMessageBar::ElaMessageBar(ElaMessageBarType::PositionPolicy policy, ElaMessageBarType::MessageMode messageMode, QString& title, QString& text, int displayMsec, QWidget* parent)
     : QWidget{parent}, d_ptr(new ElaMessageBarPrivate())
 {
@@ -72,10 +89,21 @@ ElaMessageBar::ElaMessageBar(ElaMessageBarType::PositionPolicy policy, ElaMessag
     d->_messageBarCreate(displayMsec);
 }
 
+/**
+ * @brief 析构函数，释放消息栏资源
+ */
 ElaMessageBar::~ElaMessageBar()
 {
 }
 
+/**
+ * @brief 显示成功消息
+ * @param policy 位置策略
+ * @param title 消息标题
+ * @param text 消息内容
+ * @param displayMsec 显示时长（毫秒）
+ * @param parent 父控件指针，默认为 nullptr
+ */
 void ElaMessageBar::success(ElaMessageBarType::PositionPolicy policy, QString title, QString text, int displayMsec, QWidget* parent)
 {
      //qDebug() << QApplication::topLevelWidgets();
@@ -102,6 +130,14 @@ void ElaMessageBar::success(ElaMessageBarType::PositionPolicy policy, QString ti
     Q_UNUSED(bar);
 }
 
+/**
+ * @brief 显示警告消息
+ * @param policy 位置策略
+ * @param title 消息标题
+ * @param text 消息内容
+ * @param displayMsec 显示时长（毫秒）
+ * @param parent 父控件指针，默认为 nullptr
+ */
 void ElaMessageBar::warning(ElaMessageBarType::PositionPolicy policy, QString title, QString text, int displayMsec, QWidget* parent)
 {
     if (!parent)
@@ -126,6 +162,14 @@ void ElaMessageBar::warning(ElaMessageBarType::PositionPolicy policy, QString ti
     Q_UNUSED(bar);
 }
 
+/**
+ * @brief 显示信息消息
+ * @param policy 位置策略
+ * @param title 消息标题
+ * @param text 消息内容
+ * @param displayMsec 显示时长（毫秒）
+ * @param parent 父控件指针，默认为 nullptr
+ */
 void ElaMessageBar::information(ElaMessageBarType::PositionPolicy policy, QString title, QString text, int displayMsec, QWidget* parent)
 {
     if (!parent)
@@ -150,6 +194,14 @@ void ElaMessageBar::information(ElaMessageBarType::PositionPolicy policy, QStrin
     Q_UNUSED(bar);
 }
 
+/**
+ * @brief 显示错误消息
+ * @param policy 位置策略
+ * @param title 消息标题
+ * @param text 消息内容
+ * @param displayMsec 显示时长（毫秒）
+ * @param parent 父控件指针，默认为 nullptr
+ */
 void ElaMessageBar::error(ElaMessageBarType::PositionPolicy policy, QString title, QString text, int displayMsec, QWidget* parent)
 {
     if (!parent)
@@ -174,6 +226,10 @@ void ElaMessageBar::error(ElaMessageBarType::PositionPolicy policy, QString titl
     Q_UNUSED(bar);
 }
 
+/**
+ * @brief 绘制事件，绘制消息栏外观
+ * @param event 绘图事件
+ */
 void ElaMessageBar::paintEvent(QPaintEvent* event)
 {
     Q_D(ElaMessageBar);
@@ -237,6 +293,12 @@ void ElaMessageBar::paintEvent(QPaintEvent* event)
     painter.restore();
 }
 
+/**
+ * @brief 事件过滤器，处理父控件事件
+ * @param watched 监控对象
+ * @param event 事件对象
+ * @return 是否处理事件
+ */
 bool ElaMessageBar::eventFilter(QObject* watched, QEvent* event)
 {
     Q_D(ElaMessageBar);

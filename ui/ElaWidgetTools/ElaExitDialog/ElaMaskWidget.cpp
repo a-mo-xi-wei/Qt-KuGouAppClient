@@ -1,7 +1,20 @@
+/**
+* @file ElaMaskWidget.cpp
+ * @brief 实现 ElaMaskWidget 类，提供遮罩效果和动画
+ * @author [Your Name]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaMaskWidget.h"
 
 #include <QPainter>
 #include <QPropertyAnimation>
+
+/**
+ * @brief 构造函数，初始化遮罩控件
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaMaskWidget::ElaMaskWidget(QWidget* parent)
     : QWidget{parent}
 {
@@ -10,10 +23,17 @@ ElaMaskWidget::ElaMaskWidget(QWidget* parent)
     _pMaskAlpha = 0;
 }
 
+/**
+ * @brief 析构函数，释放遮罩控件资源
+ */
 ElaMaskWidget::~ElaMaskWidget()
 {
 }
 
+/**
+ * @brief 执行遮罩透明度动画
+ * @param endValue 动画结束时的透明度值
+ */
 void ElaMaskWidget::doMaskAnimation(int endValue)
 {
     QPropertyAnimation* opacityAnimation = new QPropertyAnimation(this, "pMaskAlpha");
@@ -33,6 +53,10 @@ void ElaMaskWidget::doMaskAnimation(int endValue)
     opacityAnimation->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
+/**
+ * @brief 重绘事件，绘制遮罩效果
+ * @param event 绘图事件
+ */
 void ElaMaskWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);

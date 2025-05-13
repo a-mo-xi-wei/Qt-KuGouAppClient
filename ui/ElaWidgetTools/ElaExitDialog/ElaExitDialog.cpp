@@ -1,4 +1,12 @@
-﻿#include "ElaExitDialog.h"
+﻿/**
+ * @file ElaExitDialog.cpp
+ * @brief 实现 ElaExitDialog 类，提供退出对话框的功能
+ * @author [Your Name]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
+#include "ElaExitDialog.h"
 #include "ElaPushButton.h"
 #include "ElaMaskWidget.h"
 #include "ElaText.h"
@@ -12,6 +20,10 @@
 #include <QPainter>
 #include <QVBoxLayout>
 
+/**
+ * @brief 构造函数，初始化退出对话框
+ * @param parent 父控件指针
+ */
 ElaExitDialog::ElaExitDialog(QWidget* parent)
     : QDialog{parent}, d_ptr(new ElaExitDialogPrivate())
 {
@@ -109,27 +121,43 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     });
 }
 
+/**
+ * @brief 析构函数，释放退出对话框资源
+ */
 ElaExitDialog::~ElaExitDialog()
 {
     Q_D(ElaExitDialog);
     d->_maskWidget->deleteLater();
 }
 
+/**
+ * @brief 左侧按钮点击槽函数
+ */
 void ElaExitDialog::onLeftButtonClicked()
 {
-    STREAM_INFO()<<"取消退出程序";
+    STREAM_INFO() << "取消退出程序";
 }
 
+/**
+ * @brief 中间按钮点击槽函数
+ */
 void ElaExitDialog::onMiddleButtonClicked()
 {
-    STREAM_INFO()<<"最小化程序";
+    STREAM_INFO() << "最小化程序";
 }
 
+/**
+ * @brief 右侧按钮点击槽函数
+ */
 void ElaExitDialog::onRightButtonClicked()
 {
-    STREAM_INFO()<<"退出程序";
+    STREAM_INFO() << "退出程序";
 }
 
+/**
+ * @brief 设置中心控件
+ * @param centralWidget 中心控件指针
+ */
 void ElaExitDialog::setCentralWidget(QWidget* centralWidget)
 {
     Q_D(ElaExitDialog);
@@ -140,30 +168,49 @@ void ElaExitDialog::setCentralWidget(QWidget* centralWidget)
     d->_mainLayout->addWidget(d->_buttonWidget);
 }
 
+/**
+ * @brief 设置左侧按钮文本
+ * @param text 按钮文本
+ */
 void ElaExitDialog::setLeftButtonText(QString text)
 {
     Q_D(ElaExitDialog);
     d->_leftButton->setText(text);
 }
 
+/**
+ * @brief 设置中间按钮文本
+ * @param text 按钮文本
+ */
 void ElaExitDialog::setMiddleButtonText(QString text)
 {
     Q_D(ElaExitDialog);
     d->_middleButton->setText(text);
 }
 
+/**
+ * @brief 设置右侧按钮文本
+ * @param text 按钮文本
+ */
 void ElaExitDialog::setRightButtonText(QString text)
 {
     Q_D(ElaExitDialog);
     d->_rightButton->setText(text);
 }
 
+/**
+ * @brief 关闭对话框
+ */
 void ElaExitDialog::close()
 {
     Q_D(ElaExitDialog);
     d->_doCloseAnimation();
 }
 
+/**
+ * @brief 显示事件处理
+ * @param event 显示事件
+ */
 void ElaExitDialog::showEvent(QShowEvent* event)
 {
     Q_D(ElaExitDialog);
@@ -186,6 +233,10 @@ void ElaExitDialog::showEvent(QShowEvent* event)
     QDialog::showEvent(event);
 }
 
+/**
+ * @brief 重绘事件，绘制对话框背景和按钮区域
+ * @param event 绘图事件
+ */
 /*
 void ElaExitDialog::paintEvent(QPaintEvent* event)
 {
@@ -203,7 +254,6 @@ void ElaExitDialog::paintEvent(QPaintEvent* event)
     painter.drawRoundedRect(QRectF(0, height() - 60, width(), 60), 8, 8);
     painter.restore();
 }*/
-
 void ElaExitDialog::paintEvent(QPaintEvent* event)
 {
     Q_D(ElaExitDialog);
@@ -213,8 +263,8 @@ void ElaExitDialog::paintEvent(QPaintEvent* event)
     painter.setPen(Qt::NoPen);
 
     // 定义渐变的起止颜色
-    QColor startColor(105, 225, 255, 200);       // 淡蓝色
-    QColor endColor(255, 182, 193, 200);    // 淡粉色
+    QColor startColor(105, 225, 255, 200);      // 淡蓝色
+    QColor endColor(255, 182, 193, 200);        // 淡粉色
 
     // 上半部分背景 - 对角线渐变（左上到右下）
     QLinearGradient gradient(0, 0, width(), height());
@@ -238,6 +288,10 @@ void ElaExitDialog::paintEvent(QPaintEvent* event)
     painter.restore();
 }
 
+/**
+ * @brief 键盘按下事件处理
+ * @param event 键盘事件
+ */
 void ElaExitDialog::keyPressEvent(QKeyEvent* event)
 {
     event->accept();
@@ -245,8 +299,22 @@ void ElaExitDialog::keyPressEvent(QKeyEvent* event)
 
 #ifdef Q_OS_WIN
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+/**
+ * @brief 本地事件处理（Windows 平台）
+ * @param eventType 事件类型
+ * @param message 事件消息
+ * @param result 事件结果
+ * @return 是否处理事件
+ */
 bool ElaExitDialog::nativeEvent(const QByteArray& eventType, void* message, qintptr* result)
 #else
+/**
+ * @brief 本地事件处理（Windows 平台，Qt5）
+ * @param eventType 事件类型
+ * @param message 事件消息
+ * @param result 事件结果
+ * @return 是否处理事件
+ */
 bool ElaExitDialog::nativeEvent(const QByteArray& eventType, void* message, long* result)
 #endif
 {

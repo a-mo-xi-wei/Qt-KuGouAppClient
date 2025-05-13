@@ -1,3 +1,11 @@
+/**
+ * @file ElaMenuBarStyle.cpp
+ * @brief 实现 ElaMenuBarStyle 类，提供自定义菜单栏样式
+ * @author [Your Name]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaMenuBarStyle.h"
 #include "ElaTheme.h"
 #include "ElaMenuBar.h"
@@ -5,6 +13,10 @@
 #include <QPainter>
 #include <QStyleOption>
 
+/**
+ * @brief 构造函数，初始化菜单栏样式
+ * @param style 基础样式指针，默认为 nullptr
+ */
 ElaMenuBarStyle::ElaMenuBarStyle(QStyle* style)
 {
     _themeMode = eTheme->getThemeMode();
@@ -13,10 +25,20 @@ ElaMenuBarStyle::ElaMenuBarStyle(QStyle* style)
     });
 }
 
+/**
+ * @brief 析构函数，释放菜单栏样式资源
+ */
 ElaMenuBarStyle::~ElaMenuBarStyle()
 {
 }
 
+/**
+ * @brief 绘制基本图形元素
+ * @param element 图形元素
+ * @param option 样式选项
+ * @param painter 绘制器
+ * @param widget 控件指针
+ */
 void ElaMenuBarStyle::drawPrimitive(PrimitiveElement element, const QStyleOption* option, QPainter* painter, const QWidget* widget) const
 {
     switch (element)
@@ -33,6 +55,13 @@ void ElaMenuBarStyle::drawPrimitive(PrimitiveElement element, const QStyleOption
     QProxyStyle::drawPrimitive(element, option, painter, widget);
 }
 
+/**
+ * @brief 绘制控件元素
+ * @param element 控件元素
+ * @param option 样式选项
+ * @param painter 绘制器
+ * @param widget 控件指针
+ */
 void ElaMenuBarStyle::drawControl(ControlElement element, const QStyleOption* option, QPainter* painter, const QWidget* widget) const
 {
     switch (element)
@@ -164,6 +193,14 @@ void ElaMenuBarStyle::drawControl(ControlElement element, const QStyleOption* op
     QProxyStyle::drawControl(element, option, painter, widget);
 }
 
+/**
+ * @brief 计算内容尺寸
+ * @param type 内容类型
+ * @param option 样式选项
+ * @param size 原始尺寸
+ * @param widget 控件指针
+ * @return 计算后的尺寸
+ */
 QSize ElaMenuBarStyle::sizeFromContents(ContentsType type, const QStyleOption* option, const QSize& size, const QWidget* widget) const
 {
     switch (type)
@@ -199,6 +236,13 @@ QSize ElaMenuBarStyle::sizeFromContents(ContentsType type, const QStyleOption* o
     return QProxyStyle::sizeFromContents(type, option, size, widget);
 }
 
+/**
+ * @brief 获取像素度量值
+ * @param metric 度量类型
+ * @param option 样式选项
+ * @param widget 控件指针
+ * @return 像素度量值
+ */
 int ElaMenuBarStyle::pixelMetric(PixelMetric metric, const QStyleOption* option, const QWidget* widget) const
 {
     switch (metric)

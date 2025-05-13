@@ -1,3 +1,11 @@
+/**
+ * @file ElaMessageButton.cpp
+ * @brief 实现 ElaMessageButton 类，提供消息触发按钮功能
+ * @author [Your Name]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaMessageButton.h"
 #include "ElaMessageButtonPrivate.h"
 #include "ElaMessageBar.h"
@@ -8,15 +16,50 @@
 #include <QPainter>
 #include <QPainterPath>
 
-Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, int, BorderRadius)
-Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, QString, BarTitle);
-Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, QString, BarText);
-Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, int, DisplayMsec);
-Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, QWidget*, MessageTargetWidget)
-Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, ElaMessageBarType::MessageMode, MessageMode);
-Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, ElaMessageBarType::PositionPolicy, PositionPolicy);
+/**
+ * @brief 定义 BorderRadius 属性
+ */
+Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, int,                              BorderRadius)
+
+/**
+ * @brief 定义 BarTitle 属性
+ */
+Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, QString,                         BarTitle)
+
+/**
+ * @brief 定义 BarText 属性
+ */
+Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, QString,                         BarText)
+
+/**
+ * @brief 定义 DisplayMsec 属性
+ */
+Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, int,                             DisplayMsec)
+
+/**
+ * @brief 定义 MessageTargetWidget 属性
+ */
+Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, QWidget*,                        MessageTargetWidget)
+
+/**
+ * @brief 定义 MessageMode 属性
+ */
+Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, ElaMessageBarType::MessageMode,  MessageMode)
+
+/**
+ * @brief 定义 PositionPolicy 属性
+ */
+Q_PROPERTY_CREATE_Q_CPP(ElaMessageButton, ElaMessageBarType::PositionPolicy, PositionPolicy)
+
+/**
+ * @brief 获取当前文件目录
+ */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
+/**
+ * @brief 构造函数，初始化消息按钮
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaMessageButton::ElaMessageButton(QWidget* parent)
     : QPushButton(parent), d_ptr(new ElaMessageButtonPrivate())
 {
@@ -44,37 +87,50 @@ ElaMessageButton::ElaMessageButton(QWidget* parent)
         {
         case ElaMessageBarType::Success:
         {
-            ElaMessageBar::success(d->_pPositionPolicy,d->_pBarTitle,d->_pBarText,d->_pDisplayMsec,d->_pMessageTargetWidget);
+            ElaMessageBar::success(d->_pPositionPolicy, d->_pBarTitle, d->_pBarText, d->_pDisplayMsec, d->_pMessageTargetWidget);
             break;
         }
         case ElaMessageBarType::Warning:
         {
-            ElaMessageBar::warning(d->_pPositionPolicy,d->_pBarTitle,d->_pBarText,d->_pDisplayMsec,d->_pMessageTargetWidget);
+            ElaMessageBar::warning(d->_pPositionPolicy, d->_pBarTitle, d->_pBarText, d->_pDisplayMsec, d->_pMessageTargetWidget);
             break;
         }
         case ElaMessageBarType::Information:
         {
-            ElaMessageBar::information(d->_pPositionPolicy,d->_pBarTitle,d->_pBarText,d->_pDisplayMsec,d->_pMessageTargetWidget);
+            ElaMessageBar::information(d->_pPositionPolicy, d->_pBarTitle, d->_pBarText, d->_pDisplayMsec, d->_pMessageTargetWidget);
             break;
         }
         case ElaMessageBarType::Error:
         {
-            ElaMessageBar::error(d->_pPositionPolicy,d->_pBarTitle,d->_pBarText,d->_pDisplayMsec,d->_pMessageTargetWidget);
+            ElaMessageBar::error(d->_pPositionPolicy, d->_pBarTitle, d->_pBarText, d->_pDisplayMsec, d->_pMessageTargetWidget);
             break;
         }
-        } });
+        }
+    });
 }
 
+/**
+ * @brief 构造函数，初始化带文本的消息按钮
+ * @param text 按钮文本
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaMessageButton::ElaMessageButton(const QString& text, QWidget* parent)
     : ElaMessageButton(parent)
 {
     setText(text);
 }
 
+/**
+ * @brief 析构函数，释放消息按钮资源
+ */
 ElaMessageButton::~ElaMessageButton()
 {
 }
 
+/**
+ * @brief 鼠标按下事件处理
+ * @param event 鼠标事件对象
+ */
 void ElaMessageButton::mousePressEvent(QMouseEvent* event)
 {
     Q_D(ElaMessageButton);
@@ -85,6 +141,10 @@ void ElaMessageButton::mousePressEvent(QMouseEvent* event)
     QPushButton::mousePressEvent(event);
 }
 
+/**
+ * @brief 鼠标释放事件处理
+ * @param event 鼠标事件对象
+ */
 void ElaMessageButton::mouseReleaseEvent(QMouseEvent* event)
 {
     Q_D(ElaMessageButton);
@@ -92,6 +152,10 @@ void ElaMessageButton::mouseReleaseEvent(QMouseEvent* event)
     QPushButton::mouseReleaseEvent(event);
 }
 
+/**
+ * @brief 绘制事件，绘制按钮外观
+ * @param event 绘图事件
+ */
 void ElaMessageButton::paintEvent(QPaintEvent* event)
 {
     Q_D(ElaMessageButton);

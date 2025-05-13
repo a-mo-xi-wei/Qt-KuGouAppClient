@@ -1,3 +1,11 @@
+/**
+ * @file ElaMenuStyle.cpp
+ * @brief 实现 ElaMenuStyle 类，提供自定义菜单样式
+ * @author [Your Name]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaMenuStyle.h"
 #include "ElaTheme.h"
 #include "ElaMenu.h"
@@ -6,6 +14,10 @@
 #include <QPainterPath>
 #include <QStyleOption>
 
+/**
+ * @brief 构造函数，初始化菜单样式
+ * @param style 基础样式指针，默认为 nullptr
+ */
 ElaMenuStyle::ElaMenuStyle(QStyle* style)
 {
     _pMenuItemHeight = 32;
@@ -15,10 +27,20 @@ ElaMenuStyle::ElaMenuStyle(QStyle* style)
     });
 }
 
+/**
+ * @brief 析构函数，释放菜单样式资源
+ */
 ElaMenuStyle::~ElaMenuStyle()
 {
 }
 
+/**
+ * @brief 绘制基本图形元素
+ * @param element 图形元素
+ * @param option 样式选项
+ * @param painter 绘制器
+ * @param widget 控件指针
+ */
 void ElaMenuStyle::drawPrimitive(PrimitiveElement element, const QStyleOption* option, QPainter* painter, const QWidget* widget) const
 {
     switch (element)
@@ -49,6 +71,13 @@ void ElaMenuStyle::drawPrimitive(PrimitiveElement element, const QStyleOption* o
     QProxyStyle::drawPrimitive(element, option, painter, widget);
 }
 
+/**
+ * @brief 绘制控件元素
+ * @param element 控件元素
+ * @param option 样式选项
+ * @param painter 绘制器
+ * @param widget 控件指针
+ */
 void ElaMenuStyle::drawControl(ControlElement element, const QStyleOption* option, QPainter* painter, const QWidget* widget) const
 {
     switch (element)
@@ -91,8 +120,7 @@ void ElaMenuStyle::drawControl(ControlElement element, const QStyleOption* optio
                 if (mopt->menuHasCheckableItems)
                 {
                     painter->save();
-                    painter->setPen(!mopt->state.testFlag(QStyle::State_Enabled) ? Qt::gray : _themeMode == ElaThemeType::Light ? Qt::black
-                                                                                                                                : Qt::white);
+                    painter->setPen(!mopt->state.testFlag(QStyle::State_Enabled) ? Qt::gray : _themeMode == ElaThemeType::Light ? Qt::black : Qt::white);
                     QFont iconFont = QFont("ElaAwesome");
                     iconFont.setPixelSize(_pMenuItemHeight * 0.57);
                     painter->setFont(iconFont);
@@ -114,8 +142,7 @@ void ElaMenuStyle::drawControl(ControlElement element, const QStyleOption* optio
                     if (!iconText.isEmpty())
                     {
                         painter->save();
-                        painter->setPen(!mopt->state.testFlag(QStyle::State_Enabled) ? Qt::gray : _themeMode == ElaThemeType::Light ? Qt::black
-                                                                                                                                    : Qt::white);
+                        painter->setPen(!mopt->state.testFlag(QStyle::State_Enabled) ? Qt::gray : _themeMode == ElaThemeType::Light ? Qt::black : Qt::white);
                         QFont iconFont = QFont("ElaAwesome");
                         iconFont.setPixelSize(_pMenuItemHeight * 0.57);
                         painter->setFont(iconFont);
@@ -134,9 +161,7 @@ void ElaMenuStyle::drawControl(ControlElement element, const QStyleOption* optio
                 if (!mopt->text.isEmpty())
                 {
                     QStringList textList = mopt->text.split("\t");
-                    painter->setPen(!mopt->state.testFlag(QStyle::State_Enabled) ? Qt::gray : _themeMode == ElaThemeType::Light ? Qt::black
-                                                                                                                                : Qt::white);
-
+                    painter->setPen(!mopt->state.testFlag(QStyle::State_Enabled) ? Qt::gray : _themeMode == ElaThemeType::Light ? Qt::black : Qt::white);
                     painter->drawText(QRectF(menuRect.x() + (_isAnyoneItemHasIcon ? contentPadding + textLeftSpacing : 0) + _iconWidth, menuRect.y(), menuRect.width(), menuRect.height()), Qt::AlignLeft | Qt::AlignVCenter | Qt::TextSingleLine, textList[0]);
                     if (textList.count() > 1)
                     {
@@ -147,8 +172,7 @@ void ElaMenuStyle::drawControl(ControlElement element, const QStyleOption* optio
                 if (mopt->menuItemType == QStyleOptionMenuItem::SubMenu)
                 {
                     painter->save();
-                    painter->setPen(!mopt->state.testFlag(QStyle::State_Enabled) ? Qt::gray : _themeMode == ElaThemeType::Light ? Qt::black
-                                                                                                                                : Qt::white);
+                    painter->setPen(!mopt->state.testFlag(QStyle::State_Enabled) ? Qt::gray : _themeMode == ElaThemeType::Light ? Qt::black : Qt::white);
                     QFont iconFont = QFont("ElaAwesome");
                     iconFont.setPixelSize(18);
                     painter->setFont(iconFont);
@@ -173,6 +197,13 @@ void ElaMenuStyle::drawControl(ControlElement element, const QStyleOption* optio
     QProxyStyle::drawControl(element, option, painter, widget);
 }
 
+/**
+ * @brief 获取像素度量值
+ * @param metric 度量类型
+ * @param option 样式选项
+ * @param widget 控件指针
+ * @return 像素度量值
+ */
 int ElaMenuStyle::pixelMetric(PixelMetric metric, const QStyleOption* option, const QWidget* widget) const
 {
     switch (metric)
@@ -195,6 +226,14 @@ int ElaMenuStyle::pixelMetric(PixelMetric metric, const QStyleOption* option, co
     return QProxyStyle::pixelMetric(metric, option, widget);
 }
 
+/**
+ * @brief 计算内容尺寸
+ * @param type 内容类型
+ * @param option 样式选项
+ * @param size 原始尺寸
+ * @param widget 控件指针
+ * @return 计算后的尺寸
+ */
 QSize ElaMenuStyle::sizeFromContents(ContentsType type, const QStyleOption* option, const QSize& size, const QWidget* widget) const
 {
     switch (type)

@@ -1,3 +1,11 @@
+/**
+ * @file ElaMessageBarPrivate.cpp
+ * @brief 实现 ElaMessageBarPrivate 类和 ElaMessageBarManager 类，管理消息通知栏的私有实现
+ * @author [Your Name]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaMessageBarPrivate.h"
 #include "ElaIconButton.h"
 #include "ElaMessageBar.h"
@@ -9,16 +17,35 @@
 #include <QPropertyAnimation>
 #include <QTimer>
 
+/**
+ * @brief 定义 ElaMessageBarManager 单例
+ */
 Q_SINGLETON_CREATE_CPP(ElaMessageBarManager)
+
+/**
+ * @brief 消息栏活动映射
+ */
 QMap<ElaMessageBarType::PositionPolicy, QList<ElaMessageBar*>*> _messageBarActiveMap;
+
+/**
+ * @brief 构造函数，初始化消息栏管理器
+ * @param parent 父对象指针，默认为 nullptr
+ */
 ElaMessageBarManager::ElaMessageBarManager(QObject* parent)
 {
 }
 
+/**
+ * @brief 析构函数，释放消息栏管理器资源
+ */
 ElaMessageBarManager::~ElaMessageBarManager()
 {
 }
 
+/**
+ * @brief 请求消息栏事件
+ * @param messageBar 消息栏对象
+ */
 void ElaMessageBarManager::requestMessageBarEvent(ElaMessageBar* messageBar)
 {
     if (!messageBar)
@@ -45,6 +72,10 @@ void ElaMessageBarManager::requestMessageBarEvent(ElaMessageBar* messageBar)
     }
 }
 
+/**
+ * @brief 发布消息栏创建事件
+ * @param messageBar 消息栏对象
+ */
 void ElaMessageBarManager::postMessageBarCreateEvent(ElaMessageBar* messageBar)
 {
     if (!messageBar)
@@ -62,6 +93,10 @@ void ElaMessageBarManager::postMessageBarCreateEvent(ElaMessageBar* messageBar)
     }
 }
 
+/**
+ * @brief 发布消息栏终止事件
+ * @param messageBar 消息栏对象
+ */
 void ElaMessageBarManager::postMessageBarEndEvent(ElaMessageBar* messageBar)
 {
     if (!messageBar)
@@ -97,6 +132,10 @@ void ElaMessageBarManager::postMessageBarEndEvent(ElaMessageBar* messageBar)
     }
 }
 
+/**
+ * @brief 强制发布消息栏终止事件
+ * @param messageBar 消息栏对象
+ */
 void ElaMessageBarManager::forcePostMessageBarEndEvent(ElaMessageBar* messageBar)
 {
     if (!messageBar)
@@ -109,6 +148,11 @@ void ElaMessageBarManager::forcePostMessageBarEndEvent(ElaMessageBar* messageBar
     postMessageBarEndEvent(messageBar);
 }
 
+/**
+ * @brief 获取消息栏事件数量
+ * @param messageBar 消息栏对象
+ * @return 事件数量
+ */
 int ElaMessageBarManager::getMessageBarEventCount(ElaMessageBar* messageBar)
 {
     if (!messageBar)
@@ -123,6 +167,11 @@ int ElaMessageBarManager::getMessageBarEventCount(ElaMessageBar* messageBar)
     return eventList.count();
 }
 
+/**
+ * @brief 更新活动消息栏映射
+ * @param messageBar 消息栏对象
+ * @param isActive 是否激活
+ */
 void ElaMessageBarManager::updateActiveMap(ElaMessageBar* messageBar, bool isActive)
 {
     if (!messageBar)
@@ -155,6 +204,10 @@ void ElaMessageBarManager::updateActiveMap(ElaMessageBar* messageBar, bool isAct
     }
 }
 
+/**
+ * @brief 构造函数，初始化消息栏私有对象
+ * @param parent 父对象指针，默认为 nullptr
+ */
 ElaMessageBarPrivate::ElaMessageBarPrivate(QObject* parent)
     : QObject{parent}
 {
@@ -163,10 +216,16 @@ ElaMessageBarPrivate::ElaMessageBarPrivate(QObject* parent)
     _createTime = QDateTime::currentMSecsSinceEpoch();
 }
 
+/**
+ * @brief 析构函数，释放消息栏私有资源
+ */
 ElaMessageBarPrivate::~ElaMessageBarPrivate()
 {
 }
 
+/**
+ * @brief 尝试请求消息栏事件
+ */
 void ElaMessageBarPrivate::tryToRequestMessageBarEvent()
 {
     Q_Q(ElaMessageBar);
@@ -177,6 +236,10 @@ void ElaMessageBarPrivate::tryToRequestMessageBarEvent()
     ElaMessageBarManager::getInstance()->requestMessageBarEvent(q);
 }
 
+/**
+ * @brief 获取当前工作模式
+ * @return 当前工作状态
+ */
 WorkStatus ElaMessageBarPrivate::getWorkMode() const
 {
     if (!_isMessageBarCreateAnimationFinished)
@@ -190,6 +253,10 @@ WorkStatus ElaMessageBarPrivate::getWorkMode() const
     return WorkStatus::Idle;
 }
 
+/**
+ * @brief 处理其他消息栏终止事件
+ * @param eventData 事件数据
+ */
 void ElaMessageBarPrivate::onOtherMessageBarEnd(QVariantMap eventData)
 {
     Q_Q(ElaMessageBar);
@@ -215,6 +282,10 @@ void ElaMessageBarPrivate::onOtherMessageBarEnd(QVariantMap eventData)
     closePosAnimation->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
+/**
+ * @brief 终止消息栏
+ * @param eventData 事件数据
+ */
 void ElaMessageBarPrivate::messageBarEnd(QVariantMap eventData)
 {
     Q_Q(ElaMessageBar);
@@ -234,6 +305,9 @@ void ElaMessageBarPrivate::messageBarEnd(QVariantMap eventData)
     barFinishedOpacityAnimation->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
+/**
+ * @brief 关闭按钮点击事件处理
+ */
 void ElaMessageBarPrivate::onCloseButtonClicked()
 {
     Q_Q(ElaMessageBar);
@@ -257,6 +331,10 @@ void ElaMessageBarPrivate::onCloseButtonClicked()
     opacityAnimation->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
+/**
+ * @brief 创建消息栏
+ * @param displayMsec 显示时长（毫秒）
+ */
 void ElaMessageBarPrivate::_messageBarCreate(int displayMsec)
 {
     Q_Q(ElaMessageBar);
@@ -283,14 +361,15 @@ void ElaMessageBarPrivate::_messageBarCreate(int displayMsec)
     connect(barPosAnimation, &QPropertyAnimation::finished, q, [=]() {
         _isNormalDisplay = true;
         _isMessageBarCreateAnimationFinished = true;
-        if(ElaMessageBarManager::getInstance()->getMessageBarEventCount(q) > 1)
+        if (ElaMessageBarManager::getInstance()->getMessageBarEventCount(q) > 1)
         {
             ElaMessageBarManager::getInstance()->requestMessageBarEvent(q);
         }
         QTimer::singleShot(displayMsec, q, [=]() {
             _isReadyToEnd = true;
             ElaMessageBarManager::getInstance()->requestMessageBarEvent(q);
-        }); });
+        });
+    });
     switch (_policy)
     {
     case ElaMessageBarType::Top:
@@ -311,6 +390,13 @@ void ElaMessageBarPrivate::_messageBarCreate(int displayMsec)
     barPosAnimation->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
+/**
+ * @brief 计算初始位置
+ * @param startX 起始X坐标
+ * @param startY 起始Y坐标
+ * @param endX 结束X坐标
+ * @param endY 结束Y坐标
+ */
 void ElaMessageBarPrivate::_calculateInitialPos(int& startX, int& startY, int& endX, int& endY)
 {
     Q_Q(ElaMessageBar);
@@ -392,6 +478,11 @@ void ElaMessageBarPrivate::_calculateInitialPos(int& startX, int& startY, int& e
     }
 }
 
+/**
+ * @brief 获取其他消息栏的总高度和次序信息
+ * @param isJudgeCreateOrder 是否判断创建顺序
+ * @return 包含总高度和次序的列表
+ */
 QList<int> ElaMessageBarPrivate::_getOtherMessageBarTotalData(bool isJudgeCreateOrder)
 {
     Q_Q(ElaMessageBar);
@@ -416,6 +507,10 @@ QList<int> ElaMessageBarPrivate::_getOtherMessageBarTotalData(bool isJudgeCreate
     return resultList;
 }
 
+/**
+ * @brief 计算目标Y坐标
+ * @return 目标Y坐标
+ */
 qreal ElaMessageBarPrivate::_calculateTargetPosY()
 {
     Q_Q(ElaMessageBar);
@@ -445,6 +540,11 @@ qreal ElaMessageBarPrivate::_calculateTargetPosY()
     return 0;
 }
 
+/**
+ * @brief 判断消息栏创建顺序
+ * @param otherMessageBar 其他消息栏对象
+ * @return 是否其他消息栏先创建
+ */
 bool ElaMessageBarPrivate::_judgeCreateOrder(ElaMessageBar* otherMessageBar)
 {
     if (otherMessageBar->d_ptr->_createTime < _createTime)
@@ -458,6 +558,10 @@ bool ElaMessageBarPrivate::_judgeCreateOrder(ElaMessageBar* otherMessageBar)
     }
 }
 
+/**
+ * @brief 绘制成功消息
+ * @param painter 绘图对象
+ */
 void ElaMessageBarPrivate::_drawSuccess(QPainter* painter)
 {
     Q_Q(ElaMessageBar);
@@ -480,6 +584,10 @@ void ElaMessageBarPrivate::_drawSuccess(QPainter* painter)
     painter->setPen(QPen(Qt::black));
 }
 
+/**
+ * @brief 绘制警告消息
+ * @param painter 绘图对象
+ */
 void ElaMessageBarPrivate::_drawWarning(QPainter* painter)
 {
     Q_Q(ElaMessageBar);
@@ -500,6 +608,10 @@ void ElaMessageBarPrivate::_drawWarning(QPainter* painter)
     painter->setPen(QColor(0xFA, 0xFA, 0xFA));
 }
 
+/**
+ * @brief 绘制信息消息
+ * @param painter 绘图对象
+ */
 void ElaMessageBarPrivate::_drawInformation(QPainter* painter)
 {
     Q_Q(ElaMessageBar);
@@ -519,6 +631,10 @@ void ElaMessageBarPrivate::_drawInformation(QPainter* painter)
     painter->setPen(Qt::black);
 }
 
+/**
+ * @brief 绘制错误消息
+ * @param painter 绘图对象
+ */
 void ElaMessageBarPrivate::_drawError(QPainter* painter)
 {
     Q_Q(ElaMessageBar);
