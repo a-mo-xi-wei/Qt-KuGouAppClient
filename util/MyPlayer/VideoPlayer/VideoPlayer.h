@@ -1,5 +1,5 @@
-﻿/**
- * 叶海辉
+﻿/*
+  VideoPlayer - 多媒体播放器类
  * QQ群121376426
  * http://blog.yundiantech.com/
  */
@@ -27,294 +27,479 @@ extern "C"
     #include <libavfilter/buffersrc.h>
 }
 
-///启用滤镜，用于旋转带角度的视频
-#define CONFIG_AVFILTER 1
-
-#include "util/util.h"
-#include "util/thread.h"
-#include "PcmPlayer/PcmPlayer.h"
-#include "frame/AudioFrame/AACFrame.h"
-#include "frame/VideoFrame/VideoFrame.h"
-
-#define SDL_AUDIO_BUFFER_SIZE 1024
-#define AVCODEC_MAX_AUDIO_FRAME_SIZE 192000 // 1 second of 48khz 32bit audio
-
-#define MAX_AUDIO_SIZE (50 * 20)
-#define MAX_VIDEO_SIZE (25 * 20)
-
-#define FLUSH_DATA "FLUSH"
-
-/**
- * @brief The VideoPlayer class
- * 用到了c++11的语法，需要编译器开启c++11支持
- * 播放器类，纯c++实现，方便移植，与界面的交互通过回调函数的方式实现
- */
+#define CONFIG_AVFILTER 1 ///< 启用滤镜，用于旋转带角度的视频
+#define SDL_AUDIO_BUFFER_SIZE 1024 ///< SDL 音频缓冲区大小
+#define AVCODEC_MAX_AUDIO_FRAME_SIZE 192000 ///< 1 秒 48kHz 32 位音频最大帧大小
+#define MAX_AUDIO_SIZE (50 * 20) ///< 最大音频队列大小
+#define MAX_VIDEO_SIZE (25 * 20) ///< 最大视频队列大小
+#define FLUSH_DATA "FLUSH" ///< 用于清空解码器的数据标志
 
 #if defined(MYPLAYER_LIBRARY)
 #define MYPLAYER_EXPORT Q_DECL_EXPORT
 #else
 #define MYPLAYER_EXPORT Q_DECL_IMPORT
 #endif
+#include "util/util.h"
+#include "util/thread.h"
+#include "PcmPlayer/PcmPlayer.h"
+#include "frame/AudioFrame/AACFrame.h"
+#include "frame/VideoFrame/VideoFrame.h"
 
-class MYPLAYER_EXPORT VideoPlayer : public QObject ,public Util::Thread
+/** @class VideoPlayer
+ *  @brief 多媒体播放器类
+ *
+ *  实现音视频文件的播放功能，使用 FFmpeg 进行解码，支持暂停、跳转、音量控制等功能。
+ *  通过回调函数与界面交互，基于 C++11 实现，便于跨平台移植。
+ */
+class MYPLAYER_EXPORT VideoPlayer : public QObject, public Util::Thread
 {
     Q_OBJECT
 public:
+    /** @enum State
+     *  @brief 播放器状态
+     */
     enum State
     {
-        Playing = 0,
-        Pause,
-        Stop,
-        ReadError,
+        Playing = 0, ///< 正在播放
+        Pause,       ///< 暂停
+        Stop,        ///< 停止
+        ReadError,   ///< 读取错误
     };
 
+    /** @class EventHandle
+     *  @brief 事件处理接口
+     *
+     *  定义播放器与界面交互的回调函数。
+     */
     class EventHandle
     {
     public:
-        ///打开文件失败
+        /** @brief 打开视频文件失败回调
+         *
+         *  @param code 错误码
+         */
         virtual void onOpenVideoFileFailed(const int &code) = 0;
 
-        ///打开sdl失败的时候回调此函数
+        /** @brief 打开 SDL 失败回调
+         *
+         *  @param code 错误码
+         */
         virtual void onOpenSdlFailed(const int &code) = 0;
 
-        ///获取到视频时长的时候调用此函数
+        /** @brief 视频时长变更回调
+         *
+         *  @param uSec 总时长（微秒）
+         */
         virtual void onTotalTimeChanged(const int64_t &uSec) = 0;
 
-        ///播放器状态改变的时候回调此函数
+        /** @brief 播放器状态变更回调
+         *
+         *  @param state 播放器状态
+         *  @param hasVideo 是否包含视频流
+         *  @param hasAudio 是否包含音频流
+         */
         virtual void onPlayerStateChanged(const VideoPlayer::State &state, const bool &hasVideo, const bool &hasAudio) = 0;
 
-        ///播放视频，此函数不宜做耗时操作，否则会影响播放的流畅性。
+        /** @brief 显示视频帧回调
+         *
+         *  @param videoFrame 视频帧数据
+         */
         virtual void onDisplayVideo(VideoRawFramePtr videoFrame) = 0;
 
-        virtual void onVideoBuffer(VideoEncodedFramePtr video_frame){};
-        virtual void onAudioBuffer(AACFramePtr audio_frame){};
-        virtual void onAudioBuffer(PCMFramePtr audio_frame){};
+        /** @brief 视频编码帧回调
+         *
+         *  @param video_frame 编码视频帧
+         */
+        virtual void onVideoBuffer(VideoEncodedFramePtr video_frame) {}
+
+        /** @brief 音频编码帧回调
+         *
+         *  @param audio_frame AAC 音频帧
+         */
+        virtual void onAudioBuffer(AACFramePtr audio_frame) {}
+
+        /** @brief PCM 音频帧回调
+         *
+         *  @param audio_frame PCM 音频帧
+         */
+        virtual void onAudioBuffer(PCMFramePtr audio_frame) {}
     };
 
-public:
-    VideoPlayer(QObject* parent = nullptr);
+    /** @brief 构造函数
+     *
+     *  @param parent 父对象
+     */
+    VideoPlayer(QObject *parent = nullptr);
+
+    /** @brief 析构函数
+     */
     ~VideoPlayer();
 
-    ///初始化播放器（必需要调用一次）
+    /** @brief 初始化播放器
+     *
+     *  必须调用一次以初始化 FFmpeg 和网络支持。
+     *
+     *  @return 初始化是否成功
+     */
     static bool initPlayer();
 
-    /**
-     * @brief setVideoPlayerCallBack 设置播放器回调函数
-     * @param pointer
+    /** @brief 设置事件处理回调
+     *
+     *  @param handle 事件处理接口指针
      */
-    void setEventHandle(VideoPlayer::EventHandle *handle){m_event_handle=handle;}
+    void setEventHandle(VideoPlayer::EventHandle *handle) { m_event_handle = handle; }
 
+    /** @brief 开始播放
+     *
+     *  @param filePath 文件路径
+     *  @return 是否成功开始播放
+     */
     bool startPlay(const std::string &filePath);
 
-    bool replay(bool isWait = false); //重新播放
+    /** @brief 重新播放
+     *
+     *  @param isWait 是否等待线程结束
+     *  @return 是否成功重新播放
+     */
+    bool replay(bool isWait = false);
 
-    bool play(); //播放（用于暂停后，重新开始播放）
-    bool pause(); //暂停播放
-    bool stop(bool isWait = true); //停止播放-参数表示是否等待所有的线程执行完毕再返回
+    /** @brief 继续播放
+     *
+     *  用于暂停后恢复播放。
+     *
+     *  @return 是否成功继续播放
+     */
+    bool play();
 
-    void seek(int64_t pos); //单位是微秒
+    /** @brief 暂停播放
+     *
+     *  @return 是否成功暂停
+     */
+    bool pause();
 
-    /**
-     * 设置能力函数
-     * 
-     * @param video_decode 是否支持视频解码
-     * @param encoded_video_callback 是否支持编码后的视频回调
-     * 
-     * 此函数用于配置对象的视频处理能力，包括是否支持视频解码和是否支持编码后视频的回调
-     * 通过设置这些参数，可以控制对象在视频处理过程中的行为和功能
+    /** @brief 停止播放
+     *
+     *  @param isWait 是否等待线程结束
+     *  @return 是否成功停止
+     */
+    bool stop(bool isWait = true);
+
+    /** @brief 跳转到指定位置
+     *
+     *  @param pos 跳转位置（微秒）
+     */
+    void seek(int64_t pos);
+
+    /** @brief 设置播放能力
+     *
+     *  配置视频解码、编码视频回调、音频播放和编码音频回调。
+     *
+     *  @param video_decode 是否启用视频解码
+     *  @param encoded_video_callback 是否启用编码视频回调
+     *  @param audio_play 是否启用音频播放
+     *  @param encoded_audio_callback 是否启用编码音频回调
      */
     void setAbility(bool video_decode, bool encoded_video_callback, bool audio_play, bool encoded_audio_callback);
 
+    /** @brief 设置静音
+     *
+     *  @param isMute 是否静音
+     */
     void setMute(bool isMute);
+
+    /** @brief 设置音量
+     *
+     *  @param value 音量值（0~1，超过1表示放大）
+     */
     void setVolume(float value);
-    float getVolume(){return mVolume;}
 
-    int64_t getTotalTime(); //单位微秒
-    int64_t getCurrentTime(); //单位秒
+    /** @brief 获取音量
+     *
+     *  @return 当前音量值
+     */
+    float getVolume() { return mVolume; }
 
-    ///用于判断是否打开超时或读取超时
-    bool mIsOpenStream; //是否正在打开流（用于回调函数中判断是打开流还是读取流）
-    int64_t mCallStartTime = 0;
+    /** @brief 获取总时长
+     *
+     *  @return 总时长（微秒）
+     */
+    int64_t getTotalTime();
+
+    /** @brief 获取当前播放时间
+     *
+     *  @return 当前时间（秒）
+     */
+    int64_t getCurrentTime();
+
+    /** @brief 获取音乐文件路径
+     *
+     *  @return 音乐文件路径
+     */
+    QString getMusicPath() const { return m_file_path.c_str(); }
+
+    /** @brief 获取播放器状态
+     *
+     *  @return 当前播放器状态
+     */
+    State state() const { return m_state; }
+
+signals:
+    /** @brief 专辑信息变更信号
+     *
+     *  @param album 专辑名称
+     */
+    void albumFound(QString);
+
+    /** @brief 艺术家信息变更信号
+     *
+     *  @param artist 艺术家名称
+     */
+    void artistFound(QString);
+
+    /** @brief 标题信息变更信号
+     *
+     *  @param title 标题
+     */
+    void titleFound(QString);
+
+    /** @brief 专辑图片变更信号
+     *
+     *  @param picture 专辑图片
+     */
+    void pictureFound(QPixmap);
+
+    /** @brief 播放位置变更信号
+     *
+     *  @param position 当前播放位置（毫秒）
+     */
+    void positionChanged(int position);
+
+    /** @brief 总时长变更信号
+     *
+     *  @param duration 总时长（毫秒）
+     */
+    void durationChanged(int duration);
+
+    /** @brief 播放开始信号
+     */
+    void audioPlay();
+
+    /** @brief 播放暂停信号
+     */
+    void audioPause();
+
+    /** @brief 播放结束信号
+     */
+    void audioFinish();
+
+    /** @brief 错误发生信号
+     *
+     *  @param msg 错误信息
+     */
+    void errorOccur(QString msg);
 
 protected:
-    void run(); //读取视频文件
-    void decodeVideoThread(); //解码视频的线程
-    void decodeAudioThread(); //解码音频的线程
+    /** @brief 读取视频文件线程函数
+     *
+     *  重载 Thread 类的 run 方法，负责读取音视频数据。
+     */
+    void run();
 
-//    static void sdlAudioCallBackFunc(void *userdata, Uint8 *stream, int len);
-//    void sdlAudioCallBack(Uint8 *stream, int len);
+    /** @brief 视频解码线程函数
+     */
+    void decodeVideoThread();
+
+    /** @brief 音频解码线程函数
+     */
+    void decodeAudioThread();
+
+
+    // static void sdlAudioCallBackFunc(void *userdata, Uint8 *stream, int len);
+    // void sdlAudioCallBack(Uint8 *stream, int len);
     // int decodeAudioFrame(bool isBlock = false);
 
 private:
-    std::string m_file_path; //视频/音频文件路径
-    bool m_is_live_mode = false; //是否为直播流
-    float m_speed = 1; //倍速播放
-
-    State m_state; //播放状态
-
-    ///音量相关变量
-    bool  mIsMute;
-    float mVolume; //音量 0~1 超过1 表示放大倍数
-
-    /// 跳转相关的变量
-    int             seek_req = 0; //跳转标志
-    int64_t         seek_pos; //跳转的位置 -- 微秒
-    int             seek_flag_audio;//跳转标志 -- 用于音频线程中
-    int             seek_flag_video;//跳转标志 -- 用于视频线程中
-    int64_t        seek_time; //跳转的时间(毫秒秒)  值和seek_pos是一样的
-
-    ///播放控制相关
-    bool mIsNeedPause; //暂停后跳转先标记此变量
-    bool mIsPause;  //暂停标志
-    bool mIsQuit;   //停止
-    bool mIsReadFinished; //文件读取完毕
-    bool mIsReadThreadFinished;
-    bool mIsVideoThreadFinished; //视频解码线程
-    bool mIsAudioThreadFinished; //音频播放线程
-    bool mIsReadError = false; //是否读取失败
-
-    ///音视频同步相关
-    uint64_t mVideoStartTime; //开始播放视频的时间
-    uint64_t mPauseStartTime; //暂停开始的时间
-    int64_t audio_clock; ///音频时钟毫秒
-    int64_t video_clock; ///<pts of last decoded frame / predicted pts of next decoded frame
-    AVStream *mVideoStream = nullptr; //视频流
-    AVStream *mAudioStream = nullptr; //音频流
-    // std::mutex m_mutex_audio_clk;
+    /** @brief 获取音频时钟
+     *
+     *  @return 音频时钟（毫秒）
+     */
     int64_t getAudioClock();
 
-    ///视频相关
-    AVFormatContext *pFormatCtx = nullptr;
-    AVCodecContext *pCodecCtx = nullptr;
-    AVCodec *pCodec = nullptr;
-
-    ///音频相关
-    AVCodecContext *aCodecCtx = nullptr;
-    AVCodec *aCodec = nullptr;
-    AVFrame *aFrame = nullptr;
-
-    ///以下变量用于音频重采样
-    /// 由于ffmpeg解码出来后的pcm数据有可能是带平面的pcm，因此这里统一做重采样处理，
-    /// 重采样成44100的16 bits 双声道数据(AV_SAMPLE_FMT_S16)
-    AVFrame *aFrame_ReSample = nullptr;
-    SwrContext *swrCtx = nullptr;
-
-    enum AVSampleFormat in_sample_fmt; //输入的采样格式
-    enum AVSampleFormat out_sample_fmt;//输出的采样格式 16bit PCM
-    int m_in_sample_rate;//输入的采样率
-    int m_out_sample_rate;//输出的采样率
-    int audio_tgt_channels; ///av_get_channel_layout_nb_channels(out_ch_layout);
-    int out_ch_layout;
-    unsigned int audio_buf_size;
-    unsigned int audio_buf_index;
-//    DECLARE_ALIGNED(16,uint8_t,audio_buf) [AVCODEC_MAX_AUDIO_FRAME_SIZE * 4];
-    uint8_t audio_buf[AVCODEC_MAX_AUDIO_FRAME_SIZE * 4];
-
-    int autorotate = 1;
-    int find_stream_info = 1;
-    int filter_nbthreads = 0;
-
-#if CONFIG_AVFILTER
-    const char **vfilters_list = NULL;
-    int nb_vfilters = 0;
-    char *afilters = NULL;
-
-    int vfilter_idx;
-    AVFilterContext *in_video_filter;   // the first filter in the video chain
-    AVFilterContext *out_video_filter;  // the last filter in the video chain
-//    AVFilterContext *in_audio_filter;   // the first filter in the audio chain
-//    AVFilterContext *out_audio_filter;  // the last filter in the audio chain
-//    AVFilterGraph *agraph;              // audio filter graph
-#endif
-
-    ///视频帧队列
-    Thread *m_thread_video = nullptr;
-    std::mutex m_mutex_video;
-    std::condition_variable m_cond_video;
-    std::list<AVPacket> m_video_pkt_list;
+    /** @brief 将视频数据包加入队列
+     *
+     *  @param pkt 视频数据包
+     *  @return 是否成功加入队列
+     */
     bool inputVideoQuene(const AVPacket &pkt);
+
+    /** @brief 清空视频队列
+     */
     void clearVideoQuene();
-    bool m_enable_video_decode = true;
-    bool m_enable_encoded_video_callback = false; //是否回调解码之前的视频数据
 
-    ///音频帧队列
-    Thread *m_thread_audio = nullptr;
-    std::mutex m_mutex_audio;
-    std::condition_variable m_cond_audio;
-    std::list<AVPacket> m_audio_pkt_list;
+    /** @brief 将音频数据包加入队列
+     *
+     *  @param pkt 音频数据包
+     *  @return 是否成功加入队列
+     */
     bool inputAudioQuene(const AVPacket &pkt);
+
+    /** @brief 清空音频队列
+     */
     void clearAudioQuene();
-    bool m_enable_audio_play = true; //是否播放音频
-    bool m_enable_encoded_audio_callback = false; //是否回调解码之前的音频数据
 
-#ifdef USE_PCM_PLAYER
-    PcmPlayer *m_pcm_player = nullptr;
-#endif
-
+    /** @brief 配置滤镜图
+     *
+     *  @param graph 滤镜图
+     *  @param filtergraph 滤镜描述
+     *  @param source_ctx 源滤镜上下文
+     *  @param sink_ctx 输出滤镜上下文
+     *  @return 配置结果
+     */
     int configure_filtergraph(AVFilterGraph *graph, const char *filtergraph, AVFilterContext *source_ctx, AVFilterContext *sink_ctx);
+
+    /** @brief 配置视频滤镜
+     *
+     *  @param graph 滤镜图
+     *  @param vfilters 视频滤镜描述
+     *  @param frame 视频帧
+     *  @return 配置结果
+     */
     int configure_video_filters(AVFilterGraph *graph, const char *vfilters, AVFrame *frame);
 
-    ///回调函数相关，主要用于输出信息给界面
-private:
-    ///回调函数
-    EventHandle *m_event_handle = nullptr;
-
-    ///打开文件失败
+    /** @brief 打开视频文件失败回调
+     *
+     *  @param code 错误码
+     */
     void doOpenVideoFileFailed(const int &code = 0);
 
-    ///打开sdl失败的时候回调此函数
+    /** @brief 打开 SDL 失败回调
+     *
+     *  @param code 错误码
+     */
     void doOpenSdlFailed(const int &code);
 
-    ///获取到视频时长的时候调用此函数
+    /** @brief 视频时长变更回调
+     *
+     *  @param uSec 总时长（微秒）
+     */
     void doTotalTimeChanged(const int64_t &uSec);
 
-    ///播放器状态改变的时候回调此函数
+    /** @brief 播放器状态变更回调
+     *
+     *  @param state 播放器状态
+     *  @param hasVideo 是否包含视频流
+     *  @param hasAudio 是否包含音频流
+     */
     void doPlayerStateChanged(const VideoPlayer::State &state, const bool &hasVideo, const bool &hasAudio);
 
-    ///显示视频数据，此函数不宜做耗时操作，否则会影响播放的流畅性。
+    /** @brief 显示视频数据回调
+     *
+     *  @param yuv420Buffer YUV420P 数据缓冲区
+     *  @param width 视频宽度
+     *  @param height 视频高度
+     */
     void doDisplayVideo(const uint8_t *yuv420Buffer, const int &width, const int &height);
 
-/*-----------仅仅播放歌曲----------------*/
-private:
+    /** @brief 尝试解码元数据
+     *
+     *  @param data 元数据字符
+     *  @return 解码后的字符串
+     */
     static QString tryDecode(const char *data);
 
-    void parseMetadata(AVFormatContext* pFormatCtx);
+    /** @brief 解析元数据
+     *
+     *  @param pFormatCtx FFmpeg 格式上下文
+     */
+    void parseMetadata(AVFormatContext *pFormatCtx);
 
+    /** @brief 从文件名解析艺术家和标题
+     *
+     *  @param filePath 文件路径
+     *  @return 艺术家和标题对
+     */
     QPair<QString, QString> parseArtistAndTitleFromFilename(const QString &filePath);
 
 public:
-    // 新增元数据访问接口
-    QString getMusicPath()  const { return m_file_path.c_str(); }
-
-    State state()           const { return m_state; }
-
-signals:
-    // 新增信号(仅仅播放歌曲)
-    void albumFound(QString);
-    void artistFound(QString);
-    void titleFound(QString);
-    void pictureFound(QPixmap);
-
-    void positionChanged(int position);     // Current playback position in milliseconds
-    void durationChanged(int duration);     // Total duration in milliseconds
-    void audioPlay();                       // Playback started
-    void audioPause();                      // Playback paused
-    void audioFinish();                     // Playback finished naturally
-    void errorOccur(QString msg);           // Error occurred with code and message
+    bool mIsOpenStream; ///< 是否正在打开流
+    int64_t mCallStartTime = 0; ///< 调用开始时间
 
 private:
-    // 新增元数据成员变量(仅仅播放歌曲)
-    QTimer     m_positionUpdateTimer{};    //通知歌曲进度发生改变的Timer
-    QString     m_musicAlbum;
-    QString     m_musicTitle;
-    QString     m_musicArtist;
-    QPixmap     m_musicPicture;
-
-    std::mutex m_mutex_read_finished;
-    std::condition_variable m_cond_read_finished;
-
-    bool mIsNaturalEnd = false; // 新增标志，表示是否自然结束
+    std::string m_file_path;                    ///< 文件路径
+    bool m_is_live_mode = false;                ///< 是否为直播流
+    float m_speed = 1;                          ///< 播放倍速
+    State m_state;                              ///< 播放器状态
+    bool mIsMute;                               ///< 是否静音
+    float mVolume;                              ///< 音量（0~1，超过1表示放大）
+    int seek_req = 0;                           ///< 跳转请求标志
+    int64_t seek_pos;                           ///< 跳转位置（微秒）
+    int seek_flag_audio;                        ///< 音频跳转标志
+    int seek_flag_video;                        ///< 视频跳转标志
+    int64_t seek_time;                          ///< 跳转时间（毫秒）
+    bool mIsNeedPause;                          ///< 暂停请求标志
+    bool mIsPause;                              ///< 暂停标志
+    bool mIsQuit;                               ///< 停止标志
+    bool mIsReadFinished;                       ///< 文件读取完成标志
+    bool mIsReadThreadFinished;                 ///< 读取线程结束标志
+    bool mIsVideoThreadFinished;                ///< 视频解码线程结束标志
+    bool mIsAudioThreadFinished;                ///< 音频解码线程结束标志
+    bool mIsReadError = false;                  ///< 读取错误标志
+    uint64_t mVideoStartTime;                   ///< 视频播放开始时间
+    uint64_t mPauseStartTime;                   ///< 暂停开始时间
+    int64_t audio_clock;                        ///< 音频时钟（毫秒）
+    int64_t video_clock;                        ///< 视频时钟（毫秒）
+    AVStream *mVideoStream = nullptr;           ///< 视频流
+    AVStream *mAudioStream = nullptr;           ///< 音频流
+    AVFormatContext *pFormatCtx = nullptr;      ///< FFmpeg 格式上下文
+    AVCodecContext *pCodecCtx = nullptr;        ///< 视频解码上下文
+    AVCodec *pCodec = nullptr;                  ///< 视频解码器
+    AVCodecContext *aCodecCtx = nullptr;        ///< 音频解码上下文
+    AVCodec *aCodec = nullptr;                  ///< 音频解码器
+    AVFrame *aFrame = nullptr;                  ///< 音频帧
+    AVFrame *aFrame_ReSample = nullptr;         ///< 重采样音频帧
+    SwrContext *swrCtx = nullptr;               ///< 音频重采样上下文
+    enum AVSampleFormat in_sample_fmt;          ///< 输入采样格式
+    enum AVSampleFormat out_sample_fmt;         ///< 输出采样格式
+    int m_in_sample_rate;                       ///< 输入采样率
+    int m_out_sample_rate;                      ///< 输出采样率
+    int audio_tgt_channels;                     ///< 目标声道数
+    int out_ch_layout;                          ///< 输出声道布局
+    unsigned int audio_buf_size;                ///< 音频缓冲区大小
+    unsigned int audio_buf_index;               ///< 音频缓冲区索引
+    uint8_t audio_buf[AVCODEC_MAX_AUDIO_FRAME_SIZE * 4]; ///< 音频缓冲区
+    int autorotate = 1;                         ///< 自动旋转视频
+    int find_stream_info = 1;                   ///< 查找流信息
+    int filter_nbthreads = 0;                   ///< 滤镜线程数
+    const char **vfilters_list = nullptr;       ///< 视频滤镜列表
+    int nb_vfilters = 0;                        ///< 视频滤镜数量
+    char *afilters = nullptr;                   ///< 音频滤镜
+    int vfilter_idx;                            ///< 视频滤镜索引
+    AVFilterContext *in_video_filter;           ///< 输入视频滤镜
+    AVFilterContext *out_video_filter;          ///< 输出视频滤镜
+    Thread *m_thread_video = nullptr;           ///< 视频解码线程
+    std::mutex m_mutex_video;                   ///< 视频队列互斥锁
+    std::condition_variable m_cond_video;       ///< 视频队列条件变量
+    std::list<AVPacket> m_video_pkt_list;       ///< 视频数据包队列
+    bool m_enable_video_decode = true;          ///< 是否启用视频解码
+    bool m_enable_encoded_video_callback = false; ///< 是否启用编码视频回调
+    Thread *m_thread_audio = nullptr;           ///< 音频解码线程
+    std::mutex m_mutex_audio;                   ///< 音频队列互斥锁
+    std::condition_variable m_cond_audio;       ///< 音频队列条件变量
+    std::list<AVPacket> m_audio_pkt_list;       ///< 音频数据包队列
+    bool m_enable_audio_play = true;            ///< 是否启用音频播放
+    bool m_enable_encoded_audio_callback = false; ///< 是否启用编码音频回调
+#ifdef USE_PCM_PLAYER
+    PcmPlayer *m_pcm_player = nullptr;          ///< PCM 播放器
+#endif
+    EventHandle *m_event_handle = nullptr;      ///< 事件处理回调
+    QTimer m_positionUpdateTimer;               ///< 播放位置更新定时器
+    QString m_musicAlbum;                       ///< 音乐专辑
+    QString m_musicTitle;                       ///< 音乐标题
+    QString m_musicArtist;                      ///< 音乐艺术家
+    QPixmap m_musicPicture;                     ///< 音乐图片
+    std::mutex m_mutex_read_finished;           ///< 读取线程结束互斥锁
+    std::condition_variable m_cond_read_finished; ///< 读取线程结束条件变量
+    bool mIsNaturalEnd = false;                 ///< 是否自然结束标志
 };
-
 
 #endif // VIDEOPLAYER_H
