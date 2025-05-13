@@ -1,6 +1,29 @@
 //
 // Created by WeiWang on 25-3-9.
 //
+/**
+ * @file Server.cpp
+ * @brief HTTP 服务器核心实现，处理请求路由、数据库操作及业务逻辑。
+ *
+ * 此文件是服务器应用程序的核心，负责处理 HTTP 请求、数据库操作和业务逻辑。
+ *
+ * @author WeiWang
+ * @date 2025-05-12
+ */
+
+//-----------------------------------------------------------------------------
+// Server类实现
+//-----------------------------------------------------------------------------
+
+/**
+ * @class Server
+ * @brief HTTP服务器主类，管理数据库、路由及请求处理
+ * @details
+ * - 使用SQLite作为本地数据库存储用户和歌曲数据
+ * - 基于JQHttpServer实现HTTP协议解析和路由分发
+ * - 支持JWT令牌验证的鉴权机制
+ * - 提供歌曲列表管理、搜索、增删等RESTful API
+ */
 
 #include "Server.h"
 #include "SJwt.h"
@@ -10,6 +33,19 @@
 #include <QSqlError>
 
 
+//-----------------------------------------------------------------------------
+// 宏定义
+//-----------------------------------------------------------------------------
+
+/**
+ * @def CheckJsonParse(session)
+ * @brief JSON 解析检查宏，快速验证请求体合法性
+ * @param session HTTP 会话对象
+ * @note
+ * - 解析失败时自动返回 400 错误
+ * - 使用 QJsonParseError 检测具体错误类型
+ * - 宏内包含直接 return，需谨慎使用作用域
+ */
 #define CheckJsonParse(session)\
         QJsonParseError error;\
         QJsonDocument requestDoc = QJsonDocument::fromJson(session->requestBody(), &error);\
@@ -21,20 +57,26 @@
 
 const char* SECRET = "weisang666";
 
-std::optional<QByteArray>CheckToken(const QPointer<JQHttpServer::Session> &session) {
-	//验证token
+/**
+ * @brief 检查令牌。
+ *
+ * @param session HTTP 会话对象。
+ * @return std::optional<QByteArray> 检查结果。
+ */
+std::optional<QByteArray> CheckToken(const QPointer<JQHttpServer::Session> &session) {
+    // 验证 token
 	auto auth = session->requestHeader().value("Authorization");
-	//如果没有认证头
+    // 如果没有认证头
 	if (auth.isEmpty()) {
 		return SResult::failure(SResultCode::UserUnauthorized);
 	}
-	//必须以Bearer开头
+    // 必须以 Bearer 开头
 	if (!auth.startsWith("Bearer")) {
 		return SResult::failure(SResultCode::UserAuthFormatError);
 	}
-	//拿到token
+    // 拿到 token
 	auto token = auth.mid(strlen("Bearer")).toUtf8();
-	//验证token
+    // 验证 token
 	auto jwtObject = SJwt::SJwtObject::decode(token, SJwt::SAlgorithm::HS256, SECRET);
 	if (jwtObject.status() == SJwt::SJwtObject::Status::Expired) {
 		return SResult::failure(SResultCode::UserAuthTokenExpired);
@@ -45,6 +87,9 @@ std::optional<QByteArray>CheckToken(const QPointer<JQHttpServer::Session> &sessi
 	return {};
 }
 
+/**
+ * @brief 构造函数。
+ */
 Server::Server() {
     initDateBase();
     initRouter();
@@ -53,14 +98,28 @@ Server::Server() {
     m_httpserver.setNetworkFrameManager(this);
     if (!m_httpserver.isRunning()) {
         m_httpserver.listen(8080);
-        QLOG_INFO()<< "服务器启动成功";
+        QLOG_INFO() << "服务器启动成功";
     }
 }
 
+//-----------------------------------------------------------------------------
+// 数据库初始化
+//-----------------------------------------------------------------------------
+
+/**
+ * @brief 初始化 SQLite 数据库表结构。
+ * @details
+ * 1. 检查 user_table 表是否存在，不存在则创建用户表。
+ * 2. 检查 local_song_table 表是否存在，不存在则创建歌曲表。
+ * 表结构说明：
+ * - user_table: 存储用户账户、昵称、头像等基本信息。
+ * - local_song_table: 存储歌曲索引、元数据及播放统计。
+ * @warning 主键设计使用复合键保证数据唯一性。
+ */
 void Server::initDateBase() {
-    init_dbpool(false,this);
-    m_SqliteDataProvider.connect(QCoreApplication::applicationDirPath()+QString("SQLite.db"));
-    //先判断是否存在usertable表,不存在则创建
+    init_dbpool(false, this);
+    m_SqliteDataProvider.connect(QCoreApplication::applicationDirPath() + QString("SQLite.db"));
+    //先判断是否存在 usertable 表,不存在则创建
     if (m_SqliteDataProvider.execSql("SELECT name FROM sqlite_master WHERE type='table' AND name='user_table';","find_user_able",false).isEmpty()) {
         const QString sql =
            "CREATE TABLE \"usertable\" ("
@@ -77,7 +136,7 @@ void Server::initDateBase() {
            "PRIMARY KEY (\"account\", \"id\"));";
         m_SqliteDataProvider.execSql(sql,"create_user_table",false);
     }
-    //先判断是否存在local_song_table表,不存在则创建
+    // 先判断是否存在 local_song_table 表,不存在则创建
     if (m_SqliteDataProvider.execSql("SELECT name FROM sqlite_master WHERE type='table' AND name='local_song_table';","find_local_song_able",false).isEmpty()) {
         const QString sql =
             "CREATE TABLE \"local_song_table\" ("
@@ -95,6 +154,9 @@ void Server::initDateBase() {
 
 }
 
+/**
+ * @brief 初始化路由。
+ */
 void Server::initRouter() {
     m_SqliteDataProvider.connect(QCoreApplication::applicationDirPath()+QString("SQLite.db"));
     //apiRouter["/api/test"] = std::bind(&Server::onApiTest, this, std::placeholders::_1);
@@ -107,11 +169,27 @@ void Server::initRouter() {
     apiRouter["/api/delSong"] = [this](auto && PH1) { return onApiDelSong(std::forward<decltype(PH1)>(PH1)); };
 }
 
+//-----------------------------------------------------------------------------
+// 路由处理
+//-----------------------------------------------------------------------------
+
+/**
+ * @brief 处理 HTTP 请求入口
+ * @param obj 事件来源对象
+ * @param session HTTP会话对象
+ * @return bool 是否已处理请求
+ * @retval true 请求已被处理
+ * @retval false 请求未处理，转交默认处理
+ * @note
+ * - 路由匹配优先级：精确路径 > 正则兜底
+ * - 支持GET/POST/PUT/DELETE方法
+ * - 记录客户端 IP 用于审计日志
+ */
 bool Server::OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServer::Session> &session) {
     //qDebug()<<"看到我，你就有了";
     QString path = session->requestUrl();
     QString method = session->requestMethod(); // GET/POST/PUT/DELETE
-    //QMap<QString,QString> header = session->requestUrlQuery();
+    // QMap<QString,QString> header = session->requestUrlQuery();
 
     bool isProcessed = false;
 
@@ -138,6 +216,9 @@ bool Server::OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServer::Se
     return isProcessed ? isProcessed : NetworkFrameManager::OnProcessHttpAccepted(obj,session);
 }
 
+/**
+ * @brief 重排歌曲索引。
+ */
 void Server::reorderIndex() {
     const QString sql =
        R"(
@@ -154,42 +235,66 @@ void Server::reorderIndex() {
     m_SqliteDataProvider.execSql(sql, "reindex_songs", false);
 }
 
+/**
+ * @brief 安全处理字符串，防止 SQL 注入。
+ *
+ * @param input 输入字符串。
+ * @return 安全处理后的字符串。
+ */
 QString Server::safeString(const QString &input) {
     // 创建输入字符串的副本
     QString escaped = input;
 
-    // 使用QString参数进行替换
+    // 使用 QString 参数进行替换
     escaped.replace(QStringLiteral("'"), QStringLiteral("''"));
 
     // 包裹结果在单引号中
     return QString("'%1'").arg(escaped);
 }
 
+/**
+ * @brief 处理测试 API。
+ *
+ * @param session HTTP 会话对象。
+ * @return bool 操作结果。
+ */
 bool Server::onApiTest(const QPointer<JQHttpServer::Session> &session) {
     // 解析请求数据（假设是 JSON）
-    //QJsonDocument requestDoc = QJsonDocument::fromJson(session->requestBody());
-    //QJsonObject requestData = requestDoc.object();
+    // QJsonDocument requestDoc = QJsonDocument::fromJson(session->requestBody());
+    // QJsonObject requestData = requestDoc.object();
 
     // 返回成功响应
     QJsonObject response;
     response["status"] = "success";
-    session->replyBytes(QJsonDocument(response).toJson(),"application/json");
+    session->replyBytes(QJsonDocument(response).toJson(), "application/json");
     return true;
 }
 
+/**
+ * @brief 处理版本 API。
+ *
+ * @param session HTTP 会话对象。
+ * @return bool 操作结果。
+ */
 bool Server::onApiVersion(const QPointer<JQHttpServer::Session> &session) {
     QJsonObject response;
     response["App-version"] = "1.0";
     response["App-name"] = "我的酷狗";
-    response["App-datatime"] =  QDateTime::currentDateTime().toString("yyyy-MM-dd");
+    response["App-datatime"] = QDateTime::currentDateTime().toString("yyyy-MM-dd");
     response["App-copyright"] = "威桑版权所有";
-    session->replyBytes(QJsonDocument(response).toJson(),"application/json");
+    session->replyBytes(QJsonDocument(response).toJson(), "application/json");
     return true;
 }
 
+/**
+ * @brief 处理获取本地歌曲列表 API。
+ *
+ * @param session HTTP 会话对象。
+ * @return bool 操作结果。
+ */
 bool Server::onApiLocalSongList(const QPointer<JQHttpServer::Session> &session) {
     try {
-        // 构造带字段别名的SQL查询语句
+        // 构造带字段别名的 SQL 查询语句
         const QString sql =
             "SELECT "
             "\"index\", "
@@ -202,8 +307,8 @@ bool Server::onApiLocalSongList(const QPointer<JQHttpServer::Session> &session) 
             "FROM local_song_table ;";
 
         // 执行查询
-        auto resultRecord  = m_SqliteDataProvider.execSql(sql, "get_song_list", false);
-        if (!resultRecord .isEmpty()) {
+        auto resultRecord = m_SqliteDataProvider.execSql(sql, "get_song_list", false);
+        if (!resultRecord.isEmpty()) {
             // 构建响应数据
             QJsonArray songsArray;
             /*  //未重载迭代器
@@ -231,10 +336,10 @@ bool Server::onApiLocalSongList(const QPointer<JQHttpServer::Session> &session) 
                     for (int j = 0; j < resultSet.cols(); j++) {
                         // 遍历每一列，根据列名填充 QJsonObject
                         if (resultSet.getField(j) == "index") {
-                            song["index"] = resultSet(i,j).toInt();
+                            song["index"] = resultSet(i, j).toInt();
                             continue;
                         }
-                         song[resultSet.getField(j)] = resultSet(i,j);
+                        song[resultSet.getField(j)] = resultSet(i, j);
                     }
                     songsArray.append(song);
                 }
@@ -251,8 +356,7 @@ bool Server::onApiLocalSongList(const QPointer<JQHttpServer::Session> &session) 
             return true;
         }
         QLOG_INFO() << "Fetched Empty songs";
-    }
-    catch (const std::exception &e) {
+    } catch (const std::exception &e) {
         QLOG_ERROR() << "Exception in onApiLocalSongList:" << e.what();
         session->replyBytes(SResult::failure(SResultCode::ServerInnerError), "application/json");
         return false;
@@ -260,10 +364,34 @@ bool Server::onApiLocalSongList(const QPointer<JQHttpServer::Session> &session) 
     return false;
 }
 
+/**
+ * @brief 处理搜索歌曲 API。
+ *
+ * @param session HTTP 会话对象。
+ * @return bool 操作结果。
+ */
 bool Server::onApiSearchSong(const QPointer<JQHttpServer::Session> &session) {
     return false;
 }
 
+/**
+ * @brief 处理添加歌曲 API。
+ *
+ * @param session HTTP 会话对象。
+ * @return bool 操作结果。
+ * @par 请求参数示例:
+ * @code{json}
+ * {
+ *   "index": 1,
+ *   "songName": "Hello",
+ *   "singer": "Adele",
+ *   "duration": "04:55",
+ *   "mediaPath": "/music/hello.mp3",
+ *   "addTime": "2025-05-13"
+ * }
+ * @endcode
+ * @warning 使用 safeString 防止 SQL 注入攻击。
+ */
 bool Server::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
     CheckJsonParse(session);
     QJsonObject requestData = requestDoc.object();
@@ -276,7 +404,7 @@ bool Server::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
     for (const auto &field : requiredFields) {
         if (!requestData.contains(field)) {
             QLOG_ERROR() << "Missing required field: " << field;
-            session->replyBytes(SResult::failure(SResultCode::ParamLoss),"application/json");
+            session->replyBytes(SResult::failure(SResultCode::ParamLoss), "application/json");
             return false;
         }
     }
@@ -305,22 +433,22 @@ bool Server::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
             }
         }
 
-        // 构造SQL语句（使用参数化查询防注入）
+        // 构造 SQL 语句（使用参数化查询防注入）
         const QString sql = QString(
            "INSERT INTO local_song_table "
            "(\"index\", cover, song, singer, duration, media_path, add_time) "
            "VALUES (%1, %2, %3, %4, %5, %6, %7);"
        )
         .arg(safeNumber(index))         // 数值类型
-        .arg(safeString(coverData))         // Base64图像数据
+        .arg(safeString(coverData))     // Base64 图像数据
         .arg(safeString(songName))
         .arg(safeString(singer))
         .arg(safeString(duration))
         .arg(safeString(mediaPath))
         .arg(safeString(addTime));
 
-        // 执行SQL
-        if (!m_SqliteDataProvider.execInsertSql(sql,"add_song",false).isEmpty()) {
+        // 执行 SQL
+        if (!m_SqliteDataProvider.execInsertSql(sql, "add_song", false).isEmpty()) {
             QJsonObject response;
             response["status"] = "success";
             response["index"] = index;
@@ -329,11 +457,11 @@ bool Server::onApiAddSong(const QPointer<JQHttpServer::Session> &session) {
             QLOG_INFO() << "Song added successfully. Index:" << index;
         } else {
             QLOG_ERROR() << "Song added error for index:" << index;
-            session->replyBytes(SResult::failure(SResultCode::ServerSqlQueryError),"application/json");
+            session->replyBytes(SResult::failure(SResultCode::ServerSqlQueryError), "application/json");
         }
     } catch (const std::exception &e) {
         QLOG_ERROR() << "Exception in onApiAddSong:" << e.what();
-        session->replyBytes(SResult::failure(SResultCode::ServerInnerError),"application/json");
+        session->replyBytes(SResult::failure(SResultCode::ServerInnerError), "application/json");
     }
 
     return true;

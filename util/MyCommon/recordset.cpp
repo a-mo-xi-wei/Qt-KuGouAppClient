@@ -1,231 +1,212 @@
-﻿#include "recordset.h"
+﻿/*
+  RecordSet - 用于存储 SQL 查询结果的类实现
+*/
+
+#include "recordset.h"
 #include "QsLog.h"
 
-/** 
- * 初始的构造函数
- */
-RecordSet::RecordSet()
-	throw()
-{
-
-}
-
-/** 
- * 析构函数
- */
-RecordSet::~RecordSet()
-	noexcept
-{
-
-}
-
-/** 
- * 清除所有的记录
- */
-void RecordSet::clear()
-{
-	mHeaders.clear();
-	mRows.clear();
-}
-
-/** 
- * 检测当前记录是否为空
+/** @brief 构造函数
  *
- * @return 如果当前记录为空的话返回真，否则返回假
+ *  初始化 RecordSet 对象。
+ *
+ *  @throw 无异常抛出
  */
-bool RecordSet::isEmpty() const
-{
-	return mRows.empty();
+RecordSet::RecordSet() throw() {
 }
 
-/** 
- * 得到当前记录有多少行
+/** @brief 析构函数
  *
- * @return 返回当前记录有多少行数据
+ *  销毁 RecordSet 对象，释放资源。
+ *
+ *  @throw 无异常抛出
  */
-unsigned int RecordSet::rows() const
-{
-	return static_cast<unsigned int>(mRows.size());
+RecordSet::~RecordSet() noexcept {
 }
 
-/** 
- * 得到当前记录有多少列
+/** @brief 清除所有记录
  *
- * @return 返回当前记录有多少列数据
+ *  清空当前存储的列头和行数据。
  */
-unsigned int RecordSet::cols() const
-{
-	return static_cast<unsigned int>(mHeaders.size());
+void RecordSet::clear() {
+    mHeaders.clear();
+    mRows.clear();
 }
-/**
- * 获取字段名
+
+/** @brief 检查记录是否为空
  *
- * @param col 获取第几列的字段名
+ *  @return 如果当前记录为空则返回 true，否则返回 false
+ */
+bool RecordSet::isEmpty() const {
+    return mRows.empty();
+}
+
+/** @brief 获取行数
+ *
+ *  @return 当前记录的行数
+ */
+unsigned int RecordSet::rows() const {
+    return static_cast<unsigned int>(mRows.size());
+}
+
+/** @brief 获取列数
+ *
+ *  @return 当前记录的列数
+ */
+unsigned int RecordSet::cols() const {
+    return static_cast<unsigned int>(mHeaders.size());
+}
+
+/** @brief 获取指定列的字段名称
+ *
+ *  @param col 列索引
+ *  @return 指定列的字段名称
  */
 QString RecordSet::getField(const int &col) {
-	return mHeaders[col];
+    return mHeaders[col];
 }
 
-/** 
- * 设置当前记录的列表头
+/** @brief 设置列头
  *
- * @param headers 要设置的列表头
+ *  设置记录的列头数据。如果已存在列头，则记录警告并返回。
+ *
+ *  @param headers 列头数据
  */
-void RecordSet::setColumnHeaders(const Row& headers)
-{
-	if(mHeaders.size() > 0)
-	{
-        QLOG_WARN()<<"list hearder is exist.";
+void RecordSet::setColumnHeaders(const Row& headers) {
+    if (mHeaders.size() > 0) {
+        QLOG_WARN() << "list hearder is exist.";
         return;
-	}
+    }
 
-	mHeaders = headers;
+    mHeaders = headers;
 }
 
-/** 
- * 添加一行新的数据
+/** @brief 添加一行数据
  *
- * @param row 要添加的一行数据
+ *  将一行数据添加到记录中。要求行数据的列数与列头一致。
+ *
+ *  @param row 要添加的行数据
  */
-void RecordSet::add(const Row& row)
-{
-	const unsigned int nCols = (unsigned int)mHeaders.size();
+void RecordSet::add(const Row& row) {
+    const unsigned int nCols = (unsigned int)mHeaders.size();
 
-	if(nCols == 0)
-	{
-        QLOG_WARN()<<"data not exist.";
-
+    if (nCols == 0) {
+        QLOG_WARN() << "data not exist.";
         return;
-	}
+    }
 
-	if(row.size() != nCols)
-	{
+    if (row.size() != nCols) {
         QLOG_WARN() << "rows:" << (unsigned int)row.size() << " "
-            << "real rows:" << nCols;
-
+                    << "real rows:" << nCols;
         return;
-	}
+    }
 
-	mRows.push_back(row);
+    mRows.push_back(row);
 }
 
-/** 
-* 得到指定行和指定列的数据
-*
-* @param row,col 要取得的数据的行号和列号
-*
-* @return 如果这个数据存在返回这个数据的字符串表示，否则抛出异常
-*/
-const QString& RecordSet::operator()(const unsigned int row,
-										 const unsigned int col) const
-{
-    if((row >= (quint32)mRows.size() || (col >= (quint32)mHeaders.size())))
-	{
-        QLOG_WARN() << "(" << row << "," << col << ") Out of range;"
-            << "max row:" << (unsigned int)mRows.size()
-            << ",max list:" << (unsigned int)mHeaders.size();
-	}
-
-	return mRows[row][col];
-}
-
-/** 
- * 得到指定行指定名称的数据
+/** @brief 获取指定行列的数据
  *
- * @param row 要取得的数据的行号
- * @param name 要取得的数据的名称
+ *  获取指定行和列的数据。如果索引越界，则记录警告并抛出异常。
  *
- * @return 如果这个数据存在返回这个数据的字符串表示，否则抛出异常
+ *  @param row 行索引
+ *  @param col 列索引
+ *  @return 指定位置的数据
  */
-const QString& RecordSet::operator()(const unsigned int row,
-                              const QString& name) const
-{
-	if(row >= mRows.size())
-	{
+const QString& RecordSet::operator()(const unsigned int row, const unsigned int col) const {
+    if ((row >= (quint32)mRows.size() || (col >= (quint32)mHeaders.size()))) {
+        QLOG_WARN() << "(" << row << "," << col << ") Out of range;"
+                    << "max row:" << (unsigned int)mRows.size()
+                    << ",max list:" << (unsigned int)mHeaders.size();
+    }
+
+    return mRows[row][col];
+}
+
+/** @brief 获取指定行和字段名称的数据
+ *
+ *  获取指定行和字段名称的数据。如果行索引越界或字段名称不存在，则记录警告并抛出异常。
+ *
+ *  @param row 行索引
+ *  @param name 字段名称
+ *  @return 指定位置的数据
+ */
+const QString& RecordSet::operator()(const unsigned int row, const QString& name) const {
+    if (row >= mRows.size()) {
         QLOG_WARN() << "row num" << row << "out of range;"
-            << "current max row:" << (unsigned int)mRows.size();
-	}
+                    << "current max row:" << (unsigned int)mRows.size();
+    }
 
     Row::const_iterator it = std::find(mHeaders.begin(), mHeaders.end(), name);
 
-	if(it == mHeaders.end())
-	{
+    if (it == mHeaders.end()) {
         QLOG_WARN() << "name:" << name << " data is not exist.";
-	}
+    }
 
-	// 找到这个数据的索引号
-	const unsigned int nCols = (unsigned int)mHeaders.size();
-	unsigned int i;
-	for(i=0;i<nCols;++i)
-	{
-		if(mHeaders[i] == name)
-			break;
-	}
+    // 找到字段名称对应的索引
+    const unsigned int nCols = (unsigned int)mHeaders.size();
+    unsigned int i;
+    for (i = 0; i < nCols; ++i) {
+        if (mHeaders[i] == name)
+            break;
+    }
 
-	return mRows[row][i];
+    return mRows[row][i];
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/** 
- * 初始的构造函数
- */
-RecordSetList::RecordSetList()
-	throw()
-{
-
-}
-
-/** 
- * 析构函数
- */
-RecordSetList::~RecordSetList()
-	throw()
-{
-
-}
-
-/** 
- * 清除所有的记录
- */
-void RecordSetList::clear()
-{
-	mRecordSets.clear();
-}
-
-/** 
- * 检测当前记录是否为空
+/** @brief 构造函数
  *
- * @return 如果当前记录为空的话返回真，否则返回假
- */
-bool RecordSetList::isEmpty() const
-{
-	return static_cast<int>(mRecordSets.size()) == 0;
-}
-
-/** 
- * 添加一行新的数据
+ *  初始化 RecordSetList 对象。
  *
- * @param rowset 要添加的一行数据
+ *  @throw 无异常抛出
  */
-void RecordSetList::add(const RecordSet& rowset)
-{
-	mRecordSets.push_back(rowset);
+RecordSetList::RecordSetList() throw() {
 }
 
-/** 
-* 得到指定行和指定列的数据
-*
-* @param row,col 要取得的数据的行号和列号
-*
-* @return 如果这个数据存在返回这个数据的字符串表示，否则抛出异常
-*/
-const RecordSet& RecordSetList::operator()(const unsigned int& row) const
-{
-	if(row >= mRecordSets.size() || row < 0)
-	{
+/** @brief 析构函数
+ *
+ *  销毁 RecordSetList 对象，释放资源。
+ *
+ *  @throw 无异常抛出
+ */
+RecordSetList::~RecordSetList() throw() {
+}
+
+/** @brief 清除所有记录
+ *
+ *  清空当前存储的所有记录集。
+ */
+void RecordSetList::clear() {
+    mRecordSets.clear();
+}
+
+/** @brief 检查记录是否为空
+ *
+ *  @return 如果当前记录集为空则返回 true，否则返回 false
+ */
+bool RecordSetList::isEmpty() const {
+    return static_cast<int>(mRecordSets.size()) == 0;
+}
+
+/** @brief 添加一个记录集
+ *
+ *  将一个 RecordSet 添加到记录集列表中。
+ *
+ *  @param rowset 要添加的记录集
+ */
+void RecordSetList::add(const RecordSet& rowset) {
+    mRecordSets.push_back(rowset);
+}
+
+/** @brief 获取指定索引的记录集
+ *
+ *  获取指定索引的记录集。如果索引越界，则记录警告并抛出异常。
+ *
+ *  @param row 记录集索引
+ *  @return 指定索引的记录集
+ */
+const RecordSet& RecordSetList::operator()(const unsigned int& row) const {
+    if (row >= mRecordSets.size() || row < 0) {
         QLOG_WARN() << "(" << row << ") is out of range;";
-	}
+    }
 
-	return mRecordSets[row];
+    return mRecordSets[row];
 }

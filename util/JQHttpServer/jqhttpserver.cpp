@@ -1,19 +1,13 @@
-﻿/*
-    This file is part of JQLibrary
-
-    Copyright: Jason
-
-    Contact email: 188080501@qq.com
-
-    GNU Lesser General Public License Usage
-    Alternatively, this file may be used under the terms of the GNU Lesser
-    General Public License version 2.1 or version 3 as published by the Free
-    Software Foundation and appearing in the file LICENSE.LGPLv21 and
-    LICENSE.LGPLv3 included in the packaging of this file. Please review the
-    following information to ensure the GNU Lesser General Public License
-    requirements will be met: https://www.gnu.org/licenses/lgpl.html and
-    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
-*/
+﻿/**
+ * @file jqhttpserver.cpp
+ * @brief JQHttpServer 实现文件，包含 HTTP 服务器的类实现。
+ *
+ * 此文件是 JQLibrary 的一部分，提供了 HTTP 服务器的实现。
+ *
+ * @author Jason
+ * @contact 188080501@qq.com
+ * @copyright GNU Lesser General Public License
+ */
 
 #include "jqhttpserver.h"
 
@@ -34,7 +28,7 @@
 #   include <QSslConfiguration>
 #endif
 
-//基本对象有效性检查
+// 基本对象有效性检查
 #define JQHTTPSERVER_SESSION_PROTECTION( functionName, ... )                             \
     auto this_ = this;                                                                   \
     if ( !this_ || ( contentLength_ < -1 ) || ( waitWrittenByteCount_ < -1 ) )           \
@@ -43,7 +37,7 @@
                                   + ": current session this is null";                    \
         return __VA_ARGS__;                                                              \
     }
-//扩展的响应状态保护
+// 扩展的响应状态保护
 #define JQHTTPSERVER_SESSION_REPLY_PROTECTION( functionName, ... )                                            \
     JQHTTPSERVER_SESSION_PROTECTION( functionName, __VA_ARGS__ )                                              \
     if ( ( replyHttpCode_ >= 0 ) && ( QThread::currentThread() != this->thread() ) )                          \
@@ -51,7 +45,7 @@
         qDebug().noquote() << QStringLiteral( "JQHttpServer::Session::" ) + functionName + ": already reply"; \
         return __VA_ARGS__;                                                                                   \
     }
-//IO 设备有效性检查
+// IO 设备有效性检查
 #define JQHTTPSERVER_SESSION_REPLY_PROTECTION2( functionName, ... )                                    \
     if ( ioDevice_.isNull() )                                                                          \
     {                                                                                                  \
@@ -1102,17 +1096,11 @@ void JQHttpServer::Service::registerProcessor(const QPointer<QObject> &processor
             continue;
         } else if (metaMethod.parameterTypes() == QList<QByteArray>({"QPointer<JQHttpServer::Session>"})) {
             api.receiveDataType = NoReceiveDataType;
-        } else if (metaMethod.parameterTypes() == QList<QByteArray>({
-                       "QVariantList", "QPointer<JQHttpServer::Session>"
-                   })) {
+        } else if (metaMethod.parameterTypes() == QList<QByteArray>({"QVariantList", "QPointer<JQHttpServer::Session>"})) {
             api.receiveDataType = VariantListReceiveDataType;
-        } else if (metaMethod.parameterTypes() == QList<QByteArray>({
-                       "QVariantMap", "QPointer<JQHttpServer::Session>"
-                   })) {
+        } else if (metaMethod.parameterTypes() == QList<QByteArray>({"QVariantMap", "QPointer<JQHttpServer::Session>"})) {
             api.receiveDataType = VariantMapReceiveDataType;
-        } else if (metaMethod.parameterTypes() == QList<QByteArray>({
-                       "QList<QVariantMap>", "QPointer<JQHttpServer::Session>"
-                   })) {
+        } else if (metaMethod.parameterTypes() == QList<QByteArray>({"QList<QVariantMap>", "QPointer<JQHttpServer::Session>"})) {
             api.receiveDataType = ListVariantMapReceiveDataType;
         } else if (metaMethod.name() == "certificateVerifier") {
             certificateVerifier_ = processor;
@@ -1123,9 +1111,9 @@ void JQHttpServer::Service::registerProcessor(const QPointer<QObject> &processor
         api.slotName = QString(metaMethod.name());
         if (exceptionSlots.contains(api.slotName)) { continue; }
 
-        for (const auto &methdo: allowMethod) {
-            if (api.slotName.startsWith(methdo.toLower())) {
-                api.apiMethod = methdo;
+        for (const auto &method: allowMethod) {
+            if (api.slotName.startsWith(method.toLower())) {
+                api.apiMethod = method;
                 break;
             }
         }
@@ -1438,8 +1426,7 @@ QList<QVariantMap> JQHttpServer::Service::variantListToListVariantMap(const QVar
 }
 
 JQHttpServer::Service::Recoder::Recoder(const QPointer<JQHttpServer::Session> &session) {
-    qDebug() << "HTTP accepted:" << session->requestMethod().toLatin1().data() << session->requestUrlPath().toLatin1().
-            data();
+    qDebug() << "HTTP accepted:" << session->requestMethod().toLatin1().data() << session->requestUrlPath().toLatin1().data();
 
     session_ = session;
     acceptedTime_ = QDateTime::currentDateTime();

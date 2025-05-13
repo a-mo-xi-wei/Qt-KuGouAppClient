@@ -4,13 +4,10 @@
 #include "ndbpool.h"
 #include "QsLog.h"
 
-#include <iostream>
 #include <QDir>
-#include <QImage>
 #include <QHostInfo>
 #include <QSettings>
 #include <QCryptographicHash>
-#include <QDebug>
 
 #if defined (WIN32)
 #include <sapi.h>
@@ -98,9 +95,10 @@ void print_log(const LogLevel level, const QString &msg, const QString &isprints
 }
 
 /**
- * @brief init_dbpool 初始化数据库连接池
- * @param paramIsDebug
- * @param parent
+ * @brief 初始化数据库连接池。
+ *
+ * @param paramIsDebug 是否为调试模式。
+ * @param parent 父对象。
  */
 void init_dbpool(const bool paramIsDebug,QObject * parent)
 {
@@ -165,7 +163,14 @@ bool sava_file(const QString& srcfile,const QString& decfile)
     return preturnState;
 }
 
-//拷贝文件：
+/**
+ * @brief 拷贝文件。
+ *
+ * @param sourceDir 源文件路径。
+ * @param toDir 目标文件路径。
+ * @param coverFileIfExist 是否覆盖已存在的文件。
+ * @return bool 拷贝成功返回 true，否则返回 false。
+ */
 bool copyFileToPath(const QString& sourceDir ,QString toDir, bool coverFileIfExist)
 {
 	toDir.replace("\\","/");
@@ -190,7 +195,14 @@ bool copyFileToPath(const QString& sourceDir ,QString toDir, bool coverFileIfExi
 	return true;
 }
 
-//拷贝文件夹：
+/**
+ * @brief 拷贝文件夹。
+ *
+ * @param fromDir 源文件夹路径。
+ * @param toDir 目标文件夹路径。
+ * @param coverFileIfExist 是否覆盖已存在的文件。
+ * @return bool 拷贝成功返回 true，否则返回 false。
+ */
 bool copyDirectoryFiles(const QString &fromDir, const QString &toDir, bool coverFileIfExist)
 {
 	QDir sourceDir(fromDir);
@@ -226,7 +238,12 @@ bool copyDirectoryFiles(const QString &fromDir, const QString &toDir, bool cover
 	return true;
 }
 
-/// 得到当前IP
+/**
+ * @brief 得到当前 IP。
+ *
+ * @param protocolType 协议类型（默认为 IPv4）。
+ * @return QHostAddress 当前 IP 地址。
+ */
 QHostAddress getLocalIP(int protocolType)
 {
     QHostAddress returnAddress;
@@ -297,9 +314,10 @@ int FindFile(const QString& _filePath,QVector<QString> &filelist,
 }
 
 /**
- * @brief JsonToString QJsonObject转QString
- * @param json 要转换的QJsonObject
- * @return 返回转换后的字符串
+ * @brief QJsonObject 转 QString。
+ *
+ * @param json 要转换的 QJsonObject。
+ * @return QString 转换后的字符串。
  */
 QString JsonToString(const QJsonObject& json)
 {
@@ -309,9 +327,10 @@ QString JsonToString(const QJsonObject& json)
 }
 
 /**
- * @brief JsonArrayToString QJsonArray转QString
- * @param json
- * @return
+ * @brief QJsonArray 转 QString。
+ *
+ * @param json 要转换的 QJsonArray。
+ * @return QString 转换后的字符串。
  */
 QString JsonArrayToString(const QJsonArray& json)
 {
@@ -321,9 +340,10 @@ QString JsonArrayToString(const QJsonArray& json)
 }
 
 /**
- * @brief ObjectToByteArray QJsonObject转QByteArray
- * @param json
- * @return
+ * @brief QJsonObject 转 QByteArray。
+ *
+ * @param json 要转换的 QJsonObject。
+ * @return QByteArray 转换后的字节数组。
  */
 QByteArray ObjectToByteArray(const QJsonObject& json)
 {
@@ -334,9 +354,10 @@ QByteArray ObjectToByteArray(const QJsonObject& json)
 }
 
 /**
- * @brief ByteArrayToObject QByteArray转QJsonObject
- * @param array
- * @return
+ * @brief QByteArray 转 QJsonObject。
+ *
+ * @param array 要转换的字节数组。
+ * @return QJsonObject 转换后的 QJsonObject。
  */
 QJsonObject ByteArrayToObject(const QByteArray& array)
 {
@@ -345,9 +366,10 @@ QJsonObject ByteArrayToObject(const QByteArray& array)
 }
 
 /**
- * @brief StringToJson QString转QJsonObject
- * @param str 要转换的字符串
- * @return 返回转换后的QJsonObject
+ * @brief QString 转 QJsonObject。
+ *
+ * @param str 要转换的字符串。
+ * @return QJsonObject 转换后的 QJsonObject。
  */
 QJsonObject StringToJson(const QString& str)
 {
@@ -365,7 +387,12 @@ QJsonObject StringToJson(const QString& str)
     return l_ret;
 }
 
-/// QString转QJsonArray
+/**
+ * @brief QString 转 QJsonArray。
+ *
+ * @param str 要转换的字符串。
+ * @return QJsonArray 转换后的 QJsonArray。
+ */
 QJsonArray StringToJsonArray(const QString& str)
 {
     QJsonArray l_ret;
@@ -383,7 +410,13 @@ QJsonArray StringToJsonArray(const QString& str)
     return l_ret;
 }
 
-/// 删除目录下所有文件和文件夹
+/**
+ * @brief 删除目录下所有文件和文件夹。
+ *
+ * @param folderDir 目录路径。
+ * @param isDeleteDir 是否删除目录。
+ * @return bool 删除成功返回 true，否则返回 false。
+ */
 bool removeFolderContent(const QString &folderDir,bool isDeleteDir)
 {
     QDir dir(folderDir);
@@ -436,9 +469,11 @@ bool removeFolderContent(const QString &folderDir,bool isDeleteDir)
 }
 
 /**
- * @brief FastlzCompressData fastlz压缩数据
- * @param srcdata
- * @return
+ * @brief fastlz 压缩数据。
+ *
+ * @param srcdata 源数据。
+ * @param decdata 压缩后的数据。
+ * @return bool 压缩成功返回 true，否则返回 false。
  */
 bool FastlzCompressData(QByteArray srcdata,QByteArray &decdata)
 {
@@ -465,9 +500,12 @@ bool FastlzCompressData(QByteArray srcdata,QByteArray &decdata)
 }
 
 /**
- * @brief FastlzDecompressData fastlz解压数据
- * @param srcdata
- * @return
+ * @brief fastlz 解压数据。
+ *
+ * @param srcdata 压缩数据。
+ * @param decdata 解压后的数据。
+ * @param deccSize 解压后数据大小。
+ * @return bool 解压成功返回 true，否则返回 false。
  */
 bool FastlzDecompressData(QByteArray srcdata,QByteArray &decdata,qint32 deccSize)
 {
@@ -534,6 +572,12 @@ void appAutoRun(bool bAutoRun)
 #endif
 }
 
+/**
+ * @brief IP 地址格式化。
+ *
+ * @param addr IP 地址。
+ * @return QString 格式化后的 IP 地址。
+ */
 QString convert_to_ipv4_addr(const QHostAddress& addr)
 {
     quint32  addr_origin = addr.toIPv4Address();
@@ -542,7 +586,12 @@ QString convert_to_ipv4_addr(const QHostAddress& addr)
     return addr_str;
 }
 
-/// 删除指定路径的文件或者文件夹
+/**
+ * @brief 删除指定路径的文件或者文件夹。
+ *
+ * @param path 路径。
+ * @return bool 删除成功返回 true，否则返回 false。
+ */
 bool DeleteTheFileOrFolder(const QString& path)
 {
     if(path.isEmpty())
@@ -558,7 +607,13 @@ bool DeleteTheFileOrFolder(const QString& path)
     return QFile::remove(path);
 }
 
-/// 创建指定路径的文件或者文件夹
+/**
+ * @brief 创建指定路径的文件或者文件夹。
+ *
+ * @param path 路径。
+ * @param type 0-文件；1-文件夹。
+ * @return bool 创建成功返回 true，否则返回 false。
+ */
 bool CreateTheFileOrFolder(const QString& path,int type)
 {
     if(path.isEmpty())
@@ -592,11 +647,12 @@ bool CreateTheFileOrFolder(const QString& path,int type)
 }
 
 /**
- * @brief EncData 简单加解密
- * @param data
- * @param key1
- * @param key2
- * @return
+ * @brief 简单加解密。
+ *
+ * @param data 数据。
+ * @param keyone 密钥一。
+ * @param keytwo 密钥二。
+ * @return QByteArray 加解密后的数据。
  */
 QByteArray EncData(QByteArray data,const QString& keyone,const QString& keytwo)
 {
@@ -620,9 +676,10 @@ QByteArray EncData(QByteArray data,const QString& keyone,const QString& keytwo)
 }
 
 /**
- * @brief getByteArrayMd5 得到相应数据的MD5
- * @param data
- * @return
+ * @brief 得到相应数据的 MD5。
+ *
+ * @param data 数据。
+ * @return QString MD5 值。
  */
 QString getByteArrayMd5(const QByteArray& data)
 {
@@ -636,9 +693,10 @@ QString getByteArrayMd5(const QByteArray& data)
 }
 
 /**
- * @brief generateMd5 生成字符串的MD5值
- * @param str
- * @return
+ * @brief 生成字符串的 MD5 值。
+ *
+ * @param str 字符串。
+ * @return QString MD5 值。
  */
 QString generateMd5(const QString& str)
 {
@@ -648,9 +706,10 @@ QString generateMd5(const QString& str)
 }
 
 /**
- * @brief generateFileMd5 生成文件内容的MD5值
- * @param filePath
- * @return
+ * @brief 生成文件内容的 MD5 值。
+ *
+ * @param filePath 文件路径。
+ * @return QString MD5 值。
  */
 QString generateFileMd5(const QString& filePath)
 {
@@ -665,6 +724,13 @@ QString generateFileMd5(const QString& filePath)
     return "";
 }
 
+/**
+ * @brief 转换 QImage 到 YUV420P。
+ *
+ * @param image QImage 对象。
+ * @param yuvData YUV 数据。
+ * @return bool 转换成功返回 true，否则返回 false。
+ */
 bool convertImageToYUV420P(const QImage& image, QByteArray& yuvData)
 {
     if(image.isNull())
@@ -707,6 +773,15 @@ bool convertImageToYUV420P(const QImage& image, QByteArray& yuvData)
     return true;
 }
 
+/**
+ * @brief 转换 RGB888 到 YUV420P。
+ *
+ * @param imagePath 图像路径。
+ * @param width 宽度。
+ * @param height 高度。
+ * @param yuvData YUV 数据。
+ * @return bool 转换成功返回 true，否则返回 false。
+ */
 bool convertRGBToYUV420P(const QString& imagePath, int width, int height, QByteArray& yuvData)
 {
     QImage image(imagePath);
@@ -721,7 +796,13 @@ bool convertRGBToYUV420P(const QString& imagePath, int width, int height, QByteA
     return convertImageToYUV420P(image,yuvData);
 }
 
-// 字符串转QSize
+/**
+ * @brief 字符串转 QSize。
+ *
+ * @param str 字符串。
+ * @param separator 分隔符。
+ * @return QSize 转换后的 QSize。
+ */
 QSize convertStringToSize(const QString& str,const QString& separator)
 {
     if(str == "" || separator == "")
@@ -734,7 +815,13 @@ QSize convertStringToSize(const QString& str,const QString& separator)
     return {strParams[0].toInt(),strParams[1].toInt()};
 }
 
-// 字符串转QPoint
+/**
+ * @brief 字符串转 QPoint。
+ *
+ * @param str 字符串。
+ * @param separator 分隔符。
+ * @return QPoint 转换后的 QPoint。
+ */
 QPoint convertStringToPoint(const QString& str,const QString& separator)
 {
     if(str == "" || separator == "")
@@ -747,7 +834,13 @@ QPoint convertStringToPoint(const QString& str,const QString& separator)
     return {strParams[0].toInt(),strParams[1].toInt()};
 }
 
-// 字符串转QRect
+/**
+ * @brief 字符串转 QRect。
+ *
+ * @param str 字符串。
+ * @param separator 分隔符。
+ * @return QRect 转换后的 QRect。
+ */
 QRect convertStringToRect(const QString& str,const QString& separator)
 {
     if(str == "" || separator == "")

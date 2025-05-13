@@ -1,24 +1,27 @@
-﻿/*
-    This file is part of JQLibrary
-
-    Copyright: Jason
-
-    Contact email: 188080501@qq.com
-
-    GNU Lesser General Public License Usage
-    Alternatively, this file may be used under the terms of the GNU Lesser
-    General Public License version 2.1 or version 3 as published by the Free
-    Software Foundation and appearing in the file LICENSE.LGPLv21 and
-    LICENSE.LGPLv3 included in the packaging of this file. Please review the
-    following information to ensure the GNU Lesser General Public License
-    requirements will be met: https://www.gnu.org/licenses/lgpl.html and
-    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
-*/
+﻿/**
+ * @file jqdeclare.hpp
+ * @brief JQLibrary 的声明文件，包含宏定义和导出声明。
+ *
+ * 此文件是 JQLibrary 的一部分，提供了属性声明宏、运行时保护宏等实用工具。
+ *
+ * @author Jason
+ * @contact 188080501@qq.com
+ * @copyright GNU Lesser General Public License
+ */
 
 #ifndef JQLIBRARY_INCLUDE_JQDECLARE_HPP_
 #define JQLIBRARY_INCLUDE_JQDECLARE_HPP_
 
-// Macro define
+// 宏定义
+/**
+ * @def JQPROPERTYDECLARE(Type, name, setName, ...)
+ * @brief 声明一个私有成员变量及其 getter 和 setter 方法。
+ *
+ * @param Type 成员变量的类型。
+ * @param name 成员变量的名称。
+ * @param setName setter 方法的名称。
+ * @param ... 成员变量的初始化参数。
+ */
 #define JQPROPERTYDECLARE( Type, name, setName, ... )                  \
 private:                                                               \
     Type name##_ __VA_ARGS__;                                          \
@@ -29,6 +32,15 @@ public:                                                                \
                                                                        \
 private:
 
+/**
+ * @def JQPROPERTYDECLAREWITHSLOT(Type, name, setName, ...)
+ * @brief 声明一个私有成员变量及其 getter 和 setter 方法（作为槽函数）。
+ *
+ * @param Type 成员变量的类型。
+ * @param name 成员变量的名称。
+ * @param setName setter 方法的名称。
+ * @param ... 成员变量的初始化参数。
+ */
 #define JQPROPERTYDECLAREWITHSLOT( Type, name, setName, ... ) \
 private:                                                      \
     Type name##_ __VA_ARGS__;                                 \
@@ -38,6 +50,15 @@ public Q_SLOTS:                                               \
                                                               \
 private:
 
+/**
+ * @def JQPTRPROPERTYDECLARE(Type, name, setName, ...)
+ * @brief 声明一个私有指针成员变量及其 getter 和 setter 方法。
+ *
+ * @param Type 成员变量的类型。
+ * @param name 成员变量的名称。
+ * @param setName setter 方法的名称。
+ * @param ... 成员变量的初始化参数。
+ */
 #define JQPTRPROPERTYDECLARE( Type, name, setName, ... ) \
 private:                                                 \
     Type *name##_ __VA_ARGS__;                           \
@@ -55,6 +76,14 @@ public:                                                  \
                                                          \
 private:
 
+/**
+ * @def JQ_READ_AND_SET_PROPERTY(Type, name, setName)
+ * @brief 声明一个公共的 getter 和 setter 方法。
+ *
+ * @param Type 成员变量的类型。
+ * @param name 成员变量的名称。
+ * @param setName setter 方法的名称。
+ */
 #define JQ_READ_AND_SET_PROPERTY( Type, name, setName )                \
 public:                                                                \
     inline const Type &name() const { return name##_; }                \
@@ -62,6 +91,14 @@ public:                                                                \
                                                                        \
 private:
 
+/**
+ * @def JQ_STATIC_READ_AND_SET_PROPERTY(Type, name, setName)
+ * @brief 声明一个静态的 getter 和 setter 方法。
+ *
+ * @param Type 成员变量的类型。
+ * @param name 成员变量的名称。
+ * @param setName setter 方法的名称。
+ */
 #define JQ_STATIC_READ_AND_SET_PROPERTY( Type, name, setName )                \
 public:                                                                       \
     static inline const Type &name() { return name##_; }                      \
@@ -69,14 +106,38 @@ public:                                                                       \
                                                                               \
 private:
 
+/**
+ * @def JQ_STATIC_SET_PROPERTY(Type, name, setName)
+ * @brief 声明一个静态的 setter 方法。
+ *
+ * @param Type 成员变量的类型。
+ * @param name 成员变量的名称。
+ * @param setName setter 方法的名称。
+ */
 #define JQ_STATIC_SET_PROPERTY( Type, name, setName )                  \
 public:                                                                \
     static inline void setName( const Type &name ) { name##_ = name; } \
                                                                        \
 private:
 
+/**
+ * @def RUNONOUTRANGEHELPER2(x, y)
+ * @brief 辅助宏，用于连接标识符。
+ */
 #define RUNONOUTRANGEHELPER2( x, y ) x##y
+
+/**
+ * @def RUNONOUTRANGEHELPER(x, y)
+ * @brief 辅助宏，用于连接标识符。
+ */
 #define RUNONOUTRANGEHELPER( x, y )  RUNONOUTRANGEHELPER2( x, y )
+
+/**
+ * @def RUNONOUTRANGE(...)
+ * @brief 在超出范围时运行回调。
+ *
+ * @param ... 回调函数。
+ */
 #define RUNONOUTRANGE( ... )                                                                    \
     auto                  RUNONOUTRANGEHELPER( runOnOutRangeCallback, __LINE__ ) = __VA_ARGS__; \
     QSharedPointer< int > RUNONOUTRANGEHELPER( runOnOutRange, __LINE__ )(                       \
@@ -91,14 +152,32 @@ private:
         exit( -1 );                                                                             \
     }
 
+/**
+ * @def RUNONOUTRANGETIMER(message)
+ * @brief 在超出范围时运行计时器并记录消息。
+ *
+ * @param message 要记录的消息。
+ */
 #define RUNONOUTRANGETIMER( message )                                                            \
     const auto &&runOnOutRangeTimerTime = QDateTime::currentMSecsSinceEpoch();                   \
     RUNONOUTRANGE( [ = ]() {                                                                     \
         qDebug() << message << ( QDateTime::currentMSecsSinceEpoch() - runOnOutRangeTimerTime ); \
     } )
 
+/**
+ * @def JQCONST(property)
+ * @brief 返回属性的常量引用。
+ *
+ * @param property 属性。
+ */
 #define JQCONST( property ) static_cast< const decltype( property ) >( property )
 
+/**
+ * @def JQTICKCOUNTERMESSAGE(message)
+ * @brief 记录消息和滴答计数。
+ *
+ * @param message 要记录的消息。
+ */
 #define JQTICKCOUNTERMESSAGE( message )                     \
     {                                                       \
         static JQTickCounter tickCounter;                   \
@@ -106,6 +185,10 @@ private:
         qDebug() << message << tickCounter.tickPerSecond(); \
     }
 
+/**
+ * @def JQBUILDDATETIMESTRING
+ * @brief 获取构建日期和时间字符串。
+ */
 #define JQBUILDDATETIMESTRING                                                                             \
     ( QDateTime(                                                                                          \
           QLocale( QLocale::English ).toDate( QString( __DATE__ ).replace( "  ", " 0" ), "MMM dd yyyy" ), \
@@ -114,6 +197,10 @@ private:
           .toLatin1()                                                                                     \
           .data() )
 
+/**
+ * @def JQONLYONCE
+ * @brief 确保代码块只执行一次。
+ */
 #define JQONLYONCE                    \
     if ( []() {                       \
              static auto flag = true; \
@@ -125,6 +212,10 @@ private:
              return false;            \
          }() )
 
+/**
+ * @def JQSKIPFIRST
+ * @brief 跳过第一次执行。
+ */
 #define JQSKIPFIRST                   \
     if ( []() {                       \
              static auto flag = true; \
@@ -136,6 +227,12 @@ private:
              return true;             \
          }() )
 
+/**
+ * @def JQINTERVAL(timeInterval)
+ * @brief 确保代码块在指定时间间隔内执行。
+ *
+ * @param timeInterval 时间间隔（毫秒）。
+ */
 #define JQINTERVAL( timeInterval )                                            \
     if ( []() {                                                               \
              static qint64 lastTime    = 0;                                   \
@@ -148,7 +245,7 @@ private:
              return false;                                                    \
          }() )
 
-// Export
+// 导出
 #ifdef JQLIBRARY_EXPORT_ENABLE
 #    ifdef JQLIBRARY_EXPORT_MODE
 #        define JQLIBRARY_EXPORT Q_DECL_EXPORT

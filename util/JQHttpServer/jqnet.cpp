@@ -1,19 +1,13 @@
-﻿/*
-    This file is part of JQLibrary
-
-    Copyright: Jason
-
-    Contact email: 188080501@qq.com
-
-    GNU Lesser General Public License Usage
-    Alternatively, this file may be used under the terms of the GNU Lesser
-    General Public License version 2.1 or version 3 as published by the Free
-    Software Foundation and appearing in the file LICENSE.LGPLv21 and
-    LICENSE.LGPLv3 included in the packaging of this file. Please review the
-    following information to ensure the GNU Lesser General Public License
-    requirements will be met: https://www.gnu.org/licenses/lgpl.html and
-    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
-*/
+﻿/**
+ * @file jqnet.cpp
+ * @brief JQNet 实现文件，包含网络相关的实用函数。
+ *
+ * 此文件是 JQLibrary 的一部分，提供了网络地址、主机名、TCP 连接等实用函数。
+ *
+ * @author Jason
+ * @contact 188080501@qq.com
+ * @copyright GNU Lesser General Public License
+ */
 
 #include "jqnet.h"
 
@@ -30,28 +24,41 @@
 #   include "JQFoundation.h"
 #endif
 
-QNetworkAddressEntry JQNet::getFirstNetworkAddressEntry()
-{
+/**
+ * @brief 获取第一个网络地址条目。
+ *
+ * @return 第一个网络地址条目。
+ */
+QNetworkAddressEntry JQNet::getFirstNetworkAddressEntry() {
     auto list = JQNet::getNetworkAddressEntryAndInterface();
     if ( list.isEmpty() ) { return { }; }
 
     return list.first().first;
 }
 
-QPair< QNetworkAddressEntry, QNetworkInterface > JQNet::getFirstNetworkAddressEntryAndInterface(const bool &ridVm)
-{
+/**
+ * @brief 获取第一个网络地址条目和接口。
+ *
+ * @param ridVm 是否排除虚拟机接口。
+ * @return 第一个网络地址条目和接口。
+ */
+QPair< QNetworkAddressEntry, QNetworkInterface > JQNet::getFirstNetworkAddressEntryAndInterface(const bool &ridVm) {
     auto list = JQNet::getNetworkAddressEntryAndInterface( ridVm );
     if ( list.isEmpty() ) { return { }; }
 
     return list.first();
 }
 
-QList< QPair< QNetworkAddressEntry, QNetworkInterface > > JQNet::getNetworkAddressEntryAndInterface(const bool &ridVm)
-{
+/**
+ * @brief 获取网络地址条目和接口列表。
+ *
+ * @param ridVm 是否排除虚拟机接口。
+ * @return 网络地址条目和接口列表。
+ */
+QList< QPair< QNetworkAddressEntry, QNetworkInterface > > JQNet::getNetworkAddressEntryAndInterface(const bool &ridVm) {
     QList< QPair< QNetworkAddressEntry, QNetworkInterface > > result;
 
-    for ( const auto &interface: static_cast< const QList< QNetworkInterface > >( QNetworkInterface::allInterfaces() ) )
-    {
+    for ( const auto &interface: static_cast< const QList< QNetworkInterface > >( QNetworkInterface::allInterfaces() ) ) {
         if ( interface.flags() != ( QNetworkInterface::IsUp |
                                     QNetworkInterface::IsRunning |
                                     QNetworkInterface::CanBroadcast |
@@ -59,10 +66,8 @@ QList< QPair< QNetworkAddressEntry, QNetworkInterface > > JQNet::getNetworkAddre
 
         if ( ridVm && interface.humanReadableName().startsWith( "vm" ) ) { continue; }
 
-        for ( const auto &entry: static_cast< QList<QNetworkAddressEntry> >( interface.addressEntries() ) )
-        {
-            if ( entry.ip().toIPv4Address() )
-            {
+        for ( const auto &entry: static_cast< QList<QNetworkAddressEntry> >( interface.addressEntries() ) ) {
+            if ( entry.ip().toIPv4Address() ) {
                 result.push_back( { entry, interface } );
             }
         }
@@ -71,8 +76,12 @@ QList< QPair< QNetworkAddressEntry, QNetworkInterface > > JQNet::getNetworkAddre
     return result;
 }
 
-QString JQNet::getHostName()
-{
+/**
+ * @brief 获取主机名。
+ *
+ * @return 主机名。
+ */
+QString JQNet::getHostName() {
 #if ( defined Q_OS_MAC )
     return QHostInfo::localHostName().replace( ".local", "" );
 #else
@@ -80,8 +89,15 @@ QString JQNet::getHostName()
 #endif
 }
 
-bool JQNet::tcpReachable(const QString &hostName, const quint16 &port, const int &timeout)
-{
+/**
+ * @brief 检查 TCP 是否可达。
+ *
+ * @param hostName 主机名。
+ * @param port 端口。
+ * @param timeout 超时时间。
+ * @return 是否可达。
+ */
+bool JQNet::tcpReachable(const QString &hostName, const quint16 &port, const int &timeout) {
     QTcpSocket socket;
 
     socket.connectToHost( hostName, port );
@@ -91,8 +107,14 @@ bool JQNet::tcpReachable(const QString &hostName, const quint16 &port, const int
 }
 
 #ifdef JQFOUNDATION_LIB
-bool JQNet::pingReachable(const QString &address, const int &timeout)
-{
+/**
+ * @brief 检查 ping 是否可达。
+ *
+ * @param address 地址。
+ * @param timeout 超时时间。
+ * @return 是否可达。
+ */
+bool JQNet::pingReachable(const QString &address, const int &timeout) {
     QPair< int, QByteArray > pingResult = { -1, { } };
 
 #if ( defined Q_OS_MAC )
@@ -108,11 +130,18 @@ bool JQNet::pingReachable(const QString &address, const int &timeout)
 #endif
 
 // HTTP
+/**
+ * @brief 执行 HTTP GET 请求。
+ *
+ * @param request 网络请求。
+ * @param receiveBuffer 接收缓冲区。
+ * @param timeout 超时时间。
+ * @return 是否成功。
+ */
 bool JQNet::HTTP::get(
         const QNetworkRequest &request,
         QByteArray &receiveBuffer, const int &timeout
-    )
-{
+    ) {
     receiveBuffer.clear();
 
     QEventLoop eventLoop;
@@ -144,13 +173,20 @@ bool JQNet::HTTP::get(
     return eventLoop.exec() && !isFail;
 }
 
+/**
+ * @brief 执行 HTTP GET 请求（异步）。
+ *
+ * @param request 网络请求。
+ * @param onFinished 完成回调。
+ * @param onError 错误回调。
+ * @param timeout 超时时间。
+ */
 void JQNet::HTTP::get(
         const QNetworkRequest &request,
         const std::function<void (const QList< QNetworkReply::RawHeaderPair > &, const QByteArray &)> &onFinished,
         const std::function<void (const QList< QNetworkReply::RawHeaderPair > &, const QNetworkReply::NetworkError &, const QByteArray &)> &onError,
         const int &timeout
-    )
-{
+    ) {
     auto reply = manage_.get( request );
 
     this->handle(
@@ -165,12 +201,19 @@ void JQNet::HTTP::get(
     );
 }
 
+/**
+ * @brief 执行 HTTP DELETE 请求。
+ *
+ * @param request 网络请求。
+ * @param receiveBuffer 接收缓冲区。
+ * @param timeout 超时时间。
+ * @return 是否成功。
+ */
 bool JQNet::HTTP::deleteResource(
         const QNetworkRequest &request,
         QByteArray &receiveBuffer,
         const int &timeout
-    )
-{
+    ) {
     receiveBuffer.clear();
 
     QEventLoop eventLoop;
@@ -202,13 +245,20 @@ bool JQNet::HTTP::deleteResource(
     return eventLoop.exec() && !isFail;
 }
 
+/**
+ * @brief 执行 HTTP DELETE 请求（异步）。
+ *
+ * @param request 网络请求。
+ * @param onFinished 完成回调。
+ * @param onError 错误回调。
+ * @param timeout 超时时间。
+ */
 void JQNet::HTTP::deleteResource(
         const QNetworkRequest &request,
         const std::function<void (const QList< QNetworkReply::RawHeaderPair > &, const QByteArray &)> &onFinished,
         const std::function<void (const QList< QNetworkReply::RawHeaderPair > &, const QNetworkReply::NetworkError &, const QByteArray &)> &onError,
         const int &timeout
-    )
-{
+    ) {
     auto reply = manage_.deleteResource( request );
 
     this->handle(
@@ -223,14 +273,23 @@ void JQNet::HTTP::deleteResource(
     );
 }
 
+/**
+ * @brief 执行 HTTP POST 请求。
+ *
+ * @param request 网络请求。
+ * @param body 请求体。
+ * @param receiveRawHeaderPairs 接收的原始头对。
+ * @param receiveBuffer 接收缓冲区。
+ * @param timeout 超时时间。
+ * @return 是否成功。
+ */
 bool JQNet::HTTP::post(
         const QNetworkRequest &request,
         const QByteArray &body,
         QList< QNetworkReply::RawHeaderPair > &receiveRawHeaderPairs,
         QByteArray &receiveBuffer,
         const int &timeout
-    )
-{
+    ) {
     receiveBuffer.clear();
 
     QEventLoop eventLoop;
@@ -264,13 +323,21 @@ bool JQNet::HTTP::post(
     return eventLoop.exec() && !isFail;
 }
 
+/**
+ * @brief 执行 HTTP POST 请求（多部分）。
+ *
+ * @param request 网络请求。
+ * @param multiPart 多部分指针。
+ * @param receiveBuffer 接收缓冲区。
+ * @param timeout 超时时间。
+ * @return 是否成功。
+ */
 bool JQNet::HTTP::post(
         const QNetworkRequest &request,
         const QSharedPointer< QHttpMultiPart > &multiPart,
         QByteArray &receiveBuffer,
         const int &timeout
-    )
-{
+    ) {
     receiveBuffer.clear();
 
     QEventLoop eventLoop;
@@ -302,14 +369,22 @@ bool JQNet::HTTP::post(
     return eventLoop.exec() && !isFail;
 }
 
+/**
+ * @brief 执行 HTTP POST 请求（异步）。
+ *
+ * @param request 网络请求。
+ * @param body 请求体。
+ * @param onFinished 完成回调。
+ * @param onError 错误回调。
+ * @param timeout 超时时间。
+ */
 void JQNet::HTTP::post(
         const QNetworkRequest &request,
         const QByteArray &body,
         const std::function<void (const QList< QNetworkReply::RawHeaderPair > &, const QByteArray &)> &onFinished,
         const std::function<void (const QList< QNetworkReply::RawHeaderPair > &, const QNetworkReply::NetworkError &, const QByteArray &)> &onError,
         const int &timeout
-    )
-{
+    ) {
     auto reply = manage_.post( request, body );
 
     this->handle(
@@ -324,13 +399,21 @@ void JQNet::HTTP::post(
     );
 }
 
+/**
+ * @brief 执行 HTTP PUT 请求。
+ *
+ * @param request 网络请求。
+ * @param body 请求体。
+ * @param receiveBuffer 接收缓冲区。
+ * @param timeout 超时时间。
+ * @return 是否成功。
+ */
 bool JQNet::HTTP::put(
         const QNetworkRequest &request,
         const QByteArray &body,
         QByteArray &receiveBuffer,
         const int &timeout
-    )
-{
+    ) {
     receiveBuffer.clear();
 
     QEventLoop eventLoop;
@@ -362,13 +445,21 @@ bool JQNet::HTTP::put(
     return eventLoop.exec() && !isFail;
 }
 
+/**
+ * @brief 执行 HTTP PUT 请求（多部分）。
+ *
+ * @param request 网络请求。
+ * @param multiPart 多部分指针。
+ * @param receiveBuffer 接收缓冲区。
+ * @param timeout 超时时间。
+ * @return 是否成功。
+ */
 bool JQNet::HTTP::put(
         const QNetworkRequest &request,
         const QSharedPointer< QHttpMultiPart > &multiPart,
         QByteArray &receiveBuffer,
         const int &timeout
-    )
-{
+    ) {
     receiveBuffer.clear();
 
     QEventLoop eventLoop;
@@ -385,7 +476,7 @@ bool JQNet::HTTP::put(
             receiveBuffer = data;
             eventLoop.exit( true );
         },
-        [ &receiveBuffer, &eventLoop ](const QList< QNetworkReply::RawHeaderPair > &, const QNetworkReply::NetworkError & /*e*/, const QByteArray &data)
+        [ &receiveBuffer, &eventLoop ](const QList< QNetworkReply::RawHeaderPair > &, const QNetworkReply::NetworkError &, const QByteArray &data)
         {
             receiveBuffer = data;
             eventLoop.exit( false );
@@ -400,14 +491,22 @@ bool JQNet::HTTP::put(
     return eventLoop.exec() && !isFail;
 }
 
+/**
+ * @brief 执行 HTTP PUT 请求（异步）。
+ *
+ * @param request 网络请求。
+ * @param body 请求体。
+ * @param onFinished 完成回调。
+ * @param onError 错误回调。
+ * @param timeout 超时时间。
+ */
 void JQNet::HTTP::put(
         const QNetworkRequest &request,
         const QByteArray &body,
         const std::function<void (const QList< QNetworkReply::RawHeaderPair > &, const QByteArray &)> &onFinished,
         const std::function<void (const QList< QNetworkReply::RawHeaderPair > &, const QNetworkReply::NetworkError &, const QByteArray &)> &onError,
         const int &timeout
-    )
-{
+    ) {
     auto reply = manage_.put( request, body );
 
     this->handle(
@@ -423,13 +522,21 @@ void JQNet::HTTP::put(
 }
 
 #if !( defined Q_OS_LINUX ) && ( QT_VERSION >= QT_VERSION_CHECK( 5, 9, 0 ) )
+/**
+ * @brief 执行 HTTP PATCH 请求。
+ *
+ * @param request 网络请求。
+ * @param body 请求体。
+ * @param receiveBuffer 接收缓冲区。
+ * @param timeout 超时时间。
+ * @return 是否成功。
+ */
 bool JQNet::HTTP::patch(
         const QNetworkRequest &request,
         const QByteArray &body,
         QByteArray &receiveBuffer,
         const int &timeout
-    )
-{
+    ) {
     receiveBuffer.clear();
 
     QEventLoop eventLoop;
@@ -461,14 +568,22 @@ bool JQNet::HTTP::patch(
     return eventLoop.exec() && !isFail;
 }
 
+/**
+ * @brief 执行 HTTP PATCH 请求（异步）。
+ *
+ * @param request 网络请求。
+ * @param body 请求体。
+ * @param onFinished 完成回调。
+ * @param onError 错误回调。
+ * @param timeout 超时时间。
+ */
 void JQNet::HTTP::patch(
         const QNetworkRequest &request,
         const QByteArray &body,
         const std::function<void (const QList< QNetworkReply::RawHeaderPair > &, const QByteArray &)> &onFinished,
         const std::function<void (const QList< QNetworkReply::RawHeaderPair > &, const QNetworkReply::NetworkError &, const QByteArray &)> &onError,
         const int &timeout
-    )
-{
+    ) {
     auto reply = manage_.sendCustomRequest( request, "PATCH", body );
 
     this->handle(
@@ -484,8 +599,14 @@ void JQNet::HTTP::patch(
 }
 #endif
 
-QPair< bool, QByteArray > JQNet::HTTP::get(const QString &url, const int &timeout)
-{
+/**
+ * @brief 执行 HTTP GET 请求（静态）。
+ *
+ * @param url URL。
+ * @param timeout 超时时间。
+ * @return 结果和数据。
+ */
+QPair< bool, QByteArray > JQNet::HTTP::get(const QString &url, const int &timeout) {
     QNetworkRequest networkRequest( ( QUrl( url ) ) );
     QByteArray receiveBuffer;
 
@@ -494,8 +615,14 @@ QPair< bool, QByteArray > JQNet::HTTP::get(const QString &url, const int &timeou
     return { isSucceed, receiveBuffer };
 }
 
-QPair< bool, QByteArray > JQNet::HTTP::get(const QNetworkRequest &request, const int &timeout)
-{
+/**
+ * @brief 执行 HTTP GET 请求（静态）。
+ *
+ * @param request 网络请求。
+ * @param timeout 超时时间。
+ * @return 结果和数据。
+ */
+QPair< bool, QByteArray > JQNet::HTTP::get(const QNetworkRequest &request, const int &timeout) {
     QByteArray receiveBuffer;
     HTTP http;
 
@@ -504,8 +631,14 @@ QPair< bool, QByteArray > JQNet::HTTP::get(const QNetworkRequest &request, const
     return { isSucceed, receiveBuffer };
 }
 
-QPair< bool, QByteArray > JQNet::HTTP::deleteResource(const QString &url, const int &timeout)
-{
+/**
+ * @brief 执行 HTTP DELETE 请求（静态）。
+ *
+ * @param url URL。
+ * @param timeout 超时时间。
+ * @return 结果和数据。
+ */
+QPair< bool, QByteArray > JQNet::HTTP::deleteResource(const QString &url, const int &timeout) {
     QNetworkRequest networkRequest( ( QUrl( url ) ) );
     QByteArray receiveBuffer;
 
@@ -514,8 +647,14 @@ QPair< bool, QByteArray > JQNet::HTTP::deleteResource(const QString &url, const 
     return { isSucceed, receiveBuffer };
 }
 
-QPair< bool, QByteArray > JQNet::HTTP::deleteResource(const QNetworkRequest &request, const int &timeout)
-{
+/**
+ * @brief 执行 HTTP DELETE 请求（静态）。
+ *
+ * @param request 网络请求。
+ * @param timeout 超时时间。
+ * @return 结果和数据。
+ */
+QPair< bool, QByteArray > JQNet::HTTP::deleteResource(const QNetworkRequest &request, const int &timeout) {
     QByteArray receiveBuffer;
     HTTP http;
 
@@ -524,8 +663,15 @@ QPair< bool, QByteArray > JQNet::HTTP::deleteResource(const QNetworkRequest &req
     return { isSucceed, receiveBuffer };
 }
 
-QPair< bool, QByteArray > JQNet::HTTP::post(const QString &url, const QByteArray &body, const int &timeout)
-{
+/**
+ * @brief 执行 HTTP POST 请求（静态）。
+ *
+ * @param url URL。
+ * @param body 请求体。
+ * @param timeout 超时时间。
+ * @return 结果和数据。
+ */
+QPair< bool, QByteArray > JQNet::HTTP::post(const QString &url, const QByteArray &body, const int &timeout) {
     QNetworkRequest networkRequest( ( QUrl( url ) ) );
     QList< QNetworkReply::RawHeaderPair > rawHeaderPairs;
     QByteArray receiveBuffer;
@@ -537,8 +683,15 @@ QPair< bool, QByteArray > JQNet::HTTP::post(const QString &url, const QByteArray
     return { isSucceed, receiveBuffer };
 }
 
-QPair< bool, QByteArray > JQNet::HTTP::post(const QNetworkRequest &request, const QByteArray &body, const int &timeout)
-{
+/**
+ * @brief 执行 HTTP POST 请求（静态）。
+ *
+ * @param request 网络请求。
+ * @param body 请求体。
+ * @param timeout 超时时间。
+ * @return 结果和数据。
+ */
+QPair< bool, QByteArray > JQNet::HTTP::post(const QNetworkRequest &request, const QByteArray &body, const int &timeout) {
     QByteArray receiveBuffer;
     QList< QNetworkReply::RawHeaderPair > rawHeaderPairs;
     HTTP http;
@@ -548,8 +701,15 @@ QPair< bool, QByteArray > JQNet::HTTP::post(const QNetworkRequest &request, cons
     return { isSucceed, receiveBuffer };
 }
 
-QPair< bool, QPair< QList< QNetworkReply::RawHeaderPair >, QByteArray > > JQNet::HTTP::post2(const QNetworkRequest &request, const QByteArray &body, const int &timeout)
-{
+/**
+ * @brief 执行 HTTP POST 请求（静态，带原始头对）。
+ *
+ * @param request 网络请求。
+ * @param body 请求体。
+ * @param timeout 超时时间。
+ * @return 结果和数据。
+ */
+QPair< bool, QPair< QList< QNetworkReply::RawHeaderPair >, QByteArray > > JQNet::HTTP::post2(const QNetworkRequest &request, const QByteArray &body, const int &timeout) {
     QByteArray receiveBuffer;
     QList< QNetworkReply::RawHeaderPair > rawHeaderPairs;
     HTTP http;
@@ -559,8 +719,15 @@ QPair< bool, QPair< QList< QNetworkReply::RawHeaderPair >, QByteArray > > JQNet:
     return { isSucceed, { rawHeaderPairs, receiveBuffer } };
 }
 
-QPair< bool, QByteArray > JQNet::HTTP::post(const QNetworkRequest &request, const QSharedPointer<QHttpMultiPart> &multiPart, const int &timeout)
-{
+/**
+ * @brief 执行 HTTP POST 请求（静态，多部分）。
+ *
+ * @param request 网络请求。
+ * @param multiPart 多部分指针。
+ * @param timeout 超时时间。
+ * @return 结果和数据。
+ */
+QPair< bool, QByteArray > JQNet::HTTP::post(const QNetworkRequest &request, const QSharedPointer<QHttpMultiPart> &multiPart, const int &timeout) {
     QByteArray receiveBuffer;
     HTTP http;
 
@@ -569,8 +736,15 @@ QPair< bool, QByteArray > JQNet::HTTP::post(const QNetworkRequest &request, cons
     return { isSucceed, receiveBuffer };
 }
 
-QPair< bool, QByteArray > JQNet::HTTP::put(const QString &url, const QByteArray &body, const int &timeout)
-{
+/**
+ * @brief 执行 HTTP PUT 请求（静态）。
+ *
+ * @param url URL。
+ * @param body 请求体。
+ * @param timeout 超时时间。
+ * @return 结果和数据。
+ */
+QPair< bool, QByteArray > JQNet::HTTP::put(const QString &url, const QByteArray &body, const int &timeout) {
     QNetworkRequest networkRequest( ( QUrl( url ) ) );
     QByteArray receiveBuffer;
 
@@ -581,8 +755,15 @@ QPair< bool, QByteArray > JQNet::HTTP::put(const QString &url, const QByteArray 
     return { isSucceed, receiveBuffer };
 }
 
-QPair< bool, QByteArray > JQNet::HTTP::put(const QNetworkRequest &request, const QByteArray &body, const int &timeout)
-{
+/**
+ * @brief 执行 HTTP PUT 请求（静态）。
+ *
+ * @param request 网络请求。
+ * @param body 请求体。
+ * @param timeout 超时时间。
+ * @return 结果和数据。
+ */
+QPair< bool, QByteArray > JQNet::HTTP::put(const QNetworkRequest &request, const QByteArray &body, const int &timeout) {
     QByteArray receiveBuffer;
     HTTP http;
 
@@ -591,8 +772,15 @@ QPair< bool, QByteArray > JQNet::HTTP::put(const QNetworkRequest &request, const
     return { isSucceed, receiveBuffer };
 }
 
-QPair< bool, QByteArray > JQNet::HTTP::put(const QNetworkRequest &request, const QSharedPointer< QHttpMultiPart > &multiPart, const int &timeout)
-{
+/**
+ * @brief 执行 HTTP PUT 请求（静态，多部分）。
+ *
+ * @param request 网络请求。
+ * @param multiPart 多部分指针。
+ * @param timeout 超时时间。
+ * @return 结果和数据。
+ */
+QPair< bool, QByteArray > JQNet::HTTP::put(const QNetworkRequest &request, const QSharedPointer< QHttpMultiPart > &multiPart, const int &timeout) {
     QByteArray receiveBuffer;
     HTTP http;
 
@@ -602,8 +790,15 @@ QPair< bool, QByteArray > JQNet::HTTP::put(const QNetworkRequest &request, const
 }
 
 #if !( defined Q_OS_LINUX ) && ( QT_VERSION >= QT_VERSION_CHECK( 5, 9, 0 ) )
-QPair< bool, QByteArray > JQNet::HTTP::patch(const QString &url, const QByteArray &body, const int &timeout)
-{
+/**
+ * @brief 执行 HTTP PATCH 请求（静态）。
+ *
+ * @param url URL。
+ * @param body 请求体。
+ * @param timeout 超时时间。
+ * @return 结果和数据。
+ */
+QPair< bool, QByteArray > JQNet::HTTP::patch(const QString &url, const QByteArray &body, const int &timeout) {
     QNetworkRequest networkRequest( ( QUrl( url ) ) );
     QByteArray receiveBuffer;
 
@@ -614,8 +809,15 @@ QPair< bool, QByteArray > JQNet::HTTP::patch(const QString &url, const QByteArra
     return { isSucceed, receiveBuffer };
 }
 
-QPair< bool, QByteArray > JQNet::HTTP::patch(const QNetworkRequest &request, const QByteArray &body, const int &timeout)
-{
+/**
+ * @brief 执行 HTTP PATCH 请求（静态）。
+ *
+ * @param request 网络请求。
+ * @param body 请求体。
+ * @param timeout 超时时间。
+ * @return 结果和数据。
+ */
+QPair< bool, QByteArray > JQNet::HTTP::patch(const QNetworkRequest &request, const QByteArray &body, const int &timeout) {
     QByteArray receiveBuffer;
     HTTP http;
 
@@ -625,19 +827,26 @@ QPair< bool, QByteArray > JQNet::HTTP::patch(const QNetworkRequest &request, con
 }
 #endif
 
+/**
+ * @brief 处理 HTTP 回复。
+ *
+ * @param reply 网络回复。
+ * @param timeout 超时时间。
+ * @param onFinished 完成回调。
+ * @param onError 错误回调。
+ * @param onTimeout 超时回调。
+ */
 void JQNet::HTTP::handle(
         QNetworkReply *reply,
         const int &timeout,
         const std::function<void (const QList< QNetworkReply::RawHeaderPair > &, const QByteArray &)> &onFinished,
         const std::function<void (const QList< QNetworkReply::RawHeaderPair > &, const QNetworkReply::NetworkError &, const QByteArray &data)> &onError,
         const std::function<void ()> &onTimeout
-    )
-{
+    ) {
     QSharedPointer< bool > isCalled( new bool( false ) );
 
     QTimer *timer = nullptr;
-    if ( timeout )
-    {
+    if ( timeout ) {
         timer = new QTimer;
         timer->setSingleShot(true);
 
@@ -669,11 +878,10 @@ void JQNet::HTTP::handle(
     } );
 
 #ifndef QT_NO_SSL
-    if ( reply->url().toString().toLower().startsWith( "https" ) )
-    {
+    if ( reply->url().toString().toLower().startsWith( "https" ) ) {
         QObject::connect( reply, static_cast< void( QNetworkReply::* )( const QList< QSslError > & ) >( &QNetworkReply::sslErrors ), [ reply ](const QList< QSslError > & /*errors*/)
         {
-//            qDebug() << "HTTP::handle: ignoreSslErrors:" << errors;
+            //            qDebug() << "HTTP::handle: ignoreSslErrors:" << errors;
             reply->ignoreSslErrors();
         } );
     }
@@ -709,5 +917,4 @@ void JQNet::HTTP::handle(
 
         onError(rawHeaderPairs, code, acceptedData);
     });
-
 }
