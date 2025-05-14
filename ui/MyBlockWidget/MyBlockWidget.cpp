@@ -1,6 +1,11 @@
-//
-// Created by WeiWang on 24-11-23.
-//
+/**
+ * @file MyBlockWidget.cpp
+ * @brief 实现 MyBlockWidget 类，提供块状控件功能
+ * @author WeiWang
+ * @date 24-11-23
+ * @version 1.0
+ */
+
 #include "MyBlockWidget.h"
 
 #include <QToolButton>
@@ -10,6 +15,10 @@
 #include <QResizeEvent>
 #include <QStyleOption>
 
+/**
+ * @brief 构造函数，初始化块状控件
+ * @param parent 父控件指针，默认为 nullptr
+ */
 MyBlockWidget::MyBlockWidget(QWidget *parent) :
     QWidget(parent)
     , m_bacWidget(new QWidget(this))
@@ -20,19 +29,22 @@ MyBlockWidget::MyBlockWidget(QWidget *parent) :
     , m_durationBtn(new QToolButton(this))
 {
     initUi();
-    this->m_mask->setParent(this->m_bacWidget);
-    this->m_mask->move(this->m_bacWidget->pos());
-    this->m_mask->setFixedSize(this->m_bacWidget->size());
-    this->m_mask->hide();
+    m_mask->setParent(m_bacWidget);
+    m_mask->move(m_bacWidget->pos());
+    m_mask->setFixedSize(m_bacWidget->size());
+    m_mask->hide();
     //先隐藏流行人数按钮
-    this->m_leftPopularBtn->hide();
-    this->m_rightPopularBtn->hide();
+    m_leftPopularBtn->hide();
+    m_rightPopularBtn->hide();
     //默认隐藏tipLab
-    this->m_tipLab->hide();
+    m_tipLab->hide();
     //默认隐藏时长按钮
-    this->m_durationBtn->hide();
+    m_durationBtn->hide();
 }
 
+/**
+ * @brief 初始化用户界面
+ */
 void MyBlockWidget::initUi() {
     this->setFixedSize(200,200);
     this->setCursor(Qt::PointingHandCursor);
@@ -70,6 +82,9 @@ void MyBlockWidget::initUi() {
 
 }
 
+/**
+ * @brief 初始化提示标签数组
+ */
 void MyBlockWidget::initTipArr() {
     m_tipArr = {QStringLiteral("流行"),QStringLiteral("经典"),
                 QStringLiteral("轻音乐"),QStringLiteral("影视"),
@@ -88,34 +103,58 @@ void MyBlockWidget::initTipArr() {
                 QStringLiteral("甜蜜"),QStringLiteral("广场舞"),};
 }
 
-void MyBlockWidget::setBorderImage(const QString &path,const int& border)const {
+/**
+ * @brief 设置边框图片
+ * @param path 图片路径
+ * @param border 圆角半径，默认为 8
+ */
+void MyBlockWidget::setBorderImage(const QString &path, const int &border) const
+{
     QString style = QString("border-radius:%1px;border-image:url(%2);").arg(border).arg(path);
     //qDebug()<<"当前样式："<<style;
-    this->m_bacWidget->setStyleSheet(style);
-    if (border != 8) {
-        this->m_mask->setBorderRadius(border);
+    m_bacWidget->setStyleSheet(style);
+    if (border != 8)
+    {
+        m_mask->setBorderRadius(border);
     }
 }
 
-void MyBlockWidget::setTipLabText(const QString &text)const {
-    this->m_tipLab->setText(text);
-    this->m_tipLab->adjustSize();
+/**
+ * @brief 设置提示标签文本
+ * @param text 文本内容
+ */
+void MyBlockWidget::setTipLabText(const QString &text) const
+{
+    m_tipLab->setText(text);
+    m_tipLab->adjustSize();
 }
 
-void MyBlockWidget::setPopularDirection(const int &direction) {
-    this->m_popularDirection = direction;
-    if(direction == 1) {
-        this->m_leftPopularBtn->show();
+/**
+ * @brief 设置流行度按钮方向
+ * @param direction 方向（0:无，1:左，2:右）
+ */
+void MyBlockWidget::setPopularDirection(const int &direction)
+{
+    m_popularDirection = direction;
+    if (direction == 1)
+    {
+        m_leftPopularBtn->show();
     }
-    else if(direction == 2) {
-        this->m_rightPopularBtn->show();
+    else if (direction == 2)
+    {
+        m_rightPopularBtn->show();
     }
-    else {
-        this->m_leftPopularBtn->hide();
-        this->m_rightPopularBtn->hide();
+    else
+    {
+        m_leftPopularBtn->hide();
+        m_rightPopularBtn->hide();
     }
 }
 
+/**
+ * @brief 设置流行度按钮文本
+ * @param text 文本内容
+ */
 void MyBlockWidget::setPopularBtnText(const QString &text)const {
     if(!this->m_popularDirection)return;
 
@@ -151,126 +190,227 @@ void MyBlockWidget::setPopularBtnText(const QString &text)const {
     }
 }
 
-void MyBlockWidget::setShowTip(bool show) const {
-    if (show)this->m_tipLab->show();
-    else this->m_tipLab->hide();
+/**
+ * @brief 设置是否显示提示标签
+ * @param show 是否显示，默认为 true
+ */
+void MyBlockWidget::setShowTip(bool show) const
+{
+    if (show)
+        m_tipLab->show();
+    else
+        m_tipLab->hide();
 }
 
-void MyBlockWidget::setExpandRespond(const bool &expandRespond) {
-    this->m_isExpandRespond = expandRespond;
+/**
+ * @brief 设置是否扩展响应范围
+ * @param expandRespond 是否扩展
+ */
+void MyBlockWidget::setExpandRespond(const bool &expandRespond)
+{
+    m_isExpandRespond = expandRespond;
 }
 
-void MyBlockWidget::setRightPopularBtnIcon(const QString &icon)const {
-    if (icon.isEmpty()) {
+/**
+ * @brief 设置右侧流行度按钮图标
+ * @param icon 图标路径
+ */
+void MyBlockWidget::setRightPopularBtnIcon(const QString &icon) const
+{
+    if (icon.isEmpty())
+    {
         //qDebug()<<"icon为空";
-        this->m_rightPopularBtn->setToolButtonStyle(Qt::ToolButtonTextOnly);
-        this->m_rightPopularBtn->setFixedWidth(30);
+        m_rightPopularBtn->setToolButtonStyle(Qt::ToolButtonTextOnly);
+        m_rightPopularBtn->setFixedWidth(30);
         return;
     }
-    this->m_rightPopularBtn->setIcon(QIcon(icon));
+    m_rightPopularBtn->setIcon(QIcon(icon));
 }
 
-void MyBlockWidget::setLeftPopularBtnIcon(const QString &icon) {
-    if (icon.isEmpty()) {
-        this->m_leftPopularBtn->setToolButtonStyle(Qt::ToolButtonTextOnly);
+/**
+ * @brief 设置左侧流行度按钮图标
+ * @param icon 图标路径
+ */
+void MyBlockWidget::setLeftPopularBtnIcon(const QString &icon)
+{
+    if (icon.isEmpty())
+    {
+        m_leftPopularBtn->setToolButtonStyle(Qt::ToolButtonTextOnly);
         // 1. 移除固定大小限制      没有效果，不知道为什么
-        this->m_leftPopularBtn->setMinimumSize(0, 0);
-        this->m_leftPopularBtn->setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
-        this->m_leftPopularBtn->setIconSize(QSize(0,0));
+        m_leftPopularBtn->setMinimumSize(0, 0);
+        m_leftPopularBtn->setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
+        m_leftPopularBtn->setIconSize(QSize(0, 0));
         return;
     }
-    this->m_leftPopularBtn->setIcon(QIcon(icon));
+    m_leftPopularBtn->setIcon(QIcon(icon));
 }
 
-void MyBlockWidget::setRightPopularBtnWidth(const int &width) const {
-    this->m_rightPopularBtn->setFixedWidth(width);
+/**
+ * @brief 设置右侧流行度按钮宽度
+ * @param width 宽度
+ */
+void MyBlockWidget::setRightPopularBtnWidth(const int &width) const
+{
+    m_rightPopularBtn->setFixedWidth(width);
 }
 
-void MyBlockWidget::setLeftPopularBtnWidth(const int &width) const {
-    this->m_leftPopularBtn->setFixedWidth(width);
+/**
+ * @brief 设置左侧流行度按钮宽度
+ * @param width 宽度
+ */
+void MyBlockWidget::setLeftPopularBtnWidth(const int &width) const
+{
+    m_leftPopularBtn->setFixedWidth(width);
 }
 
-void MyBlockWidget::setRightPopularBtnFontSize(const int &size) const {
-    auto font = this->m_leftPopularBtn->font();
+/**
+ * @brief 设置右侧流行度按钮字体大小
+ * @param size 字体大小
+ */
+void MyBlockWidget::setRightPopularBtnFontSize(const int &size) const
+{
+    auto font = m_leftPopularBtn->font();
     font.setPixelSize(size);
-    this->m_leftPopularBtn->setFont(font);
+    m_leftPopularBtn->setFont(font);
 }
 
-void MyBlockWidget::setLeftPopularBtnFontSize(const int &size,const bool& isBold) const {
-    auto font = this->m_leftPopularBtn->font();
+/**
+ * @brief 设置左侧流行度按钮字体大小和加粗
+ * @param size 字体大小
+ * @param isBold 是否加粗
+ */
+void MyBlockWidget::setLeftPopularBtnFontSize(const int &size, const bool &isBold) const
+{
+    auto font = m_leftPopularBtn->font();
     font.setPixelSize(size);
     font.setBold(isBold);
-    this->m_leftPopularBtn->setFont(font);
+    m_leftPopularBtn->setFont(font);
 }
 
-void MyBlockWidget::setAspectRatio(const float &aspectRatio) {
-    this->m_aspectRatio = aspectRatio;
+/**
+ * @brief 设置宽高比
+ * @param aspectRatio 宽高比
+ */
+void MyBlockWidget::setAspectRatio(const float &aspectRatio)
+{
+    m_aspectRatio = aspectRatio;
 }
 
-void MyBlockWidget::setPopularBtnLeftPadding(const int &leftPadding) {
-    if(!this->m_popularDirection)return;
-
-    if(this->m_popularDirection == 1) {
-        if (leftPadding == 0) {
-            this->m_leftPopularBtnStyle += "text-align: left;";
-            this->m_leftPopularBtn->setStyleSheet(this->m_leftPopularBtnStyle);
+/**
+ * @brief 设置流行度按钮左边距
+ * @param leftPadding 左边距
+ */
+void MyBlockWidget::setPopularBtnLeftPadding(const int &leftPadding)
+{
+    if (!m_popularDirection)
+        return;
+    if (m_popularDirection == 1)
+    {
+        if (leftPadding == 0)
+        {
+            m_leftPopularBtnStyle += "text-align: left;";
+            m_leftPopularBtn->setStyleSheet(m_leftPopularBtnStyle);
             return;
         }
-        this->m_leftPopularBtnStyle += QString("padding-left:%1;").arg(leftPadding);
-        this->m_leftPopularBtn->setStyleSheet(this->m_leftPopularBtnStyle);
+        m_leftPopularBtnStyle += QString("padding-left:%1;").arg(leftPadding);
+        m_leftPopularBtn->setStyleSheet(m_leftPopularBtnStyle);
     }
-    else if(this->m_popularDirection == 2) {
-        if (leftPadding == 0) {
-            this->m_rightPopularBtnStyle += "text-align : left;";
-            this->m_leftPopularBtn->setStyleSheet(this->m_leftPopularBtnStyle);
+    else if (m_popularDirection == 2)
+    {
+        if (leftPadding == 0)
+        {
+            m_rightPopularBtnStyle += "text-align : left;";
+            m_leftPopularBtn->setStyleSheet(m_leftPopularBtnStyle);
             return;
         }
-        this->m_rightPopularBtnStyle += QString("padding-left:%1;").arg(leftPadding);
-        this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle+"background-color: rgba(128, 128, 128, 127);");
+        m_rightPopularBtnStyle += QString("padding-left:%1;").arg(leftPadding);
+        m_rightPopularBtn->setStyleSheet(m_rightPopularBtnStyle + "background-color: rgba(128, 128, 128, 127);");
     }
 }
 
-void MyBlockWidget::setHaveNumberUnit(const bool &haveNumberUnit) {
-    this->m_haveUnit = haveNumberUnit;
+/**
+ * @brief 设置是否带单位（万）
+ * @param haveNumberUnit 是否带单位
+ */
+void MyBlockWidget::setHaveNumberUnit(const bool &haveNumberUnit)
+{
+    m_haveUnit = haveNumberUnit;
 }
 
-void MyBlockWidget::setTipArr(const std::vector<QString> &tipArr) {
-    this->m_tipArr = tipArr;
-    this->setTipLabText(m_tipArr[QRandomGenerator::global()->bounded(0, static_cast<int>(m_tipArr.size()))]);
+/**
+ * @brief 设置提示标签数组
+ * @param tipArr 提示标签数组
+ */
+void MyBlockWidget::setTipArr(const std::vector<QString> &tipArr)
+{
+    m_tipArr = tipArr;
+    setTipLabText(m_tipArr[QRandomGenerator::global()->bounded(0, static_cast<int>(m_tipArr.size()))]);
 }
 
-void MyBlockWidget::setTipStyleSheet(const QString &style) const {
-    this->m_tipLab->setStyleSheet(style);
+/**
+ * @brief 设置提示标签样式
+ * @param style 样式表
+ */
+void MyBlockWidget::setTipStyleSheet(const QString &style) const
+{
+    m_tipLab->setStyleSheet(style);
 }
 
-void MyBlockWidget::setDurationBtnShow()const {
-    this->m_durationBtn->show();
+/**
+ * @brief 显示时长按钮
+ */
+void MyBlockWidget::setDurationBtnShow() const
+{
+    m_durationBtn->show();
 }
 
-void MyBlockWidget::setDurationBtnText(const QString &text)const {
-    this->m_durationBtn->setText(text);
+/**
+ * @brief 设置时长按钮文本
+ * @param text 文本内容
+ */
+void MyBlockWidget::setDurationBtnText(const QString &text) const
+{
+    m_durationBtn->setText(text);
 }
 
-SMaskWidget& MyBlockWidget::getMask()const {
+/**
+ * @brief 获取遮罩控件
+ * @return 遮罩控件引用
+ */
+SMaskWidget &MyBlockWidget::getMask() const
+{
     return *m_mask;
 }
 
-void MyBlockWidget::onShowMask() {
-    this->m_mask->show();
-    this->m_mask->raise();
+/**
+ * @brief 显示遮罩
+ */
+void MyBlockWidget::onShowMask()
+{
+    m_mask->show();
+    m_mask->raise();
     QEvent enter(QEvent::Enter);
-    this->leaveEvent(&enter);
+    leaveEvent(&enter);
     update();
 }
 
-void MyBlockWidget::onHideMask() {
-    this->m_mask->hide();
+/**
+ * @brief 隐藏遮罩
+ */
+void MyBlockWidget::onHideMask()
+{
+    m_mask->hide();
     QEvent leave(QEvent::Leave);
-    this->leaveEvent(&leave);
+    leaveEvent(&leave);
     update();
 }
 
-void MyBlockWidget::paintEvent(QPaintEvent *ev) {
+/**
+ * @brief 绘制事件
+ * @param ev 绘图事件对象
+ */
+void MyBlockWidget::paintEvent(QPaintEvent *ev)
+{
     QWidget::paintEvent(ev);
     QStyleOption opt;
     opt.initFrom(this);
@@ -278,59 +418,86 @@ void MyBlockWidget::paintEvent(QPaintEvent *ev) {
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
 
-void MyBlockWidget::enterEvent(QEnterEvent *ev) {
+/**
+ * @brief 鼠标进入事件
+ * @param ev 进入事件对象
+ */
+void MyBlockWidget::enterEvent(QEnterEvent *ev)
+{
     QWidget::enterEvent(ev);
-    if(!this->m_isExpandRespond) {
-        if(!this->m_isHoverCover) {//如果之前是离开
-            this->m_isHoverCover = true;
-            this->m_mask->show();
-            if (this->m_mask->getMove())
-                this->m_mask->animationUp();
-            this->m_mask->raise();
-            this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle + "background-color: rgba(60,60,60, 127);");
+    if (!m_isExpandRespond)
+    {
+        if (!m_isHoverCover)
+        {
+            m_isHoverCover = true;
+            m_mask->show();
+            if (m_mask->getMove())
+                m_mask->animationUp();
+            m_mask->raise();
+            m_rightPopularBtn->setStyleSheet(m_rightPopularBtnStyle + "background-color: rgba(60,60,60, 127);");
             update();
         }
     }
 }
 
-void MyBlockWidget::leaveEvent(QEvent *ev) {
+/**
+ * @brief 鼠标离开事件
+ * @param ev 事件对象
+ */
+void MyBlockWidget::leaveEvent(QEvent *ev)
+{
     QWidget::leaveEvent(ev);
-    if(!this->m_isExpandRespond) {
-        if(this->m_isHoverCover) {
-            this->m_isHoverCover = false;
-            if (this->m_mask->getMove())
-                this->m_mask->animationDown();
-            this->m_mask->hide();
-            this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle + "background-color: rgba(60,60,60, 127);");
+    if (!m_isExpandRespond)
+    {
+        if (m_isHoverCover)
+        {
+            m_isHoverCover = false;
+            if (m_mask->getMove())
+                m_mask->animationDown();
+            m_mask->hide();
+            m_rightPopularBtn->setStyleSheet(m_rightPopularBtnStyle + "background-color: rgba(60,60,60, 127);");
             update();
         }
     }
 }
 
-void MyBlockWidget::resizeEvent(QResizeEvent *event) {
+/**
+ * @brief 大小调整事件
+ * @param event 大小调整事件对象
+ */
+void MyBlockWidget::resizeEvent(QResizeEvent *event)
+{
     QWidget::resizeEvent(event);
-
-    this->m_bacWidget->setFixedSize(static_cast<int>(event->size().width() / 1.01), static_cast<int>(event->size().width() / (1.01 * this->m_aspectRatio)));
-
-    this->m_mask->setFixedSize(this->m_bacWidget->size());
-
-    this->m_rightPopularBtn->move(this->m_bacWidget->width() - this->m_rightPopularBtn->width() - 5,
-                             this->m_bacWidget->height() - this->m_rightPopularBtn->height() - 5);
-
-    this->m_leftPopularBtn->move(5,this->m_bacWidget->height() - this->m_leftPopularBtn->height() - 5);
-
-    this->m_durationBtn->move(this->m_bacWidget->width() - this->m_durationBtn->width() - 5,
-                             this->m_bacWidget->height() - this->m_durationBtn->height() - 5);
+    m_bacWidget->setFixedSize(static_cast<int>(event->size().width() / 1.01), static_cast<int>(event->size().width() / (1.01 * m_aspectRatio)));
+    m_mask->setFixedSize(m_bacWidget->size());
+    m_rightPopularBtn->move(m_bacWidget->width() - m_rightPopularBtn->width() - 5, m_bacWidget->height() - m_rightPopularBtn->height() - 5);
+    m_leftPopularBtn->move(5, m_bacWidget->height() - m_leftPopularBtn->height() - 5);
+    m_durationBtn->move(m_bacWidget->width() - m_durationBtn->width() - 5, m_bacWidget->height() - m_durationBtn->height() - 5);
 }
 
-void MyBlockWidget::mousePressEvent(QMouseEvent *event) {
+/**
+ * @brief 鼠标按下事件
+ * @param event 鼠标事件对象
+ */
+void MyBlockWidget::mousePressEvent(QMouseEvent *event)
+{
     event->ignore();
 }
 
-void MyBlockWidget::mouseDoubleClickEvent(QMouseEvent *event) {
+/**
+ * @brief 鼠标双击事件
+ * @param event 鼠标事件对象
+ */
+void MyBlockWidget::mouseDoubleClickEvent(QMouseEvent *event)
+{
     event->ignore();
 }
 
-void MyBlockWidget::mouseReleaseEvent(QMouseEvent *event) {
+/**
+ * @brief 鼠标释放事件
+ * @param event 鼠标事件对象
+ */
+void MyBlockWidget::mouseReleaseEvent(QMouseEvent *event)
+{
     event->ignore();
 }

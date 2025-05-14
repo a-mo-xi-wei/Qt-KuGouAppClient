@@ -1,10 +1,17 @@
+/**
+ * @file RippleButton.h
+ * @brief 定义 RippleButton 类，提供带涟漪效果的按钮功能
+ * @author [WeiWang]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #ifndef RIPPLEBUTTON_H
 #define RIPPLEBUTTON_H
 
 #include <QWidget>
-
-#include<QToolButton>
-#include<QGraphicsDropShadowEffect>
+#include <QToolButton>
+#include <QGraphicsDropShadowEffect>
 
 #if defined(MYBUTTON_LIBRARY)
 #define MYBUTTON_EXPORT Q_DECL_EXPORT
@@ -16,41 +23,86 @@ class QPointF;
 class QTimer;
 class QIcon;
 
-class MYBUTTON_EXPORT RippleButton : public QToolButton {
+/**
+ * @class RippleButton
+ * @brief 带涟漪效果的按钮类，支持阴影和自定义图标
+ */
+class MYBUTTON_EXPORT RippleButton : public QToolButton
+{
 public:
-    explicit RippleButton(QWidget *parent = Q_NULLPTR); // 构造函数
+    /**
+     * @brief 构造函数，初始化涟漪按钮
+     * @param parent 父控件指针，默认为 nullptr
+     */
+    explicit RippleButton(QWidget *parent = nullptr);
 
-    void setSpeed(const int &timeInterval) const; // 设置定时器时间间隔，控制填充速度
+    /**
+     * @brief 设置涟漪动画速度
+     * @param timeInterval 时间间隔（毫秒）
+     */
+    void setSpeed(const int &timeInterval) const;
 
-    void setFillColor(const QColor &fillcolor); // 设置填充颜色
+    /**
+     * @brief 设置涟漪填充颜色
+     * @param fillcolor 填充颜色
+     */
+    void setFillColor(const QColor &fillcolor);
 
-    void setRadius(int radius_); // 设置圆角半径
+    /**
+     * @brief 设置圆角半径
+     * @param radius_ 圆角半径
+     */
+    void setRadius(int radius_);
 
-    void setMyIcon(const QIcon &ico); //设置按钮图标
+    /**
+     * @brief 设置按钮图标
+     * @param ico 图标
+     */
+    void setMyIcon(const QIcon &ico);
 
+    /**
+     * @brief 设置按钮启用状态
+     * @param flag 是否启用
+     */
     void setEnabled(const bool &flag);
 
 protected:
-    void enterEvent(QEnterEvent *event) override; // 重写鼠标进入事件
+    /**
+     * @brief 鼠标进入事件
+     * @param event 进入事件对象
+     */
+    void enterEvent(QEnterEvent *event) override;
 
-    void leaveEvent(QEvent *) override; // 重写鼠标离开事件
+    /**
+     * @brief 鼠标离开事件
+     * @param event 事件对象
+     */
+    void leaveEvent(QEvent *event) override;
 
-    void paintEvent(QPaintEvent *event) override; // 重写绘图事件
+    /**
+     * @brief 绘制事件
+     * @param event 绘图事件对象
+     */
+    void paintEvent(QPaintEvent *event) override;
 
-    void resizeEvent(QResizeEvent *event) override; // 重写改变大小事件
+    /**
+     * @brief 大小调整事件
+     * @param event 大小调整事件对象
+     */
+    void resizeEvent(QResizeEvent *event) override;
 
 private:
-    std::unique_ptr<QGraphicsDropShadowEffect> m_effect{};
-    int timeInterval = 10; // 定时器时间间隔，单位：ms
-    QPointF mouse_point; // 记录鼠标进入和离开时的坐标
-    QTimer *timer = Q_NULLPTR; // 定时器对象
-    QTimer *checkTimer = Q_NULLPTR; // 解决不触发leaveEvent的Bug
-    int max_radius; // 最大半径
-    int radius = 0; // 绘制半径
-    int radius_var = 2; // 半径每次改变的值（增大或减小）
-    QColor fill_color; // 填充颜色
-    int frame_radius = 0; // 绘制路径的圆角半径
-    QIcon m_ico; //按钮图标
+    std::unique_ptr<QGraphicsDropShadowEffect> m_effect{}; ///< 阴影效果
+    int                     timeInterval = 10;     ///< 定时器时间间隔（毫秒）
+    QPointF                 mouse_point;           ///< 鼠标位置
+    QTimer*                 timer = nullptr;       ///< 涟漪定时器
+    QTimer*                 checkTimer = nullptr;  ///< 鼠标检测定时器
+    int                     max_radius;            ///< 最大涟漪半径
+    int                     radius = 0;            ///< 当前涟漪半径
+    int                     radius_var = 2;        ///< 半径变化量
+    QColor                  fill_color;            ///< 填充颜色
+    int                     frame_radius = 0;      ///< 圆角半径
+    QIcon                   m_ico;                 ///< 按钮图标
 };
 
 #endif // RIPPLEBUTTON_H

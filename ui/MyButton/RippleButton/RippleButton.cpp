@@ -1,3 +1,11 @@
+/**
+ * @file RippleButton.cpp
+ * @brief 实现 RippleButton 类，提供带涟漪效果的按钮功能
+ * @author [WeiWang]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "RippleButton.h"
 
 #include <QCursor>
@@ -11,6 +19,10 @@
 #include <QPointF>
 #include <QTimer>
 
+/**
+ * @brief 构造函数，初始化涟漪按钮
+ * @param parent 父控件指针，默认为 nullptr
+ */
 RippleButton::RippleButton(QWidget* parent)
     : QToolButton(parent),
     timer(new QTimer(this)),
@@ -24,38 +36,68 @@ RippleButton::RippleButton(QWidget* parent)
     m_effect->setOffset(0, 0); //阴影的偏移量（右，下）
     m_effect->setColor(QColor(0, 0, 0)); //阴影的颜色
     m_effect->setBlurRadius(6); //控制阴影的模糊程度（光源距离）
-    this->setGraphicsEffect(this->m_effect.get());
+    setGraphicsEffect(m_effect.get());
 }
 
-void RippleButton::setSpeed(const int &timeInterval) const {
+/**
+ * @brief 设置涟漪动画速度
+ * @param timeInterval 时间间隔（毫秒）
+ */
+void RippleButton::setSpeed(const int &timeInterval) const
+{
     timer->setInterval(timeInterval);
 }
 
-void RippleButton::setFillColor(const QColor& fillcolor)
+/**
+ * @brief 设置涟漪填充颜色
+ * @param fillcolor 填充颜色
+ */
+void RippleButton::setFillColor(const QColor &fillcolor)
 {
     fill_color = fillcolor;
 }
 
+/**
+ * @brief 设置圆角半径
+ * @param radius_ 圆角半径
+ */
 void RippleButton::setRadius(int radius_)
 {
     frame_radius = radius_;
 }
 
-void RippleButton::setMyIcon(const QIcon &ico) {
-    this->m_ico = ico;
-    this->setIcon(this->m_ico);
+/**
+ * @brief 设置按钮图标
+ * @param ico 图标
+ */
+void RippleButton::setMyIcon(const QIcon &ico)
+{
+    m_ico = ico;
+    setIcon(m_ico);
 }
 
-void RippleButton::setEnabled(const bool &flag) {
+/**
+ * @brief 设置按钮启用状态
+ * @param flag 是否启用
+ */
+void RippleButton::setEnabled(const bool &flag)
+{
     QToolButton::setEnabled(flag);
-    if (flag) {
+    if (flag)
+    {
         setCursor(Qt::PointingHandCursor); // 启用时恢复为手形光标
-    } else {
+    }
+    else
+    {
         setCursor(Qt::WaitCursor); // 禁用时强制为等待光标    //没有效果，不知道为什么。。。
     }
 }
 
-void RippleButton::enterEvent(QEnterEvent* event)
+/**
+ * @brief 鼠标进入事件
+ * @param event 进入事件对象
+ */
+void RippleButton::enterEvent(QEnterEvent *event)
 {
     QToolButton::enterEvent(event);
     if (!this->isEnabled())return;
@@ -88,13 +130,18 @@ void RippleButton::enterEvent(QEnterEvent* event)
             QCoreApplication::sendEvent(this, &leaveEvent);
         }
     });
-    checkTimer->start(1000); // 每500毫秒检测一次
+    checkTimer->start(1000); // 每1000毫秒检测一次
 }
 
-void RippleButton::leaveEvent(QEvent* ev)
+/**
+ * @brief 鼠标离开事件
+ * @param event 事件对象
+ */
+void RippleButton::leaveEvent(QEvent *ev)
 {
-    if (!this->isEnabled())return;
-    mouse_point = this->mapFromGlobal(QCursor::pos());
+    if (!isEnabled())
+        return;
+    mouse_point = mapFromGlobal(QCursor::pos());
     timer->disconnect();
     connect(timer, &QTimer::timeout, this, [=]{ // 定时器触发半径减小
         radius -= radius_var;
@@ -109,9 +156,14 @@ void RippleButton::leaveEvent(QEvent* ev)
     QToolButton::leaveEvent(ev);
 }
 
-void RippleButton::paintEvent(QPaintEvent* event)
+/**
+ * @brief 绘制事件
+ * @param event 绘图事件对象
+ */
+void RippleButton::paintEvent(QPaintEvent *event)
 {
-    if(mouse_point.isNull())mouse_point = QPointF(0,0);
+    if (mouse_point.isNull())
+        mouse_point = QPointF(0, 0);
     if (!mouse_point.isNull() && radius > 0)
     {
         QPainter painter(this);
@@ -123,16 +175,17 @@ void RippleButton::paintEvent(QPaintEvent* event)
         painter.setClipPath(path);
         painter.drawEllipse(mouse_point, radius, radius); // 画圆
         int iconSize = 12;
-        this->m_ico.paint(&painter,(this->width() - iconSize) / 2, (this->height() - iconSize) / 2, iconSize, iconSize);
+        m_ico.paint(&painter, (width() - iconSize) / 2, (height() - iconSize) / 2, iconSize, iconSize);
     }
     QToolButton::paintEvent(event);
 }
 
+/**
+ * @brief 大小调整事件
+ * @param event 大小调整事件对象
+ */
 void RippleButton::resizeEvent(QResizeEvent *event)
 {
     QToolButton::resizeEvent(event);
-    max_radius = static_cast<int>(qSqrt(width() * width() + height() * height())); // 重新计算最大半径
+    max_radius = static_cast<int>(qSqrt(width() * width() + height() * height()));
 }
-
-
-

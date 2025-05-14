@@ -1,7 +1,7 @@
 /**
  * @file MusicItemWidget.h
  * @brief 定义 MusicItemWidget 类，提供音乐条目控件功能
- * @author [Your Name]
+ * @author [WeiWang]
  * @date 2025-05-13
  * @version 1.0
  */
