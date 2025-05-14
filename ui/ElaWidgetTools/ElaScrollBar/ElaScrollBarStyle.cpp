@@ -1,3 +1,11 @@
+/**
+ * @file ElaScrollBarStyle.cpp
+ * @brief 实现 ElaScrollBarStyle 类，提供自定义滚动条样式
+ * @author [Liniyous]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaScrollBarStyle.h"
 #include "ElaScrollBar.h"
 #include "ElaTheme.h"
@@ -8,6 +16,10 @@
 #include <QStyleOptionSlider>
 #include <QtMath>
 
+/**
+ * @brief 构造函数，初始化自定义样式
+ * @param style 基础样式，默认为 nullptr
+ */
 ElaScrollBarStyle::ElaScrollBarStyle(QStyle* style)
 {
     _pIsExpand = false;
@@ -18,13 +30,22 @@ ElaScrollBarStyle::ElaScrollBarStyle(QStyle* style)
     connect(eTheme, &ElaTheme::themeModeChanged, this, [=](ElaThemeType::ThemeMode themeMode) { _themeMode = themeMode; });
 }
 
+/**
+ * @brief 析构函数，释放自定义样式资源
+ */
 ElaScrollBarStyle::~ElaScrollBarStyle()
 {
 }
 
+/**
+ * @brief 绘制复杂控件
+ * @param control 控件类型
+ * @param option 样式选项
+ * @param painter 绘图对象
+ * @param widget 目标控件，默认为 nullptr
+ */
 void ElaScrollBarStyle::drawComplexControl(ComplexControl control, const QStyleOptionComplex* option, QPainter* painter, const QWidget* widget) const
 {
-    //QStyle::SC_ScrollBarGroove QStyle::SC_ScrollBarAddLine   QStyle::SC_ScrollBarSubLine上指示器
     switch (control)
     {
     case QStyle::CC_ScrollBar:
@@ -119,6 +140,13 @@ void ElaScrollBarStyle::drawComplexControl(ComplexControl control, const QStyleO
     QProxyStyle::drawComplexControl(control, option, painter, widget);
 }
 
+/**
+ * @brief 获取像素度量值
+ * @param metric 度量类型
+ * @param option 样式选项，默认为 nullptr
+ * @param widget 目标控件，默认为 nullptr
+ * @return 度量值
+ */
 int ElaScrollBarStyle::pixelMetric(PixelMetric metric, const QStyleOption* option, const QWidget* widget) const
 {
     // qDebug() << metric << QProxyStyle::pixelMetric(metric, option, widget);
@@ -136,6 +164,14 @@ int ElaScrollBarStyle::pixelMetric(PixelMetric metric, const QStyleOption* optio
     return QProxyStyle::pixelMetric(metric, option, widget);
 }
 
+/**
+ * @brief 获取样式提示
+ * @param hint 提示类型
+ * @param option 样式选项，默认为 nullptr
+ * @param widget 目标控件，默认为 nullptr
+ * @param returnData 返回数据，默认为 nullptr
+ * @return 提示值
+ */
 int ElaScrollBarStyle::styleHint(StyleHint hint, const QStyleOption* option, const QWidget* widget, QStyleHintReturn* returnData) const
 {
     if (hint == QStyle::SH_ScrollBar_LeftClickAbsolutePosition)
@@ -145,6 +181,10 @@ int ElaScrollBarStyle::styleHint(StyleHint hint, const QStyleOption* option, con
     return QProxyStyle::styleHint(hint, option, widget, returnData);
 }
 
+/**
+ * @brief 启动展开动画
+ * @param isExpand 是否展开
+ */
 void ElaScrollBarStyle::startExpandAnimation(bool isExpand)
 {
     if (isExpand)

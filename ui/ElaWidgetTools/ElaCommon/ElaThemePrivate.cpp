@@ -1,7 +1,7 @@
 /**
  * @file ElaThemePrivate.cpp
  * @brief 实现 ElaThemePrivate 类，初始化和管理主题颜色
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

@@ -1,7 +1,7 @@
 /**
  * @file ElaMessageBarPrivate.h
  * @brief 定义 ElaMessageBarPrivate 类和 ElaMessageBarManager 类，管理消息通知栏的私有实现
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

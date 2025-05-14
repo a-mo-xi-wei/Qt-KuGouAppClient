@@ -1,3 +1,11 @@
+/**
+ * @file ElaToolTip.cpp
+ * @brief 实现 ElaToolTip 类，提供自定义工具提示功能
+ * @author [Liniyous]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaToolTip.h"
 #include "ElaText.h"
 #include "ElaTheme.h"
@@ -6,10 +14,30 @@
 #include <QPainter>
 #include <QVBoxLayout>
 
+/**
+ * @brief 定义 BorderRadius 属性
+ */
 Q_PROPERTY_CREATE_Q_CPP(ElaToolTip, int, BorderRadius)
+
+/**
+ * @brief 定义 DisplayMsec 属性
+ */
 Q_PROPERTY_CREATE_Q_CPP(ElaToolTip, int, DisplayMsec)
+
+/**
+ * @brief 定义 ShowDelayMsec 属性
+ */
 Q_PROPERTY_CREATE_Q_CPP(ElaToolTip, int, ShowDelayMsec)
+
+/**
+ * @brief 定义 HideDelayMsec 属性
+ */
 Q_PROPERTY_CREATE_Q_CPP(ElaToolTip, int, HideDelayMsec)
+
+/**
+ * @brief 构造函数，初始化工具提示
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaToolTip::ElaToolTip(QWidget* parent)
     : QWidget{parent}, d_ptr(new ElaToolTipPrivate())
 {
@@ -44,15 +72,26 @@ ElaToolTip::ElaToolTip(QWidget* parent)
     hide();
 }
 
+/**
+ * @brief 析构函数，释放工具提示资源
+ */
 ElaToolTip::~ElaToolTip()
 {
 }
 
-void ElaToolTip::setToolTipShowAlways() {
+/**
+ * @brief 设置工具提示始终显示
+ */
+void ElaToolTip::setToolTipShowAlways()
+{
     Q_D(ElaToolTip);
     d->_pDisplayMsec = -1;
 }
 
+/**
+ * @brief 设置工具提示文本
+ * @param toolTip 工具提示文本
+ */
 void ElaToolTip::setToolTip(QString toolTip)
 {
     Q_D(ElaToolTip);
@@ -61,12 +100,20 @@ void ElaToolTip::setToolTip(QString toolTip)
     Q_EMIT pToolTipChanged();
 }
 
+/**
+ * @brief 获取工具提示文本
+ * @return 工具提示文本
+ */
 QString ElaToolTip::getToolTip() const
 {
     Q_D(const ElaToolTip);
     return d->_toolTipText->text();
 }
 
+/**
+ * @brief 设置自定义控件
+ * @param customWidget 自定义控件指针
+ */
 void ElaToolTip::setCustomWidget(QWidget* customWidget)
 {
     Q_D(ElaToolTip);
@@ -85,18 +132,29 @@ void ElaToolTip::setCustomWidget(QWidget* customWidget)
     Q_EMIT pCustomWidgetChanged();
 }
 
+/**
+ * @brief 获取自定义控件
+ * @return 自定义控件指针
+ */
 QWidget* ElaToolTip::getCustomWidget() const
 {
     Q_D(const ElaToolTip);
     return d->_pCustomWidget;
 }
 
+/**
+ * @brief 更新工具提示位置
+ */
 void ElaToolTip::updatePos()
 {
     Q_D(ElaToolTip);
     d->_updatePos();
 }
 
+/**
+ * @brief 绘制事件，绘制工具提示外观
+ * @param event 绘图事件
+ */
 void ElaToolTip::paintEvent(QPaintEvent* event)
 {
     Q_D(ElaToolTip);

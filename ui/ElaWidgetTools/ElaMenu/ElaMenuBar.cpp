@@ -1,7 +1,7 @@
 /**
  * @file ElaMenuBar.cpp
  * @brief 实现 ElaMenuBar 类，提供自定义菜单栏功能
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

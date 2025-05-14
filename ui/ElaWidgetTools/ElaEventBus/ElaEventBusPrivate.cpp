@@ -1,7 +1,7 @@
 /**
  * @file ElaEventBusPrivate.cpp
  * @brief 实现 ElaEventPrivate 和 ElaEventBusPrivate 类，管理事件和事件总线的私有实现
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

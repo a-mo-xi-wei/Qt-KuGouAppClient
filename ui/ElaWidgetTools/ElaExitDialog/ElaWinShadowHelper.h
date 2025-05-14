@@ -1,7 +1,7 @@
 /**
 * @file ElaWinShadowHelper.h
  * @brief 定义 Windows 平台窗口阴影辅助函数
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

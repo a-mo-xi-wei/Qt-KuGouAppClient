@@ -1,7 +1,7 @@
 /**
 * @file ElaMenuPrivate.h
  * @brief 定义 ElaMenuPrivate 类，管理菜单的私有实现
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

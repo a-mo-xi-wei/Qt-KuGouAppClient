@@ -1,7 +1,7 @@
 ﻿/**
  * @file ElaExitDialog.h
  * @brief 定义 ElaExitDialog 类，提供退出对话框功能
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

@@ -1,3 +1,11 @@
+/**
+ * @file MusicItemWidget.cpp
+ * @brief 实现 MusicItemWidget 类，提供音乐条目控件功能
+ * @author [Your Name]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "MusicItemWidget.h"
 #include "logger.hpp"
 #include "ElaToolTip.h"
@@ -12,14 +20,22 @@
 #include <QGuiApplication>
 #include <QPainterPath>
 
-//图片大小
-#define PIX_SIZE 50
-//图片圆角
-#define PIX_RADIUS 9
+#define PIX_SIZE 50 ///< 图片大小
+
+#define PIX_RADIUS 9 ///< 图片圆角
+
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
-QPixmap roundedPix(const QPixmap &src, QSize size, int radius) {
+/**
+ * @brief 创建圆角图片
+ * @param src 原始图片
+ * @param size 目标大小
+ * @param radius 圆角半径
+ * @return 处理后的图片
+ */
+QPixmap roundedPix(const QPixmap &src, QSize size, int radius)
+{
     QPixmap scaled = src.scaled(size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
     QPixmap dest(size);
     dest.fill(Qt::transparent);
@@ -34,55 +50,57 @@ QPixmap roundedPix(const QPixmap &src, QSize size, int radius) {
     return dest;
 }
 
-MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
-    :QFrame(parent)
-    ,m_information(std::move(info))
-    ,timer(new QTimer(this)) {
-    this->m_index           = m_information.index;
-    this->m_name            = m_information.songName;
-    this->m_duration        = m_information.duration;
-    this->m_cover           = m_information.cover;
-    this->m_singer          = m_information.singer;
+/**
+ * @brief 构造函数，初始化音乐条目控件
+ * @param info 歌曲信息
+ * @param parent 父控件指针，默认为 nullptr
+ */
+MusicItemWidget::MusicItemWidget(SongInfor info, QWidget *parent)
+    : QFrame(parent), m_information(std::move(info)), timer(new QTimer(this))
+{
+    this->m_index = m_information.index;
+    this->m_name = m_information.songName;
+    this->m_duration = m_information.duration;
+    this->m_cover = m_information.cover;
+    this->m_singer = m_information.singer;
     //qDebug()<<"m_index: "<<m_index<<" name: "<<m_name<<" duration: "<<m_duration;
     //    " cover: "<<m_cover<<"m_singer: "<<m_singer;
     //PRINT_INFO("index: %d , name: %s , duration: %s , singer: %s ",
     //    m_index, m_name.toStdString(), m_duration.toStdString(), m_singer.toStdString());
     initUi();
     setInformation(m_information);
-
-    this->setObjectName(QStringLiteral("window"));
-    this->m_indexLab->setObjectName(QStringLiteral("indexLab"));
-    this->m_coverLab->setObjectName(QStringLiteral("coverLab"));
-    this->m_nameLab->setObjectName(QStringLiteral("nameLab"));
-    this->m_singerLab->setObjectName(QStringLiteral("singerLab"));
-    this->m_durationLab->setObjectName(QStringLiteral("durationLab"));
-    this->m_playToolBtn->setObjectName(QStringLiteral("playToolBtn"));
-    this->m_playNextToolBtn->setObjectName(QStringLiteral("playNextToolBtn"));
-    this->m_downloadToolBtn->setObjectName(QStringLiteral("downloadToolBtn"));
-    this->m_collectToolBtn->setObjectName(QStringLiteral("collectToolBtn"));
-    this->m_moreToolBtn->setObjectName(QStringLiteral("moreToolBtn"));
+    setObjectName(QStringLiteral("window"));
+    m_indexLab->setObjectName(QStringLiteral("indexLab"));
+    m_coverLab->setObjectName(QStringLiteral("coverLab"));
+    m_nameLab->setObjectName(QStringLiteral("nameLab"));
+    m_singerLab->setObjectName(QStringLiteral("singerLab"));
+    m_durationLab->setObjectName(QStringLiteral("durationLab"));
+    m_playToolBtn->setObjectName(QStringLiteral("playToolBtn"));
+    m_playNextToolBtn->setObjectName(QStringLiteral("playNextToolBtn"));
+    m_downloadToolBtn->setObjectName(QStringLiteral("downloadToolBtn"));
+    m_collectToolBtn->setObjectName(QStringLiteral("collectToolBtn"));
+    m_moreToolBtn->setObjectName(QStringLiteral("moreToolBtn"));
     // 设置tooltip
     {
-        auto playToolBtn_toolTip = new ElaToolTip(this->m_playToolBtn);
+        auto playToolBtn_toolTip = new ElaToolTip(m_playToolBtn);
         playToolBtn_toolTip->setToolTip(QStringLiteral("播放"));
-
-        auto playNextToolBtn_toolTip = new ElaToolTip(this->m_playNextToolBtn);
+        auto playNextToolBtn_toolTip = new ElaToolTip(m_playNextToolBtn);
         playNextToolBtn_toolTip->setToolTip(QStringLiteral("下一首"));
-
-        auto downloadToolBtn_toolTip = new ElaToolTip(this->m_downloadToolBtn);
+        auto downloadToolBtn_toolTip = new ElaToolTip(m_downloadToolBtn);
         downloadToolBtn_toolTip->setToolTip(QStringLiteral("下载"));
-
-        auto collectToolBtn_toolTip = new ElaToolTip(this->m_collectToolBtn);
+        auto collectToolBtn_toolTip = new ElaToolTip(m_collectToolBtn);
         collectToolBtn_toolTip->setToolTip(QStringLiteral("收藏"));
-
-        auto moreToolBtn_toolTip = new ElaToolTip(this->m_moreToolBtn);
+        auto moreToolBtn_toolTip = new ElaToolTip(m_moreToolBtn);
         moreToolBtn_toolTip->setToolTip(QStringLiteral("更多"));
     }
     //设置样式
     QFile file(GET_CURRENT_DIR + QStringLiteral("/item.css"));
-    if (file.open(QIODevice::ReadOnly)) {
-        this->setStyleSheet(file.readAll());
-    } else {
+    if (file.open(QIODevice::ReadOnly))
+    {
+        setStyleSheet(file.readAll());
+    }
+    else
+    {
         qDebug() << "样式表打开失败QAQ";
         STREAM_ERROR() << "样式表 item.css 打开失败QAQ";
         return;
@@ -92,34 +110,58 @@ MusicItemWidget::MusicItemWidget(SongInfor  info, QWidget *parent)
     max_radius = static_cast<int>(qSqrt(width() * width() + height() * height())); // 计算最大半径
 
     //smallWidget响应
-    connect(this->m_playToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onPlayToolBtnClicked);
-    connect(this->m_playNextToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onPlayNextToolBtnClicked);
-    connect(this->m_downloadToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onDownloadToolBtnClicked);
-    connect(this->m_collectToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onCollectToolBtnClicked);
-    connect(this->m_moreToolBtn,&QToolButton::clicked,this,&MusicItemWidget::onMoreToolBtnClicked);
+    connect(m_playToolBtn, &QToolButton::clicked, this, &MusicItemWidget::onPlayToolBtnClicked);
+    connect(m_playNextToolBtn, &QToolButton::clicked, this, &MusicItemWidget::onPlayNextToolBtnClicked);
+    connect(m_downloadToolBtn, &QToolButton::clicked, this, &MusicItemWidget::onDownloadToolBtnClicked);
+    connect(m_collectToolBtn, &QToolButton::clicked, this, &MusicItemWidget::onCollectToolBtnClicked);
+    connect(m_moreToolBtn, &QToolButton::clicked, this, &MusicItemWidget::onMoreToolBtnClicked);
     //menu响应
-    auto menu = new MyMenu(MyMenu::MenuKind::SongOption,this);
+    auto menu = new MyMenu(MyMenu::MenuKind::SongOption, this);
     m_songOptMenu = menu->getMenu<SongOptionMenu>();
     connect(m_songOptMenu, &SongOptionMenu::play, this, &MusicItemWidget::onPlay);
     connect(m_songOptMenu, &SongOptionMenu::deleteSong, this, &MusicItemWidget::onDeleteSong);
 }
 
-void MusicItemWidget::setIndexText(const int &index) const {
-    this->m_indexLab->setText(QString("%1").arg(index, 2, 10, QChar('0')));
+/**
+ * @brief 设置索引文本
+ * @param index 索引值
+ */
+void MusicItemWidget::setIndexText(const int &index) const
+{
+    m_indexLab->setText(QString("%1").arg(index, 2, 10, QChar('0')));
 }
 
-void MusicItemWidget::setInterval(const int &timeInterval) const {
+/**
+ * @brief 设置定时器时间间隔，控制填充速度
+ * @param timeInterval 时间间隔（毫秒）
+ */
+void MusicItemWidget::setInterval(const int &timeInterval) const
+{
     timer->setInterval(timeInterval);
 }
 
-void MusicItemWidget::setFillColor(const QColor &fillcolor) {
+/**
+ * @brief 设置涟漪填充颜色
+ * @param fillcolor 填充颜色
+ */
+void MusicItemWidget::setFillColor(const QColor &fillcolor)
+{
     fill_color = fillcolor;
 }
 
-void MusicItemWidget::setRadius(const int &radius_) {
+/**
+ * @brief 设置圆角半径
+ * @param radius_ 圆角半径
+ */
+void MusicItemWidget::setRadius(const int &radius_)
+{
     frame_radius = radius_;
 }
 
+/**
+ * @brief 设置歌曲信息
+ * @param info 歌曲信息
+ */
 void MusicItemWidget::setInformation(const SongInfor &info) {
     this->m_index = info.index;
     this->m_name = info.songName;
@@ -150,16 +192,23 @@ void MusicItemWidget::setInformation(const SongInfor &info) {
     update(); // 重绘
 }
 
-void MusicItemWidget::setPlayState(const bool &state) {
-    this->m_isPlaying = state;
-    if (m_isPlaying) {
+/**
+ * @brief 设置播放状态
+ * @param state 是否播放
+ */
+void MusicItemWidget::setPlayState(const bool &state)
+{
+    m_isPlaying = state;
+    if (m_isPlaying)
+    {
         mouse_point = rect().center();
 
         // 启动定时器
         timer->disconnect();
-        connect(timer, &QTimer::timeout, this, [=]{
+        connect(timer, &QTimer::timeout, this, [=] {
             radius += radius_var;
-            if (radius > max_radius) {
+            if (radius > max_radius)
+            {
                 timer->stop();
                 return;
             }
@@ -167,14 +216,16 @@ void MusicItemWidget::setPlayState(const bool &state) {
         });
         timer->start();
     }
-    else {
+    else
+    {
         mouse_point = rect().center();
 
         // 断开旧连接后建立收缩动画
         timer->disconnect();
-        connect(timer, &QTimer::timeout, this, [=]{
+        connect(timer, &QTimer::timeout, this, [=] {
             radius -= radius_var;
-            if (radius < 0) {
+            if (radius < 0)
+            {
                 timer->stop();
                 radius = 0; // 归零保持有效值
             }
@@ -184,15 +235,19 @@ void MusicItemWidget::setPlayState(const bool &state) {
     }
 }
 
-void MusicItemWidget::getMenuPosition(const QPoint& pos) {
-    this->m_menuPosition = pos;
+/**
+ * @brief 获取菜单显示位置
+ * @param pos 鼠标位置
+ */
+void MusicItemWidget::getMenuPosition(const QPoint &pos)
+{
+    m_menuPosition = pos;
     // 获取屏幕的尺寸
     const QScreen *screen = QGuiApplication::primaryScreen();
     const QRect screenGeometry = screen->geometry();
 
     // 计算菜单右侧的全局位置
-    //int menuLeftPos = pos.x() - m_menu->width();
-    const int menuRightPos  = pos.x() + m_songOptMenu->width();
+    const int menuRightPos = pos.x() + m_songOptMenu->width();
     const int menuBottomPos = pos.y() + m_songOptMenu->height();
     //int menuTopPos = pos.y() - m_menu->height();
     // 若菜单左侧超出屏幕左侧 (不存在)
@@ -201,13 +256,15 @@ void MusicItemWidget::getMenuPosition(const QPoint& pos) {
     //    m_menuPosition.setX(10);
     //}
     // 如果菜单右侧超出屏幕右侧
-    if (menuRightPos > screenGeometry.right()) {
+    if (menuRightPos > screenGeometry.right())
+    {
         // 动态调整菜单位置，使其在屏幕内显示
         const int offset = menuRightPos - screenGeometry.right() + 5;
         m_menuPosition.setX(pos.x() - offset);
     }
     // 如果菜单下侧超出屏幕下侧
-    if (menuBottomPos > screenGeometry.bottom()) {
+    if (menuBottomPos > screenGeometry.bottom())
+    {
         // 动态调整菜单位置，使其在屏幕内显示
         const int offset = menuBottomPos - screenGeometry.bottom() + 5;
         m_menuPosition.setY(pos.y() - offset);
@@ -220,7 +277,12 @@ void MusicItemWidget::getMenuPosition(const QPoint& pos) {
 
 }
 
-void MusicItemWidget::enterEvent(QEnterEvent *event) {
+/**
+ * @brief 鼠标进入事件
+ * @param event 进入事件对象
+ */
+void MusicItemWidget::enterEvent(QEnterEvent *event)
+{
     //QFrame::enterEvent(event);
     mouse_point = event->position(); // 记录鼠标进入坐标
     timer->disconnect(); // 断开可能的timer的所有连接
@@ -235,9 +297,15 @@ void MusicItemWidget::enterEvent(QEnterEvent *event) {
     timer->start(); // 定时器开始
 }
 
-void MusicItemWidget::leaveEvent(QEvent *event) {
+/**
+ * @brief 鼠标离开事件
+ * @param event 事件对象
+ */
+void MusicItemWidget::leaveEvent(QEvent *event)
+{
     //QFrame::leaveEvent(event);
-    if(!this->m_isPlaying) {
+    if (!m_isPlaying)
+    {
         mouse_point = mapFromGlobal(QCursor::pos());
         timer->disconnect();
         connect(timer, &QTimer::timeout, this, [=]{ // 定时器触发半径减小
@@ -253,7 +321,12 @@ void MusicItemWidget::leaveEvent(QEvent *event) {
     }
 }
 
-void MusicItemWidget::paintEvent(QPaintEvent *event) {
+/**
+ * @brief 绘制事件
+ * @param event 绘图事件对象
+ */
+void MusicItemWidget::paintEvent(QPaintEvent *event)
+{
     QFrame::paintEvent(event);
     if (!mouse_point.isNull() && radius > 0)
     {
@@ -268,7 +341,12 @@ void MusicItemWidget::paintEvent(QPaintEvent *event) {
     }
 }
 
-void MusicItemWidget::resizeEvent(QResizeEvent *event) {
+/**
+ * @brief 大小调整事件
+ * @param event 大小调整事件对象
+ */
+void MusicItemWidget::resizeEvent(QResizeEvent *event)
+{
     QFrame::resizeEvent(event);
     max_radius = static_cast<int>(qSqrt(width() * width() + height() * height())); // 重新计算最大半径
 
@@ -279,98 +357,194 @@ void MusicItemWidget::resizeEvent(QResizeEvent *event) {
     //qDebug()<<"父对象宽度："<<qobject_cast<QWidget*>(this->parent())->width();
 }
 
-void MusicItemWidget::mouseDoubleClickEvent(QMouseEvent *event) {
+/**
+ * @brief 鼠标双击事件
+ * @param event 鼠标事件对象
+ */
+void MusicItemWidget::mouseDoubleClickEvent(QMouseEvent *event)
+{
     QFrame::mouseDoubleClickEvent(event);
-    this->m_playToolBtn->clicked();
+    m_playToolBtn->clicked();
 }
 
-void MusicItemWidget::mousePressEvent(QMouseEvent *event) {
+/**
+ * @brief 鼠标按下事件
+ * @param event 鼠标事件对象
+ */
+void MusicItemWidget::mousePressEvent(QMouseEvent *event)
+{
     // 判断是否为右键点击
-    if (event->button() == Qt::RightButton) {
-        getMenuPosition(this->mapToGlobal(event->pos()));
-        this->m_songOptMenu->popup(this->m_menuPosition);
-        //this->m_songOptMenu->show();
-        this->m_songOptMenu->setCurIndex(this->m_information.index);
+    if (event->button() == Qt::RightButton)
+    {
+        getMenuPosition(mapToGlobal(event->pos()));
+        m_songOptMenu->popup(m_menuPosition);
+        m_songOptMenu->setCurIndex(m_information.index);
     }
     else {
         QFrame::mousePressEvent(event);//要么放else里面，要么注释掉这一行，否则会不显示
     }
 }
 
-void MusicItemWidget::onPlayToolBtnClicked() {
-    //this->m_information.playCount++;//放这里不明智
-    //qDebug()<<"已播放："<<this->m_information.playCount;
+/**
+ * @brief 播放按钮点击处理
+ */
+void MusicItemWidget::onPlayToolBtnClicked()
+{
+    //m_information.playCount++;
+    //qDebug()<<"已播放："<<m_information.playCount;
     emit play();
 }
 
-void MusicItemWidget::onPlayNextToolBtnClicked() {
+/**
+ * @brief 下一首按钮点击处理
+ */
+void MusicItemWidget::onPlayNextToolBtnClicked()
+{
 }
 
-void MusicItemWidget::onDownloadToolBtnClicked() {
+/**
+ * @brief 下载按钮点击处理
+ */
+void MusicItemWidget::onDownloadToolBtnClicked()
+{
 }
 
-void MusicItemWidget::onCollectToolBtnClicked() {
+/**
+ * @brief 收藏按钮点击处理
+ */
+void MusicItemWidget::onCollectToolBtnClicked()
+{
 }
 
-void MusicItemWidget::onMoreToolBtnClicked() {
+/**
+ * @brief 更多按钮点击处理
+ */
+void MusicItemWidget::onMoreToolBtnClicked()
+{
     // 获取当前鼠标的全局位置
     getMenuPosition(QCursor::pos());
-    this->m_songOptMenu->popup(this->m_menuPosition);
-    //this->m_songOptMenu->show();
-    this->m_songOptMenu->setCurIndex(this->m_information.index);
-
+    m_songOptMenu->popup(m_menuPosition);
+    m_songOptMenu->setCurIndex(m_information.index);
 }
 
-void MusicItemWidget::onPlay() {
+/**
+ * @brief 播放菜单项处理
+ */
+void MusicItemWidget::onPlay()
+{
     emit play();
 }
 
-void MusicItemWidget::onNextPlay() {
+/**
+ * @brief 下一首播放菜单项处理
+ */
+void MusicItemWidget::onNextPlay()
+{
 }
 
-void MusicItemWidget::onAddToPlayQueue() {
+/**
+ * @brief 添加到播放队列菜单项处理
+ */
+void MusicItemWidget::onAddToPlayQueue()
+{
 }
 
-void MusicItemWidget::onAddToNewSongList() {
+/**
+ * @brief 添加到新歌单菜单项处理
+ */
+void MusicItemWidget::onAddToNewSongList()
+{
 }
 
-void MusicItemWidget::onAddToLove() {
+/**
+ * @brief 添加到喜欢菜单项处理
+ */
+void MusicItemWidget::onAddToLove()
+{
 }
 
-void MusicItemWidget::onAddToCollect() {
+/**
+ * @brief 添加到收藏菜单项处理
+ */
+void MusicItemWidget::onAddToCollect()
+{
 }
 
-void MusicItemWidget::onAddToPlayList() {
+/**
+ * @brief 添加到播放列表菜单项处理
+ */
+void MusicItemWidget::onAddToPlayList()
+{
 }
 
-void MusicItemWidget::onDownload() {
+/**
+ * @brief 下载菜单项处理
+ */
+void MusicItemWidget::onDownload()
+{
 }
 
-void MusicItemWidget::onShare() {
+/**
+ * @brief 分享菜单项处理
+ */
+void MusicItemWidget::onShare()
+{
 }
 
-void MusicItemWidget::onComment() {
+/**
+ * @brief 评论菜单项处理
+ */
+void MusicItemWidget::onComment()
+{
 }
 
-void MusicItemWidget::onSameSong() {
+/**
+ * @brief 相似歌曲菜单项处理
+ */
+void MusicItemWidget::onSameSong()
+{
 }
 
-void MusicItemWidget::onViewSongInfo() {
+/**
+ * @brief 查看歌曲信息菜单项处理
+ */
+void MusicItemWidget::onViewSongInfo()
+{
 }
 
-void MusicItemWidget::onDeleteSong(const int& idx) {
+/**
+ * @brief 删除歌曲菜单项处理
+ * @param idx 歌曲索引
+ */
+void MusicItemWidget::onDeleteSong(const int &idx)
+{
     emit deleteSong(idx);
 }
 
-void MusicItemWidget::onOpenInFile() {
+/**
+ * @brief 在文件管理器中打开菜单项处理
+ */
+void MusicItemWidget::onOpenInFile()
+{
 }
 
-void MusicItemWidget::onSearch() {
+/**
+ * @brief 搜索菜单项处理
+ */
+void MusicItemWidget::onSearch()
+{
 }
 
-void MusicItemWidget::onUpLoad() {
+/**
+ * @brief 上传菜单项处理
+ */
+void MusicItemWidget::onUpLoad()
+{
 }
 
+/**
+ * @brief 初始化用户界面
+ */
 void MusicItemWidget::initUi()
 {
     this->m_indexLab        = new QLabel(QString("%1").arg(this->m_index + 1, 2, 10, QChar('0')), this);
@@ -403,22 +577,21 @@ void MusicItemWidget::initUi()
     this->m_moreToolBtn     ->setCursor(Qt::PointingHandCursor);
 
     auto hlayout = new QHBoxLayout(this);
-    hlayout->addWidget(this->m_indexLab);
-    hlayout->addWidget(this->m_coverLab);
+    hlayout->addWidget(m_indexLab);
+    hlayout->addWidget(m_coverLab);
     auto vlayout = new QVBoxLayout;
-    vlayout->addWidget(this->m_nameLab);
-    vlayout->addWidget(this->m_singerLab);
+    vlayout->addWidget(m_nameLab);
+    vlayout->addWidget(m_singerLab);
     hlayout->addLayout(vlayout);
     // 添加第一个弹簧，拉伸系数为 2
     hlayout->addStretch(2);
-    hlayout->addWidget(this->m_durationLab);
+    hlayout->addWidget(m_durationLab);
     // 添加第二个弹簧，拉伸系数为 1
     hlayout->addStretch(1);
-    hlayout->addWidget(this->m_playToolBtn);
-    hlayout->addWidget(this->m_playNextToolBtn);
-    hlayout->addWidget(this->m_downloadToolBtn);
-    hlayout->addWidget(this->m_collectToolBtn);
-    hlayout->addWidget(this->m_moreToolBtn);
-
+    hlayout->addWidget(m_playToolBtn);
+    hlayout->addWidget(m_playNextToolBtn);
+    hlayout->addWidget(m_downloadToolBtn);
+    hlayout->addWidget(m_collectToolBtn);
+    hlayout->addWidget(m_moreToolBtn);
     //this->m_durationLab->move(this->width()*5/6,(this->height() - this->m_durationLab->height()) / 2);
 }

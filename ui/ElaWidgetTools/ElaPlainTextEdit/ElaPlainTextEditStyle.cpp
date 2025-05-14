@@ -1,3 +1,11 @@
+/**
+ * @file ElaPlainTextEditStyle.cpp
+ * @brief 实现 ElaPlainTextEditStyle 类，提供纯文本编辑框的自定义样式
+ * @author [Liniyous]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaPlainTextEditStyle.h"
 #include "ElaTheme.h"
 
@@ -5,6 +13,10 @@
 #include <QPainterPath>
 #include <QStyleOption>
 
+/**
+ * @brief 构造函数，初始化自定义样式
+ * @param style 基础样式，默认为 nullptr
+ */
 ElaPlainTextEditStyle::ElaPlainTextEditStyle(QStyle* style)
 {
     _pExpandMarkWidth = 0;
@@ -12,10 +24,20 @@ ElaPlainTextEditStyle::ElaPlainTextEditStyle(QStyle* style)
     connect(eTheme, &ElaTheme::themeModeChanged, this, [=](ElaThemeType::ThemeMode themeMode) { _themeMode = themeMode; });
 }
 
+/**
+ * @brief 析构函数，释放自定义样式资源
+ */
 ElaPlainTextEditStyle::~ElaPlainTextEditStyle()
 {
 }
 
+/**
+ * @brief 绘制控件元素
+ * @param element 控件元素
+ * @param option 样式选项
+ * @param painter 绘图对象
+ * @param widget 目标控件，默认为 nullptr
+ */
 void ElaPlainTextEditStyle::drawControl(ControlElement element, const QStyleOption* option, QPainter* painter, const QWidget* widget) const
 {
     switch (element)

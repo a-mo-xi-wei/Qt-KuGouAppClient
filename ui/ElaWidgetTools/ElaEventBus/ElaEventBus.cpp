@@ -1,7 +1,7 @@
 /**
  * @file ElaEventBus.cpp
  * @brief 实现 ElaEvent 和 ElaEventBus 类，管理事件注册、发布和查询
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

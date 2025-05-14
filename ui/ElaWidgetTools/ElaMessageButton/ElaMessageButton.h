@@ -1,7 +1,7 @@
 /**
 * @file ElaMessageButton.h
  * @brief 定义 ElaMessageButton 类，提供消息触发按钮功能
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

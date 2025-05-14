@@ -1,7 +1,7 @@
 /**
 * @file ElaExitDialogPrivate.h
  * @brief 定义 ElaExitDialogPrivate 类，管理退出对话框的私有实现
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

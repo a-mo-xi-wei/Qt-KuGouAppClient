@@ -1,3 +1,11 @@
+/**
+ * @file ElaPushButton.cpp
+ * @brief 实现 ElaPushButton 类，提供自定义按钮功能
+ * @author [Liniyous]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaPushButton.h"
 #include "ElaTheme.h"
 #include "ElaPushButtonPrivate.h"
@@ -5,13 +13,45 @@
 #include <QPainter>
 #include <QPainterPath>
 
-Q_PROPERTY_CREATE_Q_CPP(ElaPushButton, int, BorderRadius)
+/**
+ * @brief 定义 BorderRadius 属性
+ */
+Q_PROPERTY_CREATE_Q_CPP(ElaPushButton, int,    BorderRadius)
+
+/**
+ * @brief 定义 LightDefaultColor 属性
+ */
 Q_PROPERTY_CREATE_Q_CPP(ElaPushButton, QColor, LightDefaultColor)
+
+/**
+ * @brief 定义 DarkDefaultColor 属性
+ */
 Q_PROPERTY_CREATE_Q_CPP(ElaPushButton, QColor, DarkDefaultColor)
+
+/**
+ * @brief 定义 LightHoverColor 属性
+ */
 Q_PROPERTY_CREATE_Q_CPP(ElaPushButton, QColor, LightHoverColor)
+
+/**
+ * @brief 定义 DarkHoverColor 属性
+ */
 Q_PROPERTY_CREATE_Q_CPP(ElaPushButton, QColor, DarkHoverColor)
+
+/**
+ * @brief 定义 LightPressColor 属性
+ */
 Q_PROPERTY_CREATE_Q_CPP(ElaPushButton, QColor, LightPressColor)
+
+/**
+ * @brief 定义 DarkPressColor 属性
+ */
 Q_PROPERTY_CREATE_Q_CPP(ElaPushButton, QColor, DarkPressColor)
+
+/**
+ * @brief 构造函数，初始化按钮
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaPushButton::ElaPushButton(QWidget* parent)
     : QPushButton(parent), d_ptr(new ElaPushButtonPrivate())
 {
@@ -39,40 +79,68 @@ ElaPushButton::ElaPushButton(QWidget* parent)
     });
 }
 
+/**
+ * @brief 构造函数，初始化带文本的按钮
+ * @param text 按钮文本
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaPushButton::ElaPushButton(QString text, QWidget* parent)
     : ElaPushButton(parent)
 {
     setText(text);
 }
 
+/**
+ * @brief 析构函数，释放按钮资源
+ */
 ElaPushButton::~ElaPushButton()
 {
 }
 
+/**
+ * @brief 设置亮色主题文本颜色
+ * @param color 文本颜色
+ */
 void ElaPushButton::setLightTextColor(QColor color)
 {
     Q_D(ElaPushButton);
     d->_lightTextColor = color;
 }
 
+/**
+ * @brief 获取亮色主题文本颜色
+ * @return 文本颜色
+ */
 QColor ElaPushButton::getLightTextColor() const
 {
     Q_D(const ElaPushButton);
     return d->_lightTextColor;
 }
 
+/**
+ * @brief 设置暗色主题文本颜色
+ * @param color 文本颜色
+ */
 void ElaPushButton::setDarkTextColor(QColor color)
 {
     Q_D(ElaPushButton);
     d->_darkTextColor = color;
 }
 
+/**
+ * @brief 获取暗色主题文本颜色
+ * @return 文本颜色
+ */
 QColor ElaPushButton::getDarkTextColor() const
 {
     Q_D(const ElaPushButton);
     return d->_darkTextColor;
 }
 
+/**
+ * @brief 鼠标按下事件处理
+ * @param event 鼠标事件对象
+ */
 void ElaPushButton::mousePressEvent(QMouseEvent* event)
 {
     Q_D(ElaPushButton);
@@ -80,6 +148,10 @@ void ElaPushButton::mousePressEvent(QMouseEvent* event)
     QPushButton::mousePressEvent(event);
 }
 
+/**
+ * @brief 鼠标释放事件处理
+ * @param event 鼠标事件对象
+ */
 void ElaPushButton::mouseReleaseEvent(QMouseEvent* event)
 {
     Q_D(ElaPushButton);
@@ -87,6 +159,10 @@ void ElaPushButton::mouseReleaseEvent(QMouseEvent* event)
     QPushButton::mouseReleaseEvent(event);
 }
 
+/**
+ * @brief 绘制事件，绘制按钮外观
+ * @param event 绘图事件
+ */
 void ElaPushButton::paintEvent(QPaintEvent* event)
 {
     Q_D(ElaPushButton);

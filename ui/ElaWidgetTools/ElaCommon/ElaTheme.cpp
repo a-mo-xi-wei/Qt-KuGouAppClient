@@ -1,7 +1,7 @@
 /**
  * @file ElaTheme.cpp
  * @brief 实现 ElaTheme 类，管理主题模式、颜色和阴影效果
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

@@ -1,7 +1,7 @@
 /**
  * @file ElaFlowLayout.cpp
  * @brief 实现 ElaFlowLayout 类，提供流式布局功能
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

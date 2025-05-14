@@ -1,7 +1,7 @@
 /**
  * @file ElaTheme.h
  * @brief 定义 ElaTheme 类，提供主题管理和颜色配置功能
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

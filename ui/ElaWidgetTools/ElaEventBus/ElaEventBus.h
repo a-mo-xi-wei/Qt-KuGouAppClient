@@ -1,7 +1,7 @@
 /**
  * @file ElaEventBus.h
  * @brief 定义 ElaEvent 和 ElaEventBus 类，提供事件总线功能
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

@@ -1,3 +1,11 @@
+/**
+ * @file ElaPlainTextEdit.cpp
+ * @brief 实现 ElaPlainTextEdit 类，提供自定义纯文本编辑框功能
+ * @author [Liniyous]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaPlainTextEdit.h"
 #include "ElaEventBus.h"
 #include "ElaMenu.h"
@@ -12,6 +20,10 @@
 #include <QPainter>
 #include <QPropertyAnimation>
 
+/**
+ * @brief 构造函数，初始化纯文本编辑框
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaPlainTextEdit::ElaPlainTextEdit(QWidget* parent)
     : QPlainTextEdit(parent), d_ptr(new ElaPlainTextEditPrivate())
 {
@@ -32,16 +44,28 @@ ElaPlainTextEdit::ElaPlainTextEdit(QWidget* parent)
     connect(eTheme, &ElaTheme::themeModeChanged, d, &ElaPlainTextEditPrivate::onThemeChanged);
 }
 
+/**
+ * @brief 构造函数，初始化带文本的纯文本编辑框
+ * @param text 初始文本
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaPlainTextEdit::ElaPlainTextEdit(const QString& text, QWidget* parent)
     : ElaPlainTextEdit(parent)
 {
     setPlainText(text);
 }
 
+/**
+ * @brief 析构函数，释放纯文本编辑框资源
+ */
 ElaPlainTextEdit::~ElaPlainTextEdit()
 {
 }
 
+/**
+ * @brief 焦点进入事件处理
+ * @param event 焦点事件对象
+ */
 void ElaPlainTextEdit::focusInEvent(QFocusEvent* event)
 {
     Q_D(ElaPlainTextEdit);
@@ -60,6 +84,10 @@ void ElaPlainTextEdit::focusInEvent(QFocusEvent* event)
     QPlainTextEdit::focusInEvent(event);
 }
 
+/**
+ * @brief 焦点离开事件处理
+ * @param event 焦点事件对象
+ */
 void ElaPlainTextEdit::focusOutEvent(QFocusEvent* event)
 {
     Q_D(ElaPlainTextEdit);
@@ -78,6 +106,10 @@ void ElaPlainTextEdit::focusOutEvent(QFocusEvent* event)
     QPlainTextEdit::focusOutEvent(event);
 }
 
+/**
+ * @brief 上下文菜单事件处理
+ * @param event 上下文菜单事件对象
+ */
 void ElaPlainTextEdit::contextMenuEvent(QContextMenuEvent* event)
 {
     ElaMenu* menu = new ElaMenu(this);

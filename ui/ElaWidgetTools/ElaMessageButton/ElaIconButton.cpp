@@ -1,7 +1,7 @@
 /**
  * @file ElaIconButton.cpp
  * @brief 实现 ElaIconButton 类，提供自定义图标按钮功能
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

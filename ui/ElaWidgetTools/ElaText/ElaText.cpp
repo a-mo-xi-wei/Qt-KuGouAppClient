@@ -1,3 +1,11 @@
+/**
+ * @file ElaText.cpp
+ * @brief 实现 ElaText 类，提供自定义文本标签功能
+ * @author [Liniyous]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaText.h"
 #include "ElaTheme.h"
 #include "ElaTextPrivate.h"
@@ -5,6 +13,10 @@
 #include <QContextMenuEvent>
 #include <QPainter>
 
+/**
+ * @brief 构造函数，初始化文本标签
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaText::ElaText(QWidget* parent)
     : QLabel(parent), d_ptr(new ElaTextPrivate())
 {
@@ -24,12 +36,23 @@ ElaText::ElaText(QWidget* parent)
     connect(eTheme, &ElaTheme::themeModeChanged, d, &ElaTextPrivate::onThemeChanged);
 }
 
+/**
+ * @brief 构造函数，初始化带文本的文本标签
+ * @param text 文本内容
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaText::ElaText(QString text, QWidget* parent)
     : ElaText(parent)
 {
     setText(text);
 }
 
+/**
+ * @brief 构造函数，初始化带文本和像素大小的文本标签
+ * @param text 文本内容
+ * @param pixelSize 字体像素大小
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaText::ElaText(QString text, int pixelSize, QWidget* parent)
     : ElaText(text, parent)
 {
@@ -38,10 +61,17 @@ ElaText::ElaText(QString text, int pixelSize, QWidget* parent)
     setFont(font);
 }
 
+/**
+ * @brief 析构函数，释放文本标签资源
+ */
 ElaText::~ElaText()
 {
 }
 
+/**
+ * @brief 设置是否任意换行
+ * @param isWrapAnywhere 是否任意换行
+ */
 void ElaText::setIsWrapAnywhere(bool isWrapAnywhere)
 {
     Q_D(ElaText);
@@ -49,12 +79,20 @@ void ElaText::setIsWrapAnywhere(bool isWrapAnywhere)
     d->_isWrapAnywhere = isWrapAnywhere;
 }
 
+/**
+ * @brief 获取是否任意换行
+ * @return 是否任意换行
+ */
 bool ElaText::getIsWrapAnywhere() const
 {
     Q_D(const ElaText);
     return d->_isWrapAnywhere;
 }
 
+/**
+ * @brief 设置字体像素大小
+ * @param size 像素大小
+ */
 void ElaText::setTextPixelSize(int size)
 {
     QFont font = this->font();
@@ -62,11 +100,19 @@ void ElaText::setTextPixelSize(int size)
     setFont(font);
 }
 
+/**
+ * @brief 获取字体像素大小
+ * @return 像素大小
+ */
 int ElaText::getTextPixelSize() const
 {
     return this->font().pixelSize();
 }
 
+/**
+ * @brief 设置字体点大小
+ * @param size 点大小
+ */
 void ElaText::setTextPointSize(int size)
 {
     QFont font = this->font();
@@ -74,11 +120,19 @@ void ElaText::setTextPointSize(int size)
     setFont(font);
 }
 
+/**
+ * @brief 获取字体点大小
+ * @return 点大小
+ */
 int ElaText::getTextPointSize() const
 {
     return this->font().pointSize();
 }
 
+/**
+ * @brief 设置文本样式
+ * @param textStyle 文本样式
+ */
 void ElaText::setTextStyle(ElaTextType::TextStyle textStyle)
 {
     Q_D(ElaText);
@@ -134,12 +188,20 @@ void ElaText::setTextStyle(ElaTextType::TextStyle textStyle)
     setFont(textFont);
 }
 
+/**
+ * @brief 获取文本样式
+ * @return 文本样式
+ */
 ElaTextType::TextStyle ElaText::getTextStyle() const
 {
     Q_D(const ElaText);
     return d->_pTextStyle;
 }
 
+/**
+ * @brief 设置图标
+ * @param elaIcon 图标名称
+ */
 void ElaText::setElaIcon(ElaIconType::IconName elaIcon)
 {
     Q_D(ElaText);
@@ -148,12 +210,20 @@ void ElaText::setElaIcon(ElaIconType::IconName elaIcon)
     Q_EMIT pElaIconChanged();
 }
 
+/**
+ * @brief 获取图标
+ * @return 图标名称
+ */
 ElaIconType::IconName ElaText::getElaIcon() const
 {
     Q_D(const ElaText);
     return d->_pElaIcon;
 }
 
+/**
+ * @brief 绘制事件，绘制文本或图标
+ * @param event 绘图事件
+ */
 void ElaText::paintEvent(QPaintEvent* event)
 {
     Q_D(ElaText);

@@ -1,16 +1,36 @@
+/**
+ * @file ElaPlainTextEditPrivate.cpp
+ * @brief 实现 ElaPlainTextEditPrivate 类，管理纯文本编辑框的私有实现
+ * @author [Liniyous]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaPlainTextEditPrivate.h"
 #include "ElaPlainTextEdit.h"
+
 #include <QTimer>
 
+/**
+ * @brief 构造函数，初始化纯文本编辑框私有对象
+ * @param parent 父对象指针，默认为 nullptr
+ */
 ElaPlainTextEditPrivate::ElaPlainTextEditPrivate(QObject* parent)
     : QObject{parent}
 {
 }
 
+/**
+ * @brief 析构函数，释放纯文本编辑框私有资源
+ */
 ElaPlainTextEditPrivate::~ElaPlainTextEditPrivate()
 {
 }
 
+/**
+ * @brief 处理窗口点击事件
+ * @param data 事件数据
+ */
 void ElaPlainTextEditPrivate::onWMWindowClickedEvent(QVariantMap data)
 {
     Q_Q(ElaPlainTextEdit);
@@ -35,7 +55,12 @@ void ElaPlainTextEditPrivate::onWMWindowClickedEvent(QVariantMap data)
     }
 }
 
-bool ElaPlainTextEditPrivate::containsCursorToItem(QWidget *item)
+/**
+ * @brief 判断光标是否在控件内
+ * @param item 目标控件
+ * @return 是否包含光标
+ */
+bool ElaPlainTextEditPrivate::containsCursorToItem(QWidget* item)
 {
     if (!item || !item->isVisible())
     {
@@ -50,6 +75,10 @@ bool ElaPlainTextEditPrivate::containsCursorToItem(QWidget *item)
     return false;
 }
 
+/**
+ * @brief 主题切换事件处理
+ * @param themeMode 主题模式
+ */
 void ElaPlainTextEditPrivate::onThemeChanged(ElaThemeType::ThemeMode themeMode)
 {
     Q_Q(ElaPlainTextEdit);
@@ -66,6 +95,9 @@ void ElaPlainTextEditPrivate::onThemeChanged(ElaThemeType::ThemeMode themeMode)
     }
 }
 
+/**
+ * @brief 更改主题
+ */
 void ElaPlainTextEditPrivate::_changeTheme()
 {
     Q_Q(ElaPlainTextEdit);

@@ -1,7 +1,7 @@
 /**
  * @file ElaMenu.h
  * @brief 定义 ElaMenu 类，提供自定义菜单功能
- * @author [Your Name]
+ * @author [Liniyous]
  * @date 2025-05-13
  * @version 1.0
  */

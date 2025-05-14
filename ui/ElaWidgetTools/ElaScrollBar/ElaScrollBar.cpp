@@ -1,3 +1,11 @@
+/**
+ * @file ElaScrollBar.cpp
+ * @brief 实现 ElaScrollBar 类，提供自定义滚动条功能
+ * @author [Liniyous]
+ * @date 2025-05-13
+ * @version 1.0
+ */
+
 #include "ElaScrollBar.h"
 #include "ElaMenu.h"
 #include "ElaScrollBarStyle.h"
@@ -9,9 +17,20 @@
 #include <QTimer>
 #include <QWheelEvent>
 
+/**
+ * @brief 定义 IsAnimation 属性
+ */
+Q_PROPERTY_CREATE_Q_CPP(ElaScrollBar, bool,   IsAnimation)
 
-Q_PROPERTY_CREATE_Q_CPP(ElaScrollBar, bool, IsAnimation)
-Q_PROPERTY_CREATE_Q_CPP(ElaScrollBar, qreal, SpeedLimit)
+/**
+ * @brief 定义 SpeedLimit 属性
+ */
+Q_PROPERTY_CREATE_Q_CPP(ElaScrollBar, qreal,  SpeedLimit)
+
+/**
+ * @brief 构造函数，初始化滚动条
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaScrollBar::ElaScrollBar(QWidget* parent)
     : QScrollBar(parent), d_ptr(new ElaScrollBarPrivate())
 {
@@ -42,12 +61,22 @@ ElaScrollBar::ElaScrollBar(QWidget* parent)
     });
 }
 
+/**
+ * @brief 构造函数，初始化指定方向的滚动条
+ * @param orientation 滚动条方向
+ * @param parent 父控件指针，默认为 nullptr
+ */
 ElaScrollBar::ElaScrollBar(Qt::Orientation orientation, QWidget* parent)
     : ElaScrollBar(parent)
 {
     setOrientation(orientation);
 }
 
+/**
+ * @brief 构造函数，初始化基于现有滚动条的滚动条
+ * @param originScrollBar 原始滚动条
+ * @param parent 父滚动区域，默认为 nullptr
+ */
 ElaScrollBar::ElaScrollBar(QScrollBar* originScrollBar, QAbstractScrollArea* parent)
     : ElaScrollBar(parent)
 {
@@ -77,10 +106,18 @@ ElaScrollBar::ElaScrollBar(QScrollBar* originScrollBar, QAbstractScrollArea* par
     });
 }
 
+/**
+ * @brief 析构函数，释放滚动条资源
+ */
 ElaScrollBar::~ElaScrollBar()
 {
 }
 
+/**
+ * @brief 事件处理
+ * @param event 事件对象
+ * @return 是否处理事件
+ */
 bool ElaScrollBar::event(QEvent* event)
 {
     Q_D(ElaScrollBar);
@@ -112,6 +149,12 @@ bool ElaScrollBar::event(QEvent* event)
     return QScrollBar::event(event);
 }
 
+/**
+ * @brief 事件过滤器
+ * @param watched 监视对象
+ * @param event 事件对象
+ * @return 是否处理事件
+ */
 bool ElaScrollBar::eventFilter(QObject* watched, QEvent* event)
 {
     Q_D(ElaScrollBar);
@@ -132,6 +175,10 @@ bool ElaScrollBar::eventFilter(QObject* watched, QEvent* event)
     return QScrollBar::eventFilter(watched, event);
 }
 
+/**
+ * @brief 鼠标按下事件处理
+ * @param event 鼠标事件对象
+ */
 void ElaScrollBar::mousePressEvent(QMouseEvent* event)
 {
     Q_D(ElaScrollBar);
@@ -140,6 +187,10 @@ void ElaScrollBar::mousePressEvent(QMouseEvent* event)
     d->_scrollValue = value();
 }
 
+/**
+ * @brief 鼠标释放事件处理
+ * @param event 鼠标事件对象
+ */
 void ElaScrollBar::mouseReleaseEvent(QMouseEvent* event)
 {
     Q_D(ElaScrollBar);
@@ -148,6 +199,10 @@ void ElaScrollBar::mouseReleaseEvent(QMouseEvent* event)
     d->_scrollValue = value();
 }
 
+/**
+ * @brief 鼠标移动事件处理
+ * @param event 鼠标事件对象
+ */
 void ElaScrollBar::mouseMoveEvent(QMouseEvent* event)
 {
     Q_D(ElaScrollBar);
@@ -156,6 +211,10 @@ void ElaScrollBar::mouseMoveEvent(QMouseEvent* event)
     d->_scrollValue = value();
 }
 
+/**
+ * @brief 鼠标滚轮事件处理
+ * @param event 滚轮事件对象
+ */
 void ElaScrollBar::wheelEvent(QWheelEvent* event)
 {
     Q_D(ElaScrollBar);
@@ -186,6 +245,10 @@ void ElaScrollBar::wheelEvent(QWheelEvent* event)
     event->accept();
 }
 
+/**
+ * @brief 上下文菜单事件处理
+ * @param event 上下文菜单事件对象
+ */
 void ElaScrollBar::contextMenuEvent(QContextMenuEvent* event)
 {
     Q_D(ElaScrollBar);
