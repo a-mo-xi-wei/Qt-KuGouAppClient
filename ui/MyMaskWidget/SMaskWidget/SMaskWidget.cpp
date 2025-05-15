@@ -1,7 +1,7 @@
 /**
  * @file SMaskWidget.cpp
  * @brief 实现 SMaskWidget 类，提供带动画的遮罩控件功能
- * @author [Your Name]
+ * @author [WeiWang]
  * @date 2025-05-15
  * @version 1.0
  */

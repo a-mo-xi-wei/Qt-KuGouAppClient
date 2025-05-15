@@ -1,7 +1,7 @@
 /**
  * @file VolumeToolBtn.h
  * @brief 定义 VolumeToolBtn 类，提供音量调节按钮功能
- * @author [Your Name]
+ * @author [WeiWang]
  * @date 2025-05-15
  * @version 1.0
  */

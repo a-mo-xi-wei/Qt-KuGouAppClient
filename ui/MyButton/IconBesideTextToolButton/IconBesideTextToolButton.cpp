@@ -1,7 +1,7 @@
 /**
  * @file IconBesideTextToolButton.cpp
  * @brief 实现 IconBesideTextToolButton 类，提供图标与文本并排的工具按钮功能
- * @author [Your Name]
+ * @author [WeiWang]
  * @date 2025-05-15
  * @version 1.0
  */

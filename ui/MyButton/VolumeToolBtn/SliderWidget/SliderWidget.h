@@ -1,7 +1,7 @@
 /**
  * @file SliderWidget.h
  * @brief 定义 SliderWidget 类，提供自定义滑块控件
- * @author [Your Name]
+ * @author [WeiWang]
  * @date 2025-05-15
  * @version 1.0
  */

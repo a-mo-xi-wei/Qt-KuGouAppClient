@@ -1,7 +1,7 @@
 /**
  * @file SMaskWidget.h
  * @brief 定义 SMaskWidget 类，提供带动画的遮罩控件
- * @author [Your Name]
+ * @author [WeiWang]
  * @date 2025-05-15
  * @version 1.0
  */

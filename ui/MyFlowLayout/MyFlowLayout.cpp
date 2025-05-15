@@ -1,7 +1,7 @@
 /**
  * @file MyFlowLayout.cpp
  * @brief 实现 MyFlowLayout 类，提供自定义流布局功能
- * @author [Your Name]
+ * @author [WeiWang]
  * @date 2025-05-15
  * @version 1.0
  */

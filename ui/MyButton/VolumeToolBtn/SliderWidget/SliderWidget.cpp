@@ -1,7 +1,7 @@
 /**
  * @file SliderWidget.cpp
  * @brief 实现 SliderWidget 类，提供自定义滑块控件功能
- * @author [Your Name]
+ * @author [WeiWang]
  * @date 2025-05-15
  * @version 1.0
  */
