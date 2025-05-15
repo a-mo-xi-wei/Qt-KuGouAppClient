@@ -1,6 +1,10 @@
-//
-// Created by WeiWang on 25-1-12.
-//
+/**
+ * @file SongOptionMenu.cpp
+ * @brief 实现 SongOptionMenu 类，提供歌曲操作选项菜单功能
+ * @author WeiWang
+ * @date 2025-01-12
+ * @version 1.0
+ */
 
 #include "SongOptionMenu.h"
 #include "logger.hpp"
@@ -9,15 +13,24 @@
 #include <QHBoxLayout>
 #include <QWidgetAction>
 
+/**
+ * @brief 构造函数，初始化歌曲操作选项菜单
+ * @param parent 父控件指针，默认为 nullptr
+ */
 SongOptionMenu::SongOptionMenu(QWidget *parent)
-    : BaseMenu(parent) {
+    : BaseMenu(parent)
+{
 }
 
+/**
+ * @brief 初始化菜单布局和内容
+ */
 void SongOptionMenu::initMenu() {
-    //qDebug() << "Entering initSongOptionMenu";
     this->setFixedSize(200, 470);
-    //播放按钮
-    auto a_playAction = new QWidgetAction(this); {
+
+    // 播放按钮
+    auto a_playAction = new QWidgetAction(this);
+    {
         auto a_playToolBtn = new MenuBtn(this);
         a_playToolBtn->setFixedSize(180, 35);
         a_playToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/play-black.svg")));
@@ -29,20 +42,21 @@ void SongOptionMenu::initMenu() {
             emit play();
             this->hide();
         });
+        // 以下为注释掉的悬停事件处理代码，保留以供调试
         /*connect(a_playAction, &QWidgetAction::hovered, this, [a_playToolBtn,this] {
-            //qDebug()<<"进入a_playToolBtn";
             checkHover();
             this->m_currentHover.emplace_back(a_playToolBtn);
             this->m_lastHover = this->m_currentHover;
-            QEvent enterEvent(QEvent::Enter); // 创建进入事件
-            QCoreApplication::sendEvent(a_playToolBtn, &enterEvent); // 发送事件
-            // 模拟按钮进入 hover 状态
+            QEvent enterEvent(QEvent::Enter);
+            QCoreApplication::sendEvent(a_playToolBtn, &enterEvent);
             a_playToolBtn->setAttribute(Qt::WA_UnderMouse, true);
         });*/
-        connectAction(a_playAction,a_playToolBtn);
+        connectAction(a_playAction, a_playToolBtn);
     }
-    //下一首播放按钮
-    auto a_nextPlayAction = new QWidgetAction(this); {
+
+    // 下一首播放按钮
+    auto a_nextPlayAction = new QWidgetAction(this);
+    {
         auto a_nextPlayToolBtn = new MenuBtn(this);
         a_nextPlayToolBtn->setFixedSize(180, 35);
         a_nextPlayToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/nextplay-black.svg")));
@@ -54,26 +68,28 @@ void SongOptionMenu::initMenu() {
             emit nextPlay();
             this->hide();
         });
+        // 以下为注释掉的悬停事件处理代码，保留以供调试
         /*connect(a_nextPlayAction, &QWidgetAction::hovered, this, [a_nextPlayToolBtn,this] {
-            //qDebug()<<"进入a_nextPlayToolBtn";
             checkHover();
             this->m_currentHover.emplace_back(a_nextPlayToolBtn);
             this->m_lastHover = this->m_currentHover;
-            QEvent enterEvent(QEvent::Enter); // 创建进入事件
-            QCoreApplication::sendEvent(a_nextPlayToolBtn, &enterEvent); // 发送事件
-            // 模拟按钮进入 hover 状态
+            QEvent enterEvent(QEvent::Enter);
+            QCoreApplication::sendEvent(a_nextPlayToolBtn, &enterEvent);
             a_nextPlayToolBtn->setAttribute(Qt::WA_UnderMouse, true);
         });*/
-        connectAction(a_nextPlayAction,a_nextPlayToolBtn);
+        connectAction(a_nextPlayAction, a_nextPlayToolBtn);
     }
-    //添加到(子目录)
-    auto a_addToAction = new QWidgetAction(this); {
+
+    // 添加到子菜单
+    auto a_addToAction = new QWidgetAction(this);
+    {
         auto widget = new QWidget(this);
-        widget->setContentsMargins(0,0,0,0);
+        widget->setContentsMargins(0, 0, 0, 0);
         auto layout = new QHBoxLayout(widget);
         layout->setContentsMargins(0, 0, 0, 0);
         layout->setSpacing(0);
-        //前后两个按钮
+
+        // 主按钮
         auto a_addToToolBtn = new MenuBtn(widget);
         a_addToToolBtn->setObjectName("addToToolBtn");
         a_addToToolBtn->setStyleSheet("border-top-right-radius: 0px;border-bottom-right-radius: 0px;margin-right: 0;");
@@ -82,6 +98,8 @@ void SongOptionMenu::initMenu() {
         a_addToToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-black.svg")),
                                  QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-blue.svg")));
         a_addToToolBtn->setText(QStringLiteral("  添加到"));
+
+        // 右侧箭头按钮
         auto a_addToRightBtn = new MenuBtn(widget);
         a_addToRightBtn->setObjectName("addToRightBtn");
         a_addToRightBtn->setStyleSheet("border-top-left-radius: 0px;border-bottom-left-radius: 0px;margin-left: 0;");
@@ -90,27 +108,28 @@ void SongOptionMenu::initMenu() {
         a_addToRightBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")));
         a_addToRightBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")),
                                   QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-blue.svg")));
+
         layout->addWidget(a_addToToolBtn);
         layout->addWidget(a_addToRightBtn);
         a_addToAction->setDefaultWidget(widget);
-        connect(a_addToAction, &QWidgetAction::hovered, this, [widget,a_addToRightBtn,a_addToToolBtn,this] {
+
+        connect(a_addToAction, &QWidgetAction::hovered, this, [widget, a_addToRightBtn, a_addToToolBtn, this] {
             checkHover();
             this->m_currentHover.emplace_back(widget);
             this->m_currentHover.emplace_back(a_addToToolBtn);
             this->m_currentHover.emplace_back(a_addToRightBtn);
             this->m_lastHover = this->m_currentHover;
-            QEvent enterEvent(QEvent::Enter); // 创建进入事件
-            QCoreApplication::sendEvent(a_addToToolBtn, &enterEvent); // 发送事件
-            QCoreApplication::sendEvent(a_addToRightBtn, &enterEvent); // 发送事件
-            // 模拟widget进入 hover 状态
+            QEvent enterEvent(QEvent::Enter);
+            QCoreApplication::sendEvent(a_addToToolBtn, &enterEvent);
+            QCoreApplication::sendEvent(a_addToRightBtn, &enterEvent);
             widget->setAttribute(Qt::WA_UnderMouse, true);
             a_addToToolBtn->setAttribute(Qt::WA_UnderMouse, true);
             a_addToRightBtn->setAttribute(Qt::WA_UnderMouse, true);
         });
 
-        //子菜单项
-        //播放队列
-        auto a_playQueueAction = new QWidgetAction(this); {
+        // 子菜单项 - 播放队列
+        auto a_playQueueAction = new QWidgetAction(this);
+        {
             auto a_playQueueToolBtn = new MenuBtn(this);
             a_playQueueToolBtn->setFixedSize(130, 35);
             a_playQueueToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/playqueue-black.svg")));
@@ -122,20 +141,21 @@ void SongOptionMenu::initMenu() {
                 emit addToPlayQueue();
                 this->hide();
             });
+            // 以下为注释掉的悬停事件处理代码，保留以供调试
             /*connect(a_playQueueAction, &QWidgetAction::hovered, this, [a_playQueueToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_playQueueToolBtn);
                 this->m_lastHover = this->m_currentHover;
-                QEvent enterEvent(QEvent::Enter); // 创建进入事件
-                QCoreApplication::sendEvent(a_playQueueToolBtn, &enterEvent); // 发送事件
-                // 模拟按钮进入 hover 状态
+                QEvent enterEvent(QEvent::Enter);
+                QCoreApplication::sendEvent(a_playQueueToolBtn, &enterEvent);
                 a_playQueueToolBtn->setAttribute(Qt::WA_UnderMouse, true);
             });*/
-            connectAction(a_playQueueAction,a_playQueueToolBtn);
+            connectAction(a_playQueueAction, a_playQueueToolBtn);
         }
-        //子菜单项
-        //新建歌单
-        auto a_newPlayListAction = new QWidgetAction(this); {
+
+        // 子菜单项 - 新建歌单
+        auto a_newPlayListAction = new QWidgetAction(this);
+        {
             auto a_newPlayListToolBtn = new MenuBtn(this);
             a_newPlayListToolBtn->setFixedSize(130, 35);
             a_newPlayListToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-black.svg")));
@@ -147,20 +167,21 @@ void SongOptionMenu::initMenu() {
                 emit addToNewSongList();
                 this->hide();
             });
+            // 以下为注释掉的悬停事件处理代码，保留以供调试
             /*connect(a_newPlayListAction, &QWidgetAction::hovered, this, [a_newPlayListToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_newPlayListToolBtn);
                 this->m_lastHover = this->m_currentHover;
-                QEvent enterEvent(QEvent::Enter); // 创建进入事件
-                QCoreApplication::sendEvent(a_newPlayListToolBtn, &enterEvent); // 发送事件
-                // 模拟按钮进入 hover 状态
+                QEvent enterEvent(QEvent::Enter);
+                QCoreApplication::sendEvent(a_newPlayListToolBtn, &enterEvent);
                 a_newPlayListToolBtn->setAttribute(Qt::WA_UnderMouse, true);
             });*/
-            connectAction(a_newPlayListAction,a_newPlayListToolBtn);
+            connectAction(a_newPlayListAction, a_newPlayListToolBtn);
         }
-        //子菜单项
-        //我喜欢
-        auto a_likeAction = new QWidgetAction(this); {
+
+        // 子菜单项 - 我喜欢
+        auto a_likeAction = new QWidgetAction(this);
+        {
             auto a_likeToolBtn = new MenuBtn(this);
             a_likeToolBtn->setFixedSize(130, 35);
             a_likeToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/like-black.svg")));
@@ -172,20 +193,21 @@ void SongOptionMenu::initMenu() {
                 emit addToLove();
                 this->hide();
             });
+            // 以下为注释掉的悬停事件处理代码，保留以供调试
             /*connect(a_likeAction, &QWidgetAction::hovered, this, [a_likeToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_likeToolBtn);
                 this->m_lastHover = this->m_currentHover;
-                QEvent enterEvent(QEvent::Enter); // 创建进入事件
-                QCoreApplication::sendEvent(a_likeToolBtn, &enterEvent); // 发送事件
-                // 模拟按钮进入 hover 状态
+                QEvent enterEvent(QEvent::Enter);
+                QCoreApplication::sendEvent(a_likeToolBtn, &enterEvent);
                 a_likeToolBtn->setAttribute(Qt::WA_UnderMouse, true);
             });*/
-            connectAction(a_likeAction,a_likeToolBtn);
+            connectAction(a_likeAction, a_likeToolBtn);
         }
-        //子菜单项
-        //默认收藏
-        auto a_defaultCollectAction = new QWidgetAction(this); {
+
+        // 子菜单项 - 默认收藏
+        auto a_defaultCollectAction = new QWidgetAction(this);
+        {
             auto a_defaultCollectToolBtn = new MenuBtn(this);
             a_defaultCollectToolBtn->setFixedSize(130, 35);
             a_defaultCollectToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/collect-black.svg")));
@@ -197,20 +219,21 @@ void SongOptionMenu::initMenu() {
                 emit addToCollect();
                 this->hide();
             });
+            // 以下为注释掉的悬停事件处理代码，保留以供调试
             /*connect(a_defaultCollectAction, &QWidgetAction::hovered, this, [a_defaultCollectToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_defaultCollectToolBtn);
                 this->m_lastHover = this->m_currentHover;
-                QEvent enterEvent(QEvent::Enter); // 创建进入事件
-                QCoreApplication::sendEvent(a_defaultCollectToolBtn, &enterEvent); // 发送事件
-                // 模拟按钮进入 hover 状态
+                QEvent enterEvent(QEvent::Enter);
+                QCoreApplication::sendEvent(a_defaultCollectToolBtn, &enterEvent);
                 a_defaultCollectToolBtn->setAttribute(Qt::WA_UnderMouse, true);
             });*/
-            connectAction(a_defaultCollectAction,a_defaultCollectToolBtn);
+            connectAction(a_defaultCollectAction, a_defaultCollectToolBtn);
         }
-        //子菜单项
-        //默认列表
-        auto a_defaultListAction = new QWidgetAction(this); {
+
+        // 子菜单项 - 默认列表
+        auto a_defaultListAction = new QWidgetAction(this);
+        {
             auto a_defaultListToolBtn = new MenuBtn(this);
             a_defaultListToolBtn->setFixedSize(130, 35);
             a_defaultListToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/defaultlist-black.svg")));
@@ -222,21 +245,20 @@ void SongOptionMenu::initMenu() {
                 emit addToPlayList();
                 this->hide();
             });
+            // 以下为注释掉的悬停事件处理代码，保留以供调试
             /*connect(a_defaultListAction, &QWidgetAction::hovered, this, [a_defaultListToolBtn,this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_defaultListToolBtn);
                 this->m_lastHover = this->m_currentHover;
-                QEvent enterEvent(QEvent::Enter); // 创建进入事件
-                QCoreApplication::sendEvent(a_defaultListToolBtn, &enterEvent); // 发送事件
-                // 模拟按钮进入 hover 状态
+                QEvent enterEvent(QEvent::Enter);
+                QCoreApplication::sendEvent(a_defaultListToolBtn, &enterEvent);
                 a_defaultListToolBtn->setAttribute(Qt::WA_UnderMouse, true);
             });*/
-            connectAction(a_defaultListAction,a_defaultListToolBtn);
+            connectAction(a_defaultListAction, a_defaultListToolBtn);
         }
-        //子目录添加子项
-        auto a_addToMenu = new BaseMenu(this);
-        //让菜单项保持高亮 ???
 
+        // 子菜单
+        auto a_addToMenu = new BaseMenu(this);
         a_addToMenu->setFixedSize(150, 220);
         a_addToMenu->addAction(a_playQueueAction);
         a_addToMenu->addSeparator();
@@ -244,11 +266,12 @@ void SongOptionMenu::initMenu() {
         a_addToMenu->addAction(a_likeAction);
         a_addToMenu->addAction(a_defaultCollectAction);
         a_addToMenu->addAction(a_defaultListAction);
-        //设置Menu
         a_addToAction->setMenu(a_addToMenu);
     }
-    //下载按钮
-    auto a_downloadAction = new QWidgetAction(this); {
+
+    // 下载按钮
+    auto a_downloadAction = new QWidgetAction(this);
+    {
         auto a_downloadToolBtn = new MenuBtn(this);
         a_downloadToolBtn->setFixedSize(180, 35);
         a_downloadToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/download-black.svg")));
@@ -260,19 +283,21 @@ void SongOptionMenu::initMenu() {
             emit download();
             this->hide();
         });
+        // 以下为注释掉的悬停事件处理代码，保留以供调试
         /*connect(a_downloadAction, &QWidgetAction::hovered, this, [a_downloadToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_downloadToolBtn);
             this->m_lastHover = this->m_currentHover;
-            QEvent enterEvent(QEvent::Enter); // 创建进入事件
-            QCoreApplication::sendEvent(a_downloadToolBtn, &enterEvent); // 发送事件
-            // 模拟按钮进入 hover 状态
+            QEvent enterEvent(QEvent::Enter);
+            QCoreApplication::sendEvent(a_downloadToolBtn, &enterEvent);
             a_downloadToolBtn->setAttribute(Qt::WA_UnderMouse, true);
         });*/
-        connectAction(a_downloadAction,a_downloadToolBtn);
+        connectAction(a_downloadAction, a_downloadToolBtn);
     }
-    //分享按钮
-    auto a_shareAction = new QWidgetAction(this); {
+
+    // 分享按钮
+    auto a_shareAction = new QWidgetAction(this);
+    {
         auto a_shareToolBtn = new MenuBtn(this);
         a_shareToolBtn->setFixedSize(180, 35);
         a_shareToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/share-black.svg")));
@@ -284,19 +309,21 @@ void SongOptionMenu::initMenu() {
             emit share();
             this->hide();
         });
+        // 以下为注释掉的悬停事件处理代码，保留以供调试
         /*connect(a_shareAction, &QWidgetAction::hovered, this, [a_shareToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_shareToolBtn);
             this->m_lastHover = this->m_currentHover;
-            QEvent enterEvent(QEvent::Enter); // 创建进入事件
-            QCoreApplication::sendEvent(a_shareToolBtn, &enterEvent); // 发送事件
-            // 模拟按钮进入 hover 状态
+            QEvent enterEvent(QEvent::Enter);
+            QCoreApplication::sendEvent(a_shareToolBtn, &enterEvent);
             a_shareToolBtn->setAttribute(Qt::WA_UnderMouse, true);
         });*/
-        connectAction(a_shareAction,a_shareToolBtn);
+        connectAction(a_shareAction, a_shareToolBtn);
     }
-    //查看评论按钮
-    auto a_commentAction = new QWidgetAction(this); {
+
+    // 查看评论按钮
+    auto a_commentAction = new QWidgetAction(this);
+    {
         auto a_commentToolBtn = new MenuBtn(this);
         a_commentToolBtn->setFixedSize(180, 35);
         a_commentToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/comment-black.svg")));
@@ -308,19 +335,21 @@ void SongOptionMenu::initMenu() {
             emit comment();
             this->hide();
         });
+        // 以下为注释掉的悬停事件处理代码，保留以供调试
         /*connect(a_commentAction, &QWidgetAction::hovered, this, [a_commentToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_commentToolBtn);
             this->m_lastHover = this->m_currentHover;
-            QEvent enterEvent(QEvent::Enter); // 创建进入事件
-            QCoreApplication::sendEvent(a_commentToolBtn, &enterEvent); // 发送事件
-            // 模拟按钮进入 hover 状态
+            QEvent enterEvent(QEvent::Enter);
+            QCoreApplication::sendEvent(a_commentToolBtn, &enterEvent);
             a_commentToolBtn->setAttribute(Qt::WA_UnderMouse, true);
         });*/
-        connectAction(a_commentAction,a_commentToolBtn);
+        connectAction(a_commentAction, a_commentToolBtn);
     }
-    //相似歌曲按钮
-    auto a_sameSongAction = new QWidgetAction(this); {
+
+    // 相似歌曲按钮
+    auto a_sameSongAction = new QWidgetAction(this);
+    {
         auto a_sameSongToolBtn = new MenuBtn(this);
         a_sameSongToolBtn->setFixedSize(180, 35);
         a_sameSongToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/same-black.svg")));
@@ -332,19 +361,21 @@ void SongOptionMenu::initMenu() {
             emit sameSong();
             this->hide();
         });
+        // 以下为注释掉的悬停事件处理代码，保留以供调试
         /*connect(a_sameSongAction, &QWidgetAction::hovered, this, [a_sameSongToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_sameSongToolBtn);
             this->m_lastHover = this->m_currentHover;
-            QEvent enterEvent(QEvent::Enter); // 创建进入事件
-            QCoreApplication::sendEvent(a_sameSongToolBtn, &enterEvent); // 发送事件
-            // 模拟按钮进入 hover 状态
+            QEvent enterEvent(QEvent::Enter);
+            QCoreApplication::sendEvent(a_sameSongToolBtn, &enterEvent);
             a_sameSongToolBtn->setAttribute(Qt::WA_UnderMouse, true);
         });*/
-        connectAction(a_sameSongAction,a_sameSongToolBtn);
+        connectAction(a_sameSongAction, a_sameSongToolBtn);
     }
-    //查看歌曲信息按钮
-    auto a_songInfoAction = new QWidgetAction(this); {
+
+    // 查看歌曲信息按钮
+    auto a_songInfoAction = new QWidgetAction(this);
+    {
         auto a_songInfoSongToolBtn = new MenuBtn(this);
         a_songInfoSongToolBtn->setFixedSize(180, 35);
         a_songInfoSongToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/songinfo-black.svg")));
@@ -356,19 +387,21 @@ void SongOptionMenu::initMenu() {
             emit songInfo();
             this->hide();
         });
+        // 以下为注释掉的悬停事件处理代码，保留以供调试
         /*connect(a_songInfoAction, &QWidgetAction::hovered, this, [a_songInfoSongToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_songInfoSongToolBtn);
             this->m_lastHover = this->m_currentHover;
-            QEvent enterEvent(QEvent::Enter); // 创建进入事件
-            QCoreApplication::sendEvent(a_songInfoSongToolBtn, &enterEvent); // 发送事件
-            // 模拟按钮进入 hover 状态
+            QEvent enterEvent(QEvent::Enter);
+            QCoreApplication::sendEvent(a_songInfoSongToolBtn, &enterEvent);
             a_songInfoSongToolBtn->setAttribute(Qt::WA_UnderMouse, true);
         });*/
-        connectAction(a_songInfoAction,a_songInfoSongToolBtn);
+        connectAction(a_songInfoAction, a_songInfoSongToolBtn);
     }
-    //从列表中删除按钮
-    auto a_deleteAction = new QWidgetAction(this); {
+
+    // 从列表中删除按钮
+    auto a_deleteAction = new QWidgetAction(this);
+    {
         auto a_deleteSongToolBtn = new MenuBtn(this);
         a_deleteSongToolBtn->setFixedSize(180, 35);
         a_deleteSongToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/delete-black.svg")));
@@ -377,23 +410,24 @@ void SongOptionMenu::initMenu() {
         a_deleteSongToolBtn->setText(QStringLiteral("  从列表中删除"));
         a_deleteAction->setDefaultWidget(a_deleteSongToolBtn);
         connect(a_deleteSongToolBtn, &QToolButton::clicked, this, [this] {
-            //qDebug()<<"发送删除信号，删除第 "<<this->m_curIndex<<" 项";
             emit deleteSong(this->m_curIndex);
             this->hide();
         });
+        // 以下为注释掉的悬停事件处理代码，保留以供调试
         /*connect(a_deleteAction, &QWidgetAction::hovered, this, [a_deleteSongToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_deleteSongToolBtn);
             this->m_lastHover = this->m_currentHover;
-            QEvent enterEvent(QEvent::Enter); // 创建进入事件
-            QCoreApplication::sendEvent(a_deleteSongToolBtn, &enterEvent); // 发送事件
-            // 模拟按钮进入 hover 状态
+            QEvent enterEvent(QEvent::Enter);
+            QCoreApplication::sendEvent(a_deleteSongToolBtn, &enterEvent);
             a_deleteSongToolBtn->setAttribute(Qt::WA_UnderMouse, true);
         });*/
-        connectAction(a_deleteAction,a_deleteSongToolBtn);
+        connectAction(a_deleteAction, a_deleteSongToolBtn);
     }
-    //打开文件所在目录按钮
-    auto a_openFileAction = new QWidgetAction(this); {
+
+    // 打开文件所在目录按钮
+    auto a_openFileAction = new QWidgetAction(this);
+    {
         auto a_openFileSongToolBtn = new MenuBtn(this);
         a_openFileSongToolBtn->setFixedSize(180, 35);
         a_openFileSongToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/openfile-black.svg")));
@@ -405,25 +439,28 @@ void SongOptionMenu::initMenu() {
             emit openInFile();
             this->hide();
         });
+        // 以下为注释掉的悬停事件处理代码，保留以供调试
         /*connect(a_openFileAction, &QWidgetAction::hovered, this, [a_openFileSongToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_openFileSongToolBtn);
             this->m_lastHover = this->m_currentHover;
-            QEvent enterEvent(QEvent::Enter); // 创建进入事件
-            QCoreApplication::sendEvent(a_openFileSongToolBtn, &enterEvent); // 发送事件
-            // 模拟按钮进入 hover 状态
+            QEvent enterEvent(QEvent::Enter);
+            QCoreApplication::sendEvent(a_openFileSongToolBtn, &enterEvent);
             a_openFileSongToolBtn->setAttribute(Qt::WA_UnderMouse, true);
         });*/
-        connectAction(a_openFileAction,a_openFileSongToolBtn);
+        connectAction(a_openFileAction, a_openFileSongToolBtn);
     }
-    //搜索按钮(子目录)
-    auto a_searchAction = new QWidgetAction(this); {
+
+    // 搜索子菜单
+    auto a_searchAction = new QWidgetAction(this);
+    {
         auto widget = new QWidget(this);
-        widget->setContentsMargins(0,0,0,0);
+        widget->setContentsMargins(0, 0, 0, 0);
         auto layout = new QHBoxLayout(widget);
         layout->setContentsMargins(0, 0, 0, 0);
         layout->setSpacing(0);
-        //前后两个按钮
+
+        // 主按钮
         auto a_searchToolBtn = new MenuBtn(widget);
         a_searchToolBtn->setObjectName("searchToolBtn");
         a_searchToolBtn->setStyleSheet("border-top-right-radius: 0px;border-bottom-right-radius: 0px;margin-right: 0;");
@@ -432,6 +469,8 @@ void SongOptionMenu::initMenu() {
         a_searchToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")),
                                   QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-blue.svg")));
         a_searchToolBtn->setText(QStringLiteral("  搜索"));
+
+        // 右侧箭头按钮
         auto a_addToRightBtn = new MenuBtn(widget);
         a_addToRightBtn->setObjectName("addToRightBtn");
         a_addToRightBtn->setStyleSheet("border-top-left-radius: 0px;border-bottom-left-radius: 0px;margin-left: 0;");
@@ -440,25 +479,28 @@ void SongOptionMenu::initMenu() {
         a_addToRightBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")));
         a_addToRightBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")),
                                   QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-blue.svg")));
+
         layout->addWidget(a_searchToolBtn);
         layout->addWidget(a_addToRightBtn);
         a_searchAction->setDefaultWidget(widget);
-        connect(a_searchAction, &QWidgetAction::hovered, this, [widget,a_addToRightBtn,a_searchToolBtn,this] {
+
+        connect(a_searchAction, &QWidgetAction::hovered, this, [widget, a_addToRightBtn, a_searchToolBtn, this] {
             checkHover();
             this->m_currentHover.emplace_back(widget);
             this->m_currentHover.emplace_back(a_searchToolBtn);
             this->m_currentHover.emplace_back(a_addToRightBtn);
             this->m_lastHover = this->m_currentHover;
-            QEvent enterEvent(QEvent::Enter); // 创建进入事件
-            QCoreApplication::sendEvent(a_searchToolBtn, &enterEvent); // 发送事件
-            QCoreApplication::sendEvent(a_addToRightBtn, &enterEvent); // 发送事件
-            // 模拟按钮进入 hover 状态
+            QEvent enterEvent(QEvent::Enter);
+            QCoreApplication::sendEvent(a_searchToolBtn, &enterEvent);
+            QCoreApplication::sendEvent(a_addToRightBtn, &enterEvent);
             widget->setAttribute(Qt::WA_UnderMouse, true);
             a_searchToolBtn->setAttribute(Qt::WA_UnderMouse, true);
             a_addToRightBtn->setAttribute(Qt::WA_UnderMouse, true);
         });
-        //子菜单项
-        auto a_searchTitleAction = new QWidgetAction(this); {
+
+        // 子菜单项 - 搜索本歌曲
+        auto a_searchTitleAction = new QWidgetAction(this);
+        {
             auto a_searchTitleBtn = new QToolButton(this);
             a_searchTitleBtn->setFixedSize(120, 35);
             a_searchTitleBtn->setText(QStringLiteral("搜索本歌曲"));
@@ -467,24 +509,26 @@ void SongOptionMenu::initMenu() {
                 emit search();
                 this->hide();
             });
-            connect(a_searchTitleAction, &QWidgetAction::hovered, this, [a_searchTitleBtn,this] {
+            connect(a_searchTitleAction, &QWidgetAction::hovered, this, [a_searchTitleBtn, this] {
                 checkHover();
                 this->m_currentHover.emplace_back(a_searchTitleBtn);
                 this->m_lastHover = this->m_currentHover;
-                QEvent enterEvent(QEvent::Enter); // 创建进入事件
-                QCoreApplication::sendEvent(a_searchTitleBtn, &enterEvent); // 发送事件
-                // 模拟按钮进入 hover 状态
+                QEvent enterEvent(QEvent::Enter);
+                QCoreApplication::sendEvent(a_searchTitleBtn, &enterEvent);
                 a_searchTitleBtn->setAttribute(Qt::WA_UnderMouse, true);
             });
         }
 
+        // 子菜单
         auto a_searchMenu = new BaseMenu(this);
         a_searchMenu->setFixedSize(140, 65);
         a_searchMenu->addAction(a_searchTitleAction);
         a_searchAction->setMenu(a_searchMenu);
     }
-    //上传到音乐云盘按钮
-    auto a_uploadAction = new QWidgetAction(this); {
+
+    // 上传到音乐云盘按钮
+    auto a_uploadAction = new QWidgetAction(this);
+    {
         auto a_uploadSongToolBtn = new MenuBtn(this);
         a_uploadSongToolBtn->setFixedSize(180, 35);
         a_uploadSongToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/upload-black.svg")));
@@ -496,18 +540,19 @@ void SongOptionMenu::initMenu() {
             emit upload();
             this->hide();
         });
+        // 以下为注释掉的悬停事件处理代码，保留以供调试
         /*connect(a_uploadAction, &QWidgetAction::hovered, this, [a_uploadSongToolBtn,this] {
             checkHover();
             this->m_currentHover.emplace_back(a_uploadSongToolBtn);
             this->m_lastHover = this->m_currentHover;
-            QEvent enterEvent(QEvent::Enter); // 创建进入事件
-            QCoreApplication::sendEvent(a_uploadSongToolBtn, &enterEvent); // 发送事件
-            // 模拟按钮进入 hover 状态
+            QEvent enterEvent(QEvent::Enter);
+            QCoreApplication::sendEvent(a_uploadSongToolBtn, &enterEvent);
             a_uploadSongToolBtn->setAttribute(Qt::WA_UnderMouse, true);
         });*/
-        connectAction(a_uploadAction,a_uploadSongToolBtn);
+        connectAction(a_uploadAction, a_uploadSongToolBtn);
     }
 
+    // 添加所有动作到菜单
     this->addAction(a_playAction);
     this->addAction(a_nextPlayAction);
     this->addSeparator();
@@ -523,10 +568,13 @@ void SongOptionMenu::initMenu() {
     this->addAction(a_openFileAction);
     this->addAction(a_searchAction);
     this->addAction(a_uploadAction);
-    //qDebug() << "Exiting initSongOptionMenu";
     this->hide();
 }
 
+/**
+ * @brief 获取当前菜单对象
+ * @return 当前菜单对象指针
+ */
 const SongOptionMenu *SongOptionMenu::getMenu() const {
     return this;
 }

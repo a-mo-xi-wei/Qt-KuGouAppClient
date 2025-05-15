@@ -1,3 +1,11 @@
+/**
+ * @file MainWindow.cpp
+ * @brief 实现 MainWindow 类，提供主窗口功能和交互
+ * @author WeiWang
+ * @date 2025-03-13
+ * @version 1.0
+ */
+
 #include "MainWindow.h"
 #include "WaterDrop.h"
 #include "MyTrayIcon.h"
@@ -10,30 +18,45 @@
 #include <QTimeLine>
 #include <QGraphicsOpacityEffect>
 
+/**
+ * @brief 阴影宽度常量
+ */
 constexpr int SHADOW_WIDTH = 5;
+
+/**
+ * @brief 圆角半径常量
+ */
 constexpr int RADIUS = 12;
 
+/**
+ * @brief 构造函数，初始化主窗口
+ * @param parent 父控件指针，默认为 nullptr
+ */
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
     , m_trayIcon(new MyTrayIcon(this))
     , m_aboutDialog(std::make_unique<AboutDialog>(this))
 {
-    //接收来自 trayIcon 的信号
-    connect(m_trayIcon, &MyTrayIcon::noVolume, this, [this](const bool& flag) {
-        //qDebug()<<"MainWindow 托盘图标点击: "<<(flag?"静音":"开启声音");
+    // 连接托盘信号
+    connect(m_trayIcon, &MyTrayIcon::noVolume, this, [this](const bool &flag) {
+        // qDebug() << "MainWindow 托盘图标点击: " << (flag ? "静音" : "开启声音"); ///< 调试用
         emit fromTray_noVolume(flag);
     });
     connect(m_trayIcon, &MyTrayIcon::showAboutDialog, this, &MainWindow::onShowAboutDialog);
+    connect(m_trayIcon, &MyTrayIcon::exit, this, [this] { emit exit(); });
 
-    connect(m_trayIcon, &MyTrayIcon::exit, this, [this]{emit exit();});
-
-    this->m_aboutDialog->hide();
-    connect(m_aboutDialog.get(), &AboutDialog::showDialog, this, [this](const bool& flag) {
+    this->m_aboutDialog->hide(); ///< 隐藏关于对话框
+    connect(m_aboutDialog.get(), &AboutDialog::showDialog, this, [this](const bool &flag) {
         this->m_showDialog = flag;
     });
 }
 
-void MainWindow::paintEvent(QPaintEvent *event) {
+/**
+ * @brief 重写绘制事件，绘制窗口阴影
+ * @param event 绘制事件
+ */
+void MainWindow::paintEvent(QPaintEvent *event)
+{
     QWidget::paintEvent(event);
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
@@ -48,194 +71,224 @@ void MainWindow::paintEvent(QPaintEvent *event) {
     //path1.setFillRule(Qt::WindingFill);
     //path1.addRoundedRect(SHADOW_WIDTH,SHADOW_WIDTH, this->width() - SHADOW_WIDTH * 2, this->height() - SHADOW_WIDTH * 2,RADIUS,RADIUS);
     QColor color(150, 150, 150, 55);
-    for (int i = 0; i != SHADOW_WIDTH; ++i)
-    {
+    for (int i = 0; i != SHADOW_WIDTH; ++i) {
         QPainterPath path;
         path.setFillRule(Qt::WindingFill);
-        path.addRoundedRect(SHADOW_WIDTH - i, SHADOW_WIDTH- i, this->width() - (SHADOW_WIDTH- i) * 2,
-                            this->height() - (SHADOW_WIDTH- i) * 2, RADIUS, RADIUS);
-        color.setAlpha(240 - static_cast<int>(qSqrt(i) * 80));
+        path.addRoundedRect(SHADOW_WIDTH - i, SHADOW_WIDTH - i,
+                            this->width() - (SHADOW_WIDTH - i) * 2,
+                            this->height() - (SHADOW_WIDTH - i) * 2, RADIUS, RADIUS);
+        color.setAlpha(240 - static_cast<int>(qSqrt(i) * 80)); ///< 动态调整透明度
         painter.setPen(color);
         painter.drawPath(path);
     }
 }
 
-void MainWindow::resizeEvent(QResizeEvent *event) {
+/**
+ * @brief 重写窗口大小调整事件
+ * @param event 大小调整事件
+ */
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
     QWidget::resizeEvent(event);
 }
 
-void MainWindow::mousePressEvent(QMouseEvent *ev) {
+/**
+ * @brief 重写鼠标按下事件，处理窗口拖动和拉伸
+ * @param ev 鼠标事件
+ */
+void MainWindow::mousePressEvent(QMouseEvent *ev)
+{
     QWidget::mousePressEvent(ev);
-    auto w = new WaterDrop;
+    auto w = new WaterDrop; ///< 创建水滴动画
     w->move(this->mapToGlobal(ev->pos()));
     w->show();
     if (ev->button() == Qt::LeftButton) {
-        //qDebug()<<"按下 :"<<ev->pos();
-        // 如果是鼠标左键
-        // 获取当前窗口位置,以窗口左上角
-        windowsLastPs = pos();
-        // 获取鼠标在屏幕的位置  就是全局的坐标 以屏幕左上角为坐标系
-        mousePs = ev->globalPosition().toPoint();
-        isPress = true;
-        // 获取鼠标在那个区域
-        mouse_press_region = getMouseRegion(ev->pos().x(), ev->pos().y());
+        // qDebug() << "按下 :" << ev->pos(); ///< 调试用
+        windowsLastPs = pos(); ///< 记录窗口位置
+        mousePs = ev->globalPosition().toPoint(); ///< 记录鼠标全局位置
+        isPress = true; ///< 设置按下标志
+        mouse_press_region = getMouseRegion(ev->pos().x(), ev->pos().y()); ///< 获取鼠标区域
     }
 }
 
-void MainWindow::mouseReleaseEvent(QMouseEvent *event) {
+/**
+ * @brief 重写鼠标释放事件，结束拖动或拉伸
+ * @param event 鼠标事件
+ */
+void MainWindow::mouseReleaseEvent(QMouseEvent *event)
+{
     QWidget::mouseReleaseEvent(event);
     if (event->button() == Qt::LeftButton) {
-        isPress = false;
+        isPress = false; ///< 清除按下标志
     }
-    setCursor(QCursor{});
+    setCursor(QCursor{}); ///< 恢复默认光标
 }
 
-void MainWindow::mouseMoveEvent(QMouseEvent *event) {
+/**
+ * @brief 重写鼠标移动事件，处理窗口拖动和拉伸
+ * @param event 鼠标事件
+ */
+void MainWindow::mouseMoveEvent(QMouseEvent *event)
+{
     QWidget::mouseMoveEvent(event);
-    // 设置鼠标的形状
-    setMouseCursor(event->pos().x(), event->pos().y());
-// 计算的鼠标移动偏移量, 就是鼠标全局坐标 - 减去点击时鼠标坐标
-    this->point_offset = event->globalPosition().toPoint() - mousePs;
+    setMouseCursor(event->pos().x(), event->pos().y()); ///< 设置光标形状
+    this->point_offset = event->globalPosition().toPoint() - mousePs; ///< 计算鼠标偏移
 
-    if (isPress) {
-        if (mouse_press_region != kMousePositionMid) {
-            // 拉伸窗口
-            // 获取客户区
-            QRect rect = this->geometry();
-            switch (mouse_press_region) {
-                // 左上角
-                case kMousePositionLeftTop:
-                    rect.setTopLeft(rect.topLeft() + point_offset);
+    if (isPress && mouse_press_region != kMousePositionMid) {
+        QRect rect = this->geometry(); ///< 获取窗口区域
+        switch (mouse_press_region) {
+            case kMousePositionLeftTop:
+                rect.setTopLeft(rect.topLeft() + point_offset);
                 break;
-                case kMousePositionTop:
-                    rect.setTop(rect.top() + point_offset.y());
+            case kMousePositionTop:
+                rect.setTop(rect.top() + point_offset.y());
                 break;
-                case kMousePositionRightTop:
-                    rect.setTopRight(rect.topRight() + point_offset);
+            case kMousePositionRightTop:
+                rect.setTopRight(rect.topRight() + point_offset);
                 break;
-                case kMousePositionRight:
-                    rect.setRight(rect.right() + point_offset.x());
+            case kMousePositionRight:
+                rect.setRight(rect.right() + point_offset.x());
                 break;
-                case kMousePositionRightBottom:
-                    rect.setBottomRight(rect.bottomRight() + point_offset);
+            case kMousePositionRightBottom:
+                rect.setBottomRight(rect.bottomRight() + point_offset);
                 break;
-                case kMousePositionBottom:
-                    rect.setBottom(rect.bottom() + point_offset.y());
+            case kMousePositionBottom:
+                rect.setBottom(rect.bottom() + point_offset.y());
                 break;
-                case kMousePositionLeftBottom:
-                    rect.setBottomLeft(rect.bottomLeft() + point_offset);
+            case kMousePositionLeftBottom:
+                rect.setBottomLeft(rect.bottomLeft() + point_offset);
                 break;
-                case kMousePositionLeft:
-                    rect.setLeft(rect.left() + point_offset.x());
+            case kMousePositionLeft:
+                rect.setLeft(rect.left() + point_offset.x());
                 break;
-                default:
-                    break;
-            }
-            setGeometry(rect);
-            mousePs = event->globalPosition().toPoint();
+            default:
+                break;
         }
+        setGeometry(rect); ///< 更新窗口区域
+        mousePs = event->globalPosition().toPoint(); ///< 更新鼠标位置
     }
 }
 
-void MainWindow::closeEvent(QCloseEvent *event) {
+/**
+ * @brief 重写关闭事件，执行渐变关闭动画
+ * @param event 关闭事件
+ */
+void MainWindow::closeEvent(QCloseEvent *event)
+{
     if (!isClosing) {
-        event->ignore();
+        event->ignore(); ///< 忽略首次关闭
         auto effect = new QGraphicsOpacityEffect(this);
         effect->setOpacity(1.0);
         this->setGraphicsEffect(effect);
-        auto timeLine = new QTimeLine(500, this);
 
-        connect(timeLine, &QTimeLine::valueChanged, this, [=](const qreal& value) {
+        auto timeLine = new QTimeLine(500, this);
+        connect(timeLine, &QTimeLine::valueChanged, this, [=](const qreal &value) {
             QLinearGradient gradient(0, height(), 0, 0);
             gradient.setColorAt(0, Qt::transparent);
             gradient.setColorAt(value, Qt::transparent);
             gradient.setColorAt(1, Qt::white);
-            effect->setOpacityMask(gradient);
-            effect->setOpacity(1 - value);
+            effect->setOpacityMask(gradient); ///< 设置渐变遮罩
+            effect->setOpacity(1 - value); ///< 调整透明度
         });
 
         connect(timeLine, &QTimeLine::finished, this, [=] {
-            setGraphicsEffect(nullptr); // 立即移除效果
-            effect->deleteLater(); // 安全释放(不加这一句程序不会退出，真的服了，有一种故意让程序崩溃而退出的感觉，因为正常退出程序的关闭特效不起作用，不知道为什么)
+            setGraphicsEffect(nullptr); ///< 移除效果
+            effect->deleteLater(); ///< 安全释放
             isClosing = true;
-            close(); // 再次触发关闭
+            close(); ///< 再次触发关闭
         });
 
-        timeLine->start();
+        timeLine->start(); ///< 启动动画
     } else {
         event->accept();
-        QWidget::closeEvent(event); // 确保基类处理关闭事件
+        QWidget::closeEvent(event); ///< 接受关闭事件
     }
 }
 
-void MainWindow::setElaToolTip(QWidget *widget, const QString &tooltip) {
+/**
+ * @brief 设置控件的工具提示
+ * @param widget 目标控件
+ * @param tooltip 提示内容
+ */
+void MainWindow::setElaToolTip(QWidget *widget, const QString &tooltip)
+{
     auto toolTip = new ElaToolTip(widget);
     toolTip->setToolTip(tooltip);
 }
 
-void MainWindow::setMouseCursor(const int& x, const int& y) {
-    // 鼠标形状对象
-    Qt::CursorShape cursor{Qt::ArrowCursor};
+/**
+ * @brief 设置鼠标光标形状
+ * @param x 鼠标 X 坐标
+ * @param y 鼠标 Y 坐标
+ */
+void MainWindow::setMouseCursor(const int &x, const int &y)
+{
+    Qt::CursorShape cursor = Qt::ArrowCursor;
     int region = getMouseRegion(x, y);
     switch (region) {
         case kMousePositionLeftTop:
         case kMousePositionRightBottom:
             cursor = Qt::SizeFDiagCursor;
-        break;
+            break;
         case kMousePositionRightTop:
         case kMousePositionLeftBottom:
             cursor = Qt::SizeBDiagCursor;
-        break;
+            break;
         case kMousePositionLeft:
         case kMousePositionRight:
             cursor = Qt::SizeHorCursor;
-        break;
+            break;
         case kMousePositionTop:
         case kMousePositionBottom:
             cursor = Qt::SizeVerCursor;
-        break;
+            break;
         default:
             cursor = Qt::ArrowCursor;
-        break;
+            break;
     }
     setCursor(cursor);
 }
 
-int MainWindow::getMouseRegion(const int& x, const int& y) const {
+/**
+ * @brief 获取鼠标所在区域
+ * @param x 鼠标 X 坐标
+ * @param y 鼠标 Y 坐标
+ * @return 鼠标区域编号
+ */
+int MainWindow::getMouseRegion(const int &x, const int &y) const
+{
     int region_x = 0, region_y = 0;
-    // 鼠标的X坐标小于 边界5 说明他在最上层区域 第一区域
     if (x < Area::kMouseRegionLeft) {
-        region_x = 1;
-    } else if (x > (this->width()/*窗体宽度*/ - Area::kMouseRegionRight/*边界宽度5*/)) {
-        // 如果鼠标X坐标 大于 最右侧的边界 说明他在第三区域
-        region_x = 3;
+        region_x = 1; ///< 左侧区域
+    } else if (x > (this->width() - Area::kMouseRegionRight)) {
+        region_x = 3; ///< 右侧区域
     } else {
-        region_x = 2;
+        region_x = 2; ///< 中间区域
     }
     if (y < Area::kMouseRegionTop) {
-        // 同理 鼠标Y坐标 小于上层边界  说明鼠标在第一区域
-        region_y = 1;
+        region_y = 1; ///< 上侧区域
     } else if (y > (this->height() - Area::kMouseRegionBottom)) {
-        // 鼠标Y坐标的 大于 最下面的坐标,鼠标就在 第三区
-        region_y = 3;
+        region_y = 3; ///< 下侧区域
     } else {
-        region_y = 2;
+        region_y = 2; ///< 中间区域
     }
-    // 最后计算 表示区域的 数值 (x=1, y=1) 计算 = 1*10+1 =11
-    // x=2,y=3 = 3*10+2 = 32 在图的 3,2 区域
-    return region_y * 10 + region_x;
+    return region_y * 10 + region_x; ///< 计算区域编号
 }
 
-void MainWindow::onShowAboutDialog(const bool flag) {
-    STREAM_INFO()<<"系统托盘图标点击: "<<(flag?"显示关于对话框":"隐藏关于对话框");
+/**
+ * @brief 显示或隐藏关于对话框
+ * @param flag 是否显示
+ */
+void MainWindow::onShowAboutDialog(const bool flag)
+{
+    STREAM_INFO() << "系统托盘图标点击: " << (flag ? "显示关于对话框" : "隐藏关于对话框");
     this->raise();
     this->activateWindow();
     this->showNormal();
     if (!this->m_showDialog) {
         this->m_aboutDialog->onShowDialog();
         this->m_showDialog = true;
-    }
-    else {
+    } else {
         this->m_aboutDialog->onHideDialog();
         this->m_showDialog = false;
     }

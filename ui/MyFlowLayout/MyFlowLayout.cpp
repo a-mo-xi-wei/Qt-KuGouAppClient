@@ -1,79 +1,163 @@
-#include <QWidget>
-#include "MyFlowLayout.h"
+/**
+ * @file MyFlowLayout.cpp
+ * @brief 实现 MyFlowLayout 类，提供自定义流布局功能
+ * @author [Your Name]
+ * @date 2025-05-15
+ * @version 1.0
+ */
 
+#include "MyFlowLayout.h"
+#include <QWidget>
+
+/** @brief 默认间距 */
 #define DEFAULTSPACE 10
+/** @brief 首页默认间距 */
 #define DEFAULTHOMESPACE 10
 
+/**
+ * @brief 构造函数，初始化流布局
+ * @param parent 父控件指针，默认为 nullptr
+ * @param margin 边距，默认为 -1
+ * @param hSpacing 水平间距，默认为 -1
+ * @param vSpacing 垂直间距，默认为 -1
+ */
 MyFlowLayout::MyFlowLayout(QWidget *parent, int margin, int hSpacing, int vSpacing)
-    : QLayout(parent),
-      m_hSpace(hSpacing),
-      m_vSpace(vSpacing) {
+    : QLayout(parent)
+    , m_hSpace(hSpacing)
+    , m_vSpace(vSpacing)
+    , m_home(false)
+{
     setContentsMargins(margin, margin, margin, margin);
 }
 
-MyFlowLayout::MyFlowLayout(QWidget *parent, bool home, int margin, int hSpacing, int vSpacing): QLayout(parent),
-    m_hSpace(hSpacing),
-    m_vSpace(vSpacing),
-    m_home(home) {
+/**
+ * @brief 构造函数，初始化流布局（支持首页模式）
+ * @param parent 父控件指针，默认为 nullptr
+ * @param home 是否为首页模式
+ * @param margin 边距，默认为 -1
+ * @param hSpacing 水平间距，默认为 -1
+ * @param vSpacing 垂直间距，默认为 -1
+ */
+MyFlowLayout::MyFlowLayout(QWidget *parent, bool home, int margin, int hSpacing, int vSpacing)
+    : QLayout(parent)
+    , m_hSpace(hSpacing)
+    , m_vSpace(vSpacing)
+    , m_home(home)
+{
     setContentsMargins(margin, margin, margin, margin);
 }
 
+/**
+ * @brief 构造函数，初始化流布局（无父控件）
+ * @param margin 边距，默认为 -1
+ * @param hSpacing 水平间距，默认为 -1
+ * @param vSpacing 垂直间距，默认为 -1
+ */
 MyFlowLayout::MyFlowLayout(int margin, int hSpacing, int vSpacing)
-    : m_hSpace(hSpacing),
-      m_vSpace(vSpacing) {
+    : m_hSpace(hSpacing)
+    , m_vSpace(vSpacing)
+    , m_home(false)
+{
     setContentsMargins(margin, margin, margin, margin);
 }
 
-MyFlowLayout::~MyFlowLayout() {
+/**
+ * @brief 析构函数，清理布局项
+ */
+MyFlowLayout::~MyFlowLayout()
+{
     QLayoutItem *item;
-    while ((item = MyFlowLayout::takeAt(0)))
+    while ((item = takeAt(0)))
         delete item;
 }
 
-void MyFlowLayout::addItem(QLayoutItem *item) {
+/**
+ * @brief 添加布局项
+ * @param item 布局项指针
+ */
+void MyFlowLayout::addItem(QLayoutItem *item)
+{
     itemList.append(item);
 }
 
-int MyFlowLayout::horizontalSpacing() const {
+/**
+ * @brief 获取水平间距
+ * @return 水平间距值
+ */
+int MyFlowLayout::horizontalSpacing() const
+{
     if (m_hSpace >= 0 || m_hSpace == -1) {
         return m_hSpace;
     }
     return smartSpacing(QStyle::PM_LayoutHorizontalSpacing);
 }
 
-int MyFlowLayout::verticalSpacing() const {
+/**
+ * @brief 获取垂直间距
+ * @return 垂直间距值
+ */
+int MyFlowLayout::verticalSpacing() const
+{
     if (m_vSpace >= 0 || m_vSpace == -1) {
         return m_vSpace;
     }
     return smartSpacing(QStyle::PM_LayoutVerticalSpacing);
 }
 
-int MyFlowLayout::count() const {
+/**
+ * @brief 获取布局项数量
+ * @return 布局项数量
+ */
+int MyFlowLayout::count() const
+{
     return static_cast<int>(itemList.size());
 }
 
-QLayoutItem *MyFlowLayout::itemAt(int index) const {
+/**
+ * @brief 获取指定索引的布局项
+ * @param index 索引
+ * @return 布局项指针
+ */
+QLayoutItem *MyFlowLayout::itemAt(int index) const
+{
     return itemList.value(index);
 }
 
-QRect MyFlowLayout::itemGeometry(int index) const {
-    if(index >= 0 && index < count()) {
+/**
+ * @brief 获取指定索引的布局项几何区域
+ * @param index 索引
+ * @return 几何区域
+ */
+QRect MyFlowLayout::itemGeometry(int index) const
+{
+    if (index >= 0 && index < count()) {
         return itemAt(index)->geometry();
     }
     return {};
 }
 
-QVector<QRect> MyFlowLayout::itemGeometries() const {
+/**
+ * @brief 获取所有布局项的几何区域
+ * @return 几何区域列表
+ */
+QVector<QRect> MyFlowLayout::itemGeometries() const
+{
     QVector<QRect> rects;
-    for(int i=0; i<count(); ++i) {
-        if(QLayoutItem* item = itemAt(i)) {
+    for (int i = 0; i < count(); ++i) {
+        if (QLayoutItem* item = itemAt(i)) {
             rects.append(item->geometry());
         }
     }
     return rects;
 }
 
-QVector<QRect> MyFlowLayout::calculateAllItemRects(const QSize& containerSize) const {
+/**
+ * @brief 计算所有布局项的几何区域
+ * @param containerSize 容器大小
+ * @return 几何区域列表
+ */
+QVector<QRect> MyFlowLayout::calculateAllItemRects(const QSize& containerSize) const
+{
     QVector<QRect> rects;
     if (containerSize.width() <= 0) return rects;
 
@@ -102,22 +186,36 @@ QVector<QRect> MyFlowLayout::calculateAllItemRects(const QSize& containerSize) c
     return rects;
 }
 
-QWidget * MyFlowLayout::widgetAt(int index) const {
-    if(index >= 0 && index < count()) {
+/**
+ * @brief 获取指定索引的控件
+ * @param index 索引
+ * @return 控件指针
+ */
+QWidget *MyFlowLayout::widgetAt(int index) const
+{
+    if (index >= 0 && index < count()) {
         return itemAt(index)->widget();
     }
     return nullptr;
 }
 
-void MyFlowLayout::clear() {
-    while(QLayoutItem* item = takeAt(0)) {
+/**
+ * @brief 清空布局
+ */
+void MyFlowLayout::clear()
+{
+    while (QLayoutItem* item = takeAt(0)) {
         delete item;
     }
 }
 
-// MyFlowLayout.cpp
-void MyFlowLayout::insertWidget(int index, QWidget* widget) {
-    // 参数校验
+/**
+ * @brief 插入控件到指定索引
+ * @param index 索引
+ * @param widget 控件指针
+ */
+void MyFlowLayout::insertWidget(int index, QWidget* widget)
+{
     if (index < 0 || index > itemList.size()) {
         index = itemList.size();
     }
@@ -139,13 +237,25 @@ void MyFlowLayout::insertWidget(int index, QWidget* widget) {
     }
 }
 
-QLayoutItem *MyFlowLayout::takeAt(int index) {
+/**
+ * @brief 移除指定索引的布局项
+ * @param index 索引
+ * @return 布局项指针
+ */
+QLayoutItem *MyFlowLayout::takeAt(int index)
+{
     if (index >= 0 && index < itemList.size())
         return itemList.takeAt(index);
     return nullptr;
 }
 
-int MyFlowLayout::fillSpaceX(QWidget *wid) const {
+/**
+ * @brief 计算水平填充间距
+ * @param wid 参考控件指针
+ * @return 间距值
+ */
+int MyFlowLayout::fillSpaceX(QWidget *wid) const
+{
     int num = 0;
     int x = 0;
     int numH = 0;
@@ -181,32 +291,63 @@ int MyFlowLayout::fillSpaceX(QWidget *wid) const {
     return x;
 }
 
-Qt::Orientations MyFlowLayout::expandingDirections() const {
+/**
+ * @brief 获取扩展方向
+ * @return 扩展方向
+ */
+Qt::Orientations MyFlowLayout::expandingDirections() const
+{
     return Qt::Orientations::fromInt(0);
 }
 
-bool MyFlowLayout::hasHeightForWidth() const {
+/**
+ * @brief 判断是否依赖宽度计算高度
+ * @return 是否依赖宽度
+ */
+bool MyFlowLayout::hasHeightForWidth() const
+{
     return true;
 }
 
-int MyFlowLayout::heightForWidth(int width) const {
+/**
+ * @brief 根据宽度计算高度
+ * @param width 宽度
+ * @return 高度
+ */
+int MyFlowLayout::heightForWidth(int width) const
+{
     int height = doLayout(QRect(0, 0, width, 0), true);
     return height;
 }
 
-void MyFlowLayout::setGeometry(const QRect &rect) {
+/**
+ * @brief 设置布局几何区域
+ * @param rect 几何区域
+ */
+void MyFlowLayout::setGeometry(const QRect &rect)
+{
     QLayout::setGeometry(rect);
     doLayout(rect, false);
 }
 
-QSize MyFlowLayout::sizeHint() const {
+/**
+ * @brief 获取建议尺寸
+ * @return 建议尺寸
+ */
+QSize MyFlowLayout::sizeHint() const
+{
     return minimumSize();
 }
 
-QSize MyFlowLayout::minimumSize() const {
+/**
+ * @brief 获取最小尺寸
+ * @return 最小尺寸
+ */
+QSize MyFlowLayout::minimumSize() const
+{
     QSize size;
     QLayoutItem *item;
-    foreach(item, itemList)
+    foreach (item, itemList)
         size = size.expandedTo(item->minimumSize());
 
     // 使用 contentsMargins() 获取边距值
@@ -215,7 +356,14 @@ QSize MyFlowLayout::minimumSize() const {
     return size;
 }
 
-int MyFlowLayout::doLayout(const QRect &rect, bool testOnly) const {
+/**
+ * @brief 执行布局计算
+ * @param rect 布局区域
+ * @param testOnly 是否仅测试
+ * @return 布局高度
+ */
+int MyFlowLayout::doLayout(const QRect &rect, bool testOnly) const
+{
     int left, top, right, bottom;
     getContentsMargins(&left, &top, &right, &bottom);
     auto effectiveRect = rect.adjusted(+left, +top, -right, -bottom);
@@ -227,7 +375,7 @@ int MyFlowLayout::doLayout(const QRect &rect, bool testOnly) const {
     bool bFillX = false;
 
     QLayoutItem *item;
-    foreach(item, itemList) {
+    foreach (item, itemList) {
         QWidget *wid = item->widget();
         int spaceX = horizontalSpacing();
         if (spaceX == -1) {
@@ -264,7 +412,13 @@ int MyFlowLayout::doLayout(const QRect &rect, bool testOnly) const {
     return y + lineHeight - rect.y() + bottom;
 }
 
-int MyFlowLayout::smartSpacing(QStyle::PixelMetric pm) const {
+/**
+ * @brief 获取智能间距
+ * @param pm 样式指标
+ * @return 间距值
+ */
+int MyFlowLayout::smartSpacing(QStyle::PixelMetric pm) const
+{
     QObject *parent = this->parent();
     if (!parent) {
         return -1;

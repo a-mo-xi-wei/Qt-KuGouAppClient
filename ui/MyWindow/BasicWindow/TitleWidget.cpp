@@ -1,8 +1,10 @@
-//
-// Created by WeiWang on 25-3-25.
-//
-
-// You may need to build the project (run Qt uic code generator) to get "ui_TitleWidget.h" resolved
+/**
+ * @file TitleWidget.cpp
+ * @brief 实现 TitleWidget 类，提供标题栏功能和界面导航管理
+ * @author WeiWang
+ * @date 2025-03-25
+ * @version 1.0
+ */
 
 #include "TitleWidget.h"
 #include "ui_TitleWidget.h"
@@ -20,8 +22,15 @@
 #include <QShortcut>
 #include <QFile>
 
+/**
+ * @brief 获取当前文件所在目录路径
+ */
 #define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
+/**
+ * @brief 构造函数，初始化标题栏控件
+ * @param parent 父控件指针，默认为 nullptr
+ */
 TitleWidget::TitleWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::TitleWidget)
@@ -29,36 +38,48 @@ TitleWidget::TitleWidget(QWidget *parent)
 {
     ui->setupUi(this);
     initUi();
-    this->setAttribute(Qt::WA_StyledBackground, true);
-    qApp->installEventFilter(this);
-    {
-        //设置样式
+    this->setAttribute(Qt::WA_StyledBackground, true); ///< 启用样式背景
+    qApp->installEventFilter(this); ///< 安装应用程序级事件过滤器
+
+    // 加载样式表
         QFile file(GET_CURRENT_DIR + QStringLiteral("/title.css"));
         if (file.open(QIODevice::ReadOnly)) {
             this->setStyleSheet(file.readAll());
         } else {
-            qDebug() << "样式表打开失败QAQ";
+        // qDebug() << "样式表打开失败QAQ"; ///< 调试用，记录样式表加载失败
             return;
         }
-    }
-    // 初始化栈，并将初始界面类型压入栈中
+
+    // 初始化导航栈
     this->m_curType = StackType::RecommendForYou;
     this->m_lastType = StackType::RecommendForYou;
     m_backTypeStack.push(StackType::RecommendForYou);
 }
 
-TitleWidget::~TitleWidget() {
+/**
+ * @brief 析构函数，释放资源
+ */
+TitleWidget::~TitleWidget()
+{
     delete ui;
 }
 
-void TitleWidget::setEnableChange(const bool &flag) {
+/**
+ * @brief 设置是否允许界面切换
+ * @param flag 是否允许切换
+ */
+void TitleWidget::setEnableChange(const bool &flag)
+{
     this->m_enableChange = flag;
 }
 
-void TitleWidget::initUi() {
-    //设置toolTip
+/**
+ * @brief 初始化界面元素
+ */
+void TitleWidget::initUi()
+{
+    // 设置工具提示
     {
-    //title_music_pushButton
     auto title_music_pushButton_toolTip = new ElaToolTip(ui->title_music_pushButton);
     title_music_pushButton_toolTip->setToolTip(QStringLiteral("音乐"));
 
@@ -115,12 +136,15 @@ void TitleWidget::initUi() {
     close_toolButton_toolTip->setToolTip(QStringLiteral("关闭"));
 }
 
-    this->setStyleSheet("QWidget#TitleWidget{margin:5px;}");
-    const auto menu = new MyMenu(MyMenu::MenuKind::TitleOption,this);
-    m_titleOptMenu = menu->getMenu<TitleOptionMenu>();
-    connect(m_titleOptMenu,&TitleOptionMenu::about,this,[this]{emit showAboutDialog();});
-    connect(m_titleOptMenu,&TitleOptionMenu::exit,this,&TitleWidget::on_close_toolButton_clicked);
+    this->setStyleSheet("QWidget#TitleWidget{margin:5px;}"); ///< 设置外边距
 
+    // 初始化标题选项菜单
+    const auto menu = new MyMenu(MyMenu::MenuKind::TitleOption, this);
+    m_titleOptMenu = menu->getMenu<TitleOptionMenu>();
+    connect(m_titleOptMenu, &TitleOptionMenu::about, this, [this] { emit showAboutDialog(); });
+    connect(m_titleOptMenu, &TitleOptionMenu::exit, this, &TitleWidget::on_close_toolButton_clicked);
+
+    // 设置标题索引指示器
     ui->title_index_label1->setPixmap(
         QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
     ui->title_index_label2->setPixmap(
@@ -131,10 +155,12 @@ void TitleWidget::initUi() {
         QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
     setTitleIndex(1);
 
+    // 设置搜索框和图标
     ui->title_line->setPixmap(QPixmap(QStringLiteral(":/Res/tabIcon/line-black.svg")));
     ui->search_lineEdit->addAction(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")),
                                    QLineEdit::LeadingPosition);
 
+    // 设置搜索框字体
     auto font = QFont("AaSongLiuKaiTi");
     font.setWeight(QFont::Bold);
     ui->search_lineEdit->setFont(font);
@@ -150,6 +176,7 @@ void TitleWidget::initUi() {
     ui->title_portrait_label->setScaledContents(false); // 禁止 QLabel 自动缩放
     ui->title_portrait_label->installEventFilter(this);
 
+    // 设置性别图标
     ui->title_gender_label->setPixmap(QPixmap(QStringLiteral(":/Res/window/boy.svg")));
 
     //设置设置按钮的Frame圆角，填充颜色
@@ -165,6 +192,7 @@ void TitleWidget::initUi() {
     ui->max_toolButton->setMyIcon(QIcon(QStringLiteral(":/Res/titlebar/maximize-black.svg")));
     ui->close_toolButton->setMyIcon(QIcon(QStringLiteral(":/Res/titlebar/close-black.svg")));
 
+    // 初始化退出对话框
     m_closeDialog->setParent(this->window());
     m_closeDialog->hide();
     connect(m_closeDialog.get(), &ElaExitDialog::rightButtonClicked, this, []{qApp->quit();});
@@ -173,88 +201,115 @@ void TitleWidget::initUi() {
         on_min_toolButton_clicked();
     });
 
-    //专门处理标题menu
-    connect(ui->menu_toolButton,&QToolButton::clicked,this,&TitleWidget::on_menu_toolButton_clicked);
+    // 连接菜单按钮
+    connect(ui->menu_toolButton, &QToolButton::clicked, this, &TitleWidget::on_menu_toolButton_clicked);
 
     // 创建快捷键对象，绑定 F5 到 title_refresh_toolButton 的点击事件
     const auto shortcut = new QShortcut(QKeySequence(Qt::Key_F5), this);
     connect(shortcut, &QShortcut::activated, ui->title_refresh_toolButton, &QToolButton::click);
 }
 
-void TitleWidget::showMenu(const QPoint &pos) {
+/**
+ * @brief 显示标题选项菜单
+ * @param pos 菜单显示的全局位置
+ */
+void TitleWidget::showMenu(const QPoint &pos)
+{
     setMenuPosition(pos);
-    //qDebug()<<"当前Menu位置: "<<pos<<" 显示菜单";
-    this->m_titleOptMenu->popup(this->m_menuPosition);
-    //this->m_titleOptMenu->show();
-    //qDebug()<<"显示菜单成功";
+    // qDebug() << "当前Menu位置: " << pos << " 显示菜单"; ///< 调试用，记录菜单位置
+    this->m_titleOptMenu->popup(this->m_menuPosition); ///< 显示菜单
+    // qDebug() << "显示菜单成功"; ///< 调试用，记录菜单显示
 }
 
-RippleButton * TitleWidget::max_toolButton() const {
+/**
+ * @brief 获取最大化按钮
+ * @return 最大化按钮指针
+ */
+RippleButton *TitleWidget::max_toolButton() const
+{
     return ui->max_toolButton;
 }
 
-void TitleWidget::mouseDoubleClickEvent(QMouseEvent *event) {
+/**
+ * @brief 重写鼠标双击事件，触发最大化
+ * @param event 鼠标事件
+ */
+void TitleWidget::mouseDoubleClickEvent(QMouseEvent *event)
+{
     QWidget::mouseDoubleClickEvent(event);
     if (event->button() == Qt::LeftButton) {
-        on_max_toolButton_clicked();
+        on_max_toolButton_clicked(); ///< 左键双击触发最大化
     }
 }
 
-void TitleWidget::mousePressEvent(QMouseEvent *event) {
-    // 判断是否为右键点击
+/**
+ * @brief 重写鼠标按下事件，处理右键菜单
+ * @param event 鼠标事件
+ */
+void TitleWidget::mousePressEvent(QMouseEvent *event)
+{
     if (event->button() == Qt::RightButton) {
-        showMenu(this->mapToGlobal(event->pos()));
-    }
-    else {
+        showMenu(this->mapToGlobal(event->pos())); ///< 右键显示菜单
+    } else {
         QWidget::mousePressEvent(event);
     }
 }
 
-void TitleWidget::paintEvent(QPaintEvent *ev) {
+/**
+ * @brief 重写绘制事件，绘制带圆角的线性渐变阴影
+ * @param ev 绘制事件
+ */
+void TitleWidget::paintEvent(QPaintEvent *ev)
+{
     QWidget::paintEvent(ev);
     QPainter p(this);
-    p.setRenderHint(QPainter::Antialiasing);
-    p.setPen(Qt::NoPen);
-    // 创建一个线性渐变
-    // 先绘制阴影效果
-    QRect shadowRect = rect().adjusted(5, 5, -4, 2);
+    p.setRenderHint(QPainter::Antialiasing); ///< 启用抗锯齿
+    p.setPen(Qt::NoPen); ///< 无边框
+
+    QRect shadowRect = rect().adjusted(5, 5, -4, 2); ///< 调整阴影区域
     QLinearGradient gradient(shadowRect.topLeft(), shadowRect.bottomLeft());
-    gradient.setColorAt(0, QColor(QStringLiteral("#87CEFA"))); // 起始颜色
-    gradient.setColorAt(1, QColor(QStringLiteral("#eef2ff"))); // 结束颜色
+    gradient.setColorAt(0, QColor(QStringLiteral("#87CEFA"))); ///< 起始颜色
+    gradient.setColorAt(1, QColor(QStringLiteral("#eef2ff"))); ///< 结束颜色
     p.setBrush(gradient);
-    //p.drawRoundedRect(shadowRect, 8, 8);
+
     // 创建一个 QPainterPath，只在左上和右上角有圆角
     QPainterPath path;
-    int radius = 8; // 圆角半径
-
-    path.moveTo(shadowRect.topLeft() + QPoint(radius, 0)); // 从左上角的圆角开始
-    path.lineTo(shadowRect.topRight() - QPoint(radius, 0)); // 右上角前的直线部分
-    path.quadTo(shadowRect.topRight(), shadowRect.topRight() + QPoint(0, radius)); // 右上角的圆角
-    path.lineTo(shadowRect.bottomRight()); // 右侧的直线部分到底
-    path.lineTo(shadowRect.bottomLeft()); // 底部的直线部分到左侧
-    path.lineTo(shadowRect.topLeft() + QPoint(0, radius)); // 左侧的直线部分
-    path.quadTo(shadowRect.topLeft(), shadowRect.topLeft() + QPoint(radius, 0)); // 左上角的圆角
+    int radius = 8; ///< 圆角半径
+    path.moveTo(shadowRect.topLeft() + QPoint(radius, 0));
+    path.lineTo(shadowRect.topRight() - QPoint(radius, 0));
+    path.quadTo(shadowRect.topRight(), shadowRect.topRight() + QPoint(0, radius));
+    path.lineTo(shadowRect.bottomRight());
+    path.lineTo(shadowRect.bottomLeft());
+    path.lineTo(shadowRect.topLeft() + QPoint(0, radius));
+    path.quadTo(shadowRect.topLeft(), shadowRect.topLeft() + QPoint(radius, 0));
     path.closeSubpath();
 
-    p.drawPath(path); // 绘制路径
+    p.drawPath(path); ///< 绘制路径
 }
 
-bool TitleWidget::eventFilter(QObject *watched, QEvent *event) {
+/**
+ * @brief 重写事件过滤器，处理鼠标返回/前进键和头像动画
+ * @param watched 监视的对象
+ * @param event 事件对象
+ * @return 是否处理事件
+ */
+bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
+{
     if (event->type() == QEvent::MouseButtonPress) {
         QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
         if (mouseEvent->button() == Qt::BackButton) {
             if (this->m_enableChange) {
-                //qDebug() << "全局监听：鼠标返回键被按下";
+                //qDebug() << "全局监听：鼠标返回键被按下"; ///< 调试用，记录返回键
                 on_title_return_toolButton_clicked();
                 return true; // 表示事件已处理，不再继续传播
             }
         }
         if (mouseEvent->button() == Qt::ForwardButton) {
             if (this->m_enableChange) {
-                //qDebug() << "全局监听：鼠标前进键被按下";
+                //qDebug() << "全局监听：鼠标前进键被按下"; ///< 调试用，记录前进键
                 if (!m_frontTypeStack.isEmpty()) {
                     StackType nextType = m_frontTypeStack.pop();
-                    m_backTypeStack.push(this->m_curType); // 当前状态存入返回栈
+                    m_backTypeStack.push(this->m_curType); ///< 当前状态存入返回栈
 
                     // 更新界面状态
                     if (nextType == TitleLive) {
@@ -262,7 +317,7 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event) {
                         emit currentStackChange(StackType::TitleLive);
                         emit leftMenuShow(false);
                         setTitleIndex(2);
-                        qDebug() << "[前进] 直播";
+                    // qDebug() << "[前进] 直播"; ///< 调试用
                         STREAM_INFO() << "前进到直播界面";
                     }
                     else if (nextType == ListenBook) {
@@ -270,7 +325,7 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event) {
                         emit currentStackChange(StackType::ListenBook);
                         emit leftMenuShow(false);
                         setTitleIndex(3);
-                        qDebug() << "[前进] 听书";
+                    // qDebug() << "[前进] 听书"; ///< 调试用
                         STREAM_INFO() << "前进到听书界面";
                     }
                     else if (nextType == Search) {
@@ -278,7 +333,7 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event) {
                         emit currentStackChange(StackType::Search);
                         emit leftMenuShow(false);
                         setTitleIndex(4);
-                        qDebug() << "[前进] 探索";
+                    // qDebug() << "[前进] 探索"; ///< 调试用
                         STREAM_INFO() << "前进到探索界面";
                     }
                     else {
@@ -426,7 +481,7 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event) {
                             }
                         }
                     }
-                    this->m_curType = nextType; // 最终确认当前类型
+                    this->m_curType = nextType; ///< 更新当前类型
                 }
                 return true;
             }
@@ -473,191 +528,147 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event) {
     return QWidget::eventFilter(watched, event);
 }
 
-void TitleWidget::on_title_return_toolButton_clicked() {
+/**
+ * @brief 返回按钮点击事件，触发界面回退
+ */
+void TitleWidget::on_title_return_toolButton_clicked()
+{
     STREAM_INFO() << "返回键被按下";
     if (!m_backTypeStack.isEmpty()) {
-        this->m_lastType = m_backTypeStack.pop(); // 先弹出再赋值
+        this->m_lastType = m_backTypeStack.pop();
         m_frontTypeStack.push(this->m_curType);
         if (this->m_lastType == TitleLive) {
             ui->title_live_pushButton->setChecked(true);
             emit currentStackChange(StackType::TitleLive);
             emit leftMenuShow(false);
             setTitleIndex(2);
-            qDebug()<<"[回退] 直播";
-            STREAM_INFO()<<"切换直播界面";
-        }
-        else if (this->m_lastType == ListenBook) {
+            // qDebug() << "[回退] 直播"; ///< 调试用
+            STREAM_INFO() << "切换直播界面";
+        } else if (this->m_lastType == ListenBook) {
             ui->title_listen_book_pushButton->setChecked(true);
             emit currentStackChange(StackType::ListenBook);
             emit leftMenuShow(false);
             setTitleIndex(3);
-            qDebug()<<"[回退] 听书";
-            STREAM_INFO()<<"切换听书界面";
-        }
-        else if (this->m_lastType == Search) {
+            // qDebug() << "[回退] 听书"; ///< 调试用
+            STREAM_INFO() << "切换听书界面";
+        } else if (this->m_lastType == Search) {
             ui->title_search_pushButton->setChecked(true);
             emit currentStackChange(StackType::Search);
             emit leftMenuShow(false);
             setTitleIndex(4);
-            qDebug()<<"[回退] 探索";
-            STREAM_INFO()<<"切换探索界面";
-        }
-        else {
+            // qDebug() << "[回退] 探索"; ///< 调试用
+            STREAM_INFO() << "切换探索界面";
+        } else {
             ui->title_music_pushButton->setChecked(true);
             setTitleIndex(1);
             emit leftMenuShow(true);
             switch (this->m_lastType) {
-                case RecommendForYou: {
-                    if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
-                        emit currentStackChange(StackType::RecommendForYou);
-                    } else {
-                        emit currentStackChange(StackType::RecommendForYou, true);
-                    }
-                    qDebug() << "[回退] 为你推荐";
+                case RecommendForYou:
+                    emit currentStackChange(StackType::RecommendForYou,
+                                            !(this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend));
+                    // qDebug() << "[回退] 为你推荐"; ///< 调试用
                     STREAM_INFO() << "切换为你推荐界面";
                     break;
-                }
-                case MusicRepository: {
-                    if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
-                        emit currentStackChange(StackType::MusicRepository);
-                    } else {
-                        emit currentStackChange(StackType::MusicRepository, true);
-                    }
-                    qDebug() << "[回退] 乐库";
+                case MusicRepository:
+                    emit currentStackChange(StackType::MusicRepository,
+                                            !(this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend));
+                    // qDebug() << "[回退] 乐库"; ///< 调试用
                     STREAM_INFO() << "切换乐库界面";
                     break;
-                }
-                case Channel: {
-                    if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
-                        emit currentStackChange(StackType::Channel);
-                    } else {
-                        emit currentStackChange(StackType::Channel, true);
-                    }
-                    qDebug() << "[回退] 频道";
+                case Channel:
+                    emit currentStackChange(StackType::Channel,
+                                            !(this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend));
+                    // qDebug() << "[回退] 频道"; ///< 调试用
                     STREAM_INFO() << "切换频道界面";
                     break;
-                }
-                case Video: {
-                    if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
-                        emit currentStackChange(StackType::Video);
-                    } else {
-                        emit currentStackChange(StackType::Video, true);
-                    }
-                    qDebug() << "[回退] 视频";
+                case Video:
+                    emit currentStackChange(StackType::Video,
+                                            !(this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend));
+                    // qDebug() << "[回退] 视频"; ///< 调试用
                     STREAM_INFO() << "切换视频界面";
                     break;
-                }
-                case AiChat: {
-                    if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
-                        emit currentStackChange(StackType::AiChat);
-                    } else {
-                        emit currentStackChange(StackType::AiChat, true);
-                    }
-                    qDebug() << "[回退] Ai对话";
+                case AiChat:
+                    emit currentStackChange(StackType::AiChat,
+                                            !(this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend));
+                    // qDebug() << "[回退] Ai对话"; ///< 调试用
                     STREAM_INFO() << "切换Ai对话界面";
                     break;
-                }
-                case SongList: {
-                    if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
-                        emit currentStackChange(StackType::SongList);
-                    } else {
-                        emit currentStackChange(StackType::SongList, true);
-                    }
-                    qDebug() << "[回退] 歌单";
+                case SongList:
+                    emit currentStackChange(StackType::SongList,
+                                            !(this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend));
+                    // qDebug() << "[回退] 歌单"; ///< 调试用
                     STREAM_INFO() << "切换歌单界面";
                     break;
-                }
-                case DailyRecommend: {
+                case DailyRecommend:
                     emit currentStackChange(StackType::DailyRecommend, false);
-                    qDebug() << "[回退] 每日推荐";
+                    // qDebug() << "[回退] 每日推荐"; ///< 调试用
                     STREAM_INFO() << "切换每日推荐界面";
                     break;
-                }
-                case Collection: {
-                    //qDebug()<<"this->m_curType："<<this->m_curType;
-                    if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
-                        emit currentStackChange(StackType::Collection);
-                    } else {
-                        emit currentStackChange(StackType::Collection, true);
-                    }
-                    qDebug() << "[回退] 我的收藏";
+                case Collection:
+                    emit currentStackChange(StackType::Collection,
+                                            !(this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend));
+                    // qDebug() << "[回退] 我的收藏"; ///< 调试用
                     STREAM_INFO() << "切换我的收藏界面";
                     break;
-                }
-                case LocalDownload: {
-                    //qDebug()<<"this->m_curType："<<this->m_curType;
-                    if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
-                        emit currentStackChange(StackType::LocalDownload);
-                    } else {
-                        emit currentStackChange(StackType::LocalDownload, true);
-                    }
-                    qDebug() << "[回退] 本地与下载";
+                case LocalDownload:
+                    emit currentStackChange(StackType::LocalDownload,
+                                            !(this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend));
+                    // qDebug() << "[回退] 本地与下载"; ///< 调试用
                     STREAM_INFO() << "切换本地与下载界面";
                     break;
-                }
-                case MusicCloudDisk: {
+                case MusicCloudDisk:
                     emit currentStackChange(StackType::MusicCloudDisk, false);
-                    qDebug() << "[回退] 音乐云盘";
+                    // qDebug() << "[回退] 音乐云盘"; ///< 调试用
                     STREAM_INFO() << "切换音乐云盘界面";
                     break;
-                }
-                case PurchasedMusic: {
-                    if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
-                        emit currentStackChange(StackType::PurchasedMusic);
-                    } else {
-                        emit currentStackChange(StackType::PurchasedMusic, true);
-                    }
-                    qDebug() << "[回退] 已购音乐";
+                case PurchasedMusic:
+                    emit currentStackChange(StackType::PurchasedMusic,
+                                            !(this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend));
+                    // qDebug() << "[回退] 已购音乐"; ///< 调试用
                     STREAM_INFO() << "切换已购音乐界面";
                     break;
-                }
-                case RecentlyPlayed: {
-                    if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
-                        emit currentStackChange(StackType::RecentlyPlayed);
-                    } else {
-                        emit currentStackChange(StackType::RecentlyPlayed, true);
-                    }
-                    qDebug() << "[回退] 最近播放";
+                case RecentlyPlayed:
+                    emit currentStackChange(StackType::RecentlyPlayed,
+                                            !(this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend));
+                    // qDebug() << "[回退] 最近播放"; ///< 调试用
                     STREAM_INFO() << "切换最近播放界面";
                     break;
-                }
-                case AllMusic: {
-                    if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
-                        emit currentStackChange(StackType::AllMusic);
-                    } else {
-                        emit currentStackChange(StackType::AllMusic, true);
-                    }
-                    qDebug() << "[回退] 全部音乐";
+                case AllMusic:
+                    emit currentStackChange(StackType::AllMusic,
+                                            !(this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend));
+                    // qDebug() << "[回退] 全部音乐"; ///< 调试用
                     STREAM_INFO() << "切换全部音乐界面";
                     break;
-                }
-                default: {
-                    if (this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend) {
-                        emit currentStackChange(StackType::RecommendForYou);
-                    } else {
-                        emit currentStackChange(StackType::RecommendForYou, true);
-                    }
-                    qDebug() << "[回退] 默认为你推荐";
+                default:
+                    emit currentStackChange(StackType::RecommendForYou,
+                                            !(this->m_curType == MusicCloudDisk || this->m_curType == DailyRecommend));
+                    // qDebug() << "[回退] 默认为你推荐"; ///< 调试用
                     STREAM_INFO() << "切换默认推荐界面";
-                }
             }
             STREAM_INFO() << "切换音乐界面";
         }
-        this->m_curType = this->m_lastType;
+        this->m_curType = this->m_lastType; ///< 更新当前类型
     }
 }
 
-void TitleWidget::on_title_refresh_toolButton_clicked() {
+/**
+ * @brief 刷新按钮点击事件，触发界面刷新
+ */
+void TitleWidget::on_title_refresh_toolButton_clicked()
+{
     emit refresh();
-    qDebug() << "刷新界面";
+    // qDebug() << "刷新界面"; ///< 调试用
     STREAM_INFO() << "刷新界面";
 }
 
-void TitleWidget::on_title_music_pushButton_clicked() {
+/**
+ * @brief 音乐按钮点击事件，切换到音乐界面
+ */
+void TitleWidget::on_title_music_pushButton_clicked()
+{
     ui->title_music_pushButton->setChecked(true);
     setTitleIndex(1);
-    //显示menu
-    emit leftMenuShow(true);
+    emit leftMenuShow(true); ///< 显示左侧菜单
     switch (this->m_lastType) {
         case RecommendForYou:
             onLeftMenu_recommend_clicked();
@@ -670,6 +681,7 @@ void TitleWidget::on_title_music_pushButton_clicked() {
             break;
         case Video:
             onLeftMenu_video_clicked();
+            break;
         case AiChat:
             onLeftMenu_ai_chat_clicked();
             break;
@@ -697,12 +709,17 @@ void TitleWidget::on_title_music_pushButton_clicked() {
         case AllMusic:
             onLeftMenu_allMusic_clicked();
             break;
-        default: onLeftMenu_recommend_clicked();
+        default:
+            onLeftMenu_recommend_clicked();
     }
-    STREAM_INFO() <<"切换音乐界面";
+    STREAM_INFO() << "切换音乐界面";
 }
 
-void TitleWidget::on_title_live_pushButton_clicked() {
+/**
+ * @brief 直播按钮点击事件，切换到直播界面
+ */
+void TitleWidget::on_title_live_pushButton_clicked()
+{
     ui->title_live_pushButton->setChecked(true);
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
@@ -710,11 +727,15 @@ void TitleWidget::on_title_live_pushButton_clicked() {
     emit leftMenuShow(false);
     setTitleIndex(2);
     this->m_curType = StackType::TitleLive;
-    qDebug()<<"直播";
-    STREAM_INFO()<<"切换直播界面";
+    // qDebug() << "直播"; ///< 调试用
+    STREAM_INFO() << "切换直播界面";
 }
 
-void TitleWidget::on_title_listen_book_pushButton_clicked() {
+/**
+ * @brief 听书按钮点击事件，切换到听书界面
+ */
+void TitleWidget::on_title_listen_book_pushButton_clicked()
+{
     ui->title_listen_book_pushButton->setChecked(true);
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
@@ -722,11 +743,15 @@ void TitleWidget::on_title_listen_book_pushButton_clicked() {
     emit leftMenuShow(false);
     setTitleIndex(3);
     this->m_curType = StackType::ListenBook;
-    qDebug()<<"听书";
-    STREAM_INFO()<<"切换听书界面";
+    // qDebug() << "听书"; ///< 调试用
+    STREAM_INFO() << "切换听书界面";
 }
 
-void TitleWidget::on_title_search_pushButton_clicked() {
+/**
+ * @brief 探索按钮点击事件，切换到探索界面
+ */
+void TitleWidget::on_title_search_pushButton_clicked()
+{
     ui->title_search_pushButton->setChecked(true);
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
@@ -734,58 +759,87 @@ void TitleWidget::on_title_search_pushButton_clicked() {
     emit leftMenuShow(false);
     setTitleIndex(4);
     this->m_curType = StackType::Search;
-    qDebug()<<"探索";
-    STREAM_INFO()<<"切换探索界面";
+    // qDebug() << "探索"; ///< 调试用
+    STREAM_INFO() << "切换探索界面";
 }
 
-void TitleWidget::on_listen_toolButton_clicked() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                            "听歌识曲 功能未实现 敬请期待",
-                            1000,this->window());
+/**
+ * @brief 听歌识曲按钮点击事件，显示未实现提示
+ */
+void TitleWidget::on_listen_toolButton_clicked()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
+                               "听歌识曲 功能未实现 敬请期待", 1000, this->window());
 }
 
-void TitleWidget::on_theme_toolButton_clicked() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                            "主题 功能未实现 敬请期待",
-                            1000,this->window());
+/**
+ * @brief 主题按钮点击事件，显示未实现提示
+ */
+void TitleWidget::on_theme_toolButton_clicked()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
+                               "主题 功能未实现 敬请期待", 1000, this->window());
 }
 
-void TitleWidget::on_message_toolButton_clicked() {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight,"Info",
-                            "消息 功能未实现 敬请期待",
-                            1000,this->window());
+/**
+ * @brief 消息按钮点击事件，显示未实现提示
+ */
+void TitleWidget::on_message_toolButton_clicked()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
+                               "消息 功能未实现 敬请期待", 1000, this->window());
 }
 
-void TitleWidget::on_menu_toolButton_clicked() {
+/**
+ * @brief 菜单按钮点击事件，显示标题选项菜单
+ */
+void TitleWidget::on_menu_toolButton_clicked()
+{
     showMenu(QCursor::pos());
 }
 
-void TitleWidget::on_min_toolButton_clicked() {
-    //QRect m_startGeometry = this->geometry(); // 获取当前窗口的几何形状(正常状态)
-    //QRect m_endGeometry = m_startGeometry;
-    ////m_endGeometry.setWidth(0); // 设置目标宽度为0
-    //m_endGeometry.setHeight(100); // 设置目标高度为0
-    //this->m_animation->setDuration(1000); // 动画时长
-    //this->m_animation->setStartValue(m_startGeometry);
-    //this->m_animation->setEndValue(m_endGeometry);
-    //this->m_animation->setEasingCurve(QEasingCurve::InOutQuad); // 设置动画曲线
-    //this->m_animation->start(); // 启动动画
-    //// 最小化窗口
-    //connect(this->m_animation.get(), &QPropertyAnimation::finished, this, [&]() {this->showMinimized();});
-    STREAM_INFO()<<"最小化窗口";
-    qobject_cast<QWidget*>(this->parent())->showMinimized();
+/**
+ * @brief 最小化按钮点击事件，最小化窗口
+ */
+void TitleWidget::on_min_toolButton_clicked()
+{
+    // 以下为调试用动画代码，当前未启用
+    // QRect m_startGeometry = this->geometry();
+    // QRect m_endGeometry = m_startGeometry;
+    // m_endGeometry.setHeight(100);
+    // this->m_animation->setDuration(1000);
+    // this->m_animation->setStartValue(m_startGeometry);
+    // this->m_animation->setEndValue(m_endGeometry);
+    // this->m_animation->setEasingCurve(QEasingCurve::InOutQuad);
+    // this->m_animation->start();
+    // connect(this->m_animation.get(), &QPropertyAnimation::finished, this, [&]() {this->showMinimized();});
+
+    STREAM_INFO() << "最小化窗口";
+    qobject_cast<QWidget *>(this->parent())->showMinimized(); ///< 最小化父窗口
 }
 
-void TitleWidget::on_max_toolButton_clicked(){
+/**
+ * @brief 最大化按钮点击事件，触发最大化信号
+ */
+void TitleWidget::on_max_toolButton_clicked()
+{
     emit maxScreen();
 }
 
-void TitleWidget::on_close_toolButton_clicked() {
-    STREAM_INFO()<<"显示closeDialog";
-    m_closeDialog->show();
+/**
+ * @brief 关闭按钮点击事件，显示退出对话框
+ */
+void TitleWidget::on_close_toolButton_clicked()
+{
+    STREAM_INFO() << "显示closeDialog";
+    m_closeDialog->show(); ///< 显示退出对话框
 }
 
-void TitleWidget::onLeftMenu_recommend_clicked() {
+/**
+ * @brief 左侧菜单推荐项点击事件，切换到推荐界面
+ */
+void TitleWidget::onLeftMenu_recommend_clicked()
+{
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
     if (m_backTypeStack.top() == MusicCloudDisk || m_backTypeStack.top() == DailyRecommend) emit currentStackChange(StackType::RecommendForYou);
@@ -795,7 +849,11 @@ void TitleWidget::onLeftMenu_recommend_clicked() {
     STREAM_INFO()<<"切换为你推荐界面";
 }
 
-void TitleWidget::onLeftMenu_musicRepository_clicked() {
+/**
+ * @brief 左侧菜单乐库项点击事件，切换到乐库界面
+ */
+void TitleWidget::onLeftMenu_musicRepository_clicked()
+{
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
     if (m_backTypeStack.top() == MusicCloudDisk || m_backTypeStack.top() == DailyRecommend) emit currentStackChange(StackType::MusicRepository);
@@ -805,7 +863,11 @@ void TitleWidget::onLeftMenu_musicRepository_clicked() {
     STREAM_INFO()<<"切换乐库界面";
 }
 
-void TitleWidget::onLeftMenu_channel_clicked() {
+/**
+ * @brief 左侧菜单频道项点击事件，切换到频道界面
+ */
+void TitleWidget::onLeftMenu_channel_clicked()
+{
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
     if (m_backTypeStack.top() == MusicCloudDisk || m_backTypeStack.top() == DailyRecommend) emit currentStackChange(StackType::Channel);
@@ -815,7 +877,11 @@ void TitleWidget::onLeftMenu_channel_clicked() {
     STREAM_INFO()<<"切换频道界面";
 }
 
-void TitleWidget::onLeftMenu_video_clicked() {
+/**
+ * @brief 左侧菜单视频项点击事件，切换到视频界面
+ */
+void TitleWidget::onLeftMenu_video_clicked()
+{
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
     if (m_backTypeStack.top() == MusicCloudDisk || m_backTypeStack.top() == DailyRecommend) emit currentStackChange(StackType::Video);
@@ -825,13 +891,21 @@ void TitleWidget::onLeftMenu_video_clicked() {
     STREAM_INFO()<<"切换视频界面";
 }
 
-void TitleWidget::onLeftMenu_live_clicked() {
+/**
+ * @brief 左侧菜单直播项点击事件，切换到直播界面
+ */
+void TitleWidget::onLeftMenu_live_clicked()
+{
     ui->title_live_pushButton->clicked();
     ui->title_live_pushButton->setChecked(true);
     STREAM_INFO()<<"切换直播界面";
 }
 
-void TitleWidget::onLeftMenu_ai_chat_clicked() {
+/**
+ * @brief 左侧菜单AI对话项点击事件，切换到AI对话界面
+ */
+void TitleWidget::onLeftMenu_ai_chat_clicked()
+{
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
     if (m_backTypeStack.top() == MusicCloudDisk || m_backTypeStack.top() == DailyRecommend) emit currentStackChange(StackType::AiChat);
@@ -841,7 +915,11 @@ void TitleWidget::onLeftMenu_ai_chat_clicked() {
     STREAM_INFO()<<"切换Ai对话界面";
 }
 
-void TitleWidget::onLeftMenu_songList_clicked() {
+/**
+ * @brief 左侧菜单歌单项点击事件，切换到歌单界面
+ */
+void TitleWidget::onLeftMenu_songList_clicked()
+{
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
     if (m_backTypeStack.top() == MusicCloudDisk || m_backTypeStack.top() == DailyRecommend) emit currentStackChange(StackType::SongList);
@@ -851,7 +929,11 @@ void TitleWidget::onLeftMenu_songList_clicked() {
     STREAM_INFO()<<"切换歌单界面";
 }
 
-void TitleWidget::onLeftMenu_dailyRecommend_clicked() {
+/**
+ * @brief 左侧菜单每日推荐项点击事件，切换到每日推荐界面
+ */
+void TitleWidget::onLeftMenu_dailyRecommend_clicked()
+{
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
     if (m_backTypeStack.top() == MusicCloudDisk || m_backTypeStack.top() == DailyRecommend) emit currentStackChange(StackType::DailyRecommend);
@@ -861,7 +943,11 @@ void TitleWidget::onLeftMenu_dailyRecommend_clicked() {
     STREAM_INFO()<<"切换每日推荐界面";
 }
 
-void TitleWidget::onLeftMenu_collection_clicked() {
+/**
+ * @brief 左侧菜单收藏项点击事件，切换到收藏界面
+ */
+void TitleWidget::onLeftMenu_collection_clicked()
+{
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
     if (m_backTypeStack.top() == MusicCloudDisk || m_backTypeStack.top() == DailyRecommend) emit currentStackChange(StackType::Collection);
@@ -871,7 +957,11 @@ void TitleWidget::onLeftMenu_collection_clicked() {
     STREAM_INFO()<<"切换我的收藏界面";
 }
 
-void TitleWidget::onLeftMenu_localDownload_clicked() {
+/**
+ * @brief 左侧菜单本地下载项点击事件，切换到本地下载界面
+ */
+void TitleWidget::onLeftMenu_localDownload_clicked()
+{
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
     if (m_backTypeStack.top() == MusicCloudDisk || m_backTypeStack.top() == DailyRecommend) emit currentStackChange(StackType::LocalDownload);
@@ -881,7 +971,11 @@ void TitleWidget::onLeftMenu_localDownload_clicked() {
     STREAM_INFO()<<"切换本地与下载界面";
 }
 
-void TitleWidget::onLeftMenu_musicCloudDisk_clicked() {
+/**
+ * @brief 左侧菜单音乐云盘项点击事件，切换到音乐云盘界面
+ */
+void TitleWidget::onLeftMenu_musicCloudDisk_clicked()
+{
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
     emit currentStackChange(StackType::MusicCloudDisk,false);
@@ -890,7 +984,11 @@ void TitleWidget::onLeftMenu_musicCloudDisk_clicked() {
     STREAM_INFO()<<"切换音乐云盘界面";
 }
 
-void TitleWidget::onLeftMenu_purchasedMusic_clicked() {
+/**
+ * @brief 左侧菜单已购音乐项点击事件，切换到已购音乐界面
+ */
+void TitleWidget::onLeftMenu_purchasedMusic_clicked()
+{
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
     if (m_backTypeStack.top() == MusicCloudDisk || m_backTypeStack.top() == DailyRecommend) emit currentStackChange(StackType::PurchasedMusic);
@@ -900,7 +998,11 @@ void TitleWidget::onLeftMenu_purchasedMusic_clicked() {
     STREAM_INFO()<<"切换音乐云盘界面";
 }
 
-void TitleWidget::onLeftMenu_recentlyPlayed_clicked() {
+/**
+ * @brief 左侧菜单最近播放项点击事件，切换到最近播放界面
+ */
+void TitleWidget::onLeftMenu_recentlyPlayed_clicked()
+{
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
     if (m_backTypeStack.top() == MusicCloudDisk || m_backTypeStack.top() == DailyRecommend) emit currentStackChange(StackType::RecentlyPlayed);
@@ -910,7 +1012,11 @@ void TitleWidget::onLeftMenu_recentlyPlayed_clicked() {
     STREAM_INFO()<<"切换最近播放界面";
 }
 
-void TitleWidget::onLeftMenu_allMusic_clicked() {
+/**
+ * @brief 左侧菜单全部音乐项点击事件，切换到全部音乐界面
+ */
+void TitleWidget::onLeftMenu_allMusic_clicked()
+{
     this->m_lastType = this->m_curType;
     this->m_backTypeStack.push(m_lastType);
     if (m_backTypeStack.top() == MusicCloudDisk || m_backTypeStack.top() == DailyRecommend) emit currentStackChange(StackType::AllMusic);
@@ -920,7 +1026,12 @@ void TitleWidget::onLeftMenu_allMusic_clicked() {
     STREAM_INFO()<<"切换全部音乐界面";
 }
 
-void TitleWidget::setMenuPosition(const QPoint &pos) {
+/**
+ * @brief 设置菜单显示位置，确保在屏幕范围内
+ * @param pos 菜单的全局位置
+ */
+void TitleWidget::setMenuPosition(const QPoint &pos)
+{
     this->m_menuPosition = pos;
     // 获取屏幕的尺寸
     QScreen *screen = QGuiApplication::primaryScreen();
@@ -956,7 +1067,15 @@ void TitleWidget::setMenuPosition(const QPoint &pos) {
     //}
 }
 
-QPixmap TitleWidget::getRoundedPixmap(const QPixmap &src, QSize size, int radius) {
+/**
+ * @brief 生成圆角图片
+ * @param src 原始图片
+ * @param size 目标尺寸
+ * @param radius 圆角半径
+ * @return 圆角图片
+ */
+QPixmap TitleWidget::getRoundedPixmap(const QPixmap &src, QSize size, int radius)
+{
     QPixmap scaled = src.scaled(size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
     QPixmap dest(size);
     dest.fill(Qt::transparent);
@@ -971,11 +1090,14 @@ QPixmap TitleWidget::getRoundedPixmap(const QPixmap &src, QSize size, int radius
     return dest;
 }
 
-void TitleWidget::setTitleIndex(const int &index) const {
-    // 预防非法索引
-    if (index < 1 || index > 4) return;
+/**
+ * @brief 设置标题索引，控制界面指示器显示
+ * @param index 标题索引（1-4）
+ */
+void TitleWidget::setTitleIndex(const int &index) const
+{
+    if (index < 1 || index > 4) return; ///< 预防非法索引
 
-    // 通过索引直接控制显示状态
     ui->title_index_label1->setVisible(index == 1);
     ui->title_index_label2->setVisible(index == 2);
     ui->title_index_label3->setVisible(index == 3);

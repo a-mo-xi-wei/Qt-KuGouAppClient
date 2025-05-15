@@ -1,32 +1,43 @@
-//
-// Created by WeiWang on 25-3-22.
-//
+/**
+ * @file RefreshMask.cpp
+ * @brief 实现 RefreshMask 类，提供加载遮罩功能
+ * @author WeiWang
+ * @date 2025-03-22
+ * @version 1.0
+ */
 
 #include "RefreshMask.h"
-
 #include <QGraphicsDropShadowEffect>
 #include <QTimer>
 #include <QVBoxLayout>
 
+/**
+ * @brief 构造函数，初始化加载遮罩
+ * @param parent 父控件指针，默认为 nullptr
+ */
 RefreshMask::RefreshMask(QWidget *parent)
     : QWidget(parent)
     , m_timer(new QTimer(this))
 {
     initUi();
-    m_timer->setSingleShot(true); // 设置为单次触发
+    m_timer->setSingleShot(true);
     connect(m_timer, &QTimer::timeout, this, &RefreshMask::hideLoading);
 }
 
-void RefreshMask::initUi() {
+/**
+ * @brief 初始化界面
+ */
+void RefreshMask::initUi()
+{
     this->setCursor(Qt::ForbiddenCursor);
     // 初始化遮罩层（与窗口同级）
     maskWidget = new QWidget(this);
     // 给遮罩层添加圆角阴影
     maskWidget->setStyleSheet(
         "background-color: qlineargradient("
-                "x1:0, y1:0, x2:1, y2:1,"
-                "stop:0 rgba(196, 243, 255, 50%),"
-                "stop:1 rgba(255, 214, 255, 50%)"
+        "x1:0, y1:0, x2:1, y2:1,"
+        "stop:0 rgba(196, 243, 255, 50%),"
+        "stop:1 rgba(255, 214, 255, 50%)"
         ");"
         "border-radius: 12px;"
         "border: none;"
@@ -49,14 +60,18 @@ void RefreshMask::initUi() {
     progress = new QtMaterialCircularProgress(this);
     progress->hide();
 
-    // 确保Z轴顺序：进度条在遮罩层之上
+    // 确保进度条在遮罩层之上
     progress->raise();
     auto layout = new QVBoxLayout(maskWidget);
     layout->addWidget(progress);
     layout->setAlignment(progress, Qt::AlignCenter);
 }
 
-void RefreshMask::showLoading() {
+/**
+ * @brief 显示加载遮罩
+ */
+void RefreshMask::showLoading()
+{
     //this->resize(this->parentWidget()->size());
     this->raise();          // 确保位于父部件最上层
     this->show();           // 显示 RefreshMask 自身
@@ -65,19 +80,27 @@ void RefreshMask::showLoading() {
     m_timer->start(2000); // 启动定时器
 }
 
-void RefreshMask::hideLoading() {
-    if (this->isHidden())return;
-    m_timer->stop(); // 停止定时器（避免重复触发）
+/**
+ * @brief 隐藏加载遮罩
+ */
+void RefreshMask::hideLoading()
+{
+    if (this->isHidden()) return;
+    m_timer->stop();
     this->hide();
     maskWidget->hide();
     progress->hide();
     emit loadingFinished();
 }
 
-void RefreshMask::resizeEvent(QResizeEvent *event) {
+/**
+ * @brief 大小调整事件，更新遮罩和进度条位置
+ * @param event 大小调整事件
+ */
+void RefreshMask::resizeEvent(QResizeEvent *event)
+{
     QWidget::resizeEvent(event);
     maskWidget->resize(size());
-    progress->move((width()-progress->width())/2,
-                  (height()-progress->height())/2);
+    progress->move((width() - progress->width()) / 2,
+                   (height() - progress->height()) / 2);
 }
-

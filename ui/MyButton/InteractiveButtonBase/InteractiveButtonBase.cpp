@@ -1,3 +1,11 @@
+/**
+* @file InteractiveButtonBase.cpp
+ * @brief 实现 InteractiveButtonBase 类，提供交互式按钮功能
+ * @author [iwxyi]
+ * @date 2025-05-15
+ * @version 1.0
+ * @note 参考开源项目：iwxyi 的 Qt-InteractiveButtons，地址：https://github.com/iwxyi/Qt-InteractiveButtons
+ */
 #include "InteractiveButtonBase.h"
 #include <QPainterPath>
 #include <QDateTime>

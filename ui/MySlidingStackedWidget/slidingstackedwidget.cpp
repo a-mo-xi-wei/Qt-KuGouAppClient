@@ -1,107 +1,152 @@
-/*
- *  MIT License
-    Copyright (c) 2020 Tim Schneeberger (ThePBone) <tim.schneeberger(at)outlook.de>
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
+/**
+ * @file slidingstackedwidget.cpp
+ * @brief 实现 SlidingStackedWidget 类，提供带滑动动画的堆栈窗口
+ * @author Tim Schneeberger (ThePBone) <tim.schneeberger@outlook.de>
+ * @date 2020
+ * @version 1.0
  *
+ * @par MIT License
+ * Copyright (c) 2020 Tim Schneeberger (ThePBone) <tim.schneeberger@outlook.de>
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
  */
+
 #include "slidingstackedwidget.h"
 #include <QPropertyAnimation>
 #include <QParallelAnimationGroup>
 #include <QGraphicsOpacityEffect>
 
+/**
+ * @brief 构造函数，初始化堆栈窗口
+ * @param parent 父控件指针，默认为 nullptr
+ */
 SlidingStackedWidget::SlidingStackedWidget(QWidget *parent)
-    : QStackedWidget(parent) {
+    : QStackedWidget(parent)
+{
     if (parent != nullptr) {
-        m_mainwindow = parent;
+        m_mainwindow = parent; ///< 设置主窗口
     } else {
         m_mainwindow = this;
     }
 }
 
+/**
+ * @brief 设置是否使用垂直模式
+ * @param vertical 是否为垂直模式，默认为 true
+ */
 void SlidingStackedWidget::setVerticalMode(const bool vertical) {
     m_vertical = vertical;
 }
 
+/**
+ * @brief 设置动画速度
+ * @param speed 动画持续时间（毫秒）
+ */
 void SlidingStackedWidget::setSpeed(int speed) {
     m_speed = speed;
 }
 
+/**
+ * @brief 设置缓动曲线
+ * @param animationtype 缓动曲线类型
+ */
 void SlidingStackedWidget::setAnimation(enum QEasingCurve::Type animationtype) {
     m_animationtype = animationtype;
 }
 
+/**
+ * @brief 设置是否启用页面循环
+ * @param wrap 是否循环，默认为 true
+ */
 void SlidingStackedWidget::setWrap(bool wrap) {
     m_wrap = wrap;
 }
 
+/**
+ * @brief 滑动到下一页
+ * @return 是否成功滑动
+ */
 bool SlidingStackedWidget::slideInNext() {
     int now = currentIndex();
     if (m_wrap || (now < count() - 1))
-        slideInIdx(now + 1);
+        slideInIdx(now + 1); ///< 滑动到下一页
     else
         return false;
     return true;
 }
 
+/**
+ * @brief 滑动到上一页
+ * @return 是否成功滑动
+ */
 bool SlidingStackedWidget::slideInPrev() {
     int now = currentIndex();
     if (m_wrap || (now > 0))
-        slideInIdx(now - 1);
+        slideInIdx(now - 1); ///< 滑动到上一页
     else
         return false;
     return true;
 }
 
+/**
+ * @brief 滑动到指定索引的页面
+ * @param idx 页面索引
+ * @param direction 滑动方向，默认为 AUTOMATIC
+ */
 void SlidingStackedWidget::slideInIdx(int idx, enum t_direction direction) {
     if (idx > count() - 1) {
-        direction = m_vertical ? TOP2BOTTOM : RIGHT2LEFT;
-        idx = (idx) % count();
+        direction = m_vertical ? TOP2BOTTOM : RIGHT2LEFT; ///< 超出范围时选择默认方向
+        idx = (idx) % count(); ///< 循环索引
     } else if (idx < 0) {
         direction = m_vertical ? BOTTOM2TOP : LEFT2RIGHT;
         idx = (idx + count()) % count();
     }
-    slideInWidget(widget(idx), direction);
+    slideInWidget(widget(idx), direction); ///< 滑动到目标页面
 }
 
+/**
+ * @brief 滑动到指定控件页面
+ * @param newWidget 目标页面控件
+ * @param direction 滑动方向，默认为 AUTOMATIC
+ */
 void SlidingStackedWidget::slideInWidget(const QWidget *newWidget, enum t_direction direction) {
     if (m_active) {
-        return;
-    } else m_active = true;
+        return; ///< 动画进行中，直接返回
+    }
+    m_active = true;
+
     enum t_direction directionhint;
     int now = currentIndex();
     int next = indexOf(newWidget);
     if (now == next) {
         m_active = false;
-        return;
+        return; ///< 当前页面无需切换
     } else if (now < next) {
-        directionhint = m_vertical ? TOP2BOTTOM : RIGHT2LEFT;
+        directionhint = m_vertical ? TOP2BOTTOM : RIGHT2LEFT; ///< 自动方向提示
     } else {
         directionhint = m_vertical ? BOTTOM2TOP : LEFT2RIGHT;
     }
     if (direction == AUTOMATIC) {
-        direction = directionhint;
+        direction = directionhint; ///< 使用提示方向
     }
-
 
     int offsetx = frameRect().width();
     int offsety = frameRect().height();
 
-
-    widget(next)->setGeometry(0, 0, offsetx, offsety);
+    widget(next)->setGeometry(0, 0, offsetx, offsety); ///< 设置下一页面几何尺寸
     if (direction == BOTTOM2TOP) {
         offsetx = 0;
         offsety = -offsety;
@@ -117,17 +162,19 @@ void SlidingStackedWidget::slideInWidget(const QWidget *newWidget, enum t_direct
     QPoint pnext = widget(next)->pos();
     QPoint pnow = widget(now)->pos();
     m_pnow = pnow;
-    widget(next)->move(pnext.x() - offsetx, pnext.y() - offsety);
+    widget(next)->move(pnext.x() - offsetx, pnext.y() - offsety); ///< 调整下一页面起始位置
 
     widget(next)->show();
-    widget(next)->raise();
+    widget(next)->raise(); ///< 显示并提升下一页面
 
+    // 当前页面动画
     auto *animnow = new QPropertyAnimation(widget(now), "pos");
     animnow->setDuration(m_speed);
     animnow->setEasingCurve(m_animationtype);
     animnow->setStartValue(QPoint(pnow.x(), pnow.y()));
     animnow->setEndValue(QPoint(offsetx + pnow.x(), offsety + pnow.y()));
 
+    // 当前页面透明度动画
     auto *animnow_op_eff = new QGraphicsOpacityEffect();
     widget(now)->setGraphicsEffect(animnow_op_eff);
     auto *animnow_op = new QPropertyAnimation(animnow_op_eff, "opacity");
@@ -135,10 +182,12 @@ void SlidingStackedWidget::slideInWidget(const QWidget *newWidget, enum t_direct
     animnow_op->setStartValue(1);
     animnow_op->setEndValue(0);
     connect(animnow_op, &QPropertyAnimation::finished, [=]() {
-        if (animnow_op_eff != nullptr)
-            animnow_op_eff->deleteLater();
+        if (animnow_op_eff != nullptr) {
+            animnow_op_eff->deleteLater(); ///< 动画结束时清理效果
+        }
     });
 
+    // 下一页面透明度动画
     auto *animnext_op_eff = new QGraphicsOpacityEffect();
     animnext_op_eff->setOpacity(0);
     widget(next)->setGraphicsEffect(animnext_op_eff);
@@ -147,36 +196,40 @@ void SlidingStackedWidget::slideInWidget(const QWidget *newWidget, enum t_direct
     animnext_op->setStartValue(0);
     animnext_op->setEndValue(1);
     connect(animnext_op, &QPropertyAnimation::finished, [=]() {
-        if (animnext_op_eff != nullptr)
-            animnext_op_eff->deleteLater();
+        if (animnext_op_eff != nullptr) {
+            animnext_op_eff->deleteLater(); ///< 动画结束时清理效果
+        }
     });
 
+    // 下一页面动画
     auto *animnext = new QPropertyAnimation(widget(next), "pos");
     animnext->setDuration(m_speed);
     animnext->setEasingCurve(m_animationtype);
     animnext->setStartValue(QPoint(-offsetx + pnext.x(), offsety + pnext.y()));
     animnext->setEndValue(QPoint(pnext.x(), pnext.y()));
 
+    // 并行动画组
     animgroup = new QParallelAnimationGroup;
     animgroup->addAnimation(animnow);
     animgroup->addAnimation(animnext);
     animgroup->addAnimation(animnow_op);
     animgroup->addAnimation(animnext_op);
 
-    //connect(animgroup, SIGNAL(finished()),this,SLOT(animationDoneSlot()));
     connect(animgroup, &QParallelAnimationGroup::finished, this, &SlidingStackedWidget::animationDoneSlot);
     m_next = next;
     m_now = now;
     m_active = true;
-    animgroup->start(QAbstractAnimation::DeleteWhenStopped);
+    animgroup->start(QAbstractAnimation::DeleteWhenStopped); ///< 动画结束后自动删除
 }
 
-
+/**
+ * @brief 处理动画完成事件
+ */
 void SlidingStackedWidget::animationDoneSlot() {
-    setCurrentIndex(m_next);
-    widget(m_now)->hide();
-    widget(m_now)->move(m_pnow);
+    setCurrentIndex(m_next); ///< 设置当前页面
+    widget(m_now)->hide(); ///< 隐藏上一页面
+    widget(m_now)->move(m_pnow); ///< 恢复上一页面位置
     m_active = false;
-    emit animationFinished();
-    //qDebug() << "发送动画结束信号";
+    emit animationFinished(); ///< 发出动画完成信号
+    // qDebug() << "发送动画结束信号"; ///< 调试用，记录信号发送
 }

@@ -1,42 +1,70 @@
-//
-// Created by WeiWang on 25-3-22.
-//
+/**
+* @file RefreshMask.h
+ * @brief 定义 RefreshMask 类，提供加载遮罩功能
+ * @author WeiWang
+ * @date 2025-03-22
+ * @version 1.0
+ */
 
 #ifndef REFRESHMASK_H
 #define REFRESHMASK_H
 
 #include "qtmaterialcircularprogress.h"
 
+/** @brief 动态库导出宏，定义库的导出/导入行为 */
 #if defined(MYMASKWIDGET_LIBRARY)
 #define MYMASKWIDGET_EXPORT Q_DECL_EXPORT
 #else
 #define MYMASKWIDGET_EXPORT Q_DECL_IMPORT
 #endif
 
+/**
+ * @class RefreshMask
+ * @brief 加载遮罩类，显示模糊背景和进度条
+ */
 class MYMASKWIDGET_EXPORT RefreshMask : public QWidget {
     Q_OBJECT
 
 public:
+    /**
+     * @brief 构造函数，初始化加载遮罩
+     * @param parent 父控件指针，默认为 nullptr
+     */
     explicit RefreshMask(QWidget *parent = nullptr);
 
+    /**
+     * @brief 显示加载遮罩
+     */
     void showLoading();
 
+    /**
+     * @brief 隐藏加载遮罩
+     */
     void hideLoading();
 
 private:
+    /**
+     * @brief 初始化界面
+     */
     void initUi();
 
 protected:
+    /**
+     * @brief 大小调整事件，更新遮罩和进度条位置
+     * @param event 大小调整事件
+     */
     void resizeEvent(QResizeEvent *event) override;
 
-signals:
-    void loadingFinished();
+    signals:
+        /**
+         * @brief 加载完成信号
+         */
+        void loadingFinished();
 
 private:
-    QWidget *maskWidget{};
-    QtMaterialCircularProgress *progress{};
-    QTimer* m_timer; // 管理定时器
+    QWidget*                    maskWidget;     ///< 遮罩控件
+    QtMaterialCircularProgress* progress;       ///< 进度条控件
+    QTimer*                     m_timer;        ///< 定时器
 };
 
-
-#endif //REFRESHMASK_H
+#endif // REFRESHMASK_H

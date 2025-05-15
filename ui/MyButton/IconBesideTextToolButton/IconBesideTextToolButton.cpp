@@ -1,75 +1,149 @@
+/**
+ * @file IconBesideTextToolButton.cpp
+ * @brief 实现 IconBesideTextToolButton 类，提供图标与文本并排的工具按钮功能
+ * @author [Your Name]
+ * @date 2025-05-15
+ * @version 1.0
+ */
+
 #include "IconBesideTextToolButton.h"
 
 #include <QPainter>
 
+/**
+ * @brief 构造函数，初始化图标与文本并排的工具按钮
+ * @param parent 父控件指针，默认为 nullptr
+ */
 IconBesideTextToolButton::IconBesideTextToolButton(QWidget *parent)
     : QToolButton(parent)
-      , m_enterIconSize(QSize(25, 25))
-      , m_leaveIconSize(QSize(20, 20))
-      , m_enterFontSize(15)
-      , m_leaveFontSize(12) {
+    , m_enterIconSize(QSize(25, 25))
+    , m_leaveIconSize(QSize(20, 20))
+    , m_enterFontSize(15)
+    , m_leaveFontSize(12)
+    , m_hoverFontColor(QColor(255, 255, 255))
+{
 }
 
-void IconBesideTextToolButton::setEnterIconSize(const QSize &size) {
-    this->m_enterIconSize = size;
+/**
+ * @brief 设置鼠标进入时的图标大小
+ * @param size 图标大小
+ */
+void IconBesideTextToolButton::setEnterIconSize(const QSize &size)
+{
+    m_enterIconSize = size;
 }
 
-void IconBesideTextToolButton::setLeaveIconSize(const QSize &size) {
-    this->m_leaveIconSize = size;
-    this->setIconSize(size);
+/**
+ * @brief 设置鼠标离开时的图标大小
+ * @param size 图标大小
+ */
+void IconBesideTextToolButton::setLeaveIconSize(const QSize &size)
+{
+    m_leaveIconSize = size;
+    setIconSize(size);
 }
 
-void IconBesideTextToolButton::setEnterFontSize(const int &size) {
-    this->m_enterFontSize = size;
+/**
+ * @brief 设置鼠标进入时的字体大小
+ * @param size 字体大小
+ */
+void IconBesideTextToolButton::setEnterFontSize(const int &size)
+{
+    m_enterFontSize = size;
 }
 
-void IconBesideTextToolButton::setLeaveFontSize(const int &size) {
-    this->m_leaveFontSize = size;
+/**
+ * @brief 设置鼠标离开时的字体大小
+ * @param size 字体大小
+ */
+void IconBesideTextToolButton::setLeaveFontSize(const int &size)
+{
+    m_leaveFontSize = size;
 }
 
-void IconBesideTextToolButton::setChangeSize(const bool &change) {
-    this->m_changeSize = change;
+/**
+ * @brief 设置是否在悬停时改变图标或文字大小
+ * @param change 是否改变大小
+ */
+void IconBesideTextToolButton::setChangeSize(const bool &change)
+{
+    m_changeSize = change;
 }
 
-void IconBesideTextToolButton::setHoverFontColor(const QColor &color) {
-    this->m_hoverFontColor = color;
+/**
+ * @brief 设置悬停时的字体颜色
+ * @param color 字体颜色
+ */
+void IconBesideTextToolButton::setHoverFontColor(const QColor &color)
+{
+    m_hoverFontColor = color;
 }
 
-void IconBesideTextToolButton::setPadding(const int &padding) {
-    this->m_padding = padding;
+/**
+ * @brief 设置图标和文字的水平边距
+ * @param padding 边距值
+ */
+void IconBesideTextToolButton::setPadding(const int &padding)
+{
+    m_padding = padding;
 }
 
-void IconBesideTextToolButton::setApproach(const bool &approach) {
-    this->m_isApproach = approach;
+/**
+ * @brief 设置图标和文字是否靠近显示
+ * @param approach 是否靠近
+ */
+void IconBesideTextToolButton::setApproach(const bool &approach)
+{
+    m_isApproach = approach;
 }
 
-void IconBesideTextToolButton::setEnterIcon(const QIcon &icon) {
-    this->m_enterIcon = icon;
+/**
+ * @brief 设置鼠标进入时的图标
+ * @param icon 图标
+ */
+void IconBesideTextToolButton::setEnterIcon(const QIcon &icon)
+{
+    m_enterIcon = icon;
 }
 
-void IconBesideTextToolButton::setLeaveIcon(const QIcon &icon) {
-    this->m_leaveIcon = icon;
+/**
+ * @brief 设置鼠标离开时的图标
+ * @param icon 图标
+ */
+void IconBesideTextToolButton::setLeaveIcon(const QIcon &icon)
+{
+    m_leaveIcon = icon;
 }
 
-void IconBesideTextToolButton::paintEvent(QPaintEvent *event) {
-    // 临时存储图标，然后将按钮的图标清除
-    const QIcon originalIcon = this->icon();
-    const QString originalText = this->text();
-    this->setIcon(QIcon()); // 清除图标
-    this->setText(QString()); // 清除文字
+/**
+ * @brief 绘制事件，自定义按钮的图标和文字绘制
+ * @param event 绘图事件对象
+ */
+void IconBesideTextToolButton::paintEvent(QPaintEvent *event)
+{
+    // 临时存储图标和文本
+    const QIcon originalIcon = icon();
+    const QString originalText = text();
+    setIcon(QIcon()); // 清除图标
+    setText(QString()); // 清除文本
 
-    // 调用父类的 paintEvent，绘制按钮的背景和边框
+    // 绘制按钮的背景和边框
     QToolButton::paintEvent(event);
 
-    // 恢复按钮的图标
-    this->setIcon(originalIcon);
-    // 恢复按钮的文字
-    this->setText(originalText);
+    // 恢复图标和文本
+    setIcon(originalIcon);
+    setText(originalText);
 
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    if (this->m_isHover)painter.setPen(this->m_hoverFontColor);
-    // 获取控件的矩形区域
+
+    // 设置悬停时的字体颜色
+    if (m_isHover)
+    {
+        painter.setPen(m_hoverFontColor);
+    }
+
+    // 获取按钮的矩形区域
     QRect buttonRect = rect();
 
     // 计算文字和图标的大小
@@ -86,46 +160,72 @@ void IconBesideTextToolButton::paintEvent(QPaintEvent *event) {
     const int width = buttonRect.width();
     QRect textRect;
     QRect iconRect;
-    if (this->m_isApproach) {
-        textRect = QRect(left + (width-textWidth-iconWidth+7)/2,
-                        top + (height - textHeight) / 2,
-                        textWidth, textHeight);
-        iconRect = QRect(right - (width-textWidth-iconWidth+7)/2,
-                        top + (height - iconHeight) / 2,
-                       iconWidth,iconHeight);
-    } else {
-        textRect = QRect(left + this->m_padding, top + (height - textHeight) / 2,
-                       textWidth, textHeight);
-        iconRect = QRect(right - iconWidth - this->m_padding,
-                       top + (height - iconHeight) / 2,
-                       iconWidth,iconHeight);
+
+    // 根据靠近模式计算文字和图标位置
+    if (m_isApproach)
+    {
+        textRect = QRect(left + (width - textWidth - iconWidth + 7) / 2,
+                         top + (height - textHeight) / 2,
+                         textWidth, textHeight);
+        iconRect = QRect(right - (width - textWidth - iconWidth + 7) / 2,
+                         top + (height - iconHeight) / 2,
+                         iconWidth, iconHeight);
     }
-     // 绘制文字和图标
+    else
+    {
+        textRect = QRect(left + m_padding, top + (height - textHeight) / 2,
+                         textWidth, textHeight);
+        iconRect = QRect(right - iconWidth - m_padding,
+                         top + (height - iconHeight) / 2,
+                         iconWidth, iconHeight);
+    }
+
+    // 绘制文字和图标
     painter.drawText(textRect, Qt::AlignLeft, originalText);
     originalIcon.paint(&painter, iconRect);
 }
 
-void IconBesideTextToolButton::enterEvent(QEnterEvent *event) {
-    this->m_isHover = true;
-    if (!this->m_changeSize) {
-        if(!this->m_enterIcon.isNull())
-            this->setIcon(this->m_enterIcon);
-        return QToolButton::enterEvent(event);
+/**
+ * @brief 鼠标进入事件，处理悬停效果
+ * @param event 进入事件对象
+ */
+void IconBesideTextToolButton::enterEvent(QEnterEvent *event)
+{
+    m_isHover = true;
+    if (!m_changeSize)
+    {
+        if (!m_enterIcon.isNull())
+        {
+            setIcon(m_enterIcon);
+        }
+        QToolButton::enterEvent(event);
+        return;
     }
-    if(!this->m_enterIcon.isNull())
-        this->setIcon(this->m_enterIcon);
+
+    if (!m_enterIcon.isNull())
+    {
+        setIcon(m_enterIcon);
+    }
     QFont font = this->font();
-    font.setPointSize(this->m_enterFontSize);
-    this->setFont(font);
-    this->setIconSize(this->m_enterIconSize);
+    font.setPointSize(m_enterFontSize);
+    setFont(font);
+    setIconSize(m_enterIconSize);
     QToolButton::enterEvent(event);
 }
 
-void IconBesideTextToolButton::leaveEvent(QEvent *event) {
-    this->m_isHover = false;
-    if (!this->m_changeSize) {
-        if(!this->m_leaveIcon.isNull())
-            this->setIcon(this->m_leaveIcon);
+/**
+ * @brief 鼠标离开事件，恢复默认状态
+ * @param event 事件对象
+ */
+void IconBesideTextToolButton::leaveEvent(QEvent *event)
+{
+    m_isHover = false;
+    if (!m_changeSize)
+    {
+        if (!m_leaveIcon.isNull())
+        {
+            setIcon(m_leaveIcon);
+        }
         return QToolButton::leaveEvent(event);
     }
     if(!this->m_leaveIcon.isNull())
