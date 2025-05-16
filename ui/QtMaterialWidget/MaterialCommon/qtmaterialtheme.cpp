@@ -1,79 +1,118 @@
+/**
+ * @file qtmaterialtheme.cpp
+ * @brief 实现 QtMaterialTheme 类，提供 Material Design 主题支持
+ * @author Unknown
+ * @date 2025-05-16
+ * @version 1.0
+ */
+
 #include "qtmaterialtheme.h"
 #include "qtmaterialtheme_p.h"
 #include <QString>
 #include <QIcon>
 #include <QDebug>
 
-/*!material
- *  \class QtMaterialThemePrivate
- *  \internal
+/**
+ * @brief 构造函数，初始化私有类
+ * @param q 指向 QtMaterialTheme 的指针
+ * @note 内部实现
  */
-
 QtMaterialThemePrivate::QtMaterialThemePrivate(QtMaterialTheme *q)
     : q_ptr(q)
 {
 }
 
+/**
+ * @brief 析构函数，清理资源
+ */
 QtMaterialThemePrivate::~QtMaterialThemePrivate()
 {
 }
 
+/**
+ * @brief 构造 RGBA 颜色
+ * @param r 红色分量
+ * @param g 绿色分量
+ * @param b 蓝色分量
+ * @param a 透明度（0.0 到 1.0）
+ * @return 构造的颜色对象
+ */
 QColor QtMaterialThemePrivate::rgba(int r, int g, int b, qreal a) const
 {
     QColor color(r, g, b);
-    color.setAlphaF(a);
+    color.setAlphaF(a); ///< 设置透明度
     return color;
 }
 
-/*!
- *  \class QtMaterialTheme
+/**
+ * @brief 构造函数，初始化主题并设置默认颜色
+ * @param parent 父对象指针，默认为 nullptr
  */
-
 QtMaterialTheme::QtMaterialTheme(QObject *parent)
     : QObject(parent),
       d_ptr(new QtMaterialThemePrivate(this))
 {
-    setColor("primary1", Material::cyan500);
-    setColor("primary2", Material::cyan700);
-    setColor("primary3", Material::lightBlack);
-    setColor("accent1", Material::pinkA200);
-    setColor("accent2", Material::grey100);
-    setColor("accent3", Material::grey500);
-    setColor("text", Material::darkBlack);
-    setColor("alternateText", Material::white);
-    setColor("canvas", Material::white);
-    setColor("border", Material::grey300);
-    setColor("disabled", Material::minBlack);
-    setColor("disabled2", Material::faintBlack);
-    setColor("disabled3", Material::grey300);
+    // 设置默认主题颜色
+    setColor("primary1", Material::cyan500);     ///< 主色调 1
+    setColor("primary2", Material::cyan700);     ///< 主色调 2
+    setColor("primary3", Material::lightBlack);  ///< 主色调 3
+    setColor("accent1", Material::pinkA200);     ///< 强调色 1
+    setColor("accent2", Material::grey100);      ///< 强调色 2
+    setColor("accent3", Material::grey500);      ///< 强调色 3
+    setColor("text", Material::darkBlack);       ///< 文本颜色
+    setColor("alternateText", Material::white);  ///< 替代文本颜色
+    setColor("canvas", Material::white);         ///< 画布颜色
+    setColor("border", Material::grey300);       ///< 边框颜色
+    setColor("disabled", Material::minBlack);    ///< 禁用状态颜色
+    setColor("disabled2", Material::faintBlack); ///< 禁用状态颜色 2
+    setColor("disabled3", Material::grey300);    ///< 禁用状态颜色 3
 }
 
+/**
+ * @brief 析构函数，清理资源
+ */
 QtMaterialTheme::~QtMaterialTheme()
 {
 }
 
+/**
+ * @brief 获取主题颜色
+ * @param key 颜色键值
+ * @return 对应颜色，若键值不存在返回无效颜色
+ */
 QColor QtMaterialTheme::getColor(const QString &key) const
 {
     Q_D(const QtMaterialTheme);
 
     if (!d->colors.contains(key)) {
         qWarning() << "A theme color matching the key '" << key << "' could not be found.";
-        return QColor();
+        return QColor(); ///< 返回无效颜色
     }
-    return d->colors.value(key);
+    return d->colors.value(key); ///< 返回颜色
 }
 
+/**
+ * @brief 设置主题颜色
+ * @param key 颜色键值
+ * @param color 颜色值
+ */
 void QtMaterialTheme::setColor(const QString &key, const QColor &color)
 {
     Q_D(QtMaterialTheme);
 
-    d->colors.insert(key, color);
+    d->colors.insert(key, color); ///< 插入颜色键值对
 }
 
+/**
+ * @brief 设置主题颜色（使用枚举）
+ * @param key 颜色键值
+ * @param color Material 颜色枚举值
+ */
 void QtMaterialTheme::setColor(const QString &key, Material::Color color)
 {
     Q_D(QtMaterialTheme);
 
+    // Material Design 调色板
     static const QColor palette[] = {
         QColor("#ffebee"), QColor("#ffcdd2"), QColor("#ef9a9a"), QColor("#e57373"),
         QColor("#ef5350"), QColor("#f44336"), QColor("#e53935"), QColor("#d32f2f"),
@@ -139,21 +178,21 @@ void QtMaterialTheme::setColor(const QString &key, Material::Color color)
         QColor("#fafafa"), QColor("#f5f5f5"), QColor("#eeeeee"), QColor("#e0e0e0"),
         QColor("#bdbdbd"), QColor("#9e9e9e"), QColor("#757575"), QColor("#616161"),
         QColor("#424242"), QColor("#212121"), QColor("#000000"), QColor("#ffffff"),
-        d->rgba(0, 0, 0, 0),
-        d->rgba(0, 0, 0, 1),
-        d->rgba(0, 0, 0, 0.87),
-        d->rgba(0, 0, 0, 0.54),
-        d->rgba(0, 0, 0, 0.26),
-        d->rgba(0, 0, 0, 0.12),
-        d->rgba(255, 255, 255, 1),
-        d->rgba(255, 255, 255, 0.87),
-        d->rgba(255, 255, 255, 0.54)
+        d->rgba(0, 0, 0, 0), d->rgba(0, 0, 0, 1), d->rgba(0, 0, 0, 0.87),
+        d->rgba(0, 0, 0, 0.54), d->rgba(0, 0, 0, 0.26), d->rgba(0, 0, 0, 0.12),
+        d->rgba(255, 255, 255, 1), d->rgba(255, 255, 255, 0.87), d->rgba(255, 255, 255, 0.54)
     };
 
-    d->colors.insert(key, palette[color]);
+    d->colors.insert(key, palette[color]); ///< 插入颜色键值对
 }
 
+/**
+ * @brief 加载 Material Design 图标
+ * @param category 图标类别
+ * @param icon 图标名称
+ * @return 图标对象
+ */
 QIcon QtMaterialTheme::icon(QString category, QString icon)
 {
-    return QIcon(":/icons/icons/" % category % "/svg/production/ic_" % icon % "_24px.svg");
+    return QIcon(":/icons/icons/" % category % "/svg/production/ic_" % icon % "_24px.svg"); ///< 构造 SVG 图标路径
 }

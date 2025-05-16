@@ -1,8 +1,10 @@
-//
-// Created by WeiWang on 24-12-12.
-//
-
-// You may need to build the project (run Qt uic code generator) to get "ui_VideoChannelBlock.h" resolved
+/**
+ * @file VideoChannelBlock.cpp
+ * @brief 实现 VideoChannelBlock 类，提供视频频道块控件
+ * @author WeiWang
+ * @date 2024-12-12
+ * @version 1.0
+ */
 
 #include "VideoChannelBlock.h"
 #include "ui_VideoChannelBlock.h"
@@ -12,101 +14,159 @@
 #include <QRandomGenerator>
 #include <QLabel>
 
-// 创建一个宏来截取 __FILE__ 宏中的目录部分
+/** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
+/**
+ * @brief 构造函数，初始化视频频道块控件
+ * @param parent 父控件指针，默认为 nullptr
+ */
 VideoChannelBlock::VideoChannelBlock(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::VideoChannelBlock)
     , m_coverTextLab(new QLabel(this))
 {
-    ui->setupUi(this); {
-        this->setObjectName("videoblock");
+    ui->setupUi(this);
+    this->setObjectName("videoblock"); ///< 设置对象名称
+    {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/videoblock.css"));
-        if (file.open(QIODevice::ReadOnly)) {
-            this->setStyleSheet(file.readAll());
-        } else {
+        if (file.open(QIODevice::ReadOnly))
+        {
+            this->setStyleSheet(file.readAll()); ///< 加载样式表
+        }
+        else
+        {
             qDebug() << "样式表打开失败QAQ";
             STREAM_ERROR() << "样式表打开失败QAQ";
             return;
         }
     }
-    initCoverTextFont();
-    initUi();
+    initCoverTextFont(); ///< 初始化封面文本字体
+    initUi();            ///< 初始化界面
 }
 
-VideoChannelBlock::~VideoChannelBlock() {
+/**
+ * @brief 析构函数，清理资源
+ */
+VideoChannelBlock::~VideoChannelBlock()
+{
     delete ui;
 }
 
-void VideoChannelBlock::setCoverPix(const QString &pixmapPath)const {
-    ui->cover_widget->setBorderImage(pixmapPath, 10);
+/**
+ * @brief 设置封面图片
+ * @param pixmapPath 图片路径
+ */
+void VideoChannelBlock::setCoverPix(const QString &pixmapPath) const
+{
+    ui->cover_widget->setBorderImage(pixmapPath, 10); ///< 设置圆角图片
 }
 
-void VideoChannelBlock::setDescription(const QString &description) {
-    this->m_descriptionText = description;
+/**
+ * @brief 设置描述
+ * @param description 描述文本
+ */
+void VideoChannelBlock::setDescription(const QString &description)
+{
+    this->m_descriptionText = description; ///< 设置描述文本
 }
 
-void VideoChannelBlock::setCoverText(const QString &text)const {
-    this->m_coverTextLab->setFont(this->m_coverTextFont);
-    this->m_coverTextLab->setText(text);
-    // 计算绘制区域
-    int yPosition = height() - 95; // 在下方 40 像素的位置
-    // 计算文字的宽度，确保水平居中
-    int textWidth = this->m_coverTextLab->width(); // 获取文本宽度
-    int xPosition = (width() - textWidth) / 2; // 计算水平居中位置
-    this->m_coverTextLab->move(xPosition,yPosition);
-    this->m_coverTextLab->raise();
-    // 打印位置和文本宽度信息
-    //qDebug() << "Text position: (" << xPosition << ", " << yPosition << ")";
-    //qDebug() << "Text width: " << textWidth;
+/**
+ * @brief 设置封面文本
+ * @param text 文本内容
+ */
+void VideoChannelBlock::setCoverText(const QString &text) const
+{
+    this->m_coverTextLab->setFont(this->m_coverTextFont); ///< 设置字体
+    this->m_coverTextLab->setText(text);                  ///< 设置文本
+    int yPosition = height() - 95;                        ///< 计算 Y 位置（下方 95 像素）
+    int textWidth = this->m_coverTextLab->width();        ///< 获取文本宽度
+    int xPosition = (width() - textWidth) / 2;            ///< 计算 X 位置（水平居中）
+    this->m_coverTextLab->move(xPosition, yPosition);     ///< 移动文本标签
+    this->m_coverTextLab->raise();                        ///< 提升层级
 }
 
-void VideoChannelBlock::initUi() {
-    //遮罩设置
-    auto &mask = ui->cover_widget->getMask();
-    mask.setDefaultFillCircleColor(QColor(QStringLiteral("#525759")));
-    mask.setHoverFillCircleColor(QColor(QStringLiteral("#525759")));
-    mask.setDefaultFillTriangleColor(Qt::white);
-    mask.setHoverFillTriangleColor(Qt::white);
-    mask.setMaskColor(QColor(0,0,0,100));
-    ui->cover_widget->setAspectRatio(1.5);
-    ui->cover_widget->installEventFilter(this);
-    //设置coverTextLab
-    this->m_coverTextLab->setScaledContents(true);
-    this->m_coverTextLab->setAlignment(Qt::AlignCenter);
-    this->m_coverTextLab->setFixedWidth(this->width()-20);
-    //设置toolButton
-    ui->desc_toolButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    ui->desc_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/eye-gray.svg")));
-    ui->desc_toolButton->setText(QString::number(QRandomGenerator::global()->bounded(1,500))+"人在看");
+/**
+ * @brief 初始化界面
+ */
+void VideoChannelBlock::initUi()
+{
+    auto &mask = ui->cover_widget->getMask();                     ///< 获取遮罩
+    mask.setDefaultFillCircleColor(QColor(QStringLiteral("#525759"))); ///< 设置默认圆形颜色
+    mask.setHoverFillCircleColor(QColor(QStringLiteral("#525759")));  ///< 设置悬停圆形颜色
+    mask.setDefaultFillTriangleColor(Qt::white);                   ///< 设置默认三角形颜色
+    mask.setHoverFillTriangleColor(Qt::white);                    ///< 设置悬停三角形颜色
+    mask.setMaskColor(QColor(0, 0, 0, 100));                      ///< 设置遮罩颜色
+    ui->cover_widget->setAspectRatio(1.5);                        ///< 设置宽高比
+    ui->cover_widget->installEventFilter(this);                   ///< 安装事件过滤器
+
+    this->m_coverTextLab->setScaledContents(true);                ///< 启用缩放内容
+    this->m_coverTextLab->setAlignment(Qt::AlignCenter);          ///< 设置居中对齐
+    this->m_coverTextLab->setFixedWidth(this->width() - 20);      ///< 设置固定宽度
+
+    ui->desc_toolButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置工具按钮样式
+    ui->desc_toolButton->setIcon(QIcon(QStringLiteral(":/Res/tabIcon/eye-gray.svg"))); ///< 设置图标
+    ui->desc_toolButton->setText(QString::number(QRandomGenerator::global()->bounded(1, 500)) + "人在看"); ///< 设置随机观看人数
 }
 
-void VideoChannelBlock::initCoverTextFont() {
-    this->m_coverTextFont = QFont("YouYuan");
-    //this->m_coverTextFont.setFamily(fontFamily);
-    this->m_coverTextFont.setPixelSize(16);
+/**
+ * @brief 初始化封面文本字体
+ */
+void VideoChannelBlock::initCoverTextFont()
+{
+    this->m_coverTextFont = QFont("YouYuan");                     ///< 设置字体
+    this->m_coverTextFont.setPixelSize(16);                       ///< 设置像素大小
 }
 
-void VideoChannelBlock::mousePressEvent(QMouseEvent *event) {
-    event->ignore();
+/**
+ * @brief 鼠标按下事件
+ * @param event 鼠标事件对象
+ * @note 重写基类方法
+ */
+void VideoChannelBlock::mousePressEvent(QMouseEvent *event)
+{
+    event->ignore();                                              ///< 忽略事件
 }
 
-void VideoChannelBlock::mouseReleaseEvent(QMouseEvent *event) {
-    event->ignore();
+/**
+ * @brief 鼠标释放事件
+ * @param event 鼠标事件对象
+ * @note 重写基类方法
+ */
+void VideoChannelBlock::mouseReleaseEvent(QMouseEvent *event)
+{
+    event->ignore();                                              ///< 忽略事件
 }
 
-void VideoChannelBlock::mouseDoubleClickEvent(QMouseEvent *event) {
-    event->ignore();
+/**
+ * @brief 鼠标双击事件
+ * @param event 鼠标事件对象
+ * @note 重写基类方法
+ */
+void VideoChannelBlock::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    event->ignore();                                              ///< 忽略事件
 }
 
-bool VideoChannelBlock::eventFilter(QObject *watched, QEvent *event) {
-    if (watched == ui->cover_widget) {
-        if (event->type() == QEvent::Enter) {
-            this->m_coverTextLab->hide();
-        } else if (event->type() == QEvent::Leave) {
-            this->m_coverTextLab->show();
-            this->m_coverTextLab->raise();
+/**
+ * @brief 事件过滤器
+ * @param watched 目标对象
+ * @param event 事件对象
+ * @return 是否处理事件
+ * @note 重写基类方法
+ */
+bool VideoChannelBlock::eventFilter(QObject *watched, QEvent *event)
+{
+    if (watched == ui->cover_widget)
+    {
+        if (event->type() == QEvent::Enter)
+        {
+            this->m_coverTextLab->hide();                         ///< 鼠标进入时隐藏文本
+        }
+        else if (event->type() == QEvent::Leave)
+        {
+            this->m_coverTextLab->show();                         ///< 鼠标离开时显示文本
+            this->m_coverTextLab->raise();                        ///< 提升层级
         }
     }
     return QWidget::eventFilter(watched, event);

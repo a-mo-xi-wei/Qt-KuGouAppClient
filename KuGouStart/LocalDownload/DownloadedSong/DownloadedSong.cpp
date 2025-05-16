@@ -14,7 +14,7 @@
 #include <QFile>
 #include <QScreen>
 
-#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+#define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 DownloadedSong::DownloadedSong(QWidget *parent)
     : QWidget(parent)

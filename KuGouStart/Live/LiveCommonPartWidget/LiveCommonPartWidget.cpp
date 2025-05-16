@@ -19,7 +19,7 @@
 #include <QDir>
 
 
-#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+#define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 LiveCommonPartWidget::LiveCommonPartWidget(QWidget *parent, const int lines)
     : QWidget(parent)

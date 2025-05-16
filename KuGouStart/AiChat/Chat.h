@@ -1,7 +1,16 @@
+/**
+ * @file Chat.h
+ * @brief 定义 Chat 类，提供与硅基流动 API 的聊天交互
+ * @author WeiWang
+ * @date 2025-04-14
+ * @version 1.0
+ */
+
 #ifndef CHAT_H
 #define CHAT_H
 
 #include <QNetworkAccessManager>
+
 
 //API手册地址 https://docs.siliconflow.cn/cn/api-reference/chat-completions/chat-completions
 
@@ -42,37 +51,72 @@ curl --request POST \
   ]
 }'
 */
+
+/**
+ * @class Chat
+ * @brief 聊天类，与硅基流动 API 交互，支持流式响应
+ * @note API 手册：https://docs.siliconflow.cn/cn/api-reference/chat-completions/chat-completions
+ */
+
 class Chat final : public QObject {
     Q_OBJECT
+
 public:
+    /**
+     * @brief 构造函数，初始化聊天对象
+     */
     Chat();
 
+    /**
+     * @brief 发送聊天请求
+     * @param word 用户输入的问题
+     */
     void send(const QString &word);
 
 private:
+    /**
+     * @brief 初始化网络请求
+     */
     void init();
 
 private slots:
+    /**
+     * @brief 处理流式响应数据
+     */
     void processStream();
 
+    /**
+     * @brief 结束流式响应
+     */
     void finalizeStream();
 
 private:
-    QNetworkRequest _request; // 封装网络请求信息
-    QNetworkAccessManager *_manager; // 管理网络请求和响应
-    QNetworkReply *_reply; // 网络请求响应
-
-    QString _curl_https = "https://api.siliconflow.cn/v1/chat/completions";
-    QString _model = "deepseek-ai/DeepSeek-V3";
-    QString _api_key = "Your API Key";//填入自己的硅基流动的API,参考 https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#%E4%BB%8B%E7%BB%8D
-    QString _read_text;
-
-    QByteArray m_buffer; // 用于累积接收的数据
+    QNetworkRequest      _request;       ///< 网络请求对象
+    QNetworkAccessManager *_manager;     ///< 网络管理器
+    QNetworkReply        *_reply;        ///< 网络响应
+    QString              _curl_https    = "https://api.siliconflow.cn/v1/chat/completions";    ///< API 地址
+    QString              _model         = "deepseek-ai/DeepSeek-V3";                           ///< 模型名称
+    QString              _api_key       = "Your API Key"; ///< API 密钥,可参考 https://gitee.com/a-mo-xi-wei/qt6-access-deepseek#%E4%BB%8B%E7%BB%8D
+    QString              _read_text;     ///< 读取文本
+    QByteArray           m_buffer;       ///< 数据缓冲区
 
 signals:
-    void answered(const QString& word);
+    /**
+     * @brief 接收到回答信号
+     * @param word 回答内容
+     */
+    void answered(const QString &word);
+
+    /**
+     * @brief 流式响应结束信号
+     */
     void streamFinished();
-    void errorOccurred(const QString& error);  // 新增错误信号
+
+    /**
+     * @brief 错误发生信号
+     * @param error 错误信息
+     */
+    void errorOccurred(const QString &error);
 };
 
 #endif // CHAT_H

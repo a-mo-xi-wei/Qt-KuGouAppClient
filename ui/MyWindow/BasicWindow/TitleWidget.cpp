@@ -25,7 +25,7 @@
 /**
  * @brief 获取当前文件所在目录路径
  */
-#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+#define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 /**
  * @brief 构造函数，初始化标题栏控件

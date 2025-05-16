@@ -1,131 +1,176 @@
-//
-// Created by WeiWang on 24-11-12.
-//
-
-// You may need to build the project (run Qt uic code generator) to get "ui_Video.h" resolved
+/**
+ * @file Video.cpp
+ * @brief 实现 Video 类，提供视频界面管理功能
+ * @author WeiWang
+ * @date 2024-11-12
+ * @version 1.0
+ */
 
 #include "Video.h"
 #include "ui_Video.h"
 #include "logger.hpp"
 #include "ElaToolTip.h"
 
-#include<QButtonGroup>
-#include<QFile>
+#include <QButtonGroup>
+#include <QFile>
 
-// 创建一个宏来截取 __FILE__ 宏中的目录部分
-#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+/** @brief 获取当前文件所在目录宏 */
+#define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
-Video::Video(QWidget *parent) :
-    QWidget(parent), ui(new Ui::Video)
-    ,m_buttonGroup(std::make_unique<QButtonGroup>(this))
+/**
+ * @brief 构造函数，初始化视频界面
+ * @param parent 父控件指针，默认为 nullptr
+ */
+Video::Video(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::Video)
+    , m_buttonGroup(std::make_unique<QButtonGroup>(this))
 {
     ui->setupUi(this);
     {
-        QFile file(GET_CURRENT_DIR + QStringLiteral("/video.css"));
-        if (file.open(QIODevice::ReadOnly)) {
-            this->setStyleSheet(file.readAll());
-        } else {
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/video.css")); ///< 加载样式表
+        if (file.open(QIODevice::ReadOnly))
+        {
+            this->setStyleSheet(file.readAll());             ///< 应用样式表
+        }
+        else
+        {
             qDebug() << "样式表打开失败QAQ";
-            STREAM_ERROR() << "样式表打开失败QAQ";
+            STREAM_ERROR() << "样式表打开失败QAQ";          ///< 记录错误日志
             return;
         }
     }
-    initStackedWidget();
-    initUi();
+    initStackedWidget();                                 ///< 初始化堆栈窗口
+    initUi();                                            ///< 初始化界面
 
-    //动画结束，恢复可交互
-    connect(ui->stackedWidget,&SlidingStackedWidget::animationFinished,[this]{enableButton(true);});
-    enableButton(true);
+    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] {
+        enableButton(true);                              ///< 动画结束时启用按钮
+    });
+    enableButton(true);                                  ///< 初始启用按钮
 }
 
-Video::~Video() {
+/**
+ * @brief 析构函数，清理资源
+ */
+Video::~Video()
+{
     delete ui;
 }
 
-void Video::initUi()const {
-    //设置toolTip
+/**
+ * @brief 初始化界面
+ */
+void Video::initUi() const
+{
     {
-        auto video_channel_toolTip = new ElaToolTip(ui->video_channel_pushButton);
+        auto video_channel_toolTip = new ElaToolTip(ui->video_channel_pushButton); ///< 创建视频频道工具提示
         video_channel_toolTip->setToolTip(QStringLiteral("视频频道"));
 
-        auto mv_toolTip = new ElaToolTip(ui->MV_pushButton);
+        auto mv_toolTip = new ElaToolTip(ui->MV_pushButton); ///< 创建 MV 工具提示
         mv_toolTip->setToolTip(QStringLiteral("MV"));
 
-        auto video_toolTip = new ElaToolTip(ui->video_pushButton);
+        auto video_toolTip = new ElaToolTip(ui->video_pushButton); ///< 创建视频工具提示
         video_toolTip->setToolTip(QStringLiteral("视频"));
     }
 
-    ui->index_label1->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
-    ui->index_label2->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
-    ui->index_label3->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg")));
-    ui->index_label2->hide();
-    ui->index_label3->hide();
+    ui->index_label1->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置索引标签1图片
+    ui->index_label2->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置索引标签2图片
+    ui->index_label3->setPixmap(QPixmap(QStringLiteral(":/Res/window/index_lab.svg"))); ///< 设置索引标签3图片
+    ui->index_label2->hide();                            ///< 隐藏索引标签2
+    ui->index_label3->hide();                            ///< 隐藏索引标签3
 
-    ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart);
-    ui->stackedWidget->setSpeed(400);
+    ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart); ///< 设置堆栈窗口动画曲线
+    ui->stackedWidget->setSpeed(400);                    ///< 设置动画速度（400ms）
 }
 
-void Video::initStackedWidget() {
-    // 设置堆栈窗口的布局的边距
-    ui->stackedWidget->setContentsMargins(0, 0, 0, 0);
-    initVideoChannelWidget();
-    initMVWidget();
-    initVideoWidget();
-    //设置互斥
-    m_buttonGroup->addButton(ui->video_channel_pushButton);
-    m_buttonGroup->addButton(ui->MV_pushButton);
-    m_buttonGroup->addButton(ui->video_pushButton);
-    m_buttonGroup->setExclusive(true);
-
+/**
+ * @brief 初始化堆栈窗口
+ */
+void Video::initStackedWidget()
+{
+    ui->stackedWidget->setContentsMargins(0, 0, 0, 0);   ///< 设置堆栈窗口边距
+    initVideoChannelWidget();                            ///< 初始化视频频道控件
+    initMVWidget();                                      ///< 初始化 MV 控件
+    initVideoWidget();                                   ///< 初始化视频控件
+    m_buttonGroup->addButton(ui->video_channel_pushButton); ///< 添加视频频道按钮
+    m_buttonGroup->addButton(ui->MV_pushButton);         ///< 添加 MV 按钮
+    m_buttonGroup->addButton(ui->video_pushButton);      ///< 添加视频按钮
+    m_buttonGroup->setExclusive(true);                   ///< 设置按钮组互斥
 }
 
-void Video::initVideoChannelWidget() {
-    this->m_videoChannelWidget = std::make_unique<VideoChannelWidget>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_videoChannelWidget.get());
+/**
+ * @brief 初始化视频频道控件
+ */
+void Video::initVideoChannelWidget()
+{
+    this->m_videoChannelWidget = std::make_unique<VideoChannelWidget>(ui->stackedWidget); ///< 创建视频频道控件
+    ui->stackedWidget->addWidget(this->m_videoChannelWidget.get()); ///< 添加到堆栈窗口
 }
 
-void Video::initMVWidget() {
-    this->m_MVWidget = std::make_unique<MVWidget>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_MVWidget.get());
+/**
+ * @brief 初始化 MV 控件
+ */
+void Video::initMVWidget()
+{
+    this->m_MVWidget = std::make_unique<MVWidget>(ui->stackedWidget); ///< 创建 MV 控件
+    ui->stackedWidget->addWidget(this->m_MVWidget.get()); ///< 添加到堆栈窗口
 }
 
-void Video::enableButton(const bool &flag) const {
-    ui->video_channel_pushButton->setEnabled(flag);
-    ui->MV_pushButton->setEnabled(flag);
-    ui->video_pushButton->setEnabled(flag);
+/**
+ * @brief 初始化视频控件
+ */
+void Video::initVideoWidget()
+{
+    this->m_videoWidget = std::make_unique<VideoWidget>(ui->stackedWidget); ///< 创建视频控件
+    ui->stackedWidget->addWidget(this->m_videoWidget.get()); ///< 添加到堆栈窗口
 }
 
-void Video::initVideoWidget() {
-    this->m_videoWidget = std::make_unique<VideoWidget>(ui->stackedWidget);
-    ui->stackedWidget->addWidget(this->m_videoWidget.get());
-}
-void Video::on_video_channel_pushButton_clicked() {
-    enableButton(false);
-    //ui->stackedWidget->setCurrentWidget(this->m_videoChannelWidget.get());
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_videoChannelWidget.get()));
-    // 输出测试日志并立即刷新
-    STREAM_INFO() << "切换 videoChannelWidget 界面";
-    ui->index_label1->show();
-    ui->index_label2->hide();
-    ui->index_label3->hide();
+/**
+ * @brief 启用或禁用按钮
+ * @param flag 是否启用
+ */
+void Video::enableButton(const bool &flag) const
+{
+    ui->video_channel_pushButton->setEnabled(flag);      ///< 设置视频频道按钮状态
+    ui->MV_pushButton->setEnabled(flag);                ///< 设置 MV 按钮状态
+    ui->video_pushButton->setEnabled(flag);             ///< 设置视频按钮状态
 }
 
-void Video::on_MV_pushButton_clicked() {
-    enableButton(false);
-    //ui->stackedWidget->setCurrentWidget(this->m_MVWidget.get());
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_MVWidget.get()));
-    STREAM_INFO() << "切换 MVWidget 界面";
-    ui->index_label1->hide();
-    ui->index_label2->show();
-    ui->index_label3->hide();
+/**
+ * @brief 处理视频频道按钮点击
+ */
+void Video::on_video_channel_pushButton_clicked()
+{
+    enableButton(false);                                 ///< 禁用按钮
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_videoChannelWidget.get())); ///< 切换到视频频道
+    STREAM_INFO() << "切换 videoChannelWidget 界面";      ///< 记录切换日志
+    ui->index_label1->show();                            ///< 显示索引标签1
+    ui->index_label2->hide();                            ///< 隐藏索引标签2
+    ui->index_label3->hide();                            ///< 隐藏索引标签3
 }
 
-void Video::on_video_pushButton_clicked() {
-    enableButton(false);
-    //ui->stackedWidget->setCurrentWidget(this->m_videoWidget.get());
-    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_videoWidget.get()));
-    STREAM_INFO() << "切换 videoWidget 界面";
-    ui->index_label1->hide();
-    ui->index_label2->hide();
-    ui->index_label3->show();
+/**
+ * @brief 处理 MV 按钮点击
+ */
+void Video::on_MV_pushButton_clicked()
+{
+    enableButton(false);                                 ///< 禁用按钮
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_MVWidget.get())); ///< 切换到 MV
+    STREAM_INFO() << "切换 MVWidget 界面";               ///< 记录切换日志
+    ui->index_label1->hide();                            ///< 隐藏索引标签1
+    ui->index_label2->show();                            ///< 显示索引标签2
+    ui->index_label3->hide();                            ///< 隐藏索引标签3
+}
+
+/**
+ * @brief 处理视频按钮点击
+ */
+void Video::on_video_pushButton_clicked()
+{
+    enableButton(false);                                 ///< 禁用按钮
+    ui->stackedWidget->slideInIdx(ui->stackedWidget->indexOf(this->m_videoWidget.get())); ///< 切换到视频
+    STREAM_INFO() << "切换 videoWidget 界面";             ///< 记录切换日志
+    ui->index_label1->hide();                            ///< 隐藏索引标签1
+    ui->index_label2->hide();                            ///< 隐藏索引标签2
+    ui->index_label3->show();                            ///< 显示索引标签3
 }

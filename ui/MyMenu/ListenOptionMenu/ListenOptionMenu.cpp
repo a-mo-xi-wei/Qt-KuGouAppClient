@@ -16,7 +16,7 @@
 #include <QVBoxLayout>
 
 /** @brief 获取当前文件目录的宏 */
-#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+#define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 /**
  * @brief 构造函数，初始化听单选项菜单

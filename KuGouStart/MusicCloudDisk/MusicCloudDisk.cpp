@@ -13,7 +13,7 @@
 #include <QFile>
 #include <QMouseEvent>
 
-#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+#define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 MusicCloudDisk::MusicCloudDisk(QWidget *parent)
     : QWidget(parent), ui(new Ui::MusicCloudDisk)

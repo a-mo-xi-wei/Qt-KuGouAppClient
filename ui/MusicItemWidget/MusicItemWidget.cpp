@@ -25,7 +25,7 @@
 #define PIX_RADIUS 9 ///< 图片圆角
 
 // 创建一个宏来截取 __FILE__ 宏中的目录部分
-#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+#define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 /**
  * @brief 创建圆角图片

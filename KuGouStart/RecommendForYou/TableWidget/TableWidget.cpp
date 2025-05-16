@@ -30,7 +30,7 @@ TableWidget::TableWidget(const QString &title, KIND kind, QWidget *parent)
     this->m_play_ToolBtn = new QToolButton(this);
     this->m_adjust_ToolBtn = new QToolButton(this);
     this->m_refresh_ToolBtn = new QToolButton(this);
-    this->m_more_Lab = new QLabel(QStringLiteral("更多 >"), this);
+    this->m_more_Lab = new QLabel("更多 >", this);
     this->m_more_Lab->installEventFilter(this);
 
     initDescVector();
@@ -742,7 +742,7 @@ void ItemListWidget::initUi() {
     this->m_mask->setEnterWidgetChangeCursor(false);
     this->m_mask->move(this->m_coverLab->pos());
     this->m_mask->setFixedSize(this->m_coverLab->size());
-    this->m_mask->setStander(70);
+    this->m_mask->setStander(60);
     this->m_mask->hide();
     //初始隐藏按钮
     this->m_optionWidget->show();

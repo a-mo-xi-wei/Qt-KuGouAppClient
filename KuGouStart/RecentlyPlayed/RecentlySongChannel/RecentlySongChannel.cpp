@@ -13,7 +13,7 @@
 
 #include <QFile>
 
-#define GET_CURRENT_DIR (QString(__FILE__).first(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
+#define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
 RecentlySongChannel::RecentlySongChannel(QWidget *parent)
     : QWidget(parent)
