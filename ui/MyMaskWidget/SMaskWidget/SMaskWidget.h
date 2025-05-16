@@ -192,21 +192,21 @@ private:
     QPointF                 m_ap;                           ///< 三角形顶点 A
     QPointF                 m_bp;                           ///< 三角形顶点 B
     QPointF                 m_cp;                           ///< 三角形顶点 C
-    QColor                  m_defaultFillCircleColor;       ///< 默认圆形填充颜色
-    QColor                  m_hoverFillCircleColor;         ///< 悬浮圆形填充颜色
-    QColor                  m_defaultFillTriangleColor;     ///< 默认三角形填充颜色
-    QColor                  m_hoverFillTriangleColor;       ///< 悬浮三角形填充颜色
-    QColor                  m_maskColor;                    ///< 遮罩颜色
-    bool                    m_isEnterWidgetChangeCursor;    ///< 是否进入控件改变光标
-    bool                    m_isEnterCircle;                ///< 鼠标是否在圆形内
-    int                     m_borderRadius;                 ///< 边框圆角半径
-    int                     m_stander;                      ///< 基准尺寸
-    int                     m_animatedY;                    ///< 动画 Y 坐标
-    int                     m_alpha;                        ///< 透明度
-    QPropertyAnimation*     m_posAnimation;                 ///< 位置动画
-    QPropertyAnimation*     m_alphaAnimation;               ///< 透明度动画
-    QParallelAnimationGroup* m_aniGroup;                    ///< 动画组
-    bool                    m_isMove;                       ///< 是否启用动画
+    QColor                  m_defaultFillCircleColor = QColor();        ///< 默认圆形填充颜色
+    QColor                  m_hoverFillCircleColor = Qt::white;         ///< 悬浮圆形填充颜色
+    QColor                  m_defaultFillTriangleColor = Qt::white;     ///< 默认三角形填充颜色
+    QColor                  m_hoverFillTriangleColor = QColor();        ///< 悬浮三角形填充颜色
+    QColor                  m_maskColor = QColor(0, 0, 0, 160);   ///< 遮罩颜色
+    bool                    m_isEnterWidgetChangeCursor = true;     ///< 是否进入控件改变光标
+    bool                    m_isEnterCircle = false;                ///< 鼠标是否在圆形内
+    int                     m_borderRadius = 8;                     ///< 边框圆角半径
+    int                     m_stander = 0;                          ///< 基准尺寸
+    int                     m_animatedY;                            ///< 动画 Y 坐标
+    int                     m_alpha = 0;                            ///< 透明度
+    QPropertyAnimation*     m_posAnimation;                         ///< 位置动画
+    QPropertyAnimation*     m_alphaAnimation;                       ///< 透明度动画
+    QParallelAnimationGroup* m_aniGroup;                            ///< 动画组
+    bool                    m_isMove = false;                       ///< 是否启用动画
 };
 
 #endif // SMASKWIDGET_H

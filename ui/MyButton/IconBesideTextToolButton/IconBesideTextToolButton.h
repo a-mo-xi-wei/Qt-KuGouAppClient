@@ -116,7 +116,7 @@ private:
     QSize                   m_leaveIconSize;        ///< 鼠标离开时的图标大小
     int                     m_enterFontSize;        ///< 鼠标进入时的字体大小
     int                     m_leaveFontSize;        ///< 鼠标离开时的字体大小
-    QColor                  m_hoverFontColor;       ///< 悬停时的字体颜色
+    QColor                  m_hoverFontColor = QColor(255, 255, 255); ///< 悬停时的字体颜色
     bool                    m_changeSize = false;   ///< 是否在悬停时改变大小
     bool                    m_isHover = false;      ///< 是否处于悬停状态
     bool                    m_isApproach = false;   ///< 是否靠近显示图标和文字

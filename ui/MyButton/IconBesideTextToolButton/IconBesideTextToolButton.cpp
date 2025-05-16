@@ -20,7 +20,6 @@ IconBesideTextToolButton::IconBesideTextToolButton(QWidget *parent)
     , m_leaveIconSize(QSize(20, 20))
     , m_enterFontSize(15)
     , m_leaveFontSize(12)
-    , m_hoverFontColor(QColor(255, 255, 255))
 {
 }
 
